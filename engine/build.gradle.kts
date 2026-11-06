@@ -6,8 +6,8 @@ plugins {
 kotlin { jvmToolchain(17) }
 
 dependencies {
-    // Flow is used by SettingsRepository. Coordinates inline until PLATFORM adds them to the catalog.
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1")
+    // Flow is used by SettingsRepository.
+    implementation(libs.kotlinx.coroutines.core)
     testImplementation(libs.junit)
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.1")
+    testImplementation(libs.kotlinx.coroutines.test)
 }

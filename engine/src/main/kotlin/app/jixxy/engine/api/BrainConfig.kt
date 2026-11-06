@@ -30,6 +30,49 @@ object BrainConfig {
     const val bondFriendXp = 400
     const val bondRideOrDieXp = 1200
 
+
+    /** Energy a spoken (non-Pause) line costs. At 0 Jixxy is "on break". */
+    const val energyPerLine = 8
+    /** Minutes of real time per +1 energy point. */
+    const val regenMinutesPerPoint = 6
+    /** Energy restored when the charger is plugged in. */
+    const val chargerEnergyBonus = 10
+    /** Max energy restored by a full nap. */
+    const val napEnergyBonus = 30
+    /** Energy below this makes the mood SLEEPY. */
+    const val lowEnergy = 20
+    /** Leaving an app after at least this many minutes makes the next app change comment-worthy. */
+    const val longSessionMin = 20
+    /** Session length (minutes) at which SESSION_LONG remarks begin. */
+    const val sessionLongMin = 30
+    /** Minutes between repeated SESSION_LONG remarks within one session. */
+    const val sessionLongRepeatMin = 30
+    /** Minutes a temporary mood (GRUMPY, SMUG, IMPRESSED) lasts. */
+    const val moodHoldMin = 10
+    /** Consecutive taps that make Jixxy GRUMPY. */
+    const val pokeGrumpyThreshold = 3
+    /** Consecutive Leaves that earn an IMPRESSED line. */
+    const val impressedLeaveStreak = 3
+    const val bondXpDaily = 3
+    const val bondXpLaugh = 2
+    const val bondXpLeave = 5
+    const val bondXpImpressed = 10
+
+    /** Minimum minutes between two unprompted lines of the same [trigger]. */
+    fun unpromptedCooldownMin(trigger: Trigger): Int = when (trigger) {
+        Trigger.APP_OPEN -> 90
+        Trigger.SESSION_LONG -> 45
+        Trigger.LATE_NIGHT -> 360
+        Trigger.CHARGER_ON -> 180
+        Trigger.BATTERY_LOW -> 240
+        Trigger.MUSIC -> 240
+        else -> 0
+    }
+
+    /** How long a speech bubble stays for [text]; 0 for no text. */
+    fun bubbleMs(text: String?): Long =
+        if (text.isNullOrEmpty()) 0L else minOf(7000L, 3000L + 45L * text.length)
+
     /** Maps bond XP to a [Bond] level. */
     fun bondFor(xp: Int): Bond = when {
         xp >= bondRideOrDieXp -> Bond.RIDE_OR_DIE
