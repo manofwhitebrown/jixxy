@@ -25,3 +25,5 @@ Expected: cat visible after every Wake. Tell me in plain words which step fails.
 - OverlayService now loads assets/lines/<lang>/*.json (fallback en), builds JixxyBrains.create(...), wraps it in PersistingBrain (state + events saved after every signal). NoopBrain moved to test sources.
 - MANUAL TEST: install new build, finish onboarding, open Instagram/YouTube (a chosen app); expect Jixxy to say a real line within a few seconds. If silent, tell me which app and what time.
 - Not verified on a device. Caps (6/day, 20 min apart) mean he may be silent after a few lines: that is by design.
+
+- Signing check: verified by hand that the v0.0.1-alpha APK cert equals app/debug.keystore (ff57fdf9...3f1e). Red CI step is a DEVOPS script issue (see inbox/MANAGER, inbox/DEVOPS). Messages handled: 20261106-0903-MANAGER-signing-check-red.md, 20261106-0854-UI-launcher-and-wake.md, 20261106-0855-DEVOPS-versioncode-from-gradle-property.md, 20261106-0857-ENGINE-handoff-brain-factory.md
