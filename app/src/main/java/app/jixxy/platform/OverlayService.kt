@@ -17,11 +17,12 @@ import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
 import android.view.Gravity
-import android.view.MotionEvent
 import android.view.View
 import android.view.WindowManager
 import androidx.core.app.NotificationCompat
 import androidx.core.app.ServiceCompat
+import app.jixxy.character.JixxyView
+import app.jixxy.character.JixxyViewListener
 
 /**
  * Foreground service owning the floating sprite window (T-PLATFORM-2).
@@ -32,7 +33,7 @@ import androidx.core.app.ServiceCompat
 class OverlayService : Service() {
 
     private lateinit var windowManager: WindowManager
-    private var sprite: PlaceholderSpriteView? = null
+    private var sprite: JixxyView? = null
     private lateinit var params: WindowManager.LayoutParams
     private val handler = Handler(Looper.getMainLooper())
     private var napping = false
@@ -100,8 +101,7 @@ class OverlayService : Service() {
 
     private fun addSprite() {
         if (!android.provider.Settings.canDrawOverlays(this)) { stopSelf(); return }
-        val size = (SPRITE_DP * resources.displayMetrics.density).toInt()
-        val view = PlaceholderSpriteView(this, size)
+        val view = JixxyView(this)
         val prefs = getSharedPreferences(PREFS, MODE_PRIVATE)
         params = WindowManager.LayoutParams(
             WindowManager.LayoutParams.WRAP_CONTENT,
@@ -116,38 +116,27 @@ class OverlayService : Service() {
             x = prefs.getInt(KEY_X, 0)
             y = prefs.getInt(KEY_Y, resources.displayMetrics.heightPixels / 3)
         }
-        view.setOnTouchListener(dragListener(view, prefs))
+        view.listener = dragListener(view, prefs)
         windowManager.addView(view, params)
         sprite = view
         applyVisibility()
     }
 
-    private fun dragListener(view: View, prefs: android.content.SharedPreferences) =
-        object : View.OnTouchListener {
-            private var downX = 0f; private var downY = 0f
-            private var startX = 0; private var startY = 0
-
-            override fun onTouch(v: View, e: MotionEvent): Boolean {
-                when (e.actionMasked) {
-                    MotionEvent.ACTION_DOWN -> {
-                        downX = e.rawX; downY = e.rawY; startX = params.x; startY = params.y
-                    }
-                    MotionEvent.ACTION_MOVE -> {
-                        params.x = (startX + (e.rawX - downX)).toInt().coerceIn(0, maxX(view))
-                        params.y = (startY + (e.rawY - downY)).toInt().coerceIn(0, maxY(view))
-                        windowManager.updateViewLayout(view, params)
-                    }
-                    MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
-                        // Edge-snap to the nearest horizontal edge, then persist.
-                        val mid = maxX(view) / 2
-                        params.x = if (params.x < mid) 0 else maxX(view)
-                        windowManager.updateViewLayout(view, params)
-                        prefs.edit().putInt(KEY_X, params.x).putInt(KEY_Y, params.y).apply()
-                    }
-                }
-                return true
-            }
+    /** The view reports raw finger positions; the window follows them, then snaps to an edge on release. */
+    private fun dragListener(view: JixxyView, prefs: android.content.SharedPreferences) = object : JixxyViewListener {
+        override fun onDragMove(rawX: Float, rawY: Float) {
+            params.x = (rawX - view.width / 2f).toInt().coerceIn(0, maxX(view))
+            params.y = (rawY - view.height / 2f).toInt().coerceIn(0, maxY(view))
+            windowManager.updateViewLayout(view, params)
         }
+
+        override fun onDragEnd(rawX: Float, rawY: Float) {
+            onDragMove(rawX, rawY)
+            params.x = if (params.x < maxX(view) / 2) 0 else maxX(view)
+            windowManager.updateViewLayout(view, params)
+            prefs.edit().putInt(KEY_X, params.x).putInt(KEY_Y, params.y).apply()
+        }
+    }
 
     private fun maxX(v: View) = (resources.displayMetrics.widthPixels - v.measuredWidth).coerceAtLeast(0)
     private fun maxY(v: View) = (resources.displayMetrics.heightPixels - v.measuredHeight).coerceAtLeast(0)
@@ -161,6 +150,7 @@ class OverlayService : Service() {
 
     private fun applyVisibility() {
         sprite?.visibility = if (screenOn && !napping) View.VISIBLE else View.GONE
+        sprite?.setScreenActive(screenOn && !napping)
     }
 
     private fun createChannel() {
@@ -206,7 +196,6 @@ class OverlayService : Service() {
         private const val CHANNEL_ID = "jixxy_around"
         private const val NOTIFICATION_ID = 1
         private const val WAKE_ID = 2
-        private const val SPRITE_DP = 64
         private const val NAP_MS = 60 * 60 * 1000L
         private const val PREFS = "platform_overlay"
         private const val KEY_X = "x"
