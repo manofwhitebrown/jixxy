@@ -1,4 +1,4 @@
-# JIXXY — MICROCOPY v0.4
+# JIXXY — MICROCOPY v0.5
 Owner: WRITER · Consumer: UI (→ strings.xml) · Language: en
 
 **Rules**
@@ -149,11 +149,11 @@ Each guide: intro + steps. All end with `oem.menus_differ`.
 - `oem.guide.xiaomi.steps` — Open Settings → Apps → Manage apps → Jixxy. Turn on Autostart. Open "Battery saver" for Jixxy and choose "No restrictions".
 
 ### Oppo / Realme
-- `oem.guide.oppo.intro` — On Oppo and Realme phones, background apps can be closed automatically.
+- `oem.guide.oppo.intro` — On Oppo, Realme and OnePlus phones, background apps can be closed automatically.
 - `oem.guide.oppo.steps` — Open Settings → Apps → App management → Jixxy. Turn on "Allow auto-launch" and "Allow background activity". In Battery, choose "Don't optimise".
 
 ### Vivo
-- `oem.guide.vivo.intro` — On Vivo phones, background limits can stop Jixxy from running.
+- `oem.guide.vivo.intro` — On Vivo and iQOO phones, background limits can stop Jixxy from running.
 - `oem.guide.vivo.steps` — Open Settings → Battery → Background power consumption → Jixxy → Allow. In Apps, turn on Autostart for Jixxy.
 
 ### Samsung
@@ -233,3 +233,11 @@ Plain words, no jokes, no judgement. UI adds the app name and time to each row.
 - `whatsaw.event.charger_on` — Charger connected
 - `whatsaw.event.nap` — Jixxy napped
 - `whatsaw.event.late_night_open` — Opened late at night
+
+## 14. OEM headings and extra help (v0.5, requested by UI)
+- `oem.title.xiaomi` — Xiaomi, Redmi and POCO
+- `oem.title.oppo` — Oppo, Realme and OnePlus
+- `oem.title.vivo` — Vivo and iQOO
+- `oem.title.samsung` — Samsung
+- `oem.title.stock` — Other Android phones
+- `oem.dontkillmyapp_note` — Still stuck? The website dontkillmyapp.com lists steps for many phone brands. Type it into your browser; I can't open links myself.
