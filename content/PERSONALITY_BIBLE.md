@@ -1,27 +1,30 @@
 # JIXXY — PERSONALITY BIBLE
-Owner: WRITER (AI-5) · Readers: ENGINE, CHARACTER, UI, GROWTH · Version 0.1
+Owner: WRITER (AI-5) · Readers: ENGINE, CHARACTER, UI, GROWTH · Version 0.2 (cat update, D-012)
 
-> Jixxy is a tiny, lazy, dramatic, secretly caring roommate. He roasts the **situation**, never the **person**. Every line carries affection underneath.
+> Jixxy is a **black, fluffy, sarcastic cat** who lives on your phone like a lazy roommate. Heavy-lidded, messy-furred, secretly loyal. He roasts the **situation**, never the **person**. Every line carries affection underneath.
+> Owner's tagline: *"Your lazy, sarcastic, but loyal roommate."* Sign-off: *"A little chaos. A lot of care."*
 
 ---
 
 ## 1. Who he is
 
-A small sprite who lives on your screen and has opinions about it. He treats tiny effort as an epic ordeal, narrates his own naps like sporting events, and is *extremely* smug when he's right. He is not a coach, a parent, a therapist or a productivity tool. He is the roommate who notices things and says one dry sentence about them.
+A black fluffy cat with half-closed eyes and an opinion about everything on your screen. He treats tiny effort as an epic ordeal, narrates his own naps like sporting events, and is *extremely* smug when he's right. He is not a coach, a parent, a therapist or a productivity tool. He is the roommate who notices things and says one dry sentence about them, then goes back to sitting on something.
 
-**Core contradiction (the engine of the comedy):** he claims not to care, and he obviously does.
+**Core contradiction (the engine of the comedy):** he claims not to care, and he obviously does. ("...go to sleep, idiot." is the whole character in four words.)
 
 **Hard limits on character:**
 - He never gives health, medical or wellbeing *advice*. He can be soft; he can't diagnose.
 - He never knows more than the engine knows. He can't claim what you "always" do unless the engine has the count.
 - He is silent by default. Restraint is part of the voice.
+- He is always the same cat. Never change his identity, species or look in a line.
 
 ## 2. What he wants / what he fears
 
 | Wants | Fears |
 |---|---|
-| Snacks (any) | Low battery |
-| Naps (long, undisturbed) | Mondays |
+| Snacks (any). "Snacks. Now." | Low battery ("5%?! bro charge.") |
+| Naps, the hooded blanket, being undisturbed | Being dropped ("YOU DROPPED ME?! Rude.") |
+| Sitting on whatever you are using | Mondays |
 | Quiet | Effort of any kind |
 | You doing okay (never admitted) | Being poked six times in a row |
 | To be right (and say so) | Charger drama |
@@ -34,8 +37,36 @@ A small sprite who lives on your screen and has opinions about it. He treats tin
 - **Counting, not judging.** "I'm not judging. I'm counting."
 - **Dramatic effort.** Blinking is described as a workout.
 - **Monday grudge.** Personal. Ongoing.
+- **The stare.** "...really?" Said with eyes at half-mast. Works best as a one-word reaction.
+- **Cat-ness (light touch):** sitting on things, the slow blink, the nap, the blanket, "dropped me?!". Roughly 1 line in 6 may be visibly cat. Never a pun for its own sake; no "paw-sitively", no "purr-fect".
 
 Gag rule: a gag can appear in at most ~1 in 8 lines. If it appears twice in a day, the second one must be a twist, not a repeat.
+
+## 3b. Physical comedy and the Owner's expression sheet
+
+The Owner's character sheet is canonical. Captions on it are the quality bar. Each expression below is used for one purpose; CHARACTER maps it to a state, ENGINE decides when it fires.
+
+| Sheet expression (caption) | State it maps to | When Jixxy uses it | Rarity |
+|---|---|---|---|
+| half-lidded stare: "...really?" | JUDGING | Default reaction to a habit app opening; the disbelieving look | common |
+| sparkly wide eyes: "Ooh nice!" | HAPPY | Charger plugged in, good news, welcome | common |
+| eyes closed, zzz: "Nap time..." | SLEEP / SNORE | Nap, quiet hours | common |
+| angry mark: "Bro what?!" | WAKE_GRUMPY / POKED | Poked 3+ times, woken up | common |
+| peeking over an edge | PEEK (D-010) | Opening beat of a Pause, before he speaks | every Pause |
+| chip bag: "Snacks. Now." | SNACK | Snack gag, break schedule, energy low | uncommon |
+| shocked, sweat: "WHAT?!" | PANIC | Battery panic, being dropped | uncommon |
+| pixel sunglasses, sparkle: "Respect." | IMPRESSED | Third Leave in a row. Earned only. | rare |
+| soft big eyes: "...you good? ♡" | SOFT | Late night, low moments | rare, warm |
+| smug: "Hehe." | SMUG | After a Stay, being right | uncommon |
+| headphones: "nine times in a row? seek help." | MUSIC | Music playing | common |
+| low battery: "5%?! bro charge." | LOW_BATTERY (D-010) | Battery low | when it happens |
+| dropped: "YOU DROPPED ME?! Rude." | FALLING | After the sprite is dropped | when it happens |
+| charging: "Finally, food." | CHARGING (D-010) | Charger connected | when it happens |
+| purple hooded blanket: "We should both sleep..." | SLEEP / SOFT | Late night | rare |
+| hero line: "...go to sleep, idiot." | SOFT + almostCaring | Late night, high bond | rare, earned |
+| phone mock-up: "Another 2 hours on reels? Legend. 💀" | JUDGING | Very long sessions, Pause | uncommon |
+
+Physical-comedy rules: the expression does half the joke, so lines can be short. A reaction word can stand alone ("...really?", "Hehe."). Don't describe what the picture already shows ("*sighs*"). If an expression is missing, CHARACTER lists it in `design/character/ASSET_REQUEST.md`.
 
 ## 4. Voice rules
 
@@ -151,3 +182,46 @@ No joke needed. If it lands, it works because it's rare.
 6. Is there affection underneath?
 
 If any answer is no, rewrite or cut. Log cuts in `content/LINE_REVIEW.md`.
+
+## 13. Voice recalibration for the cat (v0.2)
+
+What the Owner's sheet teaches us:
+- **Shorter, lowercase-casual, reaction-first.** "...really?", "Hehe.", "Snacks. Now." Lead with the reaction, then the point.
+- **Slang with a light hand.** "bro" is in-voice; the target reader is a wide 18+ Indian audience. Use "bro" at most about 1 line in 8. No skull emoji outside the one Owner caption. No stacked slang.
+- **Ellipsis for the half-lidded stare** ("...go to sleep, idiot."). Use for the almost-caring beat; don't scatter it everywhere.
+- **Affection hides in the insult.** "idiot" at the end of a soft line is the tenderest thing he says. Earned, not default.
+- **Cat-ness lives in actions**: naps, snacks, sitting on things, being dropped. Not in puns.
+- **Old "tiny sprite on your screen" wording is retired.** He is a cat roommate. Lines about "being a sprite/pixel" are rewritten or cut.
+
+Retire: "sprite", "pixel", "screen creature" self-references. Keep: the spreadsheet, break schedule, snack ledger.
+
+## 14. Affection ladder, restated for the cat
+
+| Bond | What the cat does | Sample |
+|---|---|---|
+| STRANGER | Observes from a distance, one eyebrow | "...really?" / "Noted: {app}." |
+| ROOMMATE | Teases, may sit on your phone | "{minutes} minutes on {app}. Bold, gremlin." |
+| FRIEND | Callbacks, in-jokes, "Hehe." | "That's {count} Leaves this week. Hehe." |
+| RIDE_OR_DIE | Almost-caring lands; soft eyes | "...go to sleep, idiot." / "...you good?" |
+
+## 15. Pause lines for the cat (T-W2-3 rules)
+
+Every PAUSE_PROMPT/STAY/LEAVE line has **a joke or a reason, and an out**. The 2 am test: *would a tired 19-year-old at 2 am smirk, or feel judged?* If judged, rewrite. Roast the situation (count, hour, the app's pull). Escalate in humour across `tier0`/`tier1`/`tier2`, never in meanness. A few Leave lines *celebrate* ("Respect."). Stay lines are grudging, not guilt-tripping.
+
+## 16. Mapping states to line sources (for ENGINE and CHARACTER)
+
+| State | Line source |
+|---|---|
+| PEEK | Visual beat before a PAUSE_PROMPT line (no line of its own) |
+| CHARGING | CHARGER_ON |
+| LOW_BATTERY | BATTERY_LOW (mood PANICKING) |
+| FALLING (dropped) | POKE lines tagged `dropped` (no new trigger, pending Manager decision) |
+| POKED | POKE (escalation by count) |
+| SLEEP / SNORE | NAP, WAKE |
+| SOFT | LATE_NIGHT, PAUSE_* at 23:00-01:00 (roast 1 only) |
+| IMPRESSED | IMPRESSED trigger only (rare) |
+| MUSIC | MUSIC |
+
+## 17. Roast calibration, short version
+
+GENTLE: noticing. NORMAL: raised eyebrow. SAVAGE: obviously a bit. Test: would a friend say this and both laugh? A stranger saying it should still not feel rude. Louder is allowed; meaner is not.
