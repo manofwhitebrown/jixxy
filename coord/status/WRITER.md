@@ -1,18 +1,14 @@
-# WRITER status — updated 2026-11-06T09:02Z
-## Now      — T-W2-5: validator rules replicated locally, 0 errors; waiting for tester feedback and CI's validateLines result
-## Done     — T-W2-0 takeover; T-W2-1 bible v0.2 for the cat (41f0838); T-W2-2 new-state + canonical lines (ce026f3, 780a05d); T-W2-3 Pause lines (9828ba2); T-W2-4 MICROCOPY v0.6 (77fa267). EN bank is now 555 lines (was 366).
-## Next     — T-W2-5 validator loop when ENGINE lands it; rewrite/cut after tester feedback; late_opens_week / stays_week / longest_session_day callbacks if ENGINE ships those facts; Hinglish pack stays parked
+# WRITER status — updated 2026-11-06T09:16Z
+## Now      — all Wave-2 WRITER tasks done; waiting for tester feedback and CI's :engine:validateLines result
+## Done     — T-W2-0 takeover; T-W2-1 bible v0.2 + gold set v0.2; T-W2-2 new-state, canonical and roast/bond coverage lines; T-W2-3 Pause lines; T-W2-4 MICROCOPY v0.6; T-W2-5 validator loop + opening-variety pass; T-W2-6 Hinglish pack v0.2 (Manager go relayed by the Owner). Banks: EN 595 lines, Hinglish 226 lines.
+## Next     — rewrite/cut lines from tester feedback ("annoying", 😴 patterns); extra callbacks (stays_week, late_opens_week, longest_session_day) once ENGINE ships those facts; native-speaker pass on Hinglish
 ## Blockers — none
-## Questions for MANAGER — 1. DROPPED trigger or POKE + tag `dropped`? (I wrote POKE + `dropped`.) 2. Keep or retire the provisional Hinglish pack (150 lines, predecessor pushed it before the Manager's ack)? It still has pre-cat wording; I won't touch it until you trigger it.
-## Messages handled — handoffs sent to CHARACTER, ENGINE, UI (bible v0.2); INFO to UI (microcopy v0.6). Inbox/WRITER has no new messages since the predecessor's.
-## CI note — latest red run is CHARACTER's duplicate drawables (.png + .webp with the same name in character/src/main/res/drawable-nodpi). Not my paths; the "Guards (secrets, ownership, lines)" job is green.
+## Questions for MANAGER — 1. Please confirm in the repo (DECISIONS.md) the Hinglish trigger and whether `dropped` stays a POKE tag (ENGINE already implemented it that way, a5c104a). 2. Who can do a native Hinglish read-through?
+## Messages handled — inbox/WRITER has no new messages; ENGINE coverage list (0330) fully worked: SOFT/BROWSER/generic/followup/tiers/on_break/CHILL+SMUG poke/stay SMUG+SOFT/leave SOFT/fact tags/weekly_quiet
+## CI note — validate_lines (Guards) green on every push. Gradle :engine:validateLines not run by me (no Gradle in my sandbox); I replicated its rules in Python: 0 problems.
 
-## Owner manual test steps (lines reach the screen only if the real brain is in the APK you install)
-1. Install the newest GitHub Release APK built after commit fe3c9ee (PLATFORM wired the real brain).
-2. Open Jixxy, allow "Display over other apps", tap Wake. He should appear.
-3. Plug in the charger. Expected bubble within a few seconds: one of "Finally, food." / "Ooh nice! Charger. ..." (8 new lines).
-4. Tap Jixxy 3+ times quickly. Expected: a grumpy poke line (e.g. "Bro what?!"). Tell me if it feels annoying.
-5. Reply in plain words: which lines made you smile, which felt off, which felt too cat-pun-y.
+## Owner manual test steps (unchanged)
+1. Install the newest Release APK built after commit fe3c9ee. 2. Open Jixxy, allow "Display over other apps", tap Wake. 3. Plug in the charger: expect "Finally, food." or a sibling. 4. Tap him 3+ times fast: expect a grumpy line ("Bro what?!"). 5. Drag and release him: expect a "dropped" line (needs ENGINE's mapping, a5c104a). 6. Tell me in plain words which lines worked and which felt off. To try Hinglish: Settings language, if UI has enabled it.
 
 ## Honest notes
-Nothing here is device-tested. The bank passes scripts/validate_lines.py and the engine test's checks (ids unique, <= 90 chars, slots declared) as far as I can reproduce them in Python; I could not run Gradle. :engine:validateLines does not exist yet. Parsing check: Trigger/Mood/AppCategory names are strict in LineBankLoader, and all new lines use only existing enum names. The skull emoji appears once (Owner's caption line). Humour is my judgement; testers confirm. The dropped-line mapping depends on ENGINE (SpriteDropped currently returns no reaction).
+Nothing is device-tested. Humour is my judgement. Hinglish is unreviewed by a native speaker. Skull emoji appears once (EN, Owner's caption). OEM menu paths in MICROCOPY remain unverified.
