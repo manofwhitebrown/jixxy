@@ -1,6 +1,6 @@
-# Jixxy Play Store prep (T-GROWTH-4)
+# Jixxy Play Store prep (T-G2-6)
 
-Status: **draft for Owner review. Nothing is submitted.** Provisional decisions applied: category not Health & Fitness, audience 18+ (D-006). Licence and the paid developer account are pending Owner decisions. Full Play distribution needs a one-time paid developer account and ID verification; the Owner decides whether and when.
+Status: **draft for Owner review. Nothing is submitted.** Wave 2 update (2026-11-06): listing text rebased on the cat character; the foreground-service rules were re-read and still match section 6 (see "Re-check" at the end). The app is at alpha (`v0.0.1-alpha`): no speech, no Pause card and placeholder art yet, so **this listing must not be submitted or used until the shipped build matches every claim in it.** Provisional decisions applied: category not Health & Fitness, audience 18+ (D-006). Licence and the paid developer account are pending Owner decisions. Full Play distribution needs a one-time paid developer account and ID verification; the Owner decides whether and when.
 
 How to read this: items marked **[verified]** come from Google's own pages I read on 2026-11-06 (links in section 8). Items marked **[unverified]** are from memory or third-party pages and must be checked in Play Console before relying on them.
 
@@ -8,11 +8,11 @@ How to read this: items marked **[verified]** come from Google's own pages I rea
 
 **Title (max 30):** `Jixxy: pause with jokes` (23 characters)
 
-**Short description (max 80):** `A tiny roommate who pauses you, with jokes, before the apps you choose.` (71 characters)
+**Short description (max 80):** `A lazy, sarcastic cat who pauses you, with jokes, before the apps you choose.` (77 characters)
 
 **Full description (draft; Play's limit is 4,000 characters [unverified], this is well under):**
 
-> Jixxy is a tiny, lazy, dramatic roommate who lives on your screen as a floating sprite.
+> *Your lazy, sarcastic, but loyal roommate.* Jixxy is a black, fluffy, heavy-lidded cat who lives on your screen as a floating character.
 >
 > **What he does**
 > You pick up to 3 apps. When you open one, Jixxy shows a short pause card with a joke and two buttons: Leave, or Stay for 5 more minutes. You are always in control: Leave works instantly, Stay unlocks after a few seconds.
@@ -35,12 +35,14 @@ How to read this: items marked **[verified]** come from Google's own pages I rea
 >
 > English at launch. Android 8.0 or newer. Free.
 
+Draft note: the sign-off *"A little chaos. A lot of care."* can close the description once the Owner approves it for the store.
+
 Notes: the description must only promise what the shipped build does. Re-read it against the release before submitting. Policy requires that requested sensitive permissions are necessary for features **promoted in the listing** [verified], so the description above names each permission and its purpose on purpose.
 
 ## 2. Category and audience
 
 - **Category:** Lifestyle or Productivity; **not Health & Fitness** (Manager decision D-006, provisional). Also avoid any wording about wellbeing, addiction or treatment: it invites the Health apps policy and contradicts our honesty rules. [Which of Lifestyle/Productivity reviewers prefer is unverified; Owner decides]
-- **Target audience:** **18 and over only** for v1 (D-006, provisional) [Console form options unverified]. Jixxy must not be directed at children. Open question: the tester program (from the original brief) says 17+; see message to MANAGER.
+- **Target audience:** **18 and over only** for v1 (D-006, provisional) [Console form options unverified]. Jixxy must not be directed at children. The tester program now says 18+ too.
 - **Contains ads:** No. **In-app purchases:** No.
 
 ## 3. Content rating (IARC questionnaire) [unverified, answer truthfully in Console]
@@ -111,6 +113,10 @@ Draft answers:
 6. **Account requirements** [unverified, from memory]: new personal developer accounts may need a closed test with a minimum number of testers over a minimum period before production access. The Owner should check Google's current account rules before planning the timeline.
 7. **Target API level.** PLATFORM's notes say Play requires target 36 from 2026-08-31; Google's Target API Level policy page is linked below for the Owner/PLATFORM to confirm.
 8. Policy pages carry preview notices of changes effective in 2027 (location, contacts, local network, AppFunctions). None apply to Jixxy's current permissions as far as I read, but re-check at submission time.
+
+## 7b. Re-check (2026-11-06, Wave 2)
+
+Re-read Google's foreground-service page (link below). Still says: for apps targeting Android 14+, declare each foreground service type in Play Console (Policy, App content); for each type give a feature description, the user impact if deferred or interrupted, and a link to a demo video; `TYPE_SPECIAL_USE` only in limited scenarios; all types are subject to review. A policy-preview note on that page removes geofencing as an approved use case from 2026-08-26; it does not affect Jixxy. I did **not** re-read the overlay (`SYSTEM_ALERT_WINDOW`) or usage-access rules in this pass, so those stay as written in sections 6 and 7. Closed-test account rules (risk 6) are still unverified.
 
 ## 8. Sources (Google pages read on 2026-11-06)
 
