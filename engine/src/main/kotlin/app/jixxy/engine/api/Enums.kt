@@ -15,7 +15,9 @@ enum class AppCategory { SOCIAL, VIDEO, GAME, MESSAGING, PRODUCTIVITY, BROWSER, 
 /** Animation states the character module can render. */
 enum class CharacterState {
     IDLE, BLINK, YAWN, SLEEP, SNORE, WAKE_GRUMPY, SMUG, PANIC, HAPPY, IMPRESSED,
-    POKED, DRAGGED, FALLING, SNACK, STRETCH, MUSIC, JUDGING, SOFT
+    POKED, DRAGGED, FALLING, SNACK, STRETCH, MUSIC, JUDGING, SOFT,
+    /** Added by D-010: peeks over an edge before a Pause line, charger connected, battery low. */
+    PEEK, CHARGING, LOW_BATTERY
 }
 
 /** Why Jixxy might speak. Each line in the line bank belongs to exactly one trigger. */

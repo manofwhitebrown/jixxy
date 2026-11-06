@@ -23,7 +23,7 @@ internal object StatePoses {
     fun fill(state: CharacterState, t: Float, clock: Float, level: Int, o: Pose) {
         o.setNeutral()
         when (state) {
-            IDLE, BLINK -> {
+            IDLE, BLINK, PEEK, CHARGING, LOW_BATTERY -> {  // D-010 states: image swap carries the look, motion stays calm
                 breathe(o, clock, 3.2f, 0.018f)
                 o[P.TAIL] = 2.5f * wave(0.2f, clock)
             }

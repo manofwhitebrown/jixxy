@@ -20,7 +20,7 @@ class MoodStateTimeTest {
         val r = Rig()
         val out = r.send(Signal.BatteryLow(9, at(0, 12))).single()
         assertEquals(Mood.PANICKING, out.mood)
-        assertEquals(CharacterState.PANIC, out.state)
+        assertEquals(CharacterState.LOW_BATTERY, out.state)
         assertEquals("9", r.picker.queries.last().slots["battery"])
         r.send(Signal.Charger(true, 9, at(0, 12, 30)))
         assertEquals(Mood.CHILL, r.brain.snapshot.mood)

@@ -167,6 +167,9 @@ internal class PoseAnimator(private val random: Random = Random.Default) {
         SNACK -> 2_200L
         STRETCH -> 1_600L
         JUDGING -> 8_000L
+        PEEK -> 2_500L
+        CHARGING -> 4_000L
+        LOW_BATTERY -> 4_000L
         IDLE, BLINK, SLEEP, SNORE, DRAGGED, MUSIC, SOFT -> null
     }
 

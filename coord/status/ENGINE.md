@@ -1,5 +1,5 @@
 # ENGINE status — updated 2026-11-06T08:58Z
-## Now      — T-E2-6 weekly review pushed; next callbacks, Pause persistence, D-010 states
+## Now      — (taken over by PLATFORM AI at the Owner's request) T-E2-2 D-010 states done; T-E2-6 weekly review pushed; next callbacks, Pause persistence, D-010 states
 ## Takeover — 2026-11-06T08:58Z. Found: DefaultJixxyBrain (state model, trigger rules, Pause logic, caps, 30-day sim) + 50 tests, but NO real line picker and NO factory, so the 366-line bank never reached the screen.
 ## Done
 - T-E2-0 takeover. Original tasks: T-ENGINE-1 state model DONE; -2 trigger rules + Pause DONE (runtime state not persisted); -3 selector was MISSING, now DONE (BankLinePicker); -4 memory/callbacks MISSING; -5 weekly review MISSING; -6 loader DONE (LineBankLoader), validator + :engine:validateLines + categories MISSING.
@@ -15,3 +15,7 @@
 - Nothing here is verified on a device.
 - Line bank loads and every placeholder is declared (tested against the real EN bank). Hinglish not exercised.
 - Owner manual test: none yet; talking only appears once PLATFORM swaps NoopBrain for JixxyBrains.create.
+
+## Takeover 2 (PLATFORM AI covering ENGINE)
+- T-E2-2 done: PEEK/CHARGING/LOW_BATTERY in CharacterState + mapping + D010StatesTest; character whens extended (see inbox/ALL).
+- Remaining: persist Pause runtime state, callbacks memory, measured coverage.

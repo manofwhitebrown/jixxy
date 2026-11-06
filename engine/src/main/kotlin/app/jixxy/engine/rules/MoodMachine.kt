@@ -25,12 +25,13 @@ object MoodMachine {
         Trigger.NAP -> CharacterState.SLEEP
         Trigger.WAKE -> CharacterState.WAKE_GRUMPY
         Trigger.POKE -> CharacterState.POKED
-        Trigger.CHARGER_ON -> CharacterState.SNACK
-        Trigger.BATTERY_LOW -> CharacterState.PANIC
+        Trigger.CHARGER_ON -> CharacterState.CHARGING
+        Trigger.BATTERY_LOW -> CharacterState.LOW_BATTERY
         Trigger.MUSIC -> CharacterState.MUSIC
         Trigger.IMPRESSED -> CharacterState.IMPRESSED
         Trigger.PAUSE_LEAVE -> CharacterState.HAPPY
-        Trigger.PAUSE_STAY, Trigger.PAUSE_PROMPT -> CharacterState.JUDGING
+        Trigger.PAUSE_PROMPT -> CharacterState.PEEK
+        Trigger.PAUSE_STAY -> CharacterState.JUDGING
         Trigger.WELCOME -> CharacterState.STRETCH
         Trigger.ALMOST_CARING -> CharacterState.SOFT
         else -> when (mood) {
