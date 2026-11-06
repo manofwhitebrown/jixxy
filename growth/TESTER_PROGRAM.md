@@ -1,24 +1,24 @@
-# Jixxy Tester Program (T-GROWTH-3)
+# Jixxy Tester Program (T-G2-4)
 
-Draft v0.1. Owner: GROWTH. Jixxy has no telemetry, so the ~20 testers *are* our analytics. Everything below is voluntary for testers and nothing is collected by the app.
+Draft v0.2 (2026-11-06, rebased on the cat and the alpha). Owner: GROWTH. Tester #1 is the Owner: start with `OWNER_TEST_GUIDE.md`. Do not recruit friends until the Owner has run a build where the cat sprite, speech and Pause card exist (milestones M1/M2); until then testers would only see the alpha. Jixxy has no telemetry, so the ~20 testers *are* our analytics. Everything below is voluntary for testers and nothing is collected by the app.
 
 ## 1. Who to recruit (target about 20)
 
 - **Phones:** a deliberate mix. Some Pixel/Samsung, and at least 8 on **Xiaomi/Redmi/Poco, Oppo/Realme, Vivo** (the brands most likely to kill background apps). Record the exact model and Android version for each tester.
 - **Android version:** include at least 3 on Android 13 or newer (restricted settings flow) and at least 2 on Android 8 to 10.
 - **Habits:** roughly half heavy scrollers (several hours a day, by their own estimate), half light.
-- **Age:** 17 and over only. Do not recruit minors.
+- **Age:** 18 and over only (decision D-006). Do not recruit minors.
 - **Not testers:** anyone who needs Jixxy to work for something important. This is pre-release software.
 
 Keep a private sign-up sheet (outside the repo) with: first name or nickname, phone model, Android version, heavy/light, install date. Do not put tester details in the repo.
 
 ## 2. Recruitment message (WhatsApp-friendly)
 
-> Hey! I'm helping test a small free Android app called **Jixxy**. He's a tiny dramatic roommate who lives on your screen and makes you pause, with a joke, before up to 3 apps *you* pick. You can always tap Leave or Stay.
+> Hey! I'm helping test a small free Android app called **Jixxy**. He's a lazy, sarcastic black cat who lives on your screen and makes you pause, with a joke, before up to 3 apps *you* pick. You can always tap Leave or Stay.
 >
 > It has **no internet permission** (so nothing leaves your phone) and no ads or accounts. It's early and rough, so I want honest feedback, especially if he's annoying.
 >
-> What I need: install it, use it for 7 days, and answer 3 short check-ins (about 2 minutes each). Android 8+ only, age 17+.
+> What I need: install it, use it for 7 days, and answer 3 short check-ins (about 2 minutes each). Android 8+ only, age 18+.
 >
 > Interested? Reply with your phone model and I'll send the steps.
 
