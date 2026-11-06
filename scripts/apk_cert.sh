@@ -23,9 +23,9 @@ signer="$(find_apksigner || true)"
 out="$("$signer" verify --print-certs "$apk" 2>&1)" || { echo "apk_cert: apksigner failed on $apk" >&2; echo "$out" >&2; exit 3; }
 echo "$out" >&2   # full report goes to stderr (certificate DNs and digests are public data)
 
-# Accept "Signer #1 certificate SHA-256 digest: x" and the v3 form "Signer (minSdkVersion=..) certificate SHA-256 digest: x".
+# Newer apksigner prefixes the scheme ("V2 Signer: certificate SHA-256 digest: x"). Accept that too, plus "Signer #1 certificate SHA-256 digest: x" and the v3 form "Signer (minSdkVersion=..) certificate SHA-256 digest: x".
 # Several lines with the SAME digest (one per signature scheme) are fine; different digests are not.
-digests="$(printf '%s\n' "$out" | sed -n 's/^Signer.*certificate SHA-256 digest: *//p' | tr 'A-F' 'a-f' | sort -u)"
+digests="$(printf '%s\n' "$out" | sed -n 's/^\(V[0-9.]* \)\{0,1\}Signer.*certificate SHA-256 digest: *//p' | tr 'A-F' 'a-f' | sort -u)"
 count="$(printf '%s\n' "$digests" | grep -c . || true)"
 if [ "$count" -ne 1 ]; then
   echo "apk_cert: expected exactly 1 distinct signer certificate, found $count. apksigner said:" >&2
