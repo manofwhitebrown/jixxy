@@ -10,25 +10,26 @@ Jixxy is a black, fluffy, heavy-lidded cat who is meant to live on your Android 
 ![platform: Android 8+](https://img.shields.io/badge/Android-8%2B-green)
 ![internet permission: none](https://img.shields.io/badge/internet%20permission-none-blue)
 
-> **Alpha, honestly.** The first public build is `v0.0.1-alpha`. It installs and opens, and a floating placeholder sprite can be switched on. Jixxy does not talk yet, the real art is not in, and the Pause card is not working yet. Read [What works today](#what-works-today) before you install.
+> **Alpha, honestly.** The only published release so far is `v0.0.1-alpha`. It installs and opens, and a floating placeholder sprite can be switched on. Jixxy does not talk in that build and the Pause card does not work in it. Newer work on `main` adds the real cat, the real app screens and more, but none of it has been seen on a phone yet. Read [What works today](#what-works-today) before you install.
 
 ---
 
 ## What works today
 
-Based on the `v0.0.1-alpha` release and the project's own notes. Not everything has been checked on real devices.
+Two columns, so nobody is surprised. **In `v0.0.1-alpha`** is what the Owner saw on a real phone. **On `main`, not released yet** means the code was changed (per the team's bug list, `qa/BUGS.md`) but nobody has seen it working on a phone, so treat it as "may or may not work".
 
-| | Status |
-|---|---|
-| Installs and opens on Android | Works (the Owner installed it on a real phone) |
-| Floating sprite service (overlay) | Starts; the sprite is a **placeholder shape**, not the cat yet |
-| Start screen | A **temporary 3-button screen** (Allow overlay, Wake Jixxy, Stop), not the real app |
-| Launcher icon | Default Android robot for now |
-| Jixxy's lines and bubbles | **Not visible yet.** The line bank is written but not connected to the screen |
-| Pause card (Leave / Stay) | **Not working yet** |
-| Weekly review card | **Not built yet** |
-| Onboarding, home and settings screens | Written in the code but **not wired in** as the first screen |
-| Nap, then Stop, then Wake showing nothing | Reported on a real phone in `v0.0.1-alpha`. A fix is on `main` but **has not been checked on a device** |
+| | In `v0.0.1-alpha` (seen on a phone) | On `main`, not released yet (not seen on a phone) |
+|---|---|---|
+| Installs and opens | Works | n/a |
+| First screen | Temporary 3-button screen | The real app is now the launcher in code |
+| Launcher icon | Default Android robot | Jixxy cat face icon in code |
+| Floating sprite | Placeholder shape ("potato") | Real cat expression images from the Owner's sheet |
+| Jixxy's lines | Nothing shows | Real brain connected; the speech bubble is still being finished |
+| Pause card (Leave / Stay) | Not working | A real Pause card view exists in code; not confirmed end to end |
+| Nap, Stop, Wake | Jixxy never came back | Fixed in code, needs a phone test |
+| Weekly review card | Not built | A weekly review screen and share card exist in code |
+
+If a newer APK appears on the [Releases page](https://github.com/manofwhitebrown/jixxy/releases) (including a rolling pre-release called "latest", if one is published), it is the one to try. Tell us what you see using `growth/OWNER_TEST_GUIDE.md`.
 
 ## What he's meant to do
 
