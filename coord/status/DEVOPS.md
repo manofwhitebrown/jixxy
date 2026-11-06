@@ -1,6 +1,6 @@
-# DEVOPS status — updated 2026-11-06 03:20 UTC
+# DEVOPS status — updated 2026-11-06 03:27 UTC
 ## Now
-T-DEVOPS-5: watching first real CI runs now that PLATFORM's gradlew is on main
+T-DEVOPS-5: main is red at the Gradle step; cause unknown (cannot read logs)
 ## Done
 - T-DEVOPS-0: .github/workflows/ci.yml (guards job + build job, skip-safe without gradlew)
 - T-DEVOPS-1: scripts/check_no_secrets.sh, check_manifest.sh, check_dependencies.sh, check_ownership.sh, validate_lines.py, install_hooks.sh
@@ -13,11 +13,11 @@ T-DEVOPS-5: watching first real CI runs now that PLATFORM's gradlew is on main
 2. Wire :engine:validateLines into CI when ENGINE lands it
 3. Confirm debug keystore with PLATFORM, then test release.yml with a throwaway tag
 ## Blockers
-none (build verification waits on PLATFORM's gradlew)
+Cannot read CI job logs from my sandbox (blob.core.windows.net blocked). Need the Owner to paste the Gradle error lines or allow that domain. Sent BLOCKER to MANAGER.
 ## Questions for MANAGER
 none
 ## Messages handled
-none yet
+20261106-0319-PLATFORM-reply-keystore-wrapper.md
 ## Honest notes
 - Guard scripts were tested locally against a clean repo and against seeded violations (fake token, *.local.md, INTERNET permission, firebase dependency, bad line bank). All failed or passed as intended.
 - ci.yml parses as YAML but has NOT run on GitHub yet; I cannot see Actions results from here, so the first run is unverified.
