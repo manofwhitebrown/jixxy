@@ -22,7 +22,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.activity.compose.BackHandler
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -67,6 +70,9 @@ fun OnboardingScreen(
 
     fun advance() { step = OnboardingFlow.next(step, lite, sdkInt) }
     fun goBack() { step = OnboardingFlow.back(step, lite, sdkInt) }
+
+    // System Back walks the flow backwards instead of leaving the app mid-onboarding.
+    BackHandler(enabled = step != OnboardingStep.HELLO) { goBack() }
 
     Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
         Column(
@@ -159,7 +165,7 @@ private const val SAMPLE_MINUTES = 25
 
 @Composable
 private fun StepBody(title: Int, body: Int?) {
-    Text(stringResource(title), style = MaterialTheme.typography.headlineMedium)
+    Text(stringResource(title), style = MaterialTheme.typography.headlineMedium, modifier = Modifier.semantics { heading() })
     if (body != null) Text(stringResource(body), style = MaterialTheme.typography.bodyLarge)
 }
 

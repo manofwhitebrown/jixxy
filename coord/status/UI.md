@@ -1,6 +1,7 @@
-# UI status — updated 2026-11-06 09:23 UTC
+# UI status — updated 2026-11-06 15:13 UTC
 ## Now      — waiting for Owner device-test feedback; reviewing quality bar (TalkBack, 200 % font)
 ## Done     — T-U2-1 MainActivity (c2972cf); T-U2-2 palette sampled (b9307b8); T-U2-3 cat images (a4ed401); T-U2-7 icons (a0f50f5); T-U2-5 Home real service state + Stop (be3b8f0); T-U2-8 weekly screen + share card (66168a2); Home notices overlay-missing / no-apps (4a36054); T-U2-6 reviewed by reading code: Settings has roast dial + live sample, target picker (max 3), muted apps, quiet hours, stay delay, language, blind mode, reset, privacy blurb, What saw, OEM guide (all unverified on a device). CI green at ae3979f.
+## Latest — T-U2-4/quality: onboarding now handles system Back (walks steps backwards) and step titles are TalkBack headings. Not compiled locally (no Android SDK); CI is the check. Owner test: during onboarding press the phone's Back on step 3 — you go to step 2, not out of the app.
 ## Next     — T-U2-4 polish, T-U2-6 review of Settings/What saw/OEM guide, device-test fixes from the Owner
 ## Blockers — none
 ## Questions for MANAGER — none
