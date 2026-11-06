@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- PLACEHOLDER COPY: replace with WRITER's content/MICROCOPY.md. Keys marked [P]. -->
+    <string name="placeholder_onboarding">[P] Hello — onboarding goes here</string>
+    <string name="placeholder_home">[P] Home goes here</string>
+    <string name="placeholder_settings">[P] Settings go here</string>
+    <string name="placeholder_what_saw">[P] What Jixxy saw goes here</string>
+    <string name="placeholder_weekly">[P] Weekly review goes here</string>
+    <string name="placeholder_oem_guide">[P] Keep-alive guide goes here</string>
+</resources>
