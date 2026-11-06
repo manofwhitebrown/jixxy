@@ -51,11 +51,16 @@ jobs:
       - name: Download the CI APK
         if: steps.tip.outputs.skip != 'true'
         run: |
-          set -eu
-          gh run download "$RUN_ID" --repo "$GITHUB_REPOSITORY" --pattern 'jixxy-debug-*' --dir dl
+          set -u
+          fail() { echo "::error title=latest download::$1"; exit 1; }
+          list=$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${RUN_ID}/artifacts" 2>&1) || fail "listing artifacts failed: $(echo "$list" | head -c 400)"
+          art=$(echo "$list" | python3 -c 'import sys,json; a=[x for x in json.load(sys.stdin)["artifacts"] if x["name"].startswith("jixxy-debug-") and not x["expired"]]; print(a[0]["id"] if a else "")')
+          [ -n "$art" ] || fail "no jixxy-debug-* artifact in CI run ${RUN_ID}. Artifacts seen: $(echo "$list" | python3 -c 'import sys,json; print([x["name"] for x in json.load(sys.stdin)["artifacts"]])')"
+          mkdir -p dl dist
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${art}/zip" > dl/a.zip 2>dl/err.txt || fail "zip download failed: $(head -c 400 dl/err.txt)"
+          unzip -q -o dl/a.zip -d dl || fail "unzip failed"
           apk=$(find dl -name '*.apk' | head -1)
-          [ -n "$apk" ] || { echo "::error::No APK in CI run $RUN_ID"; exit 1; }
-          mkdir -p dist
+          [ -n "$apk" ] || fail "no .apk inside the artifact"
           cp "$apk" dist/jixxy-latest.apk
           (cd dist && sha256sum jixxy-latest.apk > jixxy-latest.apk.sha256)
 
