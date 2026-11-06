@@ -1,3 +1,15 @@
+# UI status — updated 2026-11-06 08:54 UTC
+## Now      — T-U2-1: MainActivity (ui/MainActivity.kt) hosts JixxyNavHost with real repositories; asked PLATFORM to make it the launcher
+## Done     — Takeover (T-U2-0) done; MainActivity pushed (commit follows in git log)
+## Next     — T-U2-2 re-skin (black cat palette, design/ui/PALETTE.md), T-U2-4 onboarding polish, T-U2-5 Home
+## Blockers — Reference art not in design/character/reference yet (Owner); launcher registration needs PLATFORM
+## Questions for MANAGER — none
+## Takeover — 2026-11-06 08:54 UTC. Found: 17 UI files (logic + Compose screens, nav, theme), amber palette (old concept), nothing wired as launcher, no Wake action in OverlayService, onboarding-done flag had no home.
+## Real vs fake — Real: OnboardingRoute uses PermissionsRepository; settings/stateStore now real via JixxyApp. Fake/unwired: WeeklyScreen is a stub, no cat images, icon is the default robot, theme still amber.
+## Manual test (Owner) — After PLATFORM registers MainActivity: install, open. Expect onboarding. Finish it, then Home: tap Nap 1h, tap Stop in the notification, open Jixxy, tap Wake. Jixxy should reappear.
+## Honest notes — Written without compiling (no Android SDK here); CI is the check. Wake-after-stop is fixed on the UI side only; PLATFORM should also fix the service. Messages handled: all UI inbox files read.
+
+---- previous notes (predecessor) ----
 # UI status — updated 2026-11-06 03:29 UTC
 ## Now      — T-UI-6 OEM guide + PLATFORM wiring (OnboardingRoute, adapter) pushed; next T-UI-5 weekly card
 ## Done     — T-UI-0 skeleton (theme, routes/nav host, fakes, 6 placeholder screens with dark/light previews); design/ui/onboarding-flow.md

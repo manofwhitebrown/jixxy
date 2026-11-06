@@ -29,6 +29,9 @@ fun JixxyNavHost(
     // Launcher-intent app list from PLATFORM (PROTECTED apps removed); empty until wired.
     apps: List<AppChoice> = emptyList(),
     appLabel: (String) -> String = { it },
+    onOnboardingDone: () -> Unit = {},
+    onNapRequested: (minutes: Int) -> Unit = {},
+    onWakeRequested: () -> Unit = {},
 ) {
     val nav = rememberNavController()
     NavHost(nav, startDestination = startRoute, modifier = modifier) {
@@ -37,10 +40,10 @@ fun JixxyNavHost(
                 settings = settings,
                 apps = apps,
                 onOpenKeepAliveGuide = { nav.navigate(Routes.OEM_GUIDE) },
-                onDone = { nav.navigate(Routes.HOME) { popUpTo(Routes.ONBOARDING) { inclusive = true } } },
+                onDone = { onOnboardingDone(); nav.navigate(Routes.HOME) { popUpTo(Routes.ONBOARDING) { inclusive = true } } },
             )
         }
-        composable(Routes.HOME) { HomeScreen(settings = settings, store = store, onSettings = { nav.navigate(Routes.SETTINGS) }, onWeekly = { nav.navigate(Routes.WEEKLY) }) }
+        composable(Routes.HOME) { HomeScreen(settings = settings, store = store, onSettings = { nav.navigate(Routes.SETTINGS) }, onWeekly = { nav.navigate(Routes.WEEKLY) }, onNapRequested = onNapRequested, onWakeRequested = onWakeRequested) }
         composable(Routes.SETTINGS) { SettingsScreen(settings = settings, store = store, apps = apps, onWhatSaw = { nav.navigate(Routes.WHAT_SAW) }, onOemGuide = { nav.navigate(Routes.OEM_GUIDE) }) }
         composable(Routes.WHAT_SAW) { WhatSawScreen(store = store, appLabel = appLabel) }
         composable(Routes.WEEKLY) { WeeklyScreen() }
