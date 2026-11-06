@@ -1,0 +1,203 @@
+# JIXXY — MICROCOPY v0.1
+Owner: WRITER · Consumer: UI (→ strings.xml) · Language: en
+
+**Rules**
+1. When the user is granting a permission or making a decision, **clarity beats jokes**. Permission and privacy text states plainly what is and isn't read. No jokes, no shaming.
+2. Jixxy's voice may flavour titles and button labels, never the explanation itself.
+3. Placeholders in `{braces}`: `{app}` app name · `{n}` number · `{brand}` phone brand · `{time}` clock time · `{minutes}` minutes.
+4. Android menu names differ by version and brand. Every walkthrough ends with the "menus differ" note. Don't promise an exact label.
+5. No health claims. No guilt. Nothing says "wasted", "addicted" or "failed".
+
+Format: `key` — text.
+
+---
+
+## 1. Onboarding
+
+### Hello
+- `onboarding.hello.title` — Hi. I'm Jixxy.
+- `onboarding.hello.body` — I'm a small, lazy roommate who lives on your screen. I make short jokes, and before the apps you choose, I ask you to pause for a moment. You're always free to leave or stay.
+- `onboarding.hello.cta_primary` — Set me up
+- `onboarding.hello.cta_lite` — Just look around first
+
+### Overlay permission ("Display over other apps")
+- `onboarding.overlay.why_title` — So I can sit on your screen
+- `onboarding.overlay.why_body` — To appear above other apps, Android needs your permission called "Display over other apps". I only use it to show my little sprite and the pause card. I can't see what's inside other apps, and I can't tap or type for you.
+- `onboarding.overlay.cta_open` — Open settings
+- `onboarding.overlay.granted` — Got it. I'm on the screen now.
+
+### Usage access
+- `onboarding.usage.why_title` — So I know which app is open
+- `onboarding.usage.why_body` — Android calls this "Usage access". I use it to read only the name of the app you're currently using and how long it's been open. I never read messages, posts, screens or anything you type. This stays on your phone.
+- `onboarding.usage.cta_open` — Open settings
+- `onboarding.usage.granted` — Done. I can see app names, nothing more.
+
+### What I can't do
+- `onboarding.cant_do` — What I can't do, by design: I have no internet permission, so nothing leaves your phone. I can't read your messages. I can't take screenshots. I can't use your microphone, camera, location or contacts.
+
+### Restricted settings
+- `onboarding.restricted.title` — If the permission is greyed out
+- `onboarding.restricted.steps` (5)
+  1. `onboarding.restricted.step1` — Open your phone's Settings and go to Apps.
+  2. `onboarding.restricted.step2` — Find and open Jixxy.
+  3. `onboarding.restricted.step3` — Tap the three-dot menu (usually in the top right).
+  4. `onboarding.restricted.step4` — Tap "Allow restricted settings" and confirm with your PIN or fingerprint if asked.
+  5. `onboarding.restricted.step5` — Come back here and try the permission again.
+- `onboarding.restricted.hedge_note` — Menus differ by phone and Android version. If you don't see these exact words, look for something similar.
+
+### Notifications
+- `onboarding.notifications.title` — A small "Jixxy is around" notice
+- `onboarding.notifications.body` — Android needs a persistent notification so I can keep running. It has buttons to nap me or wake me. I won't use it to send promotions or nag you.
+- `onboarding.notifications.cta_allow` — Allow
+- `onboarding.notifications.cta_later` — Not now
+
+### Keep-alive
+- `onboarding.keepalive.title` — Keep me from being put to sleep
+- `onboarding.keepalive.body` — Some phones close background apps to save battery, which stops me from working. A few settings can prevent that. It takes a minute.
+- `onboarding.keepalive.cta_open` — Show me how
+- `onboarding.keepalive.menus_differ` — Menus differ by phone and Android version. Look for the closest match to the words here.
+
+### Choose apps
+- `onboarding.apps.title` — Pick up to 3 apps
+- `onboarding.apps.body` — These are the apps where I'll ask you to pause first. You can change this any time. Apps like banking, payments, calls and maps are never included.
+- `onboarding.apps.cap_reached` — That's 3. Remove one to pick another.
+
+### Roast level
+- `onboarding.roast.title` — How much teasing?
+- `onboarding.roast.gentle` — Gentle
+- `onboarding.roast.normal` — Normal
+- `onboarding.roast.savage` — Savage
+- `onboarding.roast.sample_gentle` — "That's {minutes} minutes on {app}. Just noticing."
+- `onboarding.roast.sample_normal` — "{minutes} minutes on {app}. I'm starting a spreadsheet."
+- `onboarding.roast.sample_savage` — "{app} again? I've scheduled a meeting about your free time."
+- `onboarding.roast.footnote` — I only ever tease the situation, never you. Change this any time.
+
+### Finish
+- `onboarding.finish.cta` — Wake him up
+
+---
+
+## 2. Home
+
+- `home.status.awake` — Jixxy is awake
+- `home.status.napping` — Jixxy is napping until {time}
+- `home.status.blind` — Blind mode is on. I'm not watching anything.
+- `home.nap_1h` — Nap for 1 hour
+- `home.wake` — Wake up
+- `home.today_stats` — Today: {n} pauses · left {n} · stayed {n}
+- `home.stat_paused` — Pauses
+- `home.stat_left` — Left
+- `home.stat_stayed` — Stayed
+
+---
+
+## 3. Settings
+
+- `settings.title` — Settings
+- `settings.roast.label` — Teasing level
+- `settings.roast.help` — From playful to theatrical. Always about the situation, never you.
+- `settings.target_apps.label` — Apps I pause (max 3)
+- `settings.target_apps.help` — I ask you to pause before these apps.
+- `settings.muted_apps.label` — Apps I stay quiet in
+- `settings.muted_apps.help` — I won't comment while you're in these.
+- `settings.quiet_hours.label` — Quiet hours
+- `settings.quiet_hours.help` — I stay silent between {time} and {time}.
+- `settings.stay_delay.label` — "Stay" delay
+- `settings.stay_delay.help` — How many seconds before the Stay button becomes available. Leave is always instant.
+- `settings.language.label` — Language
+- `settings.blind_mode.label` — Blind mode
+- `settings.blind_mode.help` — Turns off all app detection and logging. I'll just sit there.
+- `settings.reset.label` — Reset Jixxy
+- `settings.reset.confirm` — This clears your settings and everything I've logged on this phone. This can't be undone.
+- `settings.about.label` — About and privacy
+- `settings.privacy_summary` — Everything stays on your phone. Jixxy has no internet permission, no analytics and no ads. I read only the name of the app that's open and how long, never its content.
+
+---
+
+## 4. What Jixxy saw
+
+- `whatsaw.title` — What Jixxy saw
+- `whatsaw.empty` — Nothing yet. I'll note app names and times here as I go.
+- `whatsaw.clear_button` — Clear log
+- `whatsaw.clear_confirm` — Delete everything I've logged? This can't be undone.
+- `whatsaw.nothing_leaves_phone` — This list lives only on your phone. It never leaves it.
+
+---
+
+## 5. Weekly review
+
+- `weekly.headline.1` — Jixxy's review of your week
+- `weekly.headline.2` — Your week, according to the spreadsheet
+- `weekly.headline.3` — Week in review. I took notes.
+- `weekly.stat.pauses` — Pauses
+- `weekly.stat.left` — Times you left
+- `weekly.stat.stayed` — Times you stayed
+- `weekly.stat.top_app` — Most-opened app
+- `weekly.stat.late_nights` — Late nights
+- `weekly.share_cta` — Share this card
+- `weekly.privacy_note` — This card is made on your phone. You choose whether to share it.
+
+---
+
+## 6. OEM keep-alive guides
+Each guide: intro + steps. All end with `oem.menus_differ`.
+
+- `oem.menus_differ` — Menus differ by phone and Android version. If you can't find these exact words, look for the closest match.
+
+### Xiaomi / Redmi / POCO
+- `oem.guide.xiaomi.intro` — On Xiaomi, Redmi and POCO phones, a few settings keep Jixxy running.
+- `oem.guide.xiaomi.steps` — Open Settings → Apps → Manage apps → Jixxy. Turn on Autostart. Open "Battery saver" for Jixxy and choose "No restrictions".
+
+### Oppo / Realme
+- `oem.guide.oppo.intro` — On Oppo and Realme phones, background apps can be closed automatically.
+- `oem.guide.oppo.steps` — Open Settings → Apps → App management → Jixxy. Turn on "Allow auto-launch" and "Allow background activity". In Battery, choose "Don't optimise".
+
+### Vivo
+- `oem.guide.vivo.intro` — On Vivo phones, background limits can stop Jixxy from running.
+- `oem.guide.vivo.steps` — Open Settings → Battery → Background power consumption → Jixxy → Allow. In Apps, turn on Autostart for Jixxy.
+
+### Samsung
+- `oem.guide.samsung.intro` — On Samsung phones, unused apps can be put to sleep.
+- `oem.guide.samsung.steps` — Open Settings → Battery → Background usage limits. Remove Jixxy from "Sleeping apps" and add it to "Never sleeping apps".
+
+### Stock Android
+- `oem.guide.stock.intro` — On most other phones, one battery setting is usually enough.
+- `oem.guide.stock.steps` — Open Settings → Apps → Jixxy → Battery. Choose "Unrestricted" or "Don't optimise".
+
+---
+
+## 7. Errors and empty states
+
+- `error.permission_missing.title` — I'm missing a permission
+- `error.permission_missing.body` — {app} can't be paused until "{permission}" is allowed. Tap below to fix it.
+- `error.permission_missing.cta` — Fix it
+- `error.service_not_running.title` — I'm not running
+- `error.service_not_running.body` — Jixxy was stopped by your phone. Open the keep-alive guide to stop that from happening.
+- `error.service_not_running.cta` — Open guide
+- `empty.apps.none_selected` — No apps picked yet. I'll just comment now and then.
+- `empty.weekly.not_enough_data` — Not enough data for a weekly card yet. Check back in a few days.
+
+---
+
+## 8. Notification ("Jixxy is around")
+
+- `notif.title` — Jixxy is around
+- `notif.body` — Watching app names only. Nothing leaves your phone.
+- `notif.action.nap` — Nap 1h
+- `notif.action.wake` — Wake
+- `notif.action.blind` — Blind mode
+
+---
+
+## 9. Pause card chrome (buttons only; prompt text comes from the line bank)
+
+- `pause.leave` — Leave
+- `pause.stay` — Stay 5 more minutes
+- `pause.stay_waiting` — Stay ({n})
+- `pause.dismiss_note` — You can leave any time.
+
+---
+
+## 10. Privacy blurb (README/store reuse for GROWTH)
+
+- `privacy.blurb` — Jixxy has no internet permission, no analytics, no ads and no accounts. It reads only the name of the app you have open and how long you've had it open. It doesn't read messages, screens, or anything you type, and it never uses your camera, microphone, location or contacts. Everything it logs stays on your phone, and you can clear it any time.

@@ -1,8 +1,8 @@
-# WRITER status — updated 2026-11-06T03:18Z
+# WRITER status — updated 2026-11-06T03:20Z
 ## Now      — T-WRITER-1: gold set (100 lines) in content/gold_lines.md
-## Done     — T-WRITER-0: content/PERSONALITY_BIBLE.md (v0.1), HANDOFF sent to ENGINE, CHARACTER, UI
-## Next     — T-WRITER-2 line bank (needs ENGINE coverage table), T-WRITER-3 MICROCOPY
+## Done     — T-WRITER-0 personality bible; T-WRITER-3 content/MICROCOPY.md v0.1 (HANDOFF to UI)
+## Next     — T-WRITER-2 line bank (needs ENGINE coverage table)
 ## Blockers — none
 ## Questions for MANAGER — none
-## Messages handled — none (inbox was empty)
-## Honest notes — Nothing validated yet (no :engine:validateLines available). Bible examples hand-checked for <=90 chars only.
+## Messages handled — 20261106-0318-UI-microcopy-keys.md
+## Honest notes — Nothing validated (no :engine:validateLines yet). OEM and restricted-settings menu paths are unverified on real devices; hedged in copy.
