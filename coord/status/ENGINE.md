@@ -1,4 +1,4 @@
-# ENGINE status — updated 2026-11-06T08:58Z
+# ENGINE status — updated 2026-11-06T10:00Z
 ## Now      — (taken over by PLATFORM AI at the Owner's request) T-E2-2 D-010 states done; T-E2-6 weekly review pushed; next callbacks, Pause persistence, D-010 states
 ## Takeover — 2026-11-06T08:58Z. Found: DefaultJixxyBrain (state model, trigger rules, Pause logic, caps, 30-day sim) + 50 tests, but NO real line picker and NO factory, so the 366-line bank never reached the screen.
 ## Done
@@ -20,3 +20,9 @@
 - T-E2-2 done: PEEK/CHARGING/LOW_BATTERY in CharacterState + mapping + D010StatesTest; character whens extended (see inbox/ALL).
 - Remaining: persist Pause runtime state, callbacks memory, measured coverage.
 - Open (reported to MANAGER): Pause runtime state not persisted (needs contract change), callback memory not built, coverage unmeasured. CI green on ae636c1.
+
+## Takeover 3 (ENGINE AI, T-E2-5/6 remainder)
+- Done: EventHistory (engine/memory), callbacks from real counted facts (visits day/week, pauses day, leaves week; thresholds in BrainConfig; CALLBACK cooldown 180 min, counts toward the daily cap), almost-caring (needs 3 late nights in 7 days, at most once per 3 days, derived from the log), Pause/streak/count/ring restore via `recentEvents` (HANDOFF to PLATFORM in inbox; they must pass it in OverlayService).
+- Tests: MemoryTest (12 new). 114 tests pass locally (kotlinc 2.1.21 + stand-in JUnit; FakesAndConfigTest needs coroutines-test and was not run locally).
+- Honest notes: Gradle/JUnit/jacoco not run locally, coverage still unmeasured; CI result pending; nothing verified on a device. Callbacks only appear at bond FRIEND+ (bank lines have bondMin 2), almost-caring at RIDE_OR_DIE (bondMin 3), so testers will rarely see them early.
+- Owner manual test: none new until PLATFORM passes `recentEvents`. Then: use Stay on a chosen app, tap Stop then Wake within 5 minutes, reopen the app: no new Pause card should appear.

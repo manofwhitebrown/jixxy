@@ -42,4 +42,7 @@ interface LinePicker {
     fun pick(query: LineQuery): PickedLine?
     /** The user reacted to a shown line; implementations may learn from it. */
     fun onReaction(lineId: String, kind: ReactionKind) {}
+
+    /** Seeds the no-repeat memory with ids shown before a restart, oldest first. */
+    fun restoreRecent(ids: List<String>) {}
 }

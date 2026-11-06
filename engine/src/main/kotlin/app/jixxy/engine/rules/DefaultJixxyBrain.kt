@@ -17,6 +17,7 @@ import app.jixxy.engine.api.Trigger
 import app.jixxy.engine.api.UsageEvent
 import app.jixxy.engine.api.UsageEventType
 import app.jixxy.engine.api.UserSettings
+import app.jixxy.engine.memory.EventHistory
 import app.jixxy.engine.selector.LinePicker
 import app.jixxy.engine.selector.LineQuery
 import app.jixxy.engine.selector.PickedLine
@@ -26,6 +27,8 @@ import java.time.ZoneId
  * Jixxy's brain: state model (energy, mood, bond), trigger rules, caps and Pause logic.
  *
  * Deterministic: time comes only from [Signal.ts], settings from [settings], lines from [picker].
+ * Memory: pass recent events (`StateStore.eventsBetween`) as [restoredEvents] so Pause grace, counts, streaks and the
+ * no-repeat ring survive a process restart; callbacks and the almost-caring rule read the same history.
  * Not thread-safe; call [onSignal] from one thread.
  *
  * Platform contract:
@@ -48,10 +51,12 @@ class DefaultJixxyBrain(
     private val settings: () -> UserSettings,
     private val picker: LinePicker,
     private val appLabel: (String) -> String,
-    private val zone: ZoneId
+    private val zone: ZoneId,
+    restoredEvents: List<UsageEvent> = emptyList()
 ) : JixxyBrain {
 
     private var state = initialState
+    private val history = EventHistory(zone, restoredEvents)
     private val pending = mutableListOf<UsageEvent>()
     private var lastTs = 0L
     private var lastRegenTs: Long? = null
@@ -84,6 +89,10 @@ class DefaultJixxyBrain(
     private var napPlannedUntil: Long? = null
     /** A persisted nap the user explicitly woke Jixxy from; ignored until a different nap value appears. */
     private var ignoredNapUntil: Long? = null
+
+    init {
+        restoreRuntime()
+    }
 
     override val snapshot: BrainSnapshot
         get() {
@@ -201,11 +210,11 @@ class DefaultJixxyBrain(
         val nightKey = TimeUtil.nightKey(now, zone)
         val reaction = when {
             lateNight && nightKey != lateNightKey ->
-                tryUnprompted(Trigger.LATE_NIGHT, now, s, slots)?.also { lateNightKey = nightKey }
+                (tryAlmostCaring(now, s) ?: tryUnprompted(Trigger.LATE_NIGHT, now, s, slots))?.also { lateNightKey = nightKey }
             firstOpen -> tryUnprompted(Trigger.APP_OPEN, now, s, slots)
             prevPkg != null && prevMinutes >= BrainConfig.longSessionMin ->
                 tryUnprompted(Trigger.APP_OPEN, now, s, slots)
-            else -> null
+            else -> tryCallback(sig.pkg, now, s)
         }
         return listOfNotNull(reaction)
     }
@@ -314,6 +323,70 @@ class DefaultJixxyBrain(
         return listOf(Reaction(ReactionKindOut.SAY, line.id, line.text, mood, CharacterState.FALLING, BrainConfig.bubbleMs(line.text), null))
     }
 
+    // ---- memory: callbacks, almost-caring, restore -------------------------------------------
+
+    /** A callback built from a real counted fact (visits, pauses, leaves); the first fact over its threshold that has a line wins. */
+    private fun tryCallback(pkg: String, now: Long, s: UserSettings): Reaction? {
+        val app = appLabel(pkg)
+        val facts = listOf(
+            Triple("fact:app_visits_day", history.appVisitsToday(pkg, now), BrainConfig.callbackVisitsDay),
+            Triple("fact:pauses_day", history.pausesToday(now), BrainConfig.callbackPausesDay),
+            Triple("fact:leaves_week", history.leavesWeek(now), BrainConfig.callbackLeavesWeek),
+            Triple("fact:app_visits_week", history.appVisitsWeek(pkg, now), BrainConfig.callbackVisitsWeek)
+        )
+        for ((tag, count, min) in facts) {
+            if (count < min) continue
+            val slots = mapOf("app" to app, "count" to count.toString())
+            tryUnprompted(Trigger.CALLBACK, now, s, slots, tag)?.let { return it }
+        }
+        return null
+    }
+
+    /** The rare soft line: only after several late nights in a week, and at most once per [BrainConfig.almostCaringGapDays]. */
+    private fun tryAlmostCaring(now: Long, s: UserSettings): Reaction? {
+        if (history.lateNightsWeek(now) < BrainConfig.almostCaringLateNights) return null
+        val last = history.lastLineShownTs(ALMOST_CARING_PREFIX)
+        if (last != null && now - last < BrainConfig.almostCaringGapDays * DAY_MS) return null
+        return tryUnprompted(Trigger.ALMOST_CARING, now, s)
+    }
+
+    /** Rebuilds Pause grace, counts, streak, today's minutes and the line ring from [history] after a restart. */
+    private fun restoreRuntime() {
+        val last = history.lastTs() ?: return
+        lastTs = last
+        val today = TimeUtil.epochDay(last, zone)
+        dayEpoch = today
+        picker.restoreRecent(history.all().filter { it.type == UsageEventType.LINE_SHOWN }.mapNotNull { it.lineId })
+        for (e in history.all()) {
+            val pkg = e.pkg
+            val isToday = TimeUtil.epochDay(e.ts, zone) == today
+            when (e.type) {
+                UsageEventType.FOREGROUND -> if (isToday) firstOpenPending = false
+                UsageEventType.SESSION_MINUTES ->
+                    if (isToday && pkg != null) dailyMinutes[pkg] = (dailyMinutes[pkg] ?: 0) + (e.value ?: 1)
+                UsageEventType.PAUSE_SHOWN -> if (pkg != null) {
+                    if (isToday) pauseCount[pkg] = e.value ?: ((pauseCount[pkg] ?: 0) + 1)
+                    val expiry = stayExpiry[pkg]
+                    if (expiry != null && e.ts >= expiry) secondPromptDone += pkg
+                }
+                UsageEventType.PAUSE_STAY -> if (pkg != null) {
+                    val until = e.ts + BrainConfig.stayGraceMinutes * 60_000L
+                    graceUntil[pkg] = until
+                    stayExpiry[pkg] = until
+                    secondPromptDone.remove(pkg)
+                    leaveStreak = 0
+                }
+                UsageEventType.PAUSE_LEAVE -> if (pkg != null) {
+                    graceUntil[pkg] = e.ts + BrainConfig.leaveGraceMinutes * 60_000L
+                    stayExpiry.remove(pkg)
+                    leaveStreak++
+                    if (leaveStreak >= BrainConfig.impressedLeaveStreak) leaveStreak = 0
+                }
+                else -> Unit
+            }
+        }
+    }
+
     // ---- speaking --------------------------------------------------------------------------
 
     /** Speaks an unprompted line if every gate allows it; counts toward the daily cap. */
@@ -321,7 +394,8 @@ class DefaultJixxyBrain(
         trigger: Trigger,
         now: Long,
         s: UserSettings,
-        slots: Map<String, String> = emptyMap()
+        slots: Map<String, String> = emptyMap(),
+        requiredTag: String? = null
     ): Reaction? {
         if (hardSilenced(now, s) || !screenOn || inQuiet(now, s) || state.energy <= 0) return null
         if (fgCategory == AppCategory.PROTECTED) return null
@@ -334,7 +408,7 @@ class DefaultJixxyBrain(
         if (lastSpoken != null && now - lastSpoken < BrainConfig.minGapMinutes * 60_000L) return null
         val lastOfKind = lastTriggerTs[trigger]
         if (lastOfKind != null && now - lastOfKind < BrainConfig.unpromptedCooldownMin(trigger) * 60_000L) return null
-        val line = pick(trigger, now, s, slots, null) ?: return null
+        val line = picker.pick(query(trigger, now, s, slots, null).copy(requiredTag = requiredTag)) ?: return null
         lastTriggerTs[trigger] = now
         state = state.copy(
             energy = (state.energy - BrainConfig.energyPerLine).coerceAtLeast(0),
@@ -480,6 +554,13 @@ class DefaultJixxyBrain(
     }
 
     private fun log(type: UsageEventType, now: Long, pkg: String?, value: Int? = null, lineId: String? = null) {
-        pending += UsageEvent(now, type, pkg, value, lineId)
+        val e = UsageEvent(now, type, pkg, value, lineId)
+        pending += e
+        history.add(e)
+    }
+
+    private companion object {
+        const val ALMOST_CARING_PREFIX = "almost_caring"
+        const val DAY_MS = 86_400_000L
     }
 }

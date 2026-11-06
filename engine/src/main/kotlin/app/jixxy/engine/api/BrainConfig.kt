@@ -60,6 +60,14 @@ object BrainConfig {
     const val bondXpLeave = 5
     const val bondXpImpressed = 10
 
+    /** Callback thresholds: a counted fact is only quoted once it is at least this big. */
+    const val callbackVisitsDay = 4
+    const val callbackVisitsWeek = 10
+    const val callbackPausesDay = 3
+    const val callbackLeavesWeek = 3
+    /** Distinct late nights in the last 7 days before the almost-caring line may appear. */
+    const val almostCaringLateNights = 3
+
     /** Minimum minutes between two unprompted lines of the same [trigger]. */
     fun unpromptedCooldownMin(trigger: Trigger): Int = when (trigger) {
         Trigger.APP_OPEN -> 90
@@ -68,6 +76,7 @@ object BrainConfig {
         Trigger.CHARGER_ON -> 180
         Trigger.BATTERY_LOW -> 240
         Trigger.MUSIC -> 240
+        Trigger.CALLBACK -> 180
         else -> 0
     }
 

@@ -65,6 +65,10 @@ class BankLinePicker(
         }
     }
 
+    override fun restoreRecent(ids: List<String>) {
+        ids.filter { it in byId }.forEach { remember(it) }
+    }
+
     /** Ids recently shown, oldest first (for tests and debugging). */
     fun recentIds(): List<String> = ring.toList()
 
