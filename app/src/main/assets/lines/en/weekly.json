@@ -15,7 +15,8 @@
       "count"
     ],
     "tags": [
-      "weekly"
+      "weekly",
+      "weekly_roast"
     ],
     "almostCaring": false
   },
@@ -35,7 +36,8 @@
       "count"
     ],
     "tags": [
-      "weekly"
+      "weekly",
+      "weekly_roast"
     ],
     "almostCaring": false
   },
@@ -53,7 +55,8 @@
     "text": "Here's your week. I narrated it in my head.",
     "slots": [],
     "tags": [
-      "weekly"
+      "weekly",
+      "weekly_roast"
     ],
     "almostCaring": false
   },
@@ -73,7 +76,8 @@
       "count"
     ],
     "tags": [
-      "weekly"
+      "weekly",
+      "weekly_roast"
     ],
     "almostCaring": false
   },
@@ -91,7 +95,8 @@
     "text": "Weekly report: you're doing fine. I'm snacking.",
     "slots": [],
     "tags": [
-      "weekly"
+      "weekly",
+      "weekly_praise"
     ],
     "almostCaring": false
   },
@@ -111,7 +116,8 @@
       "count"
     ],
     "tags": [
-      "weekly"
+      "weekly",
+      "weekly_roast"
     ],
     "almostCaring": false
   },
@@ -131,7 +137,8 @@
       "count"
     ],
     "tags": [
-      "weekly"
+      "weekly",
+      "weekly_praise"
     ],
     "almostCaring": false
   },
@@ -149,7 +156,8 @@
     "text": "Week in review: the spreadsheet is thick.",
     "slots": [],
     "tags": [
-      "weekly"
+      "weekly",
+      "weekly_roast"
     ],
     "almostCaring": false
   },
@@ -169,7 +177,8 @@
       "count"
     ],
     "tags": [
-      "weekly"
+      "weekly",
+      "weekly_praise"
     ],
     "almostCaring": false
   },
@@ -187,7 +196,8 @@
     "text": "Tada: your week, rated by a lazy roommate.",
     "slots": [],
     "tags": [
-      "weekly"
+      "weekly",
+      "weekly_roast"
     ],
     "almostCaring": false
   },
@@ -207,7 +217,8 @@
       "count"
     ],
     "tags": [
-      "weekly"
+      "weekly",
+      "weekly_praise"
     ],
     "almostCaring": false
   },
@@ -227,7 +238,8 @@
       "count"
     ],
     "tags": [
-      "weekly"
+      "weekly",
+      "weekly_roast"
     ],
     "almostCaring": false
   },
@@ -247,7 +259,8 @@
       "count"
     ],
     "tags": [
-      "weekly"
+      "weekly",
+      "weekly_roast"
     ],
     "almostCaring": false
   },
@@ -265,7 +278,8 @@
     "text": "Review time. I ate snacks while writing it.",
     "slots": [],
     "tags": [
-      "weekly"
+      "weekly",
+      "weekly_roast"
     ],
     "almostCaring": false
   },
@@ -285,7 +299,8 @@
       "count"
     ],
     "tags": [
-      "weekly"
+      "weekly",
+      "weekly_roast"
     ],
     "almostCaring": false
   },
@@ -303,7 +318,8 @@
     "text": "Your week, with commentary from a sleepy cat.",
     "slots": [],
     "tags": [
-      "weekly"
+      "weekly",
+      "weekly_roast"
     ],
     "almostCaring": false
   },
@@ -323,7 +339,8 @@
       "count"
     ],
     "tags": [
-      "weekly"
+      "weekly",
+      "weekly_roast"
     ],
     "almostCaring": false
   },
@@ -341,7 +358,8 @@
     "text": "Weekly card ready. Please be gentle, I wrote it.",
     "slots": [],
     "tags": [
-      "weekly"
+      "weekly",
+      "weekly_roast"
     ],
     "almostCaring": false
   },
@@ -361,7 +379,8 @@
       "count"
     ],
     "tags": [
-      "weekly"
+      "weekly",
+      "weekly_praise"
     ],
     "almostCaring": false
   },
@@ -379,7 +398,280 @@
     "text": "That's the week. I rate it 'surprisingly okay'.",
     "slots": [],
     "tags": [
-      "weekly"
+      "weekly",
+      "weekly_praise"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_021",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Zero pauses this week. Quiet. I napped through it.",
+    "slots": [],
+    "tags": [
+      "weekly",
+      "weekly_quiet"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_022",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "A pause-free week. The spreadsheet is empty. I'm suspicious.",
+    "slots": [],
+    "tags": [
+      "weekly",
+      "weekly_quiet"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_023",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Nothing to report. I'm assuming that means a good week.",
+    "slots": [],
+    "tags": [
+      "weekly",
+      "weekly_quiet"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_024",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "No pauses this week. I took the credit anyway.",
+    "slots": [],
+    "tags": [
+      "weekly",
+      "weekly_quiet"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_025",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Quiet week. I got a lot of naps in. You?",
+    "slots": [],
+    "tags": [
+      "weekly",
+      "weekly_quiet"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_026",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Weekly card: blank. Honestly? Relaxing.",
+    "slots": [],
+    "tags": [
+      "weekly",
+      "weekly_quiet"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_027",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Credit where due: at least one Leave this week. I noticed.",
+    "slots": [],
+    "tags": [
+      "weekly",
+      "weekly_praise"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_028",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "You left when it counted. That's the headline.",
+    "slots": [],
+    "tags": [
+      "weekly",
+      "weekly_praise"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_029",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Some Stays, some Leaves. Mostly fine. Hehe.",
+    "slots": [],
+    "tags": [
+      "weekly",
+      "weekly_praise"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_030",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "More Leaves than I expected. Respect. Don't tell anyone.",
+    "slots": [],
+    "tags": [
+      "weekly",
+      "weekly_praise"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_031",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{count} pauses faced. I took notes and a nap.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "weekly",
+      "weekly_roast"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_032",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "A busy week: {count} pauses. I'm tired by proxy.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "weekly",
+      "weekly_roast"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_033",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{count} pauses, and I'm the tired one.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "weekly",
+      "weekly_roast"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_034",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Weekly review: busy. I'd say more but I'm napping.",
+    "slots": [],
+    "tags": [
+      "weekly",
+      "weekly_roast"
     ],
     "almostCaring": false
   }

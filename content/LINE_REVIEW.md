@@ -34,3 +34,6 @@ Honest notes: "seek help" (Owner caption) is kept only in question form because 
 Added 83 EN lines: PAUSE_PROMPT SOFT x10, BROWSER x10, generic (any category) x10, followup x8 (tag `followup`), escalation tiers (`tier0`/`tier1`/`tier2`) for SOCIAL+VIDEO x21; PAUSE_STAY SMUG x8 and SOFT x6; PAUSE_LEAVE celebrate x4 and SOFT x6.
 Test applied to each: would a tired 19-year-old at 2 am smirk or feel judged? Rewrote the BROWSER lines that said "again" (the first pause of the day has no history).
 Honest notes: tier1/tier2 lines use {count} (nth pause of that app today) which the engine confirms for PAUSE_PROMPT. Humour is my judgement; testers confirm.
+
+## v0.5 CALLBACK / WEEKLY tags (ENGINE request 0330 items 6)
+Every CALLBACK line now has exactly one `fact:` tag (pauses_day, pauses_week, leaves_week, app_visits_day, app_visits_week). 8 lines were reworded so the period is explicit ("today" / "this week") and the tag is truthful. WEEKLY lines tagged `weekly_roast` / `weekly_praise`; +14 lines incl. 6 `weekly_quiet` (no {count}) for a zero-pause week. Not used: fact:late_opens_week, fact:stays_week, fact:longest_session_day (no lines yet).

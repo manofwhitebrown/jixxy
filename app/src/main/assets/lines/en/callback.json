@@ -15,7 +15,8 @@
       "count"
     ],
     "tags": [
-      "callback"
+      "callback",
+      "fact:leaves_week"
     ],
     "almostCaring": false
   },
@@ -36,7 +37,8 @@
       "count"
     ],
     "tags": [
-      "callback"
+      "callback",
+      "fact:app_visits_day"
     ],
     "almostCaring": false
   },
@@ -57,7 +59,8 @@
       "count"
     ],
     "tags": [
-      "callback"
+      "callback",
+      "fact:app_visits_week"
     ],
     "almostCaring": false
   },
@@ -77,7 +80,8 @@
       "count"
     ],
     "tags": [
-      "callback"
+      "callback",
+      "fact:pauses_day"
     ],
     "almostCaring": false
   },
@@ -98,7 +102,8 @@
       "count"
     ],
     "tags": [
-      "callback"
+      "callback",
+      "fact:app_visits_week"
     ],
     "almostCaring": false
   },
@@ -113,13 +118,14 @@
     "roast": 1,
     "bondMin": 2,
     "lang": "en",
-    "text": "Still {app}, {count} times now. I admire consistency.",
+    "text": "Still {app}, {count} times today. I admire consistency.",
     "slots": [
       "app",
       "count"
     ],
     "tags": [
-      "callback"
+      "callback",
+      "fact:app_visits_day"
     ],
     "almostCaring": false
   },
@@ -139,7 +145,8 @@
       "count"
     ],
     "tags": [
-      "callback"
+      "callback",
+      "fact:pauses_day"
     ],
     "almostCaring": false
   },
@@ -154,13 +161,14 @@
     "roast": 1,
     "bondMin": 2,
     "lang": "en",
-    "text": "{app} count: {count}. The spreadsheet nods.",
+    "text": "{app} count this week: {count}. The spreadsheet nods.",
     "slots": [
       "app",
       "count"
     ],
     "tags": [
-      "callback"
+      "callback",
+      "fact:app_visits_week"
     ],
     "almostCaring": false
   },
@@ -181,7 +189,8 @@
       "count"
     ],
     "tags": [
-      "callback"
+      "callback",
+      "fact:app_visits_day"
     ],
     "almostCaring": false
   },
@@ -201,7 +210,8 @@
       "count"
     ],
     "tags": [
-      "callback"
+      "callback",
+      "fact:pauses_week"
     ],
     "almostCaring": false
   },
@@ -216,13 +226,14 @@
     "roast": 1,
     "bondMin": 2,
     "lang": "en",
-    "text": "Same {app}, {count} times. We know each other now.",
+    "text": "Same {app}, {count} times today. We know each other now.",
     "slots": [
       "app",
       "count"
     ],
     "tags": [
-      "callback"
+      "callback",
+      "fact:app_visits_day"
     ],
     "almostCaring": false
   },
@@ -237,12 +248,13 @@
     "roast": 1,
     "bondMin": 2,
     "lang": "en",
-    "text": "{count} Leaves so far. The sofa is proud.",
+    "text": "{count} Leaves this week so far. The sofa is proud.",
     "slots": [
       "count"
     ],
     "tags": [
-      "callback"
+      "callback",
+      "fact:leaves_week"
     ],
     "almostCaring": false
   },
@@ -263,7 +275,8 @@
       "count"
     ],
     "tags": [
-      "callback"
+      "callback",
+      "fact:app_visits_week"
     ],
     "almostCaring": false
   },
@@ -284,7 +297,8 @@
       "count"
     ],
     "tags": [
-      "callback"
+      "callback",
+      "fact:app_visits_day"
     ],
     "almostCaring": false
   },
@@ -299,13 +313,14 @@
     "roast": 1,
     "bondMin": 2,
     "lang": "en",
-    "text": "I see you, {app}. {count} times and growing.",
+    "text": "I see you, {app}. {count} times this week and growing.",
     "slots": [
       "app",
       "count"
     ],
     "tags": [
-      "callback"
+      "callback",
+      "fact:app_visits_week"
     ],
     "almostCaring": false
   },
@@ -325,7 +340,8 @@
       "count"
     ],
     "tags": [
-      "callback"
+      "callback",
+      "fact:pauses_day"
     ],
     "almostCaring": false
   },
@@ -340,12 +356,13 @@
     "roast": 1,
     "bondMin": 2,
     "lang": "en",
-    "text": "Counting {count} pauses so far. The abacus is tired.",
+    "text": "Counting {count} pauses today. The abacus is tired.",
     "slots": [
       "count"
     ],
     "tags": [
-      "callback"
+      "callback",
+      "fact:pauses_day"
     ],
     "almostCaring": false
   },
@@ -360,12 +377,13 @@
     "roast": 1,
     "bondMin": 2,
     "lang": "en",
-    "text": "Look, {count} pauses. We make a decent team.",
+    "text": "Look, {count} pauses this week. We make a decent team.",
     "slots": [
       "count"
     ],
     "tags": [
-      "callback"
+      "callback",
+      "fact:pauses_week"
     ],
     "almostCaring": false
   },
@@ -385,7 +403,8 @@
       "count"
     ],
     "tags": [
-      "callback"
+      "callback",
+      "fact:pauses_day"
     ],
     "almostCaring": false
   },
@@ -400,13 +419,14 @@
     "roast": 1,
     "bondMin": 2,
     "lang": "en",
-    "text": "I'm writing a sitcom about you and {app}: {count} visits.",
+    "text": "I'm writing a sitcom about you and {app}: {count} visits this week.",
     "slots": [
       "app",
       "count"
     ],
     "tags": [
-      "callback"
+      "callback",
+      "fact:app_visits_week"
     ],
     "almostCaring": false
   }
