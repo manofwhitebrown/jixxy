@@ -48,7 +48,7 @@ fun JixxyNavHost(
         composable(Routes.HOME) { HomeScreen(settings = settings, store = store, onSettings = { nav.navigate(Routes.SETTINGS) }, onWeekly = { nav.navigate(Routes.WEEKLY) }, onNapRequested = onNapRequested, onWakeRequested = onWakeRequested, onStopRequested = onStopRequested, isRunning = isRunning) }
         composable(Routes.SETTINGS) { SettingsScreen(settings = settings, store = store, apps = apps, onWhatSaw = { nav.navigate(Routes.WHAT_SAW) }, onOemGuide = { nav.navigate(Routes.OEM_GUIDE) }) }
         composable(Routes.WHAT_SAW) { WhatSawScreen(store = store, appLabel = appLabel) }
-        composable(Routes.WEEKLY) { WeeklyScreen() }
+        composable(Routes.WEEKLY) { WeeklyScreen(settings = settings, store = store, appLabel = appLabel) }
         composable(Routes.OEM_GUIDE) { OemGuideScreen() }
     }
 }
