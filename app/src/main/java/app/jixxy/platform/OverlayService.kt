@@ -110,12 +110,31 @@ class OverlayService : Service(), ReactionRenderer {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         when (intent?.action) {
-            ACTION_STOP -> { setWantedRunning(this, false); stopSelf() }
+            ACTION_STOP -> {
+                // Stop = clean slate: clear the nap, remember the user wants him off, then end the service.
+                // The settings write must finish before stopSelf(), because onDestroy cancels the scope.
+                setWantedRunning(this, false)
+                scope.launch {
+                    runCatching { app.settings.update { it.copy(napUntilTs = NapPolicy.afterStop()) } }
+                    stopSelf()
+                }
+            }
             ACTION_NAP -> scope.launch {
                 val t = System.currentTimeMillis()
-                app.settings.update { it.copy(napUntilTs = t + NAP_MS) }
+                app.settings.update { it.copy(napUntilTs = NapPolicy.napUntil(t)) }
                 app.bus.emit(Signal.NapRequested(60, t))
             }
+            ACTION_WAKE -> {
+                // Explicit user wake always clears the nap and shows the sprite.
+                // startForegroundService() must be answered by startForeground() every time, even if already running.
+                enterForeground()
+                setWantedRunning(this, true)
+                scope.launch {
+                    app.settings.update { it.copy(napUntilTs = NapPolicy.afterWake()) }
+                    app.bus.emit(Signal.WakeRequested(System.currentTimeMillis()))
+                }
+            }
+            else -> enterForeground()  // plain start (boot, restart): keep any still-running nap
         }
         return START_NOT_STICKY
     }
@@ -226,12 +245,16 @@ class OverlayService : Service(), ReactionRenderer {
     /** Recomputes the nap flag from settings and schedules the wake-up at napUntilTs. */
     private fun updateNap() {
         handler.removeCallbacks(napCheck)
+        val now = System.currentTimeMillis()
         val until = settings.napUntilTs
-        val remaining = if (until == null) 0L else until - System.currentTimeMillis()
+        val remaining = NapPolicy.remainingMs(until, now)
         napping = remaining > 0
         if (napping) {
             pauseWindow.dismiss()
             handler.postDelayed(napCheck, remaining)
+        } else if (until != null) {
+            // Expired nap left over in settings: clear it so it can never hide him later.
+            scope.launch { runCatching { app.settings.update { it.copy(napUntilTs = null) } } }
         }
         applyVisibility()
     }
@@ -239,7 +262,7 @@ class OverlayService : Service(), ReactionRenderer {
     private val napCheck = Runnable { updateNap() }
 
     private fun applyVisibility() {
-        val awake = screenOn && !napping
+        val awake = NapPolicy.shouldShowSprite(screenOn, settings.napUntilTs, System.currentTimeMillis(), settings.blindMode)
         sprite?.visibility = if (awake) View.VISIBLE else View.GONE
         sprite?.setScreenActive(awake)
     }
@@ -263,6 +286,7 @@ class OverlayService : Service(), ReactionRenderer {
             .setContentTitle(PlatformStrings.NOTIFICATION_TITLE)
             .setOngoing(true)
             .addAction(0, PlatformStrings.ACTION_NAP, actionIntent(ACTION_NAP, 1))
+            .addAction(0, PlatformStrings.ACTION_WAKE, actionIntent(ACTION_WAKE, 4))
             .addAction(0, PlatformStrings.ACTION_STOP, actionIntent(ACTION_STOP, 2))
             .build()
 
@@ -286,14 +310,29 @@ class OverlayService : Service(), ReactionRenderer {
     companion object {
         const val ACTION_NAP = "app.jixxy.action.NAP"
         const val ACTION_STOP = "app.jixxy.action.STOP"
+        const val ACTION_WAKE = "app.jixxy.action.WAKE"
         private const val CHANNEL_ID = "jixxy_around"
         private const val NOTIFICATION_ID = 1
         private const val WAKE_ID = 2
-        private const val NAP_MS = 60 * 60 * 1000L
         private const val PREFS = "platform_overlay"
         private const val KEY_X = "x"
         private const val KEY_Y = "y"
         private const val KEY_WANTED = "wanted_running"
+
+        /** Explicit user wake: starts the service (if needed) and clears any nap. Use this everywhere the user wakes him. */
+        fun wake(context: Context) {
+            context.startForegroundService(Intent(context, OverlayService::class.java).setAction(ACTION_WAKE))
+        }
+
+        /** Nap for one hour. */
+        fun nap(context: Context) {
+            context.startService(Intent(context, OverlayService::class.java).setAction(ACTION_NAP))
+        }
+
+        /** Stop: hides him, clears the nap, ends the service. */
+        fun stop(context: Context) {
+            context.startService(Intent(context, OverlayService::class.java).setAction(ACTION_STOP))
+        }
 
         /** True from the moment the service starts until the user explicitly stops it; read by [BootReceiver]. */
         fun wantedRunning(context: Context): Boolean =

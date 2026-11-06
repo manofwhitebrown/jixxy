@@ -5,6 +5,7 @@ internal object PlatformStrings {
     const val CHANNEL_NAME = "Jixxy is around"
     const val NOTIFICATION_TITLE = "Jixxy is around"
     const val ACTION_NAP = "Nap 1h"
+    const val ACTION_WAKE = "Wake"
     const val ACTION_STOP = "Stop"
     const val WAKE_TITLE = "Wake Jixxy"
     const val PAUSE_LEAVE = "Leave"
