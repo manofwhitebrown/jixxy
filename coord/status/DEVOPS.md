@@ -1,10 +1,13 @@
-# DEVOPS status — updated 2026-11-06 08:55 UTC
+# DEVOPS status — updated 2026-11-06 09:28 UTC
 ## Takeover: 2026-11-06 08:55 UTC
 Wave-2 DEVOPS (AI-6), replacing the previous DEVOPS. Verified: repo cloned, ci_errors.sh says run 42158128299 on 58e7b01 is success (both jobs); debug key is committed in app/debug.keystore; release.yml, ci.yml, guards read. Found: versionCode is hard-coded to 1 in app/build.gradle.kts (PLATFORM file). First: T-D2-1, T-D2-2, T-D2-3.
 ## Now
-T-D2-1 pushed (cert check + versionCode); starting T-D2-2 rolling `latest` pre-release
-main is GREEN (84bdc18). Next: test release.yml with a throwaway tag
+T-D2-1..4 done. Next: T-D2-5 (CharacterDemoActivity in CI APK), T-D2-6 (phone-friendly smoke sheet)
 ## Done
+- (Wave 2) T-D2-1 cert check + versionCode from commit count (CI green after fixes; real apksigner prints `V2 Signer: certificate SHA-256 digest:`)
+- (Wave 2) T-D2-2 latest.yml: rolling pre-release, link https://github.com/manofwhitebrown/jixxy/releases/download/latest/jixxy-latest.apk (first published at versionCode 132; older builds are skipped, never replace a newer one)
+- (Wave 2) T-D2-3 qa/BUGS.md (B-001..B-005) + qa/REGRESSION_NAP_STOP_WAKE.md
+- (Wave 2) T-D2-4 scripts/check_assets.sh/.py, warn-only in CI
 - T-DEVOPS-0: .github/workflows/ci.yml (guards job + build job, skip-safe without gradlew)
 - T-DEVOPS-1: scripts/check_no_secrets.sh, check_manifest.sh, check_dependencies.sh, check_ownership.sh, validate_lines.py, install_hooks.sh
 - T-DEVOPS-4: qa/TEST_PLAN.md, DEVICE_MATRIX.md, SMOKE_CHECKLIST.md, KILL_TEST.md, .github/ISSUE_TEMPLATE/*
@@ -37,3 +40,8 @@ none
 - RELEASE_SIGNING.md has not been followed by anyone yet; the keytool and base64 commands are standard but unverified on the Owner's machine.
 - No script or workflow has been run on a device. Nothing Android-specific was tested.
 - (Wave 2) T-D2-1 scripts/apk_cert.sh, check_apk_cert.sh, version_code.sh tested only against a FAKE apksigner and keytool output format from memory; the real apksigner/keytool steps have not run on GitHub yet. versionCode stays 1 until PLATFORM reads the Gradle property. release.yml cert comparison uses `gh release download` of the previous release; untested.
+- (Wave 2) Verified on GitHub: latest release exists with APK + sha256, a later run skipped an older build correctly. NOT verified: that the APK installs over v0.0.1-alpha on a phone; the release.yml previous-release comparison has never run; Pages deploy state unknown (Owner must enable Settings > Pages > Source: GitHub Actions).
+## Manual test for the Owner (T-D2-1/2)
+1. On the phone open the link above in the browser, download jixxy-latest.apk, tap it, choose Update/Install.
+2. Expected: it installs over v0.0.1-alpha WITHOUT uninstalling, and your settings stay. If Android says "App not installed" or "conflicts with an existing package", tell us the exact words.
+3. Then run qa/REGRESSION_NAP_STOP_WAKE.md.
