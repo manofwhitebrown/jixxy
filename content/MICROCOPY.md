@@ -1,4 +1,4 @@
-# JIXXY — MICROCOPY v0.5
+# JIXXY — MICROCOPY v0.6
 Owner: WRITER · Consumer: UI (→ strings.xml) · Language: en
 
 **Rules**
@@ -16,13 +16,13 @@ Format: `key` — text.
 
 ### Hello
 - `onboarding.hello.title` — Hi. I'm Jixxy.
-- `onboarding.hello.body` — I'm a small, lazy roommate who lives on your screen. I make short jokes, and before the apps you choose, I ask you to pause for a moment. You're always free to leave or stay.
+- `onboarding.hello.body` — I'm a black, fluffy, lazy cat who lives on your phone like a roommate. I make short jokes, and before the apps you choose, I ask you to pause for a moment. You're always free to leave or stay.
 - `onboarding.hello.cta_primary` — Set me up
 - `onboarding.hello.cta_lite` — Just look around first
 
 ### Overlay permission ("Display over other apps")
 - `onboarding.overlay.why_title` — So I can sit on your screen
-- `onboarding.overlay.why_body` — To appear above other apps, Android needs your permission called "Display over other apps". I only use it to show my little sprite and the pause card. I can't see what's inside other apps, and I can't tap or type for you.
+- `onboarding.overlay.why_body` — To appear above other apps, Android needs your permission called "Display over other apps". I only use it to show myself and the pause card. I can't see what's inside other apps, and I can't tap or type for you.
 - `onboarding.overlay.cta_open` — Open settings
 - `onboarding.overlay.granted` — Got it. I'm on the screen now.
 
@@ -241,3 +241,51 @@ Plain words, no jokes, no judgement. UI adds the app name and time to each row.
 - `oem.title.samsung` — Samsung
 - `oem.title.stock` — Other Android phones
 - `oem.dontkillmyapp_note` — Still stuck? The website dontkillmyapp.com lists steps for many phone brands. Type it into your browser; I can't open links myself.
+
+---
+
+## 15. Additions (v0.6, cat update, T-W2-4)
+IDs above are unchanged. Two texts were reworded in place (cat wording, "sprite" retired): `onboarding.hello.body`, `onboarding.overlay.why_body`. Plain rule stays: permission text says exactly what is and isn't read.
+
+### Brand
+- `brand.tagline` — Your lazy, sarcastic, but loyal roommate.
+- `brand.signoff` — A little chaos. A lot of care.
+
+### Wake, nap, stop (home screen and launcher screen)
+Waking Jixxy always ends any nap. The copy says so, so the screen matches the behaviour.
+- `home.stop` — Stop
+- `home.stop.hint` — Stop hides me completely until you tap Wake.
+- `home.status.stopped` — Jixxy is stopped
+- `home.status.stopped_hint` — Tap Wake to bring him back. Waking him ends any nap.
+- `home.status.napping_hint` — Tap Wake any time. He'll grumble. He'll be fine.
+- `home.wake.cta` — Wake
+- `home.wake.working` — Waking him up...
+- `home.nap.cta` — Nap for 1 hour
+
+### Wake and permission error states
+- `error.wake_failed.title` — I couldn't wake up
+- `error.wake_failed.body` — Android didn't let me start. Check that "Display over other apps" is still allowed, then try again.
+- `error.wake_failed.cta` — Check permissions
+- `error.overlay_revoked.title` — I lost my permission
+- `error.overlay_revoked.body` — Android turned off "Display over other apps" for Jixxy, so I can't show up. Allow it again and I'll be back.
+- `error.overlay_revoked.cta` — Allow overlay
+
+### Launcher-screen empty states
+- `launcher.empty.no_overlay` — I can't show up yet. Allow "Display over other apps" first.
+- `launcher.empty.no_overlay.cta` — Allow overlay
+- `launcher.empty.no_apps` — No apps picked yet. Choose up to 3 and I'll start pausing them.
+- `launcher.empty.no_apps.cta` — Choose apps
+- `launcher.empty.no_stats` — No pauses yet today. I'm napping on the job.
+- `launcher.empty.asleep` — Jixxy is asleep. Tap Wake.
+
+### Notification (extra wording)
+- `notif.body_napping` — Napping until {time}. Tap Wake to wake him.
+- `notif.action.stop` — Stop
+
+### Accessibility labels (content descriptions)
+- `a11y.jixxy_sprite` — Jixxy, a black fluffy cat. Tap to poke him, drag to move him.
+- `a11y.jixxy_bubble` — Jixxy says: {text}
+- `a11y.reaction_laugh` — Funny
+- `a11y.reaction_sleepy` — Boring
+- `a11y.pause_card` — Jixxy is peeking. Choose Leave or Stay.
+
