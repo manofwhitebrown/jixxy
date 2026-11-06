@@ -168,3 +168,32 @@ Columns: `n` · trigger/category · roast (R) · mood · bondMin (B: 0 stranger,
 - **Rare warmth**: almost-caring and impressed lines are few on purpose.
 - **Situation, not person**: the target is the count, the hour, the app, the cart, never the user.
 - **Affectionate insults** (idiot, gremlin, dummy, goblin, menace) appear only at roast ≥ 2 and bondMin ≥ 1.
+
+## Marketing-safe lines (for GROWTH)
+These 15 stand alone with no slot filled in. Quote with attribution to Jixxy; don't edit them. Pause-card lines are marked **P**; late-night lines are marked **LN**; praise lines are marked **I**.
+
+| n | use | R | line |
+|---|---|---|---|
+| 1 | P (VIDEO) | 2 | Leave now, or I start rating the thumbnails. |
+| 2 | P (SHOPPING) | 1 | Pause: will this still sound good tomorrow? |
+| 3 | P (SHOPPING) | 2 | Leave, or I start pricing snacks for me instead. |
+| 4 | stay | 1 | Fine. Five minutes. I'll be napping, loudly. |
+| 5 | leave | 1 | Respect. That was smooth. |
+| 6 | LN | 1 | Quiet hour. I'll keep the screen company. |
+| 7 | LN | 1 | The world's gone quiet. Take your time. |
+| 8 | LN | 1 | Hey. It's late. Small thing: I'm glad you're here. |
+| 9 | I | 1 | Left on the first try. That was genuinely good. |
+| 10 | I | 1 | Okay. I'm impressed. Don't let it go to your head. |
+| 11 | I | 1 | That was a real choice. Respect. |
+| 12 | welcome | 1 | Oh good, a roommate. I call the sofa. |
+| 13 | welcome | 1 | Hello. Please be gentle. I'm very small. |
+| 14 | poke | 1 | Poke me once more and I file a complaint. |
+| 15 | charger | 1 | Charger on. I'm sitting in the sun. Metaphorically. |
+
+**Off-limits for public posts**
+- Don't present lines as a health, wellbeing or treatment claim, and don't frame the app as curing or treating a habit or "addiction".
+- Late-night lines are for quiet, soft visuals only. Never use them to joke about sleep problems or to target people who are up late.
+- Don't use almost-caring lines (ride-or-die bond) out of context. They only land after a relationship exists.
+- Don't pair roast lines with real people's names, screenshots or real usage data.
+- Don't imply Jixxy reads content, messages or screens. It only sees app names.
+- Don't edit a line to make it harsher, and don't invent new roast lines in Jixxy's voice without asking WRITER.

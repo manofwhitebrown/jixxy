@@ -1,4 +1,4 @@
-# JIXXY — MICROCOPY v0.1
+# JIXXY — MICROCOPY v0.2
 Owner: WRITER · Consumer: UI (→ strings.xml) · Language: en
 
 **Rules**
@@ -201,3 +201,17 @@ Each guide: intro + steps. All end with `oem.menus_differ`.
 ## 10. Privacy blurb (README/store reuse for GROWTH)
 
 - `privacy.blurb` — Jixxy has no internet permission, no analytics, no ads and no accounts. It reads only the name of the app you have open and how long you've had it open. It doesn't read messages, screens, or anything you type, and it never uses your camera, microphone, location or contacts. Everything it logs stays on your phone, and you can clear it any time.
+
+---
+
+## 11. Additions (v0.2, requested by UI)
+Placeholder order is stable: in any line with repeated placeholders, fill them in the order they appear.
+
+- `onboarding.notifications.granted` — Done. I'll show up in your notification shade.
+- `onboarding.keepalive.done` — Noted. That should help keep me running.
+- `onboarding.restricted.cta_open_app_info` — Open Jixxy's app info
+- `onboarding.finish.title` — All set
+- `onboarding.finish.body` — That's everything. I only read the name of the app that's open, and nothing leaves your phone. You can change any of this in Settings.
+- `onboarding.roast.sample_app` — that app
+- `common.continue` — Continue
+- `common.back` — Back
