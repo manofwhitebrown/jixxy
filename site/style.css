@@ -97,3 +97,10 @@ summary { cursor: pointer; font-weight: 600; min-height: 32px; }
 details p { margin: 8px 0 0; color: var(--muted); }
 
 .foot { color: var(--muted); font-size: 0.85rem; padding-bottom: 48px; }
+
+.who { font-size: 0.85rem; color: var(--muted); margin: 0 0 14px; }
+.duo { display: grid; gap: 14px; margin: 0; }
+.duo .card { margin: 0; }
+.duo .quote { margin: 0 0 8px; }
+.duo .who { margin: 0; }
+@media (min-width: 640px) { .duo { grid-template-columns: 1fr 1fr; } }

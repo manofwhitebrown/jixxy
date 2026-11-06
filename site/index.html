@@ -46,16 +46,31 @@
   <section class="wrap" aria-labelledby="pause">
     <h2 id="pause">The Pause</h2>
     <p>You choose the apps and how roasty he is. When you open one, a short card appears:</p>
-    <div class="card" aria-live="polite">
-      <p class="quote" id="line">"Third night on Instagram at 2am. I'm starting a spreadsheet."</p>
+    <div class="card">
+      <p class="quote" id="line">&ldquo;Leave now, or I start rating the thumbnails.&rdquo;</p>
+      <p class="who">Jixxy</p>
       <div class="choices"><span class="chip">Leave</span><span class="chip ghost">Stay 5 more minutes</span></div>
     </div>
-    <p class="fine">Example line, placeholder until the final line bank is ready. App names are neutral examples; Jixxy isn't affiliated with any app.</p>
+    <p class="fine">Lines are written by hand. In the app, they name the app you opened and how long you've been in it. Apps are neutral examples; Jixxy isn't affiliated with any app or brand.</p>
     <ul class="points">
       <li><strong>You're always in control.</strong> Leave works instantly. Stay unlocks after a few seconds.</li>
       <li><strong>He jokes about the situation, not about you.</strong> Late at night he gets softer.</li>
       <li><strong>No guilt mechanics.</strong> No lost streaks, no punishment for being away, one tap to nap him.</li>
     </ul>
+  </section>
+
+  <section class="wrap" aria-labelledby="voice">
+    <h2 id="voice">How he talks</h2>
+    <div class="duo">
+      <figure class="card">
+        <blockquote class="quote">&ldquo;The world's gone quiet. Take your time.&rdquo;</blockquote>
+        <figcaption class="who">Jixxy, softer when it's late</figcaption>
+      </figure>
+      <figure class="card">
+        <blockquote class="quote">&ldquo;Left on the first try. That was genuinely good.&rdquo;</blockquote>
+        <figcaption class="who">Jixxy, rarely, and he means it</figcaption>
+      </figure>
+    </div>
   </section>
 
   <section class="wrap" aria-labelledby="weekly">
@@ -84,16 +99,18 @@
 </footer>
 
 <script>
-// Tiny optional enhancement: rotate placeholder lines. Safe to remove.
+// Tiny optional enhancement: rotate Pause-card lines. Safe to remove; the first line is already in the HTML.
+// Lines are WRITER's marketing-safe set (content/gold_lines.md). Do not edit them here.
 (function () {
   if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var lines = [
-    "\u201CThird night on Instagram at 2am. I\u2019m starting a spreadsheet.\u201D"
-    // TODO(T-GROWTH-2): add gold lines once WRITER pushes content/gold_lines.md
+    "\u201CLeave now, or I start rating the thumbnails.\u201D",
+    "\u201CPause: will this still sound good tomorrow?\u201D",
+    "\u201CLeave, or I start pricing snacks for me instead.\u201D"
   ];
   var el = document.getElementById('line'), i = 0;
-  if (!el || lines.length < 2) return;
-  setInterval(function () { i = (i + 1) % lines.length; el.textContent = lines[i]; }, 5000);
+  if (!el) return;
+  setInterval(function () { i = (i + 1) % lines.length; el.textContent = lines[i]; }, 6000);
 })();
 </script>
 </body>
