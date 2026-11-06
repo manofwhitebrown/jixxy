@@ -11,3 +11,12 @@ dependencies {
     testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)
 }
+
+// Validates the line bank (ids, length, slots, banned topics). Run: ./gradlew :engine:validateLines
+tasks.register<JavaExec>("validateLines") {
+    group = "verification"
+    description = "Validates app/src/main/assets/lines/** against the content rules."
+    classpath = project.extensions.getByType(org.gradle.api.tasks.SourceSetContainer::class.java)["main"].runtimeClasspath
+    mainClass.set("app.jixxy.engine.tools.ValidateLinesKt")
+    args(rootProject.file("app/src/main/assets/lines").absolutePath, "--coverage")
+}

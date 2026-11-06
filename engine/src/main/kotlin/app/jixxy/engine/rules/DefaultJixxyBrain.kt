@@ -236,7 +236,11 @@ class DefaultJixxyBrain(
 
     private fun onPauseChoice(sig: Signal.PauseChoice, s: UserSettings, now: Long): List<Reaction> {
         val pkg = sig.pkg
-        val slots = mapOf("app" to appLabel(pkg), "count" to (pauseCount[pkg] ?: 0).toString())
+        val slots = mapOf(
+            "app" to appLabel(pkg),
+            "count" to (pauseCount[pkg] ?: 0).toString(),
+            "minutes" to (dailyMinutes[pkg] ?: 0).toString()
+        )
         return when (sig.choice) {
             PauseChoiceKind.STAY -> {
                 val until = now + BrainConfig.stayGraceMinutes * 60_000L
