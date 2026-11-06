@@ -18,9 +18,33 @@ android {
         versionName = "0.0.1"
     }
 
+    signingConfigs {
+        // Throwaway debug key committed on purpose (DEVOPS request): CI builds update in place.
+        getByName("debug") {
+            storeFile = file("debug.keystore")
+            storePassword = "android"
+            keyAlias = "jixxydebug"
+            keyPassword = "android"
+        }
+        // Release key only exists when the Owner has set these env vars / GitHub secrets.
+        val keystoreB64 = System.getenv("JIXXY_KEYSTORE_B64")
+        if (!keystoreB64.isNullOrBlank()) {
+            create("release") {
+                val f = layout.buildDirectory.file("release.keystore").get().asFile
+                f.parentFile.mkdirs()
+                f.writeBytes(java.util.Base64.getDecoder().decode(keystoreB64.trim()))
+                storeFile = f
+                storePassword = System.getenv("JIXXY_KEYSTORE_PASSWORD")
+                keyAlias = System.getenv("JIXXY_KEY_ALIAS")
+                keyPassword = System.getenv("JIXXY_KEY_PASSWORD")
+            }
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
+            signingConfig = signingConfigs.findByName("release") ?: signingConfigs.getByName("debug")
         }
     }
 
@@ -41,5 +65,11 @@ dependencies {
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.lifecycle.runtime.compose)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.kotlinx.coroutines.core)
+    debugImplementation(libs.androidx.compose.ui.tooling)
     testImplementation(libs.junit)
 }

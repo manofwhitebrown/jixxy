@@ -13,3 +13,6 @@ build/
 .DS_Store
 .kotlin/
 captures/
+
+# Dedicated throwaway debug key requested by DEVOPS (no value beyond testing)
+!app/debug.keystore

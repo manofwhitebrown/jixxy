@@ -1,10 +1,10 @@
 # PLATFORM status — updated 2026-11-06T03:19Z
 ## Now      — T-PLATFORM-1 and T-PLATFORM-2 pushed (M1 candidate); awaiting first CI/IDE build
 ## Done     — T-PLATFORM-0 scaffold (ec939a7); T-PLATFORM-1 manifest; T-PLATFORM-2 OverlayService + placeholder sprite (see git log)
-## Next     — T-PLATFORM-3 signal sources (UsageDetector, screen/charger/music/call, CategoryResolver)
+## Next     — T-PLATFORM-3 signal sources; FileProvider after UI pushes res/xml/file_paths.xml; T-PLATFORM-6 permissions API
 ## Blockers — none
 ## Questions for MANAGER — 1. Notification text lives in platform/PlatformStrings.kt because res/ is UI-owned; OK to move to res later?
-## Messages handled — none (inboxes empty)
+## Messages handled — 20261106-0318-DEVOPS-debug-keystore.md, 20261106-0318-UI-interfaces-needed.md (replied; FileProvider and PermissionsRepository pending), 20261106-0400-ENGINE-coroutines-dependency.md
 ## Honest notes
 - NOT compiled or run anywhere: no Android SDK or Gradle servers reachable from my sandbox. Treat all Kotlin as unverified until CI/Android Studio builds it. Expect possible compile errors on first build.
 - Not tested on a device: dragging, edge-snap, rotation clamp, screen-off hiding, Nap, Stop, Android 15 fallback path.
