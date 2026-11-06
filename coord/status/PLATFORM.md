@@ -36,3 +36,11 @@ Expected: cat visible after every Wake. Tell me in plain words which step fails.
 - PauseWindow hosts CHARACTER's PauseCardView (300 dp wide, centred, wrap-content). Null/blank text shows "Quick pause?". Leave still calls goHome(): UNVERIFIED on Android 14/15.
 - Manifest icon + roundIcon set; notification uses R.drawable.ic_stat_jixxy. Messages handled: 20261106-0907-UI-icon-resources.md
 - MANUAL TEST: (1) launcher icon is the Jixxy icon, not the Android robot; (2) pull down the notification shade: small icon is the cat silhouette, buttons Nap 1h / Wake / Stop; (3) choose Instagram as a Pause app, open it, wait: a card with a peeking cat, Leave and a Stay countdown appears; Leave -> home screen; Stay -> card closes.
+
+## T-P2-4 (2026-11-06, later) — sprite hosting review
+- Reviewed OverlayService against CHARACTER's handoff: `params` is still the object passed to addView (CHARACTER's bubble shift depends on it); WRAP_CONTENT window; drag clamps to screen; PEEK/CHARGING/LOW_BATTERY pass through Dispatcher -> setCharacterState unchanged (no `when` in platform code).
+- Fix: sprite remembers which edge it snapped to (`snappedRight`, saved in prefs) and stays on that edge after rotation. Before, a right-edge sprite could end up mid-screen after portrait<->landscape.
+- NOT tested on a device. MANUAL TEST: drag cat to the right edge, rotate phone -> cat stays on right edge, same for left. Then trigger a bubble with the cat on left edge, right edge, and near top: bubble must stay fully on screen and the cat must not jump.
+- Still UNVERIFIED (device only): Leave -> home from a service on Android 14/15; reboot auto-return on Android 15.
+- GROWTH <queries> note: kept as is; the app picker needs the launchable-app list. PRIVACY.md wording (launcher query) is accurate.
+Messages handled (later): 20261106-0914-CHARACTER-bubble-and-pausecard-ready.md, 20261106-1300-GROWTH-queries-visibility.md

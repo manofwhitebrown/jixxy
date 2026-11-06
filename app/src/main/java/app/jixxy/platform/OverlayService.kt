@@ -68,6 +68,7 @@ class OverlayService : Service(), ReactionRenderer {
     private var settings = UserSettings()
     private var napping = false
     private var screenOn = true
+    private var snappedRight = false
 
     private val screenReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
@@ -172,7 +173,8 @@ class OverlayService : Service(), ReactionRenderer {
         super.onConfigurationChanged(newConfig)
         // Rotation: clamp the saved position into the new screen bounds.
         val view = sprite ?: return
-        params.x = params.x.coerceIn(0, maxX(view))
+        // Keep the snapped side: a sprite on the right edge must stay on the right edge after rotating.
+        params.x = if (snappedRight) maxX(view) else params.x.coerceIn(0, maxX(view))
         params.y = params.y.coerceIn(0, maxY(view))
         windowManager.updateViewLayout(view, params)
     }
@@ -239,6 +241,7 @@ class OverlayService : Service(), ReactionRenderer {
             x = prefs.getInt(KEY_X, 0)
             y = prefs.getInt(KEY_Y, resources.displayMetrics.heightPixels / 3)
         }
+        snappedRight = prefs.getBoolean(KEY_RIGHT, false)
         view.listener = spriteListener(view, prefs)
         windowManager.addView(view, params)
         sprite = view
@@ -257,9 +260,10 @@ class OverlayService : Service(), ReactionRenderer {
 
         override fun onDragEnd(rawX: Float, rawY: Float) {
             onDragMove(rawX, rawY)
-            params.x = if (params.x < maxX(view) / 2) 0 else maxX(view)
+            snappedRight = params.x >= maxX(view) / 2
+            params.x = if (snappedRight) maxX(view) else 0
             windowManager.updateViewLayout(view, params)
-            prefs.edit().putInt(KEY_X, params.x).putInt(KEY_Y, params.y).apply()
+            prefs.edit().putInt(KEY_X, params.x).putInt(KEY_Y, params.y).putBoolean(KEY_RIGHT, snappedRight).apply()
             app.bus.emit(Signal.SpriteDropped(System.currentTimeMillis()))
         }
 
@@ -346,6 +350,7 @@ class OverlayService : Service(), ReactionRenderer {
         private const val PREFS = "platform_overlay"
         private const val KEY_X = "x"
         private const val KEY_Y = "y"
+        private const val KEY_RIGHT = "snapped_right"
         private const val KEY_WANTED = "wanted_running"
 
         /** Explicit user wake: starts the service (if needed) and clears any nap. Use this everywhere the user wakes him. */
