@@ -20,7 +20,7 @@ Use as text on a plain card, or as a story/status caption. Each stands alone wit
 ## Not used here, on purpose
 
 - The late-night lines ("Quiet hour. I'll keep the screen company.", "The world's gone quiet. Take your time.", "Hey. It's late. Small thing: I'm glad you're here.") are only for quiet, soft visuals, never for jokes or targeting. See script 5's optional ending.
-- Two further praise lines ("Left on the first try. That was genuinely good." and "That was a real choice. Respect.") are saved so "rare praise" stays rare. The first is used in script 5.
+- Two further praise lines ("Left without a fight. That was genuinely good." and "That was a real choice. Respect.") are saved so "rare praise" stays rare. The first is used in script 5.
 - Slot lines (with the app name or minutes) aren't used out of context.
 
 ## Posting notes

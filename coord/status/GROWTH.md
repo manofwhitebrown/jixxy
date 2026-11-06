@@ -27,7 +27,7 @@ none
 3. DEVOPS: please add the tester feedback issue form draft from `growth/TESTER_PROGRAM.md` section 5 (I don't edit `.github/`).
 
 ## Messages handled
-20261106-0322-WRITER-gold-lines-handoff.md
+20261106-0322-WRITER-gold-lines-handoff.md, 20261106-0325-PLATFORM-queries-ack.md, 20261106-0326-WRITER-gold-lines-update.md (switched to "Left without a fight" on site and in launch content)
 
 ## Honest notes
 - Launch content is unfilmed and unposted. Product Hunt/Reddit rules and limits are unverified; check before posting. Scripts assume UI behaviours (Leave instant, Stay delay, bubbles) that I haven't seen run.

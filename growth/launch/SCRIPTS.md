@@ -47,7 +47,7 @@ Jixxy's lines below are quoted unedited from `content/gold_lines.md` (marketing-
 
 - **0 to 2 s (hook):** Text: "He almost never compliments you."
 - **2 to 8 s:** Open a chosen app, pause card appears, tap **Leave** right away.
-- **8 to 14 s:** Bubble: "Left on the first try. That was genuinely good."
+- **8 to 14 s:** Bubble: "Left without a fight. That was genuinely good."
 - **14 to 20 s:** Text: "Rare. Earned. He means it." End card.
 - **Optional soft ending (quiet visual only):** dim, calm screen with the line "The world's gone quiet. Take your time." No voice-over, no joke about sleep or being up late, no targeting.
 - **Why:** shows he rewards your choices instead of guilting you.
