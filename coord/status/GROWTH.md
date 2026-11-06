@@ -18,6 +18,7 @@ T-G2-1 README + CHANGELOG, then T-G2-2 `growth/BRAND.md`, then T-G2-3 text-first
 Wave-2 list T-G2-0..7 delivered. Waiting on Owner art, Pages enabling and a release containing the nap fix.
 
 ## Done (Wave 2)
+- Owner-approved cross-lane unblock: fixed two parsing bugs in DEVOPS scripts (apk_cert.sh b801214, check_apk_cert.sh ae3979f); CI on main green afterwards (run 42194034786). DEVOPS to review.
 - Site: cat hero + 8-expression strip from D-013 crops, 57 KB (525c887)
 - T-G2-0 takeover audit (2ee6c46)
 - T-G2-1 README + CHANGELOG (e07ddad)
