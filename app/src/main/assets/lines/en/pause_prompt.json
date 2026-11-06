@@ -1,0 +1,1341 @@
+[
+  {
+    "id": "pause_prompt_social_001",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "That's {minutes} minutes on {app} today. Just saying it out loud.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_social_002",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} again. Quick pause, then it's all yours.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_social_003",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{minutes} minutes on {app}. I'm starting a spreadsheet.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_social_004",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Back on {app}? Leave, or I'll narrate your scrolling.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_social_005",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "I've drafted a formal complaint on behalf of your thumb. {minutes} minutes on {app}.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_social_006",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{app}! Bold. I'll hold your place in real life, gremlin.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_video_001",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{minutes} minutes of video today. Leave, or I'll make popcorn.",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_video_002",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Ooh, {app}. Quick pause before the next one autoplays.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_video_003",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Autoplay has entered the chat. {minutes} minutes so far on {app}.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_video_004",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Leave now, or I start rating the thumbnails.",
+    "slots": [],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_video_005",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{app} again. The algorithm sends its regards, and an invoice.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_video_006",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Plot twist: you could leave. {minutes} minutes on {app}. I'll wait, goblin.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_game_001",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Big {app} energy. Pause first, then conquer.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_game_002",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Round done? {minutes} minutes in {app} so far. One more, or call it?",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_game_003",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "One more match, they say. {minutes} minutes later, still {app}.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_game_004",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app}? I'll be here. Judging your aim. Fondly.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_game_005",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{app} again. The leaderboard doesn't know you, but I do, menace.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_game_006",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{minutes} minutes in {app}. Even the final boss wants a break.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_messaging_001",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Quick pause before {app}. Say hi to everyone for me.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_messaging_002",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "A gentle nudge: {minutes} minutes on {app} today.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_messaging_003",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} opens. My nap waits, as always.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_messaging_004",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{minutes} minutes in {app}. That's a lot of 'typing...'.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_messaging_005",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{app}! Please tell everyone I'm busy napping. Dramatically.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_messaging_006",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Your thumbs are working overtime on {app}, {minutes} minutes in, gremlin.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_shopping_001",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} again. Quick pause before the cart gets ideas.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_shopping_002",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Pause: will this still sound good tomorrow?",
+    "slots": [],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_shopping_003",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{minutes} minutes on {app}. The cart is giving puppy eyes.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_shopping_004",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Leave, or I start pricing snacks for me instead.",
+    "slots": [],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_shopping_005",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Your cart has more friends than I do, dummy. {app} again?",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_shopping_006",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Add 'snacks for Jixxy' to the cart. {minutes} minutes on {app}, for balance.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_other_001",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "OTHER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} is open. Leave, or stay a little. Your call.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_other_002",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "OTHER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Hello, {app}. {minutes} minutes today. Just a number, no verdict.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_other_003",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "OTHER"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "The spreadsheet is feeling hungry. {minutes} minutes on {app}.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_other_004",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "OTHER"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Leave? I'll keep your seat warm. {app} will survive.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_other_005",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "OTHER"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{app} AGAIN? Theatre of the absurd, starring you and {minutes} minutes.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_other_006",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "OTHER"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{minutes} minutes on {app}. I've started naming the minutes. This one's Gary.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_social_007",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Scroll check: {minutes} minutes on {app}. Still fun?",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_social_008",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Another {app} session. I'll bring snacks, you bring a reason.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_social_009",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Feed number who-knows. {minutes} minutes on {app}. Leave?",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_social_010",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Thumb status: exhausted. {app} status: thriving, {minutes} minutes in.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_video_007",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Episode check: {minutes} minutes on {app} so far.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_video_008",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Just one more clip, right? {app} says hello.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_video_009",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Buffering my patience. {minutes} minutes on {app}.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_video_010",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Streaming gods demand tribute. {minutes} minutes on {app}, goblin.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_game_007",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Respawn or retire? {app} is waiting.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_game_008",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Quest log says {minutes} minutes. Leave, or I start a side quest.",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_game_009",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Save point reached. Leave now, or grind on.",
+    "slots": [],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_game_010",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Achievement unlocked: {minutes} minutes of {app}. Claim your nap, gremlin.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_messaging_007",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Group chats don't expire. {app} can wait a breath.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_messaging_008",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Chats are forever; thumbs are not. {minutes} minutes on {app}.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_messaging_009",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Pause before {app}. The reply will taste better in a minute.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_messaging_010",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Please tell the sofa I'm napping. Meanwhile, {app}, menace.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_shopping_007",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Window shopping on {app}? Lovely window. Pause anyway.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_shopping_008",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} says it's 'almost gone'. Everything is almost gone.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_shopping_009",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Sale sign detected. Gently pausing before {app}.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_shopping_010",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Cart, meet reality. Reality, meet {minutes} minutes of {app}, goblin.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_other_007",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "OTHER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Heads-up: {minutes} minutes on {app} today.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_other_008",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "OTHER"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} opens, my eyebrow rises. Standard procedure.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_other_009",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "OTHER"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Tiny pause. Giant dramatic sigh. {app}.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_other_010",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "OTHER"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Breaking news: {app} again. Experts say leave, menace.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  }
+]

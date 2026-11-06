@@ -1,0 +1,182 @@
+[
+  {
+    "id": "music_any_001",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Music! Good. I'm tapping my foot.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "music_any_002",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Tune on. I'll bob gently.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "music_any_003",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Good song? I'm vibing quietly.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "music_any_004",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Soundtrack time. I approve.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "music_any_005",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Sweet beats. I'm a nodder.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "music_any_006",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Music's on. I'm a tiny dancer.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "music_any_007",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Volume up, mood up. Fine by me.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "music_any_008",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "A tune. My day improves.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "music_any_009",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Playlist magic. Carry on.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "music_any_010",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Headphones on? Respect. I'll hum solo.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
+  }
+]

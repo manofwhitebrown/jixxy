@@ -1,0 +1,456 @@
+[
+  {
+    "id": "pause_leave_any_001",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Left. Efficient. I'm updating the spreadsheet, nicely.",
+    "slots": [],
+    "tags": [
+      "pause_leave"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_002",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Good call. Now I can nap in peace.",
+    "slots": [],
+    "tags": [
+      "pause_leave"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_003",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Nice. We both got five minutes back.",
+    "slots": [],
+    "tags": [
+      "pause_leave"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_004",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "And just like that, we're free. Snack?",
+    "slots": [],
+    "tags": [
+      "pause_leave"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_005",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Look at you, leaving on purpose.",
+    "slots": [],
+    "tags": [
+      "pause_leave"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_006",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Respect. That was smooth.",
+    "slots": [],
+    "tags": [
+      "pause_leave"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_007",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Off you go. I'll guard the sofa.",
+    "slots": [],
+    "tags": [
+      "pause_leave"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_008",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Out after {minutes} minutes. Neat.",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "pause_leave"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_009",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Left. See? Nothing exploded.",
+    "slots": [],
+    "tags": [
+      "pause_leave"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_010",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Walked away like a pro.",
+    "slots": [],
+    "tags": [
+      "pause_leave"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_011",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "That's the one. Nicely done.",
+    "slots": [],
+    "tags": [
+      "pause_leave"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_012",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "And we're out. Smooth as anything.",
+    "slots": [],
+    "tags": [
+      "pause_leave"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_013",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Gone. I barely had time to roast.",
+    "slots": [],
+    "tags": [
+      "pause_leave"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_014",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Good. Now we both get to do nothing.",
+    "slots": [],
+    "tags": [
+      "pause_leave"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_015",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Left. I'll note it under 'bravery'.",
+    "slots": [],
+    "tags": [
+      "pause_leave"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_016",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Exit complete. I'm mildly thrilled.",
+    "slots": [],
+    "tags": [
+      "pause_leave"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_017",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Free time, restored. Lovely.",
+    "slots": [],
+    "tags": [
+      "pause_leave"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_018",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Out in {minutes} minutes. Not bad.",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "pause_leave"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_019",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Well, that was graceful.",
+    "slots": [],
+    "tags": [
+      "pause_leave"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_020",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Okay, show-off. Nicely done.",
+    "slots": [],
+    "tags": [
+      "pause_leave"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_021",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I'll allow myself one tiny cheer.",
+    "slots": [],
+    "tags": [
+      "pause_leave"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_022",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "You found the exit. Lovely.",
+    "slots": [],
+    "tags": [
+      "pause_leave"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_023",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Done. The sofa awaits us both.",
+    "slots": [],
+    "tags": [
+      "pause_leave"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_024",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Nice exit. I'd clap, but effort.",
+    "slots": [],
+    "tags": [
+      "pause_leave"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_025",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Back to real life. Pleasant place.",
+    "slots": [],
+    "tags": [
+      "pause_leave"
+    ],
+    "almostCaring": false
+  }
+]

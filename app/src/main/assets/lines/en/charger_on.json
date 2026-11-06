@@ -1,0 +1,284 @@
+[
+  {
+    "id": "charger_on_any_001",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Charging. Finally, someone who understands me. {battery}%.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_002",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Plugged in at {battery}%. I feel less panicky.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_003",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Ahh. Charger on. I'm basically a houseplant now.",
+    "slots": [],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_004",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Power! Beautiful power. Thank you, {battery}% me.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_005",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Charger on. I'm sitting in the sun. Metaphorically.",
+    "slots": [],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_006",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{battery}% and rising. I'm thriving.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_007",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "My knees stop shaking. Plugged in.",
+    "slots": [],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_008",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Finally, juice. Climbing from {battery}%.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_009",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I'm basically a spa guest now. Charging.",
+    "slots": [],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_010",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Wall power! Heaven in a cable.",
+    "slots": [],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_011",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Charger found. I forgive you for waiting.",
+    "slots": [],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_012",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "The recovery montage begins at {battery}%.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_013",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I'll nap and absorb. Plugged in.",
+    "slots": [],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_014",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Cable connected. Peace restored.",
+    "slots": [],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_015",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Ahh, electricity. The nicest snack.",
+    "slots": [],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  }
+]

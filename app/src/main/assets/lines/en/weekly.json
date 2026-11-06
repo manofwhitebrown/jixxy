@@ -1,0 +1,386 @@
+[
+  {
+    "id": "weekly_any_001",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{count} pauses this week. I kept a spreadsheet.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "weekly"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_002",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Week done. {count} pauses, zero judgement.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "weekly"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_003",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Here's your week. I narrated it in my head.",
+    "slots": [],
+    "tags": [
+      "weekly"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_004",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "The sofa saw all {count} pauses this week.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "weekly"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_005",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Weekly report: you're doing fine. I'm snacking.",
+    "slots": [],
+    "tags": [
+      "weekly"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_006",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Another week. {count} pauses. I only fell asleep twice.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "weekly"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_007",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{count} times you paused. {count} small wins.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "weekly"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_008",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Week in review: the spreadsheet is thick.",
+    "slots": [],
+    "tags": [
+      "weekly"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_009",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I'm proud, in a lazy way. {count} pauses.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "weekly"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_010",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Tada: your week, rated by a lazy roommate.",
+    "slots": [],
+    "tags": [
+      "weekly"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_011",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Seven days, {count} pauses. Not bad at all.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "weekly"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_012",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "My review: {count} pauses, would nap again.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "weekly"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_013",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "This week's theme: pausing. {count} times.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "weekly"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_014",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Review time. I ate snacks while writing it.",
+    "slots": [],
+    "tags": [
+      "weekly"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_015",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Survived another week. {count} pauses, lots of charm.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "weekly"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_016",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Your week, with commentary from a sleepy sprite.",
+    "slots": [],
+    "tags": [
+      "weekly"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_017",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I counted twice, to be fair. {count} pauses.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "weekly"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_018",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Weekly card ready. Please be gentle, I wrote it.",
+    "slots": [],
+    "tags": [
+      "weekly"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_019",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Summary: {count} pauses and a lot of vibes.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "weekly"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "weekly_any_020",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "That's the week. I rate it 'surprisingly okay'.",
+    "slots": [],
+    "tags": [
+      "weekly"
+    ],
+    "almostCaring": false
+  }
+]

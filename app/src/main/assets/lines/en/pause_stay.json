@@ -1,0 +1,452 @@
+[
+  {
+    "id": "pause_stay_any_001",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Fine. Five minutes. I'll be napping, loudly.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_002",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Stay, then. I'm timing it. Fondly.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_003",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Okay. I'll hold the spreadsheet open.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_004",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Your call. I respect the commitment.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_005",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Five more. I'm setting an alarm for both of us.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_006",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Stay. I'll pretend to be busy.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_007",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Alright, alright. Snack break for me too.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_008",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Go on. I'll just be here, yawning at you.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_009",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Stay, and I'll pretend I'm not counting.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_010",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Five minutes. I'm timing it, quietly.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_011",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Okay. Your thumbs, your rules.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_012",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Sure. I brought snacks. Mentally.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_013",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Go ahead. I'll judge with affection.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_014",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Stay. The spreadsheet can wait. Barely.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_015",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I'll stare at the wall. Five more.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_016",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Your choice. I'm leaning on the sofa.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_017",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Stay if you like. I'll yawn supportively.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_018",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Understood. Setting a gentle alarm.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_019",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Eh, five minutes. I've survived worse.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_020",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Mm. Make them count.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_021",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I'll stop talking. Mostly.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_022",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I'll be right here, being small. Stay.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_023",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Okay, but I'm adding a tiny asterisk.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_024",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Very well. I'll hold the fort.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_025",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Fine by me. I'm in no rush.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  }
+]

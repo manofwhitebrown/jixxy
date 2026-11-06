@@ -1,0 +1,186 @@
+[
+  {
+    "id": "impressed_any_001",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Left on the first try. That was genuinely good.",
+    "slots": [],
+    "tags": [
+      "impressed"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "impressed_any_002",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "That's {count} Leaves this week. I noticed.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "impressed"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "impressed_any_003",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Okay. I'm impressed. Don't let it go to your head.",
+    "slots": [],
+    "tags": [
+      "impressed"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "impressed_any_004",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "No joke. That was disciplined, and I'm a lazy expert.",
+    "slots": [],
+    "tags": [
+      "impressed"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "impressed_any_005",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "That was a real choice. Respect.",
+    "slots": [],
+    "tags": [
+      "impressed"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "impressed_any_006",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "You walked away from {app}. Quietly proud over here.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "impressed"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "impressed_any_007",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "You stayed away. That's real strength.",
+    "slots": [],
+    "tags": [
+      "impressed"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "impressed_any_008",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Quiet applause. Very quiet. I'm tired.",
+    "slots": [],
+    "tags": [
+      "impressed"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "impressed_any_009",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Left again? Okay, I'm paying attention.",
+    "slots": [],
+    "tags": [
+      "impressed"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "impressed_any_010",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Elegant. I'm rarely impressed.",
+    "slots": [],
+    "tags": [
+      "impressed"
+    ],
+    "almostCaring": false
+  }
+]

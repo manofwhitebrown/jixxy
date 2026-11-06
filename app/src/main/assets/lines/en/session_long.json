@@ -1,0 +1,617 @@
+[
+  {
+    "id": "session_long_any_001",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{minutes} minutes on {app}. Stretch break?",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_002",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Still on {app}? {minutes} minutes in. Just noting.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_003",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "My eyes got tired for you. {minutes} minutes straight.",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_004",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Long session. Wiggle your toes, I dare you.",
+    "slots": [],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_005",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "The sofa misses us. {minutes} minutes in.",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_006",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Quick stretch? {app} will still be there.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_007",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Marathon mode: {minutes} minutes of {app}.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_008",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Only mentioning it kindly: {minutes} minutes.",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_009",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Time check: {minutes} minutes on {app}.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_010",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} marathon: {minutes} minutes and counting.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_011",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "You and {app} are really hitting it off.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_012",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Should I get snacks for the occasion? {minutes} minutes in.",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_013",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Long {app} session. I'm declaring it an event.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_014",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I've started a tab called 'thumb marathon'. {minutes} minutes.",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_015",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Still here, still {app}. I admire the stamina.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_016",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I've nearly finished my nap. {minutes} minutes of {app}.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_017",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} has had you {minutes} minutes. Jealous? A bit.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_018",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I've booked you a medal. {minutes} minutes of {app}.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_019",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "We could've built a pillow fort in {minutes} minutes of {app}.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_020",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I've named a constellation after your thumb. {minutes} minutes!",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_021",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "At {minutes} minutes, {app} is basically family, goblin.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_022",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Joint petition, filed with the sofa, dummy. {minutes} minutes.",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_023",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{app} for {minutes} minutes. Where's my finish-line snack, gremlin?",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_024",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "I've ordered you a tiny trophy, menace. {minutes} minutes on {app}.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_025",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "The spreadsheet has new columns, gremlin. {minutes} minutes!",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_026",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "A long stretch on {app}. {minutes} minutes, to be exact.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_027",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Your sofa spot is cold. {minutes} minutes on {app}.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_028",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Fun fact: {minutes} minutes on {app}. Not judging.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_029",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Reminder from your roommate: {minutes} minutes on {app}.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_030",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "A lot of minutes, that. {minutes} on {app}.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  }
+]

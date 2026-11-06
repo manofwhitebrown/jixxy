@@ -1,0 +1,182 @@
+[
+  {
+    "id": "nap_any_001",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Napping. Wake me for snacks or emergencies. Snacks first.",
+    "slots": [],
+    "tags": [
+      "nap"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "nap_any_002",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Nap time. I'll be dreaming of snacks.",
+    "slots": [],
+    "tags": [
+      "nap"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "nap_any_003",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Zzz mode on. Wake me for emergencies.",
+    "slots": [],
+    "tags": [
+      "nap"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "nap_any_004",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Going quiet. Don't mind me.",
+    "slots": [],
+    "tags": [
+      "nap"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "nap_any_005",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Closing my eyes. Back soon.",
+    "slots": [],
+    "tags": [
+      "nap"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "nap_any_006",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Nap accepted. Cozy.",
+    "slots": [],
+    "tags": [
+      "nap"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "nap_any_007",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Night-night, briefly.",
+    "slots": [],
+    "tags": [
+      "nap"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "nap_any_008",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I'll be asleep. Poke gently.",
+    "slots": [],
+    "tags": [
+      "nap"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "nap_any_009",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Sofa calls. See you soon.",
+    "slots": [],
+    "tags": [
+      "nap"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "nap_any_010",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Napping. Bring snacks later.",
+    "slots": [],
+    "tags": [
+      "nap"
+    ],
+    "almostCaring": false
+  }
+]

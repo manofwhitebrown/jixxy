@@ -1,0 +1,298 @@
+[
+  {
+    "id": "battery_low_any_001",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{battery}%. I'm not scared. I'm dramatically concerned.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "battery_low_any_002",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{battery}% left. Find a charger or I start negotiating with the screen.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "battery_low_any_003",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{battery}%! Please. A charger. I'll owe you a snack.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "battery_low_any_004",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Battery at {battery}%. We're close to the dark, my friend.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "battery_low_any_005",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{battery}%. Time to ration my sarcasm.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "battery_low_any_006",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I'm being very brave about {battery}%.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "battery_low_any_007",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Battery's low. My dramatic side wakes up.",
+    "slots": [],
+    "tags": [
+      "battery_low"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "battery_low_any_008",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Let's find a charger together. {battery}% left.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "battery_low_any_009",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Running on fumes: {battery}%.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "battery_low_any_010",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I'd like to talk to a charger. {battery}%.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "battery_low_any_011",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Low battery. Fewer jokes, more pleas.",
+    "slots": [],
+    "tags": [
+      "battery_low"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "battery_low_any_012",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Snack-level emergency at {battery}%!",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "battery_low_any_013",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "At {battery}%, I'm on dramatic mode.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "battery_low_any_014",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Power's slipping: {battery}%. Plug me in?",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "battery_low_any_015",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I'm conserving my wit. {battery}% left.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low"
+    ],
+    "almostCaring": false
+  }
+]

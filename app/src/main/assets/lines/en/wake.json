@@ -1,0 +1,182 @@
+[
+  {
+    "id": "wake_any_001",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Mmm. I'm up. Mostly. Hi.",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "wake_any_002",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Back. Did I miss anything? Please say no.",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "wake_any_003",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I'm back. Miss me? Don't answer.",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "wake_any_004",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Awake. Slightly regretting it.",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "wake_any_005",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Hello again. Anything exciting?",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "wake_any_006",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Up. Fluffy. Ready.",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "wake_any_007",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Morning-ish. Hi.",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "wake_any_008",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Woke up. Snack first.",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "wake_any_009",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Refreshed. Mostly.",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "wake_any_010",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Back online. Tiny stretch.",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
+  }
+]

@@ -1,0 +1,182 @@
+[
+  {
+    "id": "welcome_any_001",
+    "trigger": "WELCOME",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Hi. I'm Jixxy. I'll mostly nap. Occasionally comment.",
+    "slots": [],
+    "tags": [
+      "welcome"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "welcome_any_002",
+    "trigger": "WELCOME",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Oh good, a roommate. I call the sofa.",
+    "slots": [],
+    "tags": [
+      "welcome"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "welcome_any_003",
+    "trigger": "WELCOME",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Hello. Please be gentle. I'm very small.",
+    "slots": [],
+    "tags": [
+      "welcome"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "welcome_any_004",
+    "trigger": "WELCOME",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Hi! Tiny roommate here. Snacks accepted.",
+    "slots": [],
+    "tags": [
+      "welcome"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "welcome_any_005",
+    "trigger": "WELCOME",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Oh, hello. I live here now.",
+    "slots": [],
+    "tags": [
+      "welcome"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "welcome_any_006",
+    "trigger": "WELCOME",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Welcome. I'm Jixxy. I'm mostly asleep.",
+    "slots": [],
+    "tags": [
+      "welcome"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "welcome_any_007",
+    "trigger": "WELCOME",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "A new human. I'll call you roommate.",
+    "slots": [],
+    "tags": [
+      "welcome"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "welcome_any_008",
+    "trigger": "WELCOME",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Hello. I'll try to be useful. Try.",
+    "slots": [],
+    "tags": [
+      "welcome"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "welcome_any_009",
+    "trigger": "WELCOME",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I promise to be mostly quiet. Hi.",
+    "slots": [],
+    "tags": [
+      "welcome"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "welcome_any_010",
+    "trigger": "WELCOME",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Nice to meet you. I'm the sofa's friend.",
+    "slots": [],
+    "tags": [
+      "welcome"
+    ],
+    "almostCaring": false
+  }
+]

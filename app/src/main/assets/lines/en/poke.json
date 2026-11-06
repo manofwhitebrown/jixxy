@@ -1,0 +1,362 @@
+[
+  {
+    "id": "poke_any_001",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Hm?",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_002",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Yes? I'm busy resting.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_003",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Third poke. I'm keeping count.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_004",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I felt that. All of it.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_005",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Okay, this is becoming a pattern.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_006",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Poke me once more and I file a complaint.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_007",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Fine. I'm awake. Happy?",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_008",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 2,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "That's enough. I'm napping now. Goodnight, gremlin.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_009",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Yes? You called?",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_010",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Tap noted.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_011",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Polite knock accepted.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_012",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Okay, I'm listening.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_013",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "That tickles. Don't.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_014",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Seriously, I'm resting.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_015",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Poke count: rising. Mood: dipping.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_016",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Hey. Boundaries. Tiny ones.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_017",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I'm filing this under 'rude'.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_018",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Okay, okay, I'm up. What?",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_019",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "One more and I roll over.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_020",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Are we playing a game? I'll lose.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  }
+]

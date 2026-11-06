@@ -1,0 +1,564 @@
+[
+  {
+    "id": "late_night_any_001",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "It's {time}. No pressure. Just me, keeping you company.",
+    "slots": [
+      "time"
+    ],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_002",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Late one. I'm sleepy by proxy.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_003",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Whatever you're doing, I'm here. It's {time}.",
+    "slots": [
+      "time"
+    ],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_004",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Quiet hour. I'll keep the screen company.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_005",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "The world's gone quiet. Take your time.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_006",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{time} already. Gentle reminder that tomorrow exists.",
+    "slots": [
+      "time"
+    ],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_007",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Hey. It's late. Small thing: I'm glad you're here.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_008",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{time}. I'll dim my lights. You do you.",
+    "slots": [
+      "time"
+    ],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_009",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I'm right here. It's {time}.",
+    "slots": [
+      "time"
+    ],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_010",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Late hours are quiet. I like them.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_011",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Soft lights, soft screen. Take your time.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_012",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{time}. No lectures. Just company.",
+    "slots": [
+      "time"
+    ],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_013",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Whenever you're ready, no rush.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_014",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Night mode: me, you, and the glow.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_015",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I'll keep my comments short. It's {time}.",
+    "slots": [
+      "time"
+    ],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_016",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I'm awake too. Small team.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_017",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "You're not alone here. It's {time}.",
+    "slots": [
+      "time"
+    ],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_018",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "The night is long. We can be quiet.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_019",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Dim everything. I'll whisper.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_020",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Let's be gentle. It's {time}.",
+    "slots": [
+      "time"
+    ],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_021",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I'll just sit here, if that's okay.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_022",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Quiet company, as ordered.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_023",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Whatever the hour, you're welcome here.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_024",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{time}, and I'm not judging. At all.",
+    "slots": [
+      "time"
+    ],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_025",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Slow night. I'll hold the silence.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_026",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Take it easy. I've got the lights.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_027",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "You can stay, I'll hush. {time}.",
+    "slots": [
+      "time"
+    ],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_028",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Rest when you can. I'm nearby.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_029",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "No jokes tonight. Just hi.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_030",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Soft hour. Be kind to yourself.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  }
+]

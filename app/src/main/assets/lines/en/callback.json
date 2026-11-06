@@ -1,0 +1,413 @@
+[
+  {
+    "id": "callback_any_001",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "That's {count} Leaves this week. The spreadsheet is blushing.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "callback"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_002",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "{app} again. {count} times today. I'm adding a tab.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "callback"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_003",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "You and {app}: {count} times this week. I'm not mad, just curious.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "callback"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_004",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "{count} pauses today. I've named them all.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "callback"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_005",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "{count} times on {app} this week. I've got a tab for it.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "callback"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_006",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "Still {app}, {count} times now. I admire consistency.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "callback"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_007",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "Quietly impressive: {count} pauses today.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "callback"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_008",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "{app} count: {count}. The spreadsheet nods.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "callback"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_009",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "Back again? {count} visits to {app} today.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "callback"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_010",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "I'm updating your file: {count} pauses this week.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "callback"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_011",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "Same {app}, {count} times. We know each other now.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "callback"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_012",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "{count} Leaves so far. The sofa is proud.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "callback"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_013",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "{app} {count} times this week. I'm keeping receipts.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "callback"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_014",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "Another {app} visit today. Not judging. Counting: {count}.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "callback"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_015",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "I see you, {app}. {count} times and growing.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "callback"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_016",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "Day's tally: {count} pauses. I'm weirdly pleased.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "callback"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_017",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "Counting {count} pauses so far. The abacus is tired.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "callback"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_018",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "Look, {count} pauses. We make a decent team.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "callback"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_019",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "Pause number {count} today. Still counting.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "callback"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_020",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "I'm writing a sitcom about you and {app}: {count} visits.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "callback"
+    ],
+    "almostCaring": false
+  }
+]
