@@ -1,10 +1,10 @@
 # PLATFORM status — updated 2026-11-06T08:54Z
 ## Takeover: 2026-11-06T08:54Z
 Found: nap bug confirmed in code (Stop left napUntilTs set, Wake restarted the service, updateNap hid the sprite). Reviewed D-008 edits: `import java.util.Base64` is correct and used; the manifest comment rewording only touched comments. First actions: T-P2-1.
-## Now      — T-P2-2 launcher = ui.MainActivity (done in code); T-P2-3 real brain wired (PersistingBrain); waiting for CI
-## Done     — T-P2-7 versionCode/versionName from -P props (0f59980); T-P2-0 takeover + D-008 review; T-P2-1 fix, CI green (a68c168)
+## Now      — waiting for CHARACTER PauseCardView (T-P2-5) and UI icon assets (T-P2-6); T-P2-4 checks need a device
+## Done     — T-P2-2 launcher + T-P2-3 real brain (fe3c9ee, build/tests/lint green); T-P2-7 versionCode/versionName from -P props (0f59980); T-P2-0 takeover + D-008 review; T-P2-1 fix, CI green (a68c168)
 ## Next     — T-P2-2 launcher wiring (agree API with UI), T-P2-3 real brain, T-P2-7 versionCode from -PversionCode
-## Blockers — none
+## Blockers — CI step "Signing certificate must match" red for all commits (DEVOPS script, exit 4); PauseCardView and icon assets not pushed yet
 ## Questions for MANAGER — none
 ## T-P2-1 behaviour (decisions)
 - Wake (`OverlayService.wake(ctx)` / ACTION_WAKE, notification "Wake") clears the nap and shows the sprite. Stop clears the nap too (clean slate). A nap that expired while stopped never hides him. Blind mode does not hide the sprite.
