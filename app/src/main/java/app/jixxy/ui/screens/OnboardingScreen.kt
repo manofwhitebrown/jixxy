@@ -72,28 +72,29 @@ fun OnboardingScreen(
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             when (step) {
-                OnboardingStep.HELLO -> StepBody(R.string.ob_hello_title, R.string.ob_hello_body)
+                OnboardingStep.HELLO -> StepBody(R.string.onboarding_hello_title, R.string.onboarding_hello_body)
                 OnboardingStep.OVERLAY -> {
-                    StepBody(R.string.ob_overlay_title, R.string.ob_overlay_body)
+                    StepBody(R.string.onboarding_overlay_why_title, R.string.onboarding_overlay_why_body)
                     CantDoList()
-                    GrantRow(permissions.overlayGranted, actions.openOverlaySettings)
+                    GrantRow(permissions.overlayGranted, R.string.onboarding_overlay_granted, R.string.onboarding_overlay_cta_open, actions.openOverlaySettings)
                 }
                 OnboardingStep.USAGE -> {
-                    StepBody(R.string.ob_usage_title, R.string.ob_usage_body)
+                    StepBody(R.string.onboarding_usage_why_title, R.string.onboarding_usage_why_body)
                     CantDoList()
                     if (permissions.restrictedSettingsLikelyBlocked) RestrictedSettingsExplainer(actions.openAppInfo)
-                    GrantRow(permissions.usageAccessGranted, actions.openUsageAccessSettings)
+                    GrantRow(permissions.usageAccessGranted, R.string.onboarding_usage_granted, R.string.onboarding_usage_cta_open, actions.openUsageAccessSettings)
                 }
                 OnboardingStep.NOTIFICATIONS -> {
-                    StepBody(R.string.ob_notif_title, R.string.ob_notif_body)
-                    GrantRow(permissions.notificationsGranted, actions.requestNotifications)
+                    StepBody(R.string.onboarding_notifications_title, R.string.onboarding_notifications_body)
+                    GrantRow(permissions.notificationsGranted, R.string.onboarding_notifications_granted, R.string.onboarding_notifications_cta_allow, actions.requestNotifications)
                 }
                 OnboardingStep.KEEP_ALIVE -> {
-                    StepBody(R.string.ob_keepalive_title, R.string.ob_keepalive_body)
-                    GrantRow(permissions.batteryExempt, actions.openKeepAliveSettings)
+                    StepBody(R.string.onboarding_keepalive_title, R.string.onboarding_keepalive_body)
+                    GrantRow(permissions.batteryExempt, R.string.onboarding_keepalive_done, R.string.onboarding_keepalive_cta_open, actions.openKeepAliveSettings)
+                    Text(stringResource(R.string.onboarding_keepalive_menus_differ), style = MaterialTheme.typography.bodySmall)
                 }
                 OnboardingStep.PICK_APPS -> {
-                    StepBody(R.string.ob_apps_title, R.string.ob_apps_body)
+                    StepBody(R.string.onboarding_apps_title, R.string.onboarding_apps_body)
                     availableApps.forEach { app ->
                         val on = app.pkg in picked
                         FilterChip(
@@ -103,9 +104,12 @@ fun OnboardingScreen(
                             modifier = Modifier.heightIn(min = 48.dp),
                         )
                     }
+                    if (picked.size >= OnboardingFlow.MAX_TARGET_APPS) {
+                        Text(stringResource(R.string.onboarding_apps_cap_reached), style = MaterialTheme.typography.bodySmall)
+                    }
                 }
                 OnboardingStep.ROAST -> {
-                    StepBody(R.string.ob_roast_title, R.string.ob_roast_body)
+                    StepBody(R.string.onboarding_roast_title, null)
                     Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                         RoastLevel.entries.forEach { level ->
                             FilterChip(
@@ -116,9 +120,13 @@ fun OnboardingScreen(
                             )
                         }
                     }
-                    Text(stringResource(R.string.ob_roast_sample_placeholder), style = MaterialTheme.typography.bodyMedium)
+                    Text(
+                        stringResource(roastSample(roast), stringResource(R.string.onboarding_roast_sample_app), SAMPLE_MINUTES),
+                        style = MaterialTheme.typography.bodyMedium,
+                    )
+                    Text(stringResource(R.string.onboarding_roast_footnote), style = MaterialTheme.typography.bodySmall)
                 }
-                OnboardingStep.FINISH -> StepBody(R.string.ob_finish_title, R.string.ob_finish_body)
+                OnboardingStep.FINISH -> StepBody(R.string.onboarding_finish_title, R.string.onboarding_finish_body)
             }
 
             NavButtons(
@@ -133,57 +141,74 @@ fun OnboardingScreen(
 }
 
 private fun roastLabel(level: RoastLevel) = when (level) {
-    RoastLevel.GENTLE -> R.string.roast_gentle
-    RoastLevel.NORMAL -> R.string.roast_normal
-    RoastLevel.SAVAGE -> R.string.roast_savage
+    RoastLevel.GENTLE -> R.string.onboarding_roast_gentle
+    RoastLevel.NORMAL -> R.string.onboarding_roast_normal
+    RoastLevel.SAVAGE -> R.string.onboarding_roast_savage
 }
 
+private fun roastSample(level: RoastLevel) = when (level) {
+    RoastLevel.GENTLE -> R.string.onboarding_roast_sample_gentle
+    RoastLevel.NORMAL -> R.string.onboarding_roast_sample_normal
+    RoastLevel.SAVAGE -> R.string.onboarding_roast_sample_savage
+}
+
+private const val SAMPLE_MINUTES = 25
+
 @Composable
-private fun StepBody(title: Int, body: Int) {
+private fun StepBody(title: Int, body: Int?) {
     Text(stringResource(title), style = MaterialTheme.typography.headlineMedium)
-    Text(stringResource(body), style = MaterialTheme.typography.bodyLarge)
+    if (body != null) Text(stringResource(body), style = MaterialTheme.typography.bodyLarge)
 }
 
 /** What Jixxy cannot do. Shown on both scary-permission screens. Plain, no jokes. */
 @Composable
 private fun CantDoList() {
-    Text(stringResource(R.string.ob_cant_do), style = MaterialTheme.typography.bodyMedium)
+    Text(stringResource(R.string.onboarding_cant_do), style = MaterialTheme.typography.bodyMedium)
 }
 
 @Composable
-private fun GrantRow(granted: Boolean, onOpen: () -> Unit) {
+private fun GrantRow(granted: Boolean, grantedText: Int, openText: Int, onOpen: () -> Unit) {
     if (granted) {
-        Text(stringResource(R.string.ob_granted), style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.primary)
+        Text(stringResource(grantedText), style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.primary)
     } else {
-        OutlinedButton(onClick = onOpen, Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(stringResource(R.string.ob_open_setting)) }
+        OutlinedButton(onClick = onOpen, Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(stringResource(openText)) }
     }
 }
 
 /** Sideload path on Android 13+: hedge honestly, wording differs by brand/version. */
 @Composable
 private fun RestrictedSettingsExplainer(onOpenAppInfo: () -> Unit) {
-    Text(stringResource(R.string.ob_restricted_title), style = MaterialTheme.typography.titleMedium)
-    Text(stringResource(R.string.ob_restricted_steps), style = MaterialTheme.typography.bodyMedium)
-    Text(stringResource(R.string.ob_restricted_hedge), style = MaterialTheme.typography.bodySmall)
-    TextButton(onClick = onOpenAppInfo, Modifier.heightIn(min = 48.dp)) { Text(stringResource(R.string.ob_open_app_info)) }
+    Text(stringResource(R.string.onboarding_restricted_title), style = MaterialTheme.typography.titleMedium)
+    listOf(
+        R.string.onboarding_restricted_step1, R.string.onboarding_restricted_step2, R.string.onboarding_restricted_step3,
+        R.string.onboarding_restricted_step4, R.string.onboarding_restricted_step5,
+    ).forEachIndexed { i, step -> Text("${i + 1}. ${stringResource(step)}", style = MaterialTheme.typography.bodyMedium) }
+    Text(stringResource(R.string.onboarding_restricted_hedge_note), style = MaterialTheme.typography.bodySmall)
+    TextButton(onClick = onOpenAppInfo, Modifier.heightIn(min = 48.dp)) { Text(stringResource(R.string.onboarding_restricted_open_app_info)) }
 }
 
 @Composable
 private fun NavButtons(step: OnboardingStep, onPrimary: () -> Unit, onLite: () -> Unit, onSkip: () -> Unit, onBack: () -> Unit) {
     Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
         Button(onClick = onPrimary, Modifier.fillMaxWidth().heightIn(min = 48.dp)) {
-            Text(stringResource(if (step == OnboardingStep.FINISH) R.string.ob_wake_him else R.string.ob_continue))
+            Text(stringResource(primaryLabel(step)))
         }
         if (step == OnboardingStep.HELLO) {
-            TextButton(onClick = onLite, Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(stringResource(R.string.ob_lite)) }
+            TextButton(onClick = onLite, Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(stringResource(R.string.onboarding_hello_cta_lite)) }
         }
         if (step != OnboardingStep.HELLO && step != OnboardingStep.FINISH) {
-            TextButton(onClick = onSkip, Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(stringResource(R.string.ob_not_now)) }
+            TextButton(onClick = onSkip, Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(stringResource(R.string.onboarding_notifications_cta_later)) }
         }
         if (step != OnboardingStep.HELLO) {
-            TextButton(onClick = onBack, Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(stringResource(R.string.ob_back)) }
+            TextButton(onClick = onBack, Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(stringResource(R.string.common_back)) }
         }
     }
+}
+
+private fun primaryLabel(step: OnboardingStep) = when (step) {
+    OnboardingStep.HELLO -> R.string.onboarding_hello_cta_primary
+    OnboardingStep.FINISH -> R.string.onboarding_finish_cta
+    else -> R.string.common_continue
 }
 
 private val previewApps = listOf(AppChoice("pkg.a", "App A"), AppChoice("pkg.b", "App B"), AppChoice("pkg.c", "App C"), AppChoice("pkg.d", "App D"))
