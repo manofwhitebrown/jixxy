@@ -120,11 +120,20 @@
     <string name="onboarding_roast_sample_app">that app</string>
     <string name="common_continue">Continue</string>
     <string name="common_back">Back</string>
+    <string name="home_open_weekly">See my review of your week</string>
+    <string name="common_cancel">Cancel</string>
+    <string name="settings_language_value_en">English</string>
     <!-- [P] placeholders: keys not yet in MICROCOPY -->
-    <string name="home_open_weekly">[P] Weekly review</string>
-    <string name="common_cancel">[P] Cancel</string>
-    <string name="settings_language_value_en">[P] English</string>
-    <string name="placeholder_what_saw">[P] What Jixxy saw goes here</string>
+    <string name="whatsaw_event_foreground">[P] Opened</string>
+    <string name="whatsaw_event_session_minutes">[P] Open for %1$d min</string>
+    <string name="whatsaw_event_pause_shown">[P] Pause card shown</string>
+    <string name="whatsaw_event_pause_stay">[P] You chose to stay</string>
+    <string name="whatsaw_event_pause_leave">[P] You chose to leave</string>
+    <string name="whatsaw_event_line_shown">[P] Jixxy said something</string>
+    <string name="whatsaw_event_line_reaction">[P] You reacted to a line</string>
+    <string name="whatsaw_event_charger_on">[P] Charger plugged in</string>
+    <string name="whatsaw_event_nap">[P] Napped</string>
+    <string name="whatsaw_event_late_night_open">[P] Late-night app open</string>
     <string name="placeholder_weekly">[P] Weekly review goes here</string>
     <string name="placeholder_oem_guide">[P] Keep-alive guide goes here</string>
 </resources>

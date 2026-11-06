@@ -28,13 +28,14 @@ fun JixxyNavHost(
     store: StateStore = remember { InMemoryStateStore() },
     // Launcher-intent app list from PLATFORM (PROTECTED apps removed); empty until wired.
     apps: List<AppChoice> = emptyList(),
+    appLabel: (String) -> String = { it },
 ) {
     val nav = rememberNavController()
     NavHost(nav, startDestination = startRoute, modifier = modifier) {
         composable(Routes.ONBOARDING) { OnboardingScreen(onDone = { nav.navigate(Routes.HOME) { popUpTo(Routes.ONBOARDING) { inclusive = true } } }) }
         composable(Routes.HOME) { HomeScreen(settings = settings, store = store, onSettings = { nav.navigate(Routes.SETTINGS) }, onWeekly = { nav.navigate(Routes.WEEKLY) }) }
         composable(Routes.SETTINGS) { SettingsScreen(settings = settings, store = store, apps = apps, onWhatSaw = { nav.navigate(Routes.WHAT_SAW) }, onOemGuide = { nav.navigate(Routes.OEM_GUIDE) }) }
-        composable(Routes.WHAT_SAW) { WhatSawScreen() }
+        composable(Routes.WHAT_SAW) { WhatSawScreen(store = store, appLabel = appLabel) }
         composable(Routes.WEEKLY) { WeeklyScreen() }
         composable(Routes.OEM_GUIDE) { OemGuideScreen() }
     }
