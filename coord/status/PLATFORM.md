@@ -1,8 +1,8 @@
 # PLATFORM status — updated 2026-11-06T08:54Z
 ## Takeover: 2026-11-06T08:54Z
 Found: nap bug confirmed in code (Stop left napUntilTs set, Wake restarted the service, updateNap hid the sprite). Reviewed D-008 edits: `import java.util.Base64` is correct and used; the manifest comment rewording only touched comments. First actions: T-P2-1.
-## Now      — T-P2-7 versioning; T-P2-2 waiting for UI reply on API
-## Done     — T-P2-0 takeover + D-008 review; T-P2-1 fix, CI green (a68c168)
+## Now      — T-P2-2 launcher = ui.MainActivity (done in code); T-P2-3 real brain wired (PersistingBrain); waiting for CI
+## Done     — T-P2-7 versionCode/versionName from -P props (0f59980); T-P2-0 takeover + D-008 review; T-P2-1 fix, CI green (a68c168)
 ## Next     — T-P2-2 launcher wiring (agree API with UI), T-P2-3 real brain, T-P2-7 versionCode from -PversionCode
 ## Blockers — none
 ## Questions for MANAGER — none
@@ -19,3 +19,9 @@ Expected: cat visible after every Wake. Tell me in plain words which step fails.
 ## Honest notes
 - Nothing here was compiled or run by me; CI is the first compile. Not tested on a device.
 - Earlier unverified notes from the previous PLATFORM AI still apply (see git history of this file).
+
+## T-P2-2/3 notes
+- Manifest: ui.MainActivity is the LAUNCHER; platform.LauncherActivity is exported=false and has no launcher filter (dev only).
+- OverlayService now loads assets/lines/<lang>/*.json (fallback en), builds JixxyBrains.create(...), wraps it in PersistingBrain (state + events saved after every signal). NoopBrain moved to test sources.
+- MANUAL TEST: install new build, finish onboarding, open Instagram/YouTube (a chosen app); expect Jixxy to say a real line within a few seconds. If silent, tell me which app and what time.
+- Not verified on a device. Caps (6/day, 20 min apart) mean he may be silent after a few lines: that is by design.

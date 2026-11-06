@@ -28,14 +28,20 @@
         android:label="Jixxy"
         android:theme="@android:style/Theme.Material.Light.NoActionBar">
 
+        <!-- The real app (T-P2-2): Compose UI hosted by UI's MainActivity. -->
         <activity
-            android:name=".platform.LauncherActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Old 3-button screen, kept for development only: not a launcher entry, not exported. -->
+        <activity
+            android:name=".platform.LauncherActivity"
+            android:exported="false" />
 
         <!-- specialUse: no standard foreground-service type fits a floating companion sprite.
              Type + PROPERTY_SPECIAL_USE_FGS_SUBTYPE per Android docs (property API 34+). -->

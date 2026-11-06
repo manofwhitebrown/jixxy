@@ -26,19 +26,26 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.core.app.ServiceCompat
 import app.jixxy.character.JixxyView
 import app.jixxy.character.JixxyViewListener
+import app.jixxy.engine.JixxyBrains
 import app.jixxy.engine.api.CharacterState
 import app.jixxy.engine.api.PauseChoiceKind
 import app.jixxy.engine.api.PauseSpec
 import app.jixxy.engine.api.ReactionKind
 import app.jixxy.engine.api.Signal
 import app.jixxy.engine.api.UserSettings
+import app.jixxy.engine.lines.LineBank
+import app.jixxy.engine.lines.LineBankLoader
 import app.jixxy.platform.signals.CategoryResolver
+import app.jixxy.ui.MainActivity
 import app.jixxy.platform.signals.SystemSignals
 import app.jixxy.platform.signals.UsageDetector
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.withContext
+import java.time.ZoneId
 import kotlinx.coroutines.launch
 
 /**
@@ -90,14 +97,25 @@ class OverlayService : Service(), ReactionRenderer {
         startPipeline()
     }
 
-    /** Wires detectors -> bus -> dispatcher, and follows settings (blind mode, nap). */
+    /** Loads state + line bank, builds the real brain, then wires detectors -> bus -> dispatcher and follows settings. */
     private fun startPipeline() {
         val categories = CategoryResolver(this)
         val usage = UsageDetector(this, app.bus, categories)
         systemSignals = SystemSignals(this, app.bus, usage)
-        // TODO(T-PLATFORM-5b): replace NoopBrain once ENGINE publishes a JixxyBrain implementation.
-        Dispatcher(scope, app.bus, NoopBrain(), app.stateStore, this, { settings }).start()
         scope.launch {
+            val (initial, bank) = withContext(Dispatchers.IO) {
+                app.stateStore.load() to loadLineBank(app.settings.settings.first().language)
+            }
+            val real = JixxyBrains.create(
+                lineBank = bank,
+                initialState = initial,
+                settings = { settings },
+                appLabel = { pkg -> categories.label(pkg) },
+                zone = ZoneId.systemDefault(),
+            )
+            val brain = PersistingBrain(real, real::currentState, real::drainEvents, app.stateStore, scope)
+            // The dispatcher subscribes before any detector starts, so no early signal is lost.
+            Dispatcher(scope, app.bus, brain, app.stateStore, this@OverlayService, { settings }).start()
             app.settings.settings.collect { s ->
                 settings = s
                 app.blindMode = s.blindMode
@@ -106,6 +124,16 @@ class OverlayService : Service(), ReactionRenderer {
             }
         }
         scope.launch { app.stateStore.purgeExpired() }
+    }
+
+    /** Reads every `*.json` under assets/lines/<lang>; falls back to English if that language has none. */
+    private fun loadLineBank(language: String): LineBank {
+        fun texts(lang: String): List<String> =
+            (assets.list("lines/$lang") ?: emptyArray()).filter { it.endsWith(".json") }.sorted().map { name ->
+                assets.open("lines/$lang/$name").bufferedReader().use { it.readText() }
+            }
+        val chosen = texts(language).ifEmpty { texts("en") }
+        return LineBankLoader.fromTexts(chosen)
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
@@ -295,7 +323,7 @@ class OverlayService : Service(), ReactionRenderer {
     private fun postWakeNotification() {
         if (!NotificationManagerCompat.from(this).areNotificationsEnabled()) return
         val open = PendingIntent.getActivity(
-            this, 3, Intent(this, LauncherActivity::class.java),
+            this, 3, Intent(this, MainActivity::class.java),
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
         )
         val n = NotificationCompat.Builder(this, CHANNEL_ID)
