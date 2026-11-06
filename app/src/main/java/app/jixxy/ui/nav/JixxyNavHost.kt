@@ -13,7 +13,7 @@ import app.jixxy.engine.fakes.InMemoryStateStore
 import app.jixxy.ui.onboarding.AppChoice
 import app.jixxy.ui.screens.HomeScreen
 import app.jixxy.ui.screens.OemGuideScreen
-import app.jixxy.ui.screens.OnboardingScreen
+import app.jixxy.ui.screens.OnboardingRoute
 import app.jixxy.ui.screens.SettingsScreen
 import app.jixxy.ui.screens.WeeklyScreen
 import app.jixxy.ui.screens.WhatSawScreen
@@ -32,7 +32,14 @@ fun JixxyNavHost(
 ) {
     val nav = rememberNavController()
     NavHost(nav, startDestination = startRoute, modifier = modifier) {
-        composable(Routes.ONBOARDING) { OnboardingScreen(onDone = { nav.navigate(Routes.HOME) { popUpTo(Routes.ONBOARDING) { inclusive = true } } }) }
+        composable(Routes.ONBOARDING) {
+            OnboardingRoute(
+                settings = settings,
+                apps = apps,
+                onOpenKeepAliveGuide = { nav.navigate(Routes.OEM_GUIDE) },
+                onDone = { nav.navigate(Routes.HOME) { popUpTo(Routes.ONBOARDING) { inclusive = true } } },
+            )
+        }
         composable(Routes.HOME) { HomeScreen(settings = settings, store = store, onSettings = { nav.navigate(Routes.SETTINGS) }, onWeekly = { nav.navigate(Routes.WEEKLY) }) }
         composable(Routes.SETTINGS) { SettingsScreen(settings = settings, store = store, apps = apps, onWhatSaw = { nav.navigate(Routes.WHAT_SAW) }, onOemGuide = { nav.navigate(Routes.OEM_GUIDE) }) }
         composable(Routes.WHAT_SAW) { WhatSawScreen(store = store, appLabel = appLabel) }

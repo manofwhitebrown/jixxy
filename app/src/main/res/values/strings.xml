@@ -135,5 +135,10 @@
     <string name="whatsaw_event_nap">[P] Napped</string>
     <string name="whatsaw_event_late_night_open">[P] Late-night app open</string>
     <string name="placeholder_weekly">[P] Weekly review goes here</string>
-    <string name="placeholder_oem_guide">[P] Keep-alive guide goes here</string>
+    <string name="oem_title_xiaomi">[P] Xiaomi / Redmi / POCO</string>
+    <string name="oem_title_oppo">[P] Oppo / Realme / OnePlus</string>
+    <string name="oem_title_vivo">[P] Vivo / iQOO</string>
+    <string name="oem_title_samsung">[P] Samsung</string>
+    <string name="oem_title_stock">[P] Other phones (stock Android)</string>
+    <string name="oem_dontkillmyapp_note">[P] More phone-specific help: dontkillmyapp.com (open it in your browser).</string>
 </resources>

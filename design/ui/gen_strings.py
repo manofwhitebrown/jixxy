@@ -23,7 +23,12 @@ MANUAL = {
     "whatsaw_event_nap": "[P] Napped",
     "whatsaw_event_late_night_open": "[P] Late-night app open",
     "placeholder_weekly": "[P] Weekly review goes here",
-    "placeholder_oem_guide": "[P] Keep-alive guide goes here",
+    "oem_title_xiaomi": "[P] Xiaomi / Redmi / POCO",
+    "oem_title_oppo": "[P] Oppo / Realme / OnePlus",
+    "oem_title_vivo": "[P] Vivo / iQOO",
+    "oem_title_samsung": "[P] Samsung",
+    "oem_title_stock": "[P] Other phones (stock Android)",
+    "oem_dontkillmyapp_note": "[P] More phone-specific help: dontkillmyapp.com (open it in your browser).",
 }
 PAT = re.compile(r"^\s*(?:\d+\.\s+|-\s+)`([a-z0-9_.]+)`\s+—\s+(.*)$")
 

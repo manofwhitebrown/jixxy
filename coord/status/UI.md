@@ -1,9 +1,9 @@
-# UI status — updated 2026-11-06 03:27 UTC
-## Now      — T-UI-4 What Jixxy saw pushed; next T-PLATFORM adapter + T-UI-6 OEM guide
+# UI status — updated 2026-11-06 03:28 UTC
+## Now      — T-UI-6 OEM guide + PLATFORM wiring (OnboardingRoute, adapter) pushed; next T-UI-5 weekly card
 ## Done     — T-UI-0 skeleton (theme, routes/nav host, fakes, 6 placeholder screens with dark/light previews); design/ui/onboarding-flow.md
-## Next     — PermissionsSource adapter for PLATFORM's PermissionsRepository; T-UI-6 OEM guide; T-UI-5 weekly card
+## Next     — T-UI-5 weekly review + share card; wire real repositories when PLATFORM holder exists; polish after first green CI
 ## Blockers — none (PLATFORM added nav/preview deps; waiting on PermissionsRepository/OemIntents final signatures)
-## Questions for MANAGER — 0. UI unit tests live in app/src/test/java/app/jixxy/ui/** (outside my listed paths): OK? 1. Please create coord/TASKS.md + DECISIONS.md. 2. Confirm UI-side ports (PermissionsSource) are acceptable pending PLATFORM interfaces.
+## Questions for MANAGER — 00. Where is 'onboarding done' persisted? (see DECISION_NEEDED message) 0. UI unit tests live in app/src/test/java/app/jixxy/ui/** (outside my listed paths): OK? 1. Please create coord/TASKS.md + DECISIONS.md. 2. Confirm UI-side ports (PermissionsSource) are acceptable pending PLATFORM interfaces.
 ## Messages handled — 20261106-0326-WRITER-microcopy-v03.md, 20261106-0325-PLATFORM-permissions-handoff.md (read; adapter not yet written), 20261106-0322-WRITER-microcopy-v02.md, 20261106-0322-PLATFORM-fileprovider-added.md, 20261106-0319-PLATFORM-reply-interfaces.md, 20261106-0320-WRITER-microcopy-handoff.md
 ## Honest notes — T-UI-1 uses ENGINE's InMemorySettingsRepository (my own fake removed). Nothing compiled or run: no Gradle scaffold exists yet. Code assumes engine.api names from the brief (UserSettings, SettingsRepository). Fonts not bundled (no network); system font used. Onboarding strings now generated from MICROCOPY v0.1 (a few keys still [P], requested from WRITER); other screens still [P]. CI on 90f9366 was green before my T-UI-1 push; I have not verified CI for later commits.
 
@@ -16,3 +16,4 @@
 - What Jixxy saw (T-UI-4): WhatSawLogic compiled with kotlinc; assertion harness mirroring WhatSawLogicTest passed 5/5. Screen/LazyColumn/dialog NOT compiled or run. Event-type labels are [P] (requested from WRITER).
 - PLATFORM correction noted: restricted settings only blocks overlay/usage on Android 15+; App-info item appears after tapping the blocked toggle once. My onboarding explainer text comes from WRITER; correction sent to WRITER.
 - CI: 3147818 and bf8d9be were red when last checked; I cannot read logs (log download redirects to a blocked domain). Cause still unknown.
+- T-UI-6 / wiring: OnboardingRoute (PermissionsRepository, onResume refresh, try/catch intents, POST_NOTIFICATIONS launcher) and brand-aware OemGuideScreen (OemIntents) are written. NOTHING of this is compiled or run; a syntax-level kotlinc parse of all ui/ files showed only unresolved-library cascade errors (Compose/Android jars unavailable here), which proves nothing about real compilation. OEM menu paths are WRITER's and unverified on devices; component names in OemIntents are unverified community knowledge (PLATFORM's note).
