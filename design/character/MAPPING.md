@@ -1,7 +1,7 @@
 # Jixxy expression mapping (T-C2-0)
 
 Source of truth for which image `JixxyView` shows for each `CharacterState`. Art is the Owner's character
-sheet (D-012); this file only decides *which* picture plays *when*. File names are Android resource names in
+sheet (D-012, cut into sprites per D-013); this file only decides *which* picture plays *when*. File names are Android resource names in
 `character/src/main/res/drawable-nodpi/` (`.webp` or `.png`, 512 px max, same canvas and anchor for all).
 
 | CharacterState | Resource (`jixxy_expr_*`) | Sheet caption | Notes |
@@ -32,4 +32,4 @@ sheet (D-012); this file only decides *which* picture plays *when*. File names a
 - A missing image never crashes: the view falls back to `really`, and if that is missing too it draws nothing.
 - Unknown or future `CharacterState` values fall back to IDLE's image (D-010 values are looked up by name until ENGINE adds them).
 - Captions stay on the sheet. The app never draws the captions; speech comes from the line bank.
-- Never edit `design/character/reference/`. Derived sprites go in `character/src/main/res/drawable-nodpi/`.
+- Never edit `design/character/reference/`. Derived sprites go in `character/src/main/res/drawable-nodpi/` (one file per name, `.webp`; a second file with the same name and another extension breaks the build).

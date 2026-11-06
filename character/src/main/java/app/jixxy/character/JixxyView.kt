@@ -409,7 +409,7 @@ class JixxyView(context: Context) : FrameLayout(context) {
         const val DEFAULT_SIZE_DP = 88f
         const val VIEWBOX = 128f
         const val FEET_X = 64f
-        const val FEET_Y = 126f
+        const val FEET_Y = 125f
         const val NOON = 12
         const val TAU = (2.0 * PI).toFloat()
         const val OUTLINE = 1.4f
