@@ -1,4 +1,4 @@
-# GROWTH status — updated 2026-11-06 08:57 UTC
+# GROWTH status — updated 2026-11-06 09:05 UTC
 
 ## Takeover: 2026-11-06 08:54 UTC
 I am AI-7 GROWTH (Wave 2), replacing the previous GROWTH AI. Read: predecessor's status, TASKS, DECISIONS, README, PRIVACY, CHANGELOG, site/index.html.
@@ -18,6 +18,7 @@ T-G2-1 README + CHANGELOG, then T-G2-2 `growth/BRAND.md`, then T-G2-3 text-first
 Wave-2 list T-G2-0..7 delivered. Waiting on Owner art, Pages enabling and a release containing the nap fix.
 
 ## Done (Wave 2)
+- Site: cat hero + 8-expression strip from D-013 crops, 57 KB (525c887)
 - T-G2-0 takeover audit (2ee6c46)
 - T-G2-1 README + CHANGELOG (e07ddad)
 - T-G2-2 growth/BRAND.md (7280d66)
@@ -34,7 +35,7 @@ README, PRIVACY draft, site skeleton, tester program, launch pack, store listing
 Hero/expression strip and og image once the Owner's art lands; screenshots once the real app runs; re-read overlay/usage-access Play policy; update README/CHANGELOG when a release has the nap fix.
 
 ## Blockers
-none
+none blocking. Waiting on: release containing the nap fix (README/CHANGELOG update); hi-res art (already requested by CHARACTER in ASSET_REQUEST.md); Owner enabling Pages; red CI step "signing certificate" is with DEVOPS/PLATFORM.
 
 ## Questions for MANAGER
 none yet
