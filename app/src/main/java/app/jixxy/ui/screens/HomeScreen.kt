@@ -41,6 +41,7 @@ import app.jixxy.engine.api.UserSettings
 import app.jixxy.ui.components.CatImage
 import app.jixxy.ui.components.CatPoses
 import app.jixxy.ui.home.HomeLogic
+import app.jixxy.ui.home.HomeNotice
 import app.jixxy.ui.home.HomeUiState
 import app.jixxy.ui.home.JixxyStatus
 import app.jixxy.ui.home.TodayStats
@@ -64,6 +65,8 @@ fun HomeScreen(
     onWakeRequested: () -> Unit = {},
     onStopRequested: () -> Unit = {},
     isRunning: () -> Boolean = { true },
+    overlayGranted: () -> Boolean = { true },
+    onAllowOverlay: () -> Unit = {},
     clock: () -> Long = System::currentTimeMillis,
 ) {
     val current by settings.settings.collectAsStateWithLifecycle(initialValue = UserSettings())
@@ -71,13 +74,14 @@ fun HomeScreen(
     val scope = rememberCoroutineScope()
     // The service has no change callback: re-read its real state on return and shortly after Wake/Stop.
     var running by remember { mutableStateOf(isRunning()) }
-    LifecycleEventEffect(Lifecycle.Event.ON_RESUME) { running = isRunning() }
+    var overlayOk by remember { mutableStateOf(overlayGranted()) }
+    LifecycleEventEffect(Lifecycle.Event.ON_RESUME) { running = isRunning(); overlayOk = overlayGranted() }
 
     // Recompute on settings change; events are re-read at the same time so numbers are fresh on each visit.
-    LaunchedEffect(current, running) {
+    LaunchedEffect(current, running, overlayOk) {
         val now = clock()
         val events = store.eventsBetween(HomeLogic.startOfLocalDay(now), now + 1)
-        ui = HomeLogic.uiState(current, events, now, running)
+        ui = HomeLogic.uiState(current, events, now, running, overlayOk)
     }
 
     HomeContent(
@@ -96,6 +100,7 @@ fun HomeScreen(
                 running = isRunning()
             }
         },
+        onAllowOverlay = onAllowOverlay,
         onStop = {
             scope.launch {
                 onStopRequested()
@@ -117,6 +122,7 @@ fun HomeContent(
     onSettings: () -> Unit,
     onWeekly: () -> Unit,
     onStop: () -> Unit = {},
+    onAllowOverlay: () -> Unit = {},
 ) {
     Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
         Column(
@@ -124,6 +130,7 @@ fun HomeContent(
             verticalArrangement = Arrangement.spacedBy(20.dp),
         ) {
             CatImage(CatPoses.forStatus(ui.status))
+            NoticeCard(ui.notice, onAllowOverlay = onAllowOverlay, onChooseApps = onSettings)
             Text(statusText(ui), style = MaterialTheme.typography.headlineMedium)
 
             when (ui.status) {
@@ -162,6 +169,25 @@ fun HomeContent(
         }
     }
 }
+
+/** Plain, jokeless heads-up when something stops him working. Nothing shows when all is fine. */
+@Composable
+private fun NoticeCard(notice: HomeNotice, onAllowOverlay: () -> Unit, onChooseApps: () -> Unit) {
+    if (notice == HomeNotice.NONE) return
+    val (title, body, cta, action) = when (notice) {
+        HomeNotice.OVERLAY_MISSING -> NoticeText(R.string.error_overlay_revoked_title, R.string.error_overlay_revoked_body, R.string.error_overlay_revoked_cta, onAllowOverlay)
+        else -> NoticeText(null, R.string.launcher_empty_no_apps, R.string.launcher_empty_no_apps_cta, onChooseApps)
+    }
+    Card(Modifier.fillMaxWidth()) {
+        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            if (title != null) Text(stringResource(title), style = MaterialTheme.typography.titleMedium)
+            Text(stringResource(body), style = MaterialTheme.typography.bodyMedium)
+            OutlinedButton(onClick = action, Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(stringResource(cta)) }
+        }
+    }
+}
+
+private data class NoticeText(val title: Int?, val body: Int, val cta: Int, val action: () -> Unit)
 
 @Composable
 private fun statusText(ui: HomeUiState): String = when (ui.status) {
@@ -211,3 +237,6 @@ private val sampleStats = TodayStats(paused = 5, left = 3, stayed = 2)
 
 @Preview(showBackground = true, name = "stopped dark") @Composable private fun HomeStoppedDark() =
     JixxyTheme(dark = true) { HomeContent(HomeUiState(JixxyStatus.STOPPED, today = sampleStats), {}, {}, {}, {}) }
+
+@Preview(showBackground = true, name = "overlay missing") @Composable private fun HomeOverlayMissing() =
+    JixxyTheme(dark = true) { HomeContent(HomeUiState(JixxyStatus.AWAKE, notice = HomeNotice.OVERLAY_MISSING), {}, {}, {}, {}) }

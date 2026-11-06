@@ -1,5 +1,6 @@
 package app.jixxy.ui
 
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.os.Build
@@ -12,6 +13,7 @@ import androidx.compose.runtime.remember
 import app.jixxy.engine.api.AppCategory
 import app.jixxy.platform.JixxyApp
 import app.jixxy.platform.OverlayService
+import app.jixxy.platform.PermissionKind
 import app.jixxy.platform.signals.CategoryResolver
 import app.jixxy.ui.nav.JixxyNavHost
 import app.jixxy.ui.nav.Routes
@@ -47,6 +49,8 @@ class MainActivity : ComponentActivity() {
                     onWakeRequested = { wakeJixxy() },
                     onStopRequested = { stopJixxy() },
                     isRunning = { OverlayService.wantedRunning(this@MainActivity) },
+                    overlayGranted = { app.permissions.refresh(); app.permissions.state.value.overlayGranted },
+                    onAllowOverlay = { openOverlaySettings(app) },
                 )
             }
         }
@@ -77,6 +81,11 @@ class MainActivity : ComponentActivity() {
     private fun napJixxy() {
         if (!OverlayService.wantedRunning(this)) return
         startService(Intent(this, OverlayService::class.java).setAction(OverlayService.ACTION_NAP))
+    }
+
+    /** Opens "Display over other apps" for Jixxy; some phones lack the page, so never crash. */
+    private fun openOverlaySettings(app: JixxyApp) {
+        try { startActivity(app.permissions.intentFor(PermissionKind.OVERLAY)) } catch (e: ActivityNotFoundException) { } catch (e: SecurityException) { }
     }
 
     /** Asks the running service to stop; Stop also clears any nap on PLATFORM's side. */

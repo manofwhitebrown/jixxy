@@ -50,4 +50,16 @@ class HomeLogicTest {
 
     @Test fun blindBeatsStopped() =
         assertEquals(JixxyStatus.BLIND, HomeLogic.status(UserSettings(blindMode = true), now, serviceRunning = false))
+
+    @Test fun missingOverlayWinsOverNoApps() =
+        assertEquals(HomeNotice.OVERLAY_MISSING, HomeLogic.notice(UserSettings(), overlayGranted = false))
+
+    @Test fun noAppsPickedGivesGentleNotice() =
+        assertEquals(HomeNotice.NO_APPS, HomeLogic.notice(UserSettings(), overlayGranted = true))
+
+    @Test fun noNoticeWhenAllIsFine() =
+        assertEquals(HomeNotice.NONE, HomeLogic.notice(UserSettings(targetApps = setOf("a.b")), overlayGranted = true))
+
+    @Test fun blindModeNeedsNoAppsNotice() =
+        assertEquals(HomeNotice.NONE, HomeLogic.notice(UserSettings(blindMode = true), overlayGranted = true))
 }
