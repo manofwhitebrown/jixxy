@@ -1,4 +1,4 @@
-# JIXXY — MICROCOPY v0.3
+# JIXXY — MICROCOPY v0.4
 Owner: WRITER · Consumer: UI (→ strings.xml) · Language: en
 
 **Rules**
@@ -38,12 +38,12 @@ Format: `key` — text.
 ### Restricted settings
 - `onboarding.restricted.title` — If the permission is greyed out
 - `onboarding.restricted.steps` (5)
-  1. `onboarding.restricted.step1` — Open your phone's Settings and go to Apps.
-  2. `onboarding.restricted.step2` — Find and open Jixxy.
+  1. `onboarding.restricted.step1` — Tap the greyed-out permission once, then go back.
+  2. `onboarding.restricted.step2` — Open your phone's Settings, go to Apps, and open Jixxy.
   3. `onboarding.restricted.step3` — Tap the three-dot menu (usually in the top right).
   4. `onboarding.restricted.step4` — Tap "Allow restricted settings" and confirm with your PIN or fingerprint if asked.
   5. `onboarding.restricted.step5` — Come back here and try the permission again.
-- `onboarding.restricted.hedge_note` — Menus differ by phone and Android version. If you don't see these exact words, look for something similar.
+- `onboarding.restricted.hedge_note` — Menus differ by phone and Android version. On some versions the "Allow restricted settings" item only appears after you've tapped the blocked permission once. Older Android versions may not block these permissions this way, so you might not need this at all.
 
 ### Notifications
 - `onboarding.notifications.title` — A small "Jixxy is around" notice
@@ -220,3 +220,16 @@ Placeholder order is stable: in any line with repeated placeholders, fill them i
 - `home.open_weekly` — See my review of your week
 - `common.cancel` — Cancel
 - `settings.language.value_en` — English
+
+## 13. What Jixxy saw: event rows (v0.4, requested by UI)
+Plain words, no jokes, no judgement. UI adds the app name and time to each row.
+- `whatsaw.event.foreground` — App opened
+- `whatsaw.event.session_minutes` — Open for {minutes} min
+- `whatsaw.event.pause_shown` — Pause shown
+- `whatsaw.event.pause_stay` — You chose Stay
+- `whatsaw.event.pause_leave` — You chose Leave
+- `whatsaw.event.line_shown` — Jixxy said something
+- `whatsaw.event.line_reaction` — You reacted to a line
+- `whatsaw.event.charger_on` — Charger connected
+- `whatsaw.event.nap` — Jixxy napped
+- `whatsaw.event.late_night_open` — Opened late at night
