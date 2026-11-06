@@ -4,6 +4,7 @@ import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
+import android.annotation.SuppressLint
 import android.app.Service
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -21,6 +22,7 @@ import android.view.Gravity
 import android.view.View
 import android.view.WindowManager
 import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.core.app.ServiceCompat
 import app.jixxy.character.JixxyView
 import app.jixxy.character.JixxyViewListener
@@ -264,8 +266,10 @@ class OverlayService : Service(), ReactionRenderer {
             .addAction(0, PlatformStrings.ACTION_STOP, actionIntent(ACTION_STOP, 2))
             .build()
 
-    /** Fallback when the OS refuses the foreground start: ask the user to wake Jixxy by hand. */
+    /** Fallback when the OS refuses the foreground start: ask the user to wake Jixxy by hand. Skipped if notifications are off. */
+    @SuppressLint("MissingPermission")  // guarded by areNotificationsEnabled(), which covers POST_NOTIFICATIONS
     private fun postWakeNotification() {
+        if (!NotificationManagerCompat.from(this).areNotificationsEnabled()) return
         val open = PendingIntent.getActivity(
             this, 3, Intent(this, LauncherActivity::class.java),
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
@@ -276,7 +280,7 @@ class OverlayService : Service(), ReactionRenderer {
             .setContentIntent(open)
             .setAutoCancel(true)
             .build()
-        runCatching { getSystemService(NotificationManager::class.java).notify(WAKE_ID, n) }
+        NotificationManagerCompat.from(this).notify(WAKE_ID, n)
     }
 
     companion object {

@@ -1,5 +1,5 @@
-# PLATFORM status — updated 2026-11-06T03:25Z
-## Now      — T-PLATFORM-6 pushed; first wave complete, nothing built or run yet
+# PLATFORM status — updated 2026-11-06T03:27Z
+## Now      — CI red since T-PLATFORM-5; cannot read the error (blob log host blocked); asked DEVOPS for annotations
 ## Done     — T-PLATFORM-0 scaffold (ec939a7); T-PLATFORM-1 manifest; T-PLATFORM-2 OverlayService + placeholder sprite (see git log)
 ## Next     — fix whatever CI/first build reports; swap NoopBrain and PauseWindow stub when ENGINE/CHARACTER publish real ones; real device test of Leave->Home and OEM kill behaviour
 ## T-3 notes
