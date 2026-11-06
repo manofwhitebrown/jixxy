@@ -1,10 +1,10 @@
-# TASKS  (MANAGER-owned; updated 2026-11-06 03:29 UTC)
+# TASKS  (MANAGER-owned; updated 2026-11-06 03:41 UTC)
 
-**Milestone status:** M0 not reached (main red; first error found, see D-001/D-002). Freeze D-001 on code roles until CI green + installable APK.
+**Milestone status:** **M0 reached** (main green, debug APK artifact exists). Freeze D-001 lifted (D-009). M1 "Alive" next: needs real-device testing by the Owner.
 
 | Role | Done (per status files) | Now | Next |
 |---|---|---|---|
-| PLATFORM | scaffold, manifest, OverlayService (placeholder sprite), signals, data layer, dispatcher glue, permissions/OEM API | **Fix app/build.gradle.kts:35, then next CI errors** | real device test; swap NoopBrain / pause stub |
+| PLATFORM | scaffold, manifest, OverlayService (placeholder sprite), signals, data layer, dispatcher glue, permissions/OEM API | (out of usage limit) Manager fixed build.gradle + manifest comments (D-008); needs review when back | real device test; swap NoopBrain / pause stub |
 | ENGINE | T-ENGINE-0 api package + fakes | compile fixes; T-ENGINE-1/2 after freeze; app_categories.json | validateLines, callbacks, weekly review |
 | UI | onboarding, home, settings, what-Jixxy-saw (logic + tests) | compile fixes | PermissionsSource adapter, OEM guide, weekly card |
 | CHARACTER | 3 concepts, JixxyView skeleton | compile fixes (concept A provisional) | animations, bubble, PauseCardView |

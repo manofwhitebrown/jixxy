@@ -9,3 +9,5 @@
 - **D-007 (2026-11-06 03:29 UTC)** Tests live with their owner's package under app/src/test/java/app/jixxy/<ui|platform|data>/**.
 
 - **D-008 (2026-11-06 03:34 UTC)** While PLATFORM is unavailable, MANAGER may make minimal compile-error fixes in PLATFORM-owned paths, each logged in PLATFORM's inbox. Features stay frozen.
+
+- **D-009 (2026-11-06 03:41 UTC)** M0 reached: main is green (run 42157822863) and a debug APK artifact exists. Compile-green freeze D-001 is **lifted**. New rule: never push to main a change that you know turns CI red; check annotations after every push (scripts/ci_errors.sh) and fix your own breakage first. D-008 (Manager fixes in PLATFORM paths) stays in force only while PLATFORM is unavailable.
