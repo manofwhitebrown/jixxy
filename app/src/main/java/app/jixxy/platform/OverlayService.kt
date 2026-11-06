@@ -16,6 +16,7 @@ import android.os.Build
 import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
+import android.provider.Settings
 import android.view.Gravity
 import android.view.View
 import android.view.WindowManager
@@ -23,25 +24,45 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.ServiceCompat
 import app.jixxy.character.JixxyView
 import app.jixxy.character.JixxyViewListener
+import app.jixxy.engine.api.CharacterState
+import app.jixxy.engine.api.PauseChoiceKind
+import app.jixxy.engine.api.PauseSpec
+import app.jixxy.engine.api.ReactionKind
+import app.jixxy.engine.api.Signal
+import app.jixxy.engine.api.UserSettings
+import app.jixxy.platform.signals.CategoryResolver
+import app.jixxy.platform.signals.SystemSignals
+import app.jixxy.platform.signals.UsageDetector
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.launch
 
 /**
- * Foreground service owning the floating sprite window (T-PLATFORM-2).
+ * Foreground service owning the sprite window, the signal sources and the [Dispatcher] (T-PLATFORM-2/5).
  *
- * The window is exactly the sprite's size, so touches elsewhere reach the app underneath.
+ * The sprite window is exactly the sprite's size, so touches elsewhere reach the app underneath.
  * Docs: TYPE_APPLICATION_OVERLAY needs SYSTEM_ALERT_WINDOW (developer.android.com/reference/android/view/WindowManager.LayoutParams#TYPE_APPLICATION_OVERLAY).
  */
-class OverlayService : Service() {
+class OverlayService : Service(), ReactionRenderer {
 
     private lateinit var windowManager: WindowManager
+    private lateinit var app: JixxyApp
+    private lateinit var pauseWindow: PauseWindow
+    private var systemSignals: SystemSignals? = null
     private var sprite: JixxyView? = null
     private lateinit var params: WindowManager.LayoutParams
     private val handler = Handler(Looper.getMainLooper())
+    private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate)
+    private var settings = UserSettings()
     private var napping = false
     private var screenOn = true
 
     private val screenReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
             screenOn = intent.action == Intent.ACTION_SCREEN_ON
+            if (!screenOn) pauseWindow.dismiss()
             applyVisibility()
         }
     }
@@ -50,7 +71,9 @@ class OverlayService : Service() {
 
     override fun onCreate() {
         super.onCreate()
+        app = application as JixxyApp
         windowManager = getSystemService(WINDOW_SERVICE) as WindowManager
+        pauseWindow = PauseWindow(this, windowManager)
         createChannel()
         if (!enterForeground()) {
             stopSelf()
@@ -61,12 +84,35 @@ class OverlayService : Service() {
             addAction(Intent.ACTION_SCREEN_ON)
             addAction(Intent.ACTION_SCREEN_OFF)
         })
+        startPipeline()
+    }
+
+    /** Wires detectors -> bus -> dispatcher, and follows settings (blind mode, nap). */
+    private fun startPipeline() {
+        val categories = CategoryResolver(this)
+        val usage = UsageDetector(this, app.bus, categories)
+        systemSignals = SystemSignals(this, app.bus, usage)
+        // TODO(T-PLATFORM-5b): replace NoopBrain once ENGINE publishes a JixxyBrain implementation.
+        Dispatcher(scope, app.bus, NoopBrain(), app.stateStore, this, { settings }).start()
+        scope.launch {
+            app.settings.settings.collect { s ->
+                settings = s
+                app.blindMode = s.blindMode
+                systemSignals?.setBlindMode(s.blindMode)  // starts detectors when blind mode is off
+                updateNap()
+            }
+        }
+        scope.launch { app.stateStore.purgeExpired() }
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         when (intent?.action) {
             ACTION_STOP -> stopSelf()
-            ACTION_NAP -> nap(NAP_MS)
+            ACTION_NAP -> scope.launch {
+                val t = System.currentTimeMillis()
+                app.settings.update { it.copy(napUntilTs = t + NAP_MS) }
+                app.bus.emit(Signal.NapRequested(60, t))
+            }
         }
         return START_NOT_STICKY
     }
@@ -81,12 +127,38 @@ class OverlayService : Service() {
     }
 
     override fun onDestroy() {
+        scope.cancel()
         handler.removeCallbacksAndMessages(null)
+        systemSignals?.stop()
+        pauseWindow.dismiss()
         runCatching { unregisterReceiver(screenReceiver) }
         sprite?.let { runCatching { windowManager.removeView(it) } }  // never leak the overlay view
         sprite = null
         super.onDestroy()
     }
+
+    // ---- ReactionRenderer -------------------------------------------------------------------------------
+
+    override fun say(text: String, bubbleMs: Long, lineId: String?) {
+        sprite?.showBubble(text, bubbleMs, lineId)
+    }
+
+    override fun setCharacterState(state: CharacterState) {
+        sprite?.setCharacterState(state)
+    }
+
+    override fun showPause(spec: PauseSpec, text: String, onChoice: (PauseChoiceKind) -> Unit) {
+        pauseWindow.show(spec, text, onChoice)
+    }
+
+    /** Sends the user to the home screen. Background-start allowance via SYSTEM_ALERT_WINDOW is unverified for Android 14+. */
+    override fun goHome() {
+        startActivity(
+            Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        )
+    }
+
+    // ---- window + notification ---------------------------------------------------------------------------
 
     /** Returns false if Android refused to start the foreground service. */
     private fun enterForeground(): Boolean = try {
@@ -100,7 +172,7 @@ class OverlayService : Service() {
     }
 
     private fun addSprite() {
-        if (!android.provider.Settings.canDrawOverlays(this)) { stopSelf(); return }
+        if (!Settings.canDrawOverlays(this)) { stopSelf(); return }
         val view = JixxyView(this)
         val prefs = getSharedPreferences(PREFS, MODE_PRIVATE)
         params = WindowManager.LayoutParams(
@@ -116,14 +188,16 @@ class OverlayService : Service() {
             x = prefs.getInt(KEY_X, 0)
             y = prefs.getInt(KEY_Y, resources.displayMetrics.heightPixels / 3)
         }
-        view.listener = dragListener(view, prefs)
+        view.listener = spriteListener(view, prefs)
         windowManager.addView(view, params)
         sprite = view
         applyVisibility()
     }
 
-    /** The view reports raw finger positions; the window follows them, then snaps to an edge on release. */
-    private fun dragListener(view: JixxyView, prefs: android.content.SharedPreferences) = object : JixxyViewListener {
+    /** The view reports raw finger positions; the window follows them, snaps to an edge on release, and signals the brain. */
+    private fun spriteListener(view: JixxyView, prefs: android.content.SharedPreferences) = object : JixxyViewListener {
+        override fun onTap(count: Int) = app.bus.emit(Signal.SpriteTapped(count, System.currentTimeMillis()))
+
         override fun onDragMove(rawX: Float, rawY: Float) {
             params.x = (rawX - view.width / 2f).toInt().coerceIn(0, maxX(view))
             params.y = (rawY - view.height / 2f).toInt().coerceIn(0, maxY(view))
@@ -135,22 +209,36 @@ class OverlayService : Service() {
             params.x = if (params.x < maxX(view) / 2) 0 else maxX(view)
             windowManager.updateViewLayout(view, params)
             prefs.edit().putInt(KEY_X, params.x).putInt(KEY_Y, params.y).apply()
+            app.bus.emit(Signal.SpriteDropped(System.currentTimeMillis()))
+        }
+
+        override fun onReaction(lineId: String?, kind: ReactionKind) {
+            if (lineId != null) app.bus.emit(Signal.UserReaction(lineId, kind, System.currentTimeMillis()))
         }
     }
 
     private fun maxX(v: View) = (resources.displayMetrics.widthPixels - v.measuredWidth).coerceAtLeast(0)
     private fun maxY(v: View) = (resources.displayMetrics.heightPixels - v.measuredHeight).coerceAtLeast(0)
 
-    private fun nap(ms: Long) {
-        napping = true
+    /** Recomputes the nap flag from settings and schedules the wake-up at napUntilTs. */
+    private fun updateNap() {
+        handler.removeCallbacks(napCheck)
+        val until = settings.napUntilTs
+        val remaining = if (until == null) 0L else until - System.currentTimeMillis()
+        napping = remaining > 0
+        if (napping) {
+            pauseWindow.dismiss()
+            handler.postDelayed(napCheck, remaining)
+        }
         applyVisibility()
-        handler.removeCallbacksAndMessages(null)
-        handler.postDelayed({ napping = false; applyVisibility() }, ms)
     }
 
+    private val napCheck = Runnable { updateNap() }
+
     private fun applyVisibility() {
-        sprite?.visibility = if (screenOn && !napping) View.VISIBLE else View.GONE
-        sprite?.setScreenActive(screenOn && !napping)
+        val awake = screenOn && !napping
+        sprite?.visibility = if (awake) View.VISIBLE else View.GONE
+        sprite?.setScreenActive(awake)
     }
 
     private fun createChannel() {

@@ -1,7 +1,7 @@
-# PLATFORM status — updated 2026-11-06T03:22Z
-## Now      — T-PLATFORM-4 data layer pushed; JixxyView adopted in overlay; FileProvider added
+# PLATFORM status — updated 2026-11-06T03:24Z
+## Now      — T-PLATFORM-5 dispatcher glue pushed; next T-PLATFORM-6
 ## Done     — T-PLATFORM-0 scaffold (ec939a7); T-PLATFORM-1 manifest; T-PLATFORM-2 OverlayService + placeholder sprite (see git log)
-## Next     — T-PLATFORM-5 dispatcher glue, T-PLATFORM-6 permissions API + OemIntents + BootReceiver
+## Next     — T-PLATFORM-6 PermissionsRepository, OemIntents, BootReceiver; swap NoopBrain and PauseWindow stub when ENGINE/CHARACTER publish real ones
 ## T-3 notes
 - Files: platform/signals/{SignalBus,CategoryRules,CategoryResolver,UsageDetector,SystemSignals}.kt; unit tests CategoryRulesTest (never run).
 - Assumed app_categories.json schema {"overrides":{pkg:CATEGORY},"protected":[pkg]}: ENGINE has not pushed the file; please confirm or send the real schema.

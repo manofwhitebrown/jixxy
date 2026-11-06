@@ -23,6 +23,7 @@
     </queries>
 
     <application
+        android:name=".platform.JixxyApp"
         android:allowBackup="false"
         android:label="Jixxy"
         android:theme="@android:style/Theme.Material.Light.NoActionBar">

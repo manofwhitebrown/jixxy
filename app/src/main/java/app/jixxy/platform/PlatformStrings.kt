@@ -7,4 +7,6 @@ internal object PlatformStrings {
     const val ACTION_NAP = "Nap 1h"
     const val ACTION_STOP = "Stop"
     const val WAKE_TITLE = "Wake Jixxy"
+    const val PAUSE_LEAVE = "Leave"
+    fun pauseStay(minutes: Int) = "Stay $minutes more minutes"
 }
