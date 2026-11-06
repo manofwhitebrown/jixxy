@@ -22,7 +22,7 @@ import kotlinx.coroutines.withContext
 
 /**
  * The real app entry (T-U2-1): hosts the Compose [JixxyNavHost] with PLATFORM's real repositories.
- * Wake always clears the nap first (Home does it through settings) and then starts the service, so
+ * Wake sends PLATFORM's ACTION_WAKE, which clears the nap and shows the sprite, so
  * "Nap -> Stop -> Wake" brings Jixxy back.
  */
 class MainActivity : ComponentActivity() {
@@ -66,7 +66,8 @@ class MainActivity : ComponentActivity() {
     private fun wakeJixxy() {
         val intent = Intent(this, OverlayService::class.java)
         try {
-            if (Build.VERSION.SDK_INT >= 26) startForegroundService(intent) else startService(intent)
+            val wake = intent.setAction(OverlayService.ACTION_WAKE)
+            if (Build.VERSION.SDK_INT >= 26) startForegroundService(wake) else startService(wake)
         } catch (e: IllegalStateException) { /* Android refused; Home still shows the true state next time. */ }
     }
 

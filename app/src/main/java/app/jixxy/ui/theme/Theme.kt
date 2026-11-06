@@ -10,25 +10,30 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
 
 private val DarkScheme = darkColorScheme(
-    primary = Amber, onPrimary = NightBg,
-    background = NightBg, onBackground = NightOnSurface,
-    surface = NightSurface, onSurface = NightOnSurface,
+    primary = Purple, onPrimary = Fur,
+    secondary = Cream, onSecondary = Fur,
+    tertiary = EarPink, onTertiary = Fur,
+    background = Fur, onBackground = Cream,
+    surface = Charcoal, onSurface = Cream,
+    surfaceVariant = CharcoalHigh, onSurfaceVariant = Cream,
 )
 private val LightScheme = lightColorScheme(
-    primary = AmberDeep, onPrimary = DaySurface,
-    background = DayBg, onBackground = DayOnSurface,
-    surface = DaySurface, onSurface = DayOnSurface,
+    primary = PurpleDeep, onPrimary = CreamSurface,
+    secondary = InkOnLight, onSecondary = CreamSurface,
+    tertiary = EarPinkDeep, onTertiary = CreamSurface,
+    background = CreamBg, onBackground = InkOnLight,
+    surface = CreamSurface, onSurface = InkOnLight,
+    surfaceVariant = CreamBg, onSurfaceVariant = InkOnLight,
 )
 private val JixxyShapes = Shapes(
-    small = RoundedCornerShape(12.dp),
-    medium = RoundedCornerShape(20.dp),
-    large = RoundedCornerShape(28.dp),
+    small = RoundedCornerShape(16.dp),
+    medium = RoundedCornerShape(24.dp),
+    large = RoundedCornerShape(32.dp),
 )
 
 /**
- * App theme. Dark-first: [dark] defaults to the system setting, but the
- * brand is designed in dark. Typography uses the system font until fonts
- * are bundled under res/font (no network, ever).
+ * App theme. Dark-first: the brand is the black cat, so [dark] defaults to the system setting but light mode is the
+ * cream sheet and stays readable. System font until fonts are bundled under res/font (no network, ever).
  */
 @Composable
 fun JixxyTheme(dark: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
