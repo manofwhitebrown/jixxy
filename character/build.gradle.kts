@@ -17,5 +17,8 @@ android {
 }
 
 dependencies {
+    // Enums only (CharacterState, ReactionKind, PauseSpec, PauseChoiceKind). Exposed in the public API, hence `api`.
+    api(project(":engine"))
     implementation(libs.androidx.core.ktx)
+    testImplementation(libs.junit)
 }
