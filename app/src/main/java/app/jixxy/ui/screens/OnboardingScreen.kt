@@ -29,6 +29,8 @@ import androidx.compose.ui.unit.dp
 import app.jixxy.R
 import app.jixxy.engine.api.RoastLevel
 import app.jixxy.ui.onboarding.AppChoice
+import app.jixxy.ui.components.CatImage
+import app.jixxy.ui.components.CatPoses
 import app.jixxy.ui.onboarding.OnboardingFlow
 import app.jixxy.ui.onboarding.OnboardingStep
 import app.jixxy.ui.state.PermissionsUiState
@@ -71,6 +73,7 @@ fun OnboardingScreen(
             Modifier.verticalScroll(rememberScrollState()).padding(24.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
+            CatImage(CatPoses.forStep(step))
             when (step) {
                 OnboardingStep.HELLO -> StepBody(R.string.onboarding_hello_title, R.string.onboarding_hello_body)
                 OnboardingStep.OVERLAY -> {

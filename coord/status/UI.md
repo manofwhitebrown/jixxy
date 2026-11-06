@@ -1,6 +1,6 @@
-# UI status — updated 2026-11-06 08:54 UTC
-## Now      — T-U2-1: MainActivity (ui/MainActivity.kt) hosts JixxyNavHost with real repositories; asked PLATFORM to make it the launcher
-## Done     — Takeover (T-U2-0) done; MainActivity pushed (commit follows in git log)
+# UI status — updated 2026-11-06 09:01 UTC
+## Now      — T-U2-3: cat expression images in onboarding + Home (CatPose mapping + test); waiting for PLATFORM to register MainActivity as launcher
+## Done     — T-U2-0 takeover; T-U2-1 MainActivity (c2972cf, Wake = ACTION_WAKE); T-U2-2 cat palette + design/ui/PALETTE.md (ab44c6f)
 ## Next     — T-U2-2 re-skin (black cat palette, design/ui/PALETTE.md), T-U2-4 onboarding polish, T-U2-5 Home
 ## Blockers — Reference art not in design/character/reference yet (Owner); launcher registration needs PLATFORM
 ## Questions for MANAGER — none

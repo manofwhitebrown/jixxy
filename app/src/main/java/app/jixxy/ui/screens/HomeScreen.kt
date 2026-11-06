@@ -36,6 +36,8 @@ import app.jixxy.R
 import app.jixxy.engine.api.SettingsRepository
 import app.jixxy.engine.api.StateStore
 import app.jixxy.engine.api.UserSettings
+import app.jixxy.ui.components.CatImage
+import app.jixxy.ui.components.CatPoses
 import app.jixxy.ui.home.HomeLogic
 import app.jixxy.ui.home.HomeUiState
 import app.jixxy.ui.home.JixxyStatus
@@ -103,6 +105,7 @@ fun HomeContent(
             Modifier.verticalScroll(rememberScrollState()).padding(24.dp),
             verticalArrangement = Arrangement.spacedBy(20.dp),
         ) {
+            CatImage(CatPoses.forStatus(ui.status))
             Text(statusText(ui), style = MaterialTheme.typography.headlineMedium)
 
             when (ui.status) {
