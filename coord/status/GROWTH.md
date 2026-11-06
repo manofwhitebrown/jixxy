@@ -18,6 +18,7 @@ T-G2-1 README + CHANGELOG, then T-G2-2 `growth/BRAND.md`, then T-G2-3 text-first
 Wave-2 list T-G2-0..7 delivered. Waiting on Owner art, Pages enabling and a release containing the nap fix.
 
 ## Done (Wave 2)
+- 2026-11-06: overlay/usage-access policy re-check (found no specific rule or form; see store/LISTING.md), CHANGELOG/README synced to qa/BUGS.md "fixed in code" states.
 - Owner-approved help for CHARACTER: debug-only CharacterDemoActivity (T-C2-6, 7092441), CI green (run 42195396490). Not seen on a phone.
 - Owner-approved cross-lane unblock: fixed two parsing bugs in DEVOPS scripts (apk_cert.sh b801214, check_apk_cert.sh ae3979f); CI on main green afterwards (run 42194034786). DEVOPS to review.
 - Site: cat hero + 8-expression strip from D-013 crops, 57 KB (525c887)
@@ -55,5 +56,5 @@ none yet
 - I cannot run Android or a browser here; nothing is device-tested. Everything I write about the app is taken from the brief, the code and status files, not from running it.
 - Site not opened in a browser, Lighthouse not run (target >= 90 unverified). Pages deploy not confirmed; Owner must enable Pages.
 - README "What works today" comes from the brief and commit messages. The nap fix on main is described as unverified.
-- I did not re-read Google's overlay and usage-access policy pages; only the foreground-service page.
+- Policy re-check read Device and Network Abuse only; no overlay-specific rule found, which is not proof none exists. og:image not added: needs the final Pages URL (Owner must enable Pages).
 - Manual test steps for the Owner are in growth/OWNER_TEST_GUIDE.md.

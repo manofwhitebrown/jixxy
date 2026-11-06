@@ -107,7 +107,7 @@ Android 8.0 or newer.
 
 - **Alpha.** Expect rough edges. See [CHANGELOG.md](CHANGELOG.md) for known issues per release.
 - **Sprite art is in progress.** The floating sprite is a placeholder shape. The real cat art is being added.
-- **Temporary first screen** instead of the real app.
+- **Temporary first screen** in `v0.0.1-alpha`. The real app is set as the launcher on `main`, not yet in a release.
 - **Jixxy doesn't speak yet** and the **Pause flow is unverified on devices.**
 - Phones with **aggressive battery managers** may close Jixxy in the background.
 - **Android only.** No iOS version is planned.
