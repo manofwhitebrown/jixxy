@@ -4,6 +4,7 @@
 ## Latest — T-U2-4/quality: onboarding now handles system Back (walks steps backwards) and step titles are TalkBack headings. Not compiled locally (no Android SDK); CI is the check. Owner test: during onboarding press the phone's Back on step 3 — you go to step 2, not out of the app.
 ## Latest — T-U2-7 redo: launcher/mono/notification icons rebuilt from CHARACTER's icon sources (432 px / 96 px PNG, bg #5E4B7A). Not seen on a launcher. Owner test: install, check the home-screen icon is the cat face, centred, not clipped in round/squircle masks; on Android 13+ try themed icons; pull the shade and see the status-bar icon is a white cat silhouette. Inbox read: CHARACTER icon-files (done), PLATFORM v1-ui-work (T-V1-UI-1..9: proposal, waits for Manager ratification).
 ## Latest — T-V1-UI-1 first cut (proposal, not yet ratified by Manager): design/ui/DESIGN_SYSTEM.md + Spacing.kt; amber theme was already gone; contrast ratios computed (all AA). No component gallery or screenshots yet; nothing seen rendered.
+## Latest — T-V1-UI-4 first cut: roast chips and quiet-hours buttons now wrap (FlowRow); design/ui/ACCESSIBILITY_CHECKLIST.md with honest CODE/OPEN/OWNER status. Not compiled locally; not seen on a device.
 ## Next     — T-U2-4 polish, T-U2-6 review of Settings/What saw/OEM guide, device-test fixes from the Owner
 ## Blockers — none
 ## Questions for MANAGER — none

@@ -1,9 +1,12 @@
+@file:OptIn(androidx.compose.foundation.layout.ExperimentalLayoutApi::class)
+
 package app.jixxy.ui.screens
 
 import android.app.TimePickerDialog
 import android.text.format.DateFormat
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -102,7 +105,7 @@ fun SettingsContent(
             Text(stringResource(R.string.settings_title), style = MaterialTheme.typography.headlineMedium)
 
             Section(R.string.settings_roast_label, R.string.settings_roast_help) {
-                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     RoastLevel.entries.forEach { level ->
                         FilterChip(
                             selected = s.roast == level,
@@ -140,7 +143,7 @@ fun SettingsContent(
                 val start = clockText(s.quietStartMin)
                 val end = clockText(s.quietEndMin)
                 Text(stringResource(R.string.settings_quiet_hours_help, start, end), style = MaterialTheme.typography.bodyMedium)
-                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     TimeButton(start, s.quietStartMin) { onQuietHours(it, s.quietEndMin) }
                     TimeButton(end, s.quietEndMin) { onQuietHours(s.quietStartMin, it) }
                 }
