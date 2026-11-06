@@ -26,6 +26,8 @@
         android:name=".platform.JixxyApp"
         android:allowBackup="false"
         android:label="Jixxy"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@android:style/Theme.Material.Light.NoActionBar">
 
         <!-- The real app (T-P2-2): Compose UI hosted by UI's MainActivity. -->

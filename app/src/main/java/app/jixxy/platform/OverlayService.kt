@@ -24,6 +24,7 @@ import android.view.WindowManager
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.app.ServiceCompat
+import app.jixxy.R
 import app.jixxy.character.JixxyView
 import app.jixxy.character.JixxyViewListener
 import app.jixxy.engine.JixxyBrains
@@ -310,7 +311,7 @@ class OverlayService : Service(), ReactionRenderer {
 
     private fun buildNotification(): Notification =
         NotificationCompat.Builder(this, CHANNEL_ID)
-            .setSmallIcon(android.R.drawable.ic_menu_info_details)
+            .setSmallIcon(R.drawable.ic_stat_jixxy)
             .setContentTitle(PlatformStrings.NOTIFICATION_TITLE)
             .setOngoing(true)
             .addAction(0, PlatformStrings.ACTION_NAP, actionIntent(ACTION_NAP, 1))
@@ -327,7 +328,7 @@ class OverlayService : Service(), ReactionRenderer {
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT,
         )
         val n = NotificationCompat.Builder(this, CHANNEL_ID)
-            .setSmallIcon(android.R.drawable.ic_menu_info_details)
+            .setSmallIcon(R.drawable.ic_stat_jixxy)
             .setContentTitle(PlatformStrings.WAKE_TITLE)
             .setContentIntent(open)
             .setAutoCancel(true)

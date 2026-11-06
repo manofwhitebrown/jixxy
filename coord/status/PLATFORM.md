@@ -1,7 +1,7 @@
 # PLATFORM status — updated 2026-11-06T08:54Z
 ## Takeover: 2026-11-06T08:54Z
 Found: nap bug confirmed in code (Stop left napUntilTs set, Wake restarted the service, updateNap hid the sprite). Reviewed D-008 edits: `import java.util.Base64` is correct and used; the manifest comment rewording only touched comments. First actions: T-P2-1.
-## Now      — waiting on CHARACTER (showBubble stub T-C2-3, PauseCardView) and UI icons
+## Now      — T-P2-5/6 pushed (real PauseCardView, icons); next: device checks for T-P2-4/5
 ## Done     — T-P2-2 launcher + T-P2-3 real brain (fe3c9ee, build/tests/lint green); T-P2-7 versionCode/versionName from -P props (0f59980); T-P2-0 takeover + D-008 review; T-P2-1 fix, CI green (a68c168)
 ## Next     — T-P2-2 launcher wiring (agree API with UI), T-P2-3 real brain, T-P2-7 versionCode from -PversionCode
 ## Blockers — CI step "Signing certificate must match" red for all commits (DEVOPS script, exit 4); PauseCardView and icon assets not pushed yet
@@ -31,3 +31,8 @@ Expected: cat visible after every Wake. Tell me in plain words which step fails.
 ## Doc check (T-P2-5/8), source: developer.android.com/about/versions/15/behavior-changes-15
 - Android 15, apps targeting 35+: the SYSTEM_ALERT_WINDOW exemption for starting a foreground service from the background is narrower; the app must already have a VISIBLE TYPE_APPLICATION_OVERLAY window first. Consequence: a start from a notification button or boot while no overlay is visible can throw ForegroundServiceStartNotAllowedException. OverlayService.enterForeground and BootReceiver already catch it; the Owner test is: reboot, then check whether Jixxy returns by himself (if not, he returns when the app is opened and Wake is tapped).
 - Not found in the docs I retrieved: whether starting the HOME activity from a service is allowed with overlay permission only. Still UNVERIFIED; needs a real Android 14/15 phone. Test: open Instagram, wait for a Pause, tap Leave; expected result is the home screen.
+
+## T-P2-5/6 notes
+- PauseWindow hosts CHARACTER's PauseCardView (300 dp wide, centred, wrap-content). Null/blank text shows "Quick pause?". Leave still calls goHome(): UNVERIFIED on Android 14/15.
+- Manifest icon + roundIcon set; notification uses R.drawable.ic_stat_jixxy. Messages handled: 20261106-0907-UI-icon-resources.md
+- MANUAL TEST: (1) launcher icon is the Jixxy icon, not the Android robot; (2) pull down the notification shade: small icon is the cat silhouette, buttons Nap 1h / Wake / Stop; (3) choose Instagram as a Pause app, open it, wait: a card with a peeking cat, Leave and a Stay countdown appears; Leave -> home screen; Stay -> card closes.
