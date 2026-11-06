@@ -7,24 +7,36 @@ Release notes on GitHub are taken from this file. Entries are only added for thi
 
 Work towards the first tester build, `v0.1.0`. Nothing here has been released.
 
-### Added
-- Project skeleton with `:engine`, `:character` and `:app` modules, plus CI, release and Pages workflows.
-- Floating sprite service with a placeholder sprite; detectors for foreground app and system signals (screen, charger, battery, music); dispatcher and pause window stub.
-- Character view skeleton with tap counting.
-- On-device settings and state storage; event log kept for 30 days and clearable.
-- Onboarding with in-character microcopy, a permissions flow, and brand-specific keep-alive guides (Xiaomi/Redmi/POCO, Oppo/Realme, Vivo, Samsung, stock Android).
-- Home screen (nap/wake, today's numbers), Settings screen, and a "What Jixxy saw" screen showing the last 7 days with a button to erase the log.
-- English line bank and microcopy for Jixxy's voice.
-- README, privacy notice (draft), tester program plan, Play Store listing draft, launch content drafts, and a static landing page with no external requests.
+### Changed
+- Jixxy is now a black, fluffy, sarcastic cat (Owner's character sheet). The earlier placeholder concepts are retired.
+
+### Fixed (on `main`, not yet in a release, not yet checked on a device)
+- Nap, then Stop, then Wake could leave Jixxy hidden for the rest of the nap. An explicit Wake is meant to clear the nap now. Unit tests were added; device testing is pending.
+
+### Planned for `v0.1.0`
+The real app as the first screen, the cat art, the brain wired in so lines appear, the Pause card, onboarding, settings, weekly review card, signed APK. This list will be rewritten with what actually ships.
+
+## [0.0.1-alpha] - 2026-11-06
+
+First public build (milestone M0, "Skeleton"). Published on GitHub Releases. Installed by the Owner on a real Android phone.
+
+### What it has
+- Installs and opens on Android 8+.
+- A temporary start screen with three buttons: Allow overlay, Wake Jixxy, Stop.
+- A floating sprite service (overlay) with a placeholder shape; detectors for foreground app and system signals (screen, charger, battery, music); on-device settings and event storage (30-day retention).
+- Project skeleton with `:engine`, `:character`, `:app`, CI, release and Pages workflows.
+- Written but **not wired in or not visible yet:** onboarding, home, settings and "What Jixxy saw" screens; the English line bank (366 lines); the brain.
 
 ### Known issues
-- Most Android code has been written without being compiled or run on a device. Expect build errors and rough behaviour until CI and device testing catch up.
-- As of this entry, CI on `main` is failing at the Gradle step (reported by DEVOPS and UI); a tester build can't be cut until it's green.
-- The real pause card, the weekly review card and the full dispatch pipeline are not finished or verified.
+- **Placeholder sprite.** The Owner's verdict: "Jixxy looks like a potato." The cat art is not in this build.
+- **Temporary launcher screen.** The real app screens are not the first screen.
+- **Default launcher icon** (the Android robot).
+- **Nap, then Stop, then Wake: Jixxy does not show up.** Reported by the Owner on a real phone. Likely cause from reading the code: the nap stays saved after Stop, so a later Wake hides the sprite. Not reproduced by us. Fixed on `main` after this release, not yet checked on a device.
+- **Jixxy says nothing.** The line bank is not connected to the screen yet.
+- **Pause card, weekly review card:** not working yet.
 - Keep-alive behaviour on aggressive phone brands (Xiaomi, Oppo, Vivo and others) is untested.
+- More bugs are expected from real-device testing; DEVOPS keeps the bug list in `qa/`.
 
 ## [0.1.0] - not yet released
 
-Planned first tester build: sprite you can drag, foreground-app detection, canned lines, nap, Pause card on up to 3 chosen apps, onboarding with permissions, settings, weekly review card, "What Jixxy saw" log, signed APK on GitHub Releases.
-
-This section will be rewritten with what actually shipped, including known issues, when the release is cut.
+Planned first tester build. This section is rewritten with what actually shipped when the release is cut.
