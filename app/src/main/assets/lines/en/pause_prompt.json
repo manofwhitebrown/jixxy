@@ -2655,5 +2655,249 @@
       "tier2"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_browser_011",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "BROWSER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY",
+      "SMUG"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Fifteen tabs, zero answers. {app} again?",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_browser_012",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "BROWSER"
+    ],
+    "moods": [
+      "SLEEPY",
+      "GRUMPY"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{minutes} minutes in {app}. The research is now just vibes.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_browser_013",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "BROWSER"
+    ],
+    "moods": [
+      "SMUG",
+      "GRUMPY"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{app} again. You're not researching, you're wandering, gremlin.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_browser_014",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "BROWSER"
+    ],
+    "moods": [
+      "SMUG"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{minutes} minutes of 'one quick search'. Bold of you, dummy.",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_browser_015",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "BROWSER"
+    ],
+    "moods": [
+      "SMUG",
+      "SLEEPY"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "That tab has been open since the last ice age. Leave {app}?",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_productivity_001",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} for {minutes} minutes. Useful, but stretch your paws.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_productivity_002",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "moods": [
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Quick pause. Water, stretch, then back to {app}.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_productivity_003",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "moods": [
+      "SLEEPY",
+      "GRUMPY"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} again? Productive. I'm suspicious, but proud.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_productivity_004",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "moods": [
+      "SMUG",
+      "SLEEPY"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{minutes} minutes in {app}. Is this work or just reorganising folders?",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_productivity_005",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "moods": [
+      "SMUG"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Colour-coding {app} again? The deadline can see you, goblin.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_productivity_006",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "moods": [
+      "SMUG",
+      "GRUMPY"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{minutes} minutes in {app} and one real task. I counted.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
   }
 ]
