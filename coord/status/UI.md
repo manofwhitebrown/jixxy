@@ -1,8 +1,8 @@
-# UI status — updated 2026-11-06 09:07 UTC
-## Now      — T-U2-4/5 polish: onboarding + Home against the real service state
-## Done     — T-U2-1 MainActivity (c2972cf, launcher registered by PLATFORM); T-U2-2 palette sampled from sheet (b9307b8); T-U2-3 cat images (a4ed401); T-U2-7 adaptive + monochrome icon, ic_stat_jixxy (a0f50f5); strings re-synced to MICROCOPY v0.6
-## Next     — T-U2-4 onboarding resume/sideload checks, T-U2-5 Home service state, T-U2-6 settings, T-U2-8 weekly card
-## Blockers — CI red on signing-cert step (DEVOPS/PLATFORM); not caused by UI files as far as I can tell
+# UI status — updated 2026-11-06 09:18 UTC
+## Now      — T-U2-4 onboarding resume/sideload review, T-U2-6 settings check
+## Done     — T-U2-1 MainActivity (c2972cf); T-U2-2 palette sampled (b9307b8); T-U2-3 cat images (a4ed401); T-U2-7 icons (a0f50f5); T-U2-5 Home real service state + Stop (be3b8f0); T-U2-8 weekly screen + share card (66168a2). CI green at ae3979f.
+## Next     — T-U2-4 polish, T-U2-6 review of Settings/What saw/OEM guide, device-test fixes from the Owner
+## Blockers — none
 ## Questions for MANAGER — none
 ## Takeover — 2026-11-06 08:54 UTC. Found: 17 UI files (logic + Compose screens, nav, theme), amber palette (old concept), nothing wired as launcher, no Wake action in OverlayService, onboarding-done flag had no home.
 ## Real vs fake — Real: OnboardingRoute uses PermissionsRepository; settings/stateStore now real via JixxyApp. Fake/unwired: WeeklyScreen is a stub, no cat images, icon is the default robot, theme still amber.
@@ -30,3 +30,6 @@
 - CI: 3147818 and bf8d9be were red when last checked; I cannot read logs (log download redirects to a blocked domain). Cause still unknown.
 - T-UI-6 / wiring: OnboardingRoute (PermissionsRepository, onResume refresh, try/catch intents, POST_NOTIFICATIONS launcher) and brand-aware OemGuideScreen (OemIntents) are written. NOTHING of this is compiled or run; a syntax-level kotlinc parse of all ui/ files showed only unresolved-library cascade errors (Compose/Android jars unavailable here), which proves nothing about real compilation. OEM menu paths are WRITER's and unverified on devices; component names in OemIntents are unverified community knowledge (PLATFORM's note).
 - CI cause found via DEVOPS annotations: build script compile error (not my code). Also an ownership-guard annotation flags my tests under app/src/test/.../ui/** as outside my paths (asked MANAGER; non-fatal, Guards job passed).
+
+- Weekly card (66168a2): drawn with Canvas, not Compose-to-Bitmap, because that works without an attached window. Not seen on a device: check the PNG layout (cat, headline wrap, three counts, roast/compliment, jixxy mark) and the share sheet. Owner test: open Home > See my review of your week > Share this card; a week with no data shows the not-enough-data text and no Share button.
+- Home (be3b8f0): STOPPED status reads OverlayService.wantedRunning on resume and 0.8 s after Wake/Stop; not device-verified.
