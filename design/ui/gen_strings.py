@@ -22,7 +22,6 @@ MANUAL = {
     "whatsaw_event_charger_on": "[P] Charger plugged in",
     "whatsaw_event_nap": "[P] Napped",
     "whatsaw_event_late_night_open": "[P] Late-night app open",
-    "placeholder_weekly": "[P] Weekly review goes here",
     "oem_title_xiaomi": "[P] Xiaomi / Redmi / POCO",
     "oem_title_oppo": "[P] Oppo / Realme / OnePlus",
     "oem_title_vivo": "[P] Vivo / iQOO",

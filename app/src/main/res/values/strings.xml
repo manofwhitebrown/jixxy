@@ -169,5 +169,5 @@
     <string name="a11y_reaction_sleepy">Boring</string>
     <string name="a11y_pause_card">Jixxy is peeking. Choose Leave or Stay.</string>
     <!-- [P] placeholders: keys not yet in MICROCOPY -->
-    <string name="placeholder_weekly">[P] Weekly review goes here</string>
+
 </resources>
