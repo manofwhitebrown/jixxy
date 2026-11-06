@@ -1,10 +1,10 @@
 # Launch content (T-GROWTH-5)
 
-Draft v0.1. Nothing here is to be posted until a real tester build or release exists and the download link works.
+Draft v0.2 (rebased on the cat, T-G2-5). Nothing here is to be posted until a real tester build or release exists and the download link works.
 
 | File | What |
 |---|---|
-| `SCRIPTS.md` | Five 15 to 30 second Reels/Shorts scripts |
+| `SCRIPTS.md` | Five 15 to 30 second Reels/Shorts scripts (sheet moments) |
 | `CAPTIONS.md` | Caption and hashtag sets |
 | `POSTS.md` | WhatsApp status text, Product Hunt draft, Reddit draft |
 | `ONELINERS.md` | 10 shareable one-liners from WRITER's marketing-safe lines |

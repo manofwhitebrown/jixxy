@@ -5,10 +5,10 @@ Replace `[LINK]` with the Releases page or Pages site URL only once it works. Do
 ## WhatsApp status text
 
 **Version 1 (short)**
-> Testing a small free Android app called Jixxy: a tiny roommate who pauses you, with jokes, before the apps you pick. No internet permission, no ads. Early tester build. [LINK]
+> Testing a small free Android app called Jixxy: a lazy, sarcastic cat who pauses you, with jokes, before the apps you pick. No internet permission, no ads. Early alpha. [LINK]
 
 **Version 2 (ask for testers)**
-> Looking for Android testers (17+). Jixxy is a tiny dramatic roommate that pauses you before up to 3 apps you choose. Free, nothing leaves your phone. It's rough, so I want honest feedback. Message me your phone model. [LINK]
+> Looking for Android testers (18+). Jixxy is a lazy, sarcastic cat that pauses you before up to 3 apps you choose. Free, nothing leaves your phone. It's rough, so I want honest feedback. Message me your phone model. [LINK]
 
 Notes: don't tag or name anyone's habits. Don't post screenshots with other people's chats visible.
 
@@ -17,7 +17,7 @@ Notes: don't tag or name anyone's habits. Don't post screenshots with other peop
 *Not for the tester phase. Use only for a real public release, with the Owner's go-ahead.* [Product Hunt's current rules and field limits are unverified; check before submitting.]
 
 - **Name:** Jixxy
-- **Tagline:** A tiny roommate who pauses you, with jokes (42 characters)
+- **Tagline:** A lazy cat who pauses you, with jokes
 - **Description:**
   > Jixxy is a free Android companion who lives on your screen as a small floating character. You choose up to 3 apps. When you open one, he shows a short pause card with a joke and two buttons: Leave, or Stay for 5 more minutes. You're always in control.
   >
@@ -33,7 +33,7 @@ Notes: don't tag or name anyone's habits. Don't post screenshots with other peop
 
 Rules differ per subreddit and many restrict self-promotion. **Read each subreddit's rules first**, disclose that you made it, and don't cross-post the same text everywhere. Likely candidates to check: r/androidapps, r/SideProject. [Rules unverified.]
 
-**Title:** I made a free Android app where a tiny roommate pauses you, with jokes, before apps you pick (early tester build)
+**Title:** I made a free Android app where a lazy, sarcastic cat pauses you, with jokes, before apps you pick (early alpha)
 
 **Body:**
 > Disclosure: I'm part of the team building this.
@@ -44,7 +44,7 @@ Rules differ per subreddit and many restrict self-promotion. **Read each subredd
 >
 > Privacy, which you can verify in app info: no internet permission, no accounts, no ads, no analytics. He only sees which app is in front and when, on your phone, using the Usage access and Display over other apps permissions. He doesn't read messages or screen content.
 >
-> It's an early tester build (Android 8+), installed as an APK, so you'll need to follow a couple of permission steps. Some phone brands kill background apps aggressively and I'd like to learn which. [LINK]
+> It's an early alpha (Android 8+), installed as an APK, so you'll need to follow a couple of permission steps. Some phone brands kill background apps aggressively and I'd like to learn which. [LINK]
 >
 > Honest feedback wanted: was he ever annoying? When did you choose Leave vs Stay? Did he survive in the background?
 

@@ -2,7 +2,7 @@
 
 Source: WRITER's "Marketing-safe lines" in `content/gold_lines.md` (v0.1, 2026-11-06). **Quoted unedited, attributed to Jixxy.** Do not change a word. If a line changes in the source, update here the same day.
 
-Use as text on a plain card, or as a story/status caption. Each stands alone with no slots filled in. Suggested card footer: "Jixxy, a free Android roommate. Early tester build."
+Use as text on a plain card, or as a story/status caption. Each stands alone with no slots filled in. Suggested card footer: "Jixxy, a free Android roommate (cat). Early alpha."
 
 | # | Line | Good for |
 |---|---|---|
