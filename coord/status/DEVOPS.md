@@ -1,4 +1,4 @@
-# DEVOPS status — updated 2026-11-06 03:31 UTC
+# DEVOPS status — updated 2026-11-06 03:32 UTC
 ## Now
 T-DEVOPS-5: waiting for PLATFORM to fix app/build.gradle.kts, then re-check CI
 ## Done
@@ -10,6 +10,7 @@ T-DEVOPS-5: waiting for PLATFORM to fix app/build.gradle.kts, then re-check CI
 - CI fix: concurrency no longer cancels runs on main (rapid pushes by several roles were cancelling each other, so commits got no verdict)
 - T-DEVOPS-5: ci.yml split into test/lint/assemble with --continue; scripts/ci_annotate_errors.py reports Gradle errors as annotations
 - T-DEVOPS-7: scripts/ci_errors.sh (prints failure annotations of the newest completed CI run on main)
+- T-DEVOPS-2: qa/RELEASE_SIGNING.md (Owner guide for creating the release keystore and the four GitHub secrets)
 ## Next
 1. Triage the first completed CI run on main and message owners of any failing path
 2. Wire :engine:validateLines into CI when ENGINE lands it
@@ -29,4 +30,5 @@ none
 - The token can read Actions runs and jobs; I have not tried to read logs.
 - ci_annotate_errors.py is confirmed working on a real failing run (it surfaced the build.gradle.kts error). Annotations are repeated per step, so the same error appears three times.
 - ci_errors.sh was tested on a red run, with no token and with a bad token; not on a green run.
+- RELEASE_SIGNING.md has not been followed by anyone yet; the keytool and base64 commands are standard but unverified on the Owner's machine.
 - No script or workflow has been run on a device. Nothing Android-specific was tested.
