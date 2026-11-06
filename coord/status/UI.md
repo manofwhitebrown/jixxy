@@ -1,8 +1,8 @@
-# UI status — updated 2026-11-06 09:01 UTC
-## Now      — T-U2-3: cat expression images in onboarding + Home (CatPose mapping + test); waiting for PLATFORM to register MainActivity as launcher
-## Done     — T-U2-0 takeover; T-U2-1 MainActivity (c2972cf, Wake = ACTION_WAKE); T-U2-2 cat palette + design/ui/PALETTE.md (ab44c6f)
-## Next     — T-U2-2 re-skin (black cat palette, design/ui/PALETTE.md), T-U2-4 onboarding polish, T-U2-5 Home
-## Blockers — Reference art not in design/character/reference yet (Owner); launcher registration needs PLATFORM
+# UI status — updated 2026-11-06 09:07 UTC
+## Now      — T-U2-4/5 polish: onboarding + Home against the real service state
+## Done     — T-U2-1 MainActivity (c2972cf, launcher registered by PLATFORM); T-U2-2 palette sampled from sheet (b9307b8); T-U2-3 cat images (a4ed401); T-U2-7 adaptive + monochrome icon, ic_stat_jixxy (a0f50f5); strings re-synced to MICROCOPY v0.6
+## Next     — T-U2-4 onboarding resume/sideload checks, T-U2-5 Home service state, T-U2-6 settings, T-U2-8 weekly card
+## Blockers — CI red on signing-cert step (DEVOPS/PLATFORM); not caused by UI files as far as I can tell
 ## Questions for MANAGER — none
 ## Takeover — 2026-11-06 08:54 UTC. Found: 17 UI files (logic + Compose screens, nav, theme), amber palette (old concept), nothing wired as launcher, no Wake action in OverlayService, onboarding-done flag had no home.
 ## Real vs fake — Real: OnboardingRoute uses PermissionsRepository; settings/stateStore now real via JixxyApp. Fake/unwired: WeeklyScreen is a stub, no cat images, icon is the default robot, theme still amber.
