@@ -19,3 +19,4 @@
 ## Takeover 2 (PLATFORM AI covering ENGINE)
 - T-E2-2 done: PEEK/CHARGING/LOW_BATTERY in CharacterState + mapping + D010StatesTest; character whens extended (see inbox/ALL).
 - Remaining: persist Pause runtime state, callbacks memory, measured coverage.
+- Open (reported to MANAGER): Pause runtime state not persisted (needs contract change), callback memory not built, coverage unmeasured. CI green on ae636c1.
