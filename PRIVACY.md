@@ -43,7 +43,7 @@ Jixxy never shares anything automatically. The weekly review card (planned, not 
 | Foreground service (`FOREGROUND_SERVICE`, `FOREGROUND_SERVICE_SPECIAL_USE`) | Keep the floating sprite running while you have him switched on; started and stopped by you | Doesn't run hidden tasks or networking |
 | Notifications (`POST_NOTIFICATIONS`, Android 13+) | Show the service notification and a "Wake Jixxy" action | Not used for marketing or reminders |
 | Start at boot (`RECEIVE_BOOT_COMPLETED`) | Bring Jixxy back after a restart | No extra data collected |
-| **Not requested:** internet, accessibility service, notification listener, microphone, camera, location, contacts, storage | — | — |
+| **Not requested:** internet, accessibility service, notification listener, microphone, camera, location, contacts | — | — |
 
 Jixxy also declares a query for launcher apps, so setup can show a list of your installed apps to choose from. It does not request the broad "see all installed apps" permission (`QUERY_ALL_PACKAGES`). App backup is switched off, so the log is not copied to cloud backups.
 
