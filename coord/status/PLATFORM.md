@@ -27,3 +27,7 @@ Expected: cat visible after every Wake. Tell me in plain words which step fails.
 - Not verified on a device. Caps (6/day, 20 min apart) mean he may be silent after a few lines: that is by design.
 
 - Signing check: verified by hand that the v0.0.1-alpha APK cert equals app/debug.keystore (ff57fdf9...3f1e). Red CI step is a DEVOPS script issue (see inbox/MANAGER, inbox/DEVOPS). Messages handled: 20261106-0903-MANAGER-signing-check-red.md, 20261106-0854-UI-launcher-and-wake.md, 20261106-0855-DEVOPS-versioncode-from-gradle-property.md, 20261106-0857-ENGINE-handoff-brain-factory.md
+
+## Doc check (T-P2-5/8), source: developer.android.com/about/versions/15/behavior-changes-15
+- Android 15, apps targeting 35+: the SYSTEM_ALERT_WINDOW exemption for starting a foreground service from the background is narrower; the app must already have a VISIBLE TYPE_APPLICATION_OVERLAY window first. Consequence: a start from a notification button or boot while no overlay is visible can throw ForegroundServiceStartNotAllowedException. OverlayService.enterForeground and BootReceiver already catch it; the Owner test is: reboot, then check whether Jixxy returns by himself (if not, he returns when the app is opened and Wake is tapped).
+- Not found in the docs I retrieved: whether starting the HOME activity from a service is allowed with overlay permission only. Still UNVERIFIED; needs a real Android 14/15 phone. Test: open Instagram, wait for a Pause, tap Leave; expected result is the home screen.
