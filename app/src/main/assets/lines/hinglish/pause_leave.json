@@ -190,5 +190,111 @@
       "hinglish"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "hg_pause_leave_any_011",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL",
+      "IMPRESSED"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Respect.",
+    "slots": [],
+    "tags": [
+      "pause_leave",
+      "owner_canon",
+      "celebrate",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_leave_any_012",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{app} se nikal gaye. Sunglasses on. Respect.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_leave",
+      "celebrate",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_leave_any_013",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Achha faisla. Sleepy-cat approved.",
+    "slots": [],
+    "tags": [
+      "pause_leave",
+      "soft",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_leave_any_014",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Nikal gaye. Bas itna hi. Shabash.",
+    "slots": [],
+    "tags": [
+      "pause_leave",
+      "soft",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_leave_any_015",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{app} bina tumhare bhi chal jayega. Achha kiya.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_leave",
+      "soft",
+      "hinglish"
+    ],
+    "almostCaring": false
   }
 ]

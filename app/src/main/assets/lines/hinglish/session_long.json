@@ -254,5 +254,28 @@
       "hinglish"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "hg_session_long_any_013",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SMUG"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{minutes} minute {app} pe? Legend.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long",
+      "owner_canon",
+      "hinglish"
+    ],
+    "almostCaring": false
   }
 ]

@@ -188,5 +188,101 @@
       "hinglish"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "hg_pause_stay_any_011",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Hehe. Theek hai. Paanch minute. Main time dekh raha hoon.",
+    "slots": [],
+    "tags": [
+      "pause_stay",
+      "owner_canon",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_stay_any_012",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Tumhari marzi. Meri aankhein aadhi band hain, support mein.",
+    "slots": [],
+    "tags": [
+      "pause_stay",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_stay_any_013",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Theek hai. Main so jaata hoon. Paanch poore hon toh jagana.",
+    "slots": [],
+    "tags": [
+      "pause_stay",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_stay_any_014",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Theek hai. Thoda ruk lo. Main yahin hoon.",
+    "slots": [],
+    "tags": [
+      "pause_stay",
+      "soft",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_stay_any_015",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Apne paanch minute lo. Koi judgement nahi. Blanket garam hai.",
+    "slots": [],
+    "tags": [
+      "pause_stay",
+      "soft",
+      "hinglish"
+    ],
+    "almostCaring": false
   }
 ]

@@ -274,5 +274,48 @@
       "hinglish"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "hg_app_open_any_001",
+    "trigger": "APP_OPEN",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "...sach mein?",
+    "slots": [],
+    "tags": [
+      "app_open",
+      "stare",
+      "owner_canon",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_app_open_any_002",
+    "trigger": "APP_OPEN",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "...sach mein? {app}?",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "stare",
+      "hinglish"
+    ],
+    "almostCaring": false
   }
 ]

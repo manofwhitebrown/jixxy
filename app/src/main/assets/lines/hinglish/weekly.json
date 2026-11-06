@@ -158,5 +158,65 @@
       "hinglish"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "hg_weekly_any_009",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Is hafte zero pause. Shaant. Main so gaya tha.",
+    "slots": [],
+    "tags": [
+      "weekly",
+      "weekly_quiet",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_weekly_any_010",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Pause-free hafta. Spreadsheet khaali hai. Mujhe shak hai.",
+    "slots": [],
+    "tags": [
+      "weekly",
+      "weekly_quiet",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_weekly_any_011",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Report khaali. Sach bolun toh, relaxing.",
+    "slots": [],
+    "tags": [
+      "weekly",
+      "weekly_quiet",
+      "hinglish"
+    ],
+    "almostCaring": false
   }
 ]

@@ -74,5 +74,43 @@
       "hinglish"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "hg_welcome_any_005",
+    "trigger": "WELCOME",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Ooh nice! Naya roommate. Expect nahi kiya tha, par chalega.",
+    "slots": [],
+    "tags": [
+      "welcome",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_welcome_any_006",
+    "trigger": "WELCOME",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Hi. Main Jixxy hoon. Billi hoon. Ab yahin rehta hoon. Snacks welcome.",
+    "slots": [],
+    "tags": [
+      "welcome",
+      "hinglish"
+    ],
+    "almostCaring": false
   }
 ]

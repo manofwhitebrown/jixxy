@@ -122,5 +122,89 @@
       "hinglish"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "hg_battery_low_any_007",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{battery}%?! bhai charge kar.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low",
+      "owner_canon",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_battery_low_any_008",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "WHAT?! {battery}%?! Charger. Abhi.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_battery_low_any_009",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{battery}% bacha hai. Mujhe bahut saari naps leni hain.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_battery_low_any_010",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Darr nahi raha. Bas bahut tezi se let raha hoon. {battery}%.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low",
+      "hinglish"
+    ],
+    "almostCaring": false
   }
 ]

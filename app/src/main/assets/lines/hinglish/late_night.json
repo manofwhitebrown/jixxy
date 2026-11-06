@@ -232,5 +232,88 @@
       "hinglish"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "hg_late_night_any_013",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Hum dono ko sona chahiye...",
+    "slots": [],
+    "tags": [
+      "late_night",
+      "blanket",
+      "owner_canon",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_late_night_any_014",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "...tum theek ho? ♡",
+    "slots": [],
+    "tags": [
+      "late_night",
+      "soft",
+      "owner_canon",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_late_night_any_015",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Blanket nikala hai. Jagah hai. Bas bata raha hoon.",
+    "slots": [],
+    "tags": [
+      "late_night",
+      "blanket",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_late_night_any_016",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{time} ho gaye. Blanket bahut garam hai. Bas ek fact.",
+    "slots": [
+      "time"
+    ],
+    "tags": [
+      "late_night",
+      "blanket",
+      "hinglish"
+    ],
+    "almostCaring": false
   }
 ]

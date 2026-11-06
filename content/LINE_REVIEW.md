@@ -46,3 +46,7 @@ Reworded 22 of my own new lines that shared their first two words with a neighbo
 
 ## v0.8 Roast and bond coverage (+40 EN lines)
 Gap found: PAUSE_STAY, PAUSE_LEAVE, POKE, WAKE, MUSIC, IMPRESSED had almost nothing at roast 2-3 or bondMin 1, so Normal/Savage users at ROOMMATE bond kept hearing gentle strangers' lines. Added 40 lines (stay x8, leave x6, poke x6, wake x3, music x3, impressed x2, app_open x12 with cat flavour for SOCIAL/VIDEO/GAME/MESSAGING/PRODUCTIVITY). Affectionate insults only at roast >= 2 and bondMin >= 1. Reworded four lines that implied a repeat ("again", "another") the engine cannot know. Local validator replica: 0 problems.
+
+## Hinglish pack v0.2 (T-W2-6, Manager go relayed by the Owner)
+The Manager's yes reached me through the Owner, not as a repo message; I read it as "trigger the Hinglish pack". Added 90 cat-voice Hinglish lines (150 -> 240; ids `hg_*`, lang `hinglish`, Roman script) mirroring the English canon: charger, low battery, dropped, poke escalation/on_break, nap/wake, music, late-night blanket, almost-caring, impressed, Pause SOFT/followup/tiers/BROWSER, Stay/Leave, weekly_quiet. "bro" becomes "bhai"; the skull emoji is not used. No Hindi insults (the engine's insult gate only knows the English list); only "gremlin" at roast 2 / bond 3.
+Not done: native-speaker review. Idiom, gender agreement (Jixxy speaks as "raha hoon") and whether sarcasm lands harder in Hinglish are unverified. Local validator replica: 0 problems on all 821+ lines.

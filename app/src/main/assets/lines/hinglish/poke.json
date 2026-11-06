@@ -150,5 +150,320 @@
       "hinglish"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "hg_poke_any_009",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "PANICKING"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Gira diya mujhe?! Rude.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "dropped",
+      "owner_canon",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_poke_any_010",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "WHAT?! Ye gira tha na? Mujhe laga gira tha.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "dropped",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_poke_any_011",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Billi paon pe girti hai. Meri izzat nahi giri.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "dropped",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_poke_any_012",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Dheere se rakhna agli baar. Main fluffy hoon, fragile hoon.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "dropped",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_poke_any_013",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Bhai kya?!",
+    "slots": [],
+    "tags": [
+      "poke",
+      "escalation",
+      "owner_canon",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_poke_any_014",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Emergency hai? Snacks aaye hain?",
+    "slots": [],
+    "tags": [
+      "poke",
+      "escalation",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_poke_any_015",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Bas karo poke. Main ab roti jaisa gol ho gaya.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "escalation",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_poke_any_016",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Tumhari ungli ke liye meeting bula raha hoon.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "escalation",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_poke_any_017",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "...sach mein?",
+    "slots": [],
+    "tags": [
+      "poke",
+      "stare",
+      "owner_canon",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_poke_any_018",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Hm? Arre, hi.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_poke_any_019",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Hehe. Mil gaya main.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "owner_canon",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_poke_any_020",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Tumne poke kiya. Main ise compliment maan raha hoon.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_poke_any_021",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Snacks. Abhi. Phir shayad baat karunga.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "on_break",
+      "owner_canon",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_poke_any_022",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Break pe hoon. Break poora din chalta hai.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "on_break",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_poke_any_023",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Lunch ke liye band. Lunch hi breakfast hai.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "on_break",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_poke_any_024",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Energy zero. Snacks se madad milegi. Bas bol raha hoon.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "on_break",
+      "hinglish"
+    ],
+    "almostCaring": false
   }
 ]

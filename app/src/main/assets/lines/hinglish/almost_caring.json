@@ -112,5 +112,44 @@
       "hinglish"
     ],
     "almostCaring": true
+  },
+  {
+    "id": "hg_almost_caring_any_007",
+    "trigger": "ALMOST_CARING",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 2,
+    "bondMin": 3,
+    "lang": "hinglish",
+    "text": "...so ja, gremlin.",
+    "slots": [],
+    "tags": [
+      "almost_caring",
+      "owner_canon",
+      "hinglish"
+    ],
+    "almostCaring": true
+  },
+  {
+    "id": "hg_almost_caring_any_008",
+    "trigger": "ALMOST_CARING",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 3,
+    "lang": "hinglish",
+    "text": "Main pareshaan nahi hoon. Bas tumhare time pe jaag raha hoon.",
+    "slots": [],
+    "tags": [
+      "almost_caring",
+      "hinglish"
+    ],
+    "almostCaring": true
   }
 ]

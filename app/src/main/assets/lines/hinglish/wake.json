@@ -74,5 +74,63 @@
       "hinglish"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "hg_wake_any_005",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Hm? ...main jaag raha tha. Bas aankhein aaram kar rahi thi.",
+    "slots": [],
+    "tags": [
+      "wake",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_wake_any_006",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Wapas. Mast neend aayi. Snacks ka sapna dekha.",
+    "slots": [],
+    "tags": [
+      "wake",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_wake_any_007",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "...maine kya miss kiya? Kuch nahi? Achha.",
+    "slots": [],
+    "tags": [
+      "wake",
+      "hinglish"
+    ],
+    "almostCaring": false
   }
 ]

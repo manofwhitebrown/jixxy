@@ -116,5 +116,44 @@
       "hinglish"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "hg_impressed_any_007",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Respect.",
+    "slots": [],
+    "tags": [
+      "impressed",
+      "owner_canon",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_impressed_any_008",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{count} Leave lagataar. Respect.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "impressed",
+      "hinglish"
+    ],
+    "almostCaring": false
   }
 ]

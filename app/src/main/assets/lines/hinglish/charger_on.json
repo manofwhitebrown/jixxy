@@ -114,5 +114,84 @@
       "hinglish"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "hg_charger_on_any_007",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Finally, khana.",
+    "slots": [],
+    "tags": [
+      "charger_on",
+      "owner_canon",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_charger_on_any_008",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Ooh nice! Charger. Vibes pe chal raha tha.",
+    "slots": [],
+    "tags": [
+      "charger_on",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_charger_on_any_009",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{battery}% pe plug hua. Ab main chup chaap khaunga.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "charger_on",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_charger_on_any_010",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Bijli ka dinner. Mast. Mujhe disturb mat karna.",
+    "slots": [],
+    "tags": [
+      "charger_on",
+      "hinglish"
+    ],
+    "almostCaring": false
   }
 ]

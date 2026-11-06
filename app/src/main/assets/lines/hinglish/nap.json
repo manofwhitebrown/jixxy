@@ -74,5 +74,60 @@
       "hinglish"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "hg_nap_any_005",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Nap time...",
+    "slots": [],
+    "tags": [
+      "nap",
+      "owner_canon",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_nap_any_006",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Chaddar ke neeche ja raha hoon. Jab uthunga, uthunga.",
+    "slots": [],
+    "tags": [
+      "nap",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_nap_any_007",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Aankhein band. Opinions abhi bhi on hain.",
+    "slots": [],
+    "tags": [
+      "nap",
+      "hinglish"
+    ],
+    "almostCaring": false
   }
 ]

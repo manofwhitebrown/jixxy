@@ -696,5 +696,396 @@
       "hinglish"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_any_001",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{time} baje hain. {app} kal bhi rahega. Main bhi.",
+    "slots": [
+      "app",
+      "time"
+    ],
+    "tags": [
+      "pause_prompt",
+      "soft",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_any_002",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Chhota pause. Chaho toh Leave. Chaho toh Stay.",
+    "slots": [],
+    "tags": [
+      "pause_prompt",
+      "soft",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_any_003",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [],
+    "moods": [
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "...tum theek ho? {app} wait kar lega. Ya nahi. Tumhari marzi.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "soft",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_any_004",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Raat late hai aur {app} bahut bright hai. Leave karo, main saath hoon.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "soft",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_any_005",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Peek. {app} se pehle ek chhota pause. Leave ya reason ke saath Stay.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_any_006",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{app} tumhe bula raha hai. Mujhe snack chahiye. Leave karo, dono jeetenge.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_any_007",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Main darwaze pe hoon. Leave karo, ya bolo ye zaroori hai.",
+    "slots": [],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_any_008",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Main ek fluffy speed bump hoon. Leave ya Stay?",
+    "slots": [],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_any_009",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Time ho gaya. Kaisa chal raha hai? Leave ya ek round aur?",
+    "slots": [],
+    "tags": [
+      "pause_prompt",
+      "followup",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_any_010",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Paanch minute poore. Maine gine. Leave ya ek aur?",
+    "slots": [],
+    "tags": [
+      "pause_prompt",
+      "followup",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_any_011",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Round do. Koi pressure nahi. Leave ya Stay?",
+    "slots": [],
+    "tags": [
+      "pause_prompt",
+      "followup",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_any_012",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Hehe. Time already khatam. Leave, ya ek aur baar?",
+    "slots": [],
+    "tags": [
+      "pause_prompt",
+      "followup",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_browser_001",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "BROWSER"
+    ],
+    "moods": [
+      "CHILL",
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{minutes} minute {app} me aaj. Tabs apne aap badhte hain.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_browser_002",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "BROWSER"
+    ],
+    "moods": [
+      "CHILL",
+      "SMUG"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Ek chhoti si search? Famous last words. Leave ya Stay?",
+    "slots": [],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_browser_003",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "BROWSER"
+    ],
+    "moods": [
+      "CHILL",
+      "SMUG"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{app} ek rabbit hole hai achchi lighting ke saath. Leave, ya main kood raha hoon.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_social_006",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SOCIAL",
+      "VIDEO"
+    ],
+    "moods": [
+      "CHILL",
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Peek. {app}? Theek hai. Pehle ek chhota pause.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier0",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_social_007",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SOCIAL",
+      "VIDEO"
+    ],
+    "moods": [
+      "CHILL",
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{app}, round {count}. Main ek row jod raha hoon.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier1",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_social_008",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SOCIAL",
+      "VIDEO"
+    ],
+    "moods": [
+      "CHILL",
+      "SMUG"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{count} pause {app} pe aaj. Maine naya column shuru kiya.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier2",
+      "hinglish"
+    ],
+    "almostCaring": false
   }
 ]

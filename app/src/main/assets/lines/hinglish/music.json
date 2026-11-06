@@ -74,5 +74,44 @@
       "hinglish"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "hg_music_any_005",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Wahi gaana repeat pe? Mazaak. Zyada nahi.",
+    "slots": [],
+    "tags": [
+      "music",
+      "owner_canon",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_music_any_006",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Music on. Volume tumhara. Opinion mera.",
+    "slots": [],
+    "tags": [
+      "music",
+      "hinglish"
+    ],
+    "almostCaring": false
   }
 ]
