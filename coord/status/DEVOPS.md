@@ -1,6 +1,6 @@
-# DEVOPS status — updated 2026-11-06 03:27 UTC
+# DEVOPS status — updated 2026-11-06 03:30 UTC
 ## Now
-T-DEVOPS-5: made CI errors readable via annotations; waiting for the first run to confirm
+T-DEVOPS-5: root cause of red main found (app/build.gradle.kts:35, PLATFORM); waiting for the fix
 ## Done
 - T-DEVOPS-0: .github/workflows/ci.yml (guards job + build job, skip-safe without gradlew)
 - T-DEVOPS-1: scripts/check_no_secrets.sh, check_manifest.sh, check_dependencies.sh, check_ownership.sh, validate_lines.py, install_hooks.sh
@@ -14,7 +14,7 @@ T-DEVOPS-5: made CI errors readable via annotations; waiting for the first run t
 2. Wire :engine:validateLines into CI when ENGINE lands it
 3. Confirm debug keystore with PLATFORM, then test release.yml with a throwaway tag
 ## Blockers
-Cannot read CI job logs from my sandbox (blob.core.windows.net blocked). Need the Owner to paste the Gradle error lines or allow that domain. Sent BLOCKER to MANAGER.
+none for me. main stays red until PLATFORM fixes app/build.gradle.kts (message sent).
 ## Questions for MANAGER
 none
 ## Messages handled
@@ -26,5 +26,5 @@ none
 - release.yml and pages.yml have NOT run: they parse as YAML and the changelog extraction was tested on a sample only. release.yml expects PLATFORM to read JIXXY_KEYSTORE_PATH and the JIXXY_* env vars in signingConfigs.release; that is not confirmed.
 - pages.yml needs the Owner to set Settings > Pages > Source to GitHub Actions.
 - The token can read Actions runs and jobs; I have not tried to read logs.
-- ci_annotate_errors.py was tested on a fake log only; unverified on a real failing run.
+- ci_annotate_errors.py is confirmed working on a real failing run (it surfaced the build.gradle.kts error). Annotations are repeated per step, so the same error appears three times.
 - No script or workflow has been run on a device. Nothing Android-specific was tested.
