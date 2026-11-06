@@ -30,7 +30,9 @@ import java.time.ZoneId
  *
  * Platform contract:
  *  - After each [onSignal], persist [currentState] and any [drainEvents] via `StateStore`.
- *  - The platform owns `UserSettings.napUntilTs`: set it when handling a nap, clear it on wake.
+ *  - The platform owns `UserSettings.napUntilTs`: set it when handling a nap, clear it on wake. The brain also
+ *    tracks its own nap from [Signal.NapRequested] and treats [Signal.WakeRequested] as authoritative: after a
+ *    wake it ignores the persisted nap value it saw at that moment, so a stale `napUntilTs` can never keep him silent.
  *  - A [Reaction] of kind PAUSE_PROMPT may have `text == null` if no line was available; show the card with a neutral resource string.
  *
  * Speech rules:
@@ -79,6 +81,8 @@ class DefaultJixxyBrain(
     private var tempMoodUntil = 0L
     private var napStartedAt: Long? = null
     private var napPlannedUntil: Long? = null
+    /** A persisted nap the user explicitly woke Jixxy from; ignored until a different nap value appears. */
+    private var ignoredNapUntil: Long? = null
 
     override val snapshot: BrainSnapshot
         get() {
@@ -153,6 +157,7 @@ class DefaultJixxyBrain(
             emptyList()
         }
         is Signal.NapRequested -> {
+            ignoredNapUntil = null
             napStartedAt = now
             napPlannedUntil = now + signal.minutes * 60_000L
             log(UsageEventType.NAP, now, null, signal.minutes)
@@ -160,8 +165,9 @@ class DefaultJixxyBrain(
         }
         is Signal.WakeRequested -> {
             endNap(now)
-            setTempMood(Mood.GRUMPY, now)
-            listOf(prompted(Trigger.WAKE, now, s, emptyMap(), null))
+            ignoredNapUntil = s.napUntilTs
+            tempMood = null
+            listOf(prompted(Trigger.WAKE, now, s, emptyMap(), Mood.CHILL))
         }
         is Signal.Heartbeat -> emptyList()
     }
@@ -375,7 +381,12 @@ class DefaultJixxyBrain(
 
     // ---- gates and state helpers -----------------------------------------------------------
 
-    private fun isNapping(now: Long, s: UserSettings): Boolean = s.napUntilTs?.let { now < it } ?: false
+    /** Napping = an own nap still planned, or a persisted nap in the future that the user has not woken him from. */
+    private fun isNapping(now: Long, s: UserSettings): Boolean {
+        val own = napPlannedUntil?.let { now < it } ?: false
+        val persisted = s.napUntilTs?.let { now < it && it != ignoredNapUntil } ?: false
+        return own || persisted
+    }
     private fun hardSilenced(now: Long, s: UserSettings): Boolean = inCall || isNapping(now, s)
     private fun inQuiet(now: Long, s: UserSettings): Boolean =
         TimeUtil.inWindow(TimeUtil.minuteOfDay(now, zone), s.quietStartMin, s.quietEndMin)

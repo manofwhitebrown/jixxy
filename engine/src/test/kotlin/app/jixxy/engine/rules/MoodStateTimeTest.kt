@@ -35,12 +35,14 @@ class MoodStateTimeTest {
         assertEquals(Mood.CHILL, r.brain.snapshot.mood)
     }
 
-    @Test fun wakingHimIsGrumpy() {
+    @Test fun wakingHimResetsMoodToChillWithAGroggyAnimation() {
         val r = Rig()
+        r.send(Signal.SpriteTapped(3, at(0, 11, 58)))
         r.send(Signal.NapRequested(30, at(0, 12)))
         val out = r.send(Signal.WakeRequested(at(0, 12, 5))).single()
-        assertEquals(Mood.GRUMPY, out.mood)
+        assertEquals(Mood.CHILL, out.mood)
         assertEquals(CharacterState.WAKE_GRUMPY, out.state)
+        assertEquals(Mood.CHILL, r.brain.snapshot.mood)
     }
 
     @Test fun napRepliesSleepyAndRestoresEnergyWhenItEnds() {
