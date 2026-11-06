@@ -25,7 +25,7 @@ case "$mode" in
   --sha)      expected="$(printf '%s' "${1:?hex}" | tr 'A-F' 'a-f' | tr -d ': ')";;
   --keystore)
     expected="$(keytool -list -v -keystore "${1:?keystore}" -alias "${2:?alias}" -storepass "${3:?pass}" 2>/dev/null \
-      | sed -n 's/^ *SHA256: *//p' | tr -d ':' | tr 'A-F' 'a-f' | head -1)";;
+      | sed -n 's/^[[:space:]]*SHA256: *//p' | tr -d ':' | tr 'A-F' 'a-f' | head -1)";;
   *) echo "check_apk_cert: unknown mode '$mode'" >&2; exit 2;;
 esac
 [ -n "$expected" ] || { echo "check_apk_cert: could not determine expected certificate" >&2; exit 2; }
