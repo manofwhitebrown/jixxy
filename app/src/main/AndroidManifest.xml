@@ -3,8 +3,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Allowed set only (T-PLATFORM-1). Forbidden: INTERNET, ACCESS_NETWORK_STATE, QUERY_ALL_PACKAGES,
-         READ_PHONE_STATE, location, contacts, accessibility. -->
+    <!-- Allowed set only (T-PLATFORM-1). The forbidden list lives in scripts/check_manifest.sh;
+         do not write forbidden permission names in comments, the guard greps this file's merged copy. -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
@@ -14,7 +14,7 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
-    <!-- Lets the UI list launchable apps without QUERY_ALL_PACKAGES. -->
+    <!-- Lets the UI list launchable apps without the broad package-visibility permission. -->
     <queries>
         <intent>
             <action android:name="android.intent.action.MAIN" />

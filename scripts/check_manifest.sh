@@ -14,7 +14,7 @@ FORBIDDEN='android.permission.INTERNET|ACCESS_NETWORK_STATE|QUERY_ALL_PACKAGES|R
 hits=$(grep -nE "$FORBIDDEN" "$M" || true)
 if [ -n "$hits" ]; then
   echo "::error::Forbidden permission/component in merged manifest:"
-  echo "$hits"
+  echo "$hits" | while IFS= read -r l; do echo "::error::manifest hit: $l"; done
   echo "Do not loosen this guard. Report to MANAGER (a library may have pulled it in)."
   exit 1
 fi
