@@ -7,3 +7,5 @@
 - **D-005 (2026-11-06 03:29 UTC)** app_categories.json schema: {"overrides":{pkg:CATEGORY},"protected":[pkg]}.
 - **D-006 (2026-11-06 03:29 UTC)** Provisional: v1 audience 18+, Play category not Health & Fitness. Licence and paid developer account: Owner decisions, pending.
 - **D-007 (2026-11-06 03:29 UTC)** Tests live with their owner's package under app/src/test/java/app/jixxy/<ui|platform|data>/**.
+
+- **D-008 (2026-11-06 03:34 UTC)** While PLATFORM is unavailable, MANAGER may make minimal compile-error fixes in PLATFORM-owned paths, each logged in PLATFORM's inbox. Features stay frozen.

@@ -1,3 +1,5 @@
+import java.util.Base64
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -32,7 +34,7 @@ android {
             create("release") {
                 val f = layout.buildDirectory.file("release.keystore").get().asFile
                 f.parentFile.mkdirs()
-                f.writeBytes(java.util.Base64.getDecoder().decode(keystoreB64.trim()))
+                f.writeBytes(Base64.getDecoder().decode(keystoreB64.trim()))
                 storeFile = f
                 storePassword = System.getenv("JIXXY_KEYSTORE_PASSWORD")
                 keyAlias = System.getenv("JIXXY_KEY_ALIAS")
