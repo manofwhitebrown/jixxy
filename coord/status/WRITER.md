@@ -1,17 +1,18 @@
-# WRITER status — updated 2026-11-06T08:54Z
-## Now      — T-W2-0 takeover done; starting T-W2-1 (bible for the black cat, D-012)
-## Done     — (predecessor) T-WRITER-0 bible v0.1; gold set; MICROCOPY v0.5; EN bank 366 lines; provisional Hinglish pack 150 lines
-## Next     — T-W2-1 bible v0.2 + HANDOFF; T-W2-2 new-state lines; T-W2-3 Pause lines; T-W2-4 microcopy; T-W2-5 validator loop
+# WRITER status — updated 2026-11-06T09:01Z
+## Now      — T-W2-5: waiting for `:engine:validateLines` (not in repo yet); meanwhile re-reading new lines for openings/tone
+## Done     — T-W2-0 takeover; T-W2-1 bible v0.2 for the cat (41f0838); T-W2-2 new-state + canonical lines (ce026f3, 780a05d); T-W2-3 Pause lines (9828ba2); T-W2-4 MICROCOPY v0.6 (77fa267). EN bank is now 555 lines (was 366).
+## Next     — T-W2-5 validator loop when ENGINE lands it; rewrite/cut after tester feedback; late_opens_week / stays_week / longest_session_day callbacks if ENGINE ships those facts; Hinglish pack stays parked
 ## Blockers — none
-## Questions for MANAGER — 1. No DROPPED trigger exists and the engine returns no reaction for SpriteDropped. I will write dropped lines as POKE + tag `dropped` (no contract change) unless you prefer a new Trigger.
-## Messages handled — inbox/WRITER 0318..0328 UI, 0329 MANAGER, 0330 ENGINE coverage table, 1200 GROWTH (predecessor handled the first group; the ENGINE gap list is now my to-do)
+## Questions for MANAGER — 1. DROPPED trigger or POKE + tag `dropped`? (I wrote POKE + `dropped`.) 2. Keep or retire the provisional Hinglish pack (150 lines, predecessor pushed it before the Manager's ack)? It still has pre-cat wording; I won't touch it until you trigger it.
+## Messages handled — handoffs sent to CHARACTER, ENGINE, UI (bible v0.2); INFO to UI (microcopy v0.6). Inbox/WRITER has no new messages since the predecessor's.
+## CI note — latest red run is CHARACTER's duplicate drawables (.png + .webp with the same name in character/src/main/res/drawable-nodpi). Not my paths; the "Guards (secrets, ownership, lines)" job is green.
 
-## Takeover: 2026-11-06T08:54Z
-Found: repo green; scripts/validate_lines.py passes (516 lines: 366 EN + 150 Hinglish). No line loader in code yet (engine selector exists, platform uses NoopBrain). Engine has no DROPPED trigger; SpriteDropped returns no reaction. D-010 states (PEEK/CHARGING/LOW_BATTERY) are not in the engine enum yet. design/character/reference/ does not exist yet (Owner to add).
-Keep: schema, safety rules, slot discipline, the 366-line bank as base, MICROCOPY IDs.
-Rewrite: lines that read as a generic "tiny sprite" and tone to match the sheet captions (lowercase-casual, "bro", reaction-first).
-Cut: anything that contradicts a cat roommate. Logged in LINE_REVIEW.md as I go.
-Do first: bible v0.2 (cat), then the ENGINE gap list (SOFT pause lines, BROWSER, generic, followup, tiers, on_break, fact: tags, weekly_quiet).
+## Owner manual test steps (lines reach the screen only if the real brain is in the APK you install)
+1. Install the newest GitHub Release APK built after commit fe3c9ee (PLATFORM wired the real brain).
+2. Open Jixxy, allow "Display over other apps", tap Wake. He should appear.
+3. Plug in the charger. Expected bubble within a few seconds: one of "Finally, food." / "Ooh nice! Charger. ..." (8 new lines).
+4. Tap Jixxy 3+ times quickly. Expected: a grumpy poke line (e.g. "Bro what?!"). Tell me if it feels annoying.
+5. Reply in plain words: which lines made you smile, which felt off, which felt too cat-pun-y.
 
 ## Honest notes
-Nothing here is device-tested. The bank passes the fallback validator only, not :engine:validateLines (not built yet). Humour is my judgement; testers confirm.
+Nothing here is device-tested. The bank passes scripts/validate_lines.py and the engine test's checks (ids unique, <= 90 chars, slots declared) as far as I can reproduce them in Python; I could not run Gradle. :engine:validateLines does not exist yet. Parsing check: Trigger/Mood/AppCategory names are strict in LineBankLoader, and all new lines use only existing enum names. The skull emoji appears once (Owner's caption line). Humour is my judgement; testers confirm. The dropped-line mapping depends on ENGINE (SpriteDropped currently returns no reaction).
