@@ -92,8 +92,8 @@ jobs:
             fi
           }
           if gh release view latest >/dev/null 2>&1; then
-            # move the tag to this commit first, then replace the assets and notes
-            step "move tag" gh api -X PATCH "repos/${GITHUB_REPOSITORY}/git/refs/tags/latest" -f sha="$SHA" -F force=true
+            # The tag is NOT moved: GITHUB_TOKEN gets 403 when repointing a ref at commits that touch
+            # .github/workflows (needs a "workflows" permission it cannot have). The notes name the real commit.
             step "upload assets" gh release upload latest dist/jixxy-latest.apk dist/jixxy-latest.apk.sha256 --clobber
             step "edit notes" gh release edit latest --title "Jixxy latest (main)" --notes-file dist/notes.md --prerelease
           else
