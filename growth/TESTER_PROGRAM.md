@@ -26,7 +26,7 @@ Keep a private sign-up sheet (outside the repo) with: first name or nickname, ph
 
 1. Download the latest `.apk` from the Releases page: https://github.com/manofwhitebrown/jixxy/releases
 2. Open the file. If Android asks, allow your browser or file manager to install unknown apps.
-3. **Android 13+:** if permission switches are greyed out, go to Settings → Apps → Jixxy → ⋮ menu → **Allow restricted settings**.
+3. **Android 13+:** if a permission is greyed out, tap it once and go back, then Settings → Apps → Jixxy → ⋮ menu → **Allow restricted settings**, then retry. (The menu item may only appear after you've tapped the blocked permission once. Jixxy's setup screens show these steps too.)
 4. Open Jixxy and follow setup. He'll ask for **Display over other apps** and **Usage access**. Choose up to 3 apps for pauses.
 5. **Keep him alive:** set battery usage for Jixxy to unrestricted, and turn on autostart if your phone has it (see the README table). Xiaomi/Oppo/Vivo testers: please do this, then tell us whether it was enough.
 6. Use your phone normally for 7 days. If he gets annoying, tap the nap button. That is useful feedback too.

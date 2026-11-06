@@ -45,25 +45,27 @@ Jixxy is not on the Play Store yet. Until then you install the APK directly.
 
 1. On your Android phone, open the [Releases page](https://github.com/manofwhitebrown/jixxy/releases) and download the latest `.apk`.
 2. Open the downloaded file. If Android asks, allow your browser or file manager to **install unknown apps** (Settings → Apps → special access → Install unknown apps).
-3. **Android 13 and newer: "Restricted settings".** Because Jixxy is installed outside the Play Store, Android may grey out the permission switches. To unlock them: Settings → Apps → Jixxy → ⋮ (top-right menu) → **Allow restricted settings**, then continue. Exact wording and menu location vary by phone brand and Android version.
+3. **Android 13 and newer: "Restricted settings".** Because Jixxy is installed outside the Play Store, Android may grey out a permission. If it does: tap the greyed-out permission once, then go back. Open Settings → Apps → Jixxy, tap the three-dot menu (usually top right), choose **Allow restricted settings** (confirm with your PIN or fingerprint if asked), then return and try the permission again. On some versions that menu item only appears after you've tapped the blocked permission once, and older Android versions may not block it at all. Menus differ by phone and Android version.
 4. Follow Jixxy's in-app setup. He will ask for two special permissions:
    - **Display over other apps** (overlay), so he can float on screen.
    - **Usage access**, so he can tell which app is in front.
 5. **Keep him alive.** Some phone brands aggressively close background apps. See the per-brand notes below.
 
-### Keep-alive by brand (draft, to be verified on real devices)
+### Keep-alive by brand (steps match the in-app guide; not yet verified on real devices)
 
 Menu names differ between versions. The goal is always the same: allow Jixxy to run in the background, set battery usage to *unrestricted* / *no restrictions*, and enable *autostart* where the brand has it.
 
 | Brand | What to look for |
 |---|---|
-| Pixel / stock Android | Settings → Apps → Jixxy → Battery → Unrestricted |
-| Samsung | Settings → Battery → Background usage limits → remove Jixxy from "sleeping" lists; App battery → Unrestricted |
-| Xiaomi / Redmi / Poco | Settings → Apps → Manage apps → Jixxy → Autostart ON; Battery saver → No restrictions; lock the app in Recents |
-| Oppo / Realme / OnePlus | Settings → Battery → App battery management → Jixxy → Allow background activity; Auto-launch ON |
-| Vivo / iQOO | Settings → Battery → Background power consumption → Jixxy → Allow; enable Autostart |
+| Stock Android / Pixel | Settings → Apps → Jixxy → Battery → Unrestricted (or "Don't optimise") |
+| Samsung | Settings → Battery → Background usage limits → remove Jixxy from "Sleeping apps" and add it to "Never sleeping apps" |
+| Xiaomi / Redmi / POCO | Settings → Apps → Manage apps → Jixxy → Autostart ON; Battery saver for Jixxy → No restrictions |
+| Oppo / Realme | Settings → Apps → App management → Jixxy → Allow auto-launch and Allow background activity; Battery → Don't optimise |
+| Vivo | Settings → Battery → Background power consumption → Jixxy → Allow; Apps → Autostart ON for Jixxy |
 
-> These steps are written from general knowledge and have **not yet been verified** on devices. Testers will confirm or correct them.
+Jixxy's setup screens show the same brand-specific steps, so you can follow them in the app.
+
+> These steps follow the in-app guide, which the team wrote from general knowledge. They have **not yet been verified** on real devices; testers will confirm or correct them.
 
 ---
 
@@ -82,7 +84,7 @@ No. Jixxy has no accessibility service and no notification-listener, and never r
 On purpose. The app is built without the internet permission, so it technically cannot send your data anywhere. You can check this in Android's app info.
 
 **What does he remember?**
-The last 30 days of simple events (for example, "opened an app at 23:40"), kept on your phone. You can view and erase them in the app. See [PRIVACY.md](PRIVACY.md).
+Simple events (for example, "opened an app at 23:40"), kept on your phone and deleted automatically after 30 days. The in-app "What Jixxy saw" screen shows the last 7 days, and you can erase the whole log. See [PRIVACY.md](PRIVACY.md).
 
 **Is it free?**
 Yes. No ads, no accounts, no payments.

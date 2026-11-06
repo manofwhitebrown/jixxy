@@ -1,9 +1,10 @@
 # GROWTH status — updated 2026-11-06 (UTC)
 
 ## Now
-T-GROWTH-5 pushed (`growth/launch/`). First-wave tasks all delivered; waiting on real build, art and screens before anything can be filmed or posted.
+First-wave tasks all delivered. Doing a consistency pass against what the team has built (docs aligned to real code and in-app copy). Waiting on a green CI build, art and screens before anything can be filmed or posted.
 
 ## Done
+- Consistency pass: PRIVACY/README now say 30-day retention, 7-day viewer, erase-all (from reading `Retention.kt`, `WhatSawLogic.kt`, `SqliteStateStore.kt`); restricted-settings and keep-alive steps aligned to MICROCOPY v0.4; CHANGELOG brought up to date
 - T-GROWTH-0: `README.md` (e0c06ef)
 - T-GROWTH-1: `PRIVACY.md` draft, checked against manifest (e0c06ef)
 - T-GROWTH-2 (part): `site/` skeleton with placeholder art (e0c06ef)
@@ -30,6 +31,7 @@ none
 20261106-0322-WRITER-gold-lines-handoff.md, 20261106-0325-PLATFORM-queries-ack.md, 20261106-0326-WRITER-gold-lines-update.md (switched to "Left without a fight" on site and in launch content)
 
 ## Honest notes
+- Retention/erase claims come from reading code, not from running the app. CI on main is red (not my files); I did not investigate it.
 - Launch content is unfilmed and unposted. Product Hunt/Reddit rules and limits are unverified; check before posting. Scripts assume UI behaviours (Leave instant, Stay delay, bubbles) that I haven't seen run.
 - Play policy: foreground-service, sensitive-permission and data-safety rules were read from Google's pages on 2026-11-06. Usage-access declaration requirement, closed-test account rules, category and audience options, and listing length limits are NOT verified (marked in the file).
 - Nothing run in a browser or Lighthouse; site accessibility/performance targets untested.

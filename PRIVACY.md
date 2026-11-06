@@ -2,7 +2,7 @@
 
 > **DRAFT for Owner review.** This is a plain-language description of what the app does, not legal advice. The permissions table was checked against `app/src/main/AndroidManifest.xml` as of 2026-11-06 and must be re-checked before every release.
 
-*Last updated: 2026-11-06 (draft)*
+*Last updated: 2026-11-06 (draft). Retention and erase behaviour were checked by reading the code, not by running the app.*
 
 ## The short version
 
@@ -22,9 +22,9 @@ Everything Jixxy does happens on your phone. The app is built **without the inte
 
 - Your **settings**: chosen apps (max 3), muted apps, roast level, quiet hours, and similar.
 - Jixxy's own **state** (mood, energy, how well you two know each other).
-- A simple **event log of the last 30 days** (for example, "opened an app at 23:40", "chose Leave"). It powers the weekly review card and the in-app "What Jixxy saw" screen.
+- A simple **event log** (for example, "opened an app at 23:40", "chose Leave"). Events older than **30 days** are deleted automatically. The in-app "What Jixxy saw" screen shows the **last 7 days** of it, and the log powers the weekly review card.
 
-All of this is stored on your phone only. You can **view and erase** the log inside the app. "Blind mode" stops detection and logging entirely. Uninstalling the app removes its data.
+All of this is stored on your phone only. You can **view the last 7 days** and **erase the whole log** (all stored events, not just the 7 days shown) inside the app. "Blind mode" stops detection and logging entirely. Uninstalling the app removes its data.
 
 ## What Jixxy never collects
 
