@@ -1645,7 +1645,7 @@
     "roast": 2,
     "bondMin": 0,
     "lang": "en",
-    "text": "{app} is a rabbit hole with good lighting. Leave, or I'm hopping in.",
+    "text": "Rabbit hole with good lighting: {app}. Leave, or I'm hopping in.",
     "slots": [
       "app"
     ],
@@ -1668,7 +1668,7 @@
     "roast": 2,
     "bondMin": 0,
     "lang": "en",
-    "text": "{minutes} minutes in {app}. Let me guess: just checking something.",
+    "text": "Let me guess: just checking something. {minutes} minutes in {app}.",
     "slots": [
       "app",
       "minutes"
@@ -2646,7 +2646,7 @@
     "roast": 2,
     "bondMin": 0,
     "lang": "en",
-    "text": "Pause {count}. The feed has nothing new. I checked. I didn't, but still.",
+    "text": "The feed has nothing new. I checked. I didn't, but still. Pause {count}.",
     "slots": [
       "count"
     ],

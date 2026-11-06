@@ -263,7 +263,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "Woke up. Not happy. Slightly happy.",
+    "text": "Not happy. Slightly happy. Woke up.",
     "slots": [],
     "tags": [
       "wake"

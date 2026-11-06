@@ -477,7 +477,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "Okay. Your call. I'll sit on the clock.",
+    "text": "Fine. I'll sit on the clock.",
     "slots": [],
     "tags": [
       "pause_stay"
@@ -528,7 +528,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "Five minutes. I'll pretend I don't have opinions.",
+    "text": "I'll pretend I don't have opinions. Five minutes.",
     "slots": [],
     "tags": [
       "pause_stay"
@@ -545,7 +545,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "Your choice. My eyes are half closed in support.",
+    "text": "Eyes half closed in support. Your choice.",
     "slots": [],
     "tags": [
       "pause_stay"

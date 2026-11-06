@@ -630,7 +630,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "It's {time}. The blanket is very warm. Just a fact.",
+    "text": "The blanket is very warm. Just a fact. It's {time}.",
     "slots": [
       "time"
     ],
@@ -688,7 +688,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "...you good? No need to answer.",
+    "text": "No need to answer. ...you good?",
     "slots": [],
     "tags": [
       "late_night",

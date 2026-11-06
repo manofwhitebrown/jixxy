@@ -647,7 +647,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "{minutes} minutes on {app}. I could've napped three times.",
+    "text": "I could've napped three times in {minutes} minutes on {app}.",
     "slots": [
       "app",
       "minutes"

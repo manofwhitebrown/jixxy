@@ -346,7 +346,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "{battery}%. I'm not scared. I'm just lying down very fast.",
+    "text": "Not scared. Just lying down very fast. {battery}%.",
     "slots": [
       "battery"
     ],
@@ -366,7 +366,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "{battery}% left. Please. I have so many naps to take.",
+    "text": "Please. {battery}% left and so many naps to take.",
     "slots": [
       "battery"
     ],
@@ -425,7 +425,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "Low battery. Dramatic music is playing in my head.",
+    "text": "Dramatic music is playing in my head. Low battery.",
     "slots": [],
     "tags": [
       "battery_low"
@@ -442,7 +442,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "{battery}%. I'm trying to stay calm. I'm failing.",
+    "text": "Staying calm at {battery}%. Failing, but staying.",
     "slots": [
       "battery"
     ],

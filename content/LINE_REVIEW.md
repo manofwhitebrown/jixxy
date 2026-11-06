@@ -40,3 +40,6 @@ Every CALLBACK line now has exactly one `fact:` tag (pauses_day, pauses_week, le
 
 ## v0.6 Validator loop (T-W2-5)
 ENGINE landed LineBankValidator + :engine:validateLines (0c7fb49). I cannot run Gradle here, so I re-implemented its rules in Python (banned list incl. "ass", "god", "hell", "trash", "mental"; slot availability per trigger; insult gating; UTF-16 length) and ran them on all 705 EN and 150 Hinglish lines: 0 errors. CI's validateLines output remains the authority; if it flags anything I will fix it first.
+
+## v0.7 Opening-variety pass
+Reworded 22 of my own new lines that shared their first two words with a neighbour in the same trigger/group (battery_low, charger_on, late_night, nap, poke, pause_stay, browser prompts, weekly, welcome, wake, session_long, almost_caring). The Owner's canonical captions keep their exact wording. Slots re-derived; 0 validator errors.

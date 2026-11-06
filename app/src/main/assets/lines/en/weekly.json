@@ -604,7 +604,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "{count} pauses faced. I took notes and a nap.",
+    "text": "Took notes and a nap through {count} pauses.",
     "slots": [
       "count"
     ],
@@ -646,7 +646,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "{count} pauses, and I'm the tired one.",
+    "text": "I'm the tired one, and you faced {count} pauses.",
     "slots": [
       "count"
     ],

@@ -327,7 +327,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "Plugged in at {battery}%. I will now sit very still and eat.",
+    "text": "Now I will sit very still and eat. {battery}% was a lot.",
     "slots": [
       "battery"
     ],
@@ -365,7 +365,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "Ooh nice, electricity. Dinner is served.",
+    "text": "Electricity! Dinner is served.",
     "slots": [],
     "tags": [
       "charger_on"
