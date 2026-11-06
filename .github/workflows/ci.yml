@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  guards:
+    name: Guards (secrets, ownership, lines)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+      - name: No secrets / forbidden files
+        run: bash scripts/check_no_secrets.sh
+      - name: Ownership (warning only)
+        run: bash scripts/check_ownership.sh || true
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.12"
+      - name: Line bank (python fallback; Gradle task takes over when it exists)
+        run: python3 scripts/validate_lines.py
+
+  build:
+    name: Build, test, lint, privacy guards
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Detect Gradle wrapper
+        id: gradle
+        run: |
+          if [ -x ./gradlew ] || [ -f ./gradlew ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::./gradlew not found yet (PLATFORM scaffold pending). Build steps skipped, not failed."
+          fi
+      - uses: actions/setup-java@c5195efecf7bdfc987ee8bae7a71cb8b11521c00 # v4.7.1
+        if: steps.gradle.outputs.present == 'true'
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: gradle/actions/setup-gradle@ac638b010cf58a27ee6c972d7336334ccaf61c96 # v4.4.1
+        if: steps.gradle.outputs.present == 'true'
+      - name: Dependency guard
+        run: bash scripts/check_dependencies.sh
+      - name: Test, lint, assemble
+        if: steps.gradle.outputs.present == 'true'
+        run: |
+          chmod +x ./gradlew
+          ./gradlew test lint assembleDebug --stacktrace
+      - name: Manifest guard (merged debug manifest)
+        if: steps.gradle.outputs.present == 'true'
+        run: bash scripts/check_manifest.sh
+      - name: Upload debug APK
+        if: steps.gradle.outputs.present == 'true'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: jixxy-debug-${{ github.sha }}.apk
+          path: app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
+          retention-days: 14

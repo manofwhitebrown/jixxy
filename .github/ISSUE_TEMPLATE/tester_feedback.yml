@@ -1,0 +1,29 @@
+name: Tester feedback
+description: Structured feedback (Jixxy has no telemetry, so this is our data)
+labels: [feedback]
+body:
+  - type: input
+    id: days
+    attributes: {label: How many days have you used Jixxy?}
+    validations: {required: true}
+  - type: dropdown
+    id: annoying
+    attributes:
+      label: Was he annoying?
+      options: ["Never", "Sometimes", "Often", "I turned him off"]
+    validations: {required: true}
+  - type: dropdown
+    id: pause
+    attributes:
+      label: On Pause cards you mostly chose
+      options: ["Leave", "Stay", "About equal", "Never saw one"]
+    validations: {required: true}
+  - type: textarea
+    id: lines
+    attributes: {label: A line you loved, and a line you hated (copy the text)}
+  - type: input
+    id: device
+    attributes: {label: Phone model, Android version and OEM skin}
+  - type: textarea
+    id: other
+    attributes: {label: Anything else}
