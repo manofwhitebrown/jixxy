@@ -105,6 +105,8 @@ jobs:
           ls -l evidence
       - name: Replace the ci-evidence release assets
         run: |
+          trap 'echo "::error::failed at line $LINENO: $BASH_COMMAND"' ERR
+          set -E
           sha="${{ github.event.workflow_run.head_sha || github.sha }}"
           notes="Rolling evidence from the newest emulator run. Commit $sha, run ${{ github.run_id }}. Files: apiNN-<name>.png (screenshots), apiNN-logcat.txt, apiNN-crashes.txt (only if a crash was found)."
           gh release view ci-evidence --repo "${{ github.repository }}" >/dev/null 2>&1 \
