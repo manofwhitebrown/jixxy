@@ -1,7 +1,7 @@
-# PLATFORM status — updated 2026-11-06T03:24Z
-## Now      — T-PLATFORM-5 dispatcher glue pushed; next T-PLATFORM-6
+# PLATFORM status — updated 2026-11-06T03:25Z
+## Now      — T-PLATFORM-6 pushed; first wave complete, nothing built or run yet
 ## Done     — T-PLATFORM-0 scaffold (ec939a7); T-PLATFORM-1 manifest; T-PLATFORM-2 OverlayService + placeholder sprite (see git log)
-## Next     — T-PLATFORM-6 PermissionsRepository, OemIntents, BootReceiver; swap NoopBrain and PauseWindow stub when ENGINE/CHARACTER publish real ones
+## Next     — fix whatever CI/first build reports; swap NoopBrain and PauseWindow stub when ENGINE/CHARACTER publish real ones; real device test of Leave->Home and OEM kill behaviour
 ## T-3 notes
 - Files: platform/signals/{SignalBus,CategoryRules,CategoryResolver,UsageDetector,SystemSignals}.kt; unit tests CategoryRulesTest (never run).
 - Assumed app_categories.json schema {"overrides":{pkg:CATEGORY},"protected":[pkg]}: ENGINE has not pushed the file; please confirm or send the real schema.
@@ -16,7 +16,7 @@
 - DataStore 1.1.7 and the rest of the catalog versions are from memory, unverified.
  — none
 ## Questions for MANAGER — 1. Notification text lives in platform/PlatformStrings.kt because res/ is UI-owned; OK to move to res later?
-## Messages handled — 20261106-0318-DEVOPS-debug-keystore.md, 20261106-0318-UI-interfaces-needed.md (replied; FileProvider and PermissionsRepository pending), 20261106-0400-ENGINE-coroutines-dependency.md, 20261106-0320-UI-deps-exact.md, 20261106-0321-CHARACTER-jixxyview-handoff.md, 20261106-0321-UI-fileprovider-paths.md
+## Messages handled — 20261106-0318-DEVOPS-debug-keystore.md, 20261106-0318-UI-interfaces-needed.md (replied; FileProvider and PermissionsRepository pending), 20261106-0400-ENGINE-coroutines-dependency.md, 20261106-0320-UI-deps-exact.md, 20261106-0321-CHARACTER-jixxyview-handoff.md, 20261106-0321-UI-fileprovider-paths.md, 20261106-1300-GROWTH-queries-visibility.md
 ## Honest notes
 - NOT compiled or run anywhere: no Android SDK or Gradle servers reachable from my sandbox. Treat all Kotlin as unverified until CI/Android Studio builds it. Expect possible compile errors on first build.
 - Not tested on a device: dragging, edge-snap, rotation clamp, screen-off hiding, Nap, Stop, Android 15 fallback path.

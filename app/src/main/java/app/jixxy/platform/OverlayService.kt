@@ -79,6 +79,7 @@ class OverlayService : Service(), ReactionRenderer {
             stopSelf()
             return
         }
+        setWantedRunning(this, true)
         addSprite()
         registerReceiver(screenReceiver, IntentFilter().apply {
             addAction(Intent.ACTION_SCREEN_ON)
@@ -107,7 +108,7 @@ class OverlayService : Service(), ReactionRenderer {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         when (intent?.action) {
-            ACTION_STOP -> stopSelf()
+            ACTION_STOP -> { setWantedRunning(this, false); stopSelf() }
             ACTION_NAP -> scope.launch {
                 val t = System.currentTimeMillis()
                 app.settings.update { it.copy(napUntilTs = t + NAP_MS) }
@@ -288,5 +289,14 @@ class OverlayService : Service(), ReactionRenderer {
         private const val PREFS = "platform_overlay"
         private const val KEY_X = "x"
         private const val KEY_Y = "y"
+        private const val KEY_WANTED = "wanted_running"
+
+        /** True from the moment the service starts until the user explicitly stops it; read by [BootReceiver]. */
+        fun wantedRunning(context: Context): Boolean =
+            context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).getBoolean(KEY_WANTED, false)
+
+        private fun setWantedRunning(context: Context, wanted: Boolean) {
+            context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).edit().putBoolean(KEY_WANTED, wanted).apply()
+        }
     }
 }

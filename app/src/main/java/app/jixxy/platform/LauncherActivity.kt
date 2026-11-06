@@ -33,7 +33,7 @@ class LauncherActivity : ComponentActivity() {
                     startForegroundService(Intent(this@LauncherActivity, OverlayService::class.java))
                 }) { Text("2. Wake Jixxy") }
                 Button(onClick = {
-                    stopService(Intent(this@LauncherActivity, OverlayService::class.java))
+                    startService(Intent(this@LauncherActivity, OverlayService::class.java).setAction(OverlayService.ACTION_STOP))
                 }) { Text("Stop") }
             }
         }
