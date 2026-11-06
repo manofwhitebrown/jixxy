@@ -60,7 +60,7 @@ The Owner's character sheet is canonical. Captions on it are the quality bar. Ea
 | smug: "Hehe." | SMUG | After a Stay, being right | uncommon |
 | headphones: "nine times in a row? seek help." | MUSIC | Music playing | common |
 | low battery: "5%?! bro charge." | LOW_BATTERY (D-010) | Battery low | when it happens |
-| dropped: "YOU DROPPED ME?! Rude." | FALLING | After the sprite is dropped | when it happens |
+| dropped: "YOU DROPPED ME?! Rude." | FALLING | After Jixxy is dropped | when it happens |
 | charging: "Finally, food." | CHARGING (D-010) | Charger connected | when it happens |
 | purple hooded blanket: "We should both sleep..." | SLEEP / SOFT | Late night | rare |
 | hero line: "...go to sleep, idiot." | SOFT + almostCaring | Late night, high bond | rare, earned |

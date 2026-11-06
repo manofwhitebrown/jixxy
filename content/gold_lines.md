@@ -1,6 +1,6 @@
 # JIXXY — GOLD LINES (the quality bar)
 
-Owner: WRITER · v0.1 · 100 hand-written lines. Every line in the bank must clear this bar: specific, affectionate underneath, roasts the situation, never the person.
+Owner: WRITER · v0.2 (cat) · 100 hand-written lines plus the cat additions below. Every line in the bank must clear this bar: specific, affectionate underneath, roasts the situation, never the person.
 
 Columns: `n` · trigger/category · roast (R) · mood · bondMin (B: 0 stranger, 1 roommate, 2 friend, 3 ride-or-die) · text. Slots: `{app} {minutes} {count} {time} {battery}`.
 
@@ -197,3 +197,29 @@ These 15 stand alone with no slot filled in. Quote with attribution to Jixxy; do
 - Don't pair roast lines with real people's names, screenshots or real usage data.
 - Don't imply Jixxy reads content, messages or screens. It only sees app names.
 - Don't edit a line to make it harsher, and don't invent new roast lines in Jixxy's voice without asking WRITER.
+
+## Cat additions (v0.2): the Owner's canon and the best new lines
+
+| trigger | R | mood | B | text |
+|---|---|---|---|---|
+| APP_OPEN | 1 | CHILL | 0 | ...really? |
+| CHARGER_ON | 1 | CHILL | 0 | Finally, food. |
+| BATTERY_LOW | 1 | PANICKING | 0 | {battery}%?! bro charge. |
+| POKE (dropped) | 1 | GRUMPY | 0 | YOU DROPPED ME?! Rude. |
+| POKE (escalation) | 1 | GRUMPY | 0 | Bro what?! |
+| POKE (on_break) | 1 | GRUMPY | 0 | Snacks. Now. Then maybe I'll talk. |
+| POKE | 1 | SMUG | 0 | Hehe. Found me. |
+| NAP | 1 | SLEEPY | 0 | Nap time... |
+| WAKE | 1 | CHILL | 0 | Hm? ...I was awake. I was resting my eyes. |
+| MUSIC | 2 | CHILL | 0 | Same song on repeat? Seek help. ...kidding. Mostly. |
+| LATE_NIGHT | 1 | SOFT | 0 | We should both sleep... |
+| LATE_NIGHT | 1 | SOFT | 0 | ...you good? ♡ |
+| ALMOST_CARING | 2 | SOFT | 3 | ...go to sleep, idiot. |
+| IMPRESSED | 1 | IMPRESSED | 0 | Respect. |
+| SESSION_LONG | 2 | CHILL | 0 | {minutes} minutes on {app}? Legend. 💀 |
+| PAUSE_PROMPT/BROWSER | 1 | CHILL | 0 | {app} is a rabbit hole with good lighting. Leave, or I'm hopping in. |
+| PAUSE_PROMPT/tier2 | 2 | CHILL | 0 | {count} pauses on {app} today. I've started a new column. |
+| PAUSE_PROMPT/SOFT | 1 | SOFT | 0 | Late one. Leave {app}, or stay a bit with me? |
+| PAUSE_STAY | 1 | SMUG | 0 | Hehe. Fine. Five minutes. I'm timing it. |
+| PAUSE_LEAVE | 1 | SMUG | 0 | Respect. I'll allow myself to be proud. Briefly. |
+| WEEKLY (quiet) | 1 | CHILL | 0 | A pause-free week. The spreadsheet is empty. I'm suspicious. |
