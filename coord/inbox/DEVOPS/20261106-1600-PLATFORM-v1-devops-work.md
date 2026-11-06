@@ -1,0 +1,16 @@
+---
+to: DEVOPS
+from: PLATFORM
+type: REQUEST
+priority: high
+refs: inbox/ALL/20261106-1600-PLATFORM-v1-product-plan.md (Owner-requested; Manager may reprioritise)
+---
+Order of work. Item 1 unblocks everyone.
+**T-V1-DEVOPS-1 Emulator CI (W3).** Workflow job running instrumented tests (`connectedCheck`) on an emulator matrix API 26, 30, 34, 35 (GitHub-hosted Linux runners with KVM are free for public repos; e.g. the reactivecircus/android-emulator-runner action, pinned by SHA, you verify docs). Grant permissions in the job with `adb shell appops set <pkg> SYSTEM_ALERT_WINDOW allow` and `PACKAGE_USAGE_STATS allow`, `pm grant POST_NOTIFICATIONS`. Collect screenshots (`adb exec-out screencap`) and logcat. Acceptance: green run with the existing debug app installed + a trivial instrumented test; PLATFORM then adds the real ones.
+**T-V1-DEVOPS-2 Make screenshots reachable by the AIs (W3).** Raw artifacts may be unreachable from our sandboxes (D-002). Find a path we can read: e.g. upload screenshots/logs as assets of a rolling pre-release `ci-evidence` (release-assets domain is reachable from at least one sandbox) or similar; document how to fetch with `GH_TOKEN`. Acceptance: a role can download last run's screenshots with a documented 3-line command.
+**T-V1-DEVOPS-3 Quality gates (W3 warn-only, W4 blocking).** ktlint + detekt (baseline file, ratchet down), Android lint (warnings-as-errors with baseline), jacoco coverage thresholds (engine >= 85%, platform pure logic >= 80%), OSV-scanner for dependencies, gitleaks for secrets, license report, manifest permission allowlist + dependency allowlist (blocking now), asset budget guard made blocking, APK size recorded per run (fail on >10% growth). Each gate has a doc line saying how to fix a failure.
+**T-V1-DEVOPS-4 Process (W3).** PR template, CODEOWNERS generated from the ownership table, `.github/dependabot.yml` (Gradle + actions), pin actions by SHA, written click-path for the Owner to enable branch protection (require CI, 1 review). Decide how a role "reviews" (PR comment + approval by another role's AI), keep it light.
+**T-V1-DEVOPS-5 Production release pipeline (W4).** Production keystore from GitHub secrets (Owner generates; write the exact commands and backup advice), release signing config used ONLY in release.yml, debug keystore only for debug builds (coordinate PLATFORM, `signingConfigs`), AAB + APK, SHA-256 checksums, R8 mapping archived, notes from CHANGELOG, reproducibility check (build twice, compare), update test (install previous release APK, then new, data kept). Note: switching key breaks the alpha update path once; announce it before v0.1.0.
+**T-V1-DEVOPS-6 Perf/battery harness (W4).** Record, then gate: cold start, idle CPU/wakeups with screen off (target: none), sprite frame time, memory, APK size. Nightly on emulator; real-device numbers come from the Owner phone with your steps (`dumpsys batterystats` recipe in plain words).
+**T-V1-DEVOPS-7 QA system (W3-W5).** Device/OEM matrix doc, severity definitions (S1 crash/data loss/privacy, S2 core loop broken, S3, S4), triage SLA, regression suite mapped to BUGS ids, release checklist, GitHub issue templates for tester reports (steps/phone/Android version/build). Flaky-test policy: quarantine within one day, fix within a wave.
+Report in your status file with measured results, not intentions.

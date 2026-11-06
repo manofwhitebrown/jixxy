@@ -44,3 +44,6 @@ Expected: cat visible after every Wake. Tell me in plain words which step fails.
 - Still UNVERIFIED (device only): Leave -> home from a service on Android 14/15; reboot auto-return on Android 15.
 - GROWTH <queries> note: kept as is; the app picker needs the launchable-app list. PRIVACY.md wording (launcher query) is accurate.
 Messages handled (later): 20261106-0914-CHARACTER-bubble-and-pausecard-ready.md, 20261106-1300-GROWTH-queries-visibility.md
+
+## V1 planning (2026-11-06 16:00Z)
+At the Owner's request I wrote the MVP->product plan (inbox/ALL/20261106-1600-PLATFORM-v1-product-plan.md), a ratification request to MANAGER, and proposed work orders for DEVOPS, ENGINE, UI, CHARACTER, WRITER, GROWTH, plus my own list (inbox/PLATFORM/...-self-v1-work.md). TASKS.md/DECISIONS.md untouched (Manager lane). Nothing in the plan was run; it comes from reading the repo.
