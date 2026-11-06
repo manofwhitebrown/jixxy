@@ -184,7 +184,7 @@ private fun RestrictedSettingsExplainer(onOpenAppInfo: () -> Unit) {
         R.string.onboarding_restricted_step4, R.string.onboarding_restricted_step5,
     ).forEachIndexed { i, step -> Text("${i + 1}. ${stringResource(step)}", style = MaterialTheme.typography.bodyMedium) }
     Text(stringResource(R.string.onboarding_restricted_hedge_note), style = MaterialTheme.typography.bodySmall)
-    TextButton(onClick = onOpenAppInfo, Modifier.heightIn(min = 48.dp)) { Text(stringResource(R.string.onboarding_restricted_open_app_info)) }
+    TextButton(onClick = onOpenAppInfo, Modifier.heightIn(min = 48.dp)) { Text(stringResource(R.string.onboarding_restricted_cta_open_app_info)) }
 }
 
 @Composable
