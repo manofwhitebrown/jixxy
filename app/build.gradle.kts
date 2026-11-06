@@ -72,4 +72,5 @@ dependencies {
     implementation(libs.kotlinx.coroutines.core)
     debugImplementation(libs.androidx.compose.ui.tooling)
     testImplementation(libs.junit)
+    testImplementation("org.json:json:20240303") // real org.json for JVM unit tests (android.jar stubs throw)
 }

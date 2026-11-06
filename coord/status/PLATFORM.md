@@ -1,7 +1,14 @@
-# PLATFORM status — updated 2026-11-06T03:19Z
-## Now      — T-PLATFORM-1 and T-PLATFORM-2 pushed (M1 candidate); awaiting first CI/IDE build
+# PLATFORM status — updated 2026-11-06T03:21Z
+## Now      — T-PLATFORM-3 pushed (signal sources); next T-PLATFORM-4 data layer
 ## Done     — T-PLATFORM-0 scaffold (ec939a7); T-PLATFORM-1 manifest; T-PLATFORM-2 OverlayService + placeholder sprite (see git log)
-## Next     — T-PLATFORM-3 signal sources; FileProvider after UI pushes res/xml/file_paths.xml; T-PLATFORM-6 permissions API
+## Next     — T-PLATFORM-4 data layer, T-PLATFORM-5 dispatcher, T-PLATFORM-6 permissions API; FileProvider once UI pushes file_paths.xml
+## T-3 notes
+- Files: platform/signals/{SignalBus,CategoryRules,CategoryResolver,UsageDetector,SystemSignals}.kt; unit tests CategoryRulesTest (never run).
+- Assumed app_categories.json schema {"overrides":{pkg:CATEGORY},"protected":[pkg]}: ENGINE has not pushed the file; please confirm or send the real schema.
+- Own package is treated as PROTECTED. ApplicationInfo.CATEGORY_MAPS maps to PROTECTED; messaging/browser/shopping depend on the JSON overrides (Android has no such category).
+- Detectors are not yet started by OverlayService; that wiring is T-PLATFORM-5.
+- Usage polling stops while screen is off; heartbeat and audio poll also stop then (no wake-ups). Heartbeat uses Handler, not alarms.
+- Unverified: queryEvents behaviour on real OEM devices, receiver registration rules on targetSdk 36 (screen/power broadcasts are protected system broadcasts, so I believe no export flag is needed, not checked in docs).
 ## Blockers — none
 ## Questions for MANAGER — 1. Notification text lives in platform/PlatformStrings.kt because res/ is UI-owned; OK to move to res later?
 ## Messages handled — 20261106-0318-DEVOPS-debug-keystore.md, 20261106-0318-UI-interfaces-needed.md (replied; FileProvider and PermissionsRepository pending), 20261106-0400-ENGINE-coroutines-dependency.md
