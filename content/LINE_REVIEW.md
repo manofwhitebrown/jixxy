@@ -37,3 +37,6 @@ Honest notes: tier1/tier2 lines use {count} (nth pause of that app today) which 
 
 ## v0.5 CALLBACK / WEEKLY tags (ENGINE request 0330 items 6)
 Every CALLBACK line now has exactly one `fact:` tag (pauses_day, pauses_week, leaves_week, app_visits_day, app_visits_week). 8 lines were reworded so the period is explicit ("today" / "this week") and the tag is truthful. WEEKLY lines tagged `weekly_roast` / `weekly_praise`; +14 lines incl. 6 `weekly_quiet` (no {count}) for a zero-pause week. Not used: fact:late_opens_week, fact:stays_week, fact:longest_session_day (no lines yet).
+
+## v0.6 Validator loop (T-W2-5)
+ENGINE landed LineBankValidator + :engine:validateLines (0c7fb49). I cannot run Gradle here, so I re-implemented its rules in Python (banned list incl. "ass", "god", "hell", "trash", "mental"; slot availability per trigger; insult gating; UTF-16 length) and ran them on all 705 EN and 150 Hinglish lines: 0 errors. CI's validateLines output remains the authority; if it flags anything I will fix it first.

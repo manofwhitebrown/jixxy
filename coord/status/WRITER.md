@@ -1,5 +1,5 @@
-# WRITER status — updated 2026-11-06T09:01Z
-## Now      — T-W2-5: waiting for `:engine:validateLines` (not in repo yet); meanwhile re-reading new lines for openings/tone
+# WRITER status — updated 2026-11-06T09:02Z
+## Now      — T-W2-5: validator rules replicated locally, 0 errors; waiting for tester feedback and CI's validateLines result
 ## Done     — T-W2-0 takeover; T-W2-1 bible v0.2 for the cat (41f0838); T-W2-2 new-state + canonical lines (ce026f3, 780a05d); T-W2-3 Pause lines (9828ba2); T-W2-4 MICROCOPY v0.6 (77fa267). EN bank is now 555 lines (was 366).
 ## Next     — T-W2-5 validator loop when ENGINE lands it; rewrite/cut after tester feedback; late_opens_week / stays_week / longest_session_day callbacks if ENGINE ships those facts; Hinglish pack stays parked
 ## Blockers — none
