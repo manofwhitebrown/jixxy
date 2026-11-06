@@ -2,4 +2,16 @@
 <resources>
     <string name="jixxy_content_description">Jixxy, your lazy black cat roommate</string>
     <string name="jixxy_says_description">Jixxy says: %1$s</string>
+    <string name="pause_leave">Leave</string>
+    <string name="pause_stay_waiting">Stay (%d)</string>
+    <string name="pause_dismiss_note">You can leave any time.</string>
+    <string name="a11y_pause_card">Jixxy is peeking. Choose Leave or Stay.</string>
+    <plurals name="pause_stay">
+        <item quantity="one">Stay %d more minute</item>
+        <item quantity="other">Stay %d more minutes</item>
+    </plurals>
+    <plurals name="pause_stay_available_in">
+        <item quantity="one">Stay becomes available in %d second</item>
+        <item quantity="other">Stay becomes available in %d seconds</item>
+    </plurals>
 </resources>
