@@ -9,7 +9,7 @@ set -euo pipefail
 here="$(cd "$(dirname "$0")" && pwd)"
 
 apk="${1:?usage: check_apk_cert.sh <apk> --apk|--keystore|--sha ...}"; shift
-actual="$("$here/apk_cert.sh" "$apk" 2>/dev/null)"
+actual="$("$here/apk_cert.sh" "$apk")"
 echo "::notice title=APK signing certificate::$(basename "$apk") SHA-256 $actual"
 
 mode="${1:-}"; shift || true
