@@ -1,0 +1,78 @@
+[
+  {
+    "id": "hg_wake_any_001",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Wapas aa gaya. Missed me? Jawab mat dena.",
+    "slots": [],
+    "tags": [
+      "wake",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_wake_any_002",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Uth gaya. Thoda pachtawa ho raha hai.",
+    "slots": [],
+    "tags": [
+      "wake",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_wake_any_003",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Hello dobara. Kuch hua kya?",
+    "slots": [],
+    "tags": [
+      "wake",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_wake_any_004",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Fresh. Zyadatar.",
+    "slots": [],
+    "tags": [
+      "wake",
+      "hinglish"
+    ],
+    "almostCaring": false
+  }
+]

@@ -1,0 +1,78 @@
+[
+  {
+    "id": "hg_music_any_001",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Gaana lagaya! Main pair hila raha hoon.",
+    "slots": [],
+    "tags": [
+      "music",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_music_any_002",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Mast beats. Main sar hilata hoon.",
+    "slots": [],
+    "tags": [
+      "music",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_music_any_003",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Music on. Mood on. Mujhe chalega.",
+    "slots": [],
+    "tags": [
+      "music",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_music_any_004",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Playlist magic. Chalne do.",
+    "slots": [],
+    "tags": [
+      "music",
+      "hinglish"
+    ],
+    "almostCaring": false
+  }
+]

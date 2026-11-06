@@ -1,0 +1,78 @@
+[
+  {
+    "id": "hg_nap_any_001",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Nap time. Snacks ya emergency pe jagana. Snacks pehle.",
+    "slots": [],
+    "tags": [
+      "nap",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_nap_any_002",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Zzz mode on. Dhire se uthana.",
+    "slots": [],
+    "tags": [
+      "nap",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_nap_any_003",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Aankhein band. Jaldi wapas.",
+    "slots": [],
+    "tags": [
+      "nap",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_nap_any_004",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "So raha hoon. Hilana mat. Dhire se.",
+    "slots": [],
+    "tags": [
+      "nap",
+      "hinglish"
+    ],
+    "almostCaring": false
+  }
+]

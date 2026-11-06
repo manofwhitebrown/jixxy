@@ -1,0 +1,126 @@
+[
+  {
+    "id": "hg_battery_low_any_001",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{battery}%. Main dar nahi raha. Bas natak kar raha hoon.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_battery_low_any_002",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Battery kam hai. Charger dhoondo, boss.",
+    "slots": [],
+    "tags": [
+      "battery_low",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_battery_low_any_003",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Sirf {battery}% bacha. Ek snack ka karz tumpe.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_battery_low_any_004",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{battery}% me hoon. Thoda sa drama shuru.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_battery_low_any_005",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Kam hoti battery: {battery}%. Plug lagaoge?",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_battery_low_any_006",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Mazaak band, {battery}% hai. Charger do.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low",
+      "hinglish"
+    ],
+    "almostCaring": false
+  }
+]

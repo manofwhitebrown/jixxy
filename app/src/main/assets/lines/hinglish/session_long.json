@@ -1,0 +1,258 @@
+[
+  {
+    "id": "hg_session_long_any_001",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{app} pe {minutes} minute. Thoda stretch kar lo?",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_session_long_any_002",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{minutes} minute ho gaye. Sofa tumhe yaad kar raha hai.",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "session_long",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_session_long_any_003",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Lamba session. Ungliyan hilao, himmat hai?",
+    "slots": [],
+    "tags": [
+      "session_long",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_session_long_any_004",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Time check: {app} pe {minutes} minute.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_session_long_any_005",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Bas pyaar se bata raha hoon: {minutes} minute.",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "session_long",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_session_long_any_006",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{app} marathon: {minutes} minute aur chalu.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_session_long_any_007",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Tum aur {app} to jam gaye ho. {minutes} minute.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_session_long_any_008",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Maine ek tab banaya: 'angootha marathon'. {minutes} minute.",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "session_long",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_session_long_any_009",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Main jhapki le chuka. {minutes} minute ho gaye.",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "session_long",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_session_long_any_010",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Itne me toh pillow fort ban jaata. {minutes} minute {app} pe.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_session_long_any_011",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Tumhare liye ek chhota trophy mangaya hai. {minutes} minute!",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "session_long",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_session_long_any_012",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Spreadsheet me nayi column bani. {app} pe {minutes} minute, boss.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long",
+      "hinglish"
+    ],
+    "almostCaring": false
+  }
+]

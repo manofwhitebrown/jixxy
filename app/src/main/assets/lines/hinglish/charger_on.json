@@ -1,0 +1,118 @@
+[
+  {
+    "id": "hg_charger_on_any_001",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Charge lag gaya! {battery}% se upar. Mast.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "charger_on",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_charger_on_any_002",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Ahh. Bijli. Mera favourite snack.",
+    "slots": [],
+    "tags": [
+      "charger_on",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_charger_on_any_003",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Plug in ho gaya. Ab main plant jaisa hoon.",
+    "slots": [],
+    "tags": [
+      "charger_on",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_charger_on_any_004",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Charger mila! Pichli baat maaf.",
+    "slots": [],
+    "tags": [
+      "charger_on",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_charger_on_any_005",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Ab thoda sukoon. Charging chal rahi hai.",
+    "slots": [],
+    "tags": [
+      "charger_on",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_charger_on_any_006",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Wall power! Cable me sukoon.",
+    "slots": [],
+    "tags": [
+      "charger_on",
+      "hinglish"
+    ],
+    "almostCaring": false
+  }
+]

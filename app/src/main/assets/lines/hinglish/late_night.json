@@ -1,0 +1,236 @@
+[
+  {
+    "id": "hg_late_night_any_001",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Raat ke {time} baje hain. Main yahin hoon.",
+    "slots": [
+      "time"
+    ],
+    "tags": [
+      "late_night",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_late_night_any_002",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Raat chup hai. Mujhe pasand hai.",
+    "slots": [],
+    "tags": [
+      "late_night",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_late_night_any_003",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{time}. Koi lecture nahi. Bas saath.",
+    "slots": [
+      "time"
+    ],
+    "tags": [
+      "late_night",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_late_night_any_004",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Jab tak chaho, aaram se.",
+    "slots": [],
+    "tags": [
+      "late_night",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_late_night_any_005",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Main bhi jaag raha hoon. Chhoti si team.",
+    "slots": [],
+    "tags": [
+      "late_night",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_late_night_any_006",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Aaj raat koi joke nahi. Bas hi.",
+    "slots": [],
+    "tags": [
+      "late_night",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_late_night_any_007",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Dheere dheere. Main yahin baitha hoon.",
+    "slots": [],
+    "tags": [
+      "late_night",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_late_night_any_008",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{time} ho gaye. Koi jaldi nahi.",
+    "slots": [
+      "time"
+    ],
+    "tags": [
+      "late_night",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_late_night_any_009",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Light kam, awaaz kam. Chalo.",
+    "slots": [],
+    "tags": [
+      "late_night",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_late_night_any_010",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Raat lambi hai. Chup bhi rah sakte hain.",
+    "slots": [],
+    "tags": [
+      "late_night",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_late_night_any_011",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Jab bhi mann kare, rukna. Main hoon.",
+    "slots": [],
+    "tags": [
+      "late_night",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_late_night_any_012",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Apna khayal rakhna. Dheere se bol raha hoon.",
+    "slots": [],
+    "tags": [
+      "late_night",
+      "hinglish"
+    ],
+    "almostCaring": false
+  }
+]

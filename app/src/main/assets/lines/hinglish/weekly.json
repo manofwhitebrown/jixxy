@@ -1,0 +1,162 @@
+[
+  {
+    "id": "hg_weekly_any_001",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Is hafte {count} pause. Spreadsheet me likh liya.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "weekly",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_weekly_any_002",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Hafta khatam. {count} pause, koi judgement nahi.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "weekly",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_weekly_any_003",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Tumhara hafta. Maine dimaag me commentary ki.",
+    "slots": [],
+    "tags": [
+      "weekly",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_weekly_any_004",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Sofa ne saare {count} pause dekhe.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "weekly",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_weekly_any_005",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Weekly report: sab theek hai. Main snack kar raha hoon.",
+    "slots": [],
+    "tags": [
+      "weekly",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_weekly_any_006",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Theme ka naam: pause. {count} baar, is hafte.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "weekly",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_weekly_any_007",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Review time. Likhte hue maine snacks khaaye.",
+    "slots": [],
+    "tags": [
+      "weekly",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_weekly_any_008",
+    "trigger": "WEEKLY",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Hafta nikal gaya. Main isse 'kaafi theek' rating deta hoon.",
+    "slots": [],
+    "tags": [
+      "weekly",
+      "hinglish"
+    ],
+    "almostCaring": false
+  }
+]

@@ -1,0 +1,78 @@
+[
+  {
+    "id": "hg_welcome_any_001",
+    "trigger": "WELCOME",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Hello! Main Jixxy. Zyadatar so raha hoon.",
+    "slots": [],
+    "tags": [
+      "welcome",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_welcome_any_002",
+    "trigger": "WELCOME",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Arre wah, roommate. Sofa meri.",
+    "slots": [],
+    "tags": [
+      "welcome",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_welcome_any_003",
+    "trigger": "WELCOME",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Hello. Dhire se bolna. Main bohot chhota hoon.",
+    "slots": [],
+    "tags": [
+      "welcome",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_welcome_any_004",
+    "trigger": "WELCOME",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Naya insaan. Main tumhe roommate bulaunga.",
+    "slots": [],
+    "tags": [
+      "welcome",
+      "hinglish"
+    ],
+    "almostCaring": false
+  }
+]

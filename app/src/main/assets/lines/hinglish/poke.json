@@ -1,0 +1,154 @@
+[
+  {
+    "id": "hg_poke_any_001",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Hm?",
+    "slots": [],
+    "tags": [
+      "poke",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_poke_any_002",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Haan? Aaram kar raha hoon.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_poke_any_003",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Teesri baar. Main gin raha hoon.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_poke_any_004",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Mujhe laga. Poora.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_poke_any_005",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Yeh ab pattern ban raha hai.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_poke_any_006",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Ek baar aur toh complaint likhunga.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_poke_any_007",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Theek hai. Utha. Khush?",
+    "slots": [],
+    "tags": [
+      "poke",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_poke_any_008",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Bas! Ab main sone ja raha hoon. Shubh raatri.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "hinglish"
+    ],
+    "almostCaring": false
+  }
+]

@@ -1,0 +1,120 @@
+[
+  {
+    "id": "hg_impressed_any_001",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Bina ladhai ke nikle. Sachi me accha tha.",
+    "slots": [],
+    "tags": [
+      "impressed",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_impressed_any_002",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Is hafte {count} Leave. Maine dhyaan diya.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "impressed",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_impressed_any_003",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Theek hai, impress ho gaya. Sar pe mat chadhana.",
+    "slots": [],
+    "tags": [
+      "impressed",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_impressed_any_004",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Yeh asli faisla tha. Respect.",
+    "slots": [],
+    "tags": [
+      "impressed",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_impressed_any_005",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{app} chhod diya. Chupke se garv ho raha hai.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "impressed",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_impressed_any_006",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Chup chaap taali. Bohot dheere. Thaka hoon.",
+    "slots": [],
+    "tags": [
+      "impressed",
+      "hinglish"
+    ],
+    "almostCaring": false
+  }
+]

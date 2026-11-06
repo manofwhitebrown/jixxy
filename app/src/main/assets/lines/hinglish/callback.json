@@ -1,0 +1,174 @@
+[
+  {
+    "id": "hg_callback_any_001",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "hinglish",
+    "text": "Is hafte {app} pe {count} baar. Maine ek tab bana diya.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "callback",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_callback_any_002",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "hinglish",
+    "text": "{count} baar nikle. Spreadsheet sharma gayi.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "callback",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_callback_any_003",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "hinglish",
+    "text": "{app} phir? Aaj {count} baar. Gin raha hoon.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "callback",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_callback_any_004",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "hinglish",
+    "text": "Tum aur {app}: {count} baar. Sitcom likh raha hoon.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "callback",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_callback_any_005",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "hinglish",
+    "text": "{count} Leave ho gaye. Sofa ko garv hai.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "callback",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_callback_any_006",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "hinglish",
+    "text": "Aaj ka {count}. Main thoda khush hoon.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "callback",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_callback_any_007",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "hinglish",
+    "text": "Mujhe dikh gaya, {app}. {count} baar aur chalu.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "callback",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_callback_any_008",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "hinglish",
+    "text": "Pause number {count} aaj. Gin raha hoon.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "callback",
+      "hinglish"
+    ],
+    "almostCaring": false
+  }
+]

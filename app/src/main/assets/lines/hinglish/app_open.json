@@ -1,0 +1,278 @@
+[
+  {
+    "id": "hg_app_open_social_001",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Arre, {app}. Chhoti ungliyon ka mela.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_app_open_social_002",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{app} khula. Main stretch kar leta hoon.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_app_open_video_001",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{app} khula. Mentally popcorn ready.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_app_open_video_002",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Dus second aur rabbit hole. {app}.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_app_open_game_001",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Main score likhta hoon. Galat likhunga. {app}!",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_app_open_game_002",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Good luck {app} me. Sach me, zyadatar.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_app_open_messaging_001",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{app} khula hai. Sabko meri taraf se hi bol dena.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_app_open_shopping_001",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Browsing ya hunting? {app}. Mujhe curiosity hai.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_app_open_shopping_002",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "'Buy now' ki chamak se bachke. {app}.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_app_open_productivity_001",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Asli kaam? Dil khush. {app}.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_app_open_browser_001",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "BROWSER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{app} khula. Tabs ab guna honge.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_app_open_other_001",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "OTHER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{app}, hmm. Dilchasp choice.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "hinglish"
+    ],
+    "almostCaring": false
+  }
+]

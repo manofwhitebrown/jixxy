@@ -1,0 +1,700 @@
+[
+  {
+    "id": "hg_pause_prompt_social_001",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{app} pe {minutes} minute ho gaye aaj. Bas bata raha hoon.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_social_002",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Arre, {app} phir se? Chhota sa pause le lo.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_social_003",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{minutes} minute {app} pe. Main spreadsheet bana raha hoon.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_social_004",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Scroll, scroll, scroll. {minutes} minute. Chhodo, ya main commentary karun?",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_social_005",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{app} phir se? Tumhare angoothe ne overtime maanga hai, boss.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_video_001",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{minutes} minute ki video aaj. Chhodo, ya main popcorn laaun?",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_video_002",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Ooh, {app}. Autoplay se pehle ek pause.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_video_003",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Bas ek aur video, haan? {minutes} minute ho gaye {app} pe.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_video_004",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Algorithm ko tumse pyaar ho gaya. {app} pe {minutes} minute.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_video_005",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{app} phir? Thumbnails ko main rating de raha hoon, boss.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_game_001",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Pehle ek pause, phir jeet. {app} time!",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_game_002",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{app} me {minutes} minute. Ek round aur, ya bas?",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_game_003",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "'Bas ek match' bola tha. {minutes} minute baad bhi {app}.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_game_004",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Save point aa gaya. Nikal jao, ya grind karo.",
+    "slots": [],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_game_005",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Final boss bhi chai peene gaya. {minutes} minute {app} me, boss.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_messaging_001",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Sabko meri taraf se hi bol dena. {app} se pehle ek pause.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_messaging_002",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Halka sa dhyaan dilana: {minutes} minute {app} pe aaj.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_messaging_003",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Chat kahin nahi ja raha. {app} thoda ruk sakta hai.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_messaging_004",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{minutes} minute {app} me. 'typing...' ka record ban gaya.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_messaging_005",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Sofa ko bol dena main so raha hoon. Aur {app}? Aage badho, boss.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_shopping_001",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Cart ke idea aane se pehle pause. {app} phir se?",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_shopping_002",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Pause: kal bhi yeh utna hi accha lagega?",
+    "slots": [],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_shopping_003",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{minutes} minute {app} pe. Cart ki aankhein bhar aayi hain.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_shopping_004",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "'Sirf aaj sale!' Roz aaj hi hota hai. Pause.",
+    "slots": [],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_shopping_005",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Mere liye bhi snacks cart me daal do, boss. {minutes} minute {app} pe.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_other_001",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "OTHER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{app} khula hai. Chhodo ya thoda ruko. Tumhari marzi.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_other_002",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "OTHER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Aaj {app} pe {minutes} minute. Bas ek number, koi faisla nahi.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_other_003",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "OTHER"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Spreadsheet ko bhookh lagi hai. {minutes} minute {app} pe.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_other_004",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "OTHER"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{app} phir se? Main seat garam rakhta hoon. Nikalna hai?",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_other_005",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "OTHER"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{minutes} minute ka natak, hero tum, boss. {app} phir?",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish"
+    ],
+    "almostCaring": false
+  }
+]

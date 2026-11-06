@@ -1,0 +1,192 @@
+[
+  {
+    "id": "hg_pause_stay_any_001",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Theek hai. Paanch minute. Main zor se sone wala hoon.",
+    "slots": [],
+    "tags": [
+      "pause_stay",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_stay_any_002",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Ruko, ruko. Main time note kar raha hoon. Pyaar se.",
+    "slots": [],
+    "tags": [
+      "pause_stay",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_stay_any_003",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Tumhari marzi. Main spreadsheet khula rakhta hoon.",
+    "slots": [],
+    "tags": [
+      "pause_stay",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_stay_any_004",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Paanch aur. Dono ke liye alarm laga deta hoon.",
+    "slots": [],
+    "tags": [
+      "pause_stay",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_stay_any_005",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Chalo, tum raho. Main busy hone ka natak karta hoon.",
+    "slots": [],
+    "tags": [
+      "pause_stay",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_stay_any_006",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Haan haan, ruko. Mujhe bhi snack break chahiye.",
+    "slots": [],
+    "tags": [
+      "pause_stay",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_stay_any_007",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Jao jao. Main yahin baithke jamhai loonga.",
+    "slots": [],
+    "tags": [
+      "pause_stay",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_stay_any_008",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Ek chhota asterisk laga raha hoon, bas.",
+    "slots": [],
+    "tags": [
+      "pause_stay",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_stay_any_009",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Bas paanch minute. Gin raha hoon, chupke se.",
+    "slots": [],
+    "tags": [
+      "pause_stay",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_stay_any_010",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Ruk jao. Main chup rehta hoon. Zyadatar.",
+    "slots": [],
+    "tags": [
+      "pause_stay",
+      "hinglish"
+    ],
+    "almostCaring": false
+  }
+]

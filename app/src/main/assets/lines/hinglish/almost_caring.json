@@ -1,0 +1,116 @@
+[
+  {
+    "id": "hg_almost_caring_any_001",
+    "trigger": "ALMOST_CARING",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 3,
+    "lang": "hinglish",
+    "text": "...Ab so jao, boss. Main kal bhi yahin hoon.",
+    "slots": [],
+    "tags": [
+      "almost_caring",
+      "hinglish"
+    ],
+    "almostCaring": true
+  },
+  {
+    "id": "hg_almost_caring_any_002",
+    "trigger": "ALMOST_CARING",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 3,
+    "lang": "hinglish",
+    "text": "Tum theek ho? Dost ke liye pooch raha hoon. Main dost hoon.",
+    "slots": [],
+    "tags": [
+      "almost_caring",
+      "hinglish"
+    ],
+    "almostCaring": true
+  },
+  {
+    "id": "hg_almost_caring_any_003",
+    "trigger": "ALMOST_CARING",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 3,
+    "lang": "hinglish",
+    "text": "Jo bhi ho aaj, main tumhari taraf. Zyadatar.",
+    "slots": [],
+    "tags": [
+      "almost_caring",
+      "hinglish"
+    ],
+    "almostCaring": true
+  },
+  {
+    "id": "hg_almost_caring_any_004",
+    "trigger": "ALMOST_CARING",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 3,
+    "lang": "hinglish",
+    "text": "Tumhara saath accha lagta hai. Spreadsheet ko mat batana.",
+    "slots": [],
+    "tags": [
+      "almost_caring",
+      "hinglish"
+    ],
+    "almostCaring": true
+  },
+  {
+    "id": "hg_almost_caring_any_005",
+    "trigger": "ALMOST_CARING",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 3,
+    "lang": "hinglish",
+    "text": "Apne aap pe halke raho. Main bhi halka rahunga.",
+    "slots": [],
+    "tags": [
+      "almost_caring",
+      "hinglish"
+    ],
+    "almostCaring": true
+  },
+  {
+    "id": "hg_almost_caring_any_006",
+    "trigger": "ALMOST_CARING",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 3,
+    "lang": "hinglish",
+    "text": "Main yahin hoon. Bas itna.",
+    "slots": [],
+    "tags": [
+      "almost_caring",
+      "hinglish"
+    ],
+    "almostCaring": true
+  }
+]

@@ -1,0 +1,194 @@
+[
+  {
+    "id": "hg_pause_leave_any_001",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Nikal gaye. Mast. Spreadsheet me izzat se likh liya.",
+    "slots": [],
+    "tags": [
+      "pause_leave",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_leave_any_002",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Sahi decision. Ab main chain se so sakta hoon.",
+    "slots": [],
+    "tags": [
+      "pause_leave",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_leave_any_003",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Waah. Paanch minute wapas mil gaye.",
+    "slots": [],
+    "tags": [
+      "pause_leave",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_leave_any_004",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Aur bas, hum aazaad. Snack?",
+    "slots": [],
+    "tags": [
+      "pause_leave",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_leave_any_005",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Dekho dekho, jaan-boojhkar nikle!",
+    "slots": [],
+    "tags": [
+      "pause_leave",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_leave_any_006",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Respect. Bada smooth tha.",
+    "slots": [],
+    "tags": [
+      "pause_leave",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_leave_any_007",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Chalo jao. Main sofa sambhalta hoon.",
+    "slots": [],
+    "tags": [
+      "pause_leave",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_leave_any_008",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{minutes} minute me bahar. Bhai, efficient.",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "pause_leave",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_leave_any_009",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Dekha? Kuch phata nahi.",
+    "slots": [],
+    "tags": [
+      "pause_leave",
+      "hinglish"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_leave_any_010",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Mast exit. Taali bajata, par mehnat lagti hai.",
+    "slots": [],
+    "tags": [
+      "pause_leave",
+      "hinglish"
+    ],
+    "almostCaring": false
+  }
+]
