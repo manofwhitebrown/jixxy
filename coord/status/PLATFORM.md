@@ -1,8 +1,8 @@
 # PLATFORM status — updated 2026-11-06T08:54Z
 ## Takeover: 2026-11-06T08:54Z
 Found: nap bug confirmed in code (Stop left napUntilTs set, Wake restarted the service, updateNap hid the sprite). Reviewed D-008 edits: `import java.util.Base64` is correct and used; the manifest comment rewording only touched comments. First actions: T-P2-1.
-## Now      — T-P2-1 nap/stop/wake fix pushed (NapPolicy + tests + ACTION_WAKE); waiting for CI
-## Done     — T-P2-0 takeover + D-008 review; T-P2-1 code
+## Now      — T-P2-7 versioning; T-P2-2 waiting for UI reply on API
+## Done     — T-P2-0 takeover + D-008 review; T-P2-1 fix, CI green (a68c168)
 ## Next     — T-P2-2 launcher wiring (agree API with UI), T-P2-3 real brain, T-P2-7 versionCode from -PversionCode
 ## Blockers — none
 ## Questions for MANAGER — none

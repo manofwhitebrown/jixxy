@@ -16,8 +16,10 @@ android {
         applicationId = "app.jixxy"
         minSdk = 26
         targetSdk = 36
-        versionCode = 1
-        versionName = "0.0.1"
+        // Android only updates an installed app when versionCode increases (and the signing key matches).
+        // CI passes -PversionCode=<run number>; -PversionName=<tag without the leading v>. Defaults keep local builds working.
+        versionCode = (project.findProperty("versionCode") as String?)?.toIntOrNull() ?: 1
+        versionName = (project.findProperty("versionName") as String?)?.removePrefix("v") ?: "0.0.1"
     }
 
     signingConfigs {
