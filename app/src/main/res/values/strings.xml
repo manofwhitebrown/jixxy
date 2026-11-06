@@ -122,7 +122,7 @@
     <string name="onboarding_finish_title">[P] Ready?</string>
     <string name="onboarding_finish_body">[P] You can nap me with one tap whenever.</string>
     <string name="onboarding_roast_sample_app">[P] that app</string>
-    <string name="placeholder_home">[P] Home goes here</string>
+    <string name="home_open_weekly">[P] Weekly review</string>
     <string name="placeholder_settings">[P] Settings go here</string>
     <string name="placeholder_what_saw">[P] What Jixxy saw goes here</string>
     <string name="placeholder_weekly">[P] Weekly review goes here</string>
