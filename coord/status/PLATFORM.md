@@ -11,7 +11,7 @@
 - Unverified: queryEvents behaviour on real OEM devices, receiver registration rules on targetSdk 36 (screen/power broadcasts are protected system broadcasts, so I believe no export flag is needed, not checked in docs).
 ## Blockers — none
 ## Questions for MANAGER — 1. Notification text lives in platform/PlatformStrings.kt because res/ is UI-owned; OK to move to res later?
-## Messages handled — 20261106-0318-DEVOPS-debug-keystore.md, 20261106-0318-UI-interfaces-needed.md (replied; FileProvider and PermissionsRepository pending), 20261106-0400-ENGINE-coroutines-dependency.md
+## Messages handled — 20261106-0318-DEVOPS-debug-keystore.md, 20261106-0318-UI-interfaces-needed.md (replied; FileProvider and PermissionsRepository pending), 20261106-0400-ENGINE-coroutines-dependency.md, 20261106-0320-UI-deps-exact.md
 ## Honest notes
 - NOT compiled or run anywhere: no Android SDK or Gradle servers reachable from my sandbox. Treat all Kotlin as unverified until CI/Android Studio builds it. Expect possible compile errors on first build.
 - Not tested on a device: dragging, edge-snap, rotation clamp, screen-off hiding, Nap, Stop, Android 15 fallback path.
