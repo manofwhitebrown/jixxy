@@ -452,5 +452,205 @@
       "pause_leave"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_026",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL",
+      "IMPRESSED"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Respect.",
+    "slots": [],
+    "tags": [
+      "pause_leave",
+      "owner_canon",
+      "celebrate"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_027",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Left {app}. Sunglasses on. Respect.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_leave",
+      "celebrate"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_028",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Out of {app}. Very cool. Respect.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_leave",
+      "celebrate"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_029",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Respect. I'll allow myself to be proud. Briefly.",
+    "slots": [],
+    "tags": [
+      "pause_leave",
+      "celebrate"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_030",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Good call. Sleepy-cat approved.",
+    "slots": [],
+    "tags": [
+      "pause_leave",
+      "soft"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_031",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Nice. {app} will survive without you.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_leave",
+      "soft"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_032",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Left. That's it. That's the whole thing. Well done.",
+    "slots": [],
+    "tags": [
+      "pause_leave",
+      "soft"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_033",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Thanks for leaving. I'll sit with you for a bit.",
+    "slots": [],
+    "tags": [
+      "pause_leave",
+      "soft"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_034",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "The blanket's open if you want it. Good call.",
+    "slots": [],
+    "tags": [
+      "pause_leave",
+      "soft"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_leave_any_035",
+    "trigger": "PAUSE_LEAVE",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Left {app}. Quietly proud. Don't tell anyone.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_leave",
+      "soft"
+    ],
+    "almostCaring": false
   }
 ]

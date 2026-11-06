@@ -29,3 +29,8 @@ Not done: review by a native Hinglish speaker, and testing whether the sarcasm l
 Added 92 EN lines: the Owner's canonical captions (tagged `owner_canon`), CHARGER_ON x8, BATTERY_LOW x8, dropped (POKE + tag `dropped`) x6, POKE escalation x6, CHILL/SMUG POKE x10, on_break x8, NAP x6, WAKE x8 (acknowledge the nap), MUSIC x7, LATE_NIGHT blanket/soft x8, ALMOST_CARING x4, IMPRESSED x5, SESSION_LONG x3, APP_OPEN stare x3, WELCOME x2.
 Rewritten: weekly "sleepy sprite" -> "sleepy cat" (retired sprite wording).
 Honest notes: "seek help" (Owner caption) is kept only in question form because the engine cannot know the song repeats. The skull emoji appears once, in the Owner's caption line. Canonical "...go to sleep, idiot." is roast 2, bondMin 3, almostCaring.
+
+## v0.4 Pause lines (T-W2-3) and ENGINE gap list
+Added 83 EN lines: PAUSE_PROMPT SOFT x10, BROWSER x10, generic (any category) x10, followup x8 (tag `followup`), escalation tiers (`tier0`/`tier1`/`tier2`) for SOCIAL+VIDEO x21; PAUSE_STAY SMUG x8 and SOFT x6; PAUSE_LEAVE celebrate x4 and SOFT x6.
+Test applied to each: would a tired 19-year-old at 2 am smirk or feel judged? Rewrote the BROWSER lines that said "again" (the first pause of the day has no history).
+Honest notes: tier1/tier2 lines use {count} (nth pause of that app today) which the engine confirms for PAUSE_PROMPT. Humour is my judgement; testers confirm.

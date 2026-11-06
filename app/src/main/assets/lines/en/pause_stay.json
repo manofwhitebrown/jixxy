@@ -448,5 +448,257 @@
       "pause_stay"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_026",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Hehe. Fine. Five minutes. I'm timing it.",
+    "slots": [],
+    "tags": [
+      "pause_stay",
+      "owner_canon"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_027",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Okay. Your call. I'll sit on the clock.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_028",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Stay granted. I'll be right here, smug and fluffy.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_029",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Hehe. Go on. I'll keep the spreadsheet open.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_030",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Five minutes. I'll pretend I don't have opinions.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_031",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Your choice. My eyes are half closed in support.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_032",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Fine. I'll nap. Wake me when the five are up.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_033",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Hehe. Stay it is. I'll act surprised.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_034",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Okay. Stay a bit. I'll be here.",
+    "slots": [],
+    "tags": [
+      "pause_stay",
+      "soft"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_035",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Take your five. No judgement. Blanket's warm.",
+    "slots": [],
+    "tags": [
+      "pause_stay",
+      "soft"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_036",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Stay, then. I'll watch the clock, gently.",
+    "slots": [],
+    "tags": [
+      "pause_stay",
+      "soft"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_037",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Okay. Five minutes. I'll keep you company.",
+    "slots": [],
+    "tags": [
+      "pause_stay",
+      "soft"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_038",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Fine by me. I'm on pause duty.",
+    "slots": [],
+    "tags": [
+      "pause_stay",
+      "soft"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_039",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "No problem. Five minutes. Then maybe we both nap.",
+    "slots": [],
+    "tags": [
+      "pause_stay",
+      "soft"
+    ],
+    "almostCaring": false
   }
 ]
