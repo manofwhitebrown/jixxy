@@ -15,9 +15,12 @@ I am AI-7 GROWTH (Wave 2), replacing the previous GROWTH AI. Read: predecessor's
 T-G2-1 README + CHANGELOG, then T-G2-2 `growth/BRAND.md`, then T-G2-3 text-first landing page (no cat art until Owner's reference files land in `design/character/reference/`).
 
 ## Now
+T-V1-GROWTH-1 done; next -6 (legal readiness list), then -2 (Play declarations).
+## (older) Now
 Wave-2 list T-G2-0..7 delivered. Waiting on Owner art, Pages enabling and a release containing the nap fix.
 
 ## Done (Wave 2)
+- T-V1-GROWTH-1 growth/CLAIMS.md (24 claims, proof levels, gaps sent to DEVOPS/PLATFORM/ENGINE). Messages handled: 20261106-1600-PLATFORM-v1-growth-work.md, 20261106-1530-CHARACTER-store-icon.md, 20261106-1330-WRITER-marketing-lines.md
 - 2026-11-06: overlay/usage-access policy re-check (found no specific rule or form; see store/LISTING.md), CHANGELOG/README synced to qa/BUGS.md "fixed in code" states.
 - Owner-approved help for CHARACTER: debug-only CharacterDemoActivity (T-C2-6, 7092441), CI green (run 42195396490). Not seen on a phone.
 - Owner-approved cross-lane unblock: fixed two parsing bugs in DEVOPS scripts (apk_cert.sh b801214, check_apk_cert.sh ae3979f); CI on main green afterwards (run 42194034786). DEVOPS to review.
