@@ -1,10 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- PLACEHOLDER COPY: replace with WRITER's content/MICROCOPY.md. Keys marked [P]. -->
-    <string name="placeholder_onboarding">[P] Hello — onboarding goes here</string>
     <string name="placeholder_home">[P] Home goes here</string>
     <string name="placeholder_settings">[P] Settings go here</string>
     <string name="placeholder_what_saw">[P] What Jixxy saw goes here</string>
     <string name="placeholder_weekly">[P] Weekly review goes here</string>
     <string name="placeholder_oem_guide">[P] Keep-alive guide goes here</string>
+    <!-- Onboarding (T-UI-1). [P] = placeholder, replace from WRITER content/MICROCOPY.md -->
+    <string name="ob_hello_title">[P] Hi. I\'m Jixxy.</string>
+    <string name="ob_hello_body">[P] I live on your screen and help you pause before the apps you choose.</string>
+    <string name="ob_overlay_title">[P] Why I need to sit on your apps</string>
+    <string name="ob_overlay_body">[P] Android calls it "display over other apps". It lets me appear on top so I can show up.</string>
+    <string name="ob_usage_title">[P] Why I need to see which app is open</string>
+    <string name="ob_usage_body">[P] I only see the NAME of the open app. Never what is inside it.</string>
+    <string name="ob_cant_do">[P] What I can\'t do: use the internet, read your messages, take screenshots.</string>
+    <string name="ob_granted">[P] Done \u2713</string>
+    <string name="ob_open_setting">[P] Open the setting</string>
+    <string name="ob_open_app_info">[P] Open App info</string>
+    <string name="ob_restricted_title">[P] The switch looks greyed out?</string>
+    <string name="ob_restricted_steps">[P] Tap the switch, then open App info, then the \u22ee menu, then "Allow restricted settings", then come back.</string>
+    <string name="ob_restricted_hedge">[P] Menus differ by phone and Android version.</string>
+    <string name="ob_notif_title">[P] Notifications</string>
+    <string name="ob_notif_body">[P] Only so Android lets me keep running. No spam.</string>
+    <string name="ob_keepalive_title">[P] Keep me alive</string>
+    <string name="ob_keepalive_body">[P] Some phones put apps to sleep. A couple of settings stop that.</string>
+    <string name="ob_apps_title">[P] Pick up to 3 apps to pause</string>
+    <string name="ob_apps_body">[P] I\'ll ask you to stop for a moment before these. You can change this anytime.</string>
+    <string name="ob_roast_title">[P] How much teasing?</string>
+    <string name="ob_roast_body">[P] I tease the situation, never you.</string>
+    <string name="ob_roast_sample_placeholder">[P] Sample line appears here.</string>
+    <string name="roast_gentle">[P] Gentle</string>
+    <string name="roast_normal">[P] Normal</string>
+    <string name="roast_savage">[P] Savage</string>
+    <string name="ob_finish_title">[P] Ready?</string>
+    <string name="ob_finish_body">[P] You can nap me with one tap whenever.</string>
+    <string name="ob_continue">[P] Continue</string>
+    <string name="ob_not_now">[P] Not now</string>
+    <string name="ob_back">[P] Back</string>
+    <string name="ob_lite">[P] Just let me try him</string>
+    <string name="ob_wake_him">[P] Wake him up</string>
 </resources>

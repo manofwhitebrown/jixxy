@@ -5,10 +5,9 @@ Every screen: "Skip / not now" is possible; user is never trapped; state survive
 
 1. **Hello** - one-line intro, [Meet him] / [Just let me try him] (lite mode: overlay only).
 2. **Overlay - why** - "I sit on top of your apps so I can show up." Can't-do list: no internet, no messages, no screenshots. [Open setting].
-3. **Overlay - grant** - on return, auto-detect granted; show tick; [Continue].
+   (Grant state is shown on the same screen: after returning from Settings the button becomes a tick.)
 4. **Usage access - why** - "I only see WHICH app is open. Never what's inside it." [Open setting].
    - If `restrictedSettingsLikelyBlocked`: show Restricted-settings explainer (below) before/after the toggle.
-5. **Usage access - grant** - detect on return.
 6. **Notifications (Android 13+)** - why; [Allow] / [Not now].
 7. **Keep-alive** - battery exemption + OEM steps (reuses T-UI-6 guide); honest "menus differ".
 8. **Pick up to 3 apps** - launcher-intent list with icons, hard cap of 3, PROTECTED apps hidden.
