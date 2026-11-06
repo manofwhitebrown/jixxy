@@ -1,0 +1,99 @@
+package app.jixxy.character
+
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
+import org.junit.Test
+
+class BubbleTest {
+    private val start = 10_000L
+
+    @Test fun typewriterRevealsOneCharacterPerStepAndStopsAtTheEnd() {
+        val t = BubbleTimeline(charCount = 10, ttlMs = 1_000L, startMs = start)
+        assertEquals(0, t.revealed(start))
+        assertEquals(2, t.revealed(start + 2 * BubbleTimeline.CHAR_MS))
+        assertEquals(10, t.revealed(start + 60_000L))
+    }
+
+    @Test fun shortTtlIsStretchedSoTheTextCanBeRead() {
+        val t = BubbleTimeline(charCount = 10, ttlMs = 500L, startMs = start)
+        val readable = start + 10 * BubbleTimeline.CHAR_MS + BubbleTimeline.MIN_READ_MS
+        assertFalse(t.isExpired(readable - 1))
+        assertTrue(t.isExpired(readable))
+    }
+
+    @Test fun longTtlIsHonoured() {
+        val t = BubbleTimeline(charCount = 10, ttlMs = 9_000L, startMs = start)
+        assertFalse(t.isExpired(start + 8_999L))
+        assertTrue(t.isExpired(start + 9_000L))
+    }
+
+    @Test fun fadesInAtTheStartAndOutAtTheEnd() {
+        val t = BubbleTimeline(charCount = 10, ttlMs = 9_000L, startMs = start)
+        assertEquals(0f, t.alpha(start), 0.001f)
+        assertEquals(1f, t.alpha(start + 4_000L), 0.001f)
+        assertEquals(0.5f, t.alpha(start + 9_000L - BubbleTimeline.FADE_OUT_MS / 2), 0.01f)
+        assertEquals(0f, t.alpha(start + 9_000L), 0.001f)
+    }
+
+    @Test fun tappingOpensTheEmojiBarAndKeepsTheBubbleAlive() {
+        val t = BubbleTimeline(charCount = 10, ttlMs = 1_000L, startMs = start)
+        val tap = start + 1_500L
+        assertFalse(t.barVisible(tap))
+        t.openBar(tap)
+        assertTrue(t.barVisible(tap + BubbleTimeline.BAR_MS - 1))
+        assertFalse(t.barVisible(tap + BubbleTimeline.BAR_MS))
+        assertFalse(t.isExpired(tap + BubbleTimeline.BAR_MS))
+    }
+
+    @Test fun pickingAReactionClosesTheBarAndEndsTheBubbleSoon() {
+        val t = BubbleTimeline(charCount = 10, ttlMs = 9_000L, startMs = start)
+        val pick = start + 2_000L
+        t.openBar(pick - 500L)
+        t.closeSoon(pick)
+        assertFalse(t.barVisible(pick))
+        assertFalse(t.isExpired(pick + BubbleTimeline.CLOSE_MS - 1))
+        assertTrue(t.isExpired(pick + BubbleTimeline.CLOSE_MS))
+    }
+
+    private fun geometry(alignRight: Boolean, above: Boolean) = BubbleGeometry(
+        spritePx = 100f, bodyW = 150f, bodyH = 60f, band = 14f, overlap = 25f, alignRight = alignRight, above = above,
+    )
+
+    @Test fun aboveLeftKeepsTheSpriteInTheBottomLeftCorner() {
+        val g = geometry(alignRight = false, above = true)
+        assertEquals(150f, g.viewW, 0.001f)
+        assertEquals(49f, g.spriteY, 0.001f)
+        assertEquals(149f, g.viewH, 0.001f)
+        assertEquals(0, g.shiftX)
+        assertEquals(49, g.shiftY)
+        assertEquals(0f, g.bodyTop, 0.001f)
+    }
+
+    @Test fun aboveRightFlipsTheBubbleToTheLeftOfTheSprite() {
+        val g = geometry(alignRight = true, above = true)
+        assertEquals(50f, g.spriteX, 0.001f)
+        assertEquals(50, g.shiftX)
+        assertEquals(0f, g.bodyLeft, 0.001f)
+        assertEquals(150f, g.bodyRight, 0.001f)
+    }
+
+    @Test fun belowPutsTheBubbleUnderTheSpriteWithoutMovingTheWindowUp() {
+        val g = geometry(alignRight = false, above = false)
+        assertEquals(0f, g.spriteY, 0.001f)
+        assertEquals(0, g.shiftY)
+        assertEquals(114f, g.bodyTop, 0.001f)
+        assertEquals(188f, g.viewH, 0.001f)
+    }
+
+    @Test fun tailStaysAwayFromTheRoundedCorners() {
+        val g = geometry(alignRight = false, above = true)
+        assertEquals(50f, g.tailX(corner = 16f), 0.001f)
+        assertEquals(54f, g.tailX(corner = 40f), 0.001f)
+    }
+
+    @Test fun wideSpriteViewIsNeverNarrowerThanTheSprite() {
+        val g = BubbleGeometry(100f, 60f, 40f, 14f, 25f, alignRight = false, above = true)
+        assertEquals(100f, g.viewW, 0.001f)
+    }
+}

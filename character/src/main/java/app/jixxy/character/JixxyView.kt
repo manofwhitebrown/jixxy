@@ -10,12 +10,13 @@ import android.graphics.RectF
 import android.os.SystemClock
 import android.view.MotionEvent
 import android.view.ViewConfiguration
+import android.view.WindowManager
 import android.widget.FrameLayout
 import app.jixxy.engine.api.CharacterState
 import java.util.Calendar
 import kotlin.math.PI
+import kotlin.math.ceil
 import kotlin.math.hypot
-import kotlin.math.min
 import kotlin.math.sin
 
 /**
@@ -48,6 +49,10 @@ class JixxyView(context: Context) : FrameLayout(context) {
     private val animator = PoseAnimator()
     private val pose = animator.pose
     private val fader = ExpressionFader()
+    private val bubble = SpeechBubble(context, palette)
+    private val spritePx = DEFAULT_SIZE_DP * resources.displayMetrics.density
+    private val screenLocation = IntArray(2)
+    private val baseDescription: CharSequence = context.getString(R.string.jixxy_content_description)
     private val touchSlop = ViewConfiguration.get(context).scaledTouchSlop
     private val longPressMs = ViewConfiguration.getLongPressTimeout().toLong()
 
@@ -57,6 +62,9 @@ class JixxyView(context: Context) : FrameLayout(context) {
     private var shownPoke = 0
 
     private var screenActive = true
+    private var shiftedX = 0
+    private var shiftedY = 0
+    private var bubbleDown = false
     private var downX = 0f
     private var downY = 0f
     private var dragging = false
@@ -72,8 +80,10 @@ class JixxyView(context: Context) : FrameLayout(context) {
             animator.step(now)
             syncExpression(now)
             fader.step(now)
+            if (bubble.isShowing && !bubble.step(now)) clearBubble()
             invalidate()
-            postOnAnimationDelayed(this, if (fader.isFading) PoseAnimator.ACTIVE_FRAME_MS else animator.frameIntervalMs)
+            val busy = fader.isFading || bubble.isShowing
+            postOnAnimationDelayed(this, if (busy) PoseAnimator.ACTIVE_FRAME_MS else animator.frameIntervalMs)
         }
     }
 
@@ -97,7 +107,7 @@ class JixxyView(context: Context) : FrameLayout(context) {
 
     init {
         setWillNotDraw(false)
-        contentDescription = context.getString(R.string.jixxy_content_description)
+        contentDescription = baseDescription
     }
 
     /**
@@ -111,11 +121,46 @@ class JixxyView(context: Context) : FrameLayout(context) {
     }
 
     /**
-     * Shows a speech bubble with [text] for [ttlMs]; tapping it will reveal the emoji bar that ends in
-     * [JixxyViewListener.onReaction] with [lineId]. Not rendered until T-C2-3.
+     * Shows a speech bubble with [text] for [ttlMs] (typewriter reveal, at least long enough to read). Tapping it
+     * reveals a 😂/😴 bar for about 2 s; picking one ends in [JixxyViewListener.onReaction] with [lineId].
+     * A new bubble replaces the old one; dragging the sprite or switching the screen off dismisses it. Text over
+     * [SpeechBubble.MAX_CHARS] is cut. Ignored while the screen is off or the view is hidden.
+     *
+     * While a bubble is visible this view grows to hold it. When it is the content of an overlay window it moves
+     * the window's `x`/`y` so the sprite stays exactly where it was, and puts them back when the bubble goes.
      */
-    @Suppress("UNUSED_PARAMETER")
-    fun showBubble(text: String, ttlMs: Long, lineId: String?) = Unit
+    fun showBubble(text: String, ttlMs: Long, lineId: String?) {
+        if (!shouldAnimate()) return
+        clearBubble()
+        getLocationOnScreen(screenLocation)
+        val alignRight = screenLocation[0] + spritePx / 2f > resources.displayMetrics.widthPixels / 2f
+        bubble.show(text, ttlMs, lineId, SystemClock.uptimeMillis(), spritePx, alignRight, screenLocation[1].toFloat())
+        bubble.geometry?.let { shiftWindow(it.shiftX, it.shiftY) }
+        contentDescription = context.getString(R.string.jixxy_says_description, text)
+        requestLayout()
+        invalidate()
+    }
+
+    private fun clearBubble() {
+        if (!bubble.isShowing) return
+        bubble.dismiss()
+        bubbleDown = false
+        shiftWindow(-shiftedX, -shiftedY)
+        contentDescription = baseDescription
+        requestLayout()
+        invalidate()
+    }
+
+    /** Moves the host overlay window left/up by ([dx], [dy]) pixels; no-op when this view is not a window's root. */
+    private fun shiftWindow(dx: Int, dy: Int) {
+        val params = layoutParams as? WindowManager.LayoutParams ?: return
+        if (!isAttachedToWindow || (dx == 0 && dy == 0)) return
+        params.x -= dx
+        params.y -= dy
+        shiftedX += dx
+        shiftedY += dy
+        (context.getSystemService(Context.WINDOW_SERVICE) as WindowManager).updateViewLayout(this, params)
+    }
 
     /** `false` means the screen is off: every animation frame and timer stops. `true` resumes. */
     fun setScreenActive(active: Boolean) {
@@ -124,12 +169,15 @@ class JixxyView(context: Context) : FrameLayout(context) {
         if (active) startAnimating() else {
             stopAnimating()
             cancelGesture()
+            clearBubble()
         }
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        val desired = (DEFAULT_SIZE_DP * resources.displayMetrics.density).toInt()
-        setMeasuredDimension(resolveSize(desired, widthMeasureSpec), resolveSize(desired, heightMeasureSpec))
+        val g = bubble.geometry
+        val w = ceil(g?.viewW ?: spritePx).toInt()
+        val h = ceil(g?.viewH ?: spritePx).toInt()
+        setMeasuredDimension(resolveSize(w, widthMeasureSpec), resolveSize(h, heightMeasureSpec))
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
@@ -146,6 +194,9 @@ class JixxyView(context: Context) : FrameLayout(context) {
     override fun onDetachedFromWindow() {
         stopAnimating()
         cancelGesture()
+        bubble.dismiss()
+        shiftedX = 0
+        shiftedY = 0
         releaseBitmaps()
         super.onDetachedFromWindow()
     }
@@ -204,9 +255,8 @@ class JixxyView(context: Context) : FrameLayout(context) {
         if (resId == 0) return null
         val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
         BitmapFactory.decodeResource(resources, resId, bounds)
-        val target = if (width > 0) min(width, height) else (DEFAULT_SIZE_DP * resources.displayMetrics.density).toInt()
         val options = BitmapFactory.Options().apply {
-            inSampleSize = sampleSizeFor(bounds.outWidth, target)
+            inSampleSize = sampleSizeFor(bounds.outWidth, spritePx.toInt())
             inScaled = false
         }
         return BitmapFactory.decodeResource(resources, resId, options)
@@ -236,6 +286,16 @@ class JixxyView(context: Context) : FrameLayout(context) {
     // ---- touch -------------------------------------------------------------------------------------------
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
+        if (event.actionMasked == MotionEvent.ACTION_DOWN) {
+            bubbleDown = bubble.isShowing && bubble.contains(event.x, event.y, SystemClock.uptimeMillis())
+        }
+        if (bubbleDown) {
+            when (event.actionMasked) {
+                MotionEvent.ACTION_UP -> onBubbleRelease(event)
+                MotionEvent.ACTION_CANCEL -> bubbleDown = false
+            }
+            return true
+        }
         when (event.actionMasked) {
             MotionEvent.ACTION_DOWN -> {
                 downX = event.rawX
@@ -251,9 +311,17 @@ class JixxyView(context: Context) : FrameLayout(context) {
         return true
     }
 
+    private fun onBubbleRelease(event: MotionEvent) {
+        bubbleDown = false
+        val kind = bubble.onTap(event.x, event.y, SystemClock.uptimeMillis())
+        if (kind != null) listener?.onReaction(bubble.lineId, kind)
+        invalidate()
+    }
+
     private fun onMove(event: MotionEvent) {
         if (!dragging && hypot(event.rawX - downX, event.rawY - downY) > touchSlop) {
             removeCallbacks(longPressRunnable)
+            clearBubble()
             dragging = true
             taps.reset()
             animator.setDragging(true, SystemClock.uptimeMillis())
@@ -294,9 +362,10 @@ class JixxyView(context: Context) : FrameLayout(context) {
 
     override fun onDraw(canvas: Canvas) {
         val current = bitmaps[fader.current.ordinal] ?: return
-        val unit = min(width, height) / VIEWBOX
+        val unit = spritePx / VIEWBOX
+        val geometry = bubble.geometry
         canvas.save()
-        canvas.translate((width - VIEWBOX * unit) / 2f, (height - VIEWBOX * unit) / 2f)
+        canvas.translate(geometry?.spriteX ?: 0f, geometry?.spriteY ?: 0f)
         canvas.scale(unit, unit)
 
         val blink = animator.blinkEnvelope
@@ -320,6 +389,7 @@ class JixxyView(context: Context) : FrameLayout(context) {
         drawNotes(canvas)
         drawSparkles(canvas)
         canvas.restore()
+        if (geometry != null) bubble.draw(canvas, SystemClock.uptimeMillis())
     }
 
     /** Draws [path] in cream with a thin ink outline, so it reads on any app underneath. */
