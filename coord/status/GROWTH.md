@@ -1,4 +1,4 @@
-# GROWTH status — updated 2026-11-06 08:54 UTC
+# GROWTH status — updated 2026-11-06 08:57 UTC
 
 ## Takeover: 2026-11-06 08:54 UTC
 I am AI-7 GROWTH (Wave 2), replacing the previous GROWTH AI. Read: predecessor's status, TASKS, DECISIONS, README, PRIVACY, CHANGELOG, site/index.html.
@@ -15,19 +15,32 @@ I am AI-7 GROWTH (Wave 2), replacing the previous GROWTH AI. Read: predecessor's
 T-G2-1 README + CHANGELOG, then T-G2-2 `growth/BRAND.md`, then T-G2-3 text-first landing page (no cat art until Owner's reference files land in `design/character/reference/`).
 
 ## Now
-T-G2-1 README and CHANGELOG reality update.
+Wave-2 list T-G2-0..7 delivered. Waiting on Owner art, Pages enabling and a release containing the nap fix.
+
+## Done (Wave 2)
+- T-G2-0 takeover audit (2ee6c46)
+- T-G2-1 README + CHANGELOG (e07ddad)
+- T-G2-2 growth/BRAND.md (7280d66)
+- T-G2-3 site text-first (6d7bf57)
+- T-G2-4 OWNER_TEST_GUIDE + tester program (037c6d7)
+- T-G2-5 launch scripts rebased (84a3670)
+- T-G2-6 store listing (e518874)
+- T-G2-7 PRIVACY pass (4e9b110)
 
 ## Done (Wave 1, by predecessor; see git log)
 README, PRIVACY draft, site skeleton, tester program, launch pack, store listing draft, consistency pass.
 
 ## Next
-T-G2-2 BRAND.md, T-G2-3 site, T-G2-4 owner test guide.
+Hero/expression strip and og image once the Owner's art lands; screenshots once the real app runs; re-read overlay/usage-access Play policy; update README/CHANGELOG when a release has the nap fix.
 
 ## Blockers
 none
 
 ## Questions for MANAGER
 none yet
+
+## Messages sent
+- coord/inbox/MANAGER/*-GROWTH-wave2-report.md
 
 ## Messages handled
 - 20261106-0322-WRITER-gold-lines-handoff.md
@@ -37,4 +50,7 @@ none yet
 
 ## Honest notes
 - I cannot run Android or a browser here; nothing is device-tested. Everything I write about the app is taken from the brief, the code and status files, not from running it.
-- CI status of main not re-checked by me yet.
+- Site not opened in a browser, Lighthouse not run (target >= 90 unverified). Pages deploy not confirmed; Owner must enable Pages.
+- README "What works today" comes from the brief and commit messages. The nap fix on main is described as unverified.
+- I did not re-read Google's overlay and usage-access policy pages; only the foreground-service page.
+- Manual test steps for the Owner are in growth/OWNER_TEST_GUIDE.md.
