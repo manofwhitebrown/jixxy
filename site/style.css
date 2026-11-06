@@ -84,3 +84,10 @@ details p { margin: 8px 0 0; color: var(--muted); }
 @media (min-width: 640px) { .duo { grid-template-columns: 1fr 1fr; } }
 
 .banner { margin: 0; padding: 10px 20px; background: var(--accent); color: var(--accent-text); text-align: center; font-size: 0.95rem; }
+
+.hero-cat { display: block; width: 100%; max-width: 300px; height: auto; margin: 24px 0 0; background: #f6efe0; padding: 24px 24px 0; border-radius: var(--radius) var(--radius) 0 0; box-sizing: border-box; }
+.faces { list-style: none; padding: 0; margin: 16px 0 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.faces li { background: #f6efe0; color: #221f26; border-radius: var(--radius); padding: 12px 8px; text-align: center; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 8px; min-height: 190px; }
+.faces img { max-width: 100%; height: auto; max-height: 150px; width: auto; }
+.faces span { font-weight: 600; font-size: 0.95rem; }
+@media (min-width: 640px) { .faces { grid-template-columns: repeat(4, 1fr); } }

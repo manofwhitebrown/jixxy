@@ -72,5 +72,5 @@ Exact hex values come from CHARACTER and UI once they sample the sheet; until th
 
 ## Pairing words and images
 
-- Hero images use the real cat. Until CHARACTER's expression files exist, use text only. Never use the retired placeholder concepts.
+- Hero images use the real cat. The sheet crops are soft when enlarged, so keep them small (under about 300 px wide on the web) until the Owner supplies higher-resolution originals. Black fur disappears on dark backgrounds: put him on a cream tile. Never use the retired placeholder concepts.
 - Keep image captions to the Owner's expression captions above.
