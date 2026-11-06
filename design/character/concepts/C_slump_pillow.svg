@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <title>Jixxy concept C - Slump Pillow</title>
+  <!-- palette: outline #2D2A3E, pillow #F7E2A8, trim #5BA89A, cheek #E8806F, eye #FFF6E8 -->
+  <g id="shadow"><ellipse cx="64" cy="118" rx="36" ry="5" fill="#2D2A3E" opacity="0.22"/></g>
+  <g id="arms" fill="#F7E2A8" stroke="#2D2A3E" stroke-width="3">
+    <ellipse id="arm_l" cx="24" cy="96" rx="7" ry="10" transform="rotate(14 24 96)"/>
+    <ellipse id="arm_r" cx="104" cy="96" rx="7" ry="10" transform="rotate(-14 104 96)"/>
+  </g>
+  <g id="body">
+    <path d="M26 34 Q64 24 102 34 Q108 36 106 42 Q112 72 104 108 Q102 114 96 114 Q64 120 32 114 Q26 114 24 108 Q16 72 22 42 Q22 36 26 34 Z" fill="#F7E2A8" stroke="#2D2A3E" stroke-width="3" stroke-linejoin="round"/>
+    <path id="seam" d="M30 44 Q64 38 98 44" stroke="#5BA89A" stroke-width="2.5" stroke-dasharray="5 4" fill="none" stroke-linecap="round"/>
+    <ellipse id="cheek_l" cx="36" cy="88" rx="6" ry="4" fill="#E8806F" opacity="0.7"/>
+    <ellipse id="cheek_r" cx="92" cy="88" rx="6" ry="4" fill="#E8806F" opacity="0.7"/>
+  </g>
+  <g id="eyes">
+    <g id="eye_l">
+      <ellipse cx="48" cy="76" rx="9" ry="8" fill="#FFF6E8" stroke="#2D2A3E" stroke-width="2.5"/>
+      <circle cx="49" cy="79" r="3.6" fill="#2D2A3E"/>
+      <path id="lid_l" d="M38.5 76 A9.5 9 0 0 1 57.5 76 Z" fill="#F7E2A8" stroke="#2D2A3E" stroke-width="2.5" stroke-linejoin="round"/>
+    </g>
+    <g id="eye_r">
+      <ellipse cx="80" cy="76" rx="9" ry="8" fill="#FFF6E8" stroke="#2D2A3E" stroke-width="2.5"/>
+      <circle cx="81" cy="79" r="3.6" fill="#2D2A3E"/>
+      <path id="lid_r" d="M70.5 76 A9.5 9 0 0 1 89.5 76 Z" fill="#F7E2A8" stroke="#2D2A3E" stroke-width="2.5" stroke-linejoin="round"/>
+    </g>
+  </g>
+  <g id="brows" stroke="#2D2A3E" stroke-width="3" stroke-linecap="round" fill="none">
+    <path id="brow_l" d="M40 66 L55 65"/>
+    <path id="brow_r" d="M73 65 L88 66"/>
+  </g>
+  <g id="mouth"><path d="M56 95 Q64 99 73 94" stroke="#2D2A3E" stroke-width="3" stroke-linecap="round" fill="none"/></g>
+  <g id="accessory">
+    <!-- corner tassels; the right one droops (animation lever) -->
+    <path id="tassel_l" d="M24 36 Q12 30 8 22 M24 36 Q10 36 6 30 M24 36 Q14 40 8 38" stroke="#5BA89A" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <path id="tassel_r" d="M104 36 Q116 40 118 52 M104 36 Q118 34 122 44 M104 36 Q114 30 122 34" stroke="#5BA89A" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <circle cx="24" cy="36" r="4" fill="#5BA89A" stroke="#2D2A3E" stroke-width="2.5"/>
+    <circle cx="104" cy="36" r="4" fill="#5BA89A" stroke="#2D2A3E" stroke-width="2.5"/>
+  </g>
+</svg>

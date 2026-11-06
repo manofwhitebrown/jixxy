@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <title>Jixxy concept B - Hoodie Blob</title>
+  <!-- palette: outline #2D2A3E, hoodie #E8806F, face opening #3B3552, pocket/trim #F4B97A, eye #FFF6E8 -->
+  <g id="shadow"><ellipse cx="64" cy="118" rx="32" ry="5" fill="#2D2A3E" opacity="0.22"/></g>
+  <g id="body">
+    <path d="M32 108 C24 80 26 52 44 38 C58 28 82 30 92 42 C104 58 104 84 96 108 C86 118 42 118 32 108 Z" fill="#E8806F" stroke="#2D2A3E" stroke-width="3" stroke-linejoin="round"/>
+    <path id="pocket" d="M46 96 Q64 90 84 96 L82 110 Q64 114 48 110 Z" fill="#F4B97A" stroke="#2D2A3E" stroke-width="3" stroke-linejoin="round"/>
+  </g>
+  <g id="arms" fill="#E8806F" stroke="#2D2A3E" stroke-width="3">
+    <ellipse id="arm_l" cx="34" cy="92" rx="7" ry="11" transform="rotate(8 34 92)"/>
+    <ellipse id="arm_r" cx="94" cy="92" rx="7" ry="11" transform="rotate(-8 94 92)"/>
+  </g>
+  <g id="face_opening">
+    <path d="M42 70 C40 54 52 46 64 46 C76 46 88 54 86 70 C84 84 44 84 42 70 Z" fill="#3B3552" stroke="#2D2A3E" stroke-width="3"/>
+  </g>
+  <g id="eyes">
+    <g id="eye_l">
+      <ellipse cx="55" cy="68" rx="6.5" ry="6" fill="#FFF6E8"/>
+      <circle cx="56" cy="70" r="2.8" fill="#2D2A3E"/>
+      <path id="lid_l" d="M48 68 A7 6.5 0 0 1 62 68 Z" fill="#3B3552" stroke="#FFF6E8" stroke-width="1.5" stroke-linejoin="round"/>
+    </g>
+    <g id="eye_r">
+      <ellipse cx="73" cy="68" rx="6.5" ry="6" fill="#FFF6E8"/>
+      <circle cx="74" cy="70" r="2.8" fill="#2D2A3E"/>
+      <path id="lid_r" d="M66 68 A7 6.5 0 0 1 80 68 Z" fill="#3B3552" stroke="#FFF6E8" stroke-width="1.5" stroke-linejoin="round"/>
+    </g>
+  </g>
+  <g id="brows" stroke="#FFF6E8" stroke-width="2.5" stroke-linecap="round" fill="none">
+    <path id="brow_l" d="M49 61 L61 60"/>
+    <path id="brow_r" d="M67 60 L79 61"/>
+  </g>
+  <g id="mouth"><path d="M59 77 Q64 79 70 76" stroke="#FFF6E8" stroke-width="2.5" stroke-linecap="round" fill="none"/></g>
+  <g id="accessory">
+    <path id="hood_rim" d="M38 72 C32 48 46 32 64 32 C82 32 96 48 90 72" fill="none" stroke="#2D2A3E" stroke-width="3" stroke-linecap="round"/>
+    <path id="hood_peak" d="M80 36 Q104 30 112 50 Q104 46 96 52 Q92 42 80 44 Z" fill="#E8806F" stroke="#2D2A3E" stroke-width="3" stroke-linejoin="round"/>
+    <path id="hood_string_l" d="M52 84 Q50 94 54 98" stroke="#F4B97A" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path id="hood_string_r" d="M76 84 Q78 94 74 98" stroke="#F4B97A" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  </g>
+</svg>
