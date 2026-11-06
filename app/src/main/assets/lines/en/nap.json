@@ -178,5 +178,108 @@
       "nap"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "nap_any_011",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Nap time...",
+    "slots": [],
+    "tags": [
+      "nap",
+      "owner_canon"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "nap_any_012",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Nap time... don't wait up.",
+    "slots": [],
+    "tags": [
+      "nap"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "nap_any_013",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Going under the blanket. Back when I'm back.",
+    "slots": [],
+    "tags": [
+      "nap"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "nap_any_014",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Eyes closed. Opinions still on.",
+    "slots": [],
+    "tags": [
+      "nap"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "nap_any_015",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Nap mode. One slow blink, then lights out.",
+    "slots": [],
+    "tags": [
+      "nap"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "nap_any_016",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Don't tell the spreadsheet I'm napping.",
+    "slots": [],
+    "tags": [
+      "nap"
+    ],
+    "almostCaring": false
   }
 ]

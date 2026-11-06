@@ -286,5 +286,78 @@
       "almost_caring"
     ],
     "almostCaring": true
+  },
+  {
+    "id": "almost_caring_any_017",
+    "trigger": "ALMOST_CARING",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 2,
+    "bondMin": 3,
+    "lang": "en",
+    "text": "...go to sleep, idiot.",
+    "slots": [],
+    "tags": [
+      "almost_caring",
+      "owner_canon"
+    ],
+    "almostCaring": true
+  },
+  {
+    "id": "almost_caring_any_018",
+    "trigger": "ALMOST_CARING",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 3,
+    "lang": "en",
+    "text": "I'm not worried. I'm just awake at your hour. Weird.",
+    "slots": [],
+    "tags": [
+      "almost_caring"
+    ],
+    "almostCaring": true
+  },
+  {
+    "id": "almost_caring_any_019",
+    "trigger": "ALMOST_CARING",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 3,
+    "lang": "en",
+    "text": "...you good? Okay. Go to sleep, though.",
+    "slots": [],
+    "tags": [
+      "almost_caring"
+    ],
+    "almostCaring": true
+  },
+  {
+    "id": "almost_caring_any_020",
+    "trigger": "ALMOST_CARING",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 3,
+    "lang": "en",
+    "text": "I'll keep the blanket warm. Don't make it weird.",
+    "slots": [],
+    "tags": [
+      "almost_caring"
+    ],
+    "almostCaring": true
   }
 ]

@@ -182,5 +182,98 @@
       "impressed"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "impressed_any_011",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Respect.",
+    "slots": [],
+    "tags": [
+      "impressed",
+      "owner_canon"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "impressed_any_012",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Respect. Genuinely.",
+    "slots": [],
+    "tags": [
+      "impressed"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "impressed_any_013",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{count} Leaves in a row. Respect.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "impressed"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "impressed_any_014",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Sunglasses on. That was cool.",
+    "slots": [],
+    "tags": [
+      "impressed"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "impressed_any_015",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Okay, {app}-free again. Respect.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "impressed"
+    ],
+    "almostCaring": false
   }
 ]

@@ -358,5 +358,557 @@
       "poke"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "poke_any_021",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "PANICKING"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "YOU DROPPED ME?! Rude.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "dropped",
+      "owner_canon"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_022",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "WHAT?! Was that a drop? That felt like a drop.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "dropped"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_023",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Dropped. I've updated the spreadsheet.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "dropped"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_024",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Cats land on their feet. My dignity did not.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "dropped"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_025",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Thrown across the screen like laundry. Noted.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "dropped"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_026",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Put me down gently next time. I'm fragile and fluffy.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "dropped"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_027",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Bro what?!",
+    "slots": [],
+    "tags": [
+      "poke",
+      "escalation",
+      "owner_canon"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_028",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Is it an emergency? Is it snacks?",
+    "slots": [],
+    "tags": [
+      "poke",
+      "escalation"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_029",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "That's enough poking. I'm a loaf now.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "escalation"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_030",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I've called a meeting about your finger.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "escalation"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_031",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Keep poking. See what happens. ...nothing. I'm a loaf.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "escalation"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_032",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Poke me once more and I'm filing a complaint.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "escalation"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_033",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "...really?",
+    "slots": [],
+    "tags": [
+      "poke",
+      "stare",
+      "owner_canon"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_034",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Hm? Oh, hi.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_035",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Tap noted. Pet me or leave me.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_036",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Yes? I'm listening with one eye.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_037",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "You rang? This is the nap desk.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_038",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I'm here. Yes. Hi. Carry on.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_039",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Hehe. Found me.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "owner_canon"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_040",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Hehe. Missed me?",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_041",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "You poked me. I'm choosing to be flattered.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_042",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I'll allow it. Once.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_043",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Snacks. Now. Then maybe I'll talk.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "on_break",
+      "owner_canon"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_044",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I'm on break. The break lasts all day.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "on_break"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_045",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Closed for lunch. Lunch is also breakfast.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "on_break"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_046",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "On break. Leave a message. Make it snacks.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "on_break"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_047",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Out of energy. Snacks would help. Just saying.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "on_break"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_048",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "My break schedule says no. It's mostly breaks.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "on_break"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_049",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Break in progress. Please admire from a distance.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "on_break"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_050",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I'm recharging. Do not poke the cat.",
+    "slots": [],
+    "tags": [
+      "poke",
+      "on_break"
+    ],
+    "almostCaring": false
   }
 ]

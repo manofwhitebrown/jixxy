@@ -178,5 +178,42 @@
       "welcome"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "welcome_any_011",
+    "trigger": "WELCOME",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Ooh nice! A new roommate. I'll pretend I was expecting you.",
+    "slots": [],
+    "tags": [
+      "welcome",
+      "owner_canon"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "welcome_any_012",
+    "trigger": "WELCOME",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Hi. I'm Jixxy. I'm a cat. I live here now. Snacks welcome.",
+    "slots": [],
+    "tags": [
+      "welcome"
+    ],
+    "almostCaring": false
   }
 ]

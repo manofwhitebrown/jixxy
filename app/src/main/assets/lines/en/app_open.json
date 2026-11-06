@@ -848,5 +848,67 @@
       "app_open"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "app_open_any_001",
+    "trigger": "APP_OPEN",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "...really?",
+    "slots": [],
+    "tags": [
+      "app_open",
+      "stare",
+      "owner_canon"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_any_002",
+    "trigger": "APP_OPEN",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "...really? {app}?",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "stare"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_any_003",
+    "trigger": "APP_OPEN",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "One slow blink. That's my whole review of {app}.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "stare"
+    ],
+    "almostCaring": false
   }
 ]

@@ -613,5 +613,69 @@
       "session_long"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "session_long_any_031",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SMUG"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{minutes} minutes on {app}? Legend. 💀",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long",
+      "owner_canon"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_032",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{minutes} minutes on {app}. I could've napped three times.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_033",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app}, {minutes} minutes in. I've rearranged my fur twice.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
   }
 ]

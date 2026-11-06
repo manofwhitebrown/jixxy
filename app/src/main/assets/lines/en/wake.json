@@ -178,5 +178,151 @@
       "wake"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "wake_any_011",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Hm? ...I was awake. I was resting my eyes.",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "wake_any_012",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Oh. Hi. I wasn't asleep. I was thinking, loudly.",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "wake_any_013",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Back. Slept great. Dreamed about snacks.",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "wake_any_014",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "...what did I miss? Nothing? Good.",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "wake_any_015",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Woke up. Not happy. Slightly happy.",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "wake_any_016",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Nap over. Fur is messy. Mood is fine.",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "wake_any_017",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I'm up. Technically. Spiritually I'm still napping.",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "wake_any_018",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Back already? I was just warming up the nap.",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
   }
 ]

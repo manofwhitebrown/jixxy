@@ -294,5 +294,161 @@
       "battery_low"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "battery_low_any_016",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{battery}%?! bro charge.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low",
+      "owner_canon"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "battery_low_any_017",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "WHAT?! {battery}%?! Charger. Now.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "battery_low_any_018",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{battery}%. I'm not scared. I'm just lying down very fast.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "battery_low_any_019",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{battery}% left. Please. I have so many naps to take.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "battery_low_any_020",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Bro. {battery}%. Charger. Please.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "battery_low_any_021",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{battery}%?! We are basically in the dark ages.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "battery_low_any_022",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING",
+      "GRUMPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Low battery. Dramatic music is playing in my head.",
+    "slots": [],
+    "tags": [
+      "battery_low"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "battery_low_any_023",
+    "trigger": "BATTERY_LOW",
+    "categories": [],
+    "moods": [
+      "PANICKING"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{battery}%. I'm trying to stay calm. I'm failing.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "battery_low"
+    ],
+    "almostCaring": false
   }
 ]

@@ -178,5 +178,132 @@
       "music"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "music_any_011",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Same song on repeat? Seek help. ...kidding. Mostly.",
+    "slots": [],
+    "tags": [
+      "music",
+      "owner_canon"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "music_any_012",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Music on. I'll tap my tail. Tail only.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "music_any_013",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Music? I'll sit on the speaker.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "music_any_014",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Ooh nice, a soundtrack. Don't ruin it.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "music_any_015",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Volume's yours. Opinions are mine.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "music_any_016",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Is this a playlist or a feeling? Asking.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "music_any_017",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "A nap soundtrack? I'll allow it.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
   }
 ]

@@ -278,5 +278,154 @@
       "charger_on"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_016",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Finally, food.",
+    "slots": [],
+    "tags": [
+      "charger_on",
+      "owner_canon"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_017",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Ooh nice! Charger. I was running on vibes.",
+    "slots": [],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_018",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Plugged in at {battery}%. I will now sit very still and eat.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_019",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Food. At last. Please don't touch anything for a bit.",
+    "slots": [],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_020",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Ooh nice, electricity. Dinner is served.",
+    "slots": [],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_021",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Charging. Do not disturb the cat while he eats.",
+    "slots": [],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_022",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Thank you for the snack. I was down to {battery}%.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_023",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Charger! I'll just lie here and absorb.",
+    "slots": [],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
   }
 ]

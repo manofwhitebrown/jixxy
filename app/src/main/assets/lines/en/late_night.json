@@ -560,5 +560,159 @@
       "late_night"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "late_night_any_031",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "We should both sleep...",
+    "slots": [],
+    "tags": [
+      "late_night",
+      "blanket",
+      "owner_canon"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_032",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "...you good? ♡",
+    "slots": [],
+    "tags": [
+      "late_night",
+      "soft",
+      "owner_canon"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_033",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "The blanket's out. There's room. Just saying.",
+    "slots": [],
+    "tags": [
+      "late_night",
+      "blanket"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_034",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "It's {time}. The blanket is very warm. Just a fact.",
+    "slots": [
+      "time"
+    ],
+    "tags": [
+      "late_night",
+      "blanket"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_035",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Late. I'm under the blanket. You could be too.",
+    "slots": [],
+    "tags": [
+      "late_night",
+      "blanket"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_036",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Soft hours. I'm here if the screen is too bright.",
+    "slots": [],
+    "tags": [
+      "late_night",
+      "soft"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_037",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "...you good? No need to answer.",
+    "slots": [],
+    "tags": [
+      "late_night",
+      "soft"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_038",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Hooded blanket on. Highly recommended. Zero pressure.",
+    "slots": [],
+    "tags": [
+      "late_night",
+      "blanket"
+    ],
+    "almostCaring": false
   }
 ]
