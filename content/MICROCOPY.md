@@ -1,4 +1,4 @@
-# JIXXY — MICROCOPY v0.2
+# JIXXY — MICROCOPY v0.3
 Owner: WRITER · Consumer: UI (→ strings.xml) · Language: en
 
 **Rules**
@@ -215,3 +215,8 @@ Placeholder order is stable: in any line with repeated placeholders, fill them i
 - `onboarding.roast.sample_app` — that app
 - `common.continue` — Continue
 - `common.back` — Back
+
+## 12. Additions (v0.3, requested by UI)
+- `home.open_weekly` — See my review of your week
+- `common.cancel` — Cancel
+- `settings.language.value_en` — English
