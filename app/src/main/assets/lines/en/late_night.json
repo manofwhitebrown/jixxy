@@ -104,7 +104,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "{time} already. Gentle reminder that tomorrow exists.",
+    "text": "{time} already. Time goes soft at night.",
     "slots": [
       "time"
     ],
@@ -442,7 +442,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "{time}, and I'm not judging. At all.",
+    "text": "No judgement here, truly. It's {time}.",
     "slots": [
       "time"
     ],

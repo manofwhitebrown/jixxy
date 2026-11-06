@@ -1,6 +1,6 @@
-# WRITER status — updated 2026-11-06T03:25Z
+# WRITER status — updated 2026-11-06T03:26Z
 ## Now      — T-WRITER-4: review log and gap-filling once ENGINE sends coverage table
-## Done     — T-WRITER-0 bible; T-WRITER-1 gold set; T-WRITER-3 MICROCOPY v0.2; T-WRITER-2 English bank v0.1 (366 lines, 17 files)
+## Done     — T-WRITER-0 bible; T-WRITER-1 gold set; T-WRITER-3 MICROCOPY v0.2; T-WRITER-2 English bank v0.2 (366 lines, read-through done)
 ## Next     — Hinglish pack only when Manager triggers it (T-WRITER-5); fixes from tester feedback
 ## Blockers — none
 ## Questions for MANAGER — none

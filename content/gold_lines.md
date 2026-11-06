@@ -20,7 +20,7 @@ Columns: `n` · trigger/category · roast (R) · mood · bondMin (B: 0 stranger,
 | 9 | PAUSE_PROMPT/VIDEO | 2 | SLEEPY | 0 | Autoplay has entered the chat. {minutes} minutes so far on {app}. |
 | 10 | PAUSE_PROMPT/VIDEO | 2 | SLEEPY | 0 | Leave now, or I start rating the thumbnails. |
 | 11 | PAUSE_PROMPT/VIDEO | 3 | SMUG | 1 | {app} again. The algorithm sends its regards, and an invoice. |
-| 12 | PAUSE_PROMPT/VIDEO | 3 | SMUG | 1 | {minutes} minutes on {app}. Plot twist: you could leave. I'll wait, goblin. |
+| 12 | PAUSE_PROMPT/VIDEO | 3 | SMUG | 1 | Plot twist: you could leave. {minutes} minutes on {app}. I'll wait, goblin. |
 | 13 | PAUSE_PROMPT/GAME | 1 | CHILL | 0 | Big {app} energy. Pause first, then conquer. |
 | 14 | PAUSE_PROMPT/GAME | 1 | CHILL | 0 | Round done? {minutes} minutes in {app} so far. One more, or call it? |
 | 15 | PAUSE_PROMPT/GAME | 2 | GRUMPY | 0 | One more match, they say. {minutes} minutes later, still {app}. |
@@ -38,7 +38,7 @@ Columns: `n` · trigger/category · roast (R) · mood · bondMin (B: 0 stranger,
 | 27 | PAUSE_PROMPT/SHOPPING | 2 | SLEEPY | 0 | {minutes} minutes on {app}. The cart is giving puppy eyes. |
 | 28 | PAUSE_PROMPT/SHOPPING | 2 | SLEEPY | 0 | Leave, or I start pricing snacks for me instead. |
 | 29 | PAUSE_PROMPT/SHOPPING | 3 | SMUG | 1 | Your cart has more friends than I do, dummy. {app} again? |
-| 30 | PAUSE_PROMPT/SHOPPING | 3 | SMUG | 1 | {minutes} minutes on {app}. Add 'snacks for Jixxy' to the cart. For balance. |
+| 30 | PAUSE_PROMPT/SHOPPING | 3 | SMUG | 1 | Add 'snacks for Jixxy' to the cart. {minutes} minutes on {app}, for balance. |
 | 31 | PAUSE_PROMPT/OTHER | 1 | CHILL | 0 | {app} is open. Leave, or stay a little. Your call. |
 | 32 | PAUSE_PROMPT/OTHER | 1 | CHILL | 0 | Hello, {app}. {minutes} minutes today. Just a number, no verdict. |
 | 33 | PAUSE_PROMPT/OTHER | 2 | SLEEPY | 0 | The spreadsheet is feeling hungry. {minutes} minutes on {app}. |
@@ -78,10 +78,10 @@ Columns: `n` · trigger/category · roast (R) · mood · bondMin (B: 0 stranger,
 |---|---|---|---|---|---|
 | 53 | LATE_NIGHT/any | 1 | SOFT | 0 | It's {time}. No pressure. Just me, keeping you company. |
 | 54 | LATE_NIGHT/any | 1 | SOFT | 0 | Late one. I'm sleepy by proxy. |
-| 55 | LATE_NIGHT/any | 1 | SOFT | 0 | It's {time}. Whatever you're doing, I'm here. |
+| 55 | LATE_NIGHT/any | 1 | SOFT | 0 | Whatever you're doing, I'm here. It's {time}. |
 | 56 | LATE_NIGHT/any | 1 | SOFT | 0 | Quiet hour. I'll keep the screen company. |
 | 57 | LATE_NIGHT/any | 1 | SOFT | 0 | The world's gone quiet. Take your time. |
-| 58 | LATE_NIGHT/any | 1 | SOFT | 0 | {time} already. Gentle reminder that tomorrow exists. |
+| 58 | LATE_NIGHT/any | 1 | SOFT | 0 | {time} already. Time goes soft at night. |
 | 59 | LATE_NIGHT/any | 1 | SOFT | 0 | Hey. It's late. Small thing: I'm glad you're here. |
 | 60 | LATE_NIGHT/any | 1 | SOFT | 0 | {time}. I'll dim my lights. You do you. |
 
@@ -92,7 +92,7 @@ Columns: `n` · trigger/category · roast (R) · mood · bondMin (B: 0 stranger,
 | 61 | CHARGER_ON/any | 1 | CHILL | 0 | Charging. Finally, someone who understands me. {battery}%. |
 | 62 | CHARGER_ON/any | 1 | CHILL | 0 | Plugged in at {battery}%. I feel less panicky. |
 | 63 | CHARGER_ON/any | 1 | CHILL | 0 | Ahh. Charger on. I'm basically a houseplant now. |
-| 64 | CHARGER_ON/any | 1 | CHILL | 0 | Power! Beautiful power. Thank you, {battery}% me. |
+| 64 | CHARGER_ON/any | 1 | CHILL | 0 | Power! Beautiful power. Thank you. |
 | 65 | CHARGER_ON/any | 1 | CHILL | 0 | Charger on. I'm sitting in the sun. Metaphorically. |
 
 ## Battery low
@@ -133,7 +133,7 @@ Columns: `n` · trigger/category · roast (R) · mood · bondMin (B: 0 stranger,
 
 | n | trigger/cat | R | mood | B | text |
 |---|---|---|---|---|---|
-| 85 | IMPRESSED/any | 1 | IMPRESSED | 0 | Left on the first try. That was genuinely good. |
+| 85 | IMPRESSED/any | 1 | IMPRESSED | 0 | Left without a fight. That was genuinely good. |
 | 86 | IMPRESSED/any | 1 | IMPRESSED | 0 | That's {count} Leaves this week. I noticed. |
 | 87 | IMPRESSED/any | 1 | IMPRESSED | 0 | Okay. I'm impressed. Don't let it go to your head. |
 | 88 | IMPRESSED/any | 1 | IMPRESSED | 0 | No joke. That was disciplined, and I'm a lazy expert. |
@@ -182,7 +182,7 @@ These 15 stand alone with no slot filled in. Quote with attribution to Jixxy; do
 | 6 | LN | 1 | Quiet hour. I'll keep the screen company. |
 | 7 | LN | 1 | The world's gone quiet. Take your time. |
 | 8 | LN | 1 | Hey. It's late. Small thing: I'm glad you're here. |
-| 9 | I | 1 | Left on the first try. That was genuinely good. |
+| 9 | I | 1 | Left without a fight. That was genuinely good. |
 | 10 | I | 1 | Okay. I'm impressed. Don't let it go to your head. |
 | 11 | I | 1 | That was a real choice. Respect. |
 | 12 | welcome | 1 | Oh good, a roommate. I call the sofa. |

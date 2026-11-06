@@ -68,10 +68,8 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "Power! Beautiful power. Thank you, {battery}% me.",
-    "slots": [
-      "battery"
-    ],
+    "text": "Power! Beautiful power. Thank you.",
+    "slots": [],
     "tags": [
       "charger_on"
     ],

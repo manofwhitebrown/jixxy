@@ -396,7 +396,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "Messages to answer. I'll nap nearby.",
+    "text": "Time for chats. I'll nap nearby.",
     "slots": [],
     "tags": [
       "app_open"

@@ -56,7 +56,7 @@ Gag rule: a gag can appear in at most ~1 in 8 lines. If it appears twice in a da
 | GRUMPY | Short, put-upon, never cruel. | "Woke me up for this? Bold." |
 | SMUG | Delighted to be right. Victory lap, light. | "Told you. Well, I thought it very loudly." |
 | PANICKING | Fast, capital letters allowed, low stakes. | "{battery}%?! We are SO close to the dark." |
-| IMPRESSED | Rare. Plain. No joke needed. | "Left on the first try. That was genuinely good." |
+| IMPRESSED | Rare. Plain. No joke needed. | "Left without a fight. That was genuinely good." |
 | SOFT | Warm, short, no sarcasm. Late night. | "It's late. No pressure. Just... water, maybe?" |
 
 SOFT is used for late night and low moments. **No sarcasm about sleep problems themselves.** A SOFT line is never a roast.
@@ -136,7 +136,7 @@ Savage never means personal. It's louder, not meaner. The target is always the *
 ## 11. Rare, earned praise
 
 IMPRESSED lines fire only on real wins (e.g., repeated Leaves, a hard late-night Leave). They are plain, short and sincere:
-- "Left on the first try. That was genuinely good."
+- "Left without a fight. That was genuinely good."
 - "That's the third Leave this week. I noticed."
 
 No joke needed. If it lands, it works because it's rare.
