@@ -44,4 +44,10 @@ class HomeLogicTest {
         val utc = ZoneId.of("UTC")
         assertEquals(86_400_000L, HomeLogic.startOfLocalDay(86_400_000L + 5_000L, utc))
     }
+
+    @Test fun stoppedServiceShowsStopped() =
+        assertEquals(JixxyStatus.STOPPED, HomeLogic.status(UserSettings(napUntilTs = now + 10), now, serviceRunning = false))
+
+    @Test fun blindBeatsStopped() =
+        assertEquals(JixxyStatus.BLIND, HomeLogic.status(UserSettings(blindMode = true), now, serviceRunning = false))
 }

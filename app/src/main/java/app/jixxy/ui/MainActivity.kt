@@ -45,6 +45,8 @@ class MainActivity : ComponentActivity() {
                     },
                     onNapRequested = { napJixxy() },
                     onWakeRequested = { wakeJixxy() },
+                    onStopRequested = { stopJixxy() },
+                    isRunning = { OverlayService.wantedRunning(this@MainActivity) },
                 )
             }
         }
@@ -75,6 +77,12 @@ class MainActivity : ComponentActivity() {
     private fun napJixxy() {
         if (!OverlayService.wantedRunning(this)) return
         startService(Intent(this, OverlayService::class.java).setAction(OverlayService.ACTION_NAP))
+    }
+
+    /** Asks the running service to stop; Stop also clears any nap on PLATFORM's side. */
+    private fun stopJixxy() {
+        if (!OverlayService.wantedRunning(this)) return
+        startService(Intent(this, OverlayService::class.java).setAction(OverlayService.ACTION_STOP))
     }
 
     private companion object {

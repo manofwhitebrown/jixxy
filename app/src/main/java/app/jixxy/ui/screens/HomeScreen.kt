@@ -31,6 +31,8 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.compose.LifecycleEventEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import app.jixxy.R
 import app.jixxy.engine.api.SettingsRepository
@@ -44,6 +46,7 @@ import app.jixxy.ui.home.JixxyStatus
 import app.jixxy.ui.home.TodayStats
 import app.jixxy.ui.theme.JixxyTheme
 import java.util.Date
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 /**
@@ -59,17 +62,22 @@ fun HomeScreen(
     onWeekly: () -> Unit = {},
     onNapRequested: (minutes: Int) -> Unit = {},
     onWakeRequested: () -> Unit = {},
+    onStopRequested: () -> Unit = {},
+    isRunning: () -> Boolean = { true },
     clock: () -> Long = System::currentTimeMillis,
 ) {
     val current by settings.settings.collectAsStateWithLifecycle(initialValue = UserSettings())
     var ui by remember { mutableStateOf(HomeUiState()) }
     val scope = rememberCoroutineScope()
+    // The service has no change callback: re-read its real state on return and shortly after Wake/Stop.
+    var running by remember { mutableStateOf(isRunning()) }
+    LifecycleEventEffect(Lifecycle.Event.ON_RESUME) { running = isRunning() }
 
     // Recompute on settings change; events are re-read at the same time so numbers are fresh on each visit.
-    LaunchedEffect(current) {
+    LaunchedEffect(current, running) {
         val now = clock()
         val events = store.eventsBetween(HomeLogic.startOfLocalDay(now), now + 1)
-        ui = HomeLogic.uiState(current, events, now)
+        ui = HomeLogic.uiState(current, events, now, running)
     }
 
     HomeContent(
@@ -84,6 +92,15 @@ fun HomeScreen(
             scope.launch {
                 settings.update { it.copy(napUntilTs = null) }
                 onWakeRequested()
+                delay(SERVICE_SETTLE_MS)
+                running = isRunning()
+            }
+        },
+        onStop = {
+            scope.launch {
+                onStopRequested()
+                delay(SERVICE_SETTLE_MS)
+                running = isRunning()
             }
         },
         onSettings = onSettings,
@@ -99,6 +116,7 @@ fun HomeContent(
     onWake: () -> Unit,
     onSettings: () -> Unit,
     onWeekly: () -> Unit,
+    onStop: () -> Unit = {},
 ) {
     Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
         Column(
@@ -109,11 +127,26 @@ fun HomeContent(
             Text(statusText(ui), style = MaterialTheme.typography.headlineMedium)
 
             when (ui.status) {
-                JixxyStatus.AWAKE -> Button(onClick = onNap, Modifier.fillMaxWidth().heightIn(min = 56.dp)) {
-                    Text(stringResource(R.string.home_nap_1h))
+                JixxyStatus.AWAKE -> {
+                    Button(onClick = onNap, Modifier.fillMaxWidth().heightIn(min = 56.dp)) {
+                        Text(stringResource(R.string.home_nap_1h))
+                    }
+                    TextButton(onClick = onStop, Modifier.fillMaxWidth().heightIn(min = 48.dp)) {
+                        Text(stringResource(R.string.home_stop))
+                    }
+                    Text(stringResource(R.string.home_stop_hint), style = MaterialTheme.typography.bodySmall)
                 }
-                JixxyStatus.NAPPING -> Button(onClick = onWake, Modifier.fillMaxWidth().heightIn(min = 56.dp)) {
-                    Text(stringResource(R.string.home_wake))
+                JixxyStatus.NAPPING -> {
+                    Button(onClick = onWake, Modifier.fillMaxWidth().heightIn(min = 56.dp)) {
+                        Text(stringResource(R.string.home_wake))
+                    }
+                    Text(stringResource(R.string.home_status_napping_hint), style = MaterialTheme.typography.bodySmall)
+                }
+                JixxyStatus.STOPPED -> {
+                    Button(onClick = onWake, Modifier.fillMaxWidth().heightIn(min = 56.dp)) {
+                        Text(stringResource(R.string.home_wake))
+                    }
+                    Text(stringResource(R.string.home_status_stopped_hint), style = MaterialTheme.typography.bodySmall)
                 }
                 JixxyStatus.BLIND -> Unit // Blind mode is turned off in Settings; nothing to nap.
             }
@@ -134,6 +167,7 @@ fun HomeContent(
 private fun statusText(ui: HomeUiState): String = when (ui.status) {
     JixxyStatus.AWAKE -> stringResource(R.string.home_status_awake)
     JixxyStatus.BLIND -> stringResource(R.string.home_status_blind)
+    JixxyStatus.STOPPED -> stringResource(R.string.home_status_stopped)
     JixxyStatus.NAPPING -> {
         val until = ui.napUntilTs
         val time = if (until != null) DateFormat.getTimeFormat(LocalContext.current).format(Date(until)) else ""
@@ -164,6 +198,8 @@ private fun StatCard(label: Int, value: Int, modifier: Modifier) {
     }
 }
 
+private const val SERVICE_SETTLE_MS = 800L
+
 private val sampleStats = TodayStats(paused = 5, left = 3, stayed = 2)
 
 @Preview(showBackground = true, name = "awake dark") @Composable private fun HomeAwakeDark() =
@@ -172,3 +208,6 @@ private val sampleStats = TodayStats(paused = 5, left = 3, stayed = 2)
     JixxyTheme(dark = false) { HomeContent(HomeUiState(JixxyStatus.NAPPING, napUntilTs = 1_800_000_000_000, today = sampleStats), {}, {}, {}, {}) }
 @Preview(showBackground = true, name = "blind, 200% font", fontScale = 2f) @Composable private fun HomeBlindLarge() =
     JixxyTheme(dark = true) { HomeContent(HomeUiState(JixxyStatus.BLIND), {}, {}, {}, {}) }
+
+@Preview(showBackground = true, name = "stopped dark") @Composable private fun HomeStoppedDark() =
+    JixxyTheme(dark = true) { HomeContent(HomeUiState(JixxyStatus.STOPPED, today = sampleStats), {}, {}, {}, {}) }

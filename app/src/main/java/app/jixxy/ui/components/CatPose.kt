@@ -20,5 +20,6 @@ object CatPoses {
         JixxyStatus.AWAKE -> CatPose.SMUG
         JixxyStatus.NAPPING -> CatPose.NAP
         JixxyStatus.BLIND -> CatPose.REALLY
+        JixxyStatus.STOPPED -> CatPose.NAP
     }
 }
