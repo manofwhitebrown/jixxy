@@ -1,0 +1,15 @@
+# Secrets / local-only (never commit)
+*.local.md
+local.properties
+*.jks
+*.keystore
+.env
+
+# Build output / tooling
+build/
+.gradle/
+.idea/
+*.iml
+.DS_Store
+.kotlin/
+captures/
