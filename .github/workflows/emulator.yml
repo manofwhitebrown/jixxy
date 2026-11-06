@@ -115,5 +115,8 @@ jobs:
           for a in $(gh release view ci-evidence --repo "${{ github.repository }}" --json assets -q '.assets[].name'); do
             gh release delete-asset ci-evidence "$a" --repo "${{ github.repository }}" -y
           done
-          gh release upload ci-evidence evidence/* --repo "${{ github.repository }}" --clobber
+          find evidence -type f -empty -print -delete   # GitHub rejects zero-byte assets
+          for f in evidence/*; do
+            gh release upload ci-evidence "$f" --repo "${{ github.repository }}" --clobber || echo "::warning::upload failed: $f"
+          done
           echo "::notice::https://github.com/${{ github.repository }}/releases/tag/ci-evidence"
