@@ -2,21 +2,25 @@ package app.jixxy.character
 
 import android.graphics.Color
 
-/** The five colours Jixxy is drawn with, plus a shadow tint. Kept in one place so skins can swap it later. */
+/**
+ * Jixxy's colours, from the Owner's character sheet: near-black fur, charcoal, muted purple (blanket, UI accents),
+ * cream (bubble text), pink only for inner ears. Everything the character module draws takes its colours from here,
+ * so skins can swap this one object later (no skin features yet, T-C2-7).
+ */
 internal data class CharacterPalette(
-    val outline: Int,
-    val body: Int,
-    val blanket: Int,
-    val cheek: Int,
-    val eye: Int
+    val ink: Int,
+    val charcoal: Int,
+    val purple: Int,
+    val cream: Int,
+    val pink: Int,
 ) {
     companion object {
         val Default = CharacterPalette(
-            outline = Color.parseColor("#2D2A3E"),
-            body = Color.parseColor("#F4B97A"),
-            blanket = Color.parseColor("#6C7BD9"),
-            cheek = Color.parseColor("#E8806F"),
-            eye = Color.parseColor("#FFF6E8")
+            ink = Color.parseColor("#15121A"),
+            charcoal = Color.parseColor("#2B2833"),
+            purple = Color.parseColor("#6B5B95"),
+            cream = Color.parseColor("#F3EBDD"),
+            pink = Color.parseColor("#E8A0B4"),
         )
     }
 }
