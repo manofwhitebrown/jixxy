@@ -25,3 +25,17 @@ class PlatformPureTest {
         assertFalse(PermissionsRepository.likelyBlocked(35, null, overlay = true, usage = true))
     }
 }
+
+class PermissionsMappingTest {
+    @Test fun mapsEveryField() {
+        val ui = PermissionsState(
+            overlayGranted = true, usageAccessGranted = false, notificationsGranted = true,
+            batteryUnrestricted = false, restrictedSettingsLikelyBlocked = true,
+        ).toUi()
+        assertTrue(ui.overlayGranted)
+        assertFalse(ui.usageAccessGranted)
+        assertTrue(ui.notificationsGranted)
+        assertFalse(ui.batteryExempt)
+        assertTrue(ui.restrictedSettingsLikelyBlocked)
+    }
+}

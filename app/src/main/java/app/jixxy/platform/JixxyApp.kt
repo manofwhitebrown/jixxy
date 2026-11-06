@@ -12,5 +12,8 @@ class JixxyApp : Application() {
 
     val bus = SignalBus()
     val settings by lazy { DataStoreSettingsRepository(this) }
+    val permissions by lazy { PermissionsRepository(this) }
+    /** UI-facing view of [permissions]. */
+    val permissionsSource by lazy { PermissionsSourceAdapter(permissions) }
     val stateStore by lazy { SqliteStateStore(this, isBlind = { blindMode }) }
 }
