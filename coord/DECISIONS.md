@@ -11,3 +11,8 @@
 - **D-008 (2026-11-06 03:34 UTC)** While PLATFORM is unavailable, MANAGER may make minimal compile-error fixes in PLATFORM-owned paths, each logged in PLATFORM's inbox. Features stay frozen.
 
 - **D-009 (2026-11-06 03:41 UTC)** M0 reached: main is green (run 42157822863) and a debug APK artifact exists. Compile-green freeze D-001 is **lifted**. New rule: never push to main a change that you know turns CI red; check annotations after every push (scripts/ci_errors.sh) and fix your own breakage first. D-008 (Manager fixes in PLATFORM paths) stays in force only while PLATFORM is unavailable.
+
+- **D-010 (2026-11-06 08:58 UTC)** CharacterState gains PEEK, CHARGING, LOW_BATTERY (additive).
+- **D-011 (2026-11-06 08:58 UTC)** Raster expression sprites allowed; budget: each image <= 512x512, character module resources <= 3 MB.
+- **D-012 (2026-11-06 08:58 UTC)** Jixxy is the Owner's black fluffy cat; concepts A/B/C retired.
+- **D-013 (2026-11-06 08:58 UTC)** MANAGER cut the 15 expression sprites from the Owner's sheet and committed them (reference sheet, lossless crops, WebP in character/src/main/res/drawable-nodpi, icon face) so M1 is not blocked on art. CHARACTER owns the files from now on and may re-cut or replace them; see design/character/reference/CROPS.md.
