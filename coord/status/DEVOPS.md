@@ -1,6 +1,6 @@
-# DEVOPS status — updated 2026-11-06 03:39 UTC
+# DEVOPS status — updated 2026-11-06 03:42 UTC
 ## Now
-T-DEVOPS-5: unit tests, lint and assemble now pass on main (75044e0); my manifest guard fails, finding out which permission
+main is GREEN (84bdc18). Next: test release.yml with a throwaway tag
 ## Done
 - T-DEVOPS-0: .github/workflows/ci.yml (guards job + build job, skip-safe without gradlew)
 - T-DEVOPS-1: scripts/check_no_secrets.sh, check_manifest.sh, check_dependencies.sh, check_ownership.sh, validate_lines.py, install_hooks.sh
@@ -17,7 +17,7 @@ T-DEVOPS-5: unit tests, lint and assemble now pass on main (75044e0); my manifes
 2. Wire :engine:validateLines into CI when ENGINE lands it
 3. Confirm debug keystore with PLATFORM, then test release.yml with a throwaway tag
 ## Blockers
-none for me. main stays red until PLATFORM fixes app/build.gradle.kts (message sent).
+none. Owner still has to enable Pages.
 ## Questions for MANAGER
 none
 ## Messages handled
