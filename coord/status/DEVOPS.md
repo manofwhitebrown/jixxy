@@ -22,6 +22,7 @@ T-D2-1..6 and T-D2-8 (partly) done. Next: watch CI after the action bumps, triag
 - T-DEVOPS-7: scripts/ci_errors.sh (prints failure annotations of the newest completed CI run on main)
 - T-DEVOPS-2: qa/RELEASE_SIGNING.md (Owner guide for creating the release keystore and the four GitHub secrets)
 - check_manifest.sh: ignores XML comments (they cannot declare anything; real entries are still checked) and puts matched lines inside the annotation
+- (Wave 2) T-D2-8: Pages actions bumped (configure-pages v6.0.0, upload-pages-artifact v5.0.0, deploy-pages v5.0.1, SHAs from the API); not yet run. ci.yml now also runs :engine:validateLines (continue-on-error, so it reports but cannot turn main red until I see it pass once).
 ## Next
 1. Triage the first completed CI run on main and message owners of any failing path
 2. Wire :engine:validateLines into CI when ENGINE lands it

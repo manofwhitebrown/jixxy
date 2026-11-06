@@ -75,6 +75,12 @@ jobs:
           chmod +x ./gradlew
           set -o pipefail
           ./gradlew test --continue --stacktrace 2>&1 | tee build-test.log
+      - name: Line bank (Gradle task)
+        if: steps.gradle.outputs.present == 'true'
+        continue-on-error: true
+        run: |
+          chmod +x ./gradlew
+          ./gradlew :engine:validateLines --stacktrace 2>&1 | tee build-lines.log
       - name: Lint
         id: lint
         if: steps.gradle.outputs.present == 'true'
