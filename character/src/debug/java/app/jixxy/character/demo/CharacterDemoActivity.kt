@@ -63,7 +63,7 @@ class CharacterDemoActivity : Activity() {
             "Reset" to { cat.setCharacterState(CharacterState.IDLE) },
         ))
         CharacterState.values().toList().chunked(COLUMNS).forEach { states ->
-            addRow(buttons, states.map { state -> state.name to { cat.setCharacterState(state) } })
+            addRow(buttons, states.map { state -> state.name to { cat.setCharacterState(state); log.text = "State: ${state.name}" } })
         }
         root.addView(ScrollView(this).apply { addView(buttons) }, LinearLayout.LayoutParams(MATCH, 0, 1f))
 
