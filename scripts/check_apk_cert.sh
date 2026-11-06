@@ -9,7 +9,14 @@ set -euo pipefail
 here="$(cd "$(dirname "$0")" && pwd)"
 
 apk="${1:?usage: check_apk_cert.sh <apk> --apk|--keystore|--sha ...}"; shift
-actual="$("$here/apk_cert.sh" "$apk")"
+err="$(mktemp)"
+if ! actual="$("$here/apk_cert.sh" "$apk" 2>"$err")"; then
+  # stdout of apk_cert.sh is captured above, so surface its stderr as an annotation here (D-002)
+  flat="$(head -c 1800 "$err" | awk '{printf "%s%%0A", $0}')"
+  echo "::error title=apk_cert failed::${flat}"
+  cat "$err" >&2
+  exit 1
+fi
 echo "::notice title=APK signing certificate::$(basename "$apk") SHA-256 $actual"
 
 mode="${1:-}"; shift || true
