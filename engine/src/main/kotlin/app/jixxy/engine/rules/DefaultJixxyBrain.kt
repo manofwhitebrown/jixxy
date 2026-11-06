@@ -65,6 +65,7 @@ class DefaultJixxyBrain(
     private val secondPromptDone = mutableSetOf<String>()
     private val lastTriggerTs = mutableMapOf<Trigger, Long>()
     private var leaveStreak = 0
+    private var lastDroppedLineTs: Long? = null
 
     private var fgPkg: String? = null
     private var fgCategory = AppCategory.OTHER
@@ -149,7 +150,7 @@ class DefaultJixxyBrain(
             emptyList()
         }
         is Signal.SpriteTapped -> onTap(signal, s, now)
-        is Signal.SpriteDropped -> emptyList()
+        is Signal.SpriteDropped -> onDropped(s, now)
         is Signal.UserReaction -> {
             picker.onReaction(signal.lineId, signal.kind)
             log(UsageEventType.LINE_REACTION, now, null, if (signal.kind == ReactionKind.LAUGH) 1 else 0, signal.lineId)
@@ -285,7 +286,7 @@ class DefaultJixxyBrain(
         if (sig.consecutive >= BrainConfig.pokeGrumpyThreshold) setTempMood(Mood.GRUMPY, now)
         val onBreak = state.energy <= 0
         val base = query(Trigger.POKE, now, s, emptyMap(), null)
-        val line = picker.pick(if (onBreak) base.copy(onBreak = true) else base)
+        val line = picker.pick(base.copy(onBreak = onBreak, escalation = sig.consecutive >= BrainConfig.pokeGrumpyThreshold))
         if (line == null) {
             val mood = currentMood(now, s)
             return listOf(Reaction(ReactionKindOut.SILENT_JUDGE, null, null, mood, CharacterState.JUDGING, 0L, null))
@@ -293,6 +294,24 @@ class DefaultJixxyBrain(
         if (!onBreak) state = state.copy(energy = (state.energy - BrainConfig.energyPerLine).coerceAtLeast(0))
         log(UsageEventType.LINE_SHOWN, now, null, null, line.id)
         return listOf(say(Trigger.POKE, line, now, s, null))
+    }
+
+    /** Dropped after a drag: always the FALLING animation; a `dropped` POKE line at most once per cooldown. */
+    private fun onDropped(s: UserSettings, now: Long): List<Reaction> {
+        if (hardSilenced(now, s)) return emptyList()
+        val mood = currentMood(now, s)
+        val last = lastDroppedLineTs
+        val line = if (last != null && now - last < BrainConfig.droppedLineCooldownMin * 60_000L) {
+            null
+        } else {
+            picker.pick(query(Trigger.POKE, now, s, emptyMap(), null).copy(requiredTag = "dropped"))
+        }
+        if (line == null) {
+            return listOf(Reaction(ReactionKindOut.ANIMATE_ONLY, null, null, mood, CharacterState.FALLING, 0L, null))
+        }
+        lastDroppedLineTs = now
+        log(UsageEventType.LINE_SHOWN, now, null, null, line.id)
+        return listOf(Reaction(ReactionKindOut.SAY, line.id, line.text, mood, CharacterState.FALLING, BrainConfig.bubbleMs(line.text), null))
     }
 
     // ---- speaking --------------------------------------------------------------------------

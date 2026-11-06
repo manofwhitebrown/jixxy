@@ -24,6 +24,8 @@ object BrainConfig {
     const val retentionDays = 30
     /** Minimum days between ALMOST_CARING lines. */
     const val almostCaringGapDays = 3
+    /** Minutes between two spoken reactions to being dropped (the falling animation always plays). */
+    const val droppedLineCooldownMin = 2
     const val maxEnergy = 100
     /** Cumulative bond XP needed to reach each level (never lost). */
     const val bondRoommateXp = 100

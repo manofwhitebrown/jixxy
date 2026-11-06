@@ -25,8 +25,10 @@ class BankLinePickerTest {
     private fun query(
         trigger: Trigger = Trigger.APP_OPEN, cat: AppCategory? = AppCategory.SOCIAL, mood: Mood = Mood.CHILL,
         roast: RoastLevel = RoastLevel.NORMAL, bond: Bond = Bond.STRANGER, slots: Map<String, String> = mapOf("app" to "Insta"),
-        lang: String = "en", onBreak: Boolean = false, followUp: Boolean = false
-    ) = LineQuery(trigger, cat, mood, roast, bond, lang, slots, onBreak = onBreak, followUp = followUp)
+        lang: String = "en", onBreak: Boolean = false, followUp: Boolean = false, tier: Int = 0, requiredTag: String? = null,
+        escalation: Boolean = false, lateNight: Boolean = false
+    ) = LineQuery(trigger, cat, mood, roast, bond, lang, slots, tier = tier, followUp = followUp, lateNight = lateNight,
+        onBreak = onBreak, requiredTag = requiredTag, escalation = escalation)
 
     private fun picker(vararg l: Line, seed: Int = 1) = BankLinePicker(LineBank(l.toList()), Random(seed))
 
@@ -74,7 +76,7 @@ class BankLinePickerTest {
     }
 
     @Test fun followUpPrefersTaggedLines() {
-        val p = picker(line("plain"), line("later", tags = setOf("follow_up")))
+        val p = picker(line("plain"), line("later", tags = setOf("followup")))
         assertEquals("later", p.pick(query(followUp = true))!!.id)
     }
 
@@ -116,5 +118,36 @@ class BankLinePickerTest {
     @Test fun deterministicForASeed() {
         fun run() = picker(*(1..30).map { line("l$it") }.toTypedArray(), seed = 42).let { p -> (1..20).map { p.pick(query())!!.id } }
         assertEquals(run(), run())
+    }
+
+    @Test fun reservedTagsAreNeverUsedUnlessAsked() {
+        val p = picker(
+            line("plain", Trigger.POKE, emptySet(), slots = emptySet()),
+            line("drop", Trigger.POKE, emptySet(), slots = emptySet(), tags = setOf("dropped")),
+            line("esc", Trigger.POKE, emptySet(), slots = emptySet(), tags = setOf("escalation"))
+        )
+        repeat(30) { assertEquals("plain", p.pick(query(Trigger.POKE, null, slots = emptyMap()))?.id ?: "plain") }
+        assertEquals("drop", p.pick(query(Trigger.POKE, null, slots = emptyMap(), requiredTag = "dropped"))!!.id)
+        assertEquals("esc", p.pick(query(Trigger.POKE, null, slots = emptyMap(), escalation = true))!!.id)
+    }
+
+    @Test fun requiredTagWithNoMatchGivesNull() {
+        assertNull(picker(line("a", Trigger.POKE, emptySet(), slots = emptySet())).pick(query(Trigger.POKE, null, slots = emptyMap(), requiredTag = "dropped")))
+    }
+
+    @Test fun pausePromptTierSelectsTaggedLines() {
+        val p = picker(
+            line("t0", Trigger.PAUSE_PROMPT, tags = setOf("tier0")), line("t1", Trigger.PAUSE_PROMPT, tags = setOf("tier1")),
+            line("t2", Trigger.PAUSE_PROMPT, tags = setOf("tier2")), line("fu", Trigger.PAUSE_PROMPT, tags = setOf("followup"))
+        )
+        assertEquals("t0", p.pick(query(Trigger.PAUSE_PROMPT, tier = 0))!!.id)
+        assertEquals("t1", p.pick(query(Trigger.PAUSE_PROMPT, tier = 1))!!.id)
+        assertEquals("t2", p.pick(query(Trigger.PAUSE_PROMPT, tier = 7))!!.id)
+        assertEquals("fu", p.pick(query(Trigger.PAUSE_PROMPT, followUp = true))!!.id)
+    }
+
+    @Test fun lateNightPrefersSoftLines() {
+        val p = picker(line("loud", Trigger.LATE_NIGHT), line("soft", Trigger.LATE_NIGHT, tags = setOf("soft")))
+        assertEquals("soft", p.pick(query(Trigger.LATE_NIGHT, lateNight = true))!!.id)
     }
 }

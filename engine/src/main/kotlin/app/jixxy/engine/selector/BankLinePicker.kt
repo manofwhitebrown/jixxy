@@ -1,6 +1,8 @@
 package app.jixxy.engine.selector
 
 import app.jixxy.engine.api.BrainConfig
+import app.jixxy.engine.api.Mood
+import app.jixxy.engine.api.Trigger
 import app.jixxy.engine.api.ReactionKind
 import app.jixxy.engine.lines.Line
 import app.jixxy.engine.lines.LineBank
@@ -11,7 +13,9 @@ import kotlin.random.Random
  *
  * Eligibility (hard): trigger, language (falls back to "en"), roast <= user level, bond, category
  * (a line with no categories fits any app), every declared slot available in the query.
- * Preference (soft, relaxed in order): mood match, then `on_break` / `follow_up` tags.
+ * Tags (WRITER's vocabulary): `on_break`, `dropped`, `escalation`, `followup` lines are reserved: they are used only when
+ * the query asks for them. `tierN` (Pause prompts), `soft` (late night) are preferences. A `requiredTag` is a hard filter.
+ * Preference (soft, relaxed in order): tags above, then mood match.
  * Repeats: a global ring of the last [BrainConfig.dedupeWindow] ids; for small pools the block
  * window shrinks to half the pool so a 10-line trigger can still speak.
  * Reactions: 😂 lines gain weight, 😴 lines lose it (never to zero by itself; the ring still applies).
@@ -24,14 +28,21 @@ class BankLinePicker(
     private val ring = ArrayDeque<String>()
     private val weights = mutableMapOf<String, Int>()
     private val byId: Map<String, Line> = bank.lines.associateBy { it.id }
+    private val reservedTags = setOf("on_break", "dropped", "escalation", "followup")
 
     override fun pick(query: LineQuery): PickedLine? {
         var pool = eligible(query, query.language)
         if (pool.isEmpty() && query.language != "en") pool = eligible(query, "en")
         if (pool.isEmpty()) return null
 
-        pool = preferTag(pool, "on_break", query.onBreak, excludeWhenOff = true)
-        pool = preferTag(pool, "follow_up", query.followUp, excludeWhenOff = false)
+        query.requiredTag?.let { tag -> pool = pool.filter { tag in it.tags }; if (pool.isEmpty()) return null }
+        pool = withoutReserved(pool, query)
+        if (pool.isEmpty()) return null
+        if (query.onBreak) pool = prefer(pool, "on_break")
+        if (query.followUp) pool = prefer(pool, "followup")
+        if (query.escalation) pool = prefer(pool, "escalation")
+        if (query.trigger == Trigger.PAUSE_PROMPT && !query.followUp) pool = prefer(pool, "tier${minOf(query.tier, 2)}")
+        if (query.lateNight || query.mood == Mood.SOFT) pool = prefer(pool, "soft")
         val moodMatched = pool.filter { query.mood in it.moods }
         if (moodMatched.isNotEmpty()) pool = moodMatched
 
@@ -66,14 +77,19 @@ class BankLinePicker(
                 l.slots.all { it in q.slots }
         }
 
-    private fun preferTag(pool: List<Line>, tag: String, wanted: Boolean, excludeWhenOff: Boolean): List<Line> {
-        val tagged = pool.filter { tag in it.tags }
-        return when {
-            wanted && tagged.isNotEmpty() -> tagged
-            !wanted && excludeWhenOff -> pool.filter { tag !in it.tags }.ifEmpty { pool }
-            else -> pool
+    /** Drops reserved-tag lines the query did not ask for. */
+    private fun withoutReserved(pool: List<Line>, q: LineQuery): List<Line> {
+        val wanted = buildSet {
+            if (q.onBreak) add("on_break")
+            if (q.followUp) add("followup")
+            if (q.escalation) add("escalation")
+            q.requiredTag?.let { add(it) }
         }
+        return pool.filter { l -> reservedTags.none { it in l.tags && it !in wanted } }
     }
+
+    /** Narrows to lines carrying [tag] if there are any, else leaves the pool alone. */
+    private fun prefer(pool: List<Line>, tag: String): List<Line> = pool.filter { tag in it.tags }.ifEmpty { pool }
 
     private fun weighted(pool: List<Line>): Line {
         val total = pool.sumOf { weights[it.id] ?: 2 }

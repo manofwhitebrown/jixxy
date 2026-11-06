@@ -14,6 +14,8 @@ import app.jixxy.engine.api.Trigger
  * @property followUp true for the single gentle prompt after a granted Stay expires
  * @property lateNight true inside the late-night window (softer register)
  * @property onBreak true when a poke arrives at energy 0: pick a POKE line tagged `on_break` ("I'm on break")
+ * @property requiredTag only lines carrying this tag are eligible (e.g. `dropped` for a drop reaction)
+ * @property escalation true when the user is poking repeatedly: prefer POKE lines tagged `escalation`
  */
 data class LineQuery(
     val trigger: Trigger,
@@ -26,7 +28,9 @@ data class LineQuery(
     val tier: Int = 0,
     val followUp: Boolean = false,
     val lateNight: Boolean = false,
-    val onBreak: Boolean = false
+    val onBreak: Boolean = false,
+    val requiredTag: String? = null,
+    val escalation: Boolean = false
 )
 
 /** A chosen line with its slots already filled. */
