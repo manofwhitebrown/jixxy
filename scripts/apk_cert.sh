@@ -30,6 +30,9 @@ count="$(printf '%s\n' "$digests" | grep -c . || true)"
 if [ "$count" -ne 1 ]; then
   echo "apk_cert: expected exactly 1 distinct signer certificate, found $count. apksigner said:" >&2
   printf '%s\n' "$out" | sed 's/^/  | /' >&2
+  # raw CI logs are unreachable for agents (D-002): repeat the output as an annotation
+  flat="$(printf '%s' "$out" | head -c 1500 | awk '{printf "%s%%0A", $0}')"
+  echo "::error title=apk_cert: $count signer digests::apksigner output:%0A${flat}"
   exit 4
 fi
 printf '%s\n' "$digests"
