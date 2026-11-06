@@ -48,6 +48,10 @@ jobs:
             echo "::notice::Release secrets absent: building with the debug keystore."
           fi
 
+      - name: Version code (commit count)
+        id: ver
+        run: echo "code=$(bash scripts/version_code.sh)" >> "$GITHUB_OUTPUT"
+
       - name: Build APK
         env:
           JIXXY_KEYSTORE_B64: ${{ secrets.JIXXY_KEYSTORE_B64 }}
@@ -60,16 +64,43 @@ jobs:
             # Keystore is written outside the workspace and never printed.
             printf '%s' "$JIXXY_KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/release.keystore"
             export JIXXY_KEYSTORE_PATH="$RUNNER_TEMP/release.keystore"
-            ./gradlew test assembleRelease --stacktrace
+            ./gradlew test assembleRelease -PversionCode=${{ steps.ver.outputs.code }} --stacktrace
             APK_DIR=app/build/outputs/apk/release
           else
-            ./gradlew test assembleDebug --stacktrace
+            ./gradlew test assembleDebug -PversionCode=${{ steps.ver.outputs.code }} --stacktrace
             APK_DIR=app/build/outputs/apk/debug
           fi
           echo "APK_DIR=$APK_DIR" >> "$GITHUB_ENV"
 
       - name: Manifest guard
         run: bash scripts/check_manifest.sh
+
+      - name: Signing certificate must match the previous release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          set -eu
+          apk=$(ls "$APK_DIR"/*.apk | head -1)
+          if [ "${{ steps.sign.outputs.mode }}" = "debug" ]; then
+            bash scripts/check_apk_cert.sh "$apk" --keystore app/debug.keystore jixxydebug android
+          else
+            bash scripts/apk_cert.sh "$apk" >/dev/null   # prints the digest into the log; verifies the signature
+            echo "::notice::Release-key build; compared with the previous release below."
+          fi
+          # Compare with the newest earlier release that has an APK: an update only installs over
+          # it if the signing key is identical.
+          prev=$(gh release list --limit 20 --json tagName,isDraft --jq '.[] | select(.isDraft|not) | .tagName' | grep -vx "$TAG" | head -1 || true)
+          if [ -z "$prev" ]; then echo "::notice::No earlier release to compare with."; exit 0; fi
+          mkdir -p prev && gh release download "$prev" --pattern '*.apk' --dir prev
+          old=$(ls prev/*.apk | head -1)
+          if bash scripts/check_apk_cert.sh "$apk" --apk "$old"; then
+            echo "Same signing certificate as $prev."
+          else
+            echo "::error title=Key changed since $prev::Users of $prev cannot update to $TAG without uninstalling."
+            [ "${ALLOW_KEY_CHANGE:-}" = "1" ] || exit 1
+          fi
+          echo "versionCode=${{ steps.ver.outputs.code }}"
 
       - name: Name APK, checksum, notes
         env:

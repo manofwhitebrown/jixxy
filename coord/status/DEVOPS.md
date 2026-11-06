@@ -1,5 +1,8 @@
-# DEVOPS status — updated 2026-11-06 03:42 UTC
+# DEVOPS status — updated 2026-11-06 08:55 UTC
+## Takeover: 2026-11-06 08:55 UTC
+Wave-2 DEVOPS (AI-6), replacing the previous DEVOPS. Verified: repo cloned, ci_errors.sh says run 42158128299 on 58e7b01 is success (both jobs); debug key is committed in app/debug.keystore; release.yml, ci.yml, guards read. Found: versionCode is hard-coded to 1 in app/build.gradle.kts (PLATFORM file). First: T-D2-1, T-D2-2, T-D2-3.
 ## Now
+T-D2-1 pushed (cert check + versionCode); starting T-D2-2 rolling `latest` pre-release
 main is GREEN (84bdc18). Next: test release.yml with a throwaway tag
 ## Done
 - T-DEVOPS-0: .github/workflows/ci.yml (guards job + build job, skip-safe without gradlew)
@@ -33,3 +36,4 @@ none
 - ci_errors.sh was tested on a red run, with no token and with a bad token; not on a green run.
 - RELEASE_SIGNING.md has not been followed by anyone yet; the keytool and base64 commands are standard but unverified on the Owner's machine.
 - No script or workflow has been run on a device. Nothing Android-specific was tested.
+- (Wave 2) T-D2-1 scripts/apk_cert.sh, check_apk_cert.sh, version_code.sh tested only against a FAKE apksigner and keytool output format from memory; the real apksigner/keytool steps have not run on GitHub yet. versionCode stays 1 until PLATFORM reads the Gradle property. release.yml cert comparison uses `gh release download` of the previous release; untested.

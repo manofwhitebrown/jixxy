@@ -42,3 +42,11 @@ AI roles never create, see or print this key. You do it on your own computer.
 - Switching from debug-signed tester builds to release-signed builds is a one-time break: testers
   must uninstall the debug-signed build once. Tell them in the release notes.
 - If the key ever leaks, tell the Manager; there is no way to revoke it for already-installed apps.
+
+## Updates must install over the previous build (T-D2-1)
+
+Android only installs an update if (1) the signing certificate is identical and (2) `versionCode` is higher.
+
+- **Same key:** until the real release key exists, CI and releases both sign with the committed throwaway key `app/debug.keystore`. `scripts/check_apk_cert.sh` prints the APK's certificate SHA-256 (via `apksigner`) in the run summary and **fails** if it differs from the debug key (CI), or from the previous release's APK (release workflow). When the Owner adds the real key, the first signed release will correctly fail this check once, because everybody on a debug-signed build has to uninstall and reinstall. If that is intended, set `ALLOW_KEY_CHANGE=1` in the step env for that one release.
+- **Rising versionCode:** both workflows call `scripts/version_code.sh` (number of commits on `main`) and pass `-PversionCode=<n>`. This replaces the idea of `github.run_number`, because CI and Release runs have separate counters: a tagged release could get a lower code than an earlier CI build and phones would refuse it. The commit count only grows and is the same for CI and release builds of one commit. `v0.0.1-alpha` has versionCode 1.
+- **Needs PLATFORM:** `app/build.gradle.kts` must read `versionCode` from the Gradle property (request in coord/inbox/PLATFORM).

@@ -39,6 +39,11 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0   # scripts/version_code.sh counts commits
+      - name: Version code (commit count)
+        id: ver
+        run: echo "code=$(bash scripts/version_code.sh)" >> "$GITHUB_OUTPUT"
       - name: Detect Gradle wrapper
         id: gradle
         run: |
@@ -81,7 +86,7 @@ jobs:
         continue-on-error: true
         run: |
           set -o pipefail
-          ./gradlew assembleDebug --continue --stacktrace 2>&1 | tee build-assemble.log
+          ./gradlew assembleDebug -PversionCode=${{ steps.ver.outputs.code }} --continue --stacktrace 2>&1 | tee build-assemble.log
       - name: Report failures as annotations
         if: always() && steps.gradle.outputs.present == 'true'
         run: |
@@ -92,6 +97,12 @@ jobs:
       - name: Manifest guard (merged debug manifest)
         if: steps.assemble.outcome == 'success'
         run: bash scripts/check_manifest.sh
+      - name: Signing certificate must match the committed debug key
+        if: steps.assemble.outcome == 'success'
+        run: |
+          apk=$(ls app/build/outputs/apk/debug/*.apk | head -1)
+          bash scripts/check_apk_cert.sh "$apk" --keystore app/debug.keystore jixxydebug android
+          echo "versionCode=${{ steps.ver.outputs.code }}"
       - name: Upload debug APK
         if: steps.assemble.outcome == 'success'
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
