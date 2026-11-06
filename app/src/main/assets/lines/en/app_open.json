@@ -910,5 +910,257 @@
       "stare"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "app_open_social_006",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "CHILL",
+      "SMUG"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{app}. I'm a cat, I notice things. Carry on.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_social_007",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "CHILL",
+      "SMUG"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Scrolling in 3, 2, 1. I'll bring a blanket, gremlin.",
+    "slots": [],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_video_006",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "CHILL",
+      "SMUG"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Ah, {app}. Where 'one video' grows up to be an evening.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_video_007",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "CHILL",
+      "SMUG"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{app}, menace? I'll take the good cushion.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_game_006",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Gaming time. Snacks on my side, thumbs on yours.",
+    "slots": [],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_game_007",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Round one of many. I'll nap through the lag.",
+    "slots": [],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_game_008",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "CHILL",
+      "SMUG"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{app}, boss mode. Try not to rage-quit near me.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_messaging_006",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Chat time. Tell them I said hi. Or nothing.",
+    "slots": [],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_messaging_007",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} open. I'll look away. Cats are discreet.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_productivity_006",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Work mode. I'll sit very quietly. On the keyboard.",
+    "slots": [],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_productivity_007",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Productive era begins. I'm on break. Good luck.",
+    "slots": [],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_productivity_008",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "moods": [
+      "CHILL",
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app}. Respect. I'll supervise from this cushion.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
   }
 ]

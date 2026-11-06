@@ -324,5 +324,57 @@
       "wake"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "wake_any_019",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY"
+    ],
+    "roast": 2,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Fine. I'm up. Menace. You'd better have snacks.",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "wake_any_020",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY"
+    ],
+    "roast": 2,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Woke me up, dummy. Dream was about snacks.",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "wake_any_021",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Awake. Barely. Don't make me do anything fast.",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
   }
 ]

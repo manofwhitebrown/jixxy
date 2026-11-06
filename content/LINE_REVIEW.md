@@ -43,3 +43,6 @@ ENGINE landed LineBankValidator + :engine:validateLines (0c7fb49). I cannot run 
 
 ## v0.7 Opening-variety pass
 Reworded 22 of my own new lines that shared their first two words with a neighbour in the same trigger/group (battery_low, charger_on, late_night, nap, poke, pause_stay, browser prompts, weekly, welcome, wake, session_long, almost_caring). The Owner's canonical captions keep their exact wording. Slots re-derived; 0 validator errors.
+
+## v0.8 Roast and bond coverage (+40 EN lines)
+Gap found: PAUSE_STAY, PAUSE_LEAVE, POKE, WAKE, MUSIC, IMPRESSED had almost nothing at roast 2-3 or bondMin 1, so Normal/Savage users at ROOMMATE bond kept hearing gentle strangers' lines. Added 40 lines (stay x8, leave x6, poke x6, wake x3, music x3, impressed x2, app_open x12 with cat flavour for SOCIAL/VIDEO/GAME/MESSAGING/PRODUCTIVITY). Affectionate insults only at roast >= 2 and bondMin >= 1. Reworded four lines that implied a repeat ("again", "another") the engine cannot know. Local validator replica: 0 problems.

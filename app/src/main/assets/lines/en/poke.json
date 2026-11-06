@@ -910,5 +910,112 @@
       "on_break"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "poke_any_051",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 2,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Poke again and I'll sit on your cursor, gremlin.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_052",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SMUG"
+    ],
+    "roast": 2,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Is that affection or boredom? Either way, hi.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_053",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 2,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Menace. I was mid-nap. Mid-dream. Mid-snack.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_054",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SMUG"
+    ],
+    "roast": 2,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "You poke me, I judge you. Fair trade.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_055",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "SMUG"
+    ],
+    "roast": 2,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Hehe. Again? Fine, I love attention. Don't repeat that.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "poke_any_056",
+    "trigger": "POKE",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "SLEEPY"
+    ],
+    "roast": 2,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Dummy. I'm right here. You don't need to prod.",
+    "slots": [],
+    "tags": [
+      "poke"
+    ],
+    "almostCaring": false
   }
 ]

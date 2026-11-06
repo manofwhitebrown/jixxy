@@ -700,5 +700,148 @@
       "soft"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_040",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "GRUMPY"
+    ],
+    "roast": 2,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Stay, then, gremlin. I'm timing you. Lovingly.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_041",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SMUG"
+    ],
+    "roast": 2,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Five more minutes. Hehe. That's what I say about naps.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_042",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "GRUMPY"
+    ],
+    "roast": 2,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Fine, menace. The spreadsheet gets a row. A small one.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_043",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SMUG"
+    ],
+    "roast": 2,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Stay it is. I'll act shocked. I'm a great actor.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_044",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "GRUMPY"
+    ],
+    "roast": 2,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Okay, dummy. Five minutes. Then we negotiate.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_045",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SMUG"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{count} pauses on {app} and you stay. Bold. I respect the commitment.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_046",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "GRUMPY"
+    ],
+    "roast": 2,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Stay. I'll sit on your thumb in spirit.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_stay_any_047",
+    "trigger": "PAUSE_STAY",
+    "categories": [],
+    "moods": [
+      "SMUG"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Granted. I'm filing this under 'famous last minutes'.",
+    "slots": [],
+    "tags": [
+      "pause_stay"
+    ],
+    "almostCaring": false
   }
 ]

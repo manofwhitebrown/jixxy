@@ -275,5 +275,42 @@
       "impressed"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "impressed_any_016",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED"
+    ],
+    "roast": 2,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Okay. I'm impressed. That's three. Gremlin of discipline.",
+    "slots": [],
+    "tags": [
+      "impressed"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "impressed_any_017",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SMUG"
+    ],
+    "roast": 2,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{count} Leaves in a row. I'd bow, but cat.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "impressed"
+    ],
+    "almostCaring": false
   }
 ]

@@ -305,5 +305,59 @@
       "music"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "music_any_018",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Music on. Soft songs, I'm in. Loud ones, I'm leaving.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "music_any_019",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 2,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "A soundtrack. Gremlin taste, I'll allow it.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "music_any_020",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Playlist on. Judging gently from the speaker.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
   }
 ]
