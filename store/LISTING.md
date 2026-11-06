@@ -1,6 +1,6 @@
 # Jixxy Play Store prep (T-GROWTH-4)
 
-Status: **draft for Owner review. Nothing is submitted.** Full Play distribution needs a one-time paid developer account and ID verification; the Owner decides whether and when.
+Status: **draft for Owner review. Nothing is submitted.** Provisional decisions applied: category not Health & Fitness, audience 18+ (D-006). Licence and the paid developer account are pending Owner decisions. Full Play distribution needs a one-time paid developer account and ID verification; the Owner decides whether and when.
 
 How to read this: items marked **[verified]** come from Google's own pages I read on 2026-11-06 (links in section 8). Items marked **[unverified]** are from memory or third-party pages and must be checked in Play Console before relying on them.
 
@@ -39,8 +39,8 @@ Notes: the description must only promise what the shipped build does. Re-read it
 
 ## 2. Category and audience
 
-- **Category (suggestion):** Lifestyle or Productivity. **Avoid Health & Fitness** and any wording about wellbeing, addiction or treatment: that invites the Health apps policy and contradicts our honesty rules. [unverified which category reviewers prefer; Owner decides]
-- **Target audience:** 18 and over is the simplest choice [unverified form options]. The tester program uses 17+, so the Owner should decide whether to include 16–17. Jixxy must not be directed at children.
+- **Category:** Lifestyle or Productivity; **not Health & Fitness** (Manager decision D-006, provisional). Also avoid any wording about wellbeing, addiction or treatment: it invites the Health apps policy and contradicts our honesty rules. [Which of Lifestyle/Productivity reviewers prefer is unverified; Owner decides]
+- **Target audience:** **18 and over only** for v1 (D-006, provisional) [Console form options unverified]. Jixxy must not be directed at children. Open question: the tester program (from the original brief) says 17+; see message to MANAGER.
 - **Contains ads:** No. **In-app purchases:** No.
 
 ## 3. Content rating (IARC questionnaire) [unverified, answer truthfully in Console]

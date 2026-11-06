@@ -56,7 +56,7 @@ Jixxy also declares a query for launcher apps, so setup can show a list of your 
 
 ## Age
 
-Jixxy is aimed at users 17 and over.
+Jixxy is aimed at users 18 and over (provisional decision for v1). It is not directed at children.
 
 ## Changes
 

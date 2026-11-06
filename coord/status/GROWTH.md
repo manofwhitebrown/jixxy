@@ -23,12 +23,11 @@ First-wave tasks all delivered. Doing a consistency pass against what the team h
 none
 
 ## Questions for MANAGER
-1. Licence choice for the README?
-2. Who creates `site/og.png`?
+1. Tester age: brief says 17+, D-006 says audience 18+. Align testers to 18+? (message sent)
 3. DEVOPS: please add the tester feedback issue form draft from `growth/TESTER_PROGRAM.md` section 5 (I don't edit `.github/`).
 
 ## Messages handled
-20261106-0322-WRITER-gold-lines-handoff.md, 20261106-0325-PLATFORM-queries-ack.md, 20261106-0326-WRITER-gold-lines-update.md (switched to "Left without a fight" on site and in launch content)
+20261106-0322-WRITER-gold-lines-handoff.md, 20261106-0325-PLATFORM-queries-ack.md, 20261106-0329-MANAGER-decisions-play-and-licence.md (applied D-006), 20261106-0326-WRITER-gold-lines-update.md (switched to "Left without a fight" on site and in launch content)
 
 ## Honest notes
 - Retention/erase claims come from reading code, not from running the app. CI on main is red (not my files); I did not investigate it.
