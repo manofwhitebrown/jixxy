@@ -281,5 +281,95 @@
       "nap"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "nap_any_017",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Quiet mode on. No hard feelings, ever.",
+    "slots": [],
+    "tags": [
+      "safety"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "nap_any_018",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Understood. I'll stay out of your way.",
+    "slots": [],
+    "tags": [
+      "safety"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "nap_any_019",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Okay. Silence it is. Wake me whenever.",
+    "slots": [],
+    "tags": [
+      "safety"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "nap_any_020",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Going quiet. You owe me nothing.",
+    "slots": [],
+    "tags": [
+      "safety"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "nap_any_021",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Got it. Space is good. I'll be here.",
+    "slots": [],
+    "tags": [
+      "safety"
+    ],
+    "almostCaring": false
   }
 ]

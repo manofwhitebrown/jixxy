@@ -714,5 +714,113 @@
       "blanket"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "late_night_any_039",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Rough day? You don't have to explain. I'm here.",
+    "slots": [],
+    "tags": [
+      "safety"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_040",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Tired is allowed. Rest is allowed too.",
+    "slots": [],
+    "tags": [
+      "safety"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_041",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "No lecture. Just a soft light and some company.",
+    "slots": [],
+    "tags": [
+      "safety"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_042",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "If today was heavy, put it down for a bit. I'll mind it.",
+    "slots": [],
+    "tags": [
+      "safety"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_043",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Whatever kept you up, it can wait till morning. I'll wait with you.",
+    "slots": [],
+    "tags": [
+      "safety"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_044",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "You don't have to be okay at 2 a.m. Just be here. That's enough.",
+    "slots": [],
+    "tags": [
+      "safety"
+    ],
+    "almostCaring": false
   }
 ]

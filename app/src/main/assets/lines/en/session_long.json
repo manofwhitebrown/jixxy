@@ -677,5 +677,82 @@
       "session_long"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "session_long_any_034",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{minutes} minutes in one go. Water, stretch, then carry on. Your call.",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "safety"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_035",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{minutes} minutes straight. Just checking you're comfy. Carry on if you are.",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "safety"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_036",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Long stretch. No judgement. A glass of water is on offer.",
+    "slots": [],
+    "tags": [
+      "safety"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_037",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{minutes} minutes. If it's good company, enjoy it. If not, I'm right here.",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "safety"
+    ],
+    "almostCaring": false
   }
 ]

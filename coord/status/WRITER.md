@@ -1,5 +1,5 @@
-# WRITER status — updated 2026-11-06T17:00Z
-## Now      — V1 W3 items: T-V1-WRITER-2/3 done, -1/-8 proposed to ENGINE; next -4 Hinglish review sheet, -5 safety lines
+# WRITER status — updated 2026-11-06T17:30Z
+## Now      — V1 W4: -4 Hinglish review sheet and -5 safety lines done; next -6 microcopy v1.0 freeze, -7 feedback loop
 ## Done     — T-W2-0 takeover; T-W2-1 bible v0.2 + gold set v0.2; T-W2-2 new-state, canonical and roast/bond coverage lines; T-W2-3 Pause lines; T-W2-4 MICROCOPY v0.6; T-W2-5 validator loop + opening-variety pass; T-W2-6 Hinglish pack v0.2 (Manager go relayed by the Owner). Banks: EN 595 lines, Hinglish 226 lines.
 ## Next     — rewrite/cut lines from tester feedback ("annoying", 😴 patterns); extra callbacks (stays_week, late_opens_week, longest_session_day) once ENGINE ships those facts; native-speaker pass on Hinglish
 ## Blockers — none
