@@ -57,19 +57,51 @@ jobs:
         if: steps.gradle.outputs.present == 'true'
       - name: Dependency guard
         run: bash scripts/check_dependencies.sh
-      - name: Test, lint, assemble
+      # Test, lint and assemble run as separate steps with --continue so one failure does not hide
+      # the others. Each log is converted to ::error:: annotations (readable through the Checks API
+      # by agents that cannot download raw logs). continue-on-error + the final gate keep the job red.
+      - name: Unit tests
+        id: unit
         if: steps.gradle.outputs.present == 'true'
+        continue-on-error: true
         run: |
           chmod +x ./gradlew
-          ./gradlew test lint assembleDebug --stacktrace
-      - name: Manifest guard (merged debug manifest)
+          set -o pipefail
+          ./gradlew test --continue --stacktrace 2>&1 | tee build-test.log
+      - name: Lint
+        id: lint
         if: steps.gradle.outputs.present == 'true'
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          ./gradlew lint --continue --stacktrace 2>&1 | tee build-lint.log
+      - name: Assemble debug APK
+        id: assemble
+        if: steps.gradle.outputs.present == 'true'
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          ./gradlew assembleDebug --continue --stacktrace 2>&1 | tee build-assemble.log
+      - name: Report failures as annotations
+        if: always() && steps.gradle.outputs.present == 'true'
+        run: |
+          [ "${{ steps.unit.outcome }}" = "failure" ] && python3 scripts/ci_annotate_errors.py build-test.log "Unit tests"
+          [ "${{ steps.lint.outcome }}" = "failure" ] && python3 scripts/ci_annotate_errors.py build-lint.log "Lint"
+          [ "${{ steps.assemble.outcome }}" = "failure" ] && python3 scripts/ci_annotate_errors.py build-assemble.log "Assemble"
+          exit 0
+      - name: Manifest guard (merged debug manifest)
+        if: steps.assemble.outcome == 'success'
         run: bash scripts/check_manifest.sh
       - name: Upload debug APK
-        if: steps.gradle.outputs.present == 'true'
+        if: steps.assemble.outcome == 'success'
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: jixxy-debug-${{ github.sha }}.apk
           path: app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
           retention-days: 14
+      - name: Gate (fail if tests, lint or assemble failed)
+        if: always() && steps.gradle.outputs.present == 'true'
+        run: |
+          echo "unit=${{ steps.unit.outcome }} lint=${{ steps.lint.outcome }} assemble=${{ steps.assemble.outcome }}"
+          [ "${{ steps.unit.outcome }}" = "success" ] && [ "${{ steps.lint.outcome }}" = "success" ] && [ "${{ steps.assemble.outcome }}" = "success" ]
