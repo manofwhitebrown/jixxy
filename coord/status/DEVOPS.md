@@ -1,9 +1,13 @@
-# DEVOPS status — updated 2026-11-06 09:28 UTC
+# DEVOPS status — updated 2026-11-06 09:36 UTC
 ## Takeover: 2026-11-06 08:55 UTC
 Wave-2 DEVOPS (AI-6), replacing the previous DEVOPS. Verified: repo cloned, ci_errors.sh says run 42158128299 on 58e7b01 is success (both jobs); debug key is committed in app/debug.keystore; release.yml, ci.yml, guards read. Found: versionCode is hard-coded to 1 in app/build.gradle.kts (PLATFORM file). First: T-D2-1, T-D2-2, T-D2-3.
 ## Now
-T-D2-1..4 done. Next: T-D2-5 (CharacterDemoActivity in CI APK), T-D2-6 (phone-friendly smoke sheet)
+T-D2-1..6 and T-D2-8 (partly) done. Next: watch CI after the action bumps, triage red runs (T-D2-7), first Owner bug reports
 ## Done
+- (Wave 2) T-D2-5: CharacterDemoActivity (debug-only, character/src/debug, added by GROWTH at the Owner's request) is inside the published `latest` APK (checked in classes6.dex; manifest has no INTERNET). Second launcher icon "Jixxy demo"; step 0 added to qa/SMOKE_CHECKLIST.md
+- (Wave 2) T-D2-6: qa/SMOKE_CHECKLIST.md rewritten for a phone (15 steps, plain reply format)
+- (Wave 2) T-D2-8: pinned actions bumped to Node 24 releases (checkout v5.1.0, setup-java v6.0.1, setup-python v6.3.0, upload-artifact v7.0.1, setup-gradle v6.4.0); Pages API says build_type=workflow and Pages runs succeed; I cannot open the site from my sandbox, so deployment itself is unconfirmed
+- (Wave 2) latest.yml: no longer moves the `latest` tag (GITHUB_TOKEN got 403 repointing a ref at commits that change .github/workflows); assets and notes are replaced, notes name the real commit. The tag stays on the first build.
 - (Wave 2) T-D2-1 cert check + versionCode from commit count (CI green after fixes; real apksigner prints `V2 Signer: certificate SHA-256 digest:`)
 - (Wave 2) T-D2-2 latest.yml: rolling pre-release, link https://github.com/manofwhitebrown/jixxy/releases/download/latest/jixxy-latest.apk (first published at versionCode 132; older builds are skipped, never replace a newer one)
 - (Wave 2) T-D2-3 qa/BUGS.md (B-001..B-005) + qa/REGRESSION_NAP_STOP_WAKE.md
@@ -45,3 +49,4 @@ none
 1. On the phone open the link above in the browser, download jixxy-latest.apk, tap it, choose Update/Install.
 2. Expected: it installs over v0.0.1-alpha WITHOUT uninstalling, and your settings stay. If Android says "App not installed" or "conflicts with an existing package", tell us the exact words.
 3. Then run qa/REGRESSION_NAP_STOP_WAKE.md.
+- (Wave 2) Still unverified: configure-pages, deploy-pages and upload-pages-artifact are still on Node 20 versions (not bumped); I did not read the CI logs of the first run after the bumps beyond job status.

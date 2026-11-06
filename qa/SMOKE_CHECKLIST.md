@@ -6,6 +6,7 @@ Note the "Built" time shown on that page: it tells us which build you tested.
 
 Go in order. For each step answer **OK** or **BROKE** (and say what you saw).
 
+0. **Look at the cat without any permission (debug builds only).** After installing you have a second app icon called **Jixxy demo**. Open it: buttons for each mood, a test speech bubble, a test Pause card, and a drag area. Tell us what you think of the art here first.
 1. **Update over the old one.** Download `jixxy-latest.apk`, tap it, Update. *No uninstall should be needed.* If Android refuses, copy its exact words.
 2. **Open Jixxy.** You should see the real app (onboarding or home), not the 3-button screen. The icon should be the cat.
 3. **Allow things.** Say yes to overlay, usage access and notifications when asked. Each ask should explain why. If Android says "restricted setting", follow the in-app help.
