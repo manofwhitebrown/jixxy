@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jixxy: a tiny roommate who pauses you, with jokes</title>
+<meta name="description" content="Jixxy is a free Android roommate that pauses you before the apps you choose, with jokes. No internet permission. Nothing leaves your phone.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="Jixxy: a tiny roommate who pauses you, with jokes">
+<meta property="og:description" content="Free for Android. He pauses you before the apps you choose. No internet permission.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%98%B4%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="wrap top">
+  <strong class="brand">Jixxy</strong>
+  <a class="btn small" href="https://github.com/manofwhitebrown/jixxy/releases">Get the APK</a>
+</header>
+
+<main id="main">
+  <section class="wrap hero">
+    <div class="hero-text">
+      <h1>He pauses you.<br>With jokes.</h1>
+      <p class="lead">Jixxy is a tiny, lazy, dramatic roommate who lives on your Android screen. Pick up to three apps, and he'll make you stop for a second before you dive in.</p>
+      <p><a class="btn" href="https://github.com/manofwhitebrown/jixxy/releases">Download for Android</a></p>
+      <p class="fine">Free. Android 8+. Pre-release: installed as an APK, not from the Play Store.</p>
+    </div>
+    <figure class="hero-art" aria-label="Placeholder illustration of Jixxy, a sleepy round character">
+      <!-- PLACEHOLDER art. Replace with CHARACTER's sprite when pushed. -->
+      <svg viewBox="0 0 200 200" role="img" aria-hidden="true">
+        <ellipse cx="100" cy="176" rx="52" ry="8" class="shadow"/>
+        <circle cx="100" cy="100" r="70" class="body"/>
+        <path d="M70 98 q10 8 20 0" class="eye" fill="none"/>
+        <path d="M110 98 q10 8 20 0" class="eye" fill="none"/>
+        <path d="M90 128 q10 6 20 0" class="eye" fill="none"/>
+        <text x="150" y="40" class="z">z</text>
+        <text x="164" y="26" class="z small">z</text>
+      </svg>
+    </figure>
+  </section>
+
+  <section class="wrap" aria-labelledby="pause">
+    <h2 id="pause">The Pause</h2>
+    <p>You choose the apps and how roasty he is. When you open one, a short card appears:</p>
+    <div class="card" aria-live="polite">
+      <p class="quote" id="line">"Third night on Instagram at 2am. I'm starting a spreadsheet."</p>
+      <div class="choices"><span class="chip">Leave</span><span class="chip ghost">Stay 5 more minutes</span></div>
+    </div>
+    <p class="fine">Example line, placeholder until the final line bank is ready. App names are neutral examples; Jixxy isn't affiliated with any app.</p>
+    <ul class="points">
+      <li><strong>You're always in control.</strong> Leave works instantly. Stay unlocks after a few seconds.</li>
+      <li><strong>He jokes about the situation, not about you.</strong> Late at night he gets softer.</li>
+      <li><strong>No guilt mechanics.</strong> No lost streaks, no punishment for being away, one tap to nap him.</li>
+    </ul>
+  </section>
+
+  <section class="wrap" aria-labelledby="weekly">
+    <h2 id="weekly">Jixxy's review of your week</h2>
+    <p>Once a week he writes up how it went, in his voice, as a card you can share if you want to. Screenshot art coming once the screens are final.</p>
+  </section>
+
+  <section class="wrap" aria-labelledby="privacy">
+    <h2 id="privacy">Privacy you can check</h2>
+    <p>Jixxy is built <strong>without the internet permission</strong>. No accounts, no ads, no analytics. He doesn't read your messages, and has no accessibility service, microphone, camera, location or contacts. This page also loads nothing from other websites. Details in the <a href="https://github.com/manofwhitebrown/jixxy/blob/main/PRIVACY.md">privacy notice</a> (draft).</p>
+  </section>
+
+  <section class="wrap" aria-labelledby="faq">
+    <h2 id="faq">FAQ</h2>
+    <details><summary>Why does he need to display over other apps?</summary><p>That's how a floating character and the pause card can appear on top of other apps.</p></details>
+    <details><summary>Why Usage access?</summary><p>So he knows which app is in front. He sees the app's name and time only, never what's inside it.</p></details>
+    <details><summary>Does he read my messages?</summary><p>No.</p></details>
+    <details><summary>Why no internet?</summary><p>On purpose. Without the permission, the app can't send your data anywhere.</p></details>
+    <details><summary>Does it cure phone addiction?</summary><p>No, and we don't claim it does. He's a small nudge with a sense of humour.</p></details>
+    <details><summary>How do I install it?</summary><p>Download the APK from the Releases page and follow the steps in the <a href="https://github.com/manofwhitebrown/jixxy#install-sideloading">README</a>, including the Android 13+ "restricted settings" step.</p></details>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <p>Jixxy is a free, in-development project. Not affiliated with any app or brand mentioned as an example.</p>
+</footer>
+
+<script>
+// Tiny optional enhancement: rotate placeholder lines. Safe to remove.
+(function () {
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var lines = [
+    "\u201CThird night on Instagram at 2am. I\u2019m starting a spreadsheet.\u201D"
+    // TODO(T-GROWTH-2): add gold lines once WRITER pushes content/gold_lines.md
+  ];
+  var el = document.getElementById('line'), i = 0;
+  if (!el || lines.length < 2) return;
+  setInterval(function () { i = (i + 1) % lines.length; el.textContent = lines[i]; }, 5000);
+})();
+</script>
+</body>
+</html>
