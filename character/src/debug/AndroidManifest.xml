@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Debug builds only (character/src/debug is not part of release). Adds a second launcher icon so the
+         Owner can judge the cat, bubble and Pause card without granting any permission. -->
+    <application>
+        <activity
+            android:name="app.jixxy.character.demo.CharacterDemoActivity"
+            android:exported="true"
+            android:label="@string/demo_launcher_label"
+            android:theme="@android:style/Theme.Material.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
