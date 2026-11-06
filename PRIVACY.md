@@ -1,12 +1,12 @@
 # Jixxy Privacy Notice
 
-> **DRAFT for Owner review.** This is a plain-language description of what the app does, not legal advice. The permissions table was checked against `app/src/main/AndroidManifest.xml` as of 2026-11-06 and must be re-checked before every release.
+> **DRAFT for Owner review.** This is a plain-language description of what the app is built to do, not legal advice. The permissions table was re-checked against `app/src/main/AndroidManifest.xml` on 2026-11-06 (Wave 2) and must be re-checked before every release. Jixxy is at alpha: some features described here (the weekly card, the "What Jixxy saw" screen) may not be reachable in the current build yet.
 
-*Last updated: 2026-11-06 (draft). Retention and erase behaviour were checked by reading the code, not by running the app.*
+*Last updated: 2026-11-06 (draft). Retention and erase behaviour were checked by reading the code, not by running the app. Nothing here has been verified on a device.*
 
 ## The short version
 
-Everything Jixxy does happens on your phone. The app is built **without the internet permission**, so it has no way to send data off your device. There are no accounts, no ads and no analytics or crash-reporting tools.
+Jixxy is a black cat who lives on your screen. Everything he does happens on your phone. The app is built **without the internet permission**, so it has no way to send data off your device. There are no accounts, no ads and no analytics or crash-reporting tools.
 
 ## What Jixxy processes on your phone
 
@@ -32,7 +32,7 @@ Message or notification content, screen contents or screenshots, microphone, cam
 
 ## Sharing
 
-Jixxy never shares anything automatically. The weekly review card is an image you can choose to share through Android's normal share sheet. What you do with it is up to you. If a tester chooses to send a screenshot of their log or card to the team, that is voluntary and done by them, outside the app.
+Jixxy never shares anything automatically. The weekly review card (planned, not built yet) is meant to be an image you can choose to share through Android's normal share sheet. What you do with it is up to you. If a tester chooses to send a screenshot of their log or card to the team, that is voluntary and done by them, outside the app.
 
 ## Permissions
 
