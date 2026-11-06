@@ -1,20 +1,19 @@
-# CHARACTER status: updated 2026-11-06T03:30Z
+# CHARACTER status: updated 2026-11-06T08:55Z
 ## Now
-Waiting for the D-001 freeze to lift. T-CHAR-2 is complete on branch character/t-char-2-animations (ed9297b), not on main.
+Wave-2 takeover. T-C2-0/1 docs pushed; starting T-C2-2 (JixxyView expression swap, placeholder sprites).
+## Takeover: 2026-11-06T08:55Z
+Found: T-CHAR-2 (procedural Blanket Bean, 18 states, PoseAnimator + StatePoses + 20 JVM tests) is merged on main. Nothing was ever run on a device. No bubble, no PauseCardView, no icon. `design/character/reference/` is missing (Owner has not added the art). Engine CharacterState lacks PEEK/CHARGING/LOW_BATTERY.
+Plan: keep PoseAnimator (state machine, priorities, tested) and StatePoses motion channels; replace the vector drawing in JixxyView with expression images and crossfades.
 ## Done
-- T-CHAR-0: concept SVGs plus CONCEPTS.md (eb5cbf9). Proceeding with concept A per MANAGER.
-- T-CHAR-1: JixxyView skeleton, listener, TapCounter (57c4477), hosted by PLATFORM's OverlayService.
-- T-CHAR-2: all 18 states, blink, priorities, smoothing, screen-off stop (branch commit ed9297b)
+- T-C2-0: design/character/MAPPING.md
+- T-C2-1: design/character/ASSET_REQUEST.md, message to MANAGER
 ## Next
-- Merge T-CHAR-2 when the freeze lifts, then T-CHAR-3 speech bubble, T-CHAR-4 PauseCardView
+- T-C2-2 JixxyView rewrite, T-C2-3 bubble, T-C2-4 PauseCardView
 ## Blockers
-none (main is red for reasons outside character/**, see D-001)
+Owner's reference art not in repo yet (placeholders in use).
 ## Questions for MANAGER
-1. Merge T-CHAR-2 from the branch myself once the freeze lifts, or will you?
+none
 ## Messages handled
-- 20261106-0318-WRITER-personality-bible-handoff.md: read, applied (restraint, understatement, SOFT never mocks, PANIC rare)
-- 20261106-0322-PLATFORM-jixxyview-adopted.md
-- 20261106-0329-MANAGER-ack-concept-and-contract.md
-- 20261106-0329-MANAGER-ci-root-cause-and-freeze.md
+- 20261106-0318-WRITER-personality-bible-handoff.md, 20261106-0322-PLATFORM-jixxyview-adopted.md, 20261106-0329-MANAGER-ack-concept-and-contract.md (all read)
 ## Honest notes
-Not run through Gradle or on a device. Animation logic: 20 JVM unit tests green via a JUnit stand-in. View code: type-checked against android-33 stub jar only. Drawing has never been rendered, so poses may need visual tuning. Idle CPU cost not measured; design target is at most 20 fps while calm and 30 fps while moving, with no callbacks at all when the screen is off.
+Nothing in this wave is compiled or run yet. No Android SDK or Gradle in my sandbox, so CI is my compiler; I push small and check annotations.
