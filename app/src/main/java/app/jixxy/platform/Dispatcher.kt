@@ -63,8 +63,7 @@ class Dispatcher(
     }
 
     private fun canRender(): Boolean {
-        val nap = settings().napUntilTs
-        val napping = nap != null && nap > now()
+        val napping = NapPolicy.isNapping(settings().napUntilTs, now())
         return !inCall && currentCategory != AppCategory.PROTECTED && !napping
     }
 
