@@ -1,40 +1,40 @@
-# GROWTH status — updated 2026-11-06 (UTC)
+# GROWTH status — updated 2026-11-06 08:54 UTC
+
+## Takeover: 2026-11-06 08:54 UTC
+I am AI-7 GROWTH (Wave 2), replacing the previous GROWTH AI. Read: predecessor's status, TASKS, DECISIONS, README, PRIVACY, CHANGELOG, site/index.html.
+
+### What I found that is stale or overclaims (T-G2-0 audit)
+- README: pitch is the generic "tiny roommate", no cat, no brand lines; install path says "Follow Jixxy's in-app setup" although the launcher is still PLATFORM's temporary 3-button screen; no Known limitations for the alpha findings; says first build is `v0.1.0` being prepared, but `v0.0.1-alpha` exists.
+- README: describes the Pause card, bubbles and reactions as if working. Brain is NoopBrain, Pause is a stub, so none of that is visible yet.
+- CHANGELOG: no `v0.0.1-alpha` entry; "CI is failing" known issue is outdated (main is green); Owner findings missing (potato sprite, temporary launcher screen, nap/stop/wake bug, default robot icon, no speech).
+- site/index.html: hero is the old placeholder round blob (the "potato"), alt text calls it "a sleepy round character"; favicon is an emoji; no alpha banner; Pause example card is shown as if live; the line-rotation script presents lines as app behaviour.
+- PRIVACY: content matches the manifest as last checked; needs a re-check and a final pass (T-G2-7).
+- store/LISTING.md, growth/launch/*, growth/TESTER_PROGRAM.md: written for the old concept character and the pre-alpha state; to be rebased (T-G2-4/5/6). Not yet re-read line by line.
+
+### What I will do first
+T-G2-1 README + CHANGELOG, then T-G2-2 `growth/BRAND.md`, then T-G2-3 text-first landing page (no cat art until Owner's reference files land in `design/character/reference/`).
 
 ## Now
-First-wave tasks all delivered. Doing a consistency pass against what the team has built (docs aligned to real code and in-app copy). Waiting on a green CI build, art and screens before anything can be filmed or posted.
+T-G2-1 README and CHANGELOG reality update.
 
-## Done
-- Consistency pass: PRIVACY/README now say 30-day retention, 7-day viewer, erase-all (from reading `Retention.kt`, `WhatSawLogic.kt`, `SqliteStateStore.kt`); restricted-settings and keep-alive steps aligned to MICROCOPY v0.4; CHANGELOG brought up to date
-- T-GROWTH-0: `README.md` (e0c06ef)
-- T-GROWTH-1: `PRIVACY.md` draft, checked against manifest (e0c06ef)
-- T-GROWTH-2 (part): `site/` skeleton with placeholder art (e0c06ef)
-- T-GROWTH-3: `growth/TESTER_PROGRAM.md`
-- T-GROWTH-6: `CHANGELOG.md` (Unreleased + planned 0.1.0, honest known issues) (92bbd9b)
-- T-GROWTH-5: `growth/launch/` (README rules, 5 scripts, captions, WhatsApp/Product Hunt/Reddit drafts, 10 one-liners); all Jixxy lines verified verbatim against `content/gold_lines.md`
-- T-GROWTH-4: `store/LISTING.md` with policy research and risks; messages to MANAGER and PLATFORM
-- T-GROWTH-2: site now quotes WRITER's marketing-safe lines (3 Pause lines, 1 late-night, 1 praise), unedited, with the off-limits list followed
+## Done (Wave 1, by predecessor; see git log)
+README, PRIVACY draft, site skeleton, tester program, launch pack, store listing draft, consistency pass.
 
 ## Next
-- T-GROWTH-2: add `og.png`; add real screenshots once UI screens are final
-- Film/post nothing until a real build exists; then record the 5 scripts
-- T-GROWTH-2: real screenshots; T-GROWTH-3: recruit testers once a build exists (Owner)
+T-G2-2 BRAND.md, T-G2-3 site, T-G2-4 owner test guide.
 
 ## Blockers
 none
 
 ## Questions for MANAGER
-1. Tester age: brief says 17+, D-006 says audience 18+. Align testers to 18+? (message sent)
-3. DEVOPS: please add the tester feedback issue form draft from `growth/TESTER_PROGRAM.md` section 5 (I don't edit `.github/`).
+none yet
 
 ## Messages handled
-20261106-0322-WRITER-gold-lines-handoff.md, 20261106-0325-PLATFORM-queries-ack.md, 20261106-0329-MANAGER-decisions-play-and-licence.md (applied D-006), 20261106-0326-WRITER-gold-lines-update.md (switched to "Left without a fight" on site and in launch content)
+- 20261106-0322-WRITER-gold-lines-handoff.md
+- 20261106-0325-PLATFORM-queries-ack.md
+- 20261106-0326-WRITER-gold-lines-update.md
+- 20261106-0329-MANAGER-decisions-play-and-licence.md
 
 ## Honest notes
-- Retention/erase claims come from reading code, not from running the app. CI on main is red (not my files); I did not investigate it.
-- Launch content is unfilmed and unposted. Product Hunt/Reddit rules and limits are unverified; check before posting. Scripts assume UI behaviours (Leave instant, Stay delay, bubbles) that I haven't seen run.
-- Play policy: foreground-service, sensitive-permission and data-safety rules were read from Google's pages on 2026-11-06. Usage-access declaration requirement, closed-test account rules, category and audience options, and listing length limits are NOT verified (marked in the file).
-- Nothing run in a browser or Lighthouse; site accessibility/performance targets untested.
-- Keep-alive steps per brand are from general knowledge, unverified on devices.
-- Tester program is a plan; no testers recruited and no distribution channel confirmed beyond GitHub Releases APK.
-- Changelog lists items based on the git log and status files, not on running the app.
-- Pages needs enabling by Owner (Settings > Pages > Source: GitHub Actions).
+- I cannot run Android or a browser here; nothing is device-tested. Everything I write about the app is taken from the brief, the code and status files, not from running it.
+- CI status of main not re-checked by me yet.
