@@ -42,6 +42,7 @@ class Dispatcher(
     private val renderer: ReactionRenderer,
     private val settings: () -> UserSettings,
     private val now: () -> Long = System::currentTimeMillis,
+    private val diag: (String, String) -> Unit = { _, _ -> },
 ) {
     private var inCall = false
     private var currentCategory = AppCategory.OTHER
@@ -77,6 +78,7 @@ class Dispatcher(
         if (!pauseShowing) return
         pauseShowing = false
         pausePkg = null
+        diag("PAUSE_CANCELLED", "")
         renderer.dismissPause()
     }
 
@@ -102,6 +104,7 @@ class Dispatcher(
         if (pauseShowing) return
         pauseShowing = true
         pausePkg = spec.pkg
+        diag("PAUSE_SHOWN", spec.pkg)
         scope.launch { store.logEvent(UsageEvent(now(), UsageEventType.PAUSE_SHOWN, spec.pkg)) }
         renderer.showPause(
             spec, text,
@@ -109,10 +112,11 @@ class Dispatcher(
                 pauseShowing = false
                 pausePkg = null
                 // A refused/failed navigation must never swallow the choice: the card is already gone and the engine must hear it.
-                if (choice == PauseChoiceKind.LEAVE) runCatching { renderer.goHome() }
+                diag("PAUSE_CHOICE", choice.name)
+                if (choice == PauseChoiceKind.LEAVE) runCatching { renderer.goHome() }.onFailure { diag("GO_HOME_FAILED", it.javaClass.simpleName) }
                 bus.emit(Signal.PauseChoice(spec.pkg, choice, now()))
             },
-            onCancelled = { pauseShowing = false; pausePkg = null },
+            onCancelled = { pauseShowing = false; pausePkg = null; diag("PAUSE_CANCELLED", "external") },
         )
     }
 

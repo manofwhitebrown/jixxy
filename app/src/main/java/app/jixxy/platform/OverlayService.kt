@@ -86,12 +86,13 @@ class OverlayService : Service(), ReactionRenderer {
         windowManager = getSystemService(WINDOW_SERVICE) as WindowManager
         pauseWindow = PauseWindow(this, windowManager)
         createChannel()
+        app.diagnostics.record("SERVICE_CREATE", "sdk=${Build.VERSION.SDK_INT}")
         if (!enterForeground()) {
             stopSelf()
             return
         }
         setWantedRunning(this, true)
-        if (!addSprite()) { stopSelf(); return }
+        if (!addSprite()) { app.diagnostics.record("NO_OVERLAY", "service stopping"); stopSelf(); return }
         registerReceiver(screenReceiver, IntentFilter().apply {
             addAction(Intent.ACTION_SCREEN_ON)
             addAction(Intent.ACTION_SCREEN_OFF)
@@ -117,9 +118,10 @@ class OverlayService : Service(), ReactionRenderer {
             )
             val brain = PersistingBrain(real, real::currentState, real::drainEvents, app.stateStore, scope)
             // The dispatcher subscribes before any detector starts, so no early signal is lost.
-            Dispatcher(scope, app.bus, brain, app.stateStore, this@OverlayService, { settings }).start()
+            Dispatcher(scope, app.bus, brain, app.stateStore, this@OverlayService, { settings }, diag = app.diagnostics::record).start()
             app.settings.settings.collect { s ->
                 settings = s
+                app.chosenApps = s.targetApps
                 app.blindMode = s.blindMode
                 systemSignals?.setBlindMode(s.blindMode)  // starts detectors when blind mode is off
                 updateNap()
@@ -139,6 +141,7 @@ class OverlayService : Service(), ReactionRenderer {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        app.diagnostics.record("SERVICE_COMMAND", intent?.action?.substringAfterLast('.') ?: "plain-start")
         when (intent?.action) {
             ACTION_STOP -> {
                 // Stop = clean slate: clear the nap, remember the user wants him off, then end the service.
@@ -180,6 +183,7 @@ class OverlayService : Service(), ReactionRenderer {
     }
 
     override fun onDestroy() {
+        app.diagnostics.record("SERVICE_DESTROY")
         scope.cancel()
         handler.removeCallbacksAndMessages(null)
         systemSignals?.stop()
@@ -229,6 +233,7 @@ class OverlayService : Service(), ReactionRenderer {
         true
     } catch (e: IllegalStateException) {
         // ForegroundServiceStartNotAllowedException (API 31+) extends IllegalStateException.
+        app.diagnostics.record("FGS_REFUSED", e.javaClass.simpleName)
         postWakeNotification()
         false
     }
