@@ -48,3 +48,7 @@ Settings -> Copy debug info -> paste it into chat. Expect: short text with app v
 - Messages handled: all Wave-2 inbox items were read through the predecessor's status; none new for Wave 3 yet.
 ## Earlier history (condensed from Wave 2)
 Nap/Stop/Wake fix (NapPolicy, a68c168); launcher + real brain (fe3c9ee); versionCode via -P props (0f59980); sprite edge memory after rotation; PauseWindow hosts PauseCardView; Android 15 doc check (SAW-based FGS exemption narrowed).
+
+## T-P3-5 battery audit (by reading; nothing measured)
+Screen ON: usage poll every 1.5 s (one queryEvents over a few seconds, Event object now reused), audio-mode poll every 3 s, heartbeat every 60 s, three broadcast receivers. Screen OFF: all timers and the usage poll are removed; only the screen/charger receivers stay (no wake-ups). Nothing runs in blind mode. Window updates only while dragging. Pause card: CHARACTER's countdown ring animates only while shown. Decision: keep 1.5 s (back-off would risk the 2 s card target for tiny savings); revisit with the Owner's number.
+**Owner 24-hour test:** use the phone normally for a day with Jixxy awake. Then Settings -> Battery -> Battery usage -> Jixxy. Reply with the percentage and the phone model.

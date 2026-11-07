@@ -12,6 +12,11 @@ import app.jixxy.platform.UsageAccess
 /**
  * Foreground-app detection via UsageStatsManager.queryEvents (needs PACKAGE_USAGE_STATS access).
  * Polls only between [start] and [stop]; the owner stops it whenever the screen is not interactive.
+ *
+ * Battery vs latency (T-P3-5): one cheap `queryEvents` over the last ~1.5 s every [POLL_MS] while the screen is on, nothing
+ * while it is off. Worst-case delay between opening a chosen app and the card is one poll interval (~1.5 s), inside the
+ * ~2 s target. Backing off to 3 s would save little (the query is tiny) but could miss the target, so the interval is fixed
+ * until a real-device battery number says otherwise (Owner 24 h test in coord/status/PLATFORM.md).
  * Event types: ACTIVITY_RESUMED on API 29+, MOVE_TO_FOREGROUND below
  * (developer.android.com/reference/android/app/usage/UsageEvents.Event).
  */
@@ -24,6 +29,7 @@ class UsageDetector(
     private val handler = Handler(Looper.getMainLooper())
     private val usm = context.getSystemService(Context.USAGE_STATS_SERVICE) as UsageStatsManager
     private var running = false
+    private val event = UsageEvents.Event()  // reused every poll: no allocation in the hot path
     private var lastQueryTs = 0L
     private var currentPkg: String? = null
     private var sessionStartTs = 0L
@@ -57,7 +63,6 @@ class UsageDetector(
         val t = now()
         val events = usm.queryEvents(lastQueryTs, t)
         lastQueryTs = t
-        val event = UsageEvents.Event()
         var newest: String? = null
         while (events.hasNextEvent()) {
             events.getNextEvent(event)
