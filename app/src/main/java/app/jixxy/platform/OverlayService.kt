@@ -136,6 +136,8 @@ class OverlayService : Service(), ReactionRenderer {
             }
         }
         scope.launch { app.stateStore.purgeExpired() }
+        // Weekly review check rides the existing 60 s heartbeat (screen on only): no timer of its own.
+        scope.launch { app.bus.signals.collect { if (it is Signal.Heartbeat && !settings.blindMode) app.weekly.check(it.ts) } }
     }
 
     /** Reads every `*.json` under assets/lines/<lang>; falls back to English if that language has none. */

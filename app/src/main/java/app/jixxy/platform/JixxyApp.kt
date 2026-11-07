@@ -24,5 +24,6 @@ class JixxyApp : Application() {
     /** Chosen Pause apps, mirrored from settings so crash/diagnostic writes can keep exactly those package names. */
     @Volatile var chosenApps: Set<String> = emptySet()
     val diagnostics by lazy { DiagnosticsRepository(this, { chosenApps }, { permissions.state.value }) }
+    val weekly by lazy { WeeklyTrigger(this) }
     val stateStore by lazy { SqliteStateStore(this, isBlind = { blindMode }) }
 }
