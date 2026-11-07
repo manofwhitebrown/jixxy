@@ -52,3 +52,6 @@ Nap/Stop/Wake fix (NapPolicy, a68c168); launcher + real brain (fe3c9ee); version
 ## T-P3-5 battery audit (by reading; nothing measured)
 Screen ON: usage poll every 1.5 s (one queryEvents over a few seconds, Event object now reused), audio-mode poll every 3 s, heartbeat every 60 s, three broadcast receivers. Screen OFF: all timers and the usage poll are removed; only the screen/charger receivers stay (no wake-ups). Nothing runs in blind mode. Window updates only while dragging. Pause card: CHARACTER's countdown ring animates only while shown. Decision: keep 1.5 s (back-off would risk the 2 s card target for tiny savings); revisit with the Owner's number.
 **Owner 24-hour test:** use the phone normally for a day with Jixxy awake. Then Settings -> Battery -> Battery usage -> Jixxy. Reply with the percentage and the phone model.
+
+## T-P3-6 (2026-11-07)
+targetSdk/compileSdk already 36 (Play needs 36 since 2026-08-31; confirm on Google's official page, I read secondary sources). No native libs -> 16 KB n/a. R8 deferred until size + emulator smoke on a minified build. Key plan sent to MANAGER + DEVOPS (inbox, T-P3-6). 
