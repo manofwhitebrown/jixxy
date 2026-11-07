@@ -64,6 +64,14 @@ class JixxyView(context: Context) : FrameLayout(context) {
 
     private var screenActive = true
 
+    /**
+     * Optional sound source. The host sets it only when sounds are enabled and clears it otherwise; the view then plays
+     * the cue for each new state and a quiet blip every [BLIP_EVERY] revealed characters of a bubble. The host owns
+     * the object and releases it.
+     */
+    var sounds: JixxySounds? = null
+    private var blipBucket = 0
+
     /** True when the system asks for no animation (animator scale 0 or battery saver): crossfades only, no motion. */
     private var reduceMotion = false
     private var shiftedX = 0
@@ -86,6 +94,7 @@ class JixxyView(context: Context) : FrameLayout(context) {
             syncExpression(now)
             fader.step(now)
             if (bubble.isShowing && !bubble.step(now)) clearBubble()
+            else if (bubble.isShowing) blipIfRevealed(now)
             invalidate()
             val busy = fader.isFading || bubble.isShowing
             postOnAnimationDelayed(this, if (busy) PoseAnimator.ACTIVE_FRAME_MS else animator.frameIntervalMs)
@@ -140,6 +149,7 @@ class JixxyView(context: Context) : FrameLayout(context) {
         clearBubble()
         getLocationOnScreen(screenLocation)
         val alignRight = screenLocation[0] + spritePx / 2f > resources.displayMetrics.widthPixels / 2f
+        blipBucket = 0
         bubble.show(text, ttlMs, lineId, SystemClock.uptimeMillis(), spritePx, alignRight, screenLocation[1].toFloat())
         bubble.geometry?.let { shiftWindow(it.shiftX, it.shiftY) }
         accessibilityLiveRegion = ACCESSIBILITY_LIVE_REGION_POLITE // announced once, politely, when the text changes
@@ -238,9 +248,20 @@ class JixxyView(context: Context) : FrameLayout(context) {
         if (state == shownState && poke == shownPoke) return
         shownState = state
         shownPoke = poke
+        sounds?.playForState(state.name, poke)
         val hour = if (state.name == "SOFT") Calendar.getInstance().get(Calendar.HOUR_OF_DAY) else NOON
         val wanted = ExpressionMap.forState(state.name, poke, hour)
         fader.show(if (bitmapFor(wanted) != null) wanted else Expression.REALLY, nowMs)
+    }
+
+    /** Plays one blip each time the typewriter passes another [BLIP_EVERY] characters. */
+    private fun blipIfRevealed(nowMs: Long) {
+        val player = sounds ?: return
+        val bucket = bubble.revealedChars(nowMs) / BLIP_EVERY
+        if (bucket > blipBucket) {
+            blipBucket = bucket
+            player.blip(bucket)
+        }
     }
 
     private fun loadCurrent() {
@@ -519,6 +540,7 @@ class JixxyView(context: Context) : FrameLayout(context) {
         const val LEDGE_TOP = 120f
         const val LEDGE_BOTTOM = 127f
         const val LEDGE_RADIUS = 3.5f
+        const val BLIP_EVERY = 3
         const val NOON = 12
         const val TAU = (2.0 * PI).toFloat()
         const val OUTLINE = 1.4f

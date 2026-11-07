@@ -98,6 +98,9 @@ internal class SpeechBubble(context: Context, private val palette: CharacterPale
     }
 
     /** Advances the bubble; returns false when it has run its course and should be removed. */
+    /** Characters the typewriter has revealed so far (0 when no bubble); the view uses it to time text blips. */
+    fun revealedChars(nowMs: Long): Int = timeline?.revealed(nowMs) ?: 0
+
     fun step(nowMs: Long): Boolean = timeline?.isExpired(nowMs) == false
 
     /** True when the point (view coordinates) is on the bubble or on its open emoji bar. */

@@ -11,8 +11,10 @@ import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
 import app.jixxy.character.JixxyView
+import app.jixxy.character.JixxySounds
 import app.jixxy.character.JixxyViewListener
 import app.jixxy.character.PauseCardView
+import app.jixxy.character.SoundCue
 import app.jixxy.engine.api.CharacterState
 import app.jixxy.engine.api.PauseSpec
 import app.jixxy.engine.api.ReactionKind
@@ -32,6 +34,8 @@ class CharacterDemoActivity : Activity() {
     private var pauseCard: PauseCardView? = null
     private var lineIndex = 0
     private var lightStage = false
+    private var soundsOn = false
+    private lateinit var sounds: JixxySounds
     private val stageLocation = IntArray(2)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,7 +54,8 @@ class CharacterDemoActivity : Activity() {
         root.addView(log, LinearLayout.LayoutParams(MATCH, WRAP))
 
         stage = FrameLayout(this).apply { setBackgroundColor(STAGE) }
-        cat = JixxyView(this).apply { listener = demoListener() }
+        sounds = JixxySounds(this) { soundsOn }
+        cat = JixxyView(this).apply { listener = demoListener(); this.sounds = this@CharacterDemoActivity.sounds }
         stage.addView(cat, FrameLayout.LayoutParams(dp(120), dp(120), Gravity.CENTER))
         root.addView(stage, LinearLayout.LayoutParams(MATCH, dp(STAGE_HEIGHT_DP)))
 
@@ -68,6 +73,10 @@ class CharacterDemoActivity : Activity() {
             "Pause card (no wait)" to { showPauseCard(stayDelaySec = 0) },
             "Light / dark stage" to { toggleStage() },
         ))
+        addRow(buttons, listOf("Sounds: toggle (off at start)" to { toggleSounds() }))
+        SoundCue.values().toList().chunked(COLUMNS).forEach { cues ->
+            addRow(buttons, cues.map { cue -> cue.name to { playCue(cue) } })
+        }
         CharacterState.values().toList().chunked(COLUMNS).forEach { states ->
             addRow(buttons, states.map { state -> state.name to { cat.setCharacterState(state); log.text = "State: ${state.name}" } })
         }
@@ -96,6 +105,22 @@ class CharacterDemoActivity : Activity() {
         lightStage = !lightStage
         stage.setBackgroundColor(if (lightStage) STAGE_LIGHT else STAGE)
         log.text = if (lightStage) "Light stage" else "Dark stage"
+    }
+
+    private fun toggleSounds() {
+        soundsOn = !soundsOn
+        log.text = if (soundsOn) "Sounds ON: states and bubbles now make sound" else "Sounds OFF"
+    }
+
+    private fun playCue(cue: SoundCue) {
+        if (!soundsOn) { log.text = "Turn Sounds on first"; return }
+        log.text = if (sounds.hasCue(cue)) "Cue: ${cue.name}" else "Cue ${cue.name}: audio file not bundled yet"
+        sounds.play(cue)
+    }
+
+    override fun onDestroy() {
+        sounds.release()
+        super.onDestroy()
     }
 
     private fun showPauseCard(stayDelaySec: Int) {
