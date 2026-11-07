@@ -35,6 +35,10 @@ class CharacterDemoActivity : Activity() {
     private var lineIndex = 0
     private var lightStage = false
     private var soundsOn = false
+    private var spriteX = 0f
+    private var spriteY = 0f
+    private var offsetX = 0
+    private var offsetY = 0
     private lateinit var sounds: JixxySounds
     private val stageLocation = IntArray(2)
 
@@ -56,7 +60,16 @@ class CharacterDemoActivity : Activity() {
         stage = FrameLayout(this).apply { setBackgroundColor(STAGE) }
         sounds = JixxySounds(this) { soundsOn }
         cat = JixxyView(this).apply { listener = demoListener(); this.sounds = this@CharacterDemoActivity.sounds }
-        stage.addView(cat, FrameLayout.LayoutParams(dp(120), dp(120), Gravity.CENTER))
+        // Like the real overlay: the view wraps its content (it grows for a bubble and for the cloud) and the host
+        // keeps the sprite in place when it does (onSpriteOffsetChanged). Nothing may clip the bubble.
+        stage.addView(cat, FrameLayout.LayoutParams(WRAP, WRAP, Gravity.TOP or Gravity.START))
+        stage.clipChildren = false
+        root.clipChildren = false
+        stage.post {
+            spriteX = (stage.width - cat.spriteSizePx) / 2f
+            spriteY = (stage.height - cat.restHeightPx) / 2f
+            placeCat()
+        }
         root.addView(stage, LinearLayout.LayoutParams(MATCH, dp(STAGE_HEIGHT_DP)))
 
         val buttons = LinearLayout(this).apply {
@@ -140,6 +153,7 @@ class CharacterDemoActivity : Activity() {
         override fun onLongPress() { log.text = "Long press" }
         override fun onDragStart() { log.text = "Dragging" }
         override fun onDragMove(rawX: Float, rawY: Float) = moveCat(rawX, rawY)
+        override fun onSpriteOffsetChanged(x: Int, y: Int) { offsetX = x; offsetY = y; placeCat() }
         override fun onDragEnd(rawX: Float, rawY: Float) {
             moveCat(rawX, rawY)
             log.text = "Dropped"
@@ -150,10 +164,15 @@ class CharacterDemoActivity : Activity() {
     /** Keeps the sprite centred under the finger, inside the stage. */
     private fun moveCat(rawX: Float, rawY: Float) {
         stage.getLocationOnScreen(stageLocation)
-        val x = (rawX - stageLocation[0] - cat.width / 2f).coerceIn(0f, (stage.width - cat.width).toFloat())
-        val y = (rawY - stageLocation[1] - cat.height / 2f).coerceIn(0f, (stage.height - cat.height).toFloat())
-        cat.translationX = x - (stage.width - cat.width) / 2f
-        cat.translationY = y - (stage.height - cat.height) / 2f
+        spriteX = (rawX - stageLocation[0] - cat.spriteSizePx / 2f).coerceIn(0f, (stage.width - cat.spriteSizePx).coerceAtLeast(0f))
+        spriteY = (rawY - stageLocation[1] - cat.restHeightPx / 2f).coerceIn(0f, (stage.height - cat.restHeightPx).coerceAtLeast(0f))
+        placeCat()
+    }
+
+    /** The view's top-left is the sprite's, minus how far the view extends left/up of the sprite (bubble room). */
+    private fun placeCat() {
+        cat.translationX = spriteX - offsetX
+        cat.translationY = spriteY - offsetY
     }
 
     private fun addRow(parent: LinearLayout, items: List<Pair<String, () -> Unit>>) {

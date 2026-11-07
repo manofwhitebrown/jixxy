@@ -24,8 +24,12 @@ SRC = HERE / "source"
 OUT = HERE.parents[2] / "character/src/main/res/raw"
 MAX_TOTAL_KB = 400
 SR = 32_000  # plenty for meows, keeps files tiny
+TARGET_RMS = 0.24  # loudness of the active (non-silent) part, the same for every cue so none is too quiet
+CEILING = 0.95     # soft limiter ceiling
+PURR_DRIVE = 5.0   # the purr is ~170 Hz, which phone speakers barely play: tanh drive adds harmonics above 300 Hz
+PURR_WET = 0.65
 
-# cue -> (source, start s, end s, rate (pitch+speed), wobble Hz or 0, fade in s, fade out s, peak 0..1)
+# cue -> (source, start s, end s, rate (pitch+speed), wobble Hz or 0, fade in s, fade out s, unused peak)
 CUES = {
     "curious_mew": ("cat_softmew", 0.28, 1.10, 1.00, 0, 0.010, 0.080, 0.85),   # the rising mew
     "annoyed_mew": ("cat_mewpurr", 0.00, 0.75, 1.00, 0, 0.005, 0.120, 0.90),   # short sharp mew
@@ -59,7 +63,12 @@ def main() -> int:
         for name, (src, a, b, rate, wob, fin, fout, peak) in CUES.items():
             x = cut(src, a, b, rate, wob, tmp)
             n = len(x)
-            x *= peak / max(np.abs(x).max(), 1e-6)
+            if name == "purr":
+                driven = np.tanh(PURR_DRIVE * x / max(np.abs(x).max(), 1e-6)) / np.tanh(PURR_DRIVE)
+                x = (1 - PURR_WET) * x / max(np.abs(x).max(), 1e-6) + PURR_WET * driven
+            active = x[np.abs(x) > 0.02 * max(np.abs(x).max(), 1e-6)]
+            x = x * (TARGET_RMS / max(np.sqrt((active ** 2).mean()), 1e-6))
+            x = CEILING * np.tanh(x / CEILING)  # soft limit: loud peaks are rounded, not clipped
             fi, fo = int(fin * SR), int(fout * SR)
             x[:fi] *= np.linspace(0, 1, fi)
             x[n - fo:] *= np.linspace(1, 0, fo)
@@ -73,7 +82,8 @@ def main() -> int:
             subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(wav), "-c:a", "libvorbis", "-q:a", "2", str(ogg)], check=True)
             kb = ogg.stat().st_size / 1024
             total += kb
-            print(f"{name:12s} {n / SR:4.2f}s {kb:5.1f} KB  <- {src} {a}-{b}s rate {rate}")
+            act = x[np.abs(x) > 0.02]
+            print(f"{name:12s} {n / SR:4.2f}s {kb:5.1f} KB  peak {np.abs(x).max():.2f} active rms {np.sqrt((act ** 2).mean()):.2f}  <- {src} {a}-{b}s rate {rate}")
     print(f"total {total:.0f} KB (budget {MAX_TOTAL_KB})")
     return 0 if total <= MAX_TOTAL_KB else 1
 

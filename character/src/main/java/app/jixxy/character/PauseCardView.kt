@@ -102,7 +102,10 @@ class PauseCardView(context: Context) : FrameLayout(context) {
             unlockStay(announce = false)
         } else {
             countdown = StayCountdown(SystemClock.uptimeMillis(), wait)
-            lastShownSec = -1
+            // set the waiting label now, so the first frame never shows an empty or stale "Stay" button
+            lastShownSec = wait
+            stay.text = resources.getString(R.string.pause_stay_waiting, wait)
+            stay.alpha = LOCKED_ALPHA
             stay.isEnabled = false
             stay.setCompoundDrawablesRelativeWithIntrinsicBounds(ring, null, null, null)
             stay.contentDescription = resources.getQuantityString(R.plurals.pause_stay_available_in, wait, wait)
@@ -128,6 +131,7 @@ class PauseCardView(context: Context) : FrameLayout(context) {
     private fun unlockStay(announce: Boolean) {
         countdown = null
         stay.isEnabled = true
+        stay.alpha = 1f
         stay.setCompoundDrawablesRelative(null, null, null, null)
         stay.text = resources.getQuantityString(R.plurals.pause_stay, grantMinutes, grantMinutes)
         stay.contentDescription = null
@@ -206,6 +210,7 @@ class PauseCardView(context: Context) : FrameLayout(context) {
     private companion object {
         const val DEFAULT_GRANT_MINUTES = 5
         const val TICK_MS = 100L
+        const val LOCKED_ALPHA = 0.6f
         const val SLIDE_MS = 220L
         const val SLIDE_DP = 18
         const val PEEK_W_DP = 120f

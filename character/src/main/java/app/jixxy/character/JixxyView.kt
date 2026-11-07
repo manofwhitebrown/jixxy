@@ -174,16 +174,31 @@ class JixxyView(context: Context) : FrameLayout(context) {
         invalidate()
     }
 
-    /** Moves the host overlay window left/up by ([dx], [dy]) pixels; no-op when this view is not a window's root. */
+    /**
+     * Keeps the sprite where it was when the view grows left/up for a bubble: an overlay window is moved here; any
+     * other host is told through [JixxyViewListener.onSpriteOffsetChanged] and must move the view itself.
+     */
     private fun shiftWindow(dx: Int, dy: Int) {
-        val params = layoutParams as? WindowManager.LayoutParams ?: return
         if (!isAttachedToWindow || (dx == 0 && dy == 0)) return
+        val params = layoutParams as? WindowManager.LayoutParams
+        if (params == null) {
+            shiftedX += dx
+            shiftedY += dy
+            listener?.onSpriteOffsetChanged(shiftedX, shiftedY)
+            return
+        }
         params.x -= dx
         params.y -= dy
         shiftedX += dx
         shiftedY += dy
         (context.getSystemService(Context.WINDOW_SERVICE) as WindowManager).updateViewLayout(this, params)
     }
+
+    /** Side of the sprite square in pixels (the view is bigger: cloud room below, bubble room around). */
+    val spriteSizePx: Float get() = spritePx
+
+    /** Height of the sprite area including the cloud, which is the view's height when no bubble is up. */
+    val restHeightPx: Float get() = spriteH
 
     /** `false` means the screen is off: every animation frame and timer stops. `true` resumes. */
     fun setScreenActive(active: Boolean) {

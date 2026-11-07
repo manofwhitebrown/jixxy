@@ -122,4 +122,15 @@ class BubbleTest {
         assertEquals(aboveTall.spriteY + 116f, aboveTall.viewH, 0.001f)
         assertEquals(0f, aboveTall.bodyTop, 0f)
     }
+
+    @Test fun theViewAlwaysContainsTheSpriteAndTheBubble() {
+        for (alignRight in listOf(false, true)) for (above in listOf(false, true)) for (bodyW in listOf(40f, 150f, 330f, 700f)) {
+            val g = BubbleGeometry(264f, bodyW, 120f, 28f, 66f, alignRight, above, spriteH = 307f)
+            val tag = "right=$alignRight above=$above bodyW=$bodyW"
+            assertTrue(tag, g.spriteX >= 0f && g.spriteX + g.spritePx <= g.viewW + 0.001f)
+            assertTrue(tag, g.spriteY >= 0f && g.spriteY + g.spriteH <= g.viewH + 0.001f)
+            assertTrue(tag, g.bodyLeft >= 0f && g.bodyRight <= g.viewW + 0.001f)
+            assertTrue(tag, g.bodyTop >= 0f && g.bodyBottom <= g.viewH + 0.001f)
+        }
+    }
 }

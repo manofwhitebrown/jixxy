@@ -22,6 +22,14 @@ interface JixxyViewListener {
     /** The finger was released after a drag, at the given raw screen position. */
     fun onDragEnd(rawX: Float, rawY: Float) {}
 
+    /**
+     * For hosts that are NOT an overlay window: the sprite now sits at ([x], [y]) pixels inside the view because a
+     * bubble (or the cloud) made the view bigger on the left/top. Move the view by (-[x], -[y]) from where the sprite
+     * should be, so the sprite stays put; (0, 0) when the bubble is gone. Overlay windows are moved by the view itself
+     * and never get this call.
+     */
+    fun onSpriteOffsetChanged(x: Int, y: Int) {}
+
     /** The user rated a spoken line from the emoji bar. */
     fun onReaction(lineId: String?, kind: ReactionKind) {}
 }
