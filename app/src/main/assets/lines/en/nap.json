@@ -371,5 +371,113 @@
       "safety"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "nap_any_022",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Nap time. Wake me with a poke.",
+    "slots": [],
+    "tags": [
+      "nap"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "nap_any_023",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Napping. Tiny snores incoming.",
+    "slots": [],
+    "tags": [
+      "nap"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "nap_any_024",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Curling up. Back soon.",
+    "slots": [],
+    "tags": [
+      "nap"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "nap_any_025",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Zzz, on request.",
+    "slots": [],
+    "tags": [
+      "nap"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "nap_any_026",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Off to nap. Don't mind the snoring.",
+    "slots": [],
+    "tags": [
+      "nap"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "nap_any_027",
+    "trigger": "NAP",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Eyes closed. Ears open. Mostly.",
+    "slots": [],
+    "tags": [
+      "nap"
+    ],
+    "almostCaring": false
   }
 ]

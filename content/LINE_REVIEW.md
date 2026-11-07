@@ -152,3 +152,6 @@ Not done / needs ENGINE: unprompted APP_OPEN repeat-open lines ('third time toni
 ## Wave 3, repeat-rate pass from ENGINE's findings (2026-11-07T10:11Z)
 ENGINE (20261107-0540/0546): repeats within 7 days are 26-55% of unprompted lines because pools are small. Added 49 EN lines (bank 741) where pools were smallest: APP_OPEN +16 (2 per category), CHARGER_ON +8, MUSIC +8, SESSION_LONG +10 (adds the first roast-2 GRUMPY line and more SMUG), LATE_NIGHT +8 (all SOFT, no jokes). All slots limited to the ones each trigger already provides; no claims beyond the trigger. Validator 968 total, 0 problems. Not yet added: PAUSE_PROMPT GRUMPY mood in SOCIAL/VIDEO/MESSAGING/SHOPPING/OTHER (ENGINE note 3) and more NAP/WAKE/IMPRESSED; will re-run ENGINE's simulation numbers once they publish a new run.
 UI request 20261107-0547 answered in MICROCOPY v1.1 section 20.
+
+## Wave 3, gap fill 2 (2026-11-07T10:11Z)
+Added 30 EN lines (bank 771): PAUSE_PROMPT GRUMPY roast-2 lines for SOCIAL, VIDEO, MESSAGING, SHOPPING, OTHER (2 each, no 'again', no tier claims), NAP +6, WAKE +6, IMPRESSED +6 (slot-free). Validator 996 total, 0 problems.

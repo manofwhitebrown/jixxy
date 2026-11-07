@@ -312,5 +312,113 @@
       "impressed"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "impressed_any_018",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "You left. I noticed, and I'm quietly proud.",
+    "slots": [],
+    "tags": [
+      "impressed"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "impressed_any_019",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Leaving takes a decision. Nice one.",
+    "slots": [],
+    "tags": [
+      "impressed"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "impressed_any_020",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Nicely done. Tail wag, small.",
+    "slots": [],
+    "tags": [
+      "impressed"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "impressed_any_021",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "That was smooth. Don't tell anyone I said so.",
+    "slots": [],
+    "tags": [
+      "impressed"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "impressed_any_022",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "A Leave! My whiskers approve.",
+    "slots": [],
+    "tags": [
+      "impressed"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "impressed_any_023",
+    "trigger": "IMPRESSED",
+    "categories": [],
+    "moods": [
+      "IMPRESSED",
+      "SOFT"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Small win. I'll take it. So should you.",
+    "slots": [],
+    "tags": [
+      "impressed"
+    ],
+    "almostCaring": false
   }
 ]

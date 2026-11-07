@@ -376,5 +376,113 @@
       "wake"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "wake_any_022",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Up! Stretching, yawning, dramatic.",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "wake_any_023",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Awake. Did I miss anything?",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "wake_any_024",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Back from nap. Whiskers refreshed.",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "wake_any_025",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I'm up. Slowly. Don't rush me.",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "wake_any_026",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Hello. Nap was excellent. Five stars.",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "wake_any_027",
+    "trigger": "WAKE",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Awake and mildly smug about it.",
+    "slots": [],
+    "tags": [
+      "wake"
+    ],
+    "almostCaring": false
   }
 ]

@@ -4007,5 +4007,221 @@
       "followup"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_social_031",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "GRUMPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app}. I'm grumpy today, but I'll still ask nicely: leave?",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_social_032",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "GRUMPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Ahem. {app}. I woke up grumpy. Humour me and pause.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_video_016",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "GRUMPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} now? I was mid-nap, but fine. Leave, or stay?",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_video_017",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "GRUMPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Grumpy cat asks: is this episode worth it?",
+    "slots": [],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_messaging_015",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "GRUMPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} opens. I was napping. Quick pause, then reply.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_messaging_016",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "GRUMPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Grumbling quietly. {app}: pause, then carry on.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_shopping_015",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "GRUMPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} opens and I'm grumpy about it. Leave, or tell me why.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_shopping_016",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "GRUMPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Grumpy cat asks: do you need it, or just want it?",
+    "slots": [],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_other_015",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "OTHER"
+    ],
+    "moods": [
+      "GRUMPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app}. I'm grumpy and curious. Leave, or explain?",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_other_016",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "OTHER"
+    ],
+    "moods": [
+      "GRUMPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Ahem. {app}. I'm squinting at you from the sofa.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
   }
 ]
