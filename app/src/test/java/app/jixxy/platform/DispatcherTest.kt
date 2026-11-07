@@ -17,6 +17,7 @@ import app.jixxy.engine.fakes.InMemoryStateStore
 import app.jixxy.platform.signals.SignalBus
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
+import kotlinx.coroutines.test.advanceTimeBy
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
@@ -155,5 +156,21 @@ class DispatcherTest {
         r.brain.out = emptyList()
         r.renderer.onChoice!!.invoke(PauseChoiceKind.LEAVE)
         assertTrue(r.brain.seen.any { it is Signal.PauseChoice })
+    }
+
+    @Test fun switchingToProtectedOwnAppAlsoDismissesCard() = runTest(UnconfinedTestDispatcher()) {
+        val r = Rig(backgroundScope, listOf(pause))
+        r.bus.emit(Signal.Heartbeat(1))
+        r.brain.out = emptyList()
+        r.bus.emit(Signal.ForegroundApp("app.jixxy", AppCategory.PROTECTED, 2))
+        assertEquals(1, r.renderer.dismissed)
+    }
+
+    @Test fun unansweredCardIsRemovedAfterTimeout() = runTest(UnconfinedTestDispatcher()) {
+        val r = Rig(backgroundScope, listOf(pause))
+        r.bus.emit(Signal.Heartbeat(1))
+        r.brain.out = emptyList()
+        advanceTimeBy(121_000)
+        assertEquals(1, r.renderer.dismissed)
     }
 }

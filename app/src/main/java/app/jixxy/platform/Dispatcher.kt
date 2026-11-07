@@ -14,6 +14,7 @@ import app.jixxy.engine.api.UsageEventType
 import app.jixxy.engine.api.UserSettings
 import app.jixxy.platform.signals.SignalBus
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 /** What the dispatcher needs from the UI side of the platform layer (implemented by [OverlayService]). */
@@ -48,6 +49,7 @@ class Dispatcher(
     private var currentCategory = AppCategory.OTHER
     private var pauseShowing = false
     private var pausePkg: String? = null
+    private var pauseSeq = 0  // identifies which card a timeout belongs to
 
     fun start() {
         scope.launch { bus.signals.collect { handle(it) } }
@@ -64,6 +66,8 @@ class Dispatcher(
         when (signal) {
             is Signal.CallState -> { inCall = signal.inCall; if (inCall) cancelPause() }
             is Signal.ForegroundApp -> {
+                // Facts only (no package names): lets the debug report show what the detector saw while a card was up.
+                diag("FOREGROUND", "category=${signal.category} cardShowing=$pauseShowing sameAppAsCard=${signal.pkg == pausePkg}")
                 currentCategory = signal.category
                 // The user moved on: a card left over the wrong app would be confusing and blocks nothing useful.
                 if (signal.pkg != pausePkg) cancelPause()
@@ -74,11 +78,11 @@ class Dispatcher(
     }
 
     /** Drops a showing card without recording a choice, and frees the dispatcher for the next Pause. */
-    private fun cancelPause() {
+    private fun cancelPause(reason: String = "left-app-or-call-or-screen") {
         if (!pauseShowing) return
         pauseShowing = false
         pausePkg = null
-        diag("PAUSE_CANCELLED", "")
+        diag("PAUSE_CANCELLED", reason)
         renderer.dismissPause()
     }
 
@@ -104,7 +108,10 @@ class Dispatcher(
         if (pauseShowing) return
         pauseShowing = true
         pausePkg = spec.pkg
+        val seq = ++pauseSeq
         diag("PAUSE_SHOWN", spec.pkg)
+        // Safety net: a card nobody answered (missed switch signal, odd phone) must not stay on screen for ever.
+        scope.launch { delay(CARD_TIMEOUT_MS); if (pauseShowing && pauseSeq == seq) cancelPause("timeout") }
         scope.launch { store.logEvent(UsageEvent(now(), UsageEventType.PAUSE_SHOWN, spec.pkg)) }
         renderer.showPause(
             spec, text,
@@ -141,5 +148,9 @@ class Dispatcher(
             )
             else -> Unit
         }
+    }
+
+    private companion object {
+        const val CARD_TIMEOUT_MS = 120_000L
     }
 }
