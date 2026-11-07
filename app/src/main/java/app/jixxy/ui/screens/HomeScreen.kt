@@ -25,6 +25,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
@@ -131,7 +132,7 @@ fun HomeContent(
         ) {
             CatImage(CatPoses.forStatus(ui.status))
             NoticeCard(ui.notice, onAllowOverlay = onAllowOverlay, onChooseApps = onSettings)
-            Text(statusText(ui), style = MaterialTheme.typography.headlineMedium)
+            Text(statusText(ui), Modifier.semantics { heading() }, style = MaterialTheme.typography.headlineMedium)
 
             when (ui.status) {
                 JixxyStatus.AWAKE -> {
@@ -180,7 +181,7 @@ private fun NoticeCard(notice: HomeNotice, onAllowOverlay: () -> Unit, onChooseA
     }
     Card(Modifier.fillMaxWidth()) {
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            if (title != null) Text(stringResource(title), style = MaterialTheme.typography.titleMedium)
+            if (title != null) Text(stringResource(title), Modifier.semantics { heading() }, style = MaterialTheme.typography.titleMedium)
             Text(stringResource(body), style = MaterialTheme.typography.bodyMedium)
             OutlinedButton(onClick = action, Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(stringResource(cta)) }
         }

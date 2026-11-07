@@ -15,6 +15,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -63,12 +65,12 @@ fun OemGuideContent(detected: OemBrand, onOpen: (OemBrand) -> Unit) {
             Modifier.verticalScroll(rememberScrollState()).padding(24.dp),
             verticalArrangement = Arrangement.spacedBy(24.dp),
         ) {
-            Text(stringResource(R.string.onboarding_keepalive_title), style = MaterialTheme.typography.headlineMedium)
+            Text(stringResource(R.string.onboarding_keepalive_title), Modifier.semantics { heading() }, style = MaterialTheme.typography.headlineMedium)
             Text(stringResource(R.string.onboarding_keepalive_body), style = MaterialTheme.typography.bodyLarge)
 
             orderedSections(detected).forEach { section ->
                 Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Text(stringResource(section.title), style = MaterialTheme.typography.titleMedium)
+                    Text(stringResource(section.title), Modifier.semantics { heading() }, style = MaterialTheme.typography.titleMedium)
                     Text(stringResource(section.intro), style = MaterialTheme.typography.bodyMedium)
                     Text(stringResource(section.steps), style = MaterialTheme.typography.bodyMedium)
                     if (section.brand == detected || section.brand == OemBrand.OTHER) {

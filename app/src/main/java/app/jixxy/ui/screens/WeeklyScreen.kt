@@ -23,6 +23,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -82,7 +84,7 @@ fun WeeklyContent(model: WeeklyCardModel?, texts: WeeklyCardTexts, onShare: () -
             verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             CatImage(CatPose.SMUG)
-            Text(texts.headline, style = MaterialTheme.typography.headlineMedium)
+            Text(texts.headline, Modifier.semantics { heading() }, style = MaterialTheme.typography.headlineMedium)
             if (model == null || model.quiet) {
                 Text(stringResource(R.string.empty_weekly_not_enough_data), style = MaterialTheme.typography.bodyLarge)
             } else {

@@ -9,7 +9,7 @@ Status key: CODE = done in code, unseen on a device; OPEN = not done; OWNER = ne
 | Touch targets >= 48 dp (buttons, chips, rows) | CODE |
 | Screens scroll vertically at 200% font | CODE |
 | Chip groups wrap instead of overflowing at 200% font (roast, quiet hours) | CODE |
-| Screen titles are TalkBack headings | CODE onboarding only; OPEN other screens |
+| Screen titles are TalkBack headings | CODE all screens (Home, Settings sections, What saw, Weekly, OEM guide, onboarding); OWNER (TalkBack) |
 | System Back walks onboarding backwards | CODE |
 | Decorative cat images have no description; meaning is in text | CODE |
 | Home summary read as one TalkBack sentence | CODE |

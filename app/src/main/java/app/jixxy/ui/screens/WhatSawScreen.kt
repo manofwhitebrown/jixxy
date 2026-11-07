@@ -23,6 +23,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -66,7 +68,7 @@ fun WhatSawContent(days: List<SawDay>, onClear: () -> Unit) {
     var confirm by remember { mutableStateOf(false) }
     Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
         Column(Modifier.padding(24.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
-            Text(stringResource(R.string.whatsaw_title), style = MaterialTheme.typography.headlineMedium)
+            Text(stringResource(R.string.whatsaw_title), Modifier.semantics { heading() }, style = MaterialTheme.typography.headlineMedium)
             Text(stringResource(R.string.whatsaw_nothing_leaves_phone), style = MaterialTheme.typography.bodyMedium)
 
             if (days.isEmpty()) {
