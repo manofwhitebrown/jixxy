@@ -1,8 +1,8 @@
 # Jixxy Privacy Notice
 
-> **DRAFT for Owner review.** This is a plain-language description of what the app is built to do, not legal advice. The permissions table was re-checked against `app/src/main/AndroidManifest.xml` on 2026-11-06 (Wave 2) and must be re-checked before every release. Jixxy is at alpha: some features described here (the weekly card, the "What Jixxy saw" screen) may not be reachable in the current build yet.
+> **DRAFT for Owner review.** This is a plain-language description of what the app is built to do, not legal advice. The permissions table and the diagnostics section were checked against `app/src/main/AndroidManifest.xml` and `DiagnosticsRepository.kt` on 2026-11-07 and must be re-checked before every release.
 
-*Last updated: 2026-11-06 (draft). Retention and erase behaviour were checked by reading the code, not by running the app. Nothing here has been verified on a device.*
+*Last updated: 2026-11-07 (draft). Written from the code and the manifest, not from running the app: none of the newest features (the "What Jixxy saw" screen, the weekly card, the debug report) has been verified on a phone yet.*
 
 ## The short version
 
@@ -28,11 +28,20 @@ All of this is stored on your phone only. You can **view the last 7 days** and *
 
 ## What Jixxy never collects
 
-Message or notification content, screen contents or screenshots, microphone, camera, location, contacts, your identity, advertising IDs, or anything about your device sent to any server. Jixxy contains no analytics, advertising or crash-reporting SDKs, and no networking libraries.
+Message or notification content, screen contents or screenshots, microphone, camera, location, contacts, your identity, advertising IDs, or anything about your device sent to any server. Jixxy contains no analytics, advertising or crash-reporting tools from anyone else, and no networking libraries.
+
+## The debug report (only if you choose to use it)
+
+Settings has a **Report a problem** section with **Copy debug info** and **Clear diagnostics**. (The buttons appear once the build wires them in; they are written but not yet seen on a phone.)
+
+- **Kept on your phone:** a small private log file (about 200 KB, oldest lines dropped first) in the app's own storage. It records service start and stop, permission changes, Pause cards shown, chosen or cancelled (the kind of event only), and **crash details** if the app crashes.
+- **What the copied report contains:** the app version, Android version, phone make and model, the time it was made, whether each permission is on or off, the **package names of the apps you chose for Pause** (because you picked them), and the newest log lines, at most about 20,000 characters.
+- **What it does not contain:** the text of Jixxy's lines, other apps' names (they are replaced by `<app>`), screen content, messages, contacts, location, or anything you typed.
+- **It never leaves your phone by itself.** It leaves only if you copy it and paste it somewhere yourself, for example to send us a bug report. Check the text before you send it. **Clear diagnostics** erases the log.
 
 ## Sharing
 
-Jixxy never shares anything automatically. The weekly review card (planned, not built yet) is meant to be an image you can choose to share through Android's normal share sheet. What you do with it is up to you. If a tester chooses to send a screenshot of their log or card to the team, that is voluntary and done by them, outside the app.
+Jixxy never shares anything automatically. The weekly review card is an image you can choose to share through Android's normal share sheet (written, not yet seen on a phone). What you do with it is up to you. If a tester chooses to send a screenshot of their log or card to the team, that is voluntary and done by them, outside the app.
 
 ## Permissions
 
@@ -41,7 +50,7 @@ Jixxy never shares anything automatically. The weekly review card (planned, not 
 | Display over other apps (`SYSTEM_ALERT_WINDOW`) | Show the floating sprite and the pause card on top of other apps | Doesn't read or capture what's on screen; doesn't block touches outside the sprite/card |
 | Usage access (`PACKAGE_USAGE_STATS`) | Know which app is in front, and for how long | Doesn't see inside apps, messages or content; no data leaves the phone |
 | Foreground service (`FOREGROUND_SERVICE`, `FOREGROUND_SERVICE_SPECIAL_USE`) | Keep the floating sprite running while you have him switched on; started and stopped by you | Doesn't run hidden tasks or networking |
-| Notifications (`POST_NOTIFICATIONS`, Android 13+) | Show the service notification and a "Wake Jixxy" action | Not used for marketing or reminders |
+| Notifications (`POST_NOTIFICATIONS`, Android 13+) | Show the "Jixxy is awake" notification with its Wake, Nap and Stop actions | Not used for marketing or reminders |
 | Start at boot (`RECEIVE_BOOT_COMPLETED`) | Bring Jixxy back after a restart | No extra data collected |
 | **Not requested:** internet, accessibility service, notification listener, microphone, camera, location, contacts | — | — |
 
@@ -49,7 +58,7 @@ Jixxy also declares a query for launcher apps, so setup can show a list of your 
 
 ## Data-safety summary (for a future Play Store form)
 
-- Data collected: none transmitted off device.
+- Data collected: none transmitted off device. This holds **only while the app stays offline** (no INTERNET permission). If networking is ever added, this section and the store form must change first.
 - Data shared with third parties: none.
 - Data encrypted in transit: not applicable (no transmission).
 - Users can request deletion: yes, in-app erase of the event log; uninstall removes all data.

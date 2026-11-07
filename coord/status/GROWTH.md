@@ -4,9 +4,10 @@
 Found (T-G3-0 audit): README, site "What works today" and CHANGELOG still described the old alpha (placeholder sprite, 3-button screen, silent) while `latest` carries the real app in code; OWNER_TEST_GUIDE pointed at the Releases page; TESTER_PROGRAM used a Google Form and had no permissions table; store/LISTING.md header said "alpha, placeholder art"; no distribution or licence memo. Not stale: PRIVACY (manifest re-read: SYSTEM_ALERT_WINDOW, FOREGROUND_SERVICE(+SPECIAL_USE), PACKAGE_USAGE_STATS, POST_NOTIFICATIONS, RECEIVE_BOOT_COMPLETED, `<queries>` launcher intent; no INTERNET).
 
 ## Now
-T-G3-0 to -4 and -7 pushed. Next: T-G3-6 PRIVACY final pass (blocked on PLATFORM's exact diagnostics-log contents), then T-G3-7 shot list, then docs after the Owner confirms a build.
+T-G3-0 to -4, -6, -7 pushed. Next: T-G3-6 PRIVACY final pass (blocked on PLATFORM's exact diagnostics-log contents), then T-G3-7 shot list, then docs after the Owner confirms a build.
 
 ## Done (Wave 3)
+- T-G3-6 PRIVACY.md final pass: debug-report section written from DiagnosticsRepository.kt KDoc (chosen-app package names ARE in the report; others redacted); notification actions, weekly-card wording and Data-safety caveat fixed. Draft for Owner review.
 - T-G3-1 growth/OWNER_TEST_GUIDE.md rewritten (latest APK link, restricted-settings step, 8 things, report format; "Copy debug info" marked not-yet-in-app).
 - T-G3-2 store/DISTRIBUTION_OPTIONS.md (A GitHub / B Play / C IzzyOnDroid+F-Droid / D 2027 developer verification; sources, [unverified] flags, decisions for Owner).
 - T-G3-3 growth/LICENCE_OPTIONS.md (no licence file added).
@@ -19,12 +20,13 @@ T-G3-0 to -4 and -7 pushed. Next: T-G3-6 PRIVACY final pass (blocked on PLATFORM
 3. After Owner confirms a build: README/CHANGELOG/site "in this release" + known issues from qa/BUGS.md.
 
 ## Blockers
-PRIVACY diagnostics wording needs PLATFORM's exact report contents. Lighthouse and the site were not run (no browser here).
+none. Lighthouse and the site were not run (no browser here).
 
 ## Questions for MANAGER
 Please record the Owner decisions needed: licence (growth/LICENCE_OPTIONS.md), distribution (store/DISTRIBUTION_OPTIONS.md), release signing key, Pages.
 
 ## Messages handled
+20261107-0517-PLATFORM-diagnostics-privacy.md, 20261107-0525-MANAGER-unblocked-privacy-pass.md, 20261107-0518-DEVOPS-claims-guards-done.md (do not claim more than 'no networking/analytics library coordinates in Gradle files' until DEVOPS gap 3 lands). B-006 noted: do not use the default in-app sprite as final art on site/store.
 20261106-1730-WRITER-safety-tone.md (noted; SAFETY_LINES.md rules apply to store tone). Earlier Wave-2 messages listed in the history below.
 
 ## Honest notes
