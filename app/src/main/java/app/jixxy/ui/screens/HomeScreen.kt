@@ -78,8 +78,17 @@ fun HomeScreen(
     var overlayOk by remember { mutableStateOf(overlayGranted()) }
     LifecycleEventEffect(Lifecycle.Event.ON_RESUME) { running = isRunning(); overlayOk = overlayGranted() }
 
+    // A nap ends by itself: nothing changes in settings then, so wake this screen up when it expires
+    // (otherwise Home keeps saying "napping" while Jixxy is already back).
+    var napTick by remember { mutableStateOf(0) }
+    LaunchedEffect(current.napUntilTs) {
+        val until = current.napUntilTs ?: return@LaunchedEffect
+        val wait = until - clock()
+        if (wait > 0) { delay(wait + NAP_END_SLACK_MS); napTick++ }
+    }
+
     // Recompute on settings change; events are re-read at the same time so numbers are fresh on each visit.
-    LaunchedEffect(current, running, overlayOk) {
+    LaunchedEffect(current, running, overlayOk, napTick) {
         val now = clock()
         val events = store.eventsBetween(HomeLogic.startOfLocalDay(now), now + 1)
         ui = HomeLogic.uiState(current, events, now, running, overlayOk)
@@ -226,6 +235,7 @@ private fun StatCard(label: Int, value: Int, modifier: Modifier) {
 }
 
 private const val SERVICE_SETTLE_MS = 800L
+private const val NAP_END_SLACK_MS = 500L
 
 private val sampleStats = TodayStats(paused = 5, left = 3, stayed = 2)
 
