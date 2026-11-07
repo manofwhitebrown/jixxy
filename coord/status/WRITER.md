@@ -22,3 +22,5 @@ Found: EN 621 lines, Hinglish 226, validator 0 problems, nothing device-tested. 
 ## 2026-11-07T05:16Z T-W3-6 (partial): settings language/debug copy final in MICROCOPY v0.7 section 16; handled message 20261107-0513-UI-microcopy-language-debug. Still to do in T-W3-6: permission re-grant fix-it cards, notification text, other empty states.
 
 ## 2026-11-07T05:17Z T-W3-7 done: content/HINGLISH_REVIEW.md (30 lines + rubric), DECISION_NEEDED sent to MANAGER asking who can read it.
+
+## 2026-11-07T05:18Z T-W3-3 partial pushed: +18 Pause prompt lines (roast 3 for all categories, productivity roast 2). Waiting on ENGINE coverage table (T-E3-4) and fact slot names (T-W3-4).

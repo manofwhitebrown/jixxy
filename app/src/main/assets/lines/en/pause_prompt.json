@@ -2900,5 +2900,416 @@
       "pause_prompt"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_social_029",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{minutes} minutes on {app}. I've only moved my tail. Your turn, gremlin.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_social_030",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "I'd call {minutes} minutes of {app} cardio, but only for the thumb, menace.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_video_014",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{minutes} minutes of {app}. I've watched you watching. Riveting, goblin.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_video_015",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Plot hole in your evening: {minutes} minutes of {app}. Leave, menace.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_game_011",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{minutes} minutes in {app}. Even the NPCs are asking about you, gremlin.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_game_012",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "One more round, said everyone, always. {minutes} minutes in {app}, menace.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_messaging_011",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Group chats are forever, goblin. {minutes} minutes on {app} are not.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_messaging_012",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Your thumbs filed for overtime. {app}, {minutes} minutes. I'm co-signing, menace.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_shopping_011",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "If the cart is full, the snack bowl is empty. {app}, {minutes} minutes, menace.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_shopping_012",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Window-shopping with commitment. {minutes} minutes on {app}, goblin.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_browser_016",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "BROWSER"
+    ],
+    "moods": [
+      "SMUG",
+      "SLEEPY"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{minutes} minutes in {app}. Somewhere, a tab is crying for attention, gremlin.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_browser_017",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "BROWSER"
+    ],
+    "moods": [
+      "SMUG",
+      "SLEEPY"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Search history is a diary with worse handwriting, menace. {app} is open.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_productivity_007",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "moods": [
+      "SMUG",
+      "GRUMPY"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{minutes} minutes in {app}. Look busy, feel busy, be busy: pick two, goblin.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_productivity_008",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "moods": [
+      "SMUG",
+      "GRUMPY"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{app} open. Even the to-do list is asking for a nap, menace.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_other_011",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "OTHER"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{minutes} minutes on {app}. I don't know what it is, and I'm judging it, goblin.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_other_012",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "OTHER"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Mystery app, mystery minutes: {minutes} on {app}. I'm intrigued, menace.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_productivity_009",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "moods": [
+      "SLEEPY",
+      "GRUMPY"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} is useful. A stretch is also useful. I'm just saying.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_productivity_010",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "moods": [
+      "SLEEPY",
+      "GRUMPY"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{minutes} minutes in {app}. Water, stretch, snack. I'll supervise.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "pause_prompt"
+    ],
+    "almostCaring": false
   }
 ]

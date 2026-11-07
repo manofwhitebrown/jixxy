@@ -126,3 +126,7 @@ Read every Pause line (prompt, stay, leave) and every LATE_NIGHT, SESSION_LONG, 
 
 Open for the Owner: music_any_011 ('Same song on repeat? Seek help.') and session_long_any_031 (💀) are the Owner's own captions and stay; 'seek help' is a casual idiom but borders on mental-health wording, so if any tester reads it badly, retire it. pause_stay 'Five' lines assume PauseSpec.grantMinutes = 5 (current default); if Stay length ever becomes a setting, those lines need a slot.
 Not yet audited line by line: app_open, battery_low, charger_on, nap, wake, weekly, welcome (scanned by pattern only, no hits). Validator: 847 lines, 0 problems.
+
+## Wave 3, T-W3-3 (partial, 2026-11-07T05:18Z)
+ENGINE's coverage table (T-E3-4) has not arrived yet, so I used my own content/COVERAGE.md. Thinnest cells were PAUSE_PROMPT roast 3 (2 to 3 lines per category) and PRODUCTIVITY roast 2. Added 18 lines (EN now 639): 2 roast-3 lines (bondMin 1, affectionate insult only here) for each of the 8 chosen-app categories, plus 2 PRODUCTIVITY roast-2 lines (bondMin 0, no insult). No 'again', no slot beyond {app}/{minutes}, no tab/cart/tasks claims stated as fact (all conditional or joke). Validator: 865 lines (EN + Hinglish), 0 problems.
+Still open: IMPRESSED roast 2 (2 lines), NAP/WAKE variety, weekly voice (T-W3-5), callbacks for stays_week / late_opens_week / longest_session_day (T-W3-4, waiting for ENGINE's slot names).
