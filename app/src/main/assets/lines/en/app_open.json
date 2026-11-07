@@ -1585,5 +1585,1510 @@
       "calm_ok"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "app_open_escsv_001",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "SOCIAL",
+      "VIDEO"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app}, third time today. I'm only counting. Out loud.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escsv_002",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "SOCIAL",
+      "VIDEO"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Third {app} visit today. The feed missed you, apparently.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escsv_003",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "SOCIAL",
+      "VIDEO"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} again. That's three. I'm keeping a tidy little tally.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escsv_004",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "SOCIAL",
+      "VIDEO"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Visit number three to {app}. My eyebrow has questions.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escsv_005",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "SOCIAL",
+      "VIDEO"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Three times today? {app} must really miss you.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escsv_006",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "SOCIAL",
+      "VIDEO"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app}, round three. I'd say hi, but we're past hi.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escsv_007",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "SOCIAL",
+      "VIDEO"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Third time on {app}. I've started a new column.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escsv_008",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "SOCIAL",
+      "VIDEO"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "That's {app} three times today. I'm not mad. I'm narrating.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escsv_009",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "SOCIAL",
+      "VIDEO"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} again. At {time}. For the third time. Iconic.",
+    "slots": [
+      "app",
+      "time"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escsv_010",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "SOCIAL",
+      "VIDEO"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Third {app} trip today. Bring snacks, I'm getting comfy.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escsv_011",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "SOCIAL",
+      "VIDEO"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} number three. I'm calling it a routine.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escsv_012",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "SOCIAL",
+      "VIDEO"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Three {app} opens today, gremlin. I'm writing it down.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escsv_013",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "SOCIAL",
+      "VIDEO"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Third time's the charm, they say. {app} is charming, menace.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escsv_014",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "SOCIAL",
+      "VIDEO"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} three times already. I'm taking notes in tiny handwriting.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escsv_015",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "SOCIAL",
+      "VIDEO"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "It's {time} and {app} is back for round three. Respect the commitment.",
+    "slots": [
+      "app",
+      "time"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escgame_001",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app}, third time today. Rematch season, apparently.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escgame_002",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Third {app} session today. The leaderboard is watching. So am I.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escgame_003",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} again. That's three. I'm keeping score, too.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escgame_004",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Three {app} sessions today. The thumbs are sweating.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escgame_005",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Third time in {app}. I'm calling it a boss rush.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escgame_006",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} round three. Hydrate, hero. I'll hold your cape.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escgame_007",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Visit three to {app}. My tail is rooting for you, quietly.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escgame_008",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "That's {app} three times today. Save point? Maybe a nap point.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escgame_009",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "It's {time} and {app} wants a third round. Bold.",
+    "slots": [
+      "app",
+      "time"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escgame_010",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Third {app} run today, gremlin. Even the NPCs are tired.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escgame_011",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{app} again?! Third time. I demand a respawn of your free time.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escgame_012",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Three {app} trips today. I'm filing a very small complaint.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escgame_013",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app}, attempt three. The tutorial would be proud.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escgame_014",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Third {app} launch today. I'm stretching my paws for you.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escgame_015",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} round three. Gentle reminder: the game will save.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escmsg_001",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app}, third time today. The chat must be lively.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escmsg_002",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Third {app} peek today. Anything new, or just checking?",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escmsg_003",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} again. That's three. I'm keeping count, softly.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escmsg_004",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Three {app} visits today. Your thumbs deserve a medal.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escmsg_005",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Third time in {app}. Still no new gossip, I bet.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escmsg_006",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app}, visit three. Typing bubbles are a hobby now.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escmsg_007",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Visit three to {app}. I can hear the little ping from here.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escmsg_008",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "That's {app} three times today. Group chats never sleep.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escmsg_009",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "It's {time} and {app} is open for the third time. Hello, chat.",
+    "slots": [
+      "app",
+      "time"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escmsg_010",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Three {app} peeks today, gremlin. The chat can wait.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escmsg_011",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} number three. I'm turning into a chat historian.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escmsg_012",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Third {app} visit. Reply, then leave. I believe in you.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escmsg_013",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app}, round three. Say hi from me.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escmsg_014",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Third {app} visit today. I'm just waving from the sofa.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escmsg_015",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Three {app} visits already, menace. Busy chat.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escoth_001",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "BROWSER",
+      "SHOPPING",
+      "PRODUCTIVITY",
+      "OTHER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app}, third time today. I'm intrigued. And counting.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escoth_002",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "BROWSER",
+      "SHOPPING",
+      "PRODUCTIVITY",
+      "OTHER"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Third {app} visit today. Still no idea what it does.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escoth_003",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "BROWSER",
+      "SHOPPING",
+      "PRODUCTIVITY",
+      "OTHER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} again. That's three. I'm keeping a tidy tally.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escoth_004",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "BROWSER",
+      "SHOPPING",
+      "PRODUCTIVITY",
+      "OTHER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Three {app} visits today. It must be good.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escoth_005",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "BROWSER",
+      "SHOPPING",
+      "PRODUCTIVITY",
+      "OTHER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Third time in {app}. I'm pretending not to peek.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escoth_006",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "BROWSER",
+      "SHOPPING",
+      "PRODUCTIVITY",
+      "OTHER"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app}, visit three. A mystery with a cliffhanger.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escoth_007",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "BROWSER",
+      "SHOPPING",
+      "PRODUCTIVITY",
+      "OTHER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "That's {app} three times today. I'm writing it in the margins.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escoth_008",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "BROWSER",
+      "SHOPPING",
+      "PRODUCTIVITY",
+      "OTHER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "It's {time} and {app} is back, for the third time.",
+    "slots": [
+      "app",
+      "time"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escoth_009",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "BROWSER",
+      "SHOPPING",
+      "PRODUCTIVITY",
+      "OTHER"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Third {app} trip today. Productive, shopping, or lost? Asking lovingly.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escoth_010",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "BROWSER",
+      "SHOPPING",
+      "PRODUCTIVITY",
+      "OTHER"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Three {app} opens today, goblin. I'm still curious.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escoth_011",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "BROWSER",
+      "SHOPPING",
+      "PRODUCTIVITY",
+      "OTHER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} number three. The suspense is almost nice.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escoth_012",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "BROWSER",
+      "SHOPPING",
+      "PRODUCTIVITY",
+      "OTHER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Visit three to {app}. Quick pause, then you're free.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escoth_013",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "BROWSER",
+      "SHOPPING",
+      "PRODUCTIVITY",
+      "OTHER"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Third {app} visit. Tabs, carts, folders: pick a lane, menace.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escoth_014",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "BROWSER",
+      "SHOPPING",
+      "PRODUCTIVITY",
+      "OTHER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app}, round three. I'm squinting supportively.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_escoth_015",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "BROWSER",
+      "SHOPPING",
+      "PRODUCTIVITY",
+      "OTHER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Third time on {app} today. I'm getting good at this.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
   }
 ]

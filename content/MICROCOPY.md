@@ -1,4 +1,4 @@
-# JIXXY — MICROCOPY v1.2
+# JIXXY — MICROCOPY v1.3
 Owner: WRITER · Consumer: UI (→ strings.xml) · Language: en
 
 **Rules**
@@ -364,3 +364,10 @@ Truth condition: "Silent mode and calls always win" must stay true in the sound 
 
 ## 21. Read-through fixes (v1.2, T-W3-11)
 Voice rule: Home screen status text is third person ("Jixxy is awake", "him"); settings, permissions, errors and privacy are first person ("I"). Seven strings changed to follow it or to stay true after D-020 (see LINE_REVIEW 2026-11-07 T-W3-11).
+
+---
+
+## 22. Weekly notification switch (v1.3)
+- `settings.weekly.label` — Weekly review notification
+- `settings.weekly.help` — One quiet note on Sunday evening when your week is ready. Nothing is sent anywhere.
+Rule for the card title: use `weekly.headline.quiet` when the week has zero pauses (same condition as the weekly_quiet lines); otherwise rotate `weekly.headline.1` to `.4`. Truth condition: the note really is local and Sunday evening (PLATFORM posts it Sundays 19:00 local).

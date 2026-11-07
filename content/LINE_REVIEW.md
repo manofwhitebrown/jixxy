@@ -174,3 +174,9 @@ Method: content/tools/day_sim.py replays one scripted day (38 events: 7 Instagra
 6. **Possible double voice (ENGINE to check):** my sim let a LATE_NIGHT comment land on the same open as a Pause prompt. If the engine can do that, two bubbles stack; unprompted lines should wait while a Pause card is up.
 7. **Limits of this test:** Chaos and Naggy came out identical because only about 10 unprompted chances exist in this script, so the 30/day Chaos cap never bound; the nag_only pools are barely exercised. Real repeats (ENGINE measured 26-55%) are unchanged by anything here. Needs a phone day.
 Lint now 1009 lines, 0 errors. Bank EN 777 / Hinglish 232.
+
+## Wave 3, third-open escalation, Calm tiers, after-Leave staging (2026-11-07T10:55Z)
+- **APP_OPEN escalation (ENGINE 1039):** 60 EN lines tagged escalation + nag_only, 15 per group (social+video, game, messaging, browser/shopping/productivity/other), slots app/time only. 'third time' is true because the engine fires them exactly on the 3rd open of the same app in a local day, never at Calm. Roast mix: about half roast 1, a third roast 2, 7 roast-3 (bond 1). 8 Hinglish escalation lines added too (bank EN 859 / Hinglish 240).
+- **Calm Pause escalation (ENGINE 1027):** only 27% of Calm Pause prompts matched the count tier. Added 24 calm_ok lines, roast 1: per category 2 tier1 + 1 tier2 (gentle 'again' and counts, no roasting). Expect Calm tier match to rise; ENGINE can re-measure.
+- **D-024 after-Leave lines (Manager 1650):** drafted 14 EN (7 calm_ok, 7 nag_only, roast 1-3, only slot app, no time claims because no seconds slot exists) and 4 Hinglish, but they are STAGED in content/staging/after_leave_en.json and after_leave_hinglish.json, not in the live bank: without a reserved tag the picker would show 'Back already?' on ordinary first prompts. Waiting for ENGINE to reserve tag after_leave and tell me slots.
+Validator 1101 total, lint 0 errors.

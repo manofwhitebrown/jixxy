@@ -331,5 +331,189 @@
       "calm_ok"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "hg_app_open_esc_001",
+    "trigger": "APP_OPEN",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{app}, aaj teesri baar. Main gin raha hoon, dheere se.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "hinglish",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_app_open_esc_002",
+    "trigger": "APP_OPEN",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Teesri baar {app}. Yaar, ginti yaad hai mujhe.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "hinglish",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_app_open_esc_003",
+    "trigger": "APP_OPEN",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{app} phir se? Teen ho gaye aaj.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "hinglish",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_app_open_esc_004",
+    "trigger": "APP_OPEN",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Teesra {app} visit. Main bas sofa se dekh raha hoon.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "hinglish",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_app_open_esc_005",
+    "trigger": "APP_OPEN",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{app}, round teen. Thoda paani peelo, phir jao.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "hinglish",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_app_open_esc_006",
+    "trigger": "APP_OPEN",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Aaj {app} teen baar. Meri bhaunh upar ho gayi.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "hinglish",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_app_open_esc_007",
+    "trigger": "APP_OPEN",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{app} teesri baar? Main darwaze pe khada hoon.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "hinglish",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_app_open_esc_008",
+    "trigger": "APP_OPEN",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Teen baar {app} aaj. Notes bana raha hoon, chhoti handwriting mein.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open",
+      "hinglish",
+      "escalation",
+      "nag_only"
+    ],
+    "almostCaring": false
   }
 ]

@@ -4544,5 +4544,589 @@
       "calm_ok"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_social_033",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} again? Quick pause, then you're free.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier1",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_social_034",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Back on {app}. Hi. I'm here, if you want company.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier1",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_social_035",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Pause {count} on {app} today. I'm not judging, just counting softly.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier2",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_video_018",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} again? One quick pause first.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier1",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_video_019",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Round two on {app}. Snacks are optional.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier1",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_video_020",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{count} pauses on {app} today. The cushion's still warm.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier2",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_game_015",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} again? Quick pause, then good luck.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier1",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_game_016",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Second round of {app}. I'll cheer quietly.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier1",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_game_017",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Pause {count} on {app}. Hydration break?",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier2",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_messaging_017",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} again? Quick pause before you reply.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier1",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_messaging_018",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Back in {app}. The chat can wait a breath.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier1",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_messaging_019",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Pause {count} on {app} today. Gentle wave from me.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier2",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_shopping_017",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Back on {app}. A quick pause never hurt.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier1",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_shopping_018",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} again? One breath first.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier1",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_shopping_019",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Pause {count} on {app} today. Maybe sleep on it?",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier2",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_browser_020",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "BROWSER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} again? Quick pause, then browse.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier1",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_browser_021",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "BROWSER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Back on {app}. One more tab, one deep breath.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier1",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_browser_022",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "BROWSER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Pause {count} on {app}. I'll keep the tabs company.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier2",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_productivity_013",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} again. Quick pause, then back to it.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier1",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_productivity_014",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Back on {app}. Quick breath, then onwards.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier1",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_productivity_015",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Pause {count} on {app}. Water, stretch, onward.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier2",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_other_017",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "OTHER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} again? Quick pause, then it's yours.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier1",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_other_018",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "OTHER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Back on {app}. I'm still curious, gently.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier1",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_other_019",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [
+      "OTHER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Pause {count} on {app} today. I'm just keeping you company.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "pause_prompt",
+      "tier2",
+      "calm_ok"
+    ],
+    "almostCaring": false
   }
 ]
