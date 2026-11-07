@@ -10,12 +10,20 @@ Work towards the first tester build, `v0.1.0`. Nothing here has been released.
 ### Changed
 - Jixxy is now a black, fluffy, sarcastic cat (Owner's character sheet). The earlier placeholder concepts are retired.
 
-### Fixed (on `main`, not yet in a release, not yet checked on a device)
-- Nap, then Stop, then Wake could leave Jixxy hidden for the rest of the nap. An explicit Wake is meant to clear the nap now. Unit tests were added; device testing is pending.
-- A Jixxy launcher icon replaces the default Android robot (code only; not seen on a phone).
-- The real app screen is set as the launcher instead of the temporary 3-button screen (code only; not seen on a phone).
-- The real brain is wired in, so lines can be chosen. The speech bubble display is still being finished, so Jixxy may still look silent.
-- The sprite keeps its snapped screen edge after rotating the phone (code only).
+### Added (on `main`, in the rolling `latest` build; written and unit-tested by CI, **not yet seen on a phone**)
+- The real app as the launcher: guided setup, Home, Settings, "What Jixxy saw" (last 7 days, erasable), a per-brand keep-alive guide, a weekly review screen with a share card.
+- The cat: 15 expression images cut from the Owner's sheet, a speech bubble, and the Pause card (Leave / Stay). The sprites are soft and three frames are missing (a squash stands in).
+- The line bank (about 595 English lines) is connected through the brain; at most 6 unprompted comments a day.
+- Hinglish as an opt-in **beta** (off by default, labelled beta, no native-speaker read-through yet).
+- A "Report a problem" section in Settings. Its "Copy debug info" button is hidden until the diagnostics log exists.
+- The rolling `latest` pre-release and the checks that keep the app offline (no internet permission) and signed with the same key.
+
+### Fixed (on `main`, not yet in a numbered release, not yet checked on a device)
+- Nap, then Stop, then Wake could leave Jixxy hidden for the rest of the nap. An explicit Wake is meant to clear the nap. Unit tests were added.
+- A Jixxy launcher icon replaces the default Android robot.
+- The real app screen is the launcher instead of the temporary 3-button screen.
+- The Pause card is meant to never get stuck, and a failed "go Home" is handled safely. Starting again after an app update was added.
+- The sprite keeps its snapped screen edge after rotating the phone.
 
 ### Planned for `v0.1.0`
 The real app as the first screen, the cat art, the brain wired in so lines appear, the Pause card, onboarding, settings, weekly review card, signed APK. This list will be rewritten with what actually ships.

@@ -1,144 +1,78 @@
-# Jixxy Tester Program (T-G2-4)
+# Jixxy tester kit (T-G3-4)
 
-Draft v0.2 (2026-11-06, rebased on the cat and the alpha). Owner: GROWTH. Tester #1 is the Owner: start with `OWNER_TEST_GUIDE.md`. Do not recruit friends until the Owner has run a build where the cat sprite, speech and Pause card exist (milestones M1/M2); until then testers would only see the alpha. Jixxy has no telemetry, so the ~20 testers *are* our analytics. Everything below is voluntary for testers and nothing is collected by the app.
+Draft v0.3, 2026-11-07. Owner: GROWTH. For about **20 testers, all 18 or older** (D-006). Tester #1 is the Owner: start with [`OWNER_TEST_GUIDE.md`](OWNER_TEST_GUIDE.md). **Do not invite anyone until the Owner has run a build where the cat, his speech and the Pause card work on the Owner's phone** (milestone M2). Before that, testers would only find our bugs.
+Jixxy has no telemetry. The testers are our analytics, and everything below is voluntary. **No analytics, no sign-ups, no forms that track, nothing collected beyond what a tester chooses to send.**
 
-## 1. Who to recruit (target about 20)
+## 1. What Jixxy is, in one honest line
+A free, offline, early-stage Android app: a lazy, sarcastic black cat floats on your screen and, before up to 3 apps *you* choose, makes you pause with a joke. **Leave** or **Stay**, your call. It is rough, parts have not been tested on many phones, and it makes no health claims.
 
-- **Phones:** a deliberate mix. Some Pixel/Samsung, and at least 8 on **Xiaomi/Redmi/Poco, Oppo/Realme, Vivo** (the brands most likely to kill background apps). Record the exact model and Android version for each tester.
-- **Android version:** include at least 3 on Android 13 or newer (restricted settings flow) and at least 2 on Android 8 to 10.
-- **Habits:** roughly half heavy scrollers (several hours a day, by their own estimate), half light.
-- **Age:** 18 and over only (decision D-006). Do not recruit minors.
-- **Not testers:** anyone who needs Jixxy to work for something important. This is pre-release software.
+## 2. What he asks permission for, and why
 
-Keep a private sign-up sheet (outside the repo) with: first name or nickname, phone model, Android version, heavy/light, install date. Do not put tester details in the repo.
-
-## 2. Recruitment message (WhatsApp-friendly)
-
-> Hey! I'm helping test a small free Android app called **Jixxy**. He's a lazy, sarcastic black cat who lives on your screen and makes you pause, with a joke, before up to 3 apps *you* pick. You can always tap Leave or Stay.
->
-> It has **no internet permission** (so nothing leaves your phone) and no ads or accounts. It's early and rough, so I want honest feedback, especially if he's annoying.
->
-> What I need: install it, use it for 7 days, and answer 3 short check-ins (about 2 minutes each). Android 8+ only, age 18+.
->
-> Interested? Reply with your phone model and I'll send the steps.
-
-## 3. Install instructions for testers
-
-1. Download the latest `.apk` from the Releases page: https://github.com/manofwhitebrown/jixxy/releases
-2. Open the file. If Android asks, allow your browser or file manager to install unknown apps.
-3. **Android 13+:** if a permission is greyed out, tap it once and go back, then Settings → Apps → Jixxy → ⋮ menu → **Allow restricted settings**, then retry. (The menu item may only appear after you've tapped the blocked permission once. Jixxy's setup screens show these steps too.)
-4. Open Jixxy and follow setup. He'll ask for **Display over other apps** and **Usage access**. Choose up to 3 apps for pauses.
-5. **Keep him alive:** set battery usage for Jixxy to unrestricted, and turn on autostart if your phone has it (see the README table). Xiaomi/Oppo/Vivo testers: please do this, then tell us whether it was enough.
-6. Use your phone normally for 7 days. If he gets annoying, tap the nap button. That is useful feedback too.
-
-If something breaks, send a screenshot and your phone model. Please don't send anything that shows private messages or other people's content.
-
-## 4. Check-in scripts
-
-Send each as a short chat message. Accept voice notes.
-
-**Day 1 (evening)**
-1. Did setup work? Where did you get stuck, if anywhere?
-2. Is he still on screen right now?
-3. Did he say anything that made you smile or wince? Which line?
-
-**Day 3**
-1. Has he survived in the background? Any day he disappeared? (Phone model + what you were doing.)
-2. Did you see a pause card? Did you tap **Leave** or **Stay**, and why?
-3. Was he ever annoying? When, exactly?
-
-**Day 7**
-1. Do you still have him installed and switched on? (Yes / napping / uninstalled. If uninstalled, when and why?)
-2. Would you keep him? Why or why not?
-3. Best line, worst line.
-4. Did you share anything he made (a screenshot, the weekly card)? With whom, roughly?
-5. One thing to change.
-
-## 5. Feedback form questions
-
-Use a Google Form or the GitHub Issue form below. The questions that matter most:
-
-1. Phone model and Android version
-2. Was he ever annoying? When?
-3. Pause cards: did you choose Leave or Stay? Why?
-4. Which line made you laugh? Which made you cringe? (paste or screenshot)
-5. Did he survive in the background? What happened?
-6. Did setup (overlay and usage access) make sense? Where did you hesitate?
-7. Would you keep him? (Yes / Maybe / No) and why
-8. Anything that felt like pressure, guilt, or too personal?
-
-**GitHub Issue form draft (for DEVOPS to place in `.github/ISSUE_TEMPLATE/tester-feedback.yml`; GROWTH does not edit `.github/`):**
-
-```yaml
-name: Tester feedback
-description: Tell us how Jixxy went for you
-title: "[Tester] "
-labels: ["tester-feedback"]
-body:
-  - type: markdown
-    attributes:
-      value: "Please don't include private messages, other people's content, or personal details. This issue may be public."
-  - type: input
-    id: device
-    attributes:
-      label: Phone model and Android version
-    validations:
-      required: true
-  - type: textarea
-    id: annoying
-    attributes:
-      label: Was he ever annoying? When?
-  - type: textarea
-    id: pause
-    attributes:
-      label: On pause cards, did you choose Leave or Stay, and why?
-  - type: textarea
-    id: lines
-    attributes:
-      label: Which line made you laugh or cringe?
-  - type: dropdown
-    id: background
-    attributes:
-      label: Did he survive in the background?
-      options: ["Yes, all week", "Mostly", "He kept disappearing", "He never stayed"]
-  - type: dropdown
-    id: keep
-    attributes:
-      label: Would you keep him?
-      options: ["Yes", "Maybe", "No"]
-  - type: textarea
-    id: why
-    attributes:
-      label: Why?
-```
-
-Because GitHub issues are public, offer testers the private Google Form or a direct message as an alternative.
-
-## 6. Voluntary sharing of "What Jixxy saw" and the weekly card
-
-The app sends nothing. If a tester wants to help us understand usage, they may screenshot the in-app **What Jixxy saw** log or the weekly card and send it to us.
-
-- Ask first, every time. Never require it.
-- Tell them to crop or hide anything they consider private, including app names they'd rather not share.
-- Use screenshots only for understanding patterns. Don't publish a tester's screenshot or words without their explicit permission, and don't invent or alter testimonials.
-- Delete received screenshots when the program ends.
-
-## 7. Reading results against the success metrics
-
-With about 20 people, treat everything as **directional**, not statistics. Never publish percentages or claims like "X% reduction in screen time" from this group.
-
-| Metric | How we read it from testers | Watch for |
+| Permission (what you'll see) | Why | What he does *not* do |
 |---|---|---|
-| **Day-7 retention** | Count testers at Day 7 who still have him installed and switched on (self-reported). | Group drop-offs by phone brand: a brand-specific drop usually means background-kill problems, not dislike. |
-| **😂 vs 😴 ratio** | Testers' self-reports, plus screenshots of the log if volunteered. | A heavy 😴 skew on certain lines means those lines need rework (send to WRITER). |
-| **Leave vs Stay** | Day-3 and Day-7 answers on pause cards, with reasons. | "I stayed because it was boring/annoying" matters more than the raw split. |
-| **Shares** | Day-7 question 4, counted as reports, not exact numbers. | Which screen or line got shared. |
-| **"Was he annoying?"** | Day-3 and form answers, coded as: never / once / often. | Any "guilt" or "too personal" comment is high priority for MANAGER. |
+| **Display over other apps** | To float on screen and show the pause card | Does not take screenshots or read what's on screen; taps outside the cat and card pass through |
+| **Usage access** | To know *which app* is in front, so he can react to the apps you chose | Sees app name and time only, never what's inside an app, never messages |
+| **Notifications** | To show the "Jixxy is awake" notice that keeps him running, with a Stop button | No marketing or promo notifications |
+| Runs in the background, starts after a restart (no pop-up asked) | So he is there when you open your chosen apps | Nothing is sent anywhere |
 
-Report to MANAGER as a short summary: counts, quotes (with permission), brand-by-brand survival notes, and a list of lines or screens that need changes. Be explicit about what we didn't learn.
+He has **no internet permission** (anyone can check in Android's app info), no accessibility service, no microphone, camera, location or contacts. Banking, payments, password, dialer and maps apps are protected: he never reacts to or pauses them. Details: [`PRIVACY.md`](../PRIVACY.md).
 
-## 8. Rules for us
+## 3. Who to recruit
+- **Phones:** a deliberate mix. Some Pixel/Samsung and at least 8 on **Xiaomi/Redmi/Poco, Oppo/Realme, Vivo** (most likely to close background apps). At least 3 on Android 13+ (restricted-settings step) and 2 on Android 8 to 10.
+- **Habits:** about half heavy scrollers (their own estimate), half light.
+- **Not testers:** anyone under 18, or anyone who needs the app to work for something important.
+- Keep a private list **outside the repo**: nickname, phone model, Android version, heavy/light, install date. Delete it when the test ends.
 
-- Be honest with testers about what the app is and isn't. No health claims.
-- Tell testers they can stop at any time and uninstall with no explanation.
-- Thank them, and let them know about fixes made because of their feedback.
+## 4. Copy-paste WhatsApp invite
+*(Send only after the Owner's go-ahead; fill in the link the Owner gives you.)*
+
+> Hey! Can you help me test a small free Android app? It's called **Jixxy**: a lazy, sarcastic black cat who floats on your screen and makes you pause, with a joke, before up to 3 apps *you* pick (like reels). You always get **Leave** or **Stay**.
+>
+> The honest bit: it's early and rough, 18+ only, Android 8 or newer. It asks for "Display over other apps" and "Usage access" so he can float and know which app is open. It has no internet permission, so nothing leaves your phone. No ads, no sign-up.
+>
+> If you're in: install it, use it for about a week, then reply to me with 5 quick answers (I'll send the questions). You can stop any time. To quit, just uninstall it, no explanation needed.
+>
+> Reply with your phone model and I'll send the steps. 🐈‍⬛
+
+## 5. Steps to send once they say yes
+1. On your phone, open this link and download the file: https://github.com/manofwhitebrown/jixxy/releases/download/latest/jixxy-latest.apk
+2. Tap the downloaded file. If Android asks, allow your browser or Files app to install unknown apps (Settings, Apps, Special access, Install unknown apps).
+3. Open Jixxy and follow the setup. He explains each permission before he asks. Choose up to 3 apps.
+4. **If a permission is greyed out ("Restricted setting"):** tap it once, press OK, then Settings, Apps, Jixxy, three-dot menu (top right), **Allow restricted settings**, then try again. The menu item only shows after you've tapped the blocked permission once. The app shows these steps too.
+5. **Keep him running:** set Jixxy's battery use to *Unrestricted* and turn on *Autostart* if your phone has it (the app has a guide per brand). Xiaomi, Oppo, Vivo testers: please do this and tell me if it was enough.
+6. Use your phone normally. If he's annoying, tap **Nap**. That is useful feedback too.
+
+**How to leave at any time:** long-press the Jixxy icon, Uninstall. His data is only on your phone and goes with the app. You don't need to tell me why.
+**How to report a problem:** send me your phone model, Android version, what you did, what you expected, what happened, and a screenshot if you can. Don't include private messages or other people's content. Once the app has a **Copy debug info** button (Settings), you may paste its text; it only leaves your phone if you paste it.
+
+## 6. The 5 questions (plain text, reply in WhatsApp, nothing tracked)
+Send these after about 7 days. Answers can be one word or a voice note. Reply to the sender only.
+
+> **1.** Was he annoying? (1 = never, 5 = I wanted to throw the phone)
+> **2.** Which line made you laugh? (type it or screenshot)
+> **3.** Which line felt off? (too much, too personal, not funny)
+> **4.** On the pause card, did you choose Leave or Stay more? Why?
+> **5.** Would you keep him tomorrow? (Yes / Maybe / No)
+>
+> *(Optional: phone model + Android version, and did he stay alive in the background?)*
+
+Optional short check-ins at **Day 1** ("did setup work, is he on screen?") and **Day 3** ("did he vanish? did you see a pause card?") are fine in the same chat. Keep them to a message or two. Do not send reminders to testers who go quiet more than once.
+
+## 7. Rules for us
+- Be honest about what the app is and isn't. No health or "addiction" claims. No promises about dates or features.
+- Collect the minimum. Tell testers what you keep (their answers and any screenshot they choose to send), use it only to improve Jixxy, and **delete it when the test ends**.
+- If a tester volunteers a screenshot of **What Jixxy saw** or the weekly card, they may crop it first. Ask every time, never require it, never publish a tester's words or screenshots without explicit permission, never invent or change testimonials.
+- Tell testers about fixes made because of their feedback, and thank them.
+
+## 8. Reading the answers (directional, not statistics)
+With about 20 people, never publish percentages or claims like "reduced screen time by X%". Report counts, quotes (with permission) and what we didn't learn.
+
+| Success metric | Where it comes from |
+|---|---|
+| Day-7 retention | Q5 plus "is he still installed and on?" at Day 7. Group drop-offs by phone brand: a brand-specific drop is usually background-kill, not dislike. |
+| 😂 vs 😴 | Q2 and Q3 (lines that landed or fell flat; send to WRITER). Self-reported only. |
+| Leave vs Stay | Q4, with the reasons. "I stayed because he was boring" matters more than the split. |
+| Shares of the weekly card | Ask "did you share anything he made?" at Day 7; count as reports. |
+| "Was he annoying?" | Q1, coded 1–2 / 3 / 4–5. Any "guilt" or "too personal" answer goes to MANAGER first. |
+
+Send MANAGER a short summary: counts, quotes, brand-by-brand survival notes, lines to change.

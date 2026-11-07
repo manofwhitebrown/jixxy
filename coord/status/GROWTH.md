@@ -1,4 +1,39 @@
-# GROWTH status — updated 2026-11-06 09:05 UTC
+# GROWTH status (Wave 3, AI-7) — updated 2026-11-07
+
+## Takeover: 2026-11-07
+Found (T-G3-0 audit): README, site "What works today" and CHANGELOG still described the old alpha (placeholder sprite, 3-button screen, silent) while `latest` carries the real app in code; OWNER_TEST_GUIDE pointed at the Releases page; TESTER_PROGRAM used a Google Form and had no permissions table; store/LISTING.md header said "alpha, placeholder art"; no distribution or licence memo. Not stale: PRIVACY (manifest re-read: SYSTEM_ALERT_WINDOW, FOREGROUND_SERVICE(+SPECIAL_USE), PACKAGE_USAGE_STATS, POST_NOTIFICATIONS, RECEIVE_BOOT_COMPLETED, `<queries>` launcher intent; no INTERNET).
+
+## Now
+T-G3-0, -1, -2, -3, -4 pushed. Next: T-G3-6 PRIVACY final pass (blocked on PLATFORM's exact diagnostics-log contents), then T-G3-7 shot list, then docs after the Owner confirms a build.
+
+## Done (Wave 3)
+- T-G3-1 growth/OWNER_TEST_GUIDE.md rewritten (latest APK link, restricted-settings step, 8 things, report format; "Copy debug info" marked not-yet-in-app).
+- T-G3-2 store/DISTRIBUTION_OPTIONS.md (A GitHub / B Play / C IzzyOnDroid+F-Droid / D 2027 developer verification; sources, [unverified] flags, decisions for Owner).
+- T-G3-3 growth/LICENCE_OPTIONS.md (no licence file added).
+- T-G3-4 growth/TESTER_PROGRAM.md (WhatsApp invite, permissions table, 5-question plain-text form, no tracking).
+- Docs synced: README, CHANGELOG [Unreleased], site "What works today", store/LISTING.md header.
+
+## Next
+1. T-G3-6 PRIVACY pass once PLATFORM ships DiagnosticsRepository (T-P3-4).
+2. T-G3-7 phone screen-recording shot list (growth/launch/).
+3. After Owner confirms a build: README/CHANGELOG/site "in this release" + known issues from qa/BUGS.md.
+
+## Blockers
+PRIVACY diagnostics wording needs PLATFORM's exact report contents. Lighthouse and the site were not run (no browser here).
+
+## Questions for MANAGER
+Please record the Owner decisions needed: licence (growth/LICENCE_OPTIONS.md), distribution (store/DISTRIBUTION_OPTIONS.md), release signing key, Pages.
+
+## Messages handled
+20261106-1730-WRITER-safety-tone.md (noted; SAFETY_LINES.md rules apply to store tone). Earlier Wave-2 messages listed in the history below.
+
+## Honest notes
+- I tested nothing on a phone and did not open the site in a browser. All app behaviour in docs is from the manifest, code names, status files and qa/BUGS.md.
+- Distribution facts: Google/F-Droid/IzzyOnDroid pages were read via search snippets on 2026-11-07, not full-page reads. Items marked [unverified] in the memo are third-party or memory. India payment methods, F-Droid signing behaviour and non-free-asset handling are unchecked.
+- Owner test steps: growth/OWNER_TEST_GUIDE.md (install the latest APK, 8 things, how to reply).
+
+---
+# Previous (Wave 2) notes
 
 ## Takeover: 2026-11-06 08:54 UTC
 I am AI-7 GROWTH (Wave 2), replacing the previous GROWTH AI. Read: predecessor's status, TASKS, DECISIONS, README, PRIVACY, CHANGELOG, site/index.html.
