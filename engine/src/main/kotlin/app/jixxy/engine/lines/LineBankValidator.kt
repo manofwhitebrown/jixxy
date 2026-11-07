@@ -13,6 +13,8 @@ data class Problem(val lineId: String, val message: String, val error: Boolean =
  * roast 1..3, bond 0..3, banned topics and phrases, affectionate-insult gating, PROTECTED never targeted.
  */
 object LineBankValidator {
+    /** Allowed values of a line's optional `review` field (D-022); a missing field means draft. */
+    val REVIEW_STATES = setOf("draft", "reviewed", "native_reviewed")
     val allowedSlots = setOf("app", "minutes", "count", "time", "battery")
 
     /** Affectionate insults permitted only at roast >= 2 and bondMin >= 1. */
@@ -67,6 +69,7 @@ object LineBankValidator {
         if ((l.slots - allowedSlots).isNotEmpty()) err("disallowed slots ${(l.slots - allowedSlots).sorted()}")
         val unfillable = used - slotsAvailable(l.trigger)
         if (unfillable.isNotEmpty()) err("${l.trigger} never provides ${unfillable.sorted()}, so this line can never be shown")
+        if (l.review !in REVIEW_STATES) err("review '${l.review}' is not one of ${REVIEW_STATES.sorted()}")
         if (l.roast !in 1..3) err("roast ${l.roast} outside 1..3")
         if (l.bondMin !in 0..3) err("bondMin ${l.bondMin} outside 0..3")
         if (l.moods.isEmpty()) out += Problem(l.id, "no moods listed (matches any mood only as a fallback)", error = false)

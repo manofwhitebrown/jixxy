@@ -21,7 +21,9 @@ data class Line(
     val text: String,
     val slots: Set<String>,
     val tags: Set<String>,
-    val almostCaring: Boolean
+    val almostCaring: Boolean,
+    /** Review state (D-022): "draft" (default), "reviewed" or "native_reviewed". Checked by validateLines. */
+    val review: String = "draft"
 )
 
 /** An immutable set of lines indexed by trigger. */
@@ -62,7 +64,8 @@ object LineBankLoader {
                     text = str("text"),
                     slots = strs("slots").toSet(),
                     tags = strs("tags").toSet(),
-                    almostCaring = (m["almostCaring"] as? Boolean) ?: false
+                    almostCaring = (m["almostCaring"] as? Boolean) ?: false,
+                    review = (m["review"] as? String) ?: "draft"
                 )
             } catch (e: IllegalArgumentException) {
                 throw JsonException("entry $idx: ${e.message}")

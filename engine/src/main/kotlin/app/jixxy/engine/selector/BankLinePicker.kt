@@ -11,12 +11,16 @@ import kotlin.random.Random
 /**
  * Picks lines from a [LineBank].
  *
- * Eligibility (hard): trigger, language (falls back to "en"), roast <= user level, bond, category
+ * Language (D-016): the query's language is used when the bank has any line of it for the trigger; only when it has
+ * none does the pick fall back to English. A language that has lines but none eligible right now stays quiet instead
+ * of mixing in English. Each language keeps its own no-repeat ring.
+ *
+ * Eligibility (hard): trigger, roast <= user level, bond, category
  * (a line with no categories fits any app), every declared slot available in the query.
  * Tags (WRITER's vocabulary): `on_break`, `dropped`, `escalation`, `followup` lines are reserved: they are used only when
  * the query asks for them. `tierN` (Pause prompts), `soft` (late night) are preferences. A `requiredTag` is a hard filter.
  * Preference (soft, relaxed in order): tags above, then mood match.
- * Repeats: a global ring of the last [BrainConfig.dedupeWindow] ids; for small pools the block
+ * Repeats: a ring per language of the last [BrainConfig.dedupeWindow] ids; for small pools the block
  * window shrinks to half the pool so a 10-line trigger can still speak.
  * Reactions: 😂 lines gain weight, 😴 lines lose it (never to zero by itself; the ring still applies).
  */
@@ -25,14 +29,15 @@ class BankLinePicker(
     private val random: Random
 ) : LinePicker {
 
-    private val ring = ArrayDeque<String>()
+    private val rings = mutableMapOf<String, ArrayDeque<String>>()
     private val weights = mutableMapOf<String, Int>()
     private val byId: Map<String, Line> = bank.lines.associateBy { it.id }
     private val reservedTags = setOf("on_break", "dropped", "escalation", "followup")
 
     override fun pick(query: LineQuery): PickedLine? {
-        var pool = eligible(query, query.language)
-        if (pool.isEmpty() && query.language != "en") pool = eligible(query, "en")
+        val lang = languageFor(query)
+        val ring = rings.getOrPut(lang) { ArrayDeque() }
+        var pool = eligible(query, lang)
         if (pool.isEmpty()) return null
 
         query.requiredTag?.let { tag -> pool = pool.filter { tag in it.tags }; if (pool.isEmpty()) return null }
@@ -52,7 +57,7 @@ class BankLinePicker(
         if (fresh.isEmpty()) return null
 
         val line = weighted(fresh)
-        remember(line.id)
+        remember(line)
         return PickedLine(line.id, fill(line.text, query.slots))
     }
 
@@ -66,11 +71,15 @@ class BankLinePicker(
     }
 
     override fun restoreRecent(ids: List<String>) {
-        ids.filter { it in byId }.forEach { remember(it) }
+        ids.mapNotNull { byId[it] }.forEach { remember(it) }
     }
 
-    /** Ids recently shown, oldest first (for tests and debugging). */
-    fun recentIds(): List<String> = ring.toList()
+    /** Ids recently shown in [lang], oldest first (for tests and debugging). */
+    fun recentIds(lang: String = "en"): List<String> = rings[lang]?.toList().orEmpty()
+
+    /** The language to pick from: the query's own if the bank has lines of it for the trigger, else English. */
+    private fun languageFor(q: LineQuery): String =
+        if (bank.forTrigger(q.trigger).any { it.lang == q.language }) q.language else "en"
 
     private fun eligible(q: LineQuery, lang: String): List<Line> =
         bank.forTrigger(q.trigger).filter { l ->
@@ -105,7 +114,9 @@ class BankLinePicker(
         return pool.last()
     }
 
-    private fun remember(id: String) {
+    private fun remember(line: Line) {
+        val id = line.id
+        val ring = rings.getOrPut(line.lang) { ArrayDeque() }
         ring.remove(id)
         ring.addLast(id)
         while (ring.size > BrainConfig.dedupeWindow) ring.removeFirst()

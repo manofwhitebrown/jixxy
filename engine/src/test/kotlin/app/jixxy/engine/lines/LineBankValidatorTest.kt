@@ -77,4 +77,19 @@ class LineBankValidatorTest {
         val bad = LineBankValidator.validate(bank.lines).filter { it.error }
         assertTrue(bad.joinToString("\n") { "${it.lineId}: ${it.message}" }, bad.isEmpty())
     }
+
+    @Test fun reviewFieldDefaultsToDraftAndAcceptsOnlyKnownValues() {
+        val base = line()
+        assertEquals("draft", base.review)
+        listOf("draft", "reviewed", "native_reviewed").forEach { assertTrue(errors(base.copy(review = it)).isEmpty()) }
+        assertTrue(errors(base.copy(review = "approved")).any { it.contains("review") })
+    }
+
+    @Test fun loaderReadsTheReviewField() {
+        val json = """[{"id":"a_1","trigger":"APP_OPEN","categories":["SOCIAL"],"moods":["CHILL"],"roast":1,"text":"Hi.","review":"reviewed"},
+            {"id":"a_2","trigger":"APP_OPEN","categories":["SOCIAL"],"moods":["CHILL"],"roast":1,"text":"Yo."}]"""
+        val lines = LineBankLoader.fromTexts(listOf(json)).lines.associateBy { it.id }
+        assertEquals("reviewed", lines["a_1"]!!.review)
+        assertEquals("draft", lines["a_2"]!!.review)
+    }
 }
