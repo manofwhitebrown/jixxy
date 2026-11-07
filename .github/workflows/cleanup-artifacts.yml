@@ -1,0 +1,49 @@
+name: Cleanup artifacts
+
+# Deletes old Actions artifacts (per-commit debug APKs, emulator evidence). New uploads already expire after
+# 3 days; this clears the backlog made before that rule. It runs when this file changes and on "Run workflow".
+# It never touches releases (latest, ci-evidence, numbered tags).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/cleanup-artifacts.yml'
+  workflow_dispatch:
+    inputs:
+      keep_minutes:
+        description: "Keep artifacts newer than this many minutes"
+        required: false
+        default: "30"
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: cleanup-artifacts
+  cancel-in-progress: false
+
+jobs:
+  clean:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
+      KEEP_MINUTES: ${{ github.event.inputs.keep_minutes || '30' }}
+    steps:
+      - name: Delete artifacts older than KEEP_MINUTES
+        run: |
+          set -u
+          cutoff=$(date -u -d "${KEEP_MINUTES} minutes ago" +%Y-%m-%dT%H:%M:%SZ)
+          echo "Deleting artifacts created before $cutoff"
+          gh api --paginate "repos/$REPO/actions/artifacts?per_page=100" \
+            --jq ".artifacts[] | select(.created_at < \"$cutoff\") | .id" > ids.txt
+          total=$(wc -l < ids.txt); ok=0; bad=0
+          while read -r id; do
+            if gh api -X DELETE "repos/$REPO/actions/artifacts/$id" >/dev/null 2>&1; then ok=$((ok+1)); else bad=$((bad+1)); fi
+          done < ids.txt
+          echo "::notice title=Artifact cleanup::found $total, deleted $ok, failed $bad"
+          left=$(gh api "repos/$REPO/actions/artifacts?per_page=1" --jq .total_count)
+          echo "Artifacts left: $left"
