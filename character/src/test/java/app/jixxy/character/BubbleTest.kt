@@ -96,4 +96,20 @@ class BubbleTest {
         val g = BubbleGeometry(100f, 60f, 40f, 14f, 25f, alignRight = false, above = true)
         assertEquals(100f, g.viewW, 0.001f)
     }
+
+    @Test fun bubbleFontScaleIsClamped() {
+        assertEquals(1f, bubbleFontScale(0.85f), 0f)
+        assertEquals(1.2f, bubbleFontScale(1.2f), 0f)
+        assertEquals(BUBBLE_MAX_FONT_SCALE, bubbleFontScale(2f), 0f)
+    }
+
+    @Test fun textWidthGrowsWithFontScaleButNeverPastTheScreen() {
+        assertEquals(600, bubbleTextWidthPx(200f, 3f, 1f, 1080, 36f, 24f))
+        assertEquals(840, bubbleTextWidthPx(200f, 3f, 1.4f, 1080, 36f, 24f))
+        // a 320 dp wide phone at density 2 (640 px), scale 1.4: wanted 560 px, room 640 - 2*24 - 2*16 = 560
+        assertEquals(560, bubbleTextWidthPx(200f, 2f, 1.4f, 640, 24f, 16f))
+        // very narrow screen: capped to what is left, never below 1
+        assertEquals(380, bubbleTextWidthPx(200f, 3f, 1.4f, 500, 36f, 24f))
+        assertTrue(bubbleTextWidthPx(200f, 3f, 1.4f, 40, 36f, 24f) >= 1)
+    }
 }

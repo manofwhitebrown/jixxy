@@ -19,7 +19,8 @@ import kotlin.math.max
  * on the bubble reveals. [JixxyView] hosts it and forwards touches. Nothing is allocated while drawing.
  */
 internal class SpeechBubble(context: Context, private val palette: CharacterPalette) {
-    private val metrics = context.resources.displayMetrics
+    private val resources = context.resources
+    private val metrics = resources.displayMetrics
     private val density = metrics.density
 
     private val textPaint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
@@ -65,7 +66,11 @@ internal class SpeechBubble(context: Context, private val palette: CharacterPale
         val clean = if (text.length > MAX_CHARS) text.take(MAX_CHARS - 1) + "…" else text
         val padX = PAD_X_DP * density
         val padY = PAD_Y_DP * density
-        val built = StaticLayout.Builder.obtain(clean, 0, clean.length, textPaint, (MAX_TEXT_DP * density).toInt())
+        val scale = bubbleFontScale(resources.configuration.fontScale)
+        textPaint.textSize = TEXT_SP * density * scale
+        emojiPaint.textSize = EMOJI_SP * density * scale
+        val textWidth = bubbleTextWidthPx(MAX_TEXT_DP, density, scale, metrics.widthPixels, padX, SCREEN_SIDE_DP * density)
+        val built = StaticLayout.Builder.obtain(clean, 0, clean.length, textPaint, textWidth)
             .setAlignment(Layout.Alignment.ALIGN_NORMAL)
             .setIncludePad(false)
             .build()
@@ -213,6 +218,7 @@ internal class SpeechBubble(context: Context, private val palette: CharacterPale
         private const val TEXT_SP = 14f
         private const val EMOJI_SP = 16f
         private const val MAX_TEXT_DP = 200f
+        private const val SCREEN_SIDE_DP = 8f
         private const val MIN_BODY_DP = 150f
         private const val PAD_X_DP = 12f
         private const val PAD_Y_DP = 9f

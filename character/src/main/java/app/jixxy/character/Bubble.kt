@@ -92,3 +92,19 @@ internal class BubbleGeometry(
         return (spriteX + spritePx / 2f).coerceIn(low, max(low, high))
     }
 }
+
+/** Largest system font scale the bubble follows; beyond it text stops growing so the bubble still fits on screen (TalkBack reads the full line). */
+internal const val BUBBLE_MAX_FONT_SCALE = 1.4f
+
+/** The font scale the bubble uses: the system's, but never below 1 and never above [BUBBLE_MAX_FONT_SCALE]. */
+internal fun bubbleFontScale(systemScale: Float): Float = systemScale.coerceIn(1f, BUBBLE_MAX_FONT_SCALE)
+
+/**
+ * Width available to the bubble's text in pixels: the base width grows with the (clamped) font scale so the line count
+ * stays sensible, but the bubble never gets wider than the screen minus [sidePx] on each side plus its own padding.
+ */
+internal fun bubbleTextWidthPx(baseDp: Float, density: Float, fontScale: Float, screenWidthPx: Int, padXPx: Float, sidePx: Float): Int {
+    val wanted = baseDp * density * fontScale
+    val room = screenWidthPx - 2f * padXPx - 2f * sidePx
+    return min(wanted, max(room, 1f)).toInt()
+}
