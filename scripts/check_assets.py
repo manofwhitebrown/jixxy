@@ -6,12 +6,14 @@ Checks
   2. no single image there is > 512x512 px or > 300 KB
   3. no unexpected binary files anywhere in the repo (allowlist below)
   4. no remote URLs used as resources inside site/ (plain <a href> links are fine)
+  5. site/ stays small: <= 1 MB in total, no single file > 300 KB (T-D3-5)
 """
 import os, re, struct, subprocess, sys
 
 CHAR_RES = "character/src/main/res"
 MAX_TOTAL = 3 * 1024 * 1024
 MAX_FILE = 300 * 1024
+MAX_SITE_TOTAL = 1024 * 1024
 MAX_DIM = 512
 IMG_EXT = (".png", ".webp", ".jpg", ".jpeg")
 # Binary files that are expected. Anything else binary is reported.
@@ -83,7 +85,7 @@ def main():
             warn(f"unexpected binary file: {p}")
 
     remote = re.compile(
-        r"""(?:\bsrc\s*=\s*["']?https?://|<link\b[^>]*\bhref\s*=\s*["']?https?://|url\(\s*["']?https?://|@import\s+["']?(?:url\()?["']?https?://|\bfetch\(\s*["']https?://)""",
+        r"""(?:\b(?:src|srcset)\s*=\s*["']?(?:https?:)?//|<link\b[^>]*\bhref\s*=\s*["']?https?://|url\(\s*["']?https?://|@import\s+["']?(?:url\()?["']?https?://|\bfetch\(\s*["']https?://)""",
         re.I)
     for p in files:
         if p.startswith("site/") and p.lower().endswith((".html", ".htm", ".css", ".js", ".svg")):
@@ -91,6 +93,15 @@ def main():
                 for n, line in enumerate(f, 1):
                     if remote.search(line):
                         warn(f"{p}:{n} loads a remote resource (site must be self-contained)")
+
+    site_files = [p for p in files if p.startswith("site/") and os.path.exists(p)]
+    site_total = sum(os.path.getsize(p) for p in site_files)
+    print(f"site total: {site_total // 1024} KB of {MAX_SITE_TOTAL // 1024} KB")
+    if site_total > MAX_SITE_TOTAL:
+        warn(f"site/ is {site_total // 1024} KB, budget is {MAX_SITE_TOTAL // 1024} KB")
+    for p in site_files:
+        if os.path.getsize(p) > MAX_FILE:
+            warn(f"{p} is {os.path.getsize(p) // 1024} KB (max {MAX_FILE // 1024} KB per site file)")
 
     if problems:
         print(f"{len(problems)} asset problem(s).")

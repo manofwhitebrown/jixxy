@@ -6,11 +6,19 @@ Only the Owner can move a bug to `verified`. New findings: add a row below, one 
 
 | ID | Title | Owner role | Status |
 |---|---|---|---|
-| B-001 | Launcher icon is the default Android robot | PLATFORM / UI | fixed in code (T-P2-5/6, a409193); not seen on a phone |
-| B-002 | First screen is the temporary 3-button screen, not the real app | PLATFORM / UI | fixed in code (T-P2-2, fe3c9ee: MainActivity is the launcher); not seen on a phone |
-| B-003 | Floating sprite is a placeholder shape ("potato") | CHARACTER | open: new art direction D-011..D-013, real expression sprites are being wired; judge on the next build |
-| B-004 | Nap, then Stop, then Wake: Jixxy never shows again | PLATFORM | fixed in code (T-P2-1, `NapPolicy` + tests); **needs the 2-minute test below on a phone** |
-| B-005 | Jixxy says nothing: no lines reach the screen | PLATFORM / ENGINE | fixed in code in part (T-P2-3 real brain wired via `PersistingBrain`); bubble display still a stub per PLATFORM blocker, so likely still open on a phone |
+| B-001 | Launcher icon is the default Android robot | UI | fixed in code (adaptive cat icon, a0f50f5; manifest uses `@mipmap/ic_launcher`); not seen on a phone |
+| B-002 | First screen is the temporary 3-button screen, not the real app | UI | fixed in code (`ui.MainActivity` is the launcher, c2972cf); not seen on a phone |
+| B-003 | Floating sprite is a placeholder shape ("potato") | CHARACTER | fixed in code (15 expression sprites from the Owner's sheet in `character/src/main/res`, speech bubble 8789abc); the Owner judges the look on the next build, art quality (soft, 3 frames missing) is a separate pending decision |
+| B-004 | Nap, then Stop, then Wake: Jixxy never shows again | PLATFORM | fixed in code (`NapPolicy` + `NapPolicyTest`, a68c168); **needs the 2-minute test `qa/REGRESSION_NAP_STOP_WAKE.md` on a phone** |
+| B-005 | Jixxy says nothing: no lines reach the screen | PLATFORM / ENGINE | fixed in code (real brain `JixxyBrains.create` inside `PersistingBrain`, `Dispatcher.say` calls the real bubble `sprite?.showBubble`, both in `OverlayService`); not seen on a phone |
+
+All five come from the Owner's first test of `v0.0.1-alpha` (versionCode 1; phone model and Android version were not recorded). Nothing here is `verified` yet: only the Owner moves a row to `verified`.
+
+## Not bugs yet: unproven things (from the team brief, section A)
+These are risks nobody has seen fail or work. They become rows here the moment the Owner reports a failure. Tests: `qa/SMOKE_CHECKLIST.md`, `qa/MILESTONE_M2_PAUSE.md`.
+- Pause end to end; **Leave goes Home from a service on Android 14/15** (step 4 of the M2 sheet).
+- Overlay hosting of the bigger cat and the bubble.
+- Foreground service starts after reboot or app update (Android 15 rules); OEM keep-alive (Samsung, Xiaomi, Oppo, Vivo); battery cost; TalkBack; Hinglish voice quality.
 
 ## Details
 
@@ -39,11 +47,14 @@ Only the Owner can move a bug to `verified`. New findings: add a row below, one 
 - Actual (alpha): never; `Dispatcher` used `NoopBrain`.
 
 ## Template for new bugs
+Add the row to the table above AND a block below, in the same session as the report. Next free ID: B-006.
 ```
 ### B-0NN Short title
 - Steps: 1. … 2. … 3. …
 - Expected: …
 - Actual: …
 - Phone / Android version / build (versionCode, or the `latest` release time): …
-- Owner role: (DEVOPS fills in)   Status: open
+- Reported by / when: …
+- Owner role: (DEVOPS fills in)   Status: open   (words: open · fixed in code · verified · wontfix)
+- Severity: S1 crash, data loss or privacy · S2 core loop broken · S3 annoying · S4 cosmetic
 ```

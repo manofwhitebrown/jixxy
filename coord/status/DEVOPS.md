@@ -1,4 +1,4 @@
-# DEVOPS status — updated 2026-11-07 05:25 UTC (Wave 3)
+# DEVOPS status — updated 2026-11-07 05:50 UTC (Wave 3)
 ## Takeover (Wave 3): 2026-11-07 05:10 UTC
 Fresh AI-6 replacing Wave 2. Found: main green at 0550d84 (CI, Latest, Emulator all success); Wave-2 had also shipped emulator.yml (API 26/30/34/35) and ci-evidence upload. First: T-D3-0 verification, then T-D3-3 gates (validateLines + assets blocking, test summary), then T-D3-1/2.
 ## Wave 3 verification (T-D3-0) — what I actually ran
@@ -11,14 +11,19 @@ Fresh AI-6 replacing Wave 2. Found: main green at 0550d84 (CI, Latest, Emulator 
 - GROWTH's two edits reviewed line by line: apk_cert.sh b801214 (regex now accepts optional `V2 `/`V3.1 ` prefix before `Signer`; still requires exactly one distinct digest) and check_apk_cert.sh ae3979f (`[[:space:]]*` before `SHA256:` for tab-indented keytool output). Both correct, minimal; keeping them.
 - Notices seen in CI annotations: ubuntu-latest migrates to Ubuntu 26 (announced 2026-10-19) => pinned all workflows to ubuntu-24.04; Gradle 8.14.3 "out of date" (PLATFORM's file, not mine; no action needed now).
 ## Now
-T-D3-3 gates pushed in this commit; watching CI. Next T-D3-1 (BUGS.md refresh), T-D3-2 (test sheets).
+T-D3-4 (release path check, signing plan review), T-D3-6 (THIRD_PARTY.md), GROWTH gap (3) resolved-dependency scan.
 ## Done (Wave 3)
+- e0b8a88 CI run 42341901351 all green with the new steps: unit-test annotation (358 run, 0 failed: app 154, character 86, engine 118), release-manifest guard, blocking line bank + assets. Build job took ~1m46s with a warm cache.
+- T-D3-5: Pages enabled, build_type=workflow, deployment success, URL https://manofwhitebrown.github.io/jixxy/ (my sandbox cannot open it: Owner to open once). check_assets.py now also enforces site/ <= 1 MB total, <= 300 KB per file, and rejects remote and protocol-relative src/srcset (tested with seeded violations).
+- T-D3-1: qa/BUGS.md refreshed (B-001..B-005 vs code, with SHAs; none verified); added severity S1-S4, next free ID B-006, and a "not bugs yet" list of unproven risks.
+- T-D3-2: qa/SMOKE_CHECKLIST.md rewritten in sections A-H (one phone screen each, incl. restricted settings, bubble, Pause/Leave/Stay, update over previous build); qa/MILESTONE_M2_PAUSE.md added (11 steps, plain reply format); REGRESSION_NAP_STOP_WAKE.md checked, still accurate.
 - T-D3-0 verification (above).
 - T-D3-3: validateLines (Gradle) now in the Gate (a failure turns CI red); asset budget guard runs STRICT=1 (first clean run: 174 KB of 3072 KB); new scripts/ci_test_summary.py puts test counts and failing tests into annotations; manifest guard now also forbids storage permissions (READ/WRITE/MANAGE_EXTERNAL_STORAGE, READ_MEDIA_*), requires allowBackup="false", and also runs on the RELEASE merged manifest (`:app:processReleaseManifest`). GROWTH requests (1),(2),(4) done; (3) resolved-dependency scan still to do.
 - T-D3-7 (part): all workflows pinned to ubuntu-24.04.
 ## Honest notes (Wave 3)
 - The new CI steps have not run on GitHub at the time of writing; I tested the scripts locally against fake inputs only. `:app:processReleaseManifest` has never been run in CI by us.
-- Nothing here was tested on a phone.
+- Nothing here was tested on a phone. The test sheets describe behaviour read from code (stay delay 3 s, grace 5 min, Leave goes Home); the real behaviour is unproven.
+- check_assets.py site rules and the new test sheets were not run in CI before this push (assets script ran locally, strict, exit 0).
 
 ## ---- Wave 2 notes (kept for history) ----
 ## Takeover: 2026-11-06 08:55 UTC
