@@ -48,4 +48,11 @@ class SettingsLogicTest {
     }
 
     @Test fun resetGivesFactorySettings() = assertEquals(UserSettings(), SettingsLogic.reset())
+
+    @Test fun languageAcceptsOnlyKnownCodes() {
+        val base = UserSettings()
+        assertEquals("en", base.language)
+        assertEquals("hinglish", SettingsLogic.withLanguage(base, "hinglish").language)
+        assertEquals("en", SettingsLogic.withLanguage(base.copy(language = "hinglish"), "klingon").language)
+    }
 }

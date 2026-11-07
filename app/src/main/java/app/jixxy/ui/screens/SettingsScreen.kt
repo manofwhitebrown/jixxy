@@ -33,8 +33,10 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -46,6 +48,7 @@ import app.jixxy.engine.api.StateStore
 import app.jixxy.engine.api.UserSettings
 import app.jixxy.ui.onboarding.AppChoice
 import app.jixxy.ui.settings.SettingsLogic
+import app.jixxy.ui.state.DiagnosticsPort
 import app.jixxy.ui.theme.JixxyTheme
 import kotlinx.coroutines.launch
 
@@ -61,9 +64,11 @@ fun SettingsScreen(
     apps: List<AppChoice> = emptyList(),
     onWhatSaw: () -> Unit = {},
     onOemGuide: () -> Unit = {},
+    diagnostics: DiagnosticsPort? = null,
 ) {
     val current by settings.settings.collectAsStateWithLifecycle(initialValue = UserSettings())
     val scope = rememberCoroutineScope()
+    val clipboard = LocalClipboardManager.current
     fun change(transform: (UserSettings) -> UserSettings) { scope.launch { settings.update(transform) } }
 
     SettingsContent(
@@ -74,10 +79,13 @@ fun SettingsScreen(
         onToggleMuted = { pkg -> change { SettingsLogic.toggleMuted(it, pkg) } },
         onQuietHours = { start, end -> change { SettingsLogic.withQuietHours(it, start, end) } },
         onStayDelay = { sec -> change { SettingsLogic.withStayDelay(it, sec) } },
+        onLanguage = { code -> change { SettingsLogic.withLanguage(it, code) } },
         onBlindMode = { on -> change { it.copy(blindMode = on) } },
         onReset = { scope.launch { store.clearEvents(); settings.update { SettingsLogic.reset() } } },
         onWhatSaw = onWhatSaw,
         onOemGuide = onOemGuide,
+        onCopyDebug = diagnostics?.let { d -> { scope.launch { clipboard.setText(AnnotatedString(d.copyableReport())) } } },
+        onClearDebug = diagnostics?.let { d -> { scope.launch { d.clear() } } },
     )
 }
 
@@ -91,10 +99,13 @@ fun SettingsContent(
     onToggleMuted: (String) -> Unit,
     onQuietHours: (startMin: Int, endMin: Int) -> Unit,
     onStayDelay: (Int) -> Unit,
+    onLanguage: (String) -> Unit,
     onBlindMode: (Boolean) -> Unit,
     onReset: () -> Unit,
     onWhatSaw: () -> Unit,
     onOemGuide: () -> Unit,
+    onCopyDebug: (() -> Unit)? = null,
+    onClearDebug: (() -> Unit)? = null,
 ) {
     var confirmReset by remember { mutableStateOf(false) }
     Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
@@ -159,9 +170,20 @@ fun SettingsContent(
                 )
             }
 
-            Section(R.string.settings_language_label, null) {
-                // English only in v1; Hinglish pack comes later, so this is shown, not editable.
-                Text(stringResource(R.string.settings_language_value_en), style = MaterialTheme.typography.bodyLarge)
+            Section(R.string.settings_language_label, R.string.settings_language_help) {
+                FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    SettingsLogic.SUPPORTED_LANGUAGES.forEach { code ->
+                        FilterChip(
+                            selected = s.language == code,
+                            onClick = { onLanguage(code) },
+                            label = { Text(stringResource(languageName(code))) },
+                            modifier = Modifier.heightIn(min = 48.dp),
+                        )
+                    }
+                }
+                if (s.language == SettingsLogic.LANGUAGE_HINGLISH) {
+                    Text(stringResource(R.string.settings_language_hinglish_note), style = MaterialTheme.typography.bodySmall)
+                }
             }
 
             Section(R.string.settings_blind_mode_label, R.string.settings_blind_mode_help) {
@@ -172,6 +194,13 @@ fun SettingsContent(
                 Text(stringResource(R.string.settings_privacy_summary), style = MaterialTheme.typography.bodyMedium)
                 OutlinedButton(onClick = onWhatSaw, Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(stringResource(R.string.whatsaw_title)) }
                 OutlinedButton(onClick = onOemGuide, Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(stringResource(R.string.onboarding_keepalive_cta_open)) }
+            }
+
+            if (onCopyDebug != null && onClearDebug != null) {
+                Section(R.string.settings_debug_label, R.string.settings_debug_help) {
+                    OutlinedButton(onClick = onCopyDebug, Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(stringResource(R.string.settings_debug_copy)) }
+                    OutlinedButton(onClick = onClearDebug, Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(stringResource(R.string.settings_debug_clear)) }
+                }
             }
 
             OutlinedButton(onClick = { confirmReset = true }, Modifier.fillMaxWidth().heightIn(min = 48.dp)) {
@@ -243,6 +272,9 @@ private fun clockText(minutes: Int): String {
     return DateFormat.getTimeFormat(LocalContext.current).format(cal.time)
 }
 
+private fun languageName(code: String) =
+    if (code == SettingsLogic.LANGUAGE_HINGLISH) R.string.settings_language_value_hinglish else R.string.settings_language_value_en
+
 private fun roastName(level: RoastLevel) = when (level) {
     RoastLevel.GENTLE -> R.string.onboarding_roast_gentle
     RoastLevel.NORMAL -> R.string.onboarding_roast_normal
@@ -260,8 +292,8 @@ private const val SAMPLE_MINUTES = 25
 private val previewApps = listOf(AppChoice("pkg.a", "App A"), AppChoice("pkg.b", "App B"), AppChoice("pkg.c", "App C"), AppChoice("pkg.d", "App D"))
 
 @Preview(showBackground = true, name = "default dark", heightDp = 1600) @Composable private fun SettingsDark() =
-    JixxyTheme(dark = true) { SettingsContent(UserSettings(targetApps = setOf("pkg.a")), previewApps, {}, {}, {}, { _, _ -> }, {}, {}, {}, {}, {}) }
+    JixxyTheme(dark = true) { SettingsContent(UserSettings(targetApps = setOf("pkg.a")), previewApps, {}, {}, {}, { _, _ -> }, {}, {}, {}, {}, {}, {}) }
 @Preview(showBackground = true, name = "cap reached light", heightDp = 1600) @Composable private fun SettingsCapLight() =
-    JixxyTheme(dark = false) { SettingsContent(UserSettings(targetApps = setOf("pkg.a", "pkg.b", "pkg.c"), blindMode = true), previewApps, {}, {}, {}, { _, _ -> }, {}, {}, {}, {}, {}) }
+    JixxyTheme(dark = false) { SettingsContent(UserSettings(targetApps = setOf("pkg.a", "pkg.b", "pkg.c"), blindMode = true), previewApps, {}, {}, {}, { _, _ -> }, {}, {}, {}, {}, {}, {}) }
 @Preview(showBackground = true, name = "200% font", fontScale = 2f, heightDp = 2400) @Composable private fun SettingsLargeFont() =
-    JixxyTheme(dark = true) { SettingsContent(UserSettings(), previewApps, {}, {}, {}, { _, _ -> }, {}, {}, {}, {}, {}) }
+    JixxyTheme(dark = true) { SettingsContent(UserSettings(language = "hinglish"), previewApps, {}, {}, {}, { _, _ -> }, {}, {}, {}, {}, {}, {}, {}, {}) }

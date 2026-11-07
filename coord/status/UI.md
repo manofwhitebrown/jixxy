@@ -1,3 +1,14 @@
+# UI status — updated 2026-11-07 05:13 UTC (Wave 3, AI-3 UI)
+## Now      — T-U3-4 Language row + T-U3-3 "Copy debug info" UI pushed; next T-U3-2 onboarding walk-through, then T-U3-5/6.
+## Takeover — 2026-11-07 05:13 UTC. main green on 0550d84 (CI, Emulator, Latest). 27 UI files. No Android SDK here, so nothing is compiled locally: CI is the check.
+## Real vs stub per screen (all UNVERIFIED on a device) — Onboarding: real (PermissionsRepository, resume refresh, Back handling, restricted-settings explainer shown only when PLATFORM says blocked). Home: real service state + Nap/Wake/Stop. Settings: real (SettingsRepository), Language now selectable, debug section hidden until PLATFORM gives DiagnosticsRepository. What Jixxy saw: real (StateStore). Weekly: real (WeeklyLoader + Canvas card). OEM guide: real intents, menu paths unverified. Gaps: no persisted-resume proof for onboarding, no Lite-mode proof, no revoked-permission card check, no process-death check.
+## Done (Wave 3) — T-U3-4 Language row (en / Hinglish beta, honest note, `SettingsLogic.withLanguage` + test). T-U3-3 UI: `DiagnosticsPort` + Settings "Report a problem" (Copy debug info, Clear diagnostics); shown only when a port is passed. Strings are [P] placeholders until WRITER sends microcopy.
+## Next     — T-U3-2 walk the onboarding flow and fix; wire DiagnosticsPort in MainActivity once PLATFORM ships DiagnosticsRepository; T-U3-5 accessibility pass.
+## Blockers — none. Waiting on: PLATFORM DiagnosticsRepository (inbox message sent), WRITER microcopy for language/debug keys (message sent).
+## UI findings (Owner device tests) — none reported yet.
+## Manual test (Owner), Language — Install `latest`, open Settings, find Language. Tap "Hinglish (beta)": a short note appears. Tap English: it goes away. Leave and reopen Settings: your choice is still selected. Reply in plain words what looks wrong.
+## Honest notes — T-U3-3/4 are `fixed in code` only; Hinglish picks lines on the next service start (not checked whether the running service reloads the bank live: OverlayService reads language at start). The debug-info help text promises what the report contains; PLATFORM must make the report match or I change the text.
+
 # UI status — updated 2026-11-06 15:13 UTC
 ## Now      — waiting for Owner device-test feedback; reviewing quality bar (TalkBack, 200 % font)
 ## Done     — T-U2-1 MainActivity (c2972cf); T-U2-2 palette sampled (b9307b8); T-U2-3 cat images (a4ed401); T-U2-7 icons (a0f50f5); T-U2-5 Home real service state + Stop (be3b8f0); T-U2-8 weekly screen + share card (66168a2); Home notices overlay-missing / no-apps (4a36054); T-U2-6 reviewed by reading code: Settings has roast dial + live sample, target picker (max 3), muted apps, quiet hours, stay delay, language, blind mode, reset, privacy blurb, What saw, OEM guide (all unverified on a device). CI green at ae3979f.
