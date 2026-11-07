@@ -23,7 +23,7 @@ Two columns, so nobody is surprised. **In `v0.0.1-alpha`** is what the Owner saw
 | Installs and opens | Works | n/a |
 | First screen | Temporary 3-button screen | The real app is now the launcher in code |
 | Launcher icon | Default Android robot | Jixxy cat face icon in code |
-| Floating sprite | Placeholder shape ("potato") | Real cat expression images from the Owner's sheet |
+| Floating sprite | Placeholder shape ("potato") | Real cat expression images from the Owner's sheet, floating on a little cloud, with a gentle bob |
 | Jixxy's lines | Nothing shows | Real brain connected and a speech bubble in code; not seen on a phone |
 | Pause card (Leave / Stay) | Not working | A real Pause card view exists in code; not confirmed end to end |
 | Nap, Stop, Wake | Jixxy never came back | Fixed in code, needs a phone test |
@@ -33,14 +33,14 @@ The one to try is the rolling **`latest`** build: <https://github.com/manofwhite
 
 ## Progress checklist
 
-`[x]` = done. `[ ]` = not done yet. "Written" means the code exists and the computer's tests pass; **only the Owner seeing it work on a phone counts as "seen on a phone".** Last checked 2026-11-07 against commit `b53f71d`.
+`[x]` = done. `[ ]` = not done yet. "Written" means the code exists and the computer's tests pass; **only the Owner seeing it work on a phone counts as "seen on a phone".** Last checked 2026-11-07 against commit `1b835ec`.
 
 ### Seen working on a real phone
 - [x] Installs and opens (`v0.0.1-alpha`)
 - [x] Floating placeholder sprite can be switched on (alpha)
 - [ ] Real app screens and setup
 - [x] The real cat appears on the home screen (Owner screenshot, 2026-11-07)
-- [ ] The cat art looks whole (he looks cut off at the bottom; a fix is being written, not seen)
+- [ ] The cat art looks whole (he looked cut off at the bottom; a ledge was tried and is now replaced by a floating cloud, written, not seen)
 - [ ] Speech bubbles and lines
 - [ ] Pause card: Leave and Stay
 - [ ] Nap, Stop, Wake (fix written, not seen)
@@ -51,24 +51,27 @@ The one to try is the rolling **`latest`** build: <https://github.com/manofwhite
 
 ### Written, in the `latest` build or on `main`, not yet seen on a phone
 - [x] Real app as the launcher, guided setup, Home, Settings, "What Jixxy saw"
-- [x] 18 cat expression images, speech bubble, Pause card
+- [x] 18 cat expression images, speech bubble, Pause card, and a soft cloud he floats on with a gentle bob (it stills when system animations are off)
 - [x] No limit on Pause apps (cap removed in the screens and the brain; code only)
 - [x] Calm / Naggy / Chaos nag level in Settings, default Naggy (code only)
 - [x] Line bank (700+ English lines, more being added) connected to the brain
 - [x] Weekly review screen and share card
 - [x] Hinglish as an opt-in beta
-- [x] Local debug report and crash log (hidden "Report a problem" screen until wired in)
+- [x] Local debug report and crash log, with a "Report a problem" section in Settings (Copy debug info, Clear). It stays on your phone until you copy and send it yourself.
+- [x] Optional sounds: a Sounds switch in Settings (off by default) with synthesised meows and typing blips. Silent mode, Do Not Disturb, calls, music and quiet hours all win.
+- [x] An optional once-a-week "your week is ready" notification, with its own switch
 - [x] Offline checks: no internet permission, signing key match, no secrets
 
 ### Decided, not written yet
-- [ ] Optional meows and blips (off by default)
+- [ ] Recorded (public-domain) cat sounds as an alternative to the synthesised ones
 - [ ] Sharper art, plus a closed-eyes blink frame (yawn, stretch and sleep now exist)
 
 ### Docs and launch prep
 - [x] README, CHANGELOG, privacy notice, brand guide
 - [x] Landing page (static, no outside requests)
 - [x] Owner test guide and tester kit (WhatsApp invite, 5 questions)
-- [x] Distribution memo and licence memo
+- [x] Distribution memo, licence memo and a Google Play preparation pack (preparation only, no Play account chosen)
+- [x] Static FAQ page and a claims-versus-evidence table
 - [x] Launch scripts and phone-recording shot list (on hold)
 - [ ] Landing page speed score (Lighthouse) checked
 - [ ] Landing page opened and checked by the Owner (GitHub Pages is on and has deployed)
@@ -86,6 +89,7 @@ The one to try is the rolling **`latest`** build: <https://github.com/manofwhite
 - **You pick the apps.** When you open one, Jixxy shows a short pause card with **Leave** and **Stay** buttons. You stay in control.
 - **He is naggy, on purpose, and you set how much.** Persistent and dramatic ("again?"), but every card and bubble can be dismissed, and a one-tap nap is always there. A Calm / Naggy / Chaos dial is in Settings in the newest build (written, **not yet seen on a phone**); Naggy is the default.
 - **He roasts the situation, never you.** Late at night he gets softer.
+- **Optional sounds.** Meows and little typing blips, **off by default**, and silent whenever your phone is on silent, in a call, playing music or in quiet hours.
 - **Weekly,** a shareable "Jixxy's review of your week" card.
 - **No guilt mechanics.** No lost streaks, no punishment for being away, no pet death.
 
@@ -95,7 +99,7 @@ Jixxy makes no health or medical claims and is not a treatment for anything. He 
 
 ## Everything stays on your phone
 
-The app is built **without the internet permission**, with no analytics, ads or accounts. He has no accessibility service, notification listener, microphone, camera, location or contacts permission, and never reads message content. Anyone can check the permission list in Android's app info. Details: [PRIVACY.md](PRIVACY.md).
+The app is built **without the internet permission**, with no analytics, ads or accounts. A small local debug log stays on your phone and leaves only if you copy it and send it yourself. He has no accessibility service, notification listener, microphone, camera, location or contacts permission, and never reads message content. Anyone can check the permission list in Android's app info. Details: [PRIVACY.md](PRIVACY.md).
 
 ---
 
@@ -149,7 +153,7 @@ Simple events (for example, "opened an app at 23:40"), kept on your phone and de
 Yes. No ads, no accounts, no payments.
 
 **Which phones?**
-Android 8.0 or newer.
+Android 8.0 or newer, so Android 12 and Samsung One UI 4.1 are supported in principle. On Android 12 and older, setup is shorter (no restricted-settings step, no notification prompt). Nobody has tested Jixxy on an Android 12 phone yet, so tell us how it goes.
 
 ---
 
@@ -157,6 +161,7 @@ Android 8.0 or newer.
 
 - **Alpha.** Expect rough edges. See [CHANGELOG.md](CHANGELOG.md) and the team's bug list [`qa/BUGS.md`](qa/BUGS.md).
 - **Nothing in the newest builds has been seen on a phone.** That includes the Pause flow (especially Leave going Home on Android 14 and 15), the speech bubble, the overlay with the bigger cat, starting again after a restart or update, and keep-alive on Samsung, Xiaomi, Oppo and Vivo.
+- **The cloud and the floating motion are new and have not been seen on a phone.**
 - **Art is soft.** The cat sprites come from a small source image, and the closed-eyes blink frame is missing (yawn, stretch and sleep now exist); a simple squash stands in for it.
 - Phones with **aggressive battery managers** may close Jixxy in the background.
 - **Android only.** No iOS version is planned.

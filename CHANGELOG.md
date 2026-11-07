@@ -13,9 +13,12 @@ Work towards the first tester build, `v0.1.0`. Nothing here has been released.
 ### Added (on `main`, in the rolling `latest` build; written and unit-tested by CI, **not yet seen on a phone**)
 - The real app as the launcher: guided setup, Home, Settings, "What Jixxy saw" (last 7 days, erasable), a per-brand keep-alive guide, a weekly review screen with a share card.
 - The cat: 18 expression images cut from the Owner's sheet, a speech bubble, and the Pause card (Leave / Stay). The sprites are soft and three frames are missing (a squash stands in).
-- The line bank (700+ English lines) is connected through the brain. The Pause-app cap is removed and a Calm / Naggy / Chaos nag level (default Naggy) is in Settings (D-020), both in code and not yet seen on a phone. Sounds (D-021) have a setting field that defaults to off, but no audio files yet.
+- The line bank (700+ English lines) is connected through the brain. The Pause-app cap is removed and a Calm / Naggy / Chaos nag level (default Naggy) is in Settings (D-020), both in code and not yet seen on a phone. Optional sounds (D-021): a Sounds switch, off by default, with synthesised meows and typing blips that respect silent mode, calls, music and quiet hours (recorded sound files are not added yet).
 - Hinglish as an opt-in **beta** (off by default, labelled beta, no native-speaker read-through yet).
-- A "Report a problem" section in Settings. Its "Copy debug info" button is hidden until the diagnostics log exists.
+- A "Report a problem" section in Settings with "Copy debug info" and "Clear", backed by a local ring-buffer log and crash handler that never leave the phone unless the user copies the report.
+- A soft cloud under the cat, with a gentle float motion (D-023); it replaces the earlier ledge that hid the flat bottom of the sprites.
+- An optional once-a-week notification for the weekly review, with its own switch.
+- A static FAQ page on the site, and a Google Play preparation pack in `store/` (no Play account chosen yet).
 - The rolling `latest` pre-release and the checks that keep the app offline (no internet permission) and signed with the same key.
 
 ### Fixed (on `main`, not yet in a numbered release, not yet checked on a device)
