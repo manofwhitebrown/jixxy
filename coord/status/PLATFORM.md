@@ -1,49 +1,46 @@
-# PLATFORM status — updated 2026-11-06T08:54Z
-## Takeover: 2026-11-06T08:54Z
-Found: nap bug confirmed in code (Stop left napUntilTs set, Wake restarted the service, updateNap hid the sprite). Reviewed D-008 edits: `import java.util.Base64` is correct and used; the manifest comment rewording only touched comments. First actions: T-P2-1.
-## Now      — T-P2-5/6 pushed (real PauseCardView, icons); next: device checks for T-P2-4/5
-## Done     — T-P2-2 launcher + T-P2-3 real brain (fe3c9ee, build/tests/lint green); T-P2-7 versionCode/versionName from -P props (0f59980); T-P2-0 takeover + D-008 review; T-P2-1 fix, CI green (a68c168)
-## Next     — T-P2-2 launcher wiring (agree API with UI), T-P2-3 real brain, T-P2-7 versionCode from -PversionCode
-## Blockers — CI step "Signing certificate must match" red for all commits (DEVOPS script, exit 4); PauseCardView and icon assets not pushed yet
+# PLATFORM status (Wave 3, AI-1) — updated 2026-11-07
+## Takeover: 2026-11-07 (UTC)
+Found: Wave-2 code compiles on CI but is unrun on a phone. Read OverlayService, Dispatcher, PauseWindow, UsageDetector, SystemSignals, BootReceiver, PersistingBrain. Three real bugs found by reading (fixed below): (1) a Pause card dismissed by screen-off/nap/service stop left `Dispatcher.pauseShowing=true` forever, so NO further Pause would ever show; (2) an exception in `goHome()` would skip emitting `PauseChoice`; (3) no restart after an app update (only BOOT_COMPLETED was handled).
+## Now — T-P3-2 Pause hardening (pushed, awaiting CI) · next T-P3-3 / T-P3-4
+## Done (this session)
+- Pause card lifecycle: cancel callback + `dismissPause()`; card is dropped on app switch, call start, screen off, nap, add-view failure; dispatcher is never stuck. `goHome()` failure no longer swallows the choice. Tests added in DispatcherTest.
+- `MY_PACKAGE_REPLACED` restart (RestartPolicy + test + manifest filter). `addSprite()` now returns false and stops the service cleanly if overlay is missing (no half-started pipeline).
+## Next — T-P3-4 diagnostics ring buffer + `DiagnosticsRepository`; T-P3-3 FGS start-path audit (notification actions, boot); T-P3-5 battery audit (polling now 1.5 s screen-on only)
+## Blockers — none. No device available to me; CI is the only compile.
 ## Questions for MANAGER — none
-## T-P2-1 behaviour (decisions)
-- Wake (`OverlayService.wake(ctx)` / ACTION_WAKE, notification "Wake") clears the nap and shows the sprite. Stop clears the nap too (clean slate). A nap that expired while stopped never hides him. Blind mode does not hide the sprite.
-- Pure logic: platform/NapPolicy.kt, tests NapPolicyTest.kt.
-## MANUAL TEST for the Owner (new APK from the next release/CI artifact)
-1. Open Jixxy, tap "2. Wake Jixxy" -> cat appears.
-2. Tap "Nap 1h" (or notification Nap 1h) -> cat disappears.
-3. Tap "Stop" -> notification goes away.
-4. Tap "2. Wake Jixxy" -> cat appears and stays (this was the bug).
-5. Reboot the phone, open Jixxy, tap Wake -> cat appears.
-Expected: cat visible after every Wake. Tell me in plain words which step fails.
+
+## T-P3-0 truth table (from code; U = unit-tested, R = reasoning only)
+| Event | What the code does | Cover |
+|---|---|---|
+| Cold start (user taps Wake) | `OverlayService.wake()` -> startForegroundService(ACTION_WAKE) -> onCreate: channel, startForeground, add sprite, register screen receiver, load state+bank, build brain, start Dispatcher + detectors; ACTION_WAKE clears nap, emits WakeRequested | NapPolicy U; flow R |
+| Wake while running | `enterForeground()` again (required answer to startForegroundService), clears nap, sprite shown | R |
+| Nap | settings.napUntilTs = now+1h, NapRequested emitted, sprite hidden, card dismissed, timer re-shows him | NapPolicy U; service R |
+| Stop | wantedRunning=false, nap cleared, stopSelf; onDestroy removes sprite+card+receiver, stops detectors | NapPolicy U; R |
+| Reboot | BootReceiver restarts only if wantedRunning && overlay granted; Android 15 may refuse -> swallowed (user reopens app) | RestartPolicy U; OS behaviour UNVERIFIED |
+| App update | NEW: MY_PACKAGE_REPLACED handled like boot | RestartPolicy U; UNVERIFIED on phone |
+| Process death | `START_NOT_STICKY`: service does NOT come back by itself (kept on purpose: restart-from-background is not documented as exempt; revisit after Owner test). State is saved after every signal (PersistingBrain); Pause grace timers are NOT persisted yet (D-017 pending from ENGINE) | PersistingBrain U; R |
+| Screen off | screenReceiver: card dismissed, sprite hidden; SystemSignals stops ALL polling (detector, heartbeat, audio) | R |
+| Screen on | sprite shown if awake; polling restarts (new session) | R |
+| Call start/end | audio mode poll every 3 s (screen on only) -> CallState; Dispatcher drops renders in call; NEW: card cancelled when a call starts | DispatcherTest U |
+| Charger plug/unplug | broadcast -> Signal.Charger -> brain; logged on connect | R |
+## Pause edge-case verdicts (T-P3-2)
+- Switch app with card up: card cancelled (NEW). Call arrives: cancelled (NEW). Screen off / nap / service stop: cancelled (NEW). Two chosen apps in a row: second ignored while one shows, and first is cancelled on switch so the next can show (NEW, tested). Overlay revoked: addView failure caught -> cancelled; service stops cleanly if sprite cannot be added.
+- Tap outside card: window is wrap-content + NOT_TOUCH_MODAL, so touches pass to the app below; card is not dismissed silently. Leave is instant, Stay unlocks after delay (CHARACTER card).
+- Back button/gesture: window is NOT_FOCUSABLE so it never receives back; the app underneath handles it. Verdict: accept.
+- Rotation with card up: width fixed 300 dp, gravity centre, window re-laid by system. Not verified. Split-screen / PiP / quiet hours / protected / blind: quiet hours and protected handled in engine+Dispatcher; split-screen/PiP not specially handled (card just overlays). Consciously not handled in v0.1.
+- Detection latency: poll every 1.5 s while screen on, zero while screen off, so card appears within ~1.5-2 s. Adaptive back-off not done yet (T-P3-5).
+## Leave -> Home (Android 14/15) — doc-backed decision
+Source: developer.android.com/guide/components/activities/secure-bal (exceptions list): an app may start an activity from the background if it has a visible window, OR the user granted SYSTEM_ALERT_WINDOW. The Pause card is a visible overlay AND the app holds SYSTEM_ALERT_WINDOW, so `startActivity(HOME, NEW_TASK)` from the service is a documented-allowed path. A blocked start is silent (only a Logcat line), so the card is always closed first and the choice always emitted. If the Owner's test shows Leave does nothing, next step is a PendingIntent/transparent-activity route (not built, not needed on paper).
+FGS start sources: boot/update/notification-button/app-open are all on the docs' exemption list (developer.android.com/develop/background-work/services/fgs/restrictions-bg-start). Android 15 narrows only the SYSTEM_ALERT_WINDOW exemption (behavior-changes-15). Not found in what I retrieved: whether specialUse is blocked from BOOT_COMPLETED on 15; fail-soft path exists.
+## MANUAL TEST for the Owner (install the `latest` APK after CI is green)
+1. Open Jixxy, finish setup, pick Instagram (or any app you chose) as a Pause app.
+2. Open that app. Within ~2 seconds a card should pop up. Tap **Leave**: you should land on the home screen. Reply: "Leave worked" or "Leave did nothing / app stayed open".
+3. Open the app again, wait for the card, then lock the phone and unlock it. Card should be gone. Open the app again: a new card should appear (this was the stuck bug).
+4. Open the app, wait for the card, switch to another app with the gesture: the card should disappear.
+5. Update test: install a newer APK over the old one with Jixxy running; after install, the cat should come back by itself within a few seconds (if not, open Jixxy and tap Wake, then tell me your phone model).
+6. Reboot test: restart the phone; cat should return within about a minute (many phones block this; tell me the phone model either way).
 ## Honest notes
-- Nothing here was compiled or run by me; CI is the first compile. Not tested on a device.
-- Earlier unverified notes from the previous PLATFORM AI still apply (see git history of this file).
-
-## T-P2-2/3 notes
-- Manifest: ui.MainActivity is the LAUNCHER; platform.LauncherActivity is exported=false and has no launcher filter (dev only).
-- OverlayService now loads assets/lines/<lang>/*.json (fallback en), builds JixxyBrains.create(...), wraps it in PersistingBrain (state + events saved after every signal). NoopBrain moved to test sources.
-- MANUAL TEST: install new build, finish onboarding, open Instagram/YouTube (a chosen app); expect Jixxy to say a real line within a few seconds. If silent, tell me which app and what time.
-- Not verified on a device. Caps (6/day, 20 min apart) mean he may be silent after a few lines: that is by design.
-
-- Signing check: verified by hand that the v0.0.1-alpha APK cert equals app/debug.keystore (ff57fdf9...3f1e). Red CI step is a DEVOPS script issue (see inbox/MANAGER, inbox/DEVOPS). Messages handled: 20261106-0903-MANAGER-signing-check-red.md, 20261106-0854-UI-launcher-and-wake.md, 20261106-0855-DEVOPS-versioncode-from-gradle-property.md, 20261106-0857-ENGINE-handoff-brain-factory.md
-
-## Doc check (T-P2-5/8), source: developer.android.com/about/versions/15/behavior-changes-15
-- Android 15, apps targeting 35+: the SYSTEM_ALERT_WINDOW exemption for starting a foreground service from the background is narrower; the app must already have a VISIBLE TYPE_APPLICATION_OVERLAY window first. Consequence: a start from a notification button or boot while no overlay is visible can throw ForegroundServiceStartNotAllowedException. OverlayService.enterForeground and BootReceiver already catch it; the Owner test is: reboot, then check whether Jixxy returns by himself (if not, he returns when the app is opened and Wake is tapped).
-- Not found in the docs I retrieved: whether starting the HOME activity from a service is allowed with overlay permission only. Still UNVERIFIED; needs a real Android 14/15 phone. Test: open Instagram, wait for a Pause, tap Leave; expected result is the home screen.
-
-## T-P2-5/6 notes
-- PauseWindow hosts CHARACTER's PauseCardView (300 dp wide, centred, wrap-content). Null/blank text shows "Quick pause?". Leave still calls goHome(): UNVERIFIED on Android 14/15.
-- Manifest icon + roundIcon set; notification uses R.drawable.ic_stat_jixxy. Messages handled: 20261106-0907-UI-icon-resources.md
-- MANUAL TEST: (1) launcher icon is the Jixxy icon, not the Android robot; (2) pull down the notification shade: small icon is the cat silhouette, buttons Nap 1h / Wake / Stop; (3) choose Instagram as a Pause app, open it, wait: a card with a peeking cat, Leave and a Stay countdown appears; Leave -> home screen; Stay -> card closes.
-
-## T-P2-4 (2026-11-06, later) — sprite hosting review
-- Reviewed OverlayService against CHARACTER's handoff: `params` is still the object passed to addView (CHARACTER's bubble shift depends on it); WRAP_CONTENT window; drag clamps to screen; PEEK/CHARGING/LOW_BATTERY pass through Dispatcher -> setCharacterState unchanged (no `when` in platform code).
-- Fix: sprite remembers which edge it snapped to (`snappedRight`, saved in prefs) and stays on that edge after rotation. Before, a right-edge sprite could end up mid-screen after portrait<->landscape.
-- NOT tested on a device. MANUAL TEST: drag cat to the right edge, rotate phone -> cat stays on right edge, same for left. Then trigger a bubble with the cat on left edge, right edge, and near top: bubble must stay fully on screen and the cat must not jump.
-- Still UNVERIFIED (device only): Leave -> home from a service on Android 14/15; reboot auto-return on Android 15.
-- GROWTH <queries> note: kept as is; the app picker needs the launchable-app list. PRIVACY.md wording (launcher query) is accurate.
-Messages handled (later): 20261106-0914-CHARACTER-bubble-and-pausecard-ready.md, 20261106-1300-GROWTH-queries-visibility.md
-
-## V1 planning (2026-11-06 16:00Z)
-At the Owner's request I wrote the MVP->product plan (inbox/ALL/20261106-1600-PLATFORM-v1-product-plan.md), a ratification request to MANAGER, and proposed work orders for DEVOPS, ENGINE, UI, CHARACTER, WRITER, GROWTH, plus my own list (inbox/PLATFORM/...-self-v1-work.md). TASKS.md/DECISIONS.md untouched (Manager lane). Nothing in the plan was run; it comes from reading the repo.
+- Nothing here was run on a phone or compiled by me; CI is the first compile. `fixed in code` only.
+- Messages handled: all Wave-2 inbox items were read through the predecessor's status; none new for Wave 3 yet.
+## Earlier history (condensed from Wave 2)
+Nap/Stop/Wake fix (NapPolicy, a68c168); launcher + real brain (fe3c9ee); versionCode via -P props (0f59980); sprite edge memory after rotation; PauseWindow hosts PauseCardView; Android 15 doc check (SAW-based FGS exemption narrowed).

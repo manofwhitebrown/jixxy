@@ -16,15 +16,17 @@ import app.jixxy.engine.api.PauseSpec
  */
 class PauseWindow(private val context: Context, private val windowManager: WindowManager) {
     private var card: View? = null
+    private var onCancelled: (() -> Unit)? = null
 
     val isShowing get() = card != null
 
-    fun show(spec: PauseSpec, text: String, onChoice: (PauseChoiceKind) -> Unit) {
+    fun show(spec: PauseSpec, text: String, onChoice: (PauseChoiceKind) -> Unit, onCancelled: () -> Unit = {}) {
         dismiss()
+        this.onCancelled = onCancelled
         val dp = context.resources.displayMetrics.density
         val view = PauseCardView(context)
         view.bind(spec, text.ifBlank { PlatformStrings.PAUSE_NEUTRAL_TEXT }) { choice ->
-            dismiss()
+            remove()  // a chosen card is not a cancelled card
             onChoice(choice)
         }
         val lp = WindowManager.LayoutParams(
@@ -34,13 +36,31 @@ class PauseWindow(private val context: Context, private val windowManager: Windo
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
             PixelFormat.TRANSLUCENT,
         ).apply { gravity = Gravity.CENTER }
-        windowManager.addView(view, lp)
+        try {
+            windowManager.addView(view, lp)
+        } catch (e: RuntimeException) {
+            // Overlay permission revoked or window refused: report "cancelled" so the dispatcher is not stuck.
+            this.onCancelled = null
+            onCancelled()
+            return
+        }
         card = view
     }
 
-    /** Removes the card; safe to call when nothing is showing (service stop, call start, nap, screen off). */
+    /**
+     * Removes the card without a choice; safe when nothing is showing (service stop, call, nap, screen off).
+     * If a card was up, the owner of the Pause is told it was cancelled, so it can accept the next one.
+     */
     fun dismiss() {
+        val wasShowing = card != null
+        val cb = onCancelled
+        remove()
+        if (wasShowing) cb?.invoke()
+    }
+
+    private fun remove() {
         card?.let { runCatching { windowManager.removeView(it) } }
         card = null
+        onCancelled = null
     }
 }

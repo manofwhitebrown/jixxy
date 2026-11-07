@@ -91,7 +91,7 @@ class OverlayService : Service(), ReactionRenderer {
             return
         }
         setWantedRunning(this, true)
-        addSprite()
+        if (!addSprite()) { stopSelf(); return }
         registerReceiver(screenReceiver, IntentFilter().apply {
             addAction(Intent.ACTION_SCREEN_ON)
             addAction(Intent.ACTION_SCREEN_OFF)
@@ -200,11 +200,20 @@ class OverlayService : Service(), ReactionRenderer {
         sprite?.setCharacterState(state)
     }
 
-    override fun showPause(spec: PauseSpec, text: String, onChoice: (PauseChoiceKind) -> Unit) {
-        pauseWindow.show(spec, text, onChoice)
+    override fun showPause(spec: PauseSpec, text: String, onChoice: (PauseChoiceKind) -> Unit, onCancelled: () -> Unit) {
+        pauseWindow.show(spec, text, onChoice, onCancelled)
     }
 
-    /** Sends the user to the home screen. Background-start allowance via SYSTEM_ALERT_WINDOW is unverified for Android 14+. */
+    override fun dismissPause() = pauseWindow.dismiss()
+
+    /**
+     * Sends the user to the home screen from the Leave tap.
+     * Why this is allowed: Android lets an app start an activity from the background if it holds the user-granted
+     * SYSTEM_ALERT_WINDOW permission or has a visible window; the Pause card is both, and Leave is a direct user tap
+     * (developer.android.com/guide/components/activities/secure-bal, "exceptions" list).
+     * A blocked start is silent (only a Logcat line), so the caller already closed the card before this runs:
+     * worst case the user stays in the app with the card gone, never stuck behind it.
+     */
     override fun goHome() {
         startActivity(
             Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -224,8 +233,9 @@ class OverlayService : Service(), ReactionRenderer {
         false
     }
 
-    private fun addSprite() {
-        if (!Settings.canDrawOverlays(this)) { stopSelf(); return }
+    /** Returns false (and adds nothing) when the overlay permission is missing or Android refuses the window. */
+    private fun addSprite(): Boolean {
+        if (!Settings.canDrawOverlays(this)) return false
         val view = JixxyView(this)
         val prefs = getSharedPreferences(PREFS, MODE_PRIVATE)
         params = WindowManager.LayoutParams(
@@ -243,9 +253,14 @@ class OverlayService : Service(), ReactionRenderer {
         }
         snappedRight = prefs.getBoolean(KEY_RIGHT, false)
         view.listener = spriteListener(view, prefs)
-        windowManager.addView(view, params)
+        try {
+            windowManager.addView(view, params)
+        } catch (e: RuntimeException) {
+            return false  // e.g. permission revoked between the check and the add
+        }
         sprite = view
         applyVisibility()
+        return true
     }
 
     /** The view reports raw finger positions; the window follows them, snaps to an edge on release, and signals the brain. */

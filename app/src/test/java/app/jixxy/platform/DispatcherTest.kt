@@ -40,13 +40,16 @@ class DispatcherTest {
         val said = mutableListOf<String>()
         var pauses = 0
         var homes = 0
+        var dismissed = 0
+        var failHome = false
         var onChoice: ((PauseChoiceKind) -> Unit)? = null
         override fun say(text: String, bubbleMs: Long, lineId: String?) { said += text }
         override fun setCharacterState(state: CharacterState) = Unit
-        override fun showPause(spec: PauseSpec, text: String, onChoice: (PauseChoiceKind) -> Unit) {
+        override fun showPause(spec: PauseSpec, text: String, onChoice: (PauseChoiceKind) -> Unit, onCancelled: () -> Unit) {
             pauses++; this.onChoice = onChoice
         }
-        override fun goHome() { homes++ }
+        override fun dismissPause() { dismissed++ }
+        override fun goHome() { homes++; if (failHome) throw SecurityException("blocked") }
     }
 
     private class Rig(scope: kotlinx.coroutines.CoroutineScope, reactions: List<Reaction>, var settings: UserSettings = UserSettings()) {
@@ -116,5 +119,41 @@ class DispatcherTest {
         r.bus.emit(Signal.Heartbeat(1))
         r.bus.emit(Signal.Heartbeat(2))
         assertEquals(1, r.renderer.pauses)
+    }
+
+    @Test fun switchingAppDismissesCardAndAllowsNext() = runTest(UnconfinedTestDispatcher()) {
+        val r = Rig(backgroundScope, listOf(pause))
+        r.bus.emit(Signal.Heartbeat(1))
+        r.brain.out = emptyList()
+        r.bus.emit(Signal.ForegroundApp("com.other", AppCategory.OTHER, 2))
+        assertEquals(1, r.renderer.dismissed)
+        r.brain.out = listOf(pause)
+        r.bus.emit(Signal.Heartbeat(3))
+        assertEquals(2, r.renderer.pauses)  // not stuck
+    }
+
+    @Test fun callDismissesCard() = runTest(UnconfinedTestDispatcher()) {
+        val r = Rig(backgroundScope, listOf(pause))
+        r.bus.emit(Signal.Heartbeat(1))
+        r.brain.out = emptyList()
+        r.bus.emit(Signal.CallState(true, 2))
+        assertEquals(1, r.renderer.dismissed)
+    }
+
+    @Test fun sameAppForegroundKeepsCard() = runTest(UnconfinedTestDispatcher()) {
+        val r = Rig(backgroundScope, listOf(pause))
+        r.bus.emit(Signal.Heartbeat(1))
+        r.brain.out = emptyList()
+        r.bus.emit(Signal.ForegroundApp("com.x", AppCategory.OTHER, 2))
+        assertEquals(0, r.renderer.dismissed)
+    }
+
+    @Test fun failedGoHomeStillEmitsChoice() = runTest(UnconfinedTestDispatcher()) {
+        val r = Rig(backgroundScope, listOf(pause))
+        r.renderer.failHome = true
+        r.bus.emit(Signal.Heartbeat(1))
+        r.brain.out = emptyList()
+        r.renderer.onChoice!!.invoke(PauseChoiceKind.LEAVE)
+        assertTrue(r.brain.seen.any { it is Signal.PauseChoice })
     }
 }

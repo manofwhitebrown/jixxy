@@ -20,7 +20,11 @@ import kotlinx.coroutines.launch
 interface ReactionRenderer {
     fun say(text: String, bubbleMs: Long, lineId: String?)
     fun setCharacterState(state: CharacterState)
-    fun showPause(spec: PauseSpec, text: String, onChoice: (PauseChoiceKind) -> Unit)
+    /** [onCancelled] fires when the card is removed WITHOUT a choice (screen off, nap, service stop). */
+    fun showPause(spec: PauseSpec, text: String, onChoice: (PauseChoiceKind) -> Unit, onCancelled: () -> Unit)
+
+    /** Removes the card if one is up. Must not report a choice. */
+    fun dismissPause()
     fun goHome()
 }
 
@@ -42,6 +46,7 @@ class Dispatcher(
     private var inCall = false
     private var currentCategory = AppCategory.OTHER
     private var pauseShowing = false
+    private var pausePkg: String? = null
 
     fun start() {
         scope.launch { bus.signals.collect { handle(it) } }
@@ -56,10 +61,23 @@ class Dispatcher(
 
     private fun track(signal: Signal) {
         when (signal) {
-            is Signal.CallState -> inCall = signal.inCall
-            is Signal.ForegroundApp -> currentCategory = signal.category
+            is Signal.CallState -> { inCall = signal.inCall; if (inCall) cancelPause() }
+            is Signal.ForegroundApp -> {
+                currentCategory = signal.category
+                // The user moved on: a card left over the wrong app would be confusing and blocks nothing useful.
+                if (signal.pkg != pausePkg) cancelPause()
+            }
+            is Signal.ScreenState -> if (!signal.on) cancelPause()
             else -> Unit
         }
+    }
+
+    /** Drops a showing card without recording a choice, and frees the dispatcher for the next Pause. */
+    private fun cancelPause() {
+        if (!pauseShowing) return
+        pauseShowing = false
+        pausePkg = null
+        renderer.dismissPause()
     }
 
     private fun canRender(): Boolean {
@@ -83,12 +101,19 @@ class Dispatcher(
     private fun showPause(spec: PauseSpec, text: String) {
         if (pauseShowing) return
         pauseShowing = true
+        pausePkg = spec.pkg
         scope.launch { store.logEvent(UsageEvent(now(), UsageEventType.PAUSE_SHOWN, spec.pkg)) }
-        renderer.showPause(spec, text) { choice ->
-            pauseShowing = false
-            if (choice == PauseChoiceKind.LEAVE) renderer.goHome()
-            bus.emit(Signal.PauseChoice(spec.pkg, choice, now()))
-        }
+        renderer.showPause(
+            spec, text,
+            onChoice = { choice ->
+                pauseShowing = false
+                pausePkg = null
+                // A refused/failed navigation must never swallow the choice: the card is already gone and the engine must hear it.
+                if (choice == PauseChoiceKind.LEAVE) runCatching { renderer.goHome() }
+                bus.emit(Signal.PauseChoice(spec.pkg, choice, now()))
+            },
+            onCancelled = { pauseShowing = false; pausePkg = null },
+        )
     }
 
     /** Logs only facts the engine asked for; never anything from PROTECTED apps. Respects blind mode via the store. */
