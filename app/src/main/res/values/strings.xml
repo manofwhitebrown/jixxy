@@ -209,7 +209,8 @@
     <string name="onboarding_sounds_title">Meows and blips?</string>
     <string name="onboarding_sounds_body">Tiny sounds when I speak. Off by default. Silent mode and calls always win.</string>
     <string name="onboarding_sounds_toggle">Turn sounds on</string>
+    <string name="settings_weekly_label">Weekly review notification</string>
+    <string name="settings_weekly_help">One quiet note on Sunday evening when your week is ready. Nothing is sent anywhere.</string>
     <!-- [P] placeholders: keys not yet in MICROCOPY -->
-    <string name="settings_weekly_label">[P] Weekly review notification</string>
-    <string name="settings_weekly_help">[P] One quiet note on Sunday evening when your week is ready. Nothing is sent anywhere.</string>
+
 </resources>
