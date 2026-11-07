@@ -75,4 +75,6 @@ With about 20 people, never publish percentages or claims like "reduced screen t
 | Shares of the weekly card | Ask "did you share anything he made?" at Day 7; count as reports. |
 | "Was he annoying?" | Q1, coded 1–2 / 3 / 4–5. Any "guilt" or "too personal" answer goes to MANAGER first. |
 
+To tally the answers, copy `growth/tools/feedback_template.csv` somewhere **outside the repo**, add one row per tester, and run `python3 growth/tools/summarise_feedback.py your.csv` (standard library only; `--selftest` checks it). Delete the file when the test ends.
+
 Send MANAGER a short summary: counts, quotes, brand-by-brand survival notes, lines to change.
