@@ -79,5 +79,4 @@ internal object SettingsPrefs {
         val SOUNDS = booleanPreferencesKey("sounds_enabled")
         val NAP_UNTIL = longPreferencesKey("nap_until_ts")
         val PAUSES = booleanPreferencesKey("pauses_enabled")
-    }
 }
