@@ -6,6 +6,8 @@ Checks
   2. no single image there is > 512x512 px or > 300 KB
   3. no unexpected binary files anywhere in the repo (allowlist below)
   4. no remote URLs used as resources inside site/ (plain <a href> links are fine)
+  6. sounds (D-021): character/src/main/res/raw/*.ogg only, <= 400 KB combined, and every file listed with a source URL and licence
+     (CC0 or generated) in design/character/audio/CREDITS.md
   5. site/ stays small: <= 1 MB in total, no single file > 300 KB (T-D3-5)
 """
 import os, re, struct, subprocess, sys
@@ -14,6 +16,9 @@ CHAR_RES = "character/src/main/res"
 MAX_TOTAL = 3 * 1024 * 1024
 MAX_FILE = 300 * 1024
 MAX_SITE_TOTAL = 1024 * 1024
+RAW_DIR = "character/src/main/res/raw"
+MAX_AUDIO_TOTAL = 400 * 1024
+CREDITS = "design/character/audio/CREDITS.md"
 MAX_DIM = 512
 IMG_EXT = (".png", ".webp", ".jpg", ".jpeg")
 # Binary files that are expected. Anything else binary is reported.
@@ -79,6 +84,8 @@ def main():
         warn(f"{CHAR_RES} totals {total // 1024} KB (limit {MAX_TOTAL // 1024} KB)")
 
     for p in files:
+        if p.startswith(RAW_DIR + "/") and p.lower().endswith(".ogg"):
+            continue   # audio is budgeted and credited below
         if p in BIN_ALLOW_FILE or p.lower().endswith(BIN_ALLOW_EXT) and p.startswith(BIN_ALLOW_PREFIX):
             continue
         if is_binary(p):
@@ -93,6 +100,28 @@ def main():
                 for n, line in enumerate(f, 1):
                     if remote.search(line):
                         warn(f"{p}:{n} loads a remote resource (site must be self-contained)")
+
+    raw = [p for p in files if p.startswith(RAW_DIR + "/") and os.path.exists(p)]
+    for p in raw:
+        if not p.lower().endswith(".ogg"):
+            warn(f"{p}: only .ogg sounds are allowed in res/raw")
+    ogg = [p for p in raw if p.lower().endswith(".ogg")]
+    if ogg:
+        audio_total = sum(os.path.getsize(p) for p in ogg)
+        print(f"audio total: {audio_total // 1024} KB of {MAX_AUDIO_TOTAL // 1024} KB ({len(ogg)} files)")
+        if audio_total > MAX_AUDIO_TOTAL:
+            warn(f"sounds are {audio_total // 1024} KB, budget is {MAX_AUDIO_TOTAL // 1024} KB")
+        credits = open(CREDITS, encoding="utf-8").read() if os.path.exists(CREDITS) else None
+        if credits is None:
+            warn(f"{CREDITS} is missing: every sound needs a credit line with source URL and licence")
+        else:
+            for p in ogg:
+                name = os.path.basename(p)
+                lines = [l for l in credits.splitlines() if name in l]
+                if not lines:
+                    warn(f"{p} has no line in {CREDITS}")
+                elif not any(re.search(r"https?://", l) and re.search(r"CC0|generated", l, re.I) for l in lines):
+                    warn(f"{p}: its line in {CREDITS} needs a source URL and a licence (CC0 or generated)")
 
     site_files = [p for p in files if p.startswith("site/") and os.path.exists(p)]
     site_total = sum(os.path.getsize(p) for p in site_files)

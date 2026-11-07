@@ -1,11 +1,11 @@
 # Milestone M2: the 10-minute Pause test
 
 **Why:** the Pause (Jixxy stops you before a habit app) has never been seen on a real phone. This test says whether it works.
-**Needs:** the newest `jixxy-latest.apk` installed, overlay + usage access + notifications allowed, and **Wake** tapped so the cat is on screen. Pick one habit app you really use (call it APP). Note the **Built** time on the release page.
+**Needs:** the newest `jixxy-latest.apk` installed, overlay + usage access + notifications allowed, and **Wake** tapped so the cat is on screen. Pick one habit app you really use (call it APP). Leave **Nag level** on the default (Naggy) if your build has it. Note the **Built** time on the release page.
 
 Do the steps in order. Answer each as **"step N worked"** or **"step N didn't: what I saw"**.
 
-1. **Pick APP.** In Jixxy, choose APP as one of your 3 apps. *Expect:* it is saved; a 4th app is refused.
+1. **Pick APP.** In Jixxy, choose APP (and as many other apps as you like: there is no limit). *Expect:* it is saved. Banking apps and the dialer can't be picked.
 2. **Trigger.** Go to the home screen, wait 10 seconds, open APP. *Expect:* within about 2 seconds a card appears on top of APP with a joke line, a **Leave** button and a **Stay** button.
 3. **Look.** *Expect:* the card is readable, the cat peeks out, nothing is cut off at the screen edges. Tell us if the text is too small or too big.
 4. **Leave.** Tap **Leave**. *Expect:* you land on the home screen **at once** and the card is gone. (Biggest risk on Android 14/15: if you stay in APP or see a blank screen, say so.)
@@ -14,8 +14,9 @@ Do the steps in order. Answer each as **"step N worked"** or **"step N didn't: w
 7. **Grace.** Keep using APP for 5 minutes. *Expect:* no card during that time. After about 5 minutes Jixxy may ask once more.
 8. **Back button.** Open the card again and press the phone's Back button. *Expect:* the card does not trap you; tell us what happens.
 9. **Other apps.** Open an app you did NOT choose (and a banking app or the dialer). *Expect:* no card.
-10. **Nap.** Nap Jixxy for 1 hour, open APP. *Expect:* no card while he naps.
-11. **After restart (optional).** Restart the phone, open Jixxy once, then APP. *Expect:* the card works again. If it doesn't, say so.
+10. **Too naggy?** ★ In Settings pick **Calm** under Nag level. *Expect:* clearly fewer bubbles. The Pause card on APP still appears (Pause is not a nag, it's the point).
+11. **Nap.** Nap Jixxy for 1 hour, open APP. *Expect:* no card while he naps.
+12. **After restart (optional).** Restart the phone, open Jixxy once, then APP. *Expect:* the card works again. If it doesn't, say so.
 
 ## How to reply (copy and fill in)
 ```
@@ -23,7 +24,7 @@ Phone + Android version:
 Built time:
 Step 1: worked / didn't: ...
 Step 2: worked / didn't: ...
-... (up to 11)
+... (up to 12)
 Anything annoying or funny:
 ```
 We turn every "didn't" into a bug in `qa/BUGS.md`. Only you can mark a bug **verified**.
