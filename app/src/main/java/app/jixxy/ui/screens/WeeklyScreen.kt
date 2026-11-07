@@ -21,6 +21,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.semantics
@@ -43,6 +44,7 @@ import app.jixxy.ui.weekly.WeeklyCardRenderer
 import app.jixxy.ui.weekly.WeeklyCardTexts
 import app.jixxy.ui.weekly.WeeklyLoader
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 /** Weekly review: this week's counts, Jixxy's line, and a Share button that renders the 1080x1350 card on the phone. */
@@ -64,15 +66,21 @@ fun WeeklyScreen(settings: SettingsRepository, store: StateStore, appLabel: (Str
         left = stringResource(R.string.weekly_stat_left),
         stayed = stringResource(R.string.weekly_stat_stayed),
     )
-    WeeklyContent(model, texts, onShare = { model?.let { shareCard(context, it, texts) } })
+    val scope = rememberCoroutineScope()
+    WeeklyContent(model, texts, onShare = { model?.let { m -> scope.launch { shareCard(context, m, texts) } } })
 }
 
-private fun shareCard(context: Context, model: WeeklyCardModel, texts: WeeklyCardTexts) {
-    val bitmap = WeeklyCardRenderer.render(context, model, texts)
-    val uri = WeeklyCardRenderer.saveForShare(context, bitmap)
+/** Draws and saves the card off the UI thread, frees the bitmap, then opens the share sheet. A failure just does nothing. */
+private suspend fun shareCard(context: Context, model: WeeklyCardModel, texts: WeeklyCardTexts) {
+    val uri = withContext(Dispatchers.Default) {
+        runCatching {
+            val bitmap = WeeklyCardRenderer.render(context, model, texts)
+            try { WeeklyCardRenderer.saveForShare(context, bitmap) } finally { bitmap.recycle() }
+        }.getOrNull()
+    } ?: return
     val send = Intent(Intent.ACTION_SEND).setType("image/png").putExtra(Intent.EXTRA_STREAM, uri)
         .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-    context.startActivity(Intent.createChooser(send, null).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+    runCatching { context.startActivity(Intent.createChooser(send, null).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) }
 }
 
 /** Stateless layout. A quiet or still-loading week shows the "not enough data" line and no Share button. */

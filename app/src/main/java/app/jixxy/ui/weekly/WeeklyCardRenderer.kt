@@ -46,13 +46,13 @@ object WeeklyCardRenderer {
         var y = MARGIN
 
         BitmapFactory.decodeResource(context.resources, CharR.drawable.jixxy_expr_smug)?.let { cat ->
-            val h = 360f
+            val h = 320f
             val w = cat.width * h / cat.height
             c.drawBitmap(cat, null, RectF((WIDTH - w) / 2, y, (WIDTH + w) / 2, y + h), Paint(Paint.FILTER_BITMAP_FLAG))
             y += h + 24f
         }
 
-        y = drawText(c, texts.headline, y, 64f, CREAM, bold = true)
+        y = drawText(c, texts.headline, y, 64f, CREAM, bold = true, maxLines = 2)
         y += 36f
 
         val gap = 24f
@@ -61,8 +61,8 @@ object WeeklyCardRenderer {
             .forEachIndexed { i, (value, label) -> drawStat(c, MARGIN + i * (boxW + gap), y, boxW, value, label) }
         y += 230f + 40f
 
-        model.roast?.let { y = drawText(c, it, y, 46f, CREAM, italic = true) + 24f }
-        model.compliment?.let { y = drawText(c, it, y, 46f, PURPLE, italic = true) }
+        model.roast?.let { y = drawText(c, it, y, 46f, CREAM, italic = true, maxLines = 3) + 24f }
+        model.compliment?.let { y = drawText(c, it, y, 46f, PURPLE, italic = true, maxLines = 3) }
 
         val mark = TextPaint(Paint.ANTI_ALIAS_FLAG).apply { color = PURPLE; textSize = 40f; typeface = Typeface.DEFAULT_BOLD }
         c.drawText(texts.mark, WIDTH - MARGIN - mark.measureText(texts.mark), HEIGHT - MARGIN, mark)
@@ -80,13 +80,13 @@ object WeeklyCardRenderer {
     }
 
     /** Draws wrapped text at [y] and returns the y below it. */
-    private fun drawText(c: Canvas, text: String, y: Float, size: Float, color: Int, bold: Boolean = false, italic: Boolean = false): Float {
+    private fun drawText(c: Canvas, text: String, y: Float, size: Float, color: Int, bold: Boolean = false, italic: Boolean = false, maxLines: Int = 4): Float {
         val paint = TextPaint(Paint.ANTI_ALIAS_FLAG).apply {
             this.color = color; textSize = size
             typeface = Typeface.create(Typeface.DEFAULT, when { bold -> Typeface.BOLD; italic -> Typeface.ITALIC; else -> Typeface.NORMAL })
         }
         val layout = StaticLayout.Builder.obtain(text, 0, text.length, paint, (WIDTH - 2 * MARGIN).toInt())
-            .setAlignment(Layout.Alignment.ALIGN_CENTER).setMaxLines(4).build()
+            .setAlignment(Layout.Alignment.ALIGN_CENTER).setMaxLines(maxLines).setEllipsize(android.text.TextUtils.TruncateAt.END).build()
         c.save(); c.translate(MARGIN, y); layout.draw(c); c.restore()
         return y + layout.height
     }
