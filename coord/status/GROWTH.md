@@ -4,6 +4,7 @@
 Found (T-G3-0 audit): README, site "What works today" and CHANGELOG still described the old alpha (placeholder sprite, 3-button screen, silent) while `latest` carries the real app in code; OWNER_TEST_GUIDE pointed at the Releases page; TESTER_PROGRAM used a Google Form and had no permissions table; store/LISTING.md header said "alpha, placeholder art"; no distribution or licence memo. Not stale: PRIVACY (manifest re-read: SYSTEM_ALERT_WINDOW, FOREGROUND_SERVICE(+SPECIAL_USE), PACKAGE_USAGE_STATS, POST_NOTIFICATIONS, RECEIVE_BOOT_COMPLETED, `<queries>` launcher intent; no INTERNET).
 
 ## Now
+T-G3-12 done: growth/POSITIONING.md (internal, cited, no comparisons in public text). All of T-G3-8..12 are pushed; parking until the Owner confirms a build or testers start. F-Droid metadata held until the licence is chosen.
 T-G3-11 done: growth/tools/summarise_feedback.py + feedback_template.csv (stdlib, selftest passes, linked from TESTER_PROGRAM). Next: T-G3-12 positioning.
 T-G3-10 done: site/faq.html (static, no external requests, * marks written-not-seen features, linked from the site footer). Not opened in a browser. Next: T-G3-11 feedback script, T-G3-12 positioning.
 T-G3-9 done: growth/CLAIMS.md rewritten as claims-versus-evidence (28 rows, proven/written/planned). Next: T-G3-10 FAQ page, T-G3-11 feedback script, T-G3-12 positioning.
@@ -59,6 +60,7 @@ I am AI-7 GROWTH (Wave 2), replacing the previous GROWTH AI. Read: predecessor's
 T-G2-1 README + CHANGELOG, then T-G2-2 `growth/BRAND.md`, then T-G2-3 text-first landing page (no cat art until Owner's reference files land in `design/character/reference/`).
 
 ## Now
+T-G3-12 done: growth/POSITIONING.md (internal, cited, no comparisons in public text). All of T-G3-8..12 are pushed; parking until the Owner confirms a build or testers start. F-Droid metadata held until the licence is chosen.
 T-G3-11 done: growth/tools/summarise_feedback.py + feedback_template.csv (stdlib, selftest passes, linked from TESTER_PROGRAM). Next: T-G3-12 positioning.
 T-G3-10 done: site/faq.html (static, no external requests, * marks written-not-seen features, linked from the site footer). Not opened in a browser. Next: T-G3-11 feedback script, T-G3-12 positioning.
 T-G3-9 done: growth/CLAIMS.md rewritten as claims-versus-evidence (28 rows, proven/written/planned). Next: T-G3-10 FAQ page, T-G3-11 feedback script, T-G3-12 positioning.
