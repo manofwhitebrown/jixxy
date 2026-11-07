@@ -8,6 +8,7 @@ import app.jixxy.engine.api.CharacterState
 import app.jixxy.engine.api.JixxyBrain
 import app.jixxy.engine.api.Mood
 import app.jixxy.engine.api.PauseChoiceKind
+import app.jixxy.engine.api.PauseRuntime
 import app.jixxy.engine.api.PauseSpec
 import app.jixxy.engine.api.Reaction
 import app.jixxy.engine.api.ReactionKind
@@ -106,8 +107,23 @@ class DefaultJixxyBrain(
             )
         }
 
-    /** The state to persist after a signal. */
-    fun currentState(): BrainState = state
+    /** The state to persist after a signal, including the Pause runtime state ([BrainState.pause]). */
+    fun currentState(): BrainState = state.copy(pause = pauseRuntime())
+
+    /** Captures Pause runtime state, dropping entries that can no longer matter so the saved text stays small. */
+    private fun pauseRuntime(): PauseRuntime {
+        val staleBefore = lastTs - STAY_KEEP_MS
+        val stay = stayExpiry.filterValues { it > staleBefore }
+        return PauseRuntime(
+            savedTs = lastTs,
+            graceUntil = graceUntil.filterValues { it > lastTs },
+            stayExpiry = stay,
+            secondPromptDone = secondPromptDone.filterTo(mutableSetOf()) { it in stay },
+            promptsToday = pauseCount.toMap(),
+            promptsDayEpoch = dayEpoch,
+            leaveStreak = leaveStreak
+        )
+    }
 
     /** Returns and clears the usage events recorded since the last call (for the platform to persist). */
     fun drainEvents(): List<UsageEvent> {
@@ -350,16 +366,29 @@ class DefaultJixxyBrain(
         return tryUnprompted(Trigger.ALMOST_CARING, now, s)
     }
 
-    /** Rebuilds Pause grace, counts, streak, today's minutes and the line ring from [history] after a restart. */
+    /**
+     * Restores runtime state after a restart: first the saved [BrainState.pause] (survives even when events were
+     * cleared), then the usage events newer than it. A save without Pause state (`savedTs == 0`) is rebuilt from the
+     * events alone, exactly as before D-017.
+     */
     private fun restoreRuntime() {
+        val saved = state.pause
+        if (saved.savedTs > 0L) seedPause(saved)
         val last = history.lastTs() ?: return
-        lastTs = last
-        val today = TimeUtil.epochDay(last, zone)
+        lastTs = maxOf(lastTs, last)
+        val seededDay = dayEpoch
+        val today = maxOf(TimeUtil.epochDay(last, zone), seededDay ?: Long.MIN_VALUE)
+        if (seededDay != null && seededDay < today) {
+            dailyMinutes.clear()
+            pauseCount.clear()
+        }
         dayEpoch = today
+        val savedTs = saved.savedTs
         picker.restoreRecent(history.all().filter { it.type == UsageEventType.LINE_SHOWN }.mapNotNull { it.lineId })
         for (e in history.all()) {
             val pkg = e.pkg
             val isToday = TimeUtil.epochDay(e.ts, zone) == today
+            if (e.ts <= savedTs && e.type in SAVED_CHOICE_EVENTS) continue
             when (e.type) {
                 UsageEventType.FOREGROUND -> if (isToday) firstOpenPending = false
                 UsageEventType.SESSION_MINUTES ->
@@ -367,7 +396,7 @@ class DefaultJixxyBrain(
                 UsageEventType.PAUSE_SHOWN -> if (pkg != null) {
                     if (isToday) pauseCount[pkg] = e.value ?: ((pauseCount[pkg] ?: 0) + 1)
                     val expiry = stayExpiry[pkg]
-                    if (expiry != null && e.ts >= expiry) secondPromptDone += pkg
+                    if (e.ts > savedTs && expiry != null && e.ts >= expiry) secondPromptDone += pkg
                 }
                 UsageEventType.PAUSE_STAY -> if (pkg != null) {
                     val until = e.ts + BrainConfig.stayGraceMinutes * 60_000L
@@ -385,6 +414,16 @@ class DefaultJixxyBrain(
                 else -> Unit
             }
         }
+    }
+
+    private fun seedPause(p: PauseRuntime) {
+        lastTs = p.savedTs
+        graceUntil.putAll(p.graceUntil)
+        stayExpiry.putAll(p.stayExpiry)
+        secondPromptDone.addAll(p.secondPromptDone)
+        pauseCount.putAll(p.promptsToday)
+        dayEpoch = p.promptsDayEpoch
+        leaveStreak = p.leaveStreak
     }
 
     // ---- speaking --------------------------------------------------------------------------
@@ -562,5 +601,9 @@ class DefaultJixxyBrain(
     private companion object {
         const val ALMOST_CARING_PREFIX = "almost_caring"
         const val DAY_MS = 86_400_000L
+        /** Stay grants older than this can no longer trigger the second prompt, so they are not saved. */
+        const val STAY_KEEP_MS = DAY_MS
+        /** Choice events at or before the saved time are already in [PauseRuntime]; replaying them would only repeat that. */
+        val SAVED_CHOICE_EVENTS = setOf(UsageEventType.PAUSE_STAY, UsageEventType.PAUSE_LEAVE)
     }
 }

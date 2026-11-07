@@ -26,3 +26,18 @@
 - Tests: MemoryTest (12 new). 114 tests pass locally (kotlinc 2.1.21 + stand-in JUnit; FakesAndConfigTest needs coroutines-test and was not run locally).
 - Honest notes: Gradle/JUnit/jacoco not run locally, coverage still unmeasured; CI result pending; nothing verified on a device. Callbacks only appear at bond FRIEND+ (bank lines have bondMin 2), almost-caring at RIDE_OR_DIE (bondMin 3), so testers will rarely see them early.
 - Owner manual test: none new until PLATFORM passes `recentEvents`. Then: use Stay on a chosen app, tap Stop then Wake within 5 minutes, reopen the app: no new Pause card should appear.
+
+## Wave 3 — ENGINE AI (takeover 2026-11-07)
+### Takeover (T-E3-0)
+- Found: the brain, BankLinePicker, loader, validator, categories, weekly builder, EventHistory/callbacks and ~115 tests are all in the code. Pause grace, counts, streak and the no-repeat ring were rebuilt from `recentEvents` only; nothing Pause-related was in `BrainState`.
+- D-014 check against code: quiet hours silence only unprompted lines (matches); Pause exempt from energy and cap (matches); SMUG after Stay (matches); late night forces SOFT (not re-checked yet); `almostCaring` has NO global bond floor in the picker (matches, per-line bondMin; tests still to add, T-E3-2); nap owned by the platform (matches).
+- Still missing: callback counters stays_week / late_opens_week / longest_session_day (T-E3-3), JaCoCo + bank simulation (T-E3-4), language fallback tests (T-E3-5), weekly "quiet week" variant (T-E3-6).
+### Done
+- T-E3-1 Pause state persisted: `PauseRuntime` on `BrainState.pause` (Stay grant, grace, second-prompt flag, prompts today, Leave streak) with `encode()`/`decode()`; brain seeds from it, then replays only newer events. 11 tests in PauseRuntimeTest incl. old-save migration, restart mid-grant, one second prompt across restarts, day rollover.
+- INFO to ALL and HANDOFF to PLATFORM sent (SqliteStateStore needs a `pause_json` column + DB version 2).
+### Next — T-E3-2 (tests for per-line bondMin), T-E3-3 (callback counters), T-E3-4 (JaCoCo + simulation on the real bank)
+### Messages handled — 20261107-0513-WRITER-almostcaring-bondmin.md
+### Honest notes
+- Ran locally: kotlinc 2.1.21 plus a stand-in JUnit, 126 tests, all pass. NOT run: real Gradle/JUnit, JaCoCo, FakesAndConfigTest (needs coroutines-test). CI result for this push not yet seen.
+- Nothing is verified on a phone. Until PLATFORM stores `pause_json`, restarts still recover Pause from events as before.
+- Owner test: none new yet; it only becomes visible after PLATFORM stores the field.
