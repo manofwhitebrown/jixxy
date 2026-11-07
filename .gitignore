@@ -16,3 +16,4 @@ captures/
 
 # Dedicated throwaway debug key requested by DEVOPS (no value beyond testing)
 !app/debug.keystore
+design/character/audio/source/

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Builds Jixxy's meow/purr cues (D-021) from the CC0 source clips in design/character/audio/source/.
 
+Input : design/character/audio/source/*.wav, NOT in the repo (asset guard): download the CC0 pack named in CREDITS.md.
 Output: character/src/main/res/raw/jixxy_snd_<cue>.ogg  (mono Ogg Vorbis, trimmed, faded, peak-normalised)
 Budget: all audio <= 400 KB (checked here). Sources and licences: design/character/audio/CREDITS.md.
 
