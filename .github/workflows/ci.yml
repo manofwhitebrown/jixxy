@@ -113,6 +113,11 @@ jobs:
       - name: Manifest guard (merged debug manifest)
         if: steps.assemble.outcome == 'success'
         run: bash scripts/check_manifest.sh debug
+      - name: Resolved dependency guard (what actually ships, transitive libraries included)
+        if: steps.assemble.outcome == 'success'
+        run: |
+          ./gradlew :app:dependencies --configuration releaseRuntimeClasspath --quiet > resolved-deps.txt
+          bash scripts/check_resolved_deps.sh resolved-deps.txt
       - name: Manifest guard (merged RELEASE manifest)
         if: steps.assemble.outcome == 'success'
         run: |

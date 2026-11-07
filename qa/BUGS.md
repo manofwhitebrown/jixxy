@@ -13,7 +13,7 @@ Only the Owner can move a bug to `verified`. New findings: add a row below, one 
 | B-005 | Jixxy says nothing: no lines reach the screen | PLATFORM / ENGINE | fixed in code (real brain `JixxyBrains.create` inside `PersistingBrain`, `Dispatcher.say` calls the real bubble `sprite?.showBubble`, both in `OverlayService`); not seen on a phone |
 | B-006 | Cat looks half cut off (flat cut at the bottom of the sprite) | CHARACTER | open (reported by the Owner via MANAGER, 2026-11-07 10:49; CHARACTER notified) |
 
-All five come from the Owner's first test of `v0.0.1-alpha` (versionCode 1; phone model and Android version were not recorded). Nothing here is `verified` yet: only the Owner moves a row to `verified`.
+B-001 to B-005 come from the Owner's first test of `v0.0.1-alpha` (versionCode 1; phone model and Android version were not recorded). Nothing here is `verified` yet: only the Owner moves a row to `verified`.
 
 ### B-006 Cat looks half cut off
 - Steps: 1. Tap Wake. 2. Look at the cat floating mid-screen on the home screen.
