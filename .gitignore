@@ -16,3 +16,7 @@ captures/
 
 # Dedicated throwaway debug key requested by DEVOPS (no value beyond testing)
 !app/debug.keystore
+
+# Python caches (a committed .pyc once turned main red)
+__pycache__/
+*.pyc

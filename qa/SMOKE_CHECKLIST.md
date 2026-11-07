@@ -4,7 +4,7 @@
 **Only download `latest`.** Ignore the "Actions" artifacts and the `ci-evidence` release; those are developer test files, not apps.
 **Other test lists:** the 10-minute Pause test is `qa/MILESTONE_M2_PAUSE.md`; the full "will he get uninstalled?" list is `qa/KILL_TEST.md`; the overall plan is `qa/TEST_PLAN.md`. This sheet is the quick one.
 **How to answer:** for each step say **OK** or **BROKE** and what you saw. Short is fine. Details at the bottom.
-Steps marked ★ need a feature the release notes say is in your build (Nag level, sounds). If it isn't there yet, say "not in this build".
+Steps marked ★ are for features that reached `main` on 2026-11-07 (Nag level, sounds, no app limit). If your build is older and lacks one, say "not in this build".
 
 ## A. Install (1 min)
 1. Download `jixxy-latest.apk`, tap it, choose **Update**. You should NOT need to uninstall. If Android refuses, copy its exact words.
