@@ -31,6 +31,63 @@ Two columns, so nobody is surprised. **In `v0.0.1-alpha`** is what the Owner saw
 
 The one to try is the rolling **`latest`** build: <https://github.com/manofwhitebrown/jixxy/releases/download/latest/jixxy-latest.apk>. Updates install over an older Jixxy without uninstalling. Tell us what you see using [`growth/OWNER_TEST_GUIDE.md`](growth/OWNER_TEST_GUIDE.md).
 
+## Progress checklist
+
+`[x]` = done. `[ ]` = not done yet. "Written" means the code exists and the computer's tests pass; **only the Owner seeing it work on a phone counts as "seen on a phone".** Updated 2026-11-07.
+
+### Seen working on a real phone
+- [x] Installs and opens (`v0.0.1-alpha`)
+- [x] Floating placeholder sprite can be switched on (alpha)
+- [ ] Real app screens and setup
+- [ ] The cat art (the Owner reported it looks cut off at the bottom; fix written, not seen)
+- [ ] Speech bubbles and lines
+- [ ] Pause card: Leave and Stay
+- [ ] Nap, Stop, Wake (fix written, not seen)
+- [ ] Survives a restart or app update
+- [ ] Keep-alive on Samsung, Xiaomi, Oppo, Vivo
+- [ ] Weekly review card
+- [ ] TalkBack (screen reader) check
+
+### Written, in the `latest` build or on `main`, not yet seen on a phone
+- [x] Real app as the launcher, guided setup, Home, Settings, "What Jixxy saw"
+- [x] 15 cat expression images, speech bubble, Pause card
+- [x] Line bank (about 595 English lines, more being added) connected to the brain
+- [x] Weekly review screen and share card
+- [x] Hinglish as an opt-in beta
+- [x] Local debug report and crash log (hidden "Report a problem" screen until wired in)
+- [x] Offline checks: no internet permission, signing key match, no secrets
+
+### Decided, not written yet
+- [ ] No limit on Pause apps (the older limit of 3 is still in the code)
+- [ ] Calm / Naggy / Chaos dial
+- [ ] Optional meows and blips (off by default)
+- [ ] Sharper art (three animation frames still missing)
+
+### Docs and launch prep
+- [x] README, CHANGELOG, privacy notice, brand guide
+- [x] Landing page (static, no outside requests)
+- [x] Owner test guide and tester kit (WhatsApp invite, 5 questions)
+- [x] Distribution memo and licence memo
+- [x] Launch scripts and phone-recording shot list (on hold)
+- [ ] Landing page speed score (Lighthouse) checked
+- [ ] Landing page live (needs GitHub Pages switched on)
+- [ ] README, CHANGELOG and site matched to a build the Owner confirmed
+
+### Decisions only the Owner can make
+- [ ] Licence for the code, and terms for the cat art and name
+- [ ] Google Play account or another way to distribute
+- [ ] Private release signing key
+- [ ] GitHub Pages on
+- [ ] Rotate the shared GitHub token
+- [ ] Higher-resolution art and the 3 missing frames
+
+### Before testers join
+- [ ] The Owner has tested a build on their phone
+- [ ] About 20 testers (18+) recruited
+- [ ] Seven days of tester feedback collected
+
+---
+
 ## What he's meant to do
 
 - **You pick the apps.** When you open one, Jixxy shows a short pause card with **Leave** and **Stay** buttons. You stay in control.
