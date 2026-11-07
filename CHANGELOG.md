@@ -22,6 +22,8 @@ Work towards the first tester build, `v0.1.0`. Nothing here has been released.
 - The rolling `latest` pre-release and the checks that keep the app offline (no internet permission) and signed with the same key.
 
 ### Fixed (on `main`, not yet in a numbered release, not yet checked on a device)
+- `main` CI was red since the after-leave lines shipped: a first Pause prompt for apps without tier-0 lines (games, shopping, messaging, browsers) could draw a tier-1/2 "again?" line. The picker now falls back to untagged or lower-tier lines before it would serve a higher tier than the prompt count allows (checked against the real bank: 0 of 576 combinations can now escalate early, was 144), and the simulation's tier statistics no longer count after-leave return prompts.
+- Two of the cat's faces could never appear. The hungry `snacks` face now shows when he is poked while out of energy, and the lying-down `sleep` face shows on Home while he is napping.
 - Nap, then Stop, then Wake could leave Jixxy hidden for the rest of the nap. An explicit Wake is meant to clear the nap. Unit tests were added.
 - A Jixxy launcher icon replaces the default Android robot.
 - The real app screen is the launcher instead of the temporary 3-button screen.

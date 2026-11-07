@@ -48,7 +48,7 @@ class BankLinePicker(
         if (query.onBreak) pool = prefer(pool, "on_break")
         if (query.followUp) pool = prefer(pool, "followup")
         if (query.escalation) pool = prefer(pool, "escalation")
-        if (query.trigger == Trigger.PAUSE_PROMPT && !query.followUp) pool = prefer(pool, "tier${minOf(query.tier, 2)}")
+        if (query.trigger == Trigger.PAUSE_PROMPT && !query.followUp) pool = preferTier(pool, minOf(query.tier, 2))
         if (query.afterLeave) pool = prefer(pool, "after_leave")
         if (query.lateNight || query.mood == Mood.SOFT) pool = prefer(pool, "soft")
         val moodMatched = pool.filter { query.mood in it.moods }
@@ -108,6 +108,19 @@ class BankLinePicker(
 
     /** Narrows to lines carrying [tag] if there are any, else leaves the pool alone. */
     private fun prefer(pool: List<Line>, tag: String): List<Line> = pool.filter { tag in it.tags }.ifEmpty { pool }
+
+    /**
+     * Pause prompts climb `tier0` -> `tier2` with the day's prompt count. Prefers lines of exactly tier [want]. When none
+     * fit (tier0 lines only exist for some categories), falls back to untagged or lower-tier lines before it would ever
+     * serve a HIGHER tier than the count allows: the first prompt of the day must not read like the fifth. Only when
+     * nothing lower fits does the whole pool stay in play, so he still speaks.
+     */
+    private fun preferTier(pool: List<Line>, want: Int): List<Line> {
+        val exact = pool.filter { "tier$want" in it.tags }
+        if (exact.isNotEmpty()) return exact
+        val notHigher = pool.filter { l -> ((want + 1)..2).none { "tier$it" in l.tags } }
+        return notHigher.ifEmpty { pool }
+    }
 
     private fun weighted(pool: List<Line>): Line {
         val total = pool.sumOf { weights[it.id] ?: 2 }

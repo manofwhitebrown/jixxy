@@ -76,6 +76,18 @@ class MoodStateTimeTest {
         assertEquals(ReactionKindOut.SILENT_JUDGE, r.send(Signal.SpriteTapped(1, at(0, 12))).single().kind)
     }
 
+    @Test fun pokingHimOutOfEnergyShowsTheSnackFaceNotThePokeSquash() {
+        val r = Rig(state = BrainState(firstSeenTs = 1L, energy = 0))
+        val out = r.send(Signal.SpriteTapped(1, at(0, 12))).single()
+        assertEquals(ReactionKindOut.SAY, out.kind)
+        assertEquals(CharacterState.SNACK, out.state)
+    }
+
+    @Test fun anOrdinaryPokeStillSquashes() {
+        val r = Rig()
+        assertEquals(CharacterState.POKED, r.send(Signal.SpriteTapped(1, at(0, 12))).single().state)
+    }
+
     @Test fun energyRegeneratesWithTime() {
         val r = Rig(state = BrainState(firstSeenTs = 1L, energy = 0))
         r.send(Signal.Heartbeat(at(0, 12)))

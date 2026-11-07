@@ -154,6 +154,31 @@ class BankLinePickerTest {
         assertEquals("fu", p.pick(query(Trigger.PAUSE_PROMPT, followUp = true))!!.id)
     }
 
+    @Test fun pausePromptNeverServesAHigherTierThanTheCountWhenAGentlerLineFits() {
+        // Only SOCIAL/VIDEO have tier0 lines in the real bank; a first prompt for any other app used to draw from
+        // the whole pool and could land on a tier1/tier2 "again?" line. Untagged lines must win over higher tiers.
+        val plain = line("plain", Trigger.PAUSE_PROMPT)
+        val t1 = line("t1", Trigger.PAUSE_PROMPT, tags = setOf("tier1"))
+        val t2 = line("t2", Trigger.PAUSE_PROMPT, tags = setOf("tier2"))
+        for (seed in 1..12) {
+            assertEquals("plain", picker(plain, t1, t2, seed = seed).pick(query(Trigger.PAUSE_PROMPT, tier = 0))!!.id)
+        }
+        // Second prompt, no tier1 line: untagged still beats tier2.
+        for (seed in 1..12) {
+            assertEquals("plain", picker(plain, t2, seed = seed).pick(query(Trigger.PAUSE_PROMPT, tier = 1))!!.id)
+        }
+    }
+
+    @Test fun pausePromptFallsBackToLowerTiersAndThenToAnythingSoHeStillSpeaks() {
+        val t0 = line("t0", Trigger.PAUSE_PROMPT, tags = setOf("tier0"))
+        val t1 = line("t1", Trigger.PAUSE_PROMPT, tags = setOf("tier1"))
+        val t2 = line("t2", Trigger.PAUSE_PROMPT, tags = setOf("tier2"))
+        // Third prompt with no tier2 line: a lower tier is fine.
+        assertTrue(picker(t0, t1).pick(query(Trigger.PAUSE_PROMPT, tier = 2))!!.id in setOf("t0", "t1"))
+        // First prompt where only higher tiers exist: still speaks rather than going quiet.
+        assertTrue(picker(t1, t2).pick(query(Trigger.PAUSE_PROMPT, tier = 0))!!.id in setOf("t1", "t2"))
+    }
+
     @Test fun lateNightPrefersSoftLines() {
         val p = picker(line("loud", Trigger.LATE_NIGHT), line("soft", Trigger.LATE_NIGHT, tags = setOf("soft")))
         assertEquals("soft", p.pick(query(Trigger.LATE_NIGHT, lateNight = true))!!.id)

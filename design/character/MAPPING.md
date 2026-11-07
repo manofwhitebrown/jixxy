@@ -15,7 +15,7 @@ sheet (D-012, cut into sprites per D-013); this file only decides *which* pictur
 | WAKE_GRUMPY | `bro_what` | Bro what?! | Short shake, then back to IDLE. |
 | POKED | level 1: `really`, level 2-3: `bro_what` | | Squash on every tap; escalating shake at x3. |
 | PEEK | `peek` | (peeking over an edge) | Shown before a Pause line. Also top of the Pause card. |
-| SNACK | `snacks` | Snacks. Now. | |
+| SNACK | `snacks` | Snacks. Now. | Emitted when he is poked at 0 energy ("on break"), instead of the poke squash. |
 | PANIC | `shocked` | WHAT?! | Rare. Quick shake, then back to IDLE. |
 | IMPRESSED | `respect` | Respect. | Rare and earned. Slow, clean, no wobble. |
 | SOFT | `soft` | ...you good? | Late night or caring moment. Never mocks. |
@@ -46,4 +46,5 @@ Checked `Expression.kt` (`ExpressionMap.forState`), `ExpressionTest`, the `Chara
 - **Rare states stay rare:** the engine emits `IMPRESSED` (Respect) from 2 places and `PANIC` (shocked) from 1; neither is in the common path.
 - **Late night:** `SOFT` becomes `blanket` between 00:00 and 05:00 (`BLANKET_HOURS`), as the table says. `FALLING` and `DRAGGED` both show `dropped`, as required.
 - **States the engine never emits** (found by searching `engine/src/main`): `SNACK` (the "Snacks. Now." face), `SNORE` (the lying-down `sleep` face), `BLINK` (view-internal, expected), `DRAGGED` (view-internal, expected). So two shipped images, `snacks` and `sleep`, can only appear if the view or another role asks for them. This is a **question for ENGINE/MANAGER, not a bug**: either emit `SNACK` (for example on a hunger-style moment or the charger) and `SNORE` (deep sleep after a long nap), or accept that those faces are spare.
+- **Resolved 2026-11-07 (Owner request: use the spare faces).** `snacks` is now reachable: poking him at 0 energy (the existing `on_break` lines, including the owner-canon "Snacks. Now.") sends `SNACK` instead of `POKED` (`DefaultJixxyBrain.onTap`, tests in `MoodStateTimeTest`). `sleep` is now shown on Home while a nap is running (`CatPoses.forStatus(NAPPING)`, the new `CatPose.SLEEP`); a stopped service keeps the sitting `nap` face. The overlay sprite is hidden during a nap and `SNORE` holds until replaced, so the engine still does not emit `SNORE`: a held lying-down cat on someone's screen with no way to end it would be a new bug, not a feature. Revisit if the platform ever shows the sprite during a nap.
 - **Still open, needs a compiler or the Owner:** dead face channels (BROW/PUPIL/SMILE) in `Pose.kt` and `StatePoses.kt` are left in on purpose because removing them touches tested code and nobody here has a compile; the closed-eyes blink frame needs the Owner's art (`ASSET_REQUEST.md`).

@@ -28,4 +28,5 @@ private fun drawableFor(pose: CatPose): Int = when (pose) {
     CatPose.NAP -> CharR.drawable.jixxy_expr_nap
     CatPose.OOH_NICE -> CharR.drawable.jixxy_expr_ooh_nice
     CatPose.SHOCKED -> CharR.drawable.jixxy_expr_shocked
+    CatPose.SLEEP -> CharR.drawable.jixxy_expr_sleep
 }

@@ -323,7 +323,9 @@ class DefaultJixxyBrain(
         }
         if (!onBreak) state = state.copy(energy = (state.energy - BrainConfig.energyPerLine).coerceAtLeast(0))
         log(UsageEventType.LINE_SHOWN, now, null, null, line.id)
-        return listOf(say(Trigger.POKE, line, now, s, null))
+        val reaction = say(Trigger.POKE, line, now, s, null)
+        // Out of energy ("Snacks. Now. Then maybe I'll talk."): show the hungry face instead of the poke squash.
+        return listOf(if (onBreak) reaction.copy(state = CharacterState.SNACK) else reaction)
     }
 
     /** Dropped after a drag: always the FALLING animation; a `dropped` POKE line at most once per cooldown. */

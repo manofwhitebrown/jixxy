@@ -19,7 +19,11 @@ class CatPosesTest {
         assertEquals(CatPose.REALLY, CatPoses.forStep(OnboardingStep.OVERLAY))
     }
 
-    @Test fun napStatusShowsNapPose() {
-        assertEquals(CatPose.NAP, CatPoses.forStatus(JixxyStatus.NAPPING))
+    @Test fun runningNapShowsHimLyingDownAsleep() {
+        assertEquals(CatPose.SLEEP, CatPoses.forStatus(JixxyStatus.NAPPING))
+    }
+
+    @Test fun stoppedServiceKeepsTheSittingNapPose() {
+        assertEquals(CatPose.NAP, CatPoses.forStatus(JixxyStatus.STOPPED))
     }
 }

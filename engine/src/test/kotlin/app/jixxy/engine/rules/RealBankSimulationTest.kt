@@ -173,6 +173,9 @@ class RealBankSimulationTest {
             val followUp = events.none { it.type == UsageEventType.FOREGROUND && it.pkg == e.pkg && it.ts == e.ts }
             val l = card.line ?: return@forEach
             if (followUp) return@forEach
+            // D-024 return prompts are chosen by "came straight back after a Leave", not by the day's count, so they
+            // carry no tier tag and say nothing about whether the tier ladder holds.
+            if ("after_leave" in l.tags) return@forEach
             val expected = minOf((e.value ?: 1) - 1, 2)
             val shownTier = (0..2).firstOrNull { "tier$it" in l.tags }
             if (shownTier != null && shownTier > expected) early++
