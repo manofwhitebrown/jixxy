@@ -148,3 +148,7 @@ Manager request 20261107-1230. Added 41 EN lines (bank 692), all within the D-02
 - CALLBACK: 9 more across app_visits_day, pauses_day, leaves_week, app_visits_week, stays_week.
 Bible v0.3: 'restraint' replaced by 'persistent but lovable', with the floors listed (section 12). MICROCOPY v1.0 section 19: Nag level setting copy (Calm/Naggy/Chaos, no numbers), onboarding.apps.body no longer says 'fewer is calmer', cap_reached retired. Check: no bank line mentions a number of apps. Validator 918 total, 0 problems.
 Not done / needs ENGINE: unprompted APP_OPEN repeat-open lines ('third time tonight') need a count slot or a fact tag from ENGINE; callbacks only cover thresholds ENGINE lists. Tell me the new thresholds under Naggy and I will tune lines.
+
+## Wave 3, repeat-rate pass from ENGINE's findings (2026-11-07T10:11Z)
+ENGINE (20261107-0540/0546): repeats within 7 days are 26-55% of unprompted lines because pools are small. Added 49 EN lines (bank 741) where pools were smallest: APP_OPEN +16 (2 per category), CHARGER_ON +8, MUSIC +8, SESSION_LONG +10 (adds the first roast-2 GRUMPY line and more SMUG), LATE_NIGHT +8 (all SOFT, no jokes). All slots limited to the ones each trigger already provides; no claims beyond the trigger. Validator 968 total, 0 problems. Not yet added: PAUSE_PROMPT GRUMPY mood in SOCIAL/VIDEO/MESSAGING/SHOPPING/OTHER (ENGINE note 3) and more NAP/WAKE/IMPRESSED; will re-run ENGINE's simulation numbers once they publish a new run.
+UI request 20261107-0547 answered in MICROCOPY v1.1 section 20.

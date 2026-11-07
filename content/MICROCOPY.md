@@ -1,4 +1,4 @@
-# JIXXY — MICROCOPY v1.0
+# JIXXY — MICROCOPY v1.1
 Owner: WRITER · Consumer: UI (→ strings.xml) · Language: en
 
 **Rules**
@@ -345,3 +345,17 @@ D-020 removes the Pause-app cap, so `onboarding.apps.body` no longer says "fewer
 - `settings.nag.calm_hint` — Now and then. Mostly soft.
 - `settings.nag.naggy_hint` — Regular comments. Persistent, but lovable. The default.
 - `settings.nag.chaos_hint` — Opinions all day.
+
+---
+
+## 20. Sounds, turn-down, onboarding nag step (v1.1, D-020/D-021)
+- `settings.sounds.label` — Sounds (meows and blips)
+- `settings.sounds.help` — Off by default. Silent mode and calls always win.
+- `home.turn_down` — Turn him down
+- `home.turned_down` — He's already on Calm. You can change that in Settings.
+- `onboarding.nag.title` — How chatty should I be?
+- `onboarding.nag.body` — Calm, Naggy or Chaos. Change it any time, or turn me down with one tap on Home.
+- `onboarding.sounds.title` — Meows and blips?
+- `onboarding.sounds.body` — Tiny sounds when I speak. Off by default. Silent mode and calls always win.
+- `onboarding.sounds.toggle` — Turn sounds on
+Truth condition: "Silent mode and calls always win" must stay true in the sound code (PLATFORM/UI to confirm).

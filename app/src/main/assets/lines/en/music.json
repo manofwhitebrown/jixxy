@@ -359,5 +359,149 @@
       "music"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "music_any_021",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Tunes! My tail has opinions.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "music_any_022",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Music on. I'm doing the head-bob of approval.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "music_any_023",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Good taste, probably. I haven't checked.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "music_any_024",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Beat detected. Paws ready.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "music_any_025",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "New track? I'm listening with one ear.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "music_any_026",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Music makes the sofa better.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "music_any_027",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Loud enough for the cat, quiet enough for the neighbours.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "music_any_028",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Music in the air. Cat approves.",
+    "slots": [],
+    "tags": [
+      "music"
+    ],
+    "almostCaring": false
   }
 ]

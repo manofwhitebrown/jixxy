@@ -822,5 +822,149 @@
       "safety"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "late_night_any_045",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Still here. Still soft. It's okay.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_046",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Quiet hours. I'm keeping the lamp company.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_047",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Whatever you're doing, take it gently.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_048",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "It's late. Water, blanket, breath. Any order.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_049",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "No pressure. Just a small light in the quiet.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_050",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "I'm here for the quiet parts, too.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_051",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "The night is long. You don't have to fill it.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "late_night_any_052",
+    "trigger": "LATE_NIGHT",
+    "categories": [],
+    "moods": [
+      "SOFT",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Small reminder: tomorrow also gets a vote.",
+    "slots": [],
+    "tags": [
+      "late_night"
+    ],
+    "almostCaring": false
   }
 ]

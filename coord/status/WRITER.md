@@ -34,3 +34,5 @@ Found: EN 621 lines, Hinglish 226, validator 0 problems, nothing device-tested. 
 ## 2026-11-07T05:28Z T-W3-4 done (12 callbacks for the new facts) and D-019 wording done (MICROCOPY v0.9). Handled: 20261107-0524-ENGINE-callback-facts, 20261107-1200-MANAGER-app-cap-8. EN bank 651 lines. Remaining: T-W3-3 rest (needs ENGINE table), T-W3-8 (needs Owner feedback), Hinglish native read (Owner/Manager). Nothing device-tested.
 
 ## 2026-11-07T05:33Z D-020 done on my side: bible v0.3, MICROCOPY v1.0 (Nag level), +41 EN lines (692), validator 0. Handled 20261107-1230-MANAGER-naggy-d020. Asked ENGINE for an app_opens fact slot and the Naggy thresholds. Nothing device-tested; the 'naggy' tone is my judgement until the Owner reacts.
+
+## 2026-11-07T10:11Z Pool widening pushed (+49 lines, bank 741) after ENGINE coverage table; MICROCOPY v1.1 (sounds, turn-down, onboarding nag). Handled 0540/0546 ENGINE and 0547 UI. Next: PAUSE_PROMPT GRUMPY coverage, NAP/WAKE/IMPRESSED pools; rerun repeat rate when ENGINE publishes.

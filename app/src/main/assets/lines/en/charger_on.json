@@ -427,5 +427,153 @@
       "charger_on"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_024",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Charging. The little bar climbs, the tiny cat smiles.",
+    "slots": [],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_025",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Plugged in. Fresh batteries, fresh whiskers.",
+    "slots": [],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_026",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Cable in. Everyone relax.",
+    "slots": [],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_027",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{battery}% and plugged in. Reading the room: calm.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_028",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Charging! I'll stop shaking now.",
+    "slots": [],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_029",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Power returns. The kingdom is saved.",
+    "slots": [],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_030",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Plugged in at {battery}%. A very small victory lap.",
+    "slots": [
+      "battery"
+    ],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "charger_on_any_031",
+    "trigger": "CHARGER_ON",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Charging time. A nap for both of us.",
+    "slots": [],
+    "tags": [
+      "charger_on"
+    ],
+    "almostCaring": false
   }
 ]

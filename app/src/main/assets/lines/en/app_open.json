@@ -1162,5 +1162,357 @@
       "app_open"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "app_open_social_008",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} opens. I've reserved the good cushion.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_social_009",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "SOCIAL"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{app}. I'll be over here, judging quietly, menace.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_video_008",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} opens. I'm bringing snacks. Imaginary ones.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_video_009",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "VIDEO"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "One episode, said the optimist. Hi, {app}.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_game_009",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} time. I'll cheer from the sidelines, quietly.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_game_010",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "GAME"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Good luck in {app}. I'll be judging your aim from here.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_messaging_008",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} opens. Someone somewhere typed 'hey'. Probably.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_messaging_009",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "MESSAGING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Replying in {app}? I'll keep the tail still.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_shopping_006",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} opens. My wallet-sense is tingling.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_shopping_007",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "SHOPPING"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Browsing {app}? I'll be the voice of 'do you need it?'",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_browser_006",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "BROWSER"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} opens. Tab number one. Bold start.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_browser_007",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "BROWSER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app}. A quiet little portal to everything.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_productivity_009",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} opens. I'll keep the sofa warm for your break.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_productivity_010",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "PRODUCTIVITY"
+    ],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Work mode in {app}. I'll nap loudly. Ha.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_other_006",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "OTHER"
+    ],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{app}. I don't know it, but I'm already suspicious, goblin.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "app_open_other_007",
+    "trigger": "APP_OPEN",
+    "categories": [
+      "OTHER"
+    ],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} opens. Mystery guest. I'm intrigued.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "app_open"
+    ],
+    "almostCaring": false
   }
 ]

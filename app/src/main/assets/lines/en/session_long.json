@@ -754,5 +754,210 @@
       "safety"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "session_long_any_038",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Water break? I'd fetch one, but cat.",
+    "slots": [],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_039",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} for {minutes} minutes. Sit up, shoulders down, tail swish.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_040",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Gentle check-in: {minutes} minutes on {app}. Blink slowly, it helps.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_041",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{minutes} minutes. The window has been waiting for you.",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_042",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{minutes} minutes on {app}. My patience is stretching. So should you.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_043",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{app} for {minutes} minutes straight. I'm drafting a very polite memo.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_044",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SLEEPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "{minutes} minutes. Even the sofa checked its watch.",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_045",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "{minutes} minutes on {app}, goblin. My tail fell asleep and woke up twice.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_046",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 3,
+    "bondMin": 1,
+    "lang": "en",
+    "text": "Still {app} after {minutes} minutes? Iconic, menace. Also: stretch.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "session_long_any_047",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "GRUMPY",
+      "CHILL"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Ahem. {minutes} minutes on {app}. I cleared my throat for effect.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long"
+    ],
+    "almostCaring": false
   }
 ]
