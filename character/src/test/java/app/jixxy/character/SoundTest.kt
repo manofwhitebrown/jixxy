@@ -47,4 +47,18 @@ class SoundTest {
         assertEquals(0, sample(last))
         assertTrue((0..last).any { kotlin.math.abs(sample(it)) > 5_000 })
     }
+
+    private val rawDir = java.io.File("src/main/res/raw")
+
+    @Test fun everyCueHasABundledFile() {
+        for (cue in SoundCue.values()) {
+            val f = java.io.File(rawDir, "jixxy_snd_${cue.resName}.ogg")
+            assertTrue("${cue.name}: missing ${f.path}", f.isFile && f.length() > 1_000)
+        }
+    }
+
+    @Test fun bundledAudioStaysUnder400Kb() {
+        val total = (rawDir.listFiles() ?: emptyArray()).sumOf { it.length() }
+        assertTrue("audio is ${total / 1024} KB", total <= 400 * 1024)
+    }
 }
