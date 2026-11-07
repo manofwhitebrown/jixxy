@@ -24,3 +24,5 @@ Found: EN 621 lines, Hinglish 226, validator 0 problems, nothing device-tested. 
 ## 2026-11-07T05:17Z T-W3-7 done: content/HINGLISH_REVIEW.md (30 lines + rubric), DECISION_NEEDED sent to MANAGER asking who can read it.
 
 ## 2026-11-07T05:18Z T-W3-3 partial pushed: +18 Pause prompt lines (roast 3 for all categories, productivity roast 2). Waiting on ENGINE coverage table (T-E3-4) and fact slot names (T-W3-4).
+
+## 2026-11-07T05:20Z T-W3-5 done (weekly praise lines now claim only 'at least one Leave'; +2 headline IDs). No new ENGINE messages yet: T-W3-3 table and T-W3-4 slot names still pending.

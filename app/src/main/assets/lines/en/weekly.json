@@ -132,7 +132,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "{count} times you paused. {count} small wins.",
+    "text": "{count} times you paused. Every one was a tiny choice.",
     "slots": [
       "count"
     ],
@@ -547,7 +547,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "You left when it counted. That's the headline.",
+    "text": "You left at least once. That's the headline.",
     "slots": [],
     "tags": [
       "weekly",
@@ -566,7 +566,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "Some Stays, some Leaves. Mostly fine. Hehe.",
+    "text": "Leaves happened this week. Mostly fine. Hehe.",
     "slots": [],
     "tags": [
       "weekly",
@@ -585,7 +585,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "More Leaves than I expected. Respect. Don't tell anyone.",
+    "text": "A Leave in there somewhere. Respect. Don't tell anyone.",
     "slots": [],
     "tags": [
       "weekly",

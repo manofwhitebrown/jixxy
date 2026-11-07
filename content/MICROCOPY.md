@@ -129,6 +129,8 @@ Format: `key` — text.
 - `weekly.headline.1` — Jixxy's review of your week
 - `weekly.headline.2` — Your week, according to the spreadsheet
 - `weekly.headline.3` — Week in review. I took notes.
+- `weekly.headline.4` — Jixxy's verdict on your week
+- `weekly.headline.quiet` — A very quiet week
 - `weekly.stat.pauses` — Pauses
 - `weekly.stat.left` — Times you left
 - `weekly.stat.stayed` — Times you stayed
