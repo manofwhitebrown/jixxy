@@ -8,6 +8,7 @@ Checks
   4. no remote URLs used as resources inside site/ (plain <a href> links are fine)
   6. sounds (D-021): character/src/main/res/raw/*.ogg only, <= 400 KB combined, and every file listed with a source URL and licence
      (CC0 or generated) in design/character/audio/CREDITS.md
+  7. kept source clips: design/character/audio/source/*.wav, <= 600 KB each and <= 1.5 MB total (not shipped)
   5. site/ stays small: <= 1 MB in total, no single file > 300 KB (T-D3-5)
 """
 import os, re, struct, subprocess, sys
@@ -19,6 +20,9 @@ MAX_SITE_TOTAL = 1024 * 1024
 RAW_DIR = "character/src/main/res/raw"
 MAX_AUDIO_TOTAL = 400 * 1024
 CREDITS = "design/character/audio/CREDITS.md"
+SRC_AUDIO_DIR = "design/character/audio/source"   # kept source clips (not shipped): .wav, <= 600 KB each, <= 1.5 MB total
+MAX_SRC_FILE = 600 * 1024
+MAX_SRC_TOTAL = 1536 * 1024
 MAX_DIM = 512
 IMG_EXT = (".png", ".webp", ".jpg", ".jpeg")
 # Binary files that are expected. Anything else binary is reported.
@@ -86,6 +90,8 @@ def main():
     for p in files:
         if p.startswith(RAW_DIR + "/") and p.lower().endswith(".ogg"):
             continue   # audio is budgeted and credited below
+        if p.startswith(SRC_AUDIO_DIR + "/") and p.lower().endswith(".wav"):
+            continue   # source clips, size-checked below
         if p in BIN_ALLOW_FILE or p.lower().endswith(BIN_ALLOW_EXT) and p.startswith(BIN_ALLOW_PREFIX):
             continue
         if is_binary(p):
@@ -101,6 +107,12 @@ def main():
                     if remote.search(line):
                         warn(f"{p}:{n} loads a remote resource (site must be self-contained)")
 
+    src = [p for p in files if p.startswith(SRC_AUDIO_DIR + "/") and p.lower().endswith(".wav") and os.path.exists(p)]
+    for p in src:
+        if os.path.getsize(p) > MAX_SRC_FILE:
+            warn(f"{p} is {os.path.getsize(p) // 1024} KB (max {MAX_SRC_FILE // 1024} KB per source clip)")
+    if sum(os.path.getsize(p) for p in src) > MAX_SRC_TOTAL:
+        warn(f"source audio clips total {sum(os.path.getsize(p) for p in src) // 1024} KB (max {MAX_SRC_TOTAL // 1024} KB)")
     raw = [p for p in files if p.startswith(RAW_DIR + "/") and os.path.exists(p)]
     for p in raw:
         if not p.lower().endswith(".ogg"):
