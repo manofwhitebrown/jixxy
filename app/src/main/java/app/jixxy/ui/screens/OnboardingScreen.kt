@@ -34,6 +34,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import app.jixxy.R
+import app.jixxy.engine.api.NagLevel
 import app.jixxy.engine.api.RoastLevel
 import app.jixxy.ui.onboarding.AppChoice
 import app.jixxy.ui.components.CatImage
@@ -52,6 +53,7 @@ data class OnboardingActions(
     val openKeepAliveSettings: () -> Unit = {},
     val onTargetAppsChosen: (Set<String>) -> Unit = {},
     val onRoastChosen: (RoastLevel) -> Unit = {},
+    val onNagChosen: (NagLevel) -> Unit = {},
     val onLiteMode: () -> Unit = {},
     /** Called whenever the step or Lite choice changes, so the host can remember where the user was. */
     val onProgress: (OnboardingStep, Boolean) -> Unit = { _, _ -> },
@@ -76,6 +78,7 @@ fun OnboardingScreen(
     LaunchedEffect(step, lite) { actions.onProgress(step, lite) }
     var picked by rememberSaveable { mutableStateOf(emptyList<String>()) }
     var roast by rememberSaveable { mutableStateOf(RoastLevel.NORMAL) }
+    var nag by rememberSaveable { mutableStateOf(NagLevel.NAGGY) }
 
     fun advance() { step = OnboardingFlow.next(step, lite, sdkInt) }
     fun goBack() { step = OnboardingFlow.back(step, lite, sdkInt) }
@@ -140,6 +143,19 @@ fun OnboardingScreen(
                         style = MaterialTheme.typography.bodyMedium,
                     )
                     Text(stringResource(R.string.onboarding_roast_footnote), style = MaterialTheme.typography.bodySmall)
+
+                    Text(stringResource(R.string.settings_nag_label), Modifier.semantics { heading() }, style = MaterialTheme.typography.titleMedium)
+                    FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                        NagLevel.entries.forEach { level ->
+                            FilterChip(
+                                selected = nag == level,
+                                onClick = { nag = level; actions.onNagChosen(level) },
+                                label = { Text(stringResource(nagLabel(level))) },
+                                modifier = Modifier.heightIn(min = 48.dp),
+                            )
+                        }
+                    }
+                    Text(stringResource(nagHintRes(nag)), style = MaterialTheme.typography.bodyMedium)
                 }
                 OnboardingStep.FINISH -> StepBody(R.string.onboarding_finish_title, R.string.onboarding_finish_body)
             }
@@ -153,6 +169,18 @@ fun OnboardingScreen(
             )
         }
     }
+}
+
+private fun nagLabel(level: NagLevel) = when (level) {
+    NagLevel.CALM -> R.string.settings_nag_calm
+    NagLevel.NAGGY -> R.string.settings_nag_naggy
+    NagLevel.CHAOS -> R.string.settings_nag_chaos
+}
+
+private fun nagHintRes(level: NagLevel) = when (level) {
+    NagLevel.CALM -> R.string.settings_nag_calm_hint
+    NagLevel.NAGGY -> R.string.settings_nag_naggy_hint
+    NagLevel.CHAOS -> R.string.settings_nag_chaos_hint
 }
 
 private fun roastLabel(level: RoastLevel) = when (level) {

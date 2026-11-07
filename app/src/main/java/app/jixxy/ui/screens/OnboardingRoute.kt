@@ -69,6 +69,7 @@ fun OnboardingRoute(
             onTargetAppsChosen = { chosen -> scope.launch { settings.update { it.copy(targetApps = chosen) } } },
             onProgress = { step, lite -> prefs.edit().putString(KEY_STEP, step.name).putBoolean(KEY_STEP_LITE, lite).apply() },
             onRoastChosen = { level -> scope.launch { settings.update { it.copy(roast = level) } } },
+            onNagChosen = { level -> scope.launch { settings.update { it.copy(nagLevel = level) } } },
         ),
     )
 }
