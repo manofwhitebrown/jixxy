@@ -66,16 +66,18 @@ internal class BubbleGeometry(
     val overlap: Float,
     val alignRight: Boolean,
     val above: Boolean,
+    /** Height of the sprite area: the sprite square plus the cloud room below it (defaults to [spritePx]). */
+    val spriteH: Float = spritePx,
 ) {
     private val blockH = if (above) bodyH + band else band + bodyH + band
 
     val viewW: Float = max(spritePx, bodyW)
     val spriteX: Float = if (alignRight) viewW - spritePx else 0f
     val spriteY: Float = if (above) blockH - overlap else 0f
-    val viewH: Float = if (above) spriteY + spritePx else spritePx + blockH
+    val viewH: Float = if (above) spriteY + spriteH else spriteH + blockH
 
     val bodyLeft: Float = if (alignRight) viewW - bodyW else 0f
-    val bodyTop: Float = if (above) 0f else spritePx + band
+    val bodyTop: Float = if (above) 0f else spriteH + band
     val bodyRight: Float get() = bodyLeft + bodyW
     val bodyBottom: Float get() = bodyTop + bodyH
 

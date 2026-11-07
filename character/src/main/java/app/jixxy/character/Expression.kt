@@ -19,7 +19,7 @@ internal enum class Expression(val resName: String, val ledgeLeft: Float = -1f, 
     SNACKS("snacks", 25f, 106f),
     HEADPHONES("headphones"),
     RESPECT("respect", 20f, 111f),
-    BLANKET("blanket", 6f, 122f),
+    BLANKET("blanket", 9f, 119f),
     /** Lying down, eyes shut (Owner image, built by `design/character/tools/build_expressions.py`). */
     SLEEP("sleep"),
     /** Big yawn, eyes shut (same pipeline). */
@@ -29,32 +29,32 @@ internal enum class Expression(val resName: String, val ledgeLeft: Float = -1f, 
     ;
 
     /**
-     * True when the sprite's bottom edge is a flat cut (a bust on the Owner's sheet) and needs the ledge in front
-     * of it. [ledgeLeft]..[ledgeRight] are viewbox units (0..128) measured from each image's bottom rows, plus ~5
-     * units either side. Round-bottomed sprites (shocked, charging, headphones, sleep, yawn) have none.
+     * True when the sprite's bottom edge is a flat cut (a bust on the Owner's sheet) and needs the cloud under
+     * it. [ledgeLeft]..[ledgeRight] are viewbox units (0..128) measured from each image's bottom rows, plus ~5
+     * units either side ([CloudShape] adds its own 2). Blanket and stretch are trimmed so the cloud fits the view. Round-bottomed sprites (shocked, charging, headphones, sleep, yawn) have none.
      */
-    val hasLedge: Boolean get() = ledgeLeft >= 0f
+    val hasCloud: Boolean get() = ledgeLeft >= 0f
 }
 
-/** The ledge to draw this frame: span in viewbox units and opacity 0..1. */
-internal data class Ledge(val left: Float, val right: Float, val alpha: Float)
+/** The cloud to draw this frame: span of the sprite's flat edge in viewbox units, and opacity 0..1. */
+internal data class Cloud(val left: Float, val right: Float, val alpha: Float)
 
 /**
- * Blends the ledge across a crossfade from [previous] to [current] ([progress] 0..1), so it grows, shrinks or
+ * Blends the cloud across a crossfade from [previous] to [current] ([progress] 0..1), so it grows, shrinks or
  * slides with the sprite instead of popping. Null when neither expression has one.
  */
-internal fun ledgeFor(previous: Expression?, current: Expression, progress: Float): Ledge? {
+internal fun cloudFor(previous: Expression?, current: Expression, progress: Float): Cloud? {
     val p = progress.coerceIn(0f, 1f)
-    val before = previous?.takeIf { it.hasLedge }
-    val now = current.takeIf { it.hasLedge }
+    val before = previous?.takeIf { it.hasCloud }
+    val now = current.takeIf { it.hasCloud }
     return when {
-        now != null && before != null -> Ledge(
+        now != null && before != null -> Cloud(
             before.ledgeLeft + (now.ledgeLeft - before.ledgeLeft) * p,
             before.ledgeRight + (now.ledgeRight - before.ledgeRight) * p,
             1f,
         )
-        now != null -> Ledge(now.ledgeLeft, now.ledgeRight, if (previous == null) 1f else p)
-        before != null -> Ledge(before.ledgeLeft, before.ledgeRight, 1f - p)
+        now != null -> Cloud(now.ledgeLeft, now.ledgeRight, if (previous == null) 1f else p)
+        before != null -> Cloud(before.ledgeLeft, before.ledgeRight, 1f - p)
         else -> null
     }
 }

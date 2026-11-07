@@ -62,7 +62,7 @@ internal class SpeechBubble(context: Context, private val palette: CharacterPale
      * the bubble goes below the sprite when that is too small. [alignRight] puts the bubble to the left of a sprite
      * that sits on the right half of the screen.
      */
-    fun show(text: String, ttlMs: Long, lineId: String?, nowMs: Long, spritePx: Float, alignRight: Boolean, roomAbovePx: Float) {
+    fun show(text: String, ttlMs: Long, lineId: String?, nowMs: Long, spritePx: Float, alignRight: Boolean, roomAbovePx: Float, spriteH: Float = spritePx) {
         val clean = if (text.length > MAX_CHARS) text.take(MAX_CHARS - 1) + "…" else text
         val padX = PAD_X_DP * density
         val padY = PAD_Y_DP * density
@@ -81,7 +81,7 @@ internal class SpeechBubble(context: Context, private val palette: CharacterPale
         val band = BAND_DP * density
         val overlap = spritePx * OVERLAP_FRACTION
         val needed = bodyH + band - overlap + TOP_INSET_DP * density
-        val g = BubbleGeometry(spritePx, bodyW, bodyH, band, overlap, alignRight, above = roomAbovePx >= needed)
+        val g = BubbleGeometry(spritePx, bodyW, bodyH, band, overlap, alignRight, above = roomAbovePx >= needed, spriteH = spriteH)
         layout = built
         timeline = BubbleTimeline(clean.length, ttlMs, nowMs)
         geometry = g

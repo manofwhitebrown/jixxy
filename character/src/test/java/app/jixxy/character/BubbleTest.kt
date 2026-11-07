@@ -112,4 +112,14 @@ class BubbleTest {
         assertEquals(380, bubbleTextWidthPx(200f, 3f, 1.4f, 500, 36f, 24f))
         assertTrue(bubbleTextWidthPx(200f, 3f, 1.4f, 40, 36f, 24f) >= 1)
     }
+
+    @Test fun tallerSpriteAreaPushesTheViewAndBelowBubbleDown() {
+        val plain = BubbleGeometry(100f, 60f, 40f, 14f, 25f, alignRight = false, above = false)
+        val tall = BubbleGeometry(100f, 60f, 40f, 14f, 25f, alignRight = false, above = false, spriteH = 116f)
+        assertEquals(plain.viewH + 16f, tall.viewH, 0.001f)
+        assertEquals(plain.bodyTop + 16f, tall.bodyTop, 0.001f)
+        val aboveTall = BubbleGeometry(100f, 60f, 40f, 14f, 25f, alignRight = false, above = true, spriteH = 116f)
+        assertEquals(aboveTall.spriteY + 116f, aboveTall.viewH, 0.001f)
+        assertEquals(0f, aboveTall.bodyTop, 0f)
+    }
 }

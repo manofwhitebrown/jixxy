@@ -13,6 +13,8 @@ internal data class CharacterPalette(
     val purple: Int,
     val cream: Int,
     val pink: Int,
+    val cloudBody: Int,
+    val cloudShade: Int,
 ) {
     companion object {
         val Default = CharacterPalette(
@@ -21,6 +23,8 @@ internal data class CharacterPalette(
             purple = Color.parseColor("#6B5B95"),
             cream = Color.parseColor("#F3EBDD"),
             pink = Color.parseColor("#E8A0B4"),
+            cloudBody = Color.parseColor("#DDD5F0"),
+            cloudShade = Color.parseColor("#A89BCF"),
         )
     }
 }

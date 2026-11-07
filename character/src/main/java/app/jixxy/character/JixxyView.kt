@@ -52,6 +52,9 @@ class JixxyView(context: Context) : FrameLayout(context) {
     private val fader = ExpressionFader()
     private val bubble = SpeechBubble(context, palette)
     private val spritePx = DEFAULT_SIZE_DP * resources.displayMetrics.density
+
+    /** The view is taller than the sprite square by the cloud's room below the flat edge (D-023). */
+    private val spriteH = spritePx * (VIEWBOX + CloudShape.EXTRA_UNITS) / VIEWBOX
     private val screenLocation = IntArray(2)
     private val baseDescription: CharSequence = context.getString(R.string.jixxy_content_description)
     private val touchSlop = ViewConfiguration.get(context).scaledTouchSlop
@@ -109,7 +112,9 @@ class JixxyView(context: Context) : FrameLayout(context) {
         strokeJoin = Paint.Join.ROUND
     }
     private val spriteBounds = RectF(0f, 0f, VIEWBOX, VIEWBOX)
-    private val ledgeRect = RectF()
+    private val cloudRect = RectF()
+    private val puffs = FloatArray(CloudShape.PUFFS * 3)
+    private val baseBox = FloatArray(4)
     private val zShape = Path().apply { moveTo(-1f, -1f); lineTo(1f, -1f); lineTo(-1f, 1f); lineTo(1f, 1f) }
     private val noteTail = Path().apply { moveTo(2.3f, 0f); lineTo(2.3f, -9f); quadTo(5f, -8f, 6f, -4.5f) }
     private val star = Path().apply {
@@ -150,7 +155,7 @@ class JixxyView(context: Context) : FrameLayout(context) {
         getLocationOnScreen(screenLocation)
         val alignRight = screenLocation[0] + spritePx / 2f > resources.displayMetrics.widthPixels / 2f
         blipBucket = 0
-        bubble.show(text, ttlMs, lineId, SystemClock.uptimeMillis(), spritePx, alignRight, screenLocation[1].toFloat())
+        bubble.show(text, ttlMs, lineId, SystemClock.uptimeMillis(), spritePx, alignRight, screenLocation[1].toFloat(), spriteH)
         bubble.geometry?.let { shiftWindow(it.shiftX, it.shiftY) }
         accessibilityLiveRegion = ACCESSIBILITY_LIVE_REGION_POLITE // announced once, politely, when the text changes
         contentDescription = context.getString(R.string.jixxy_says_description, text)
@@ -194,7 +199,7 @@ class JixxyView(context: Context) : FrameLayout(context) {
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         val g = bubble.geometry
         val w = ceil(g?.viewW ?: spritePx).toInt()
-        val h = ceil(g?.viewH ?: spritePx).toInt()
+        val h = ceil(g?.viewH ?: spriteH).toInt()
         setMeasuredDimension(resolveSize(w, widthMeasureSpec), resolveSize(h, heightMeasureSpec))
     }
 
@@ -400,6 +405,9 @@ class JixxyView(context: Context) : FrameLayout(context) {
         canvas.save()
         canvas.translate(geometry?.spriteX ?: 0f, geometry?.spriteY ?: 0f)
         canvas.scale(unit, unit)
+        val cloud = cloudFor(fader.previous, fader.current, fader.progress)
+        // cat and cloud float together; sprites without a cloud stay still
+        canvas.translate(0f, (cloud?.alpha ?: 0f) * CloudShape.bob(animator.clockSec, dragging, reduceMotion))
 
         val blink = animator.blinkEnvelope
         val swapBlinkFrame = blinkFrame != null && blink > BLINK_SWAP_AT && fader.current == Expression.REALLY
@@ -417,9 +425,9 @@ class JixxyView(context: Context) : FrameLayout(context) {
         }
         spritePaint.alpha = (255f * fader.progress).toInt()
         canvas.drawBitmap(if (swapBlinkFrame) blinkFrame ?: current else current, null, spriteBounds, spritePaint)
-        drawLedge(canvas)
         if (!reduceMotion) drawSweat(canvas)
         canvas.restore()
+        if (cloud != null) drawCloud(canvas, cloud)
 
         if (!reduceMotion) {
             drawFloatingZs(canvas)
@@ -431,21 +439,35 @@ class JixxyView(context: Context) : FrameLayout(context) {
     }
 
     /**
-     * The small purple ledge in front of the cat's flat bottom edge (the sheet's busts are cut there), so he reads
-     * as peeking over it instead of as half a cat. Drawn in the sprite's own transform so it moves with him.
+     * The soft cloud under the cat (D-023): ink outline, darker lavender underside, lavender body, in front of the
+     * flat-cut bottom edge so he floats on it. Drawn after the cat, outside his pose transform, so his hops and jumps
+     * move relative to it. Shapes come from [CloudShape]; nothing is allocated here. A partial [Cloud.alpha] (during
+     * a face change) is drawn as one layer so overlapping puffs do not show through each other.
      */
-    private fun drawLedge(canvas: Canvas) {
-        val ledge = ledgeFor(fader.previous, fader.current, fader.progress) ?: return
-        ledgeRect.set(ledge.left, LEDGE_TOP, ledge.right, LEDGE_BOTTOM)
-        fill.color = palette.purple
-        fill.alpha = (255f * ledge.alpha).toInt()
-        canvas.drawRoundRect(ledgeRect, LEDGE_RADIUS, LEDGE_RADIUS, fill)
-        line.color = palette.ink
-        line.alpha = (200f * ledge.alpha).toInt()
-        line.strokeWidth = 1f
-        canvas.drawRoundRect(ledgeRect, LEDGE_RADIUS, LEDGE_RADIUS, line)
-        line.alpha = 255
-        fill.alpha = 255
+    private fun drawCloud(canvas: Canvas, cloud: Cloud) {
+        CloudShape.layout(cloud.left, cloud.right, animator.clockSec, !reduceMotion, puffs)
+        CloudShape.baseRect(cloud.left, cloud.right, baseBox)
+        val layer = cloud.alpha < 0.999f
+        val saved = if (layer) {
+            canvas.saveLayerAlpha(0f, 0f, VIEWBOX, VIEWBOX + CloudShape.EXTRA_UNITS, (255f * cloud.alpha).toInt())
+        } else {
+            0
+        }
+        paintCloudPass(canvas, palette.ink, grow = CloudShape.OUTLINE, drop = 0f)
+        paintCloudPass(canvas, palette.cloudShade, grow = 0f, drop = CloudShape.SHADE_DROP)
+        paintCloudPass(canvas, palette.cloudBody, grow = 0f, drop = 0f)
+        if (layer) canvas.restoreToCount(saved)
+    }
+
+    private fun paintCloudPass(canvas: Canvas, color: Int, grow: Float, drop: Float) {
+        fill.color = color
+        var i = 0
+        while (i < puffs.size) {
+            canvas.drawCircle(puffs[i], puffs[i + 1] + drop, puffs[i + 2] + grow, fill)
+            i += 3
+        }
+        cloudRect.set(baseBox[0] - grow, baseBox[1] - grow + drop, baseBox[2] + grow, baseBox[3] + grow + drop)
+        canvas.drawRoundRect(cloudRect, CloudShape.BASE_RADIUS, CloudShape.BASE_RADIUS, fill)
     }
 
     /** Draws [path] in cream with a thin ink outline, so it reads on any app underneath. */
@@ -536,10 +558,6 @@ class JixxyView(context: Context) : FrameLayout(context) {
         const val VIEWBOX = 128f
         const val FEET_X = 64f
         const val FEET_Y = 125f
-        /** Ledge band in viewbox units: covers the flat cut at the anchor line (y = 125) without touching the face. */
-        const val LEDGE_TOP = 120f
-        const val LEDGE_BOTTOM = 127f
-        const val LEDGE_RADIUS = 3.5f
         const val BLIP_EVERY = 3
         const val NOON = 12
         const val TAU = (2.0 * PI).toFloat()

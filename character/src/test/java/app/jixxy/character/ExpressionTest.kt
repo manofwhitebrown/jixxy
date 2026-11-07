@@ -81,27 +81,27 @@ class ExpressionTest {
         assertEquals(1, sampleSizeFor(256, 300))
     }
 
-    @Test fun flatBottomBustsHaveALedgeRoundOnesDoNot() {
+    @Test fun flatBottomBustsHaveACloudRoundOnesDoNot() {
         for (e in listOf(Expression.REALLY, Expression.NAP, Expression.SOFT, Expression.SMUG, Expression.BLANKET, Expression.STRETCH)) {
-            assertTrue(e.name, e.hasLedge)
+            assertTrue(e.name, e.hasCloud)
         }
         for (e in listOf(Expression.SHOCKED, Expression.CHARGING, Expression.HEADPHONES, Expression.SLEEP, Expression.YAWN)) {
-            assertFalse(e.name, e.hasLedge)
+            assertFalse(e.name, e.hasCloud)
         }
     }
 
-    @Test fun everyLedgeSitsInsideTheViewbox() {
-        for (e in Expression.values().filter { it.hasLedge }) {
+    @Test fun everyCloudSpanSitsInsideTheViewbox() {
+        for (e in Expression.values().filter { it.hasCloud }) {
             assertTrue(e.name, e.ledgeLeft >= 0f && e.ledgeRight <= 128f && e.ledgeLeft < e.ledgeRight)
         }
     }
 
-    @Test fun ledgeFadesInOutAndSlides() {
-        assertEquals(null, ledgeFor(null, Expression.SHOCKED, 1f))
-        assertEquals(1f, ledgeFor(null, Expression.REALLY, 1f)!!.alpha, 0f)
-        assertEquals(0.5f, ledgeFor(Expression.SHOCKED, Expression.REALLY, 0.5f)!!.alpha, 0f)
-        assertEquals(0.25f, ledgeFor(Expression.REALLY, Expression.SHOCKED, 0.75f)!!.alpha, 0f)
-        val mid = ledgeFor(Expression.REALLY, Expression.SMUG, 0.5f)!!
+    @Test fun cloudFadesInOutAndSlides() {
+        assertEquals(null, cloudFor(null, Expression.SHOCKED, 1f))
+        assertEquals(1f, cloudFor(null, Expression.REALLY, 1f)!!.alpha, 0f)
+        assertEquals(0.5f, cloudFor(Expression.SHOCKED, Expression.REALLY, 0.5f)!!.alpha, 0f)
+        assertEquals(0.25f, cloudFor(Expression.REALLY, Expression.SHOCKED, 0.75f)!!.alpha, 0f)
+        val mid = cloudFor(Expression.REALLY, Expression.SMUG, 0.5f)!!
         assertEquals(1f, mid.alpha, 0f)
         assertEquals((Expression.REALLY.ledgeLeft + Expression.SMUG.ledgeLeft) / 2f, mid.left, 0.001f)
     }
