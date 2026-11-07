@@ -72,7 +72,7 @@ jobs:
         if: steps.tip.outputs.skip != 'true'
         run: |
           set -eu
-          code=$(bash scripts/version_code.sh)
+          code=$(bash scripts/apk_version_code.sh dist/jixxy-latest.apk 2>/dev/null || bash scripts/version_code.sh)
           subject=$(git log -1 --format=%s "$SHA")
           {
             echo "Rolling build of \`main\` (debug-signed, testing only). Replaced on every green push."

@@ -61,9 +61,7 @@ jobs:
         run: |
           chmod +x ./gradlew
           if [ "${{ steps.sign.outputs.mode }}" = "release" ]; then
-            # Keystore is written outside the workspace and never printed.
-            printf '%s' "$JIXXY_KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/release.keystore"
-            export JIXXY_KEYSTORE_PATH="$RUNNER_TEMP/release.keystore"
+            # app/build.gradle.kts decodes JIXXY_KEYSTORE_B64 itself (into app/build, never committed); nothing is printed.
             ./gradlew test assembleRelease -PversionCode=${{ steps.ver.outputs.code }} --stacktrace
             APK_DIR=app/build/outputs/apk/release
           else
@@ -72,8 +70,11 @@ jobs:
           fi
           echo "APK_DIR=$APK_DIR" >> "$GITHUB_ENV"
 
-      - name: Manifest guard
-        run: bash scripts/check_manifest.sh
+      - name: Manifest guard (variant that was built)
+        run: |
+          if [ "${{ steps.sign.outputs.mode }}" = "release" ]; then variant=release; else variant=debug; fi
+          ./gradlew :app:process${variant^}Manifest -PversionCode=${{ steps.ver.outputs.code }} --stacktrace
+          bash scripts/check_manifest.sh "$variant"
 
       - name: Signing certificate must match the previous release
         env:
@@ -88,19 +89,35 @@ jobs:
             bash scripts/apk_cert.sh "$apk" >/dev/null   # prints the digest into the log; verifies the signature
             echo "::notice::Release-key build; compared with the previous release below."
           fi
-          # Compare with the newest earlier release that has an APK: an update only installs over
-          # it if the signing key is identical.
-          prev=$(gh release list --limit 20 --json tagName,isDraft --jq '.[] | select(.isDraft|not) | .tagName' | grep -vx "$TAG" | head -1 || true)
-          if [ -z "$prev" ]; then echo "::notice::No earlier release to compare with."; exit 0; fi
-          mkdir -p prev && gh release download "$prev" --pattern '*.apk' --dir prev
-          old=$(ls prev/*.apk | head -1)
+          new_vc=$(bash scripts/apk_version_code.sh "$apk")
+          echo "versionCode of this build: $new_vc (Gradle was given ${{ steps.ver.outputs.code }})"
+          [ "$new_vc" = "${{ steps.ver.outputs.code }}" ] || { echo "::error title=versionCode mismatch::APK says $new_vc, workflow passed ${{ steps.ver.outputs.code }}"; exit 1; }
+          # Only numbered releases (v1.2.3-...) count as "previous release". "latest" and "ci-evidence" are rolling
+          # pre-releases: ci-evidence has no APK at all, and latest is checked for versionCode only (below).
+          prev=$(gh release list --limit 30 --json tagName,isDraft --jq '.[] | select(.isDraft|not) | .tagName' | grep -E '^v[0-9]' | grep -vx "$TAG" | head -1 || true)
+          fetch_apk() {  # $1 = tag, $2 = dir ; prints the APK path or nothing
+            mkdir -p "$2"; gh release download "$1" --pattern '*.apk' --dir "$2" >/dev/null 2>&1 || true
+            ls "$2"/*.apk 2>/dev/null | head -1 || true
+          }
+          check_vc() {  # $1 = tag, $2 = apk path, $3 = "strict" (must be higher) or "notlower"
+            local old_vc; old_vc=$(bash scripts/apk_version_code.sh "$2")
+            if [ "$new_vc" -gt "$old_vc" ]; then echo "versionCode $new_vc > $old_vc ($1): ok"
+            elif [ "$3" = "notlower" ] && [ "$new_vc" -eq "$old_vc" ]; then
+              echo "::notice::$TAG has the same versionCode ($new_vc) as $1: it was tagged on the commit $1 was built from. Fine, but people on $1 will not be offered an update."
+            else echo "::error title=versionCode not higher::$TAG has versionCode $new_vc but $1 has $old_vc; phones would refuse the update."; exit 1; fi
+          }
+          lat=$(fetch_apk latest prev-latest)
+          if [ -n "$lat" ]; then check_vc latest "$lat" notlower; else echo "::notice::No APK on the latest release to compare versionCode with."; fi
+          if [ -z "$prev" ]; then echo "::notice::No earlier numbered release to compare with."; exit 0; fi
+          old=$(fetch_apk "$prev" prev)
+          if [ -z "$old" ]; then echo "::notice::Earlier release $prev has no APK; nothing to compare."; exit 0; fi
+          check_vc "$prev" "$old" strict
           if bash scripts/check_apk_cert.sh "$apk" --apk "$old"; then
             echo "Same signing certificate as $prev."
           else
             echo "::error title=Key changed since $prev::Users of $prev cannot update to $TAG without uninstalling."
             [ "${ALLOW_KEY_CHANGE:-}" = "1" ] || exit 1
           fi
-          echo "versionCode=${{ steps.ver.outputs.code }}"
 
       - name: Name APK, checksum, notes
         env:

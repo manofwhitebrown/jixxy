@@ -1,4 +1,4 @@
-# DEVOPS status — updated 2026-11-07 05:50 UTC (Wave 3)
+# DEVOPS status — updated 2026-11-07 05:22 UTC (Wave 3)
 ## Takeover (Wave 3): 2026-11-07 05:10 UTC
 Fresh AI-6 replacing Wave 2. Found: main green at 0550d84 (CI, Latest, Emulator all success); Wave-2 had also shipped emulator.yml (API 26/30/34/35) and ci-evidence upload. First: T-D3-0 verification, then T-D3-3 gates (validateLines + assets blocking, test summary), then T-D3-1/2.
 ## Wave 3 verification (T-D3-0) — what I actually ran
@@ -11,8 +11,10 @@ Fresh AI-6 replacing Wave 2. Found: main green at 0550d84 (CI, Latest, Emulator 
 - GROWTH's two edits reviewed line by line: apk_cert.sh b801214 (regex now accepts optional `V2 `/`V3.1 ` prefix before `Signer`; still requires exactly one distinct digest) and check_apk_cert.sh ae3979f (`[[:space:]]*` before `SHA256:` for tab-indented keytool output). Both correct, minimal; keeping them.
 - Notices seen in CI annotations: ubuntu-latest migrates to Ubuntu 26 (announced 2026-10-19) => pinned all workflows to ubuntu-24.04; Gradle 8.14.3 "out of date" (PLATFORM's file, not mine; no action needed now).
 ## Now
-T-D3-4 (release path check, signing plan review), T-D3-6 (THIRD_PARTY.md), GROWTH gap (3) resolved-dependency scan.
+T-D3-6 (THIRD_PARTY.md), GROWTH gap (3) resolved-dependency scan, check Owner/Manager inbox replies.
 ## Done (Wave 3)
+- T-D3-4 (release path): reviewed release.yml and found two bugs that would have bitten at the first real tag: (1) "previous release" was `gh release list | head -1` minus the tag, which picks the rolling `ci-evidence` (no APK, so `gh release download` errors and the job dies) or `latest`; now only numbered tags `v[0-9]*` count, and a missing APK is a notice, not a crash; (2) the manifest guard ran on the debug manifest even after `assembleRelease`; it now builds and checks the manifest of the variant actually built. Added scripts/apk_version_code.sh (reads versionCode out of the APK with aapt2/aapt, tested on the published APK = 163, on a missing file and on junk). release.yml now fails if the APK's versionCode differs from what Gradle was given, or is not strictly higher than the previous numbered release; vs `latest` it must not be lower (equal is only a notice, e.g. tagging the commit `latest` was built from). CI checks on every run that the versionCode inside the debug APK equals the commit count (this also proves aapt exists on the runner). Removed the unused copy of the keystore file in release.yml (Gradle decodes JIXXY_KEYSTORE_B64 itself). latest.yml notes now print the versionCode read from the APK (falls back to the commit count).
+- qa/RELEASE_SIGNING.md: stale "Needs PLATFORM" line replaced with what CI now checks. The signed path stays disabled until the Owner adds the 4 secrets.
 - e0b8a88 CI run 42341901351 all green with the new steps: unit-test annotation (358 run, 0 failed: app 154, character 86, engine 118), release-manifest guard, blocking line bank + assets. Build job took ~1m46s with a warm cache.
 - T-D3-5: Pages enabled, build_type=workflow, deployment success, URL https://manofwhitebrown.github.io/jixxy/ (my sandbox cannot open it: Owner to open once). check_assets.py now also enforces site/ <= 1 MB total, <= 300 KB per file, and rejects remote and protocol-relative src/srcset (tested with seeded violations).
 - T-D3-1: qa/BUGS.md refreshed (B-001..B-005 vs code, with SHAs; none verified); added severity S1-S4, next free ID B-006, and a "not bugs yet" list of unproven risks.
@@ -21,6 +23,7 @@ T-D3-4 (release path check, signing plan review), T-D3-6 (THIRD_PARTY.md), GROWT
 - T-D3-3: validateLines (Gradle) now in the Gate (a failure turns CI red); asset budget guard runs STRICT=1 (first clean run: 174 KB of 3072 KB); new scripts/ci_test_summary.py puts test counts and failing tests into annotations; manifest guard now also forbids storage permissions (READ/WRITE/MANAGE_EXTERNAL_STORAGE, READ_MEDIA_*), requires allowBackup="false", and also runs on the RELEASE merged manifest (`:app:processReleaseManifest`). GROWTH requests (1),(2),(4) done; (3) resolved-dependency scan still to do.
 - T-D3-7 (part): all workflows pinned to ubuntu-24.04.
 ## Honest notes (Wave 3)
+- release.yml has still NEVER run on GitHub with these changes (no tag pushed; a test tag would create a public pre-release, so I did not). Its bash was syntax-checked and the version comparison logic unit-tested locally. The release-key branch (`mode=release`) cannot be tested without the Owner's secrets.
 - The new CI steps have not run on GitHub at the time of writing; I tested the scripts locally against fake inputs only. `:app:processReleaseManifest` has never been run in CI by us.
 - Nothing here was tested on a phone. The test sheets describe behaviour read from code (stay delay 3 s, grace 5 min, Leave goes Home); the real behaviour is unproven.
 - check_assets.py site rules and the new test sheets were not run in CI before this push (assets script ran locally, strict, exit 0).

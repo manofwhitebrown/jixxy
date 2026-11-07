@@ -132,6 +132,13 @@ jobs:
           apk=$(ls app/build/outputs/apk/debug/*.apk | head -1)
           bash scripts/check_apk_cert.sh "$apk" --keystore app/debug.keystore jixxydebug android
           echo "versionCode=${{ steps.ver.outputs.code }}"
+      - name: versionCode inside the APK must equal the commit count
+        if: steps.assemble.outcome == 'success'
+        run: |
+          apk=$(ls app/build/outputs/apk/debug/*.apk | head -1)
+          got=$(bash scripts/apk_version_code.sh "$apk")
+          echo "APK versionCode=$got expected=${{ steps.ver.outputs.code }}"
+          [ "$got" = "${{ steps.ver.outputs.code }}" ]
       - name: Gate (fail if tests, line bank, lint or assemble failed)
         if: always() && steps.gradle.outputs.present == 'true'
         run: |
