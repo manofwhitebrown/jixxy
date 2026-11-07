@@ -21,11 +21,11 @@ Never alter the character's identity. Use only the Owner's art under `design/cha
 
 **Three lines**
 > Jixxy is your lazy, sarcastic, but loyal roommate: a black fluffy cat on your Android screen.
-> You pick up to three apps, and he makes you pause for a moment before you dive in, with a joke and a Leave button.
+> You pick the apps, and he makes you pause for a moment before you dive in, with a joke and a Leave button.
 > Everything stays on your phone. No internet permission, no accounts, no ads.
 
 **One paragraph**
-> Jixxy is a black, fluffy, heavy-lidded cat who lives on your Android screen as a floating sprite. He is lazy, dramatic and sarcastic, loves snacks and naps, and secretly has your back. You choose up to three apps and how roasty he should be; when you open one, he shows a short pause card with a Leave button and, after a few seconds, a Stay button. He jokes about the situation, never about you, and he gets softer late at night. The app is built without the internet permission, so nothing leaves your phone. *A little chaos. A lot of care.*
+> Jixxy is a black, fluffy, heavy-lidded cat who lives on your Android screen as a floating sprite. He is lazy, dramatic and sarcastic, loves snacks and naps, and secretly has your back. You choose the apps and how roasty (and, soon, how naggy) he should be; when you open one, he shows a short pause card with a Leave button and, after a few seconds, a Stay button. He jokes about the situation, never about you, and he gets softer late at night. The app is built without the internet permission, so nothing leaves your phone. *A little chaos. A lot of care.*
 
 **Say only what exists today.** Check the README's "What works today" table before using any of the above in public. While the alpha has no speech or Pause card, use the one-liner only with the "alpha" label.
 

@@ -13,7 +13,7 @@ Work towards the first tester build, `v0.1.0`. Nothing here has been released.
 ### Added (on `main`, in the rolling `latest` build; written and unit-tested by CI, **not yet seen on a phone**)
 - The real app as the launcher: guided setup, Home, Settings, "What Jixxy saw" (last 7 days, erasable), a per-brand keep-alive guide, a weekly review screen with a share card.
 - The cat: 15 expression images cut from the Owner's sheet, a speech bubble, and the Pause card (Leave / Stay). The sprites are soft and three frames are missing (a squash stands in).
-- The line bank (about 595 English lines) is connected through the brain; at most 6 unprompted comments a day.
+- The line bank (about 595 English lines) is connected through the brain. The current build still has the older limits (3 Pause apps, 6 unprompted comments a day); the Manager has decided to remove the app cap and add a Calm / Naggy / Chaos dial (D-020), not built yet.
 - Hinglish as an opt-in **beta** (off by default, labelled beta, no native-speaker read-through yet).
 - A "Report a problem" section in Settings. Its "Copy debug info" button is hidden until the diagnostics log exists.
 - The rolling `latest` pre-release and the checks that keep the app offline (no internet permission) and signed with the same key.

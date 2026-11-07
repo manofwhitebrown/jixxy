@@ -15,9 +15,9 @@ How to read this: items marked **[verified]** come from Google's own pages I rea
 > *Your lazy, sarcastic, but loyal roommate.* Jixxy is a black, fluffy, heavy-lidded cat who lives on your screen as a floating character.
 >
 > **What he does**
-> You pick up to 3 apps. When you open one, Jixxy shows a short pause card with a joke and two buttons: Leave, or Stay for 5 more minutes. You are always in control: Leave works instantly, Stay unlocks after a few seconds.
+> You pick the apps. When you open one, Jixxy shows a short pause card with a joke and two buttons: Leave, or Stay for 5 more minutes. You are always in control: Leave works instantly, Stay unlocks after a few seconds.
 >
-> He reacts to small moments too: a long session, a late night, plugging in the charger, a low battery. He is silent by default, has a daily cap on unprompted comments, and you can nap him with one tap.
+> He reacts to small moments too: a long session, a late night, plugging in the charger, a low battery. He is a naggy cat by design, and you set how naggy (Calm, Naggy or Chaos) **[only once the nag dial ships; remove this clause if it doesn't]**. Every card and bubble can be dismissed, and you can nap him with one tap.
 >
 > **How he talks**
 > He jokes about the situation, never about you. Late at night he gets softer. Once a week he writes a "review of your week" card you can share if you like.
@@ -55,7 +55,7 @@ Real screenshots only, from real builds. No invented testimonials or fake usage 
 
 1. Sprite floating over a neutral home screen, with a short bubble.
 2. Pause card with **Leave** and **Stay** buttons (use a marketing-safe line from `content/gold_lines.md`).
-3. Setup screen where the user picks up to 3 apps and the roast level.
+3. Setup screen where the user picks the apps, the roast level and the nag level.
 4. A soft late-night moment (quiet visual only, per WRITER's off-limits list).
 5. The weekly review card.
 6. The "What Jixxy saw" log with the erase button, to show privacy visibly.
@@ -83,7 +83,7 @@ Policy basics [verified]: sensitive permissions must be necessary for current fe
 > Jixxy's core feature is a floating companion and a pause card that appears over the apps the user chose. The user turns this on during setup via the system settings page and can revoke it at any time. The overlay does not read or capture screen content, and does not block touches outside the sprite or card. The pause card can always be dismissed instantly with Leave.
 
 **Usage access (`PACKAGE_USAGE_STATS`)**
-> Used to tell which app is in the foreground so Jixxy can react to, and pause, only the (up to 3) apps the user chose. Only the app's package name and time are used. All processing is on-device; the app has no internet permission. The user grants it in system settings and can revoke it.
+> Used to tell which app is in the foreground so Jixxy can react to, and pause, only the apps the user chose. Only the app's package name and time are used. All processing is on-device; the app has no internet permission. The user grants it in system settings and can revoke it.
 > I found **no dedicated Play Console declaration form** for this permission in Google's pages, and one third-party source also says it knows of none. [unverified] User data policy still applies, so the in-app screen that sends the user to the settings page should explain this plainly first (prominent disclosure). UI owns that screen; recommend it is reviewed against Google's User Data policy.
 
 **Foreground service, special use (`FOREGROUND_SERVICE_SPECIAL_USE`)**
@@ -104,6 +104,8 @@ Draft answers:
 **Launcher-apps query (`<queries>` with a MAIN/LAUNCHER intent)**: see risk 2 below.
 
 ## 7. Risks to report to MANAGER (not assumptions)
+
+0. **D-020 naggy design raises review risk** (more frequent overlay prompts, no app cap). See `store/DISTRIBUTION_OPTIONS.md` section B item 8. Listing text above must say plainly that he is naggy and how to turn him down.
 
 1. **Foreground service review.** `specialUse` is allowed only in limited scenarios and is reviewed; a demo video is required. Real risk of rejection or follow-up questions. [verified]
 2. **Installed-apps visibility.** Play treats the installed-app inventory as personal and sensitive, and restricts `QUERY_ALL_PACKAGES`. It also says methods that approximate broad visibility are restricted to user-facing core functionality. Our manifest does not request `QUERY_ALL_PACKAGES` (good), but its launcher-intent `<queries>` entry lets the app list essentially all launchable apps. Our justification is that choosing up to 3 apps is core setup, but a reviewer could challenge it. PLATFORM/UI should consider whether a narrower approach is enough. [verified policy text; interpretation is mine]

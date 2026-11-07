@@ -20,7 +20,7 @@ One page for the Owner. **On hold:** record only after a build is stable (the Pa
 | 5 | **Drag** | Drag him across the screen, let go, rotate phone | He stays on screen; taps pass through elsewhere | Intro |
 | 6 | **Nap** | Tap Nap | He goes quiet and sleepy; "Nap time..." mood | Nap script |
 | 7 | **Blanket / wake** | Wake him again after a nap | He's back and awake | Nap script |
-| 8 | **Setup** | Pick up to 3 apps; try a 4th | The 4th is refused; roast-level picker | Setup / privacy |
+| 8 | **Setup** | Pick a few apps | App picker; roast-level and nag-level pickers (if shipped) | Setup / privacy |
 | 9 | **Weekly card** | Open the weekly review | The share card, with a harmless dummy week | Weekly script |
 | 10 | **Permission truth** | Settings, Apps, Jixxy, Permissions | No internet permission visible in app info | Privacy script |
 

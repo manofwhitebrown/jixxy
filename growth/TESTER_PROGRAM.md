@@ -4,7 +4,7 @@ Draft v0.3, 2026-11-07. Owner: GROWTH. For about **20 testers, all 18 or older**
 Jixxy has no telemetry. The testers are our analytics, and everything below is voluntary. **No analytics, no sign-ups, no forms that track, nothing collected beyond what a tester chooses to send.**
 
 ## 1. What Jixxy is, in one honest line
-A free, offline, early-stage Android app: a lazy, sarcastic black cat floats on your screen and, before up to 3 apps *you* choose, makes you pause with a joke. **Leave** or **Stay**, your call. It is rough, parts have not been tested on many phones, and it makes no health claims.
+A free, offline, early-stage Android app: a lazy, sarcastic black cat floats on your screen and, before the apps *you* choose, makes you pause with a joke. **Leave** or **Stay**, your call. It is rough, parts have not been tested on many phones, and it makes no health claims.
 
 ## 2. What he asks permission for, and why
 
@@ -26,7 +26,7 @@ He has **no internet permission** (anyone can check in Android's app info), no a
 ## 4. Copy-paste WhatsApp invite
 *(Send only after the Owner's go-ahead; fill in the link the Owner gives you.)*
 
-> Hey! Can you help me test a small free Android app? It's called **Jixxy**: a lazy, sarcastic black cat who floats on your screen and makes you pause, with a joke, before up to 3 apps *you* pick (like reels). You always get **Leave** or **Stay**.
+> Hey! Can you help me test a small free Android app? It's called **Jixxy**: a lazy, sarcastic black cat who floats on your screen and makes you pause, with a joke, before the apps *you* pick (like reels). **He's naggy on purpose**, and you can nap him with one tap (a Calm/Naggy/Chaos dial is coming). You always get **Leave** or **Stay**.
 >
 > The honest bit: it's early and rough, 18+ only, Android 8 or newer. It asks for "Display over other apps" and "Usage access" so he can float and know which app is open. It has no internet permission, so nothing leaves your phone. No ads, no sign-up.
 >
@@ -37,7 +37,7 @@ He has **no internet permission** (anyone can check in Android's app info), no a
 ## 5. Steps to send once they say yes
 1. On your phone, open this link and download the file: https://github.com/manofwhitebrown/jixxy/releases/download/latest/jixxy-latest.apk
 2. Tap the downloaded file. If Android asks, allow your browser or Files app to install unknown apps (Settings, Apps, Special access, Install unknown apps).
-3. Open Jixxy and follow the setup. He explains each permission before he asks. Choose up to 3 apps.
+3. Open Jixxy and follow the setup. He explains each permission before he asks. Choose the apps you want pauses for.
 4. **If a permission is greyed out ("Restricted setting"):** tap it once, press OK, then Settings, Apps, Jixxy, three-dot menu (top right), **Allow restricted settings**, then try again. The menu item only shows after you've tapped the blocked permission once. The app shows these steps too.
 5. **Keep him running:** set Jixxy's battery use to *Unrestricted* and turn on *Autostart* if your phone has it (the app has a guide per brand). Xiaomi, Oppo, Vivo testers: please do this and tell me if it was enough.
 6. Use your phone normally. If he's annoying, tap **Nap**. That is useful feedback too.

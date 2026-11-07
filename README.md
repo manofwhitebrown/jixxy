@@ -2,7 +2,7 @@
 
 > *Your lazy, sarcastic, but loyal roommate.*
 
-Jixxy is a black, fluffy, heavy-lidded cat who is meant to live on your Android screen. He is lazy, dramatic and sarcastic, and he secretly has your back. The plan: he makes you **pause, with jokes,** before the apps *you* chose.
+Jixxy is a black, fluffy, heavy-lidded cat who is meant to live on your Android screen. He is lazy, dramatic and sarcastic, a bit naggy, and he secretly has your back. The plan: he makes you **pause, with jokes,** before the apps *you* chose.
 
 *A little chaos. A lot of care.*
 
@@ -33,8 +33,8 @@ The one to try is the rolling **`latest`** build: <https://github.com/manofwhite
 
 ## What he's meant to do
 
-- **You pick up to 3 apps.** When you open one, Jixxy shows a short pause card with **Leave** and **Stay** buttons. You stay in control.
-- **He reacts, he doesn't nag.** Silent by default, comments on moments, hard daily cap on unprompted comments, one-tap nap.
+- **You pick the apps.** When you open one, Jixxy shows a short pause card with **Leave** and **Stay** buttons. You stay in control.
+- **He is naggy, on purpose, and you set how much.** Persistent and dramatic ("again?"), but every card and bubble can be dismissed, and a one-tap nap is always there. A Calm / Naggy / Chaos dial is decided (D-020) but **not in any build yet**; the current build still uses the older, quieter limits.
 - **He roasts the situation, never you.** Late at night he gets softer.
 - **Weekly,** a shareable "Jixxy's review of your week" card.
 - **No guilt mechanics.** No lost streaks, no punishment for being away, no pet death.

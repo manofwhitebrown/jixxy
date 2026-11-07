@@ -20,7 +20,7 @@ Jixxy is a black cat who lives on your screen. Everything he does happens on you
 
 ## What Jixxy stores
 
-- Your **settings**: chosen apps (max 3), muted apps, roast level, quiet hours, and similar.
+- Your **settings**: chosen apps, muted apps, roast level, quiet hours, and similar.
 - Jixxy's own **state** (mood, energy, how well you two know each other).
 - A simple **event log** (for example, "opened an app at 23:40", "chose Leave"). Events older than **30 days** are deleted automatically. The in-app "What Jixxy saw" screen shows the **last 7 days** of it, and the log powers the weekly review card.
 

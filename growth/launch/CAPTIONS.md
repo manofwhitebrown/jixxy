@@ -5,7 +5,7 @@ Rebased for the cat (T-G2-5); older script numbers now map to the new scripts in
 ## Caption set A: pause (scripts 1, 4)
 
 1. "A tiny roommate who pauses you, with jokes, before the apps you choose. Leave or Stay, always your call. Early tester build, free on Android."
-2. "I picked 3 apps. He pauses me before them. That's the whole app. Early tester build."
+2. "I picked my apps. He pauses me before them. That's the whole app. Early tester build."
 3. "He can't block anything. He just makes you stop for a second. Jixxy, free for Android (early build)."
 
 ## Caption set B: character (scripts 2, 3, 5)

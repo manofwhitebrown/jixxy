@@ -8,7 +8,7 @@ Replace `[LINK]` with the Releases page or Pages site URL only once it works. Do
 > Testing a small free Android app called Jixxy: a lazy, sarcastic cat who pauses you, with jokes, before the apps you pick. No internet permission, no ads. Early alpha. [LINK]
 
 **Version 2 (ask for testers)**
-> Looking for Android testers (18+). Jixxy is a lazy, sarcastic cat that pauses you before up to 3 apps you choose. Free, nothing leaves your phone. It's rough, so I want honest feedback. Message me your phone model. [LINK]
+> Looking for Android testers (18+). Jixxy is a lazy, sarcastic cat that pauses you, with jokes, before the apps you choose. He's naggy on purpose, and you can turn him down. Free, nothing leaves your phone. It's rough, so I want honest feedback. Message me your phone model. [LINK]
 
 Notes: don't tag or name anyone's habits. Don't post screenshots with other people's chats visible.
 
@@ -19,9 +19,9 @@ Notes: don't tag or name anyone's habits. Don't post screenshots with other peop
 - **Name:** Jixxy
 - **Tagline:** A lazy cat who pauses you, with jokes
 - **Description:**
-  > Jixxy is a free Android companion who lives on your screen as a small floating character. You choose up to 3 apps. When you open one, he shows a short pause card with a joke and two buttons: Leave, or Stay for 5 more minutes. You're always in control.
+  > Jixxy is a free Android companion who lives on your screen as a small floating character. You choose the apps. When you open one, he shows a short pause card with a joke and two buttons: Leave, or Stay for 5 more minutes. You're always in control.
   >
-  > He's silent by default, jokes about the situation (never about you), gets softer late at night, and has a one-tap nap. Once a week he writes a shareable "review of your week" card.
+  > He's a naggy cat by design (you set how much), jokes about the situation (never about you), gets softer late at night, and has a one-tap nap. Once a week he writes a shareable "review of your week" card.
   >
   > Everything stays on your phone: no internet permission, no accounts, no ads, no analytics.
 - **Maker's first comment:**
@@ -38,7 +38,7 @@ Rules differ per subreddit and many restrict self-promotion. **Read each subredd
 **Body:**
 > Disclosure: I'm part of the team building this.
 >
-> Jixxy is a small floating character on your Android screen. You pick up to 3 apps. When you open one, he shows a short pause card with a joke and two buttons: Leave, or Stay for 5 more minutes. You can always get out; Leave is instant.
+> Jixxy is a small floating character on your Android screen. You pick the apps. When you open one, he shows a short pause card with a joke and two buttons: Leave, or Stay for 5 more minutes. You can always get out; Leave is instant.
 >
 > What he is: a light-hearted companion. What he's not: a health or medical tool, and not a blocker.
 >
