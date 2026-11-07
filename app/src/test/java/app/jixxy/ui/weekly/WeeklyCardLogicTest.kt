@@ -46,4 +46,9 @@ class WeeklyCardLogicTest {
             assertTrue(WeeklyCardLogic.headlineIndex(false, t, z) in 1..4)
         }
     }
+
+    @Test fun thinWeekGetsTheQuietTone() {
+        assertTrue(WeeklyCardLogic.model(review().copy(isThin = true)).quiet)
+        assertFalse(WeeklyCardLogic.model(review()).quiet)
+    }
 }

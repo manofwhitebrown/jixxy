@@ -11,6 +11,7 @@ data class WeeklyCardModel(
     val stayed: Int,
     val roast: String?,
     val compliment: String?,
+    /** Quiet or thin (too little data to say much): the card keeps a quiet tone and the quiet headline. */
     val quiet: Boolean,
 )
 
@@ -24,7 +25,7 @@ object WeeklyCardLogic {
         stayed = review.pausesStayed,
         roast = review.roast?.text,
         compliment = review.compliment?.text,
-        quiet = review.isQuiet,
+        quiet = review.isQuiet || review.isThin,
     )
 
     /**
