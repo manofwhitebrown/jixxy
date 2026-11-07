@@ -29,6 +29,10 @@ data class DayMinutes(val epochDay: Long, val minutes: Int)
  * @property bondXpGained XP earned from logged events (daily visit, Leaves, laughs); [bondLevelUp] if that crossed a level
  * @property roast one weekly line (roast or quiet-week) with `{count}` = pauses faced; null if none eligible
  * @property compliment one earned compliment, only when the week supports it; null otherwise
+ * @property activeDays distinct local days with at least one app open
+ * @property isThin too little data to say much: fewer than [BrainConfig.weeklyMinActiveDays] active days, or under
+ *   [BrainConfig.weeklyMinMinutes] tracked minutes with no Pause card. Thin weeks get the quiet-week line and no
+ *   compliment; UI should present totals as "so far" rather than as a pattern.
  */
 data class WeeklyReview(
     val fromTs: Long,
@@ -43,7 +47,9 @@ data class WeeklyReview(
     val bondXpGained: Int,
     val bondLevelUp: Boolean,
     val roast: PickedLine?,
-    val compliment: PickedLine?
+    val compliment: PickedLine?,
+    val activeDays: Int = 0,
+    val isThin: Boolean = false
 ) {
     /** True if there was nothing to report (no tracked time and no pauses). */
     val isQuiet: Boolean get() = totalMinutes == 0 && pausesFaced == 0
@@ -98,12 +104,15 @@ class WeeklyReviewBuilder(
             LineQuery(Trigger.WEEKLY, AppCategory.OTHER, Mood.CHILL, roast, bond, language,
                 mapOf("count" to faced.toString(), "time" to ""), requiredTag = tag)
         )
-        val quiet = faced == 0 && totalMinutes == 0
-        val roastLine = if (quiet || faced == 0) pickTagged("weekly_quiet") else pickTagged("weekly_roast")
-        val earned = left >= 1 && left >= stayed
+        val thin = activeDays < BrainConfig.weeklyMinActiveDays || (totalMinutes < BrainConfig.weeklyMinMinutes && faced == 0)
+        val roastLine = if (faced == 0) pickTagged("weekly_quiet") else pickTagged("weekly_roast")
+        val earned = !thin && left >= 1 && left >= stayed
         val compliment = if (earned) pickTagged("weekly_praise") else null
 
-        return WeeklyReview(fromTs, toTs, totalMinutes, top, lateNight, faced, left, stayed, best, xp, levelUp, roastLine, compliment)
+        return WeeklyReview(
+            fromTs, toTs, totalMinutes, top, lateNight, faced, left, stayed, best, xp, levelUp, roastLine, compliment,
+            activeDays = activeDays, isThin = thin
+        )
     }
 
     private fun isLateNight(ts: Long): Boolean =

@@ -62,4 +62,34 @@ class WeeklyReviewTest {
         val r = b.build(events, at(1, 0), at(2, 0), 0, RoastLevel.NORMAL)
         assertEquals(5, r.totalMinutes); assertNotNull(r.roast)
     }
+
+    @Test fun oneBusyDayIsThinGetsQuietLineAndNoCompliment() {
+        tags.clear()
+        val one = mins("insta", at(0, 12), 10) + listOf(ev(UsageEventType.FOREGROUND, at(0, 12), "insta"), ev(UsageEventType.PAUSE_LEAVE, at(0, 12)))
+        val r = b.build(one, at(0, 0), at(7, 0), bondXpNow = 0, roast = RoastLevel.NORMAL)
+        assertTrue(r.isThin)
+        assertEquals(1, r.activeDays)
+        assertNull(r.compliment)
+        assertEquals(listOf<String?>("weekly_quiet"), tags)
+        assertNull(r.bestDay)
+    }
+
+    @Test fun aFullFixtureWeekIsNotThin() {
+        val r = b.build(events, at(0, 0), at(7, 0), bondXpNow = 100, roast = RoastLevel.NORMAL)
+        assertEquals(3, r.activeDays)
+        assertTrue(!r.isThin)
+        assertNotNull(r.compliment)
+    }
+
+    @Test fun lowMinutesWithoutAnyPauseIsThinEvenOverSeveralDays() {
+        val few = (0..3).flatMap { listOf(ev(UsageEventType.FOREGROUND, at(it, 12), "a")) + mins("a", at(it, 12), 5) }
+        assertTrue(b.build(few, at(0, 0), at(7, 0), 0, RoastLevel.NORMAL).isThin)
+    }
+
+    @Test fun anEmptyWeekIsQuietAndThinAndInventsNothing() {
+        val r = b.build(emptyList(), at(0, 0), at(7, 0), 0, RoastLevel.NORMAL)
+        assertTrue(r.isQuiet && r.isThin)
+        assertEquals(0, r.totalMinutes + r.pausesFaced + r.activeDays)
+        assertTrue(r.topApps.isEmpty() && r.bestDay == null && r.compliment == null)
+    }
 }

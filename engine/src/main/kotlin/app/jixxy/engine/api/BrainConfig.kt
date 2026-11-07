@@ -69,6 +69,10 @@ object BrainConfig {
     /** Callback thresholds: a counted fact is only quoted once it is at least this big. */
     const val callbackVisitsDay = 4
     const val callbackVisitsWeek = 10
+    /** A weekly review with fewer active days than this is "thin": quiet-week line, no compliment (T-E3-6). */
+    const val weeklyMinActiveDays = 2
+    /** ...or fewer tracked minutes than this with no Pause card. */
+    const val weeklyMinMinutes = 30
     /** Opens of the same app in one local day before the Naggy "again?" line may fire (D-020). */
     const val repeatOpenVisits = 3
     /** Minimum minutes between two "again?" lines at [level]; they are still bound by the daily cap and the min gap. */
