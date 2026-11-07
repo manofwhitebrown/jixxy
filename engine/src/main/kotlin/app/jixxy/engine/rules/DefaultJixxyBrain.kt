@@ -286,6 +286,7 @@ class DefaultJixxyBrain(
                 leaveStreak++
                 if (leaveStreak >= BrainConfig.impressedLeaveStreak) {
                     leaveStreak = 0
+                    if (!impressedAllowed(now)) return listOf(prompted(Trigger.PAUSE_LEAVE, now, s, slots, null))
                     addXp(BrainConfig.bondXpImpressed)
                     setTempMood(Mood.IMPRESSED, now)
                     val earned = slots + ("count" to BrainConfig.impressedLeaveStreak.toString())
@@ -365,6 +366,12 @@ class DefaultJixxyBrain(
             tryUnprompted(Trigger.CALLBACK, now, s, slots, "fact:top_app_minutes_day")?.let { return it }
         }
         return null
+    }
+
+    /** Praise stays rare: at most one IMPRESSED line per [BrainConfig.impressedGapDays], however many Leaves. */
+    private fun impressedAllowed(now: Long): Boolean {
+        val last = history.lastLineShownTs(IMPRESSED_PREFIX)
+        return last == null || now - last >= BrainConfig.impressedGapDays * DAY_MS
     }
 
     /** The rare soft line: only after several late nights in a week, and at most once per [BrainConfig.almostCaringGapDays]. */
@@ -609,6 +616,7 @@ class DefaultJixxyBrain(
 
     private companion object {
         const val ALMOST_CARING_PREFIX = "almost_caring"
+        const val IMPRESSED_PREFIX = "impressed"
         const val DAY_MS = 86_400_000L
         /** Stay grants older than this can no longer trigger the second prompt, so they are not saved. */
         const val STAY_KEEP_MS = DAY_MS

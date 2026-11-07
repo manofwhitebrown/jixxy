@@ -66,6 +66,8 @@ object BrainConfig {
     const val callbackPausesDay = 3
     const val callbackLeavesWeek = 3
     const val callbackStaysWeek = 3
+    /** Minimum days between IMPRESSED lines (earned praise must stay rare). */
+    const val impressedGapDays = 2
     const val callbackLateOpensWeek = 3
     /** Minutes in one app on one day before `fact:top_app_minutes_day` may be quoted. */
     const val callbackTopAppMinutesDay = 120

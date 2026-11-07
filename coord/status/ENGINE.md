@@ -38,6 +38,7 @@
 ### Next (callback counters), T-E3-4 (JaCoCo + simulation on the real bank)
 - T-E3-2 done: no global floor existed; 5 tests in AlmostCaringBondTest (mild at ROOMMATE, heartfelt only at RIDE_OR_DIE, none before ROOMMATE, 3-day cap). WRITER informed. Local run: 131 tests pass.
 - T-E3-3 done: EventHistory gained staysWeek, lateOpensWeek, topAppMinutesToday, bestLeaveDayWeek; CALLBACK tags fact:stays_week, fact:late_opens_week, fact:top_app_minutes_day (thresholds in BrainConfig). 9 hand-counted tests in FactsTest. Late-opens callback is skipped during late night (it broke the once-per-night rule in an existing test). WRITER has the tag/slot table. Not provided: unbroken longest session, bond change (events cannot prove them).
+- T-E3-4 (mostly done): RealBankSimulationTest (4 personas x 30 days on the real EN bank: caps, gaps, quiet hours, nap/call/PROTECTED silence, tiers never escalate early, praise rare, repeat-rate guard); LineCoverageTable + engine/LINE_COVERAGE.md for WRITER; IMPRESSED gap (impressedGapDays=2) with ImpressedGapTest; JaCoCo in engine/build.gradle.kts (prints coverage, not gated). FINDINGS: 7-day no-repeat NOT met (rate up to 0.55), tier match 61-66%; stricter picker tried and reverted (see MANAGER message).
 ### Messages handled — 20261107-0513-WRITER-almostcaring-bondmin.md
 ### Honest notes
 - Ran locally: kotlinc 2.1.21 plus a stand-in JUnit, 126 tests, all pass. NOT run: real Gradle/JUnit, JaCoCo, FakesAndConfigTest (needs coroutines-test). CI result for this push not yet seen.
