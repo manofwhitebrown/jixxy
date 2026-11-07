@@ -133,9 +133,9 @@ class PauseLogicTest {
         assertTrue(open(r, at(0, 12)).none { it.kind == ReactionKindOut.PAUSE_PROMPT })
     }
 
-    @Test fun onlyFirstThreeTargetAppsArePaused() {
+    @Test fun everyChosenTargetAppIsPausedWithNoCap() {
         val r = rig("a", "b", "c", "d")
-        assertTrue(open(r, at(0, 12), "d").none { it.kind == ReactionKindOut.PAUSE_PROMPT })
+        assertEquals(ReactionKindOut.PAUSE_PROMPT, open(r, at(0, 12), "d").single().kind)
         assertEquals(ReactionKindOut.PAUSE_PROMPT, open(r, at(0, 13), "c").single().kind)
     }
 

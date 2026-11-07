@@ -71,12 +71,13 @@ class SilenceAndCapsTest {
     @Test fun minimumGapBlocksSecondUnpromptedLine() {
         val r = Rig()
         assertEquals(1, r.send(Signal.Charger(true, 50, at(0, 12))).size)
-        assertTrue(r.send(Signal.MusicActive(true, at(0, 12, 10))).isEmpty())
-        assertEquals(1, r.send(Signal.MusicActive(true, at(0, 12, 25))).size)
+        // Naggy default (D-020): at least 10 minutes between unprompted lines.
+        assertTrue(r.send(Signal.MusicActive(true, at(0, 12, 5))).isEmpty())
+        assertEquals(1, r.send(Signal.MusicActive(true, at(0, 12, 15))).size)
     }
 
     @Test fun dailyCapBlocksThenResetsNextDay() {
-        val capped = BrainState(firstSeenTs = 1L, unpromptedDayEpoch = 20454L, unpromptedToday = 6) // 2026-01-01
+        val capped = BrainState(firstSeenTs = 1L, unpromptedDayEpoch = 20454L, unpromptedToday = BrainConfig.maxUnpromptedPerDay(NagLevel.NAGGY)) // 2026-01-01
         val r = Rig(state = capped)
         assertTrue(r.send(Signal.Charger(true, 50, at(0, 12))).isEmpty())
         assertEquals(1, r.send(Signal.Charger(true, 50, at(1, 12))).size)
