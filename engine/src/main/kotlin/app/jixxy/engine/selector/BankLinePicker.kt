@@ -38,6 +38,8 @@ class BankLinePicker(
         val lang = languageFor(query)
         val ring = rings.getOrPut(lang) { ArrayDeque() }
         var pool = eligible(query, lang)
+        // Calm hides `nag_only` lines; only Pause mechanics may fall back to them rather than go silent (WRITER, D-020).
+        if (pool.isEmpty() && query.calm && query.trigger in PAUSE_MECHANICS) pool = eligible(query.copy(calm = false), lang)
         if (pool.isEmpty()) return null
 
         query.requiredTag?.let { tag -> pool = pool.filter { tag in it.tags }; if (pool.isEmpty()) return null }
@@ -87,7 +89,8 @@ class BankLinePicker(
                 l.roast <= q.roast.n &&
                 l.bondMin <= q.bond.ordinal &&
                 (l.categories.isEmpty() || (q.category != null && q.category in l.categories)) &&
-                l.slots.all { it in q.slots }
+                l.slots.all { it in q.slots } &&
+                !(q.calm && NAG_ONLY in l.tags)
         }
 
     /** Drops reserved-tag lines the query did not ask for. */
@@ -124,4 +127,9 @@ class BankLinePicker(
 
     private fun fill(text: String, slots: Map<String, String>): String =
         slots.entries.fold(text) { acc, (k, v) -> acc.replace("{$k}", v) }
+
+    private companion object {
+        const val NAG_ONLY = "nag_only"
+        val PAUSE_MECHANICS = setOf(Trigger.PAUSE_PROMPT, Trigger.PAUSE_STAY, Trigger.PAUSE_LEAVE, Trigger.IMPRESSED)
+    }
 }

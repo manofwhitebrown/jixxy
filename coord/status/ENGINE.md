@@ -44,6 +44,7 @@
 - T-E3-5 language plumbing: picker is language-strict with per-language rings and trigger-level English fallback (LanguageTest, 6 tests); HANDOFF to PLATFORM to load all languages into one bank.
 - Repeat finding under Naggy volume: 29-71% of unprompted lines repeat within 7 days (guard raised to 0.75); more lines per small pool is the lever.
 - Still open: escalation over repeat opens/"again?" callbacks (D-020 welcome, not built), WeeklyReview quiet-week variant (T-E3-6), D-019 8-app cap request is superseded by D-020 (no cap).
+- WRITER nag-tier request done: `LineQuery.calm` (additive), picker drops `nag_only` at Calm with a Pause-mechanics fallback; NagTierTest (5) + Calm/Chaos personas re-added to the 30-day sim (calm shows 0 nag_only lines). Calm Pause tier match 27% (finding sent to WRITER).
 ### Messages handled — 20261107-0513-WRITER-almostcaring-bondmin.md
 ### Honest notes
 - Ran locally: kotlinc 2.1.21 plus a stand-in JUnit, 126 tests, all pass. NOT run: real Gradle/JUnit, JaCoCo, FakesAndConfigTest (needs coroutines-test). CI result for this push not yet seen.

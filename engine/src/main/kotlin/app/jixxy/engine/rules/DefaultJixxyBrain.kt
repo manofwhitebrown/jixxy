@@ -7,6 +7,7 @@ import app.jixxy.engine.api.BrainState
 import app.jixxy.engine.api.CharacterState
 import app.jixxy.engine.api.JixxyBrain
 import app.jixxy.engine.api.Mood
+import app.jixxy.engine.api.NagLevel
 import app.jixxy.engine.api.PauseChoiceKind
 import app.jixxy.engine.api.PauseRuntime
 import app.jixxy.engine.api.PauseSpec
@@ -520,7 +521,8 @@ class DefaultJixxyBrain(
             bond = BrainConfig.bondFor(state.bondXp),
             language = s.language,
             slots = slots + ("time" to TimeUtil.clock(now, zone)),
-            lateNight = isLateNight(now)
+            lateNight = isLateNight(now),
+            calm = s.nagLevel == NagLevel.CALM
         )
 
     private fun say(trigger: Trigger, line: PickedLine, now: Long, s: UserSettings, mood: Mood?): Reaction {

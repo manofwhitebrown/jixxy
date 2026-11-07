@@ -23,7 +23,7 @@ class RealBankSimulationTest {
 
     private class Persona(
         val name: String, val seed: Int, val roast: RoastLevel, val leavePct: Int, val openPct: Int,
-        val nightOwl: Boolean, val chargePerMille: Int = 8, val napsPerDay: Int = 1, val callsPerDay: Int = 2
+        val nightOwl: Boolean, val nag: NagLevel = NagLevel.NAGGY, val chargePerMille: Int = 8, val napsPerDay: Int = 1, val callsPerDay: Int = 2
     )
 
     private class Result(val shown: List<Shown>, val napWindows: List<LongRange>, val callWindows: List<LongRange>, val brainEvents: List<UsageEvent>, val days: Int)
@@ -36,7 +36,7 @@ class RealBankSimulationTest {
     private val pauseTargets = setOf("reels.app", "insta.app", "game.app")
 
     private fun simulate(bank: LineBank, p: Persona, days: Int): Result {
-        val settings = UserSettings(roast = p.roast, targetApps = pauseTargets)
+        val settings = UserSettings(roast = p.roast, targetApps = pauseTargets, nagLevel = p.nag)
         val byId = bank.lines.associateBy { it.id }
         val brain = DefaultJixxyBrain(BrainState(), { settings }, BankLinePicker(bank, Random(p.seed)), { it }, z)
         val rnd = Random(p.seed)
@@ -95,7 +95,9 @@ class RealBankSimulationTest {
         Persona("heavy reels", 11, RoastLevel.NORMAL, 40, 9, false),
         Persona("night owl", 22, RoastLevel.SAVAGE, 60, 6, true),
         Persona("light user", 33, RoastLevel.GENTLE, 80, 2, false, napsPerDay = 0, callsPerDay = 1),
-        Persona("student", 44, RoastLevel.NORMAL, 70, 5, false)
+        Persona("student", 44, RoastLevel.NORMAL, 70, 5, false),
+        Persona("calm reader", 55, RoastLevel.GENTLE, 70, 5, false, nag = NagLevel.CALM),
+        Persona("chaos gremlin", 66, RoastLevel.SAVAGE, 50, 9, false, nag = NagLevel.CHAOS)
     )
 
     private val unpromptedTriggers = setOf(
@@ -111,19 +113,25 @@ class RealBankSimulationTest {
     private fun Shown.unprompted() = line?.trigger in unpromptedTriggers
 
     @Test fun capsGapsAndQuietHoursHold() = forEachPersona { p, res ->
-        val settings = UserSettings()
+        val settings = UserSettings(nagLevel = p.nag)
         val spoken = res.shown.filter { it.unprompted() }
         assertTrue("${p.name}: simulation too quiet (${spoken.size})", spoken.size > 20)
         spoken.groupingBy { TimeUtil.epochDay(it.ts, z) }.eachCount().forEach { (d, n) ->
-            assertTrue("${p.name}: $n unprompted on day $d", n <= BrainConfig.maxUnpromptedPerDay(settings.nagLevel))
+            assertTrue("${p.name}: $n unprompted on day $d", n <= BrainConfig.maxUnpromptedPerDay(p.nag))
         }
         spoken.zipWithNext().forEach { (a, b) ->
-            assertTrue("${p.name}: gap under ${BrainConfig.minGapMinutes(settings.nagLevel)} min", b.ts - a.ts >= BrainConfig.minGapMinutes(settings.nagLevel) * minute)
+            assertTrue("${p.name}: gap under ${BrainConfig.minGapMinutes(p.nag)} min", b.ts - a.ts >= BrainConfig.minGapMinutes(p.nag) * minute)
         }
         spoken.forEach {
             val m = TimeUtil.minuteOfDay(it.ts, z)
             assertFalse("${p.name}: unprompted line in quiet hours at minute $m", TimeUtil.inWindow(m, settings.quietStartMin, settings.quietEndMin))
         }
+    }
+
+    @Test fun calmNeverShowsNagOnlyLinesInUnpromptedSpeech() = forEachPersona { p, res ->
+        if (p.nag != NagLevel.CALM) return@forEachPersona
+        val bad = res.shown.filter { it.unprompted() && "nag_only" in it.line!!.tags }
+        assertTrue("${p.name}: ${bad.size} nag_only lines at Calm", bad.isEmpty())
     }
 
     @Test fun napsCallsAndProtectedAppsStaySilent() = forEachPersona { p, res ->
@@ -173,7 +181,8 @@ class RealBankSimulationTest {
         }
         println("SIM ${p.name}: pause tier match $match/$total, early escalation $early")
         assertTrue("${p.name}: early escalation $early/$total", early <= total * EARLY_TIER_CEILING)
-        assertTrue("${p.name}: tier match too low $match/$total", match >= total * TIER_MATCH_FLOOR)
+        // At Calm the pool has few higher-tier lines (most are nag_only), so escalation is deliberately flatter there.
+        if (p.nag != NagLevel.CALM) assertTrue("${p.name}: tier match too low $match/$total", match >= total * TIER_MATCH_FLOOR)
     }
 
     @Test fun praiseStaysRare() = forEachPersona { p, res ->

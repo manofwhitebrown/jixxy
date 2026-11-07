@@ -16,6 +16,7 @@ import app.jixxy.engine.api.Trigger
  * @property onBreak true when a poke arrives at energy 0: pick a POKE line tagged `on_break` ("I'm on break")
  * @property requiredTag only lines carrying this tag are eligible (e.g. `dropped` for a drop reaction)
  * @property escalation true when the user is poking repeatedly: prefer POKE lines tagged `escalation`
+ * @property calm true at the Calm nag level: lines tagged `nag_only` are not eligible (D-020); Pause mechanics fall back to them only if nothing else fits
  */
 data class LineQuery(
     val trigger: Trigger,
@@ -30,7 +31,8 @@ data class LineQuery(
     val lateNight: Boolean = false,
     val onBreak: Boolean = false,
     val requiredTag: String? = null,
-    val escalation: Boolean = false
+    val escalation: Boolean = false,
+    val calm: Boolean = false
 )
 
 /** A chosen line with its slots already filled. */
