@@ -1,39 +1,47 @@
 # Owner test guide: Jixxy on your phone
 
-One page. You are tester #1. Test on your real phone, then reply to the team in plain language ("step 4 failed, he never showed up"). Don't worry about technical words.
+One page. You are tester #1. Test on your real phone, then reply in plain words ("step 5 failed, he never showed up"). No technical terms needed.
 
-**Which build?** Install the newest APK from the Releases page (https://github.com/manofwhitebrown/jixxy/releases). Tell us the version name you installed. `v0.0.1-alpha` has the nap/wake bug you already found; a newer build should have a fix, but we haven't seen it run on a device.
+**Build you test:** the rolling `latest` build, not `v0.0.1-alpha`.
+Download link (open it in your phone browser): https://github.com/manofwhitebrown/jixxy/releases/download/latest/jixxy-latest.apk
+Release page (shows the "Built" time, so tell us which build you tested): https://github.com/manofwhitebrown/jixxy/releases/tag/latest
 
-**Note first (30 seconds):** phone brand and model, Android version, build/version name.
+**Status:** everything below was written and passed automatic tests, but **nobody has seen it run on a phone yet**. Your report is the first proof.
 
-## The 8 steps
+## Before you start (2 minutes)
 
-1. **Install and open.** Download the APK, install it, open it. Did it install without errors? What does the first screen look like? (Currently a temporary 3-button screen, or the real app once it's wired in.)
-2. **Icon.** Look at the launcher icon. Is it the Jixxy icon or the Android robot?
-3. **Permissions.** Allow *Display over other apps*. If a permission is greyed out on Android 13+, follow the "Allow restricted settings" steps in the README. Tell us exactly where you got stuck, if anywhere.
-4. **Wake him.** Tap Wake Jixxy. Does a sprite appear? Is it the cat or a placeholder shape? Is the real cat art there yet?
-5. **Move him.** Drag him around and let go. Does he stay where you dropped him? Can you still use other apps normally, with taps passing through?
-6. **Nap / Stop / Wake (the bug).** Put him to nap, then press Stop, then Wake again. Does he come back? Try it twice.
-7. **Does he talk?** Open a few apps, plug in the charger, then unplug. Does he say anything? Copy or screenshot any line. If you set up a Pause app, open it: does a card appear? Does Leave work immediately? Does Stay wait a few seconds?
-8. **Survive.** Lock the phone for 10 minutes, then unlock. Then restart the phone. Is he still there, or does he need waking?
+1. **Install over the old one.** Tap the downloaded file, then **Update**. You should not need to uninstall. If Android refuses, send us its exact words.
+2. **"Install unknown apps".** If Android asks, allow your browser (or file manager) to install apps once: Settings, Apps, Special access, Install unknown apps.
+3. **Permissions.** The app asks for three things and explains each: **Display over other apps**, **Usage access**, **Notifications**.
+4. **If a permission is greyed out ("Restricted setting").** Android 15 and newer can block overlay and usage access for apps installed outside Play (Android 13 and 14 mostly block other permissions; sources: [Android Authority](https://androidauthority.com/android-15-restricted-settings-sideloading-3481098)). Do this: tap the greyed-out permission once and press OK, then Settings, Apps, Jixxy, three-dot menu (top right), **Allow restricted settings** (PIN or fingerprint), then go back and try again. The menu item only appears after you tapped the blocked permission once. Menus differ by phone. The app also has its own help for this step. Tell us exactly where you got stuck.
+5. **Write down:** phone brand and model, Android version, and the build's "Built" time.
+
+## 8 things to try
+
+1. **First screen.** Open Jixxy. You should see the real app (onboarding or home), not a 3-button screen. Is the icon the cat, not the Android robot?
+2. **Look at him.** Is he the cat on your sheet? What's off (face, size, colour)?
+3. **Pick apps.** Choose up to 3 habit apps and a roast level. A 4th app should be refused.
+4. **Wake and move him.** Tap Wake. Drag him, let go, rotate the phone. Does he stay on screen? Can you use other apps normally, with taps passing through around him?
+5. **The Pause.** Open one of your chosen apps. A card with **Leave** and **Stay** should appear. Leave should take you home at once. On a new card, Stay should unlock after a few seconds. (This is the riskiest step on Android 14 and 15, so please try it twice.)
+6. **Talk.** Switch between apps for a few minutes, plug in and unplug the charger. Does he say anything? Funny or annoying? Screenshot any line.
+7. **Nap, Stop, Wake.** Nap 1 hour, press Stop, then Wake. He must come back. Try it twice.
+8. **Survive.** Lock the phone for 10 minutes and unlock. Then restart the phone and open Jixxy. Is he still there, or does he need waking? Either answer is useful.
 
 ## What to screenshot
-- The first screen, and the permission screen if you got stuck.
-- The sprite on screen (any state).
-- Any line he says, and the Pause card if it appears.
-- Anything that looks broken.
-Don't capture private messages or other people's content.
+The first screen, any permission screen where you got stuck, the cat on screen, any line he says, the Pause card, anything that looks broken. Skip private messages and other people's content.
 
-## How to report a bug
-Send one message per bug with:
+## How to report
+One message per problem, in plain words, with:
 1. **Phone and Android version**
-2. **Build/version name**
+2. **Build** (the "Built" time)
 3. **What you did** (steps, in order)
 4. **What you expected**
 5. **What happened** (plus a screenshot)
+6. **Debug info:** once the app has a **Copy debug info** button (Settings), tap it and paste the text. It is not in the app yet. It stays on your phone until you paste it.
 
-DEVOPS keeps the bug list in `qa/`; the full per-device checklist is `qa/SMOKE_CHECKLIST.md`. This guide is the short version for you, not a replacement.
+Example: "Steps 1-4 OK. Step 5 BROKE: Leave did nothing. Redmi Note 11, Android 13, built 09:27 UTC."
 
 ## Also tell us (opinions are data)
-- Does he look like the character on your sheet? What's off?
-- Anything that felt annoying, too much, or too personal?
+Anything annoying, too much or too personal? Did a line make you laugh?
+
+The full 15-step phone checklist is [`qa/SMOKE_CHECKLIST.md`](../qa/SMOKE_CHECKLIST.md) and the bug list is [`qa/BUGS.md`](../qa/BUGS.md). This page is the short version; it does not replace them.
