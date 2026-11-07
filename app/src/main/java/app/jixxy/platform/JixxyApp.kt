@@ -1,6 +1,7 @@
 package app.jixxy.platform
 
 import android.app.Application
+import kotlinx.coroutines.flow.first
 import app.jixxy.data.DataStoreSettingsRepository
 import app.jixxy.data.SqliteStateStore
 import app.jixxy.platform.signals.SignalBus
@@ -24,6 +25,8 @@ class JixxyApp : Application() {
     /** Chosen Pause apps, mirrored from settings so crash/diagnostic writes can keep exactly those package names. */
     @Volatile var chosenApps: Set<String> = emptySet()
     val diagnostics by lazy { DiagnosticsRepository(this, { chosenApps }, { permissions.state.value }) }
+    /** Settings -> "Test meow": `app.soundTester.testMeow()` returns true if it played, false if the phone state said no. */
+    val soundTester by lazy { SoundTester(this, { settings.settings.first() }) }
     val weekly by lazy { WeeklyTrigger(this) }
     val stateStore by lazy { SqliteStateStore(this, isBlind = { blindMode }) }
 }

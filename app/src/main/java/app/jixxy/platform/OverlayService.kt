@@ -88,28 +88,10 @@ class OverlayService : Service(), ReactionRenderer {
 
     override fun onBind(intent: Intent?): IBinder? = null
 
-    /**
-     * Asked by JixxySounds before EVERY sound (D-021). Any doubt means silence; see [SoundPolicy].
-     * Ringer mode and music state come from AudioManager (no permission). Do Not Disturb is read with
-     * NotificationManager.getCurrentInterruptionFilter(); only INTERRUPTION_FILTER_ALL counts as "off" (unknown = silent).
-     */
-    private fun soundAllowed(): Boolean {
-        val audio = getSystemService(AUDIO_SERVICE) as android.media.AudioManager
-        val nm = getSystemService(android.app.NotificationManager::class.java)
-        val minutes = java.time.LocalTime.now().let { it.hour * 60 + it.minute }
-        return SoundPolicy.allowed(
-            soundsEnabled = settings.soundsEnabled,
-            ringerNormal = audio.ringerMode == android.media.AudioManager.RINGER_MODE_NORMAL,
-            doNotDisturbOff = nm.currentInterruptionFilter == android.app.NotificationManager.INTERRUPTION_FILTER_ALL,
-            inCall = audio.mode != android.media.AudioManager.MODE_NORMAL,
-            musicPlaying = audio.isMusicActive,
-            quietHours = SoundPolicy.inQuietHours(minutes, settings.quietStartMin, settings.quietEndMin),
-            napping = napping,
-            blindMode = settings.blindMode,
-            bubbleId = null,
-            lastCueBubbleId = null,  // JixxySounds already enforces its own minimum gap between cues
-        )
-    }
+    private val soundGate by lazy { SoundGate(this, { settings }, { napping }) }
+
+    /** Asked by JixxySounds before EVERY sound (D-021); the rules live in [SoundGate] + [SoundPolicy]. */
+    private fun soundAllowed(): Boolean = soundGate.allowed()
 
     /** Creates the player when sounds are on, releases it when they are off (D-021). */
     private fun applySounds() {
