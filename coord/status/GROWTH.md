@@ -4,7 +4,7 @@
 Found (T-G3-0 audit): README, site "What works today" and CHANGELOG still described the old alpha (placeholder sprite, 3-button screen, silent) while `latest` carries the real app in code; OWNER_TEST_GUIDE pointed at the Releases page; TESTER_PROGRAM used a Google Form and had no permissions table; store/LISTING.md header said "alpha, placeholder art"; no distribution or licence memo. Not stale: PRIVACY (manifest re-read: SYSTEM_ALERT_WINDOW, FOREGROUND_SERVICE(+SPECIAL_USE), PACKAGE_USAGE_STATS, POST_NOTIFICATIONS, RECEIVE_BOOT_COMPLETED, `<queries>` launcher intent; no INTERNET).
 
 ## Now
-T-G3-0, -1, -2, -3, -4 pushed. Next: T-G3-6 PRIVACY final pass (blocked on PLATFORM's exact diagnostics-log contents), then T-G3-7 shot list, then docs after the Owner confirms a build.
+T-G3-0 to -4 and -7 pushed. Next: T-G3-6 PRIVACY final pass (blocked on PLATFORM's exact diagnostics-log contents), then T-G3-7 shot list, then docs after the Owner confirms a build.
 
 ## Done (Wave 3)
 - T-G3-1 growth/OWNER_TEST_GUIDE.md rewritten (latest APK link, restricted-settings step, 8 things, report format; "Copy debug info" marked not-yet-in-app).

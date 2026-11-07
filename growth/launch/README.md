@@ -8,6 +8,7 @@ Draft v0.2 (rebased on the cat, T-G2-5). Nothing here is to be posted until a re
 | `CAPTIONS.md` | Caption and hashtag sets |
 | `POSTS.md` | WhatsApp status text, Product Hunt draft, Reddit draft |
 | `ONELINERS.md` | 10 shareable one-liners from WRITER's marketing-safe lines |
+| `SHOT_LIST.md` | One-page shot list for the Owner's phone screen recordings (on hold until a build is stable) |
 
 ## Rules for everything in this folder
 
