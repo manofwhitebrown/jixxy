@@ -33,13 +33,14 @@ The one to try is the rolling **`latest`** build: <https://github.com/manofwhite
 
 ## Progress checklist
 
-`[x]` = done. `[ ]` = not done yet. "Written" means the code exists and the computer's tests pass; **only the Owner seeing it work on a phone counts as "seen on a phone".** Updated 2026-11-07.
+`[x]` = done. `[ ]` = not done yet. "Written" means the code exists and the computer's tests pass; **only the Owner seeing it work on a phone counts as "seen on a phone".** Last checked 2026-11-07 against commit `5892ff2`.
 
 ### Seen working on a real phone
 - [x] Installs and opens (`v0.0.1-alpha`)
 - [x] Floating placeholder sprite can be switched on (alpha)
 - [ ] Real app screens and setup
-- [ ] The cat art (the Owner reported it looks cut off at the bottom; fix written, not seen)
+- [x] The real cat appears on the home screen (Owner screenshot, 2026-11-07)
+- [ ] The cat art looks whole (he looks cut off at the bottom; a fix is being written, not seen)
 - [ ] Speech bubbles and lines
 - [ ] Pause card: Leave and Stay
 - [ ] Nap, Stop, Wake (fix written, not seen)
@@ -50,18 +51,18 @@ The one to try is the rolling **`latest`** build: <https://github.com/manofwhite
 
 ### Written, in the `latest` build or on `main`, not yet seen on a phone
 - [x] Real app as the launcher, guided setup, Home, Settings, "What Jixxy saw"
-- [x] 15 cat expression images, speech bubble, Pause card
-- [x] Line bank (about 595 English lines, more being added) connected to the brain
+- [x] 18 cat expression images, speech bubble, Pause card
+- [x] Line bank (700+ English lines, more being added) connected to the brain
 - [x] Weekly review screen and share card
 - [x] Hinglish as an opt-in beta
 - [x] Local debug report and crash log (hidden "Report a problem" screen until wired in)
 - [x] Offline checks: no internet permission, signing key match, no secrets
 
 ### Decided, not written yet
-- [ ] No limit on Pause apps (the older limit of 3 is still in the code)
+- [ ] No limit on Pause apps (app screens no longer cap it; the brain's old limit of 3 is still in the code)
 - [ ] Calm / Naggy / Chaos dial
 - [ ] Optional meows and blips (off by default)
-- [ ] Sharper art (three animation frames still missing)
+- [ ] Sharper art, plus a closed-eyes blink frame (yawn, stretch and sleep now exist)
 
 ### Docs and launch prep
 - [x] README, CHANGELOG, privacy notice, brand guide
@@ -70,16 +71,8 @@ The one to try is the rolling **`latest`** build: <https://github.com/manofwhite
 - [x] Distribution memo and licence memo
 - [x] Launch scripts and phone-recording shot list (on hold)
 - [ ] Landing page speed score (Lighthouse) checked
-- [ ] Landing page live (needs GitHub Pages switched on)
+- [ ] Landing page opened and checked by the Owner (GitHub Pages is on and has deployed)
 - [ ] README, CHANGELOG and site matched to a build the Owner confirmed
-
-### Decisions only the Owner can make
-- [ ] Licence for the code, and terms for the cat art and name
-- [ ] Google Play account or another way to distribute
-- [ ] Private release signing key
-- [ ] GitHub Pages on
-- [ ] Rotate the shared GitHub token
-- [ ] Higher-resolution art and the 3 missing frames
 
 ### Before testers join
 - [ ] The Owner has tested a build on their phone
