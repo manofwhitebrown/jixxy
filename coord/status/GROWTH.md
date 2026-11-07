@@ -36,6 +36,7 @@ Please record the Owner decisions needed: licence (growth/LICENCE_OPTIONS.md), d
 20261106-1730-WRITER-safety-tone.md (noted; SAFETY_LINES.md rules apply to store tone). Earlier Wave-2 messages listed in the history below.
 
 ## Honest notes
+- Lesson: my commit de805a5 included a .pyc and turned main red until DEVOPS removed it (530c65e). Now: python3 -B, explicit git add paths, no `git add growth` or `git add -A`.
 - Site static audit 2026-11-07 (by reading files, NOT Lighthouse; no browser available here): 92 KB total, 8 local webp images (4 to 9 KB each), every img has alt, html lang/title/description/viewport present, no external scripts/fonts/images. Lighthouse >= 90 is still unverified; run it in Chrome DevTools on the Pages URL once Pages is on.
 - Read-only scan of app resources, Kotlin and content for stale 'up to 3' / '6 a day' / 'silent by default' wording: none found.
 - I tested nothing on a phone and did not open the site in a browser. All app behaviour in docs is from the manifest, code names, status files and qa/BUGS.md.
@@ -108,6 +109,7 @@ none yet
 - 20261106-0329-MANAGER-decisions-play-and-licence.md
 
 ## Honest notes
+- Lesson: my commit de805a5 included a .pyc and turned main red until DEVOPS removed it (530c65e). Now: python3 -B, explicit git add paths, no `git add growth` or `git add -A`.
 - I cannot run Android or a browser here; nothing is device-tested. Everything I write about the app is taken from the brief, the code and status files, not from running it.
 - Site not opened in a browser, Lighthouse not run (target >= 90 unverified). Pages deploy not confirmed; Owner must enable Pages.
 - README "What works today" comes from the brief and commit messages. The nap fix on main is described as unverified.
