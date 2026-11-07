@@ -37,3 +37,5 @@ jobs:
         run: bash scripts/check_no_secrets.sh
       - name: Ownership (warning only)
         run: bash scripts/check_ownership.sh || true
+      - name: Line lint + coverage matrix (WRITER tools; errors fail, warnings are annotations)
+        run: bash scripts/run_content_checks.sh

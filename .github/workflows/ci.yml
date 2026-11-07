@@ -53,6 +53,8 @@ jobs:
         run: bash scripts/check_assets.sh
       - name: Line bank (python fallback; Gradle task takes over when it exists)
         run: python3 scripts/validate_lines.py
+      - name: Line lint + coverage matrix (WRITER tools; errors fail, warnings are annotations)
+        run: bash scripts/run_content_checks.sh
 
   build:
     name: Build, test, lint, privacy guards

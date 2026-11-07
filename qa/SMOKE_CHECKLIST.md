@@ -13,7 +13,8 @@ Steps marked ★ need a feature the release notes say is in your build (Nag leve
 ## B. Permissions (2 min)
 4. Open **Jixxy**. You should see the real app (onboarding or Home), not the old 3-button screen.
 5. Say yes to **Display over other apps**, **Usage access** and **Notifications** when asked. Each ask should say why in plain words.
-6. If Android says **"Restricted setting"** or greys a switch out: follow the in-app help (usually app info, three dots, **Allow restricted settings**). Tell us if the help was unclear.
+6. *Android 12 / Samsung One UI 4.1 (API 31/32):* there is no "Allow restricted settings" step and no notification-permission prompt on this version. One UI 4.1 has **Put unused apps to sleep** / **Sleeping apps** under battery settings: make sure Jixxy is NOT in that list, otherwise he stops after a while. Tell us if the in-app guide for this was unclear.
+   On Android 13 or newer: if Android says **"Restricted setting"** or greys a switch out: follow the in-app help (usually app info, three dots, **Allow restricted settings**). Tell us if the help was unclear.
 
 ## C. Cat on screen (1 min)
 7. Pick the apps you want Jixxy to stop you in. ★ There is no limit: try picking 10 or more. Pick a roast level. Tap **Wake**.

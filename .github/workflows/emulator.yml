@@ -1,6 +1,6 @@
 name: Emulator
 
-# After a green CI run on main: install that CI's debug APK on emulators (API 26, 30, 34, 35),
+# After a green CI run on main: install that CI's debug APK on emulators (API 26, 30, 31, 34, 35; automatic runs use 34 only),
 # grant the special permissions with adb, launch the app, and collect screenshots + logcat.
 # Evidence is uploaded as artifacts here and published by T-V1-DEVOPS-2 (ci-evidence release).
 # Instrumented tests (connectedDebugAndroidTest) run too, as soon as app/src/androidTest exists.
@@ -37,8 +37,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # Automatic runs after CI use one version (34); "Run workflow" tests all four.
-        api: ${{ fromJSON(github.event_name == 'workflow_run' && '[34]' || '[26,30,34,35]') }}
+        # Automatic runs after CI use one version (34); "Run workflow" tests all five (26, 30, 31, 34, 35).
+        api: ${{ fromJSON(github.event_name == 'workflow_run' && '[34]' || '[26,30,31,34,35]') }}
     env:
       GH_TOKEN: ${{ github.token }}
       PKG: app.jixxy
