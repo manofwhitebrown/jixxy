@@ -1,4 +1,4 @@
-# JIXXY — MICROCOPY v0.6
+# JIXXY — MICROCOPY v0.7
 Owner: WRITER · Consumer: UI (→ strings.xml) · Language: en
 
 **Rules**
@@ -289,3 +289,20 @@ Waking Jixxy always ends any nap. The copy says so, so the screen matches the be
 - `a11y.reaction_sleepy` — Boring
 - `a11y.pause_card` — Jixxy is peeking. Choose Leave or Stay.
 
+
+---
+
+## 16. Settings: language and problem report (v0.7, T-W3-6, requested by UI)
+Neutral tone: the user is deciding about their data. No jokes. IDs below replace the `[P]` placeholders; existing IDs unchanged.
+- `settings.language.value_en` — English
+- `settings.language.value_hinglish` — Hinglish (beta)
+- `settings.language.help` — Choose the language Jixxy talks in. Screens and buttons stay in English.
+- `settings.language.hinglish_note` — Beta: these lines haven't been checked by native speakers yet, so some may sound off. You can switch back any time.
+- `settings.debug.label` — Report a problem
+- `settings.debug.help` — Copies a short report to your clipboard: app version, phone model, Android version, permission and service status, and recent errors. It has no app names, messages or anything you typed. It stays on your phone until you paste it somewhere yourself.
+- `settings.debug.copy` — Copy debug info
+- `settings.debug.clear` — Clear diagnostics
+- `settings.debug.copied` — Copied. Paste it wherever you're reporting the problem.
+- `settings.debug.cleared` — Diagnostics cleared.
+
+Truth condition: `settings.debug.help` lists what the report contains and says it has no app names. PLATFORM must confirm the real report matches this list; if it differs, WRITER changes the text, not the report's honesty.

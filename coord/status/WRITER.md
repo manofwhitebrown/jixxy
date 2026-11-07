@@ -18,3 +18,5 @@ Nothing is device-tested. Humour is my judgement. Hinglish is unreviewed by a na
 Found: EN 621 lines, Hinglish 226, validator 0 problems, nothing device-tested. Done first: T-W3-1 (D-014 bondMin split, D-015 tags verified, D-016 isolation verified). Next: T-W3-2 2 am audit of the EN bank, then T-W3-3 coverage gaps. Keep/rewrite/cut list will be in content/LINE_REVIEW.md.
 
 ## 2026-11-07T05:15Z T-W3-2 pushed (2 am audit of Pause, late-night, session, music, callback, impressed, poke lines; 30 rewrites, 6 poke lines tagged escalation). Next: T-W3-3 coverage gaps once ENGINE's table arrives; meanwhile self-run coverage_matrix.py.
+
+## 2026-11-07T05:16Z T-W3-6 (partial): settings language/debug copy final in MICROCOPY v0.7 section 16; handled message 20261107-0513-UI-microcopy-language-debug. Still to do in T-W3-6: permission re-grant fix-it cards, notification text, other empty states.
