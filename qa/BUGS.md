@@ -11,8 +11,17 @@ Only the Owner can move a bug to `verified`. New findings: add a row below, one 
 | B-003 | Floating sprite is a placeholder shape ("potato") | CHARACTER | fixed in code (15 expression sprites from the Owner's sheet in `character/src/main/res`, speech bubble 8789abc); the Owner judges the look on the next build, art quality (soft, 3 frames missing) is a separate pending decision |
 | B-004 | Nap, then Stop, then Wake: Jixxy never shows again | PLATFORM | fixed in code (`NapPolicy` + `NapPolicyTest`, a68c168); **needs the 2-minute test `qa/REGRESSION_NAP_STOP_WAKE.md` on a phone** |
 | B-005 | Jixxy says nothing: no lines reach the screen | PLATFORM / ENGINE | fixed in code (real brain `JixxyBrains.create` inside `PersistingBrain`, `Dispatcher.say` calls the real bubble `sprite?.showBubble`, both in `OverlayService`); not seen on a phone |
+| B-006 | Cat looks half cut off (flat cut at the bottom of the sprite) | CHARACTER | open (reported by the Owner via MANAGER, 2026-11-07 10:49; CHARACTER notified) |
 
 All five come from the Owner's first test of `v0.0.1-alpha` (versionCode 1; phone model and Android version were not recorded). Nothing here is `verified` yet: only the Owner moves a row to `verified`.
+
+### B-006 Cat looks half cut off
+- Steps: 1. Tap Wake. 2. Look at the cat floating mid-screen on the home screen.
+- Expected: a whole cat, or an obviously intentional edge.
+- Actual: the sprite has a flat cut at the bottom (the art itself is a bust crop).
+- Phone / Android version / build: Samsung, Android version unknown, `latest` as of the morning of 2026-11-07.
+- Reported by / when: Owner via MANAGER, 2026-11-07 10:49. Same report: the "potato" cat (B-003) is gone; the Owner has not said "verified" yet.
+- Owner role: CHARACTER   Status: open   Severity: S3
 
 ## Not bugs yet: unproven things (from the team brief, section A)
 These are risks nobody has seen fail or work. They become rows here the moment the Owner reports a failure. Tests: `qa/SMOKE_CHECKLIST.md`, `qa/MILESTONE_M2_PAUSE.md`.
@@ -47,7 +56,7 @@ These are risks nobody has seen fail or work. They become rows here the moment t
 - Actual (alpha): never; `Dispatcher` used `NoopBrain`.
 
 ## Template for new bugs
-Add the row to the table above AND a block below, in the same session as the report. Next free ID: B-006.
+Add the row to the table above AND a block below, in the same session as the report. Next free ID: B-007.
 ```
 ### B-0NN Short title
 - Steps: 1. … 2. … 3. …
