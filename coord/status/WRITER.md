@@ -26,3 +26,5 @@ Found: EN 621 lines, Hinglish 226, validator 0 problems, nothing device-tested. 
 ## 2026-11-07T05:18Z T-W3-3 partial pushed: +18 Pause prompt lines (roast 3 for all categories, productivity roast 2). Waiting on ENGINE coverage table (T-E3-4) and fact slot names (T-W3-4).
 
 ## 2026-11-07T05:20Z T-W3-5 done (weekly praise lines now claim only 'at least one Leave'; +2 headline IDs). No new ENGINE messages yet: T-W3-3 table and T-W3-4 slot names still pending.
+
+## 2026-11-07T05:22Z T-W3-6 done: fix-it cards, notification states, diagnostics empty (MICROCOPY v0.8). Handled 20261107-0521-ENGINE-almostcaring-confirmed (ENGINE confirms per-line bondMin; keep mild almost-caring lines plentiful, 11 exist). Still waiting: ENGINE coverage table, fact slot names.

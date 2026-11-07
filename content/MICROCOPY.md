@@ -1,4 +1,4 @@
-# JIXXY — MICROCOPY v0.7
+# JIXXY — MICROCOPY v0.8
 Owner: WRITER · Consumer: UI (→ strings.xml) · Language: en
 
 **Rules**
@@ -308,3 +308,22 @@ Neutral tone: the user is deciding about their data. No jokes. IDs below replace
 - `settings.debug.cleared` — Diagnostics cleared.
 
 Truth condition: `settings.debug.help` lists what the report contains and says it has no app names. PLATFORM must confirm the real report matches this list; if it differs, WRITER changes the text, not the report's honesty.
+
+---
+
+## 17. Permission fix-it cards, notification states, diagnostics empty (v0.8, T-W3-6)
+New IDs only; nothing above changed. Clarity beats jokes: each card says what is off, what stops working, and that nothing extra is read. The overlay card already exists as `error.overlay_revoked.*` (section 15); reuse it.
+- `fixit.usage.title` — Usage access is off
+- `fixit.usage.body` — Without it I can't tell which app is open, so Pauses won't appear. Turn it back on in settings. I still only read app names and how long they're open.
+- `fixit.usage.cta` — Open usage access
+- `fixit.notifications.title` — Notifications are off
+- `fixit.notifications.body` — I show one small notification while I'm running. With notifications off, you won't see it or be able to use Nap from it. Allow them and it comes back.
+- `fixit.notifications.cta` — Allow notifications
+- `fixit.restart.title` — I didn't start after a restart
+- `fixit.restart.body` — Your phone restarted or Jixxy updated, and I'm not running. Tap Wake to bring me back.
+- `fixit.restart.cta` — Wake
+- `fixit.menus_note` — Menu names differ by phone. If you can't find it, search your settings for "{permission}".
+- `fixit.all_good` — Everything I need is allowed.
+- `notif.body.napping` — Napping. Tap Wake to bring me back.
+- `notif.body.blind` — Blind mode is on. I'm not reading app names and nothing is logged.
+- `settings.debug.empty` — No problems recorded.
