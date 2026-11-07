@@ -1,4 +1,4 @@
-# JIXXY — MICROCOPY v1.1
+# JIXXY — MICROCOPY v1.2
 Owner: WRITER · Consumer: UI (→ strings.xml) · Language: en
 
 **Rules**
@@ -47,7 +47,7 @@ Format: `key` — text.
 
 ### Notifications
 - `onboarding.notifications.title` — A small "Jixxy is around" notice
-- `onboarding.notifications.body` — Android needs a persistent notification so I can keep running. It has buttons to nap me or wake me. I won't use it to send promotions or nag you.
+- `onboarding.notifications.body` — Android needs a persistent notification so I can keep running. It has buttons to nap me or wake me. I won't use it for promotions or anything extra.
 - `onboarding.notifications.cta_allow` — Allow
 - `onboarding.notifications.cta_later` — Not now
 
@@ -81,7 +81,7 @@ Format: `key` — text.
 
 - `home.status.awake` — Jixxy is awake
 - `home.status.napping` — Jixxy is napping until {time}
-- `home.status.blind` — Blind mode is on. I'm not watching anything.
+- `home.status.blind` — Blind mode is on. He's not watching anything.
 - `home.nap_1h` — Nap for 1 hour
 - `home.wake` — Wake up
 - `home.today_stats` — Today: {n} pauses · left {n} · stayed {n}
@@ -95,7 +95,7 @@ Format: `key` — text.
 
 - `settings.title` — Settings
 - `settings.roast.label` — Teasing level
-- `settings.roast.help` — From playful to theatrical. Always about the situation, never you.
+- `settings.roast.help` — From gentle to savage. Always about the situation, never you.
 - `settings.target_apps.label` — Apps I pause
 - `settings.target_apps.help` — I ask you to pause before these apps.
 - `settings.muted_apps.label` — Apps I stay quiet in
@@ -174,9 +174,9 @@ Each guide: intro + steps. All end with `oem.menus_differ`.
 - `error.permission_missing.body` — {app} can't be paused until "{permission}" is allowed. Tap below to fix it.
 - `error.permission_missing.cta` — Fix it
 - `error.service_not_running.title` — I'm not running
-- `error.service_not_running.body` — Jixxy was stopped by your phone. Open the keep-alive guide to stop that from happening.
+- `error.service_not_running.body` — Your phone stopped me. Open the keep-alive guide to stop that from happening.
 - `error.service_not_running.cta` — Open guide
-- `empty.apps.none_selected` — No apps picked yet. I'll just comment now and then.
+- `empty.apps.none_selected` — No apps picked yet. I won't pause anything until you choose some.
 - `empty.weekly.not_enough_data` — Not enough data for a weekly card yet. Check back in a few days.
 
 ---
@@ -184,7 +184,7 @@ Each guide: intro + steps. All end with `oem.menus_differ`.
 ## 8. Notification ("Jixxy is around")
 
 - `notif.title` — Jixxy is around
-- `notif.body` — Watching app names only. Nothing leaves your phone.
+- `notif.body` — Reading app names only. Nothing leaves your phone.
 - `notif.action.nap` — Nap 1h
 - `notif.action.wake` — Wake
 - `notif.action.blind` — Blind mode
@@ -256,7 +256,7 @@ IDs above are unchanged. Two texts were reworded in place (cat wording, "sprite"
 ### Wake, nap, stop (home screen and launcher screen)
 Waking Jixxy always ends any nap. The copy says so, so the screen matches the behaviour.
 - `home.stop` — Stop
-- `home.stop.hint` — Stop hides me completely until you tap Wake.
+- `home.stop.hint` — Stop hides him completely until you tap Wake.
 - `home.status.stopped` — Jixxy is stopped
 - `home.status.stopped_hint` — Tap Wake to bring him back. Waking him ends any nap.
 - `home.status.napping_hint` — Tap Wake any time. He'll grumble. He'll be fine.
@@ -359,3 +359,8 @@ D-020 removes the Pause-app cap, so `onboarding.apps.body` no longer says "fewer
 - `onboarding.sounds.body` — Tiny sounds when I speak. Off by default. Silent mode and calls always win.
 - `onboarding.sounds.toggle` — Turn sounds on
 Truth condition: "Silent mode and calls always win" must stay true in the sound code (PLATFORM/UI to confirm).
+
+---
+
+## 21. Read-through fixes (v1.2, T-W3-11)
+Voice rule: Home screen status text is third person ("Jixxy is awake", "him"); settings, permissions, errors and privacy are first person ("I"). Seven strings changed to follow it or to stay true after D-020 (see LINE_REVIEW 2026-11-07 T-W3-11).
