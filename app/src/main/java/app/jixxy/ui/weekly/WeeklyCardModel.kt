@@ -27,6 +27,16 @@ object WeeklyCardLogic {
         quiet = review.isQuiet,
     )
 
+    /**
+     * Which headline the card uses: 0 = the quiet-week headline, 1..4 = the four normal ones, rotating by ISO week
+     * so the same week always shows the same headline (the shared picture and the screen agree).
+     */
+    fun headlineIndex(quiet: Boolean, now: Long, zone: ZoneId = ZoneId.systemDefault()): Int {
+        if (quiet) return 0
+        val week = Instant.ofEpochMilli(now).atZone(zone).get(java.time.temporal.IsoFields.WEEK_OF_WEEK_BASED_YEAR)
+        return week % 4 + 1
+    }
+
     /** Last seven local days including today: [from, to) with `to = now + 1`. DST-safe (calendar days, not 24 h blocks). */
     fun range(now: Long, zone: ZoneId = ZoneId.systemDefault()): Pair<Long, Long> {
         val startToday = Instant.ofEpochMilli(now).atZone(zone).toLocalDate().atStartOfDay(zone)

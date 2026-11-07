@@ -34,4 +34,16 @@ class WeeklyCardLogicTest {
         assertEquals(4 * 86_400_000L, from)
         assertEquals(now + 1, to)
     }
+
+    @Test fun headlineIsQuietOnlyForQuietWeeksAndStableWithinAWeek() {
+        val z = ZoneId.of("UTC")
+        val monday = java.time.LocalDate.of(2026, 11, 2).atStartOfDay(z).toInstant().toEpochMilli()
+        val sunday = java.time.LocalDate.of(2026, 11, 8).atStartOfDay(z).toInstant().toEpochMilli()
+        assertEquals(0, WeeklyCardLogic.headlineIndex(true, monday, z))
+        assertEquals(WeeklyCardLogic.headlineIndex(false, monday, z), WeeklyCardLogic.headlineIndex(false, sunday, z))
+        (1..60).forEach { w ->
+            val t = java.time.LocalDate.of(2026, 1, 1).plusWeeks(w.toLong()).atStartOfDay(z).toInstant().toEpochMilli()
+            assertTrue(WeeklyCardLogic.headlineIndex(false, t, z) in 1..4)
+        }
+    }
 }

@@ -64,7 +64,15 @@ fun WeeklyScreen(settings: SettingsRepository, store: StateStore, appLabel: (Str
     LaunchedEffect(model != null) { if (model != null) onShown() }
 
     val texts = WeeklyCardTexts(
-        headline = stringResource(R.string.weekly_headline_1),
+        headline = stringResource(
+            when (WeeklyCardLogic.headlineIndex(model?.quiet ?: false, System.currentTimeMillis())) {
+                0 -> R.string.weekly_headline_quiet
+                1 -> R.string.weekly_headline_1
+                2 -> R.string.weekly_headline_2
+                3 -> R.string.weekly_headline_3
+                else -> R.string.weekly_headline_4
+            },
+        ),
         pauses = stringResource(R.string.weekly_stat_pauses),
         left = stringResource(R.string.weekly_stat_left),
         stayed = stringResource(R.string.weekly_stat_stayed),
