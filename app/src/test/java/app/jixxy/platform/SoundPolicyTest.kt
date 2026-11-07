@@ -17,4 +17,13 @@ class SoundPolicyTest {
     @Test fun neverInCallOrOverMusic() { assertFalse(ok(call = true)); assertFalse(ok(music = true)) }
     @Test fun neverQuietNapBlind() { assertFalse(ok(quiet = true)); assertFalse(ok(nap = true)); assertFalse(ok(blind = true)) }
     @Test fun oneCuePerBubble() = assertFalse(ok(id = "b1", last = "b1"))
+
+    @Test fun quietHoursSimpleAndWrapping() {
+        assertTrue(SoundPolicy.inQuietHours(120, 60, 420))
+        assertFalse(SoundPolicy.inQuietHours(420, 60, 420))
+        assertTrue(SoundPolicy.inQuietHours(23 * 60, 22 * 60, 6 * 60))
+        assertTrue(SoundPolicy.inQuietHours(5 * 60, 22 * 60, 6 * 60))
+        assertFalse(SoundPolicy.inQuietHours(12 * 60, 22 * 60, 6 * 60))
+        assertFalse(SoundPolicy.inQuietHours(100, 300, 300))
+    }
 }

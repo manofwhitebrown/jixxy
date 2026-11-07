@@ -25,6 +25,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.app.ServiceCompat
 import app.jixxy.R
+import app.jixxy.character.JixxySounds
 import app.jixxy.character.JixxyView
 import app.jixxy.character.JixxyViewListener
 import app.jixxy.engine.JixxyBrains
@@ -75,6 +76,7 @@ class OverlayService : Service(), ReactionRenderer {
     private var napping = false
     private var screenOn = true
     private var snappedRight = false
+    private var sounds: JixxySounds? = null
 
     private val screenReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
@@ -85,6 +87,40 @@ class OverlayService : Service(), ReactionRenderer {
     }
 
     override fun onBind(intent: Intent?): IBinder? = null
+
+    /**
+     * Asked by JixxySounds before EVERY sound (D-021). Any doubt means silence; see [SoundPolicy].
+     * Ringer mode and music state come from AudioManager (no permission). Do Not Disturb is read with
+     * NotificationManager.getCurrentInterruptionFilter(); only INTERRUPTION_FILTER_ALL counts as "off" (unknown = silent).
+     */
+    private fun soundAllowed(): Boolean {
+        val audio = getSystemService(AUDIO_SERVICE) as android.media.AudioManager
+        val nm = getSystemService(android.app.NotificationManager::class.java)
+        val minutes = java.time.LocalTime.now().let { it.hour * 60 + it.minute }
+        return SoundPolicy.allowed(
+            soundsEnabled = settings.soundsEnabled,
+            ringerNormal = audio.ringerMode == android.media.AudioManager.RINGER_MODE_NORMAL,
+            doNotDisturbOff = nm.currentInterruptionFilter == android.app.NotificationManager.INTERRUPTION_FILTER_ALL,
+            inCall = audio.mode != android.media.AudioManager.MODE_NORMAL,
+            musicPlaying = audio.isMusicActive,
+            quietHours = SoundPolicy.inQuietHours(minutes, settings.quietStartMin, settings.quietEndMin),
+            napping = napping,
+            blindMode = settings.blindMode,
+            bubbleId = null,
+            lastCueBubbleId = null,  // JixxySounds already enforces its own minimum gap between cues
+        )
+    }
+
+    /** Creates the player when sounds are on, releases it when they are off (D-021). */
+    private fun applySounds() {
+        if (settings.soundsEnabled && sounds == null) {
+            sounds = runCatching { JixxySounds(this, ::soundAllowed) }.getOrNull()
+        } else if (!settings.soundsEnabled) {
+            sounds?.release()
+            sounds = null
+        }
+        sprite?.sounds = sounds
+    }
 
     override fun onCreate() {
         super.onCreate()
@@ -123,7 +159,7 @@ class OverlayService : Service(), ReactionRenderer {
                 val t = System.currentTimeMillis()
                 Triple(
                     app.stateStore.load(),
-                    loadLineBank(app.settings.settings.first().language),
+                    loadLineBank(),
                     // ENGINE: restores Pause grace, today's pause count and the no-repeat ring after a restart.
                     app.stateStore.eventsBetween(t - RECENT_EVENTS_MS, t + 1),
                 )
@@ -144,6 +180,7 @@ class OverlayService : Service(), ReactionRenderer {
                 settings = s
                 app.chosenApps = s.targetApps
                 app.blindMode = s.blindMode
+                applySounds()
                 systemSignals?.setBlindMode(s.blindMode)  // starts detectors when blind mode is off
                 updateNap()
             }
@@ -161,14 +198,18 @@ class OverlayService : Service(), ReactionRenderer {
         scope.launch { app.bus.signals.collect { if (it is Signal.Heartbeat && !settings.blindMode) runCatching { app.weekly.check(it.ts) } } }
     }
 
-    /** Reads every `*.json` under assets/lines/<lang>; falls back to English if that language has none. */
-    private fun loadLineBank(language: String): LineBank {
+    /**
+     * Loads EVERY shipped language into one bank (ENGINE handoff D-016/D-022): the engine picks the language per signal from
+     * settings and falls back to English per trigger, so switching language needs no service restart.
+     * Languages = the folders under assets/lines; English is always first.
+     */
+    private fun loadLineBank(): LineBank {
         fun texts(lang: String): List<String> =
             (assets.list("lines/$lang") ?: emptyArray()).filter { it.endsWith(".json") }.sorted().map { name ->
                 assets.open("lines/$lang/$name").bufferedReader().use { it.readText() }
             }
-        val chosen = texts(language).ifEmpty { texts("en") }
-        return LineBankLoader.fromTexts(chosen)
+        val langs = (assets.list("lines") ?: emptyArray()).toList().sorted().let { listOf("en") + (it - "en") }
+        return LineBankLoader.fromTexts(langs.flatMap { texts(it) })
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
@@ -219,6 +260,9 @@ class OverlayService : Service(), ReactionRenderer {
         handler.removeCallbacksAndMessages(null)
         systemSignals?.stop()
         pauseWindow.dismiss()
+        sprite?.sounds = null
+        sounds?.release()  // frees the SoundPool
+        sounds = null
         runCatching { unregisterReceiver(screenReceiver) }
         sprite?.let { runCatching { windowManager.removeView(it) } }  // never leak the overlay view
         sprite = null
@@ -295,6 +339,7 @@ class OverlayService : Service(), ReactionRenderer {
             return false  // e.g. permission revoked between the check and the add
         }
         sprite = view
+        view.sounds = sounds
         applyVisibility()
         return true
     }
@@ -323,8 +368,25 @@ class OverlayService : Service(), ReactionRenderer {
         }
     }
 
-    private fun maxX(v: View) = (resources.displayMetrics.widthPixels - v.measuredWidth).coerceAtLeast(0)
-    private fun maxY(v: View) = (resources.displayMetrics.heightPixels - v.measuredHeight).coerceAtLeast(0)
+    private fun maxX(v: View) = (screenWidth() - v.measuredWidth).coerceAtLeast(0)
+
+    /**
+     * The sprite window is WRAP_CONTENT, so its height follows the view (cat + cloud, D-023); the bottom bound uses the REAL
+     * view height. With FLAG_LAYOUT_NO_LIMITS the window may sit over the navigation bar, so on API 30+ we subtract the
+     * navigation-bar inset to keep the cloud above it (developer.android.com/reference/android/view/WindowMetrics).
+     */
+    private fun maxY(v: View) = (usableHeight() - v.measuredHeight).coerceAtLeast(0)
+
+    private fun screenWidth(): Int =
+        if (Build.VERSION.SDK_INT >= 30) windowManager.currentWindowMetrics.bounds.width()
+        else resources.displayMetrics.widthPixels
+
+    private fun usableHeight(): Int =
+        if (Build.VERSION.SDK_INT >= 30) {
+            val m = windowManager.currentWindowMetrics
+            val nav = m.windowInsets.getInsetsIgnoringVisibility(android.view.WindowInsets.Type.navigationBars())
+            m.bounds.height() - nav.bottom
+        } else resources.displayMetrics.heightPixels
 
     /** Recomputes the nap flag from settings and schedules the wake-up at napUntilTs. */
     private fun updateNap() {

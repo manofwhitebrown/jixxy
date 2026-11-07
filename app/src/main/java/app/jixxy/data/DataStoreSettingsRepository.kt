@@ -23,15 +23,18 @@ private val Context.settingsStore: DataStore<Preferences> by preferencesDataStor
 class DataStoreSettingsRepository(context: Context) : SettingsRepository {
     private val store = context.applicationContext.settingsStore
 
-    override val settings: Flow<UserSettings> = store.data.map { it.toSettings() }
+    override val settings: Flow<UserSettings> = store.data.map { SettingsPrefs.read(it) }
 
     override suspend fun update(transform: (UserSettings) -> UserSettings) {
-        store.edit { prefs -> prefs.write(transform(prefs.toSettings())) }
+        store.edit { prefs -> SettingsPrefs.write(prefs, transform(SettingsPrefs.read(prefs))) }
     }
+}
 
-    private fun Preferences.toSettings(): UserSettings {
+/** Pure mapping between [UserSettings] and DataStore preferences; absent keys (old installs) give the defaults. Unit-tested. */
+internal object SettingsPrefs {
+    fun read(p: Preferences): UserSettings {
         val d = UserSettings()
-        return UserSettings(
+        return p.run { UserSettings(
             roast = this[ROAST]?.let { name -> RoastLevel.values().firstOrNull { it.name == name } } ?: d.roast,
             targetApps = this[TARGET_APPS] ?: d.targetApps,
             mutedApps = this[MUTED_APPS] ?: d.mutedApps,
@@ -44,10 +47,10 @@ class DataStoreSettingsRepository(context: Context) : SettingsRepository {
             pausesEnabled = this[PAUSES] ?: d.pausesEnabled,
             nagLevel = this[NAG]?.let { name -> NagLevel.values().firstOrNull { it.name == name } } ?: d.nagLevel,
             soundsEnabled = this[SOUNDS] ?: d.soundsEnabled,
-        )
+        ) }
     }
 
-    private fun androidx.datastore.preferences.core.MutablePreferences.write(s: UserSettings) {
+    fun write(m: androidx.datastore.preferences.core.MutablePreferences, s: UserSettings) { m.run {
         this[ROAST] = s.roast.name
         this[TARGET_APPS] = s.targetApps
         this[MUTED_APPS] = s.mutedApps
@@ -61,9 +64,9 @@ class DataStoreSettingsRepository(context: Context) : SettingsRepository {
         this[SOUNDS] = s.soundsEnabled
         val nap = s.napUntilTs
         if (nap != null) this[NAP_UNTIL] = nap else remove(NAP_UNTIL)
-    }
+    } }
 
-    private companion object {
+
         val ROAST = stringPreferencesKey("roast")
         val TARGET_APPS = stringSetPreferencesKey("target_apps")
         val MUTED_APPS = stringSetPreferencesKey("muted_apps")

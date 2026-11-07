@@ -19,4 +19,11 @@ object SoundPolicy {
     ): Boolean =
         soundsEnabled && ringerNormal && doNotDisturbOff && !inCall && !musicPlaying &&
             !quietHours && !napping && !blindMode && (bubbleId == null || bubbleId != lastCueBubbleId)
+
+    /** True inside quiet hours; the window may wrap past midnight (default 01:00 to 07:00, or 22:00 to 06:00). */
+    fun inQuietHours(minuteOfDay: Int, startMin: Int, endMin: Int): Boolean = when {
+        startMin == endMin -> false
+        startMin < endMin -> minuteOfDay in startMin until endMin
+        else -> minuteOfDay >= startMin || minuteOfDay < endMin
+    }
 }

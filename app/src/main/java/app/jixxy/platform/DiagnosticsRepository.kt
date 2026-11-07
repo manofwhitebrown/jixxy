@@ -14,9 +14,8 @@ import java.time.Instant
  * Local-only bug report (T-P3-4). UI adapts this to its `DiagnosticsPort`.
  *
  * WHAT THE REPORT CONTAINS (GROWTH: copy into PRIVACY.md): app version and versionCode, Android version, phone make/model,
- * the current permission on/off states, how many apps the user chose to be paused in (their package names, because the user
- * picked them), and a ring-buffer of events: service start/stop, permission changes, Pause shown/chosen/cancelled (kind only),
- * and crash stack traces. It never contains: line text, other apps' names (redacted to `<app>`), screen content, messages,
+ * the current permission on/off states, how many apps the user chose to be paused in (a number, no names), and a ring-buffer of events: service start/stop, permission changes, Pause shown/chosen/cancelled (kind only),
+ * and crash stack traces. It never contains: line text, any app's name or package (redacted to `<app>`, chosen apps included), screen content, messages,
  * contacts, location or anything typed. It is stored in app-private storage and leaves the phone only when the user copies it.
  */
 class DiagnosticsRepository(
@@ -26,7 +25,7 @@ class DiagnosticsRepository(
     private val log: DiagnosticsLog = DiagnosticsLog(File(context.filesDir, "diagnostics.log")),
 ) {
     /** Safe from any thread; never throws. */
-    fun record(kind: String, detail: String = "") = log.append(kind, detail, chosenApps())
+    fun record(kind: String, detail: String = "") = log.append(kind, detail)  // no allow-list: even chosen apps' package names are hidden
 
     suspend fun copyableReport(): String = withContext(Dispatchers.IO) {
         val p = permissions()
@@ -39,7 +38,7 @@ class DiagnosticsRepository(
             "Made: ${Instant.now()}",
             "Permissions: overlay=${p.overlayGranted} usageAccess=${p.usageAccessGranted} " +
                 "notifications=${p.notificationsGranted} batteryUnrestricted=${p.batteryUnrestricted}",
-            "Apps chosen for Pause: ${chosenApps().sorted().joinToString().ifEmpty { "none" }}",
+            "Apps chosen for Pause: ${chosenApps().size}",
         )
         DiagnosticsReport.build(header, log.readAll())
     }
