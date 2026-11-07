@@ -11,6 +11,7 @@ T-C2-5 done. T-C2-6 reviewed (GROWTH built it). T-C2-7/dead face channels deferr
 Found: T-CHAR-2 (procedural Blanket Bean, 18 states, PoseAnimator + StatePoses + 20 JVM tests) is merged on main. Nothing was ever run on a device. No bubble, no PauseCardView, no icon. `design/character/reference/` is missing (Owner has not added the art). Engine CharacterState lacks PEEK/CHARGING/LOW_BATTERY.
 Plan: keep PoseAnimator (state machine, priorities, tested) and StatePoses motion channels; replace the vector drawing in JixxyView with expression images and crossfades.
 ## Done
+- T-C3-4/5 (part): TalkBack: bubble text is a polite live region only while a bubble is up (announced once, not when it returns to the base text); Pause card announces "Stay is available now" once when the countdown ends (not when it starts unlocked). Fixed in code, TalkBack never run.
 - T-C3-3 (part): JixxyView honours the system "remove animations" / battery saver (ValueAnimator.areAnimatorsEnabled, API 26): crossfades only, no bob/shake/squash/Zs/notes/sparkles. Hidden/screen-off/detached already stop the frame loop (shouldAnimate + onVisibilityAggregated), checked by reading, not measured.
 - T-V1-CHARACTER-1/-2: inventory in MAPPING.md; design/character/tools/build_expressions.py makes sleep, yawn, stretch WebP (cutout of the black-background images), manifest JSON; wired into ExpressionMap/JixxyView + tests
 - T-C2-5: icon source in design/character/icon (adaptive fg/bg/mono, 96px notification, 512 store, make_icons.py); UI + GROWTH messaged

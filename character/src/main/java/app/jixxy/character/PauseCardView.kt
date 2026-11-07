@@ -59,7 +59,7 @@ class PauseCardView(context: Context) : FrameLayout(context) {
             val c = countdown ?: return
             val now = SystemClock.uptimeMillis()
             if (c.isDone(now)) {
-                unlockStay()
+                unlockStay(announce = true)
                 return
             }
             ring.progress = c.progress(now)
@@ -99,7 +99,7 @@ class PauseCardView(context: Context) : FrameLayout(context) {
         val wait = spec.stayEnabledAfterSec
         if (wait <= 0) {
             countdown = null
-            unlockStay()
+            unlockStay(announce = false)
         } else {
             countdown = StayCountdown(SystemClock.uptimeMillis(), wait)
             lastShownSec = -1
@@ -124,12 +124,14 @@ class PauseCardView(context: Context) : FrameLayout(context) {
         super.onDetachedFromWindow()
     }
 
-    private fun unlockStay() {
+    /** Enables Stay. [announce] tells TalkBack once that it just became available (not when it starts unlocked). */
+    private fun unlockStay(announce: Boolean) {
         countdown = null
         stay.isEnabled = true
         stay.setCompoundDrawablesRelative(null, null, null, null)
         stay.text = resources.getQuantityString(R.plurals.pause_stay, grantMinutes, grantMinutes)
         stay.contentDescription = null
+        if (announce) announceForAccessibility(resources.getString(R.string.a11y_stay_unlocked))
     }
 
     private fun choose(kind: PauseChoiceKind) {

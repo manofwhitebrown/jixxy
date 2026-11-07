@@ -142,6 +142,7 @@ class JixxyView(context: Context) : FrameLayout(context) {
         val alignRight = screenLocation[0] + spritePx / 2f > resources.displayMetrics.widthPixels / 2f
         bubble.show(text, ttlMs, lineId, SystemClock.uptimeMillis(), spritePx, alignRight, screenLocation[1].toFloat())
         bubble.geometry?.let { shiftWindow(it.shiftX, it.shiftY) }
+        accessibilityLiveRegion = ACCESSIBILITY_LIVE_REGION_POLITE // announced once, politely, when the text changes
         contentDescription = context.getString(R.string.jixxy_says_description, text)
         requestLayout()
         invalidate()
@@ -152,6 +153,7 @@ class JixxyView(context: Context) : FrameLayout(context) {
         bubble.dismiss()
         bubbleDown = false
         shiftWindow(-shiftedX, -shiftedY)
+        accessibilityLiveRegion = ACCESSIBILITY_LIVE_REGION_NONE // so going back to the base text is not announced
         contentDescription = baseDescription
         requestLayout()
         invalidate()

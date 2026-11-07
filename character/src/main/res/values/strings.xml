@@ -6,6 +6,7 @@
     <string name="pause_stay_waiting">Stay (%d)</string>
     <string name="pause_dismiss_note">You can leave any time.</string>
     <string name="a11y_pause_card">Jixxy is peeking. Choose Leave or Stay.</string>
+    <string name="a11y_stay_unlocked">Stay is available now.</string>
     <plurals name="pause_stay">
         <item quantity="one">Stay %d more minute</item>
         <item quantity="other">Stay %d more minutes</item>
