@@ -54,4 +54,16 @@ class SettingsLogicTest {
         assertEquals("hinglish", SettingsLogic.withLanguage(base, "hinglish").language)
         assertEquals("en", SettingsLogic.withLanguage(base.copy(language = "hinglish"), "klingon").language)
     }
+
+    @Test fun nagDefaultsToNaggyAndTurnDownLandsOnCalm() {
+        val base = UserSettings()
+        assertEquals(app.jixxy.engine.api.NagLevel.NAGGY, base.nagLevel)
+        assertEquals(app.jixxy.engine.api.NagLevel.CALM, SettingsLogic.turnedDown(base).nagLevel)
+        assertEquals(app.jixxy.engine.api.NagLevel.CHAOS, SettingsLogic.withNagLevel(base, app.jixxy.engine.api.NagLevel.CHAOS).nagLevel)
+    }
+
+    @Test fun soundsAreOffByDefault() {
+        assertFalse(UserSettings().soundsEnabled)
+        assertTrue(SettingsLogic.withSounds(UserSettings(), true).soundsEnabled)
+    }
 }

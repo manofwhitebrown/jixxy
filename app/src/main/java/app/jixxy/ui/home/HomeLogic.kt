@@ -1,5 +1,6 @@
 package app.jixxy.ui.home
 
+import app.jixxy.engine.api.NagLevel
 import app.jixxy.engine.api.UsageEvent
 import app.jixxy.engine.api.UsageEventType
 import app.jixxy.engine.api.UserSettings
@@ -21,6 +22,7 @@ data class HomeUiState(
     val napUntilTs: Long? = null,
     val today: TodayStats = TodayStats(),
     val notice: HomeNotice = HomeNotice.NONE,
+    val nagLevel: NagLevel = NagLevel.NAGGY,
 )
 
 /** Pure rules for Home. No Android imports; unit-tested. */
@@ -58,6 +60,7 @@ object HomeLogic {
             napUntilTs = if (status == JixxyStatus.NAPPING) settings.napUntilTs else null,
             today = stats(events),
             notice = notice(settings, overlayGranted),
+            nagLevel = settings.nagLevel,
         )
     }
 

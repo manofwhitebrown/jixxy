@@ -61,9 +61,9 @@ class SimulationTest {
         assertTrue("simulation too quiet to mean anything: ${spoken.size}", spoken.size > 60)
         val z = ZoneOffset.UTC
         val perDay = spoken.groupingBy { TimeUtil.epochDay(it.first, z) }.eachCount()
-        assertTrue("daily cap exceeded: ${perDay.values.max()}", perDay.values.all { it <= BrainConfig.maxUnpromptedPerDay })
+        assertTrue("daily cap exceeded: ${perDay.values.max()}", perDay.values.all { it <= BrainConfig.maxUnpromptedPerDay(NagLevel.NAGGY) })
         spoken.zipWithNext().forEach { (a, b) ->
-            assertTrue("gap < 20 min", b.first - a.first >= BrainConfig.minGapMinutes * 60_000L)
+            assertTrue("gap under the Naggy minimum", b.first - a.first >= BrainConfig.minGapMinutes(NagLevel.NAGGY) * 60_000L)
         }
         spoken.forEach { (ts, _) ->
             val m = TimeUtil.minuteOfDay(ts, z)

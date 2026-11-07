@@ -6,7 +6,7 @@ import app.jixxy.engine.lines.MiniJson
 /** User-controlled configuration. Persisted by the app via [SettingsRepository]. */
 data class UserSettings(
     val roast: RoastLevel = RoastLevel.NORMAL,
-    /** Package names the user chose for Pause. Max 3 (enforced by UI and brain). */
+    /** Package names the user chose for Pause. No cap (D-020). */
     val targetApps: Set<String> = emptySet(),
     val mutedApps: Set<String> = emptySet(),
     /** Quiet hours start, minutes after local midnight. Default 01:00. */
@@ -19,7 +19,11 @@ data class UserSettings(
     val blindMode: Boolean = false,
     /** Silence until this epoch-millis time; null = awake. */
     val napUntilTs: Long? = null,
-    val pausesEnabled: Boolean = true
+    val pausesEnabled: Boolean = true,
+    /** How often he speaks unprompted (D-020). Additive, default Naggy. */
+    val nagLevel: NagLevel = NagLevel.NAGGY,
+    /** Meows and blips (D-021). Opt-in, off by default. */
+    val soundsEnabled: Boolean = false
 )
 
 /**

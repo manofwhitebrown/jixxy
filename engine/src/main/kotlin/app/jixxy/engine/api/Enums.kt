@@ -6,6 +6,9 @@ enum class Mood { CHILL, SLEEPY, GRUMPY, SMUG, PANICKING, IMPRESSED, SOFT }
 /** How sharp the user allows Jixxy to be. A line is eligible only if its roast <= the user's level. */
 enum class RoastLevel(val n: Int) { GENTLE(1), NORMAL(2), SAVAGE(3) }
 
+/** How often Jixxy speaks up on his own (D-020). Pauses are unaffected. Default is [NAGGY]. */
+enum class NagLevel { CALM, NAGGY, CHAOS }
+
 /** Relationship depth. Grows with time together and positive interactions; never decreases from absence. */
 enum class Bond { STRANGER, ROOMMATE, FRIEND, RIDE_OR_DIE }
 

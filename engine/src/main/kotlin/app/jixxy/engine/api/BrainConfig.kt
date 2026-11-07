@@ -2,10 +2,18 @@ package app.jixxy.engine.api
 
 /** Tunable constants for the brain. Keep all magic numbers here. */
 object BrainConfig {
-    /** Hard cap on unprompted comments per local day. Pauses are user-opted-in and not counted. */
-    const val maxUnpromptedPerDay = 6
-    /** Minimum minutes between unprompted comments. */
-    const val minGapMinutes = 20
+    /** Hard cap on unprompted comments per local day for [level] (D-020). Pauses are user-opted-in and not counted. */
+    fun maxUnpromptedPerDay(level: NagLevel): Int = when (level) {
+        NagLevel.CALM -> 3
+        NagLevel.NAGGY -> 15
+        NagLevel.CHAOS -> 30
+    }
+    /** Minimum minutes between unprompted comments for [level] (D-020). */
+    fun minGapMinutes(level: NagLevel): Int = when (level) {
+        NagLevel.CALM -> 45
+        NagLevel.NAGGY -> 10
+        NagLevel.CHAOS -> 5
+    }
     /** Number of recently shown line ids the selector will not repeat. */
     const val dedupeWindow = 200
     /** Default minutes of grace after the user taps Stay (PauseSpec.grantMinutes can override). */
@@ -18,8 +26,6 @@ object BrainConfig {
     const val lateNightEndMin = 60
     /** Max spoken line length in characters (validator). */
     const val maxLineChars = 90
-    /** Max user-chosen Pause apps. */
-    const val maxTargetApps = 3
     /** Memory retention for usage events. */
     const val retentionDays = 30
     /** Minimum days between ALMOST_CARING lines. */

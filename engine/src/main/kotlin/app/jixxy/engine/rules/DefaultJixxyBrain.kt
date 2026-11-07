@@ -458,9 +458,9 @@ class DefaultJixxyBrain(
         if (fg != null && fg in s.mutedApps) return null
         val day = TimeUtil.epochDay(now, zone)
         val used = if (state.unpromptedDayEpoch == day) state.unpromptedToday else 0
-        if (used >= BrainConfig.maxUnpromptedPerDay) return null
+        if (used >= BrainConfig.maxUnpromptedPerDay(s.nagLevel)) return null
         val lastSpoken = state.lastUnpromptedTs
-        if (lastSpoken != null && now - lastSpoken < BrainConfig.minGapMinutes * 60_000L) return null
+        if (lastSpoken != null && now - lastSpoken < BrainConfig.minGapMinutes(s.nagLevel) * 60_000L) return null
         val lastOfKind = lastTriggerTs[trigger]
         if (lastOfKind != null && now - lastOfKind < BrainConfig.unpromptedCooldownMin(trigger) * 60_000L) return null
         val line = picker.pick(query(trigger, now, s, slots, null).copy(requiredTag = requiredTag)) ?: return null
@@ -546,7 +546,7 @@ class DefaultJixxyBrain(
         TimeUtil.inWindow(TimeUtil.minuteOfDay(now, zone), BrainConfig.lateNightStartMin, BrainConfig.lateNightEndMin)
     private fun inGrace(pkg: String, now: Long): Boolean = graceUntil[pkg]?.let { now < it } ?: false
 
-    private fun pauseTargets(s: UserSettings): List<String> = s.targetApps.sorted().take(BrainConfig.maxTargetApps)
+    private fun pauseTargets(s: UserSettings): List<String> = s.targetApps.sorted()
 
     private fun pauseAllowed(pkg: String, s: UserSettings, now: Long): Boolean =
         s.pausesEnabled && screenOn && !hardSilenced(now, s) && pkg !in s.mutedApps &&

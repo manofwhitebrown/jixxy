@@ -52,7 +52,7 @@ class MemoryTest {
 
     @Test fun callbackCountsTowardTheDailyCap() {
         val r = Rig(state = BrainState(firstSeenTs = 1L, unpromptedDayEpoch = TimeUtil.epochDay(at(0, 10), ZoneOffset.UTC),
-            unpromptedToday = BrainConfig.maxUnpromptedPerDay))
+            unpromptedToday = BrainConfig.maxUnpromptedPerDay(NagLevel.NAGGY)))
         visits(r, 6)
         assertTrue(callbackQueries(r).isEmpty())
     }

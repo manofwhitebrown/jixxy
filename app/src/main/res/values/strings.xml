@@ -30,8 +30,8 @@
     <string name="onboarding_keepalive_cta_open">Show me how</string>
     <string name="onboarding_keepalive_menus_differ">Menus differ by phone and Android version. Look for the closest match to the words here.</string>
     <string name="onboarding_apps_title">Pick the apps you want a pause on</string>
-    <string name="onboarding_apps_body">These are the apps where I\'ll ask you to pause first. Fewer is calmer, and you can change this any time. Apps like banking, payments, calls and maps are never included.</string>
-    <string name="onboarding_apps_cap_reached">That\'s the limit (%1$d). Remove one to pick another.</string>
+    <string name="onboarding_apps_body">These are the apps where I\'ll ask you to pause first. Pick as many as you like, and change this any time. Apps like banking, payments, calls and maps are never included.</string>
+    <string name="onboarding_apps_cap_reached">(retired by D-020: no app cap, UI can drop this string)</string>
     <string name="onboarding_roast_title">How much teasing?</string>
     <string name="onboarding_roast_gentle">Gentle</string>
     <string name="onboarding_roast_normal">Normal</string>
@@ -192,6 +192,17 @@
     <string name="fixit_all_good">Everything I need is allowed.</string>
     <string name="notif_body_blind">Blind mode is on. I\'m not reading app names and nothing is logged.</string>
     <string name="settings_debug_empty">No problems recorded.</string>
+    <string name="settings_nag_label">Nag level</string>
+    <string name="settings_nag_help">How often I speak up on my own. Pauses on your chosen apps work the same at every level. Turn me down any time.</string>
+    <string name="settings_nag_calm">Calm</string>
+    <string name="settings_nag_naggy">Naggy</string>
+    <string name="settings_nag_chaos">Chaos</string>
+    <string name="settings_nag_calm_hint">Now and then. Mostly soft.</string>
+    <string name="settings_nag_naggy_hint">Regular comments. Persistent, but lovable. The default.</string>
+    <string name="settings_nag_chaos_hint">Opinions all day.</string>
     <!-- [P] placeholders: keys not yet in MICROCOPY -->
-
+    <string name="settings_sounds_label">[P] Sounds (meows and blips)</string>
+    <string name="settings_sounds_help">[P] Off by default. Silent mode and calls always win.</string>
+    <string name="home_turn_down">[P] Turn him down</string>
+    <string name="home_turned_down">[P] He\'s on Calm. You can change that in Settings.</string>
 </resources>

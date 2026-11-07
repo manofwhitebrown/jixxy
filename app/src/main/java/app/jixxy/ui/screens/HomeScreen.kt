@@ -36,6 +36,8 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LifecycleEventEffect
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import app.jixxy.R
+import app.jixxy.ui.settings.SettingsLogic
+import app.jixxy.engine.api.NagLevel
 import app.jixxy.engine.api.SettingsRepository
 import app.jixxy.engine.api.StateStore
 import app.jixxy.engine.api.UserSettings
@@ -120,6 +122,7 @@ fun HomeScreen(
         },
         onSettings = onSettings,
         onWeekly = onWeekly,
+        onTurnDown = { scope.launch { settings.update { SettingsLogic.turnedDown(it) } } },
     )
 }
 
@@ -133,6 +136,7 @@ fun HomeContent(
     onWeekly: () -> Unit,
     onStop: () -> Unit = {},
     onAllowOverlay: () -> Unit = {},
+    onTurnDown: () -> Unit = {},
 ) {
     Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
         Column(
@@ -166,6 +170,14 @@ fun HomeContent(
                     Text(stringResource(R.string.home_status_stopped_hint), style = MaterialTheme.typography.bodySmall)
                 }
                 JixxyStatus.BLIND -> Unit // Blind mode is turned off in Settings; nothing to nap.
+            }
+
+            if (ui.status == JixxyStatus.AWAKE) {
+                if (ui.nagLevel == NagLevel.CALM) {
+                    Text(stringResource(R.string.home_turned_down), style = MaterialTheme.typography.bodySmall)
+                } else {
+                    OutlinedButton(onClick = onTurnDown, Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(stringResource(R.string.home_turn_down)) }
+                }
             }
 
             TodayRow(ui.today)

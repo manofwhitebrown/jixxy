@@ -1,5 +1,6 @@
 package app.jixxy.ui.settings
 
+import app.jixxy.engine.api.NagLevel
 import app.jixxy.engine.api.UserSettings
 import app.jixxy.ui.onboarding.OnboardingFlow
 
@@ -46,6 +47,13 @@ object SettingsLogic {
     /** Sets the line language; an unknown code falls back to English so a bad value can never silence Jixxy. */
     fun withLanguage(s: UserSettings, code: String): UserSettings =
         s.copy(language = if (code in SUPPORTED_LANGUAGES) code else LANGUAGE_EN)
+
+    fun withNagLevel(s: UserSettings, level: NagLevel): UserSettings = s.copy(nagLevel = level)
+
+    /** One-tap "turn him down" from Home: always lands on Calm. */
+    fun turnedDown(s: UserSettings): UserSettings = s.copy(nagLevel = NagLevel.CALM)
+
+    fun withSounds(s: UserSettings, on: Boolean): UserSettings = s.copy(soundsEnabled = on)
 
     /** Factory settings for "Reset Jixxy". The caller must also clear logged events. */
     fun reset(): UserSettings = UserSettings()

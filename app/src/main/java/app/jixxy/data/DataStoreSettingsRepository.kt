@@ -10,6 +10,7 @@ import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.core.stringSetPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
+import app.jixxy.engine.api.NagLevel
 import app.jixxy.engine.api.RoastLevel
 import app.jixxy.engine.api.SettingsRepository
 import app.jixxy.engine.api.UserSettings
@@ -41,6 +42,8 @@ class DataStoreSettingsRepository(context: Context) : SettingsRepository {
             blindMode = this[BLIND] ?: d.blindMode,
             napUntilTs = this[NAP_UNTIL],
             pausesEnabled = this[PAUSES] ?: d.pausesEnabled,
+            nagLevel = this[NAG]?.let { name -> NagLevel.values().firstOrNull { it.name == name } } ?: d.nagLevel,
+            soundsEnabled = this[SOUNDS] ?: d.soundsEnabled,
         )
     }
 
@@ -54,6 +57,8 @@ class DataStoreSettingsRepository(context: Context) : SettingsRepository {
         this[LANGUAGE] = s.language
         this[BLIND] = s.blindMode
         this[PAUSES] = s.pausesEnabled
+        this[NAG] = s.nagLevel.name
+        this[SOUNDS] = s.soundsEnabled
         val nap = s.napUntilTs
         if (nap != null) this[NAP_UNTIL] = nap else remove(NAP_UNTIL)
     }
@@ -67,6 +72,8 @@ class DataStoreSettingsRepository(context: Context) : SettingsRepository {
         val STAY_DELAY = intPreferencesKey("stay_delay_sec")
         val LANGUAGE = stringPreferencesKey("language")
         val BLIND = booleanPreferencesKey("blind_mode")
+        val NAG = stringPreferencesKey("nag_level")
+        val SOUNDS = booleanPreferencesKey("sounds_enabled")
         val NAP_UNTIL = longPreferencesKey("nap_until_ts")
         val PAUSES = booleanPreferencesKey("pauses_enabled")
     }

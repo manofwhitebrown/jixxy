@@ -46,6 +46,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import app.jixxy.R
+import app.jixxy.engine.api.NagLevel
 import app.jixxy.engine.api.RoastLevel
 import app.jixxy.engine.api.SettingsRepository
 import app.jixxy.engine.api.StateStore
@@ -84,6 +85,8 @@ fun SettingsScreen(
         onQuietHours = { start, end -> change { SettingsLogic.withQuietHours(it, start, end) } },
         onStayDelay = { sec -> change { SettingsLogic.withStayDelay(it, sec) } },
         onLanguage = { code -> change { SettingsLogic.withLanguage(it, code) } },
+        onNag = { level -> change { SettingsLogic.withNagLevel(it, level) } },
+        onSounds = { on -> change { SettingsLogic.withSounds(it, on) } },
         onBlindMode = { on -> change { it.copy(blindMode = on) } },
         onReset = { scope.launch { store.clearEvents(); settings.update { SettingsLogic.reset() } } },
         onWhatSaw = onWhatSaw,
@@ -104,6 +107,8 @@ fun SettingsContent(
     onQuietHours: (startMin: Int, endMin: Int) -> Unit,
     onStayDelay: (Int) -> Unit,
     onLanguage: (String) -> Unit,
+    onNag: (NagLevel) -> Unit,
+    onSounds: (Boolean) -> Unit,
     onBlindMode: (Boolean) -> Unit,
     onReset: () -> Unit,
     onWhatSaw: () -> Unit,
@@ -136,6 +141,24 @@ fun SettingsContent(
                     stringResource(roastSampleRes(s.roast), stringResource(R.string.onboarding_roast_sample_app), SAMPLE_MINUTES),
                     style = MaterialTheme.typography.bodyMedium,
                 )
+            }
+
+            Section(R.string.settings_nag_label, R.string.settings_nag_help) {
+                FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    NagLevel.entries.forEach { level ->
+                        FilterChip(
+                            selected = s.nagLevel == level,
+                            onClick = { onNag(level) },
+                            label = { Text(stringResource(nagName(level))) },
+                            modifier = Modifier.heightIn(min = 48.dp),
+                        )
+                    }
+                }
+                Text(stringResource(nagHint(s.nagLevel)), style = MaterialTheme.typography.bodyMedium)
+            }
+
+            Section(R.string.settings_sounds_label, R.string.settings_sounds_help) {
+                SwitchRow(stringResource(R.string.settings_sounds_label), s.soundsEnabled, onSounds)
             }
 
             Section(R.string.settings_target_apps_label, R.string.settings_target_apps_help) {
@@ -275,6 +298,18 @@ private fun clockText(minutes: Int): String {
     return DateFormat.getTimeFormat(LocalContext.current).format(cal.time)
 }
 
+private fun nagName(level: NagLevel) = when (level) {
+    NagLevel.CALM -> R.string.settings_nag_calm
+    NagLevel.NAGGY -> R.string.settings_nag_naggy
+    NagLevel.CHAOS -> R.string.settings_nag_chaos
+}
+
+private fun nagHint(level: NagLevel) = when (level) {
+    NagLevel.CALM -> R.string.settings_nag_calm_hint
+    NagLevel.NAGGY -> R.string.settings_nag_naggy_hint
+    NagLevel.CHAOS -> R.string.settings_nag_chaos_hint
+}
+
 private fun languageName(code: String) =
     if (code == SettingsLogic.LANGUAGE_HINGLISH) R.string.settings_language_value_hinglish else R.string.settings_language_value_en
 
@@ -295,8 +330,8 @@ private const val SAMPLE_MINUTES = 25
 private val previewApps = listOf(AppChoice("pkg.a", "App A"), AppChoice("pkg.b", "App B"), AppChoice("pkg.c", "App C"), AppChoice("pkg.d", "App D"))
 
 @Preview(showBackground = true, name = "default dark", heightDp = 1600) @Composable private fun SettingsDark() =
-    JixxyTheme(dark = true) { SettingsContent(UserSettings(targetApps = setOf("pkg.a")), previewApps, {}, {}, {}, { _, _ -> }, {}, {}, {}, {}, {}, {}) }
+    JixxyTheme(dark = true) { SettingsContent(UserSettings(targetApps = setOf("pkg.a")), previewApps, {}, {}, {}, { _, _ -> }, {}, {}, {}, {}, {}, {}, {}, {}) }
 @Preview(showBackground = true, name = "cap reached light", heightDp = 1600) @Composable private fun SettingsCapLight() =
-    JixxyTheme(dark = false) { SettingsContent(UserSettings(targetApps = setOf("pkg.a", "pkg.b", "pkg.c"), blindMode = true), previewApps, {}, {}, {}, { _, _ -> }, {}, {}, {}, {}, {}, {}) }
+    JixxyTheme(dark = false) { SettingsContent(UserSettings(targetApps = setOf("pkg.a", "pkg.b", "pkg.c"), blindMode = true), previewApps, {}, {}, {}, { _, _ -> }, {}, {}, {}, {}, {}, {}, {}, {}) }
 @Preview(showBackground = true, name = "200% font", fontScale = 2f, heightDp = 2400) @Composable private fun SettingsLargeFont() =
-    JixxyTheme(dark = true) { SettingsContent(UserSettings(language = "hinglish"), previewApps, {}, {}, {}, { _, _ -> }, {}, {}, {}, {}, {}, {}, {}, {}) }
+    JixxyTheme(dark = true) { SettingsContent(UserSettings(language = "hinglish"), previewApps, {}, {}, {}, { _, _ -> }, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}) }

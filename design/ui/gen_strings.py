@@ -9,6 +9,10 @@ Usage: python3 design/ui/gen_strings.py
 import re, sys
 
 MANUAL = {
+    "settings_sounds_label": "[P] Sounds (meows and blips)",
+    "settings_sounds_help": "[P] Off by default. Silent mode and calls always win.",
+    "home_turn_down": "[P] Turn him down",
+    "home_turned_down": "[P] He's on Calm. You can change that in Settings.",
     "home_open_weekly": "[P] Weekly review",
     "common_cancel": "[P] Cancel",
     "settings_language_value_en": "[P] English",

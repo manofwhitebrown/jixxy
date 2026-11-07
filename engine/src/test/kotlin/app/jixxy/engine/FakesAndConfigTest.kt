@@ -35,8 +35,12 @@ class FakesAndConfigTest {
     }
 
     @Test fun defaultsMatchBrief() {
-        assertEquals(6, BrainConfig.maxUnpromptedPerDay)
-        assertEquals(20, BrainConfig.minGapMinutes)
+        assertEquals(NagLevel.NAGGY, UserSettings().nagLevel)
+        assertEquals(15, BrainConfig.maxUnpromptedPerDay(NagLevel.NAGGY))
+        assertEquals(10, BrainConfig.minGapMinutes(NagLevel.NAGGY))
+        assertEquals(3, BrainConfig.maxUnpromptedPerDay(NagLevel.CALM))
+        assertEquals(30, BrainConfig.maxUnpromptedPerDay(NagLevel.CHAOS))
+        assertEquals(false, UserSettings().soundsEnabled)
         assertEquals(200, BrainConfig.dedupeWindow)
         assertEquals(60, UserSettings().quietStartMin)
         assertEquals(420, UserSettings().quietEndMin)

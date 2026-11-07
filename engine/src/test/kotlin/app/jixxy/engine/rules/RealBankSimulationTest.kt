@@ -115,10 +115,10 @@ class RealBankSimulationTest {
         val spoken = res.shown.filter { it.unprompted() }
         assertTrue("${p.name}: simulation too quiet (${spoken.size})", spoken.size > 20)
         spoken.groupingBy { TimeUtil.epochDay(it.ts, z) }.eachCount().forEach { (d, n) ->
-            assertTrue("${p.name}: $n unprompted on day $d", n <= BrainConfig.maxUnpromptedPerDay)
+            assertTrue("${p.name}: $n unprompted on day $d", n <= BrainConfig.maxUnpromptedPerDay(settings.nagLevel))
         }
         spoken.zipWithNext().forEach { (a, b) ->
-            assertTrue("${p.name}: gap under ${BrainConfig.minGapMinutes} min", b.ts - a.ts >= BrainConfig.minGapMinutes * minute)
+            assertTrue("${p.name}: gap under ${BrainConfig.minGapMinutes(settings.nagLevel)} min", b.ts - a.ts >= BrainConfig.minGapMinutes(settings.nagLevel) * minute)
         }
         spoken.forEach {
             val m = TimeUtil.minuteOfDay(it.ts, z)
