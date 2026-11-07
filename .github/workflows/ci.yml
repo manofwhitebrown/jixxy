@@ -122,7 +122,8 @@ jobs:
         if: always() && steps.gradle.outputs.present == 'true'
         run: python3 scripts/ci_test_summary.py
       - name: Engine coverage gate (rules and selector must stay >= 85% line coverage; measured 99% and 98% on 2026-11-07)
-        if: always() && steps.gradle.outputs.present == 'true'
+        # Only when the unit tests passed: a failing test leaves no report, and the test failure is the real problem.
+        if: steps.unit.outcome == 'success'
         env:
           COVERAGE_MIN: '85'
           COVERAGE_PACKAGES: rules,selector
