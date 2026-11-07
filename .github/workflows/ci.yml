@@ -121,10 +121,10 @@ jobs:
       - name: Unit-test summary (counts + failing tests as annotations)
         if: always() && steps.gradle.outputs.present == 'true'
         run: python3 scripts/ci_test_summary.py
-      - name: Engine coverage (report only until the first number is known; gate = COVERAGE_MIN)
+      - name: Engine coverage gate (rules and selector must stay >= 85% line coverage; measured 99% and 98% on 2026-11-07)
         if: always() && steps.gradle.outputs.present == 'true'
         env:
-          COVERAGE_MIN: ''
+          COVERAGE_MIN: '85'
           COVERAGE_PACKAGES: rules,selector
         run: python3 scripts/ci_coverage.py
       - name: Upload coverage report (main pushes only)
