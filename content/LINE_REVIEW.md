@@ -50,3 +50,8 @@ Gap found: PAUSE_STAY, PAUSE_LEAVE, POKE, WAKE, MUSIC, IMPRESSED had almost noth
 ## Hinglish pack v0.2 (T-W2-6, Manager go relayed by the Owner)
 The Manager's yes reached me through the Owner, not as a repo message; I read it as "trigger the Hinglish pack". Added 90 cat-voice Hinglish lines (150 -> 240; ids `hg_*`, lang `hinglish`, Roman script) mirroring the English canon: charger, low battery, dropped, poke escalation/on_break, nap/wake, music, late-night blanket, almost-caring, impressed, Pause SOFT/followup/tiers/BROWSER, Stay/Leave, weekly_quiet. "bro" becomes "bhai"; the skull emoji is not used. No Hindi insults (the engine's insult gate only knows the English list); only "gremlin" at roast 2 / bond 3.
 Not done: native-speaker review. Idiom, gender agreement (Jixxy speaks as "raha hoon") and whether sarcasm lands harder in Hinglish are unverified. Local validator replica: 0 problems on all 821+ lines.
+
+## Wave 3, T-W3-1 (2026-11-07T05:13Z)
+- D-014: ALMOST_CARING lines now use their own bondMin. Mild/joking = 1 (ROOMMATE): 002, 004, 006, 007, 009, 012, 016, 017, 018, 019, 020. Heartfelt = 3 (RIDE_OR_DIE): 001, 003, 005, 008, 010, 011, 013, 014, 015. The once-per-3-days cap stays in the engine.
+- D-015: all 6 "dropped" lines (poke_any_021..026) are POKE + tag dropped. weekly_any_006 only says "fell asleep" and is not a dropped line.
+- D-016: English files hold only lang "en", Hinglish files only "hinglish"; picker falls back to English only, never to Hinglish. validate_lines: 847 lines, 0 problems.

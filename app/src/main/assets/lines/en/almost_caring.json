@@ -26,7 +26,7 @@
       "SLEEPY"
     ],
     "roast": 1,
-    "bondMin": 3,
+    "bondMin": 1,
     "lang": "en",
     "text": "You doing okay? Asking for a friend. I'm the friend.",
     "slots": [],
@@ -62,7 +62,7 @@
       "SLEEPY"
     ],
     "roast": 1,
-    "bondMin": 3,
+    "bondMin": 1,
     "lang": "en",
     "text": "I like having you around. Don't tell the spreadsheet.",
     "slots": [],
@@ -98,7 +98,7 @@
       "SLEEPY"
     ],
     "roast": 1,
-    "bondMin": 3,
+    "bondMin": 1,
     "lang": "en",
     "text": "I'd say something sappy, but I'm very tired. So: hi.",
     "slots": [],
@@ -116,7 +116,7 @@
       "SLEEPY"
     ],
     "roast": 1,
-    "bondMin": 3,
+    "bondMin": 1,
     "lang": "en",
     "text": "I'm not worried. I'm just... checking.",
     "slots": [],
@@ -152,7 +152,7 @@
       "SLEEPY"
     ],
     "roast": 1,
-    "bondMin": 3,
+    "bondMin": 1,
     "lang": "en",
     "text": "Don't tell anyone, but... good job.",
     "slots": [],
@@ -206,7 +206,7 @@
       "SLEEPY"
     ],
     "roast": 1,
-    "bondMin": 3,
+    "bondMin": 1,
     "lang": "en",
     "text": "I've got your back. Mostly the sofa.",
     "slots": [],
@@ -278,7 +278,7 @@
       "SLEEPY"
     ],
     "roast": 2,
-    "bondMin": 3,
+    "bondMin": 1,
     "lang": "en",
     "text": "Take a break, dummy. I'll cover.",
     "slots": [],
@@ -296,7 +296,7 @@
       "SLEEPY"
     ],
     "roast": 2,
-    "bondMin": 3,
+    "bondMin": 1,
     "lang": "en",
     "text": "...go to sleep, idiot.",
     "slots": [],
@@ -315,7 +315,7 @@
       "SLEEPY"
     ],
     "roast": 1,
-    "bondMin": 3,
+    "bondMin": 1,
     "lang": "en",
     "text": "Not worried. Just awake at your hour. Weird.",
     "slots": [],
@@ -333,7 +333,7 @@
       "SLEEPY"
     ],
     "roast": 1,
-    "bondMin": 3,
+    "bondMin": 1,
     "lang": "en",
     "text": "...you good? Okay. Go to sleep, though.",
     "slots": [],
@@ -351,7 +351,7 @@
       "SLEEPY"
     ],
     "roast": 1,
-    "bondMin": 3,
+    "bondMin": 1,
     "lang": "en",
     "text": "I'll keep the blanket warm. Don't make it weird.",
     "slots": [],

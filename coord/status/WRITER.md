@@ -12,3 +12,7 @@
 
 ## Honest notes
 Nothing is device-tested. Humour is my judgement. Hinglish is unreviewed by a native speaker. Skull emoji appears once (EN, Owner's caption). OEM menu paths in MICROCOPY remain unverified.
+
+
+## Takeover: 2026-11-07T05:13Z (Wave 3)
+Found: EN 621 lines, Hinglish 226, validator 0 problems, nothing device-tested. Done first: T-W3-1 (D-014 bondMin split, D-015 tags verified, D-016 isolation verified). Next: T-W3-2 2 am audit of the EN bank, then T-W3-3 coverage gaps. Keep/rewrite/cut list will be in content/LINE_REVIEW.md.
