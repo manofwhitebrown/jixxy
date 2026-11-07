@@ -10,13 +10,15 @@ class ExpressionTest {
     private fun map(name: String, poke: Int = 1, hour: Int = 14) = ExpressionMap.forState(name, poke, hour)
 
     @Test fun calmStatesShowTheDefaultFace() {
-        for (n in listOf("IDLE", "BLINK", "JUDGING", "YAWN", "STRETCH")) assertEquals(n, Expression.REALLY, map(n))
+        for (n in listOf("IDLE", "BLINK", "JUDGING")) assertEquals(n, Expression.REALLY, map(n))
     }
 
     @Test fun eachStateShowsItsCaptionFace() {
         assertEquals(Expression.OOH_NICE, map("HAPPY"))
         assertEquals(Expression.NAP, map("SLEEP"))
-        assertEquals(Expression.NAP, map("SNORE"))
+        assertEquals(Expression.SLEEP, map("SNORE"))
+        assertEquals(Expression.YAWN, map("YAWN"))
+        assertEquals(Expression.STRETCH, map("STRETCH"))
         assertEquals(Expression.BRO_WHAT, map("WAKE_GRUMPY"))
         assertEquals(Expression.SNACKS, map("SNACK"))
         assertEquals(Expression.SHOCKED, map("PANIC"))

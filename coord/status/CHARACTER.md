@@ -1,7 +1,7 @@
 # CHARACTER status: updated 2026-11-07T05:25Z (Wave 3, fresh AI)
 ## Takeover: 2026-11-07T05:20Z
 Found: main green (CI, Emulator, Latest at 0550d84). Module = JixxyView, SpeechBubble, PauseCardView, PoseAnimator/StatePoses, 15 expression WebPs, 5 JVM test files. Demo activity already lists every CharacterState via values() (21). 5 new Owner images (sleep, sleep+zzz, yawn+zzz, yawn/stretch opaque black) sit in reference/ unprocessed. Nothing verified on a phone.
-Doing first: T-C3-0 demo gaps (long bubble, Pause with/without wait, light/dark stage), then PLATFORM's T-V1-CHARACTER-1/-2/-3 (inventory, asset pipeline, tight hit area).
+Done: T-C3-0 demo gaps, new sleep/yawn/stretch sprites. Next: tight hit area (T-V1-CHARACTER-3), motion budget (T-C3-3), bubble/Pause polish.
 ## Wave-3 findings list (Owner reports, with SHAs)
 (none yet)
 ## Now
@@ -10,6 +10,7 @@ T-C2-5 done. T-C2-6 reviewed (GROWTH built it). T-C2-7/dead face channels deferr
 Found: T-CHAR-2 (procedural Blanket Bean, 18 states, PoseAnimator + StatePoses + 20 JVM tests) is merged on main. Nothing was ever run on a device. No bubble, no PauseCardView, no icon. `design/character/reference/` is missing (Owner has not added the art). Engine CharacterState lacks PEEK/CHARGING/LOW_BATTERY.
 Plan: keep PoseAnimator (state machine, priorities, tested) and StatePoses motion channels; replace the vector drawing in JixxyView with expression images and crossfades.
 ## Done
+- T-V1-CHARACTER-1/-2: inventory in MAPPING.md; design/character/tools/build_expressions.py makes sleep, yawn, stretch WebP (cutout of the black-background images), manifest JSON; wired into ExpressionMap/JixxyView + tests
 - T-C2-5: icon source in design/character/icon (adaptive fg/bg/mono, 96px notification, 512 store, make_icons.py); UI + GROWTH messaged
 - T-C2-6: reviewed GROWTH's CharacterDemoActivity, now logs the pressed state name
 - T-C2-0: design/character/MAPPING.md (f5dab4b)

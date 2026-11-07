@@ -281,6 +281,9 @@ class JixxyView(context: Context) : FrameLayout(context) {
         Expression.HEADPHONES -> R.drawable.jixxy_expr_headphones
         Expression.RESPECT -> R.drawable.jixxy_expr_respect
         Expression.BLANKET -> R.drawable.jixxy_expr_blanket
+        Expression.SLEEP -> R.drawable.jixxy_expr_sleep
+        Expression.YAWN -> R.drawable.jixxy_expr_yawn
+        Expression.STRETCH -> R.drawable.jixxy_expr_stretch
     }
 
     // ---- touch -------------------------------------------------------------------------------------------

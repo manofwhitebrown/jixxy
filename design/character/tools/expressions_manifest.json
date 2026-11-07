@@ -1,0 +1,61 @@
+{
+  "canvas": 512,
+  "anchorBottomY": 500,
+  "scale": 0.34635,
+  "sprites": {
+    "sleep": {
+      "source": "jixxy-sleep.png",
+      "opaqueBlackCutout": false,
+      "cropBox": [
+        94,
+        150,
+        1423,
+        1019
+      ],
+      "drawnSize": [
+        460,
+        301
+      ],
+      "offset": [
+        26,
+        199
+      ]
+    },
+    "yawn": {
+      "source": "jixxy-yawn-OPAQUE-BLACK-BG.png",
+      "opaqueBlackCutout": true,
+      "cropBox": [
+        64,
+        167,
+        1421,
+        1016
+      ],
+      "drawnSize": [
+        470,
+        294
+      ],
+      "offset": [
+        21,
+        206
+      ]
+    },
+    "stretch": {
+      "source": "jixxy-stretch-OPAQUE-BLACK-BG.png",
+      "opaqueBlackCutout": true,
+      "cropBox": [
+        104,
+        32,
+        1425,
+        1048
+      ],
+      "drawnSize": [
+        458,
+        352
+      ],
+      "offset": [
+        27,
+        148
+      ]
+    }
+  }
+}

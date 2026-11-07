@@ -3,18 +3,14 @@
 The 15 expression sprites now exist (cut from the Owner's sheet by the Manager, see `reference/CROPS.md`) and
 the names match `MAPPING.md`. What is still missing or would make Jixxy better:
 
-## Missing frames (not on the sheet)
-| File name | What | Fallback today |
-|---|---|---|
-| `jixxy_expr_really_blink` | default face, eyes fully closed, same pose and canvas | quick squash instead of a swap |
-| `jixxy_expr_yawn` | mouth open, eyes shut | `really` plus stretch motion |
-| `jixxy_expr_stretch` | arms up | `really` plus stretch motion |
+## Still missing (one request, everything at once)
+| What | Why |
+|---|---|
+| `really_blink`: the default face with eyes fully closed, same pose and canvas | Blink is a quick squash today; a real closed-eyes frame looks much better. |
+| Higher-resolution originals of the 15 sheet expressions (really, ooh_nice, nap, bro_what, peek, snacks, shocked, respect, soft, smug, headphones, low_battery, dropped, charging, blanket), transparent background | Sheet faces are ~170 px wide, so they look soft next to the new sleep/yawn/stretch images (1448 px wide). Also needed for the store icon and site hero. |
 
-## Higher resolution
-The sheet's faces are only about 170 px wide, so the sprites are soft. Fine at 88 dp on a phone; not good enough
-for the store listing, the site hero or a big icon. If the Owner has the original (larger) illustrations, please
-put them in `design/character/reference/` and I will re-cut every sprite at the same names, canvas and anchor.
+Delivered since the last version: `yawn`, `stretch`, `sleep` (the two opaque-black-background images were cut out here, so no new export is needed; a transparent export would still be cleaner).
 
 ## Format (unchanged)
 Transparent background, same canvas and the cat anchored the same way in every file, 512 x 512 max, PNG or WebP.
-The character module's resources stay at or under 3 MB (currently about 170 KB).
+The character module's resources stay at or under 3 MB (currently about 230 KB).

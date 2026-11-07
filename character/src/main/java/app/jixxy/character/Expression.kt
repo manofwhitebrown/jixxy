@@ -20,6 +20,12 @@ internal enum class Expression(val resName: String) {
     HEADPHONES("headphones"),
     RESPECT("respect"),
     BLANKET("blanket"),
+    /** Lying down, eyes shut (Owner image, built by `design/character/tools/build_expressions.py`). */
+    SLEEP("sleep"),
+    /** Big yawn, eyes shut (same pipeline). */
+    YAWN("yawn"),
+    /** Paws up stretch (same pipeline). */
+    STRETCH("stretch"),
 }
 
 /** Decides which [Expression] a character state shows. Pure, so it is unit-tested on the JVM. */
@@ -34,7 +40,10 @@ internal object ExpressionMap {
      */
     fun forState(stateName: String, pokeLevel: Int, hourOfDay: Int): Expression = when (stateName) {
         "HAPPY" -> Expression.OOH_NICE
-        "SLEEP", "SNORE" -> Expression.NAP
+        "SLEEP" -> Expression.NAP
+        "SNORE" -> Expression.SLEEP
+        "YAWN" -> Expression.YAWN
+        "STRETCH" -> Expression.STRETCH
         "WAKE_GRUMPY" -> Expression.BRO_WHAT
         "POKED" -> if (pokeLevel >= 2) Expression.BRO_WHAT else Expression.REALLY
         "PEEK" -> Expression.PEEK
@@ -47,7 +56,7 @@ internal object ExpressionMap {
         "LOW_BATTERY" -> Expression.LOW_BATTERY
         "CHARGING" -> Expression.CHARGING
         "DRAGGED", "FALLING" -> Expression.DROPPED
-        else -> Expression.REALLY // IDLE, BLINK, JUDGING, YAWN, STRETCH and anything new
+        else -> Expression.REALLY // IDLE, BLINK, JUDGING and anything new
     }
 }
 
