@@ -1,0 +1,39 @@
+name: Docs guards
+
+# ci.yml skips docs-only commits (coord, qa, design, growth, store, *.md) so they do not build Android or
+# start the emulator. This tiny workflow still scans them for secrets and forbidden files, because a pasted
+# token in a markdown file is exactly the kind of mistake that must never go unnoticed.
+# The path list below must stay the exact mirror of paths-ignore in ci.yml.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'coord/**'
+      - 'qa/**'
+      - 'design/**'
+      - 'growth/**'
+      - 'store/**'
+      - 'content/**/*.md'
+      - '**/*.md'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: docs-guards-${{ github.sha }}
+  cancel-in-progress: false
+
+jobs:
+  guards:
+    name: Docs guards (secrets, ownership)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
+        with:
+          fetch-depth: 0
+      - name: No secrets / forbidden files
+        run: bash scripts/check_no_secrets.sh
+      - name: Ownership (warning only)
+        run: bash scripts/check_ownership.sh || true

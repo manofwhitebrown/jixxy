@@ -20,8 +20,10 @@ permissions:
   contents: read
   actions: read
 
+# A newer main commit supersedes an older emulator run that is still going (saves minutes and artifacts).
+# Manual runs get their own group so they are never cancelled by a push.
 concurrency:
-  group: emulator-${{ github.event.workflow_run.head_sha || github.run_id }}
+  group: emulator-${{ github.event_name == 'workflow_run' && 'main' || github.run_id }}
   cancel-in-progress: true
 
 jobs:
@@ -33,7 +35,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        api: [26, 30, 34, 35]
+        # Automatic runs after CI use one version (34); "Run workflow" tests all four.
+        api: ${{ fromJSON(github.event_name == 'workflow_run' && '[34]' || '[26,30,34,35]') }}
     env:
       GH_TOKEN: ${{ github.token }}
       PKG: app.jixxy
@@ -76,12 +79,12 @@ jobs:
           name: emulator-evidence-api${{ matrix.api }}-${{ steps.ci.outputs.sha }}
           path: evidence
           if-no-files-found: warn
-          retention-days: 14
+          retention-days: 3
 
   publish-evidence:
     name: Publish evidence to the ci-evidence release
     needs: emulator
-    if: always() && needs.emulator.result != 'skipped'
+    if: always() && (needs.emulator.result == 'success' || needs.emulator.result == 'failure')
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     permissions:
@@ -108,10 +111,10 @@ jobs:
           trap 'echo "::error::failed at line $LINENO: $BASH_COMMAND"' ERR
           set -E
           sha="${{ github.event.workflow_run.head_sha || github.sha }}"
-          notes="Rolling evidence from the newest emulator run. Commit $sha, run ${{ github.run_id }}. Files: apiNN-<name>.png (screenshots), apiNN-logcat.txt, apiNN-crashes.txt (only if a crash was found)."
+          notes="DEVELOPER TEST SCREENSHOTS, NOT AN APP DOWNLOAD. The app is the release called \"latest\". Rolling evidence from the newest emulator run. Commit $sha, run ${{ github.run_id }}. Files: apiNN-<name>.png (screenshots), apiNN-logcat.txt, apiNN-crashes.txt (only if a crash was found)."
           gh release view ci-evidence --repo "${{ github.repository }}" >/dev/null 2>&1 \
-            || gh release create ci-evidence --repo "${{ github.repository }}" --prerelease --target main --title "CI evidence (rolling)" --notes "$notes"
-          gh release edit ci-evidence --repo "${{ github.repository }}" --prerelease --notes "$notes"
+            || gh release create ci-evidence --repo "${{ github.repository }}" --prerelease --target main --title "Developer test screenshots: NOT an app download" --notes "$notes"
+          gh release edit ci-evidence --repo "${{ github.repository }}" --prerelease --title "Developer test screenshots: NOT an app download" --notes "$notes"
           for a in $(gh release view ci-evidence --repo "${{ github.repository }}" --json assets -q '.assets[].name'); do
             gh release delete-asset ci-evidence "$a" --repo "${{ github.repository }}" -y
           done

@@ -3,7 +3,24 @@ name: CI
 on:
   push:
     branches: [main]
+    # Docs-only commits do not build Android or trigger the emulator/latest workflows.
+    # They still get the cheap secret/ownership scan from docs-guards.yml.
+    paths-ignore:
+      - 'coord/**'
+      - 'qa/**'
+      - 'design/**'
+      - 'growth/**'
+      - 'store/**'
+      - 'content/**/*.md'
+      - '**/*.md'
   pull_request:
+    paths-ignore:
+      - 'coord/**'
+      - 'qa/**'
+      - 'design/**'
+      - 'growth/**'
+      - 'store/**'
+      - '**/*.md'
 
 # Each commit on main gets its own run, so rapid pushes by several roles are not
 # cancelled before they produce a verdict. Only superseded PR runs are cancelled.
@@ -123,14 +140,14 @@ jobs:
         run: |
           ./gradlew :app:processReleaseManifest -PversionCode=${{ steps.ver.outputs.code }} --stacktrace
           bash scripts/check_manifest.sh release
-      - name: Upload debug APK
-        if: steps.assemble.outcome == 'success'
+      - name: Upload debug APK (main pushes only; latest.yml and the emulator need it)
+        if: steps.assemble.outcome == 'success' && github.event_name == 'push'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: jixxy-debug-${{ github.sha }}.apk
           path: app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
-          retention-days: 14
+          retention-days: 3
       - name: Signing certificate must match the committed debug key
         if: steps.assemble.outcome == 'success'
         run: |

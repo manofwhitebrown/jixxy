@@ -82,6 +82,8 @@ jobs:
             echo "- versionCode: ${code}"
             echo "- SHA-256: see \`jixxy-latest.apk.sha256\`"
             echo
+            echo "**This is the only download you need.** Ignore the Actions artifacts and the ci-evidence release (developer test screenshots)."
+            echo
             echo "Install over a previous build; if Android refuses, the versionCode or signing key differs: see qa/RELEASE_SIGNING.md."
           } > dist/notes.md
           step() {  # run a command; on failure put its output into an annotation (raw logs are unreachable, D-002)

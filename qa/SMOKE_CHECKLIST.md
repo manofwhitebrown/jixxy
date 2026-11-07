@@ -1,6 +1,7 @@
 # Jixxy smoke checklist (about 10 minutes, on your phone)
 
 **Build to test:** `jixxy-latest.apk` from https://github.com/manofwhitebrown/jixxy/releases/tag/latest (open it in the phone browser). Write down the **Built** time on that page: it tells us which build you tested.
+**Only download `latest`.** Ignore the "Actions" artifacts and the `ci-evidence` release; those are developer test files, not apps.
 **How to answer:** for each step say **OK** or **BROKE** and what you saw. Short is fine. Details at the bottom.
 Steps marked ★ need a feature the release notes say is in your build (Nag level, sounds). If it isn't there yet, say "not in this build".
 
