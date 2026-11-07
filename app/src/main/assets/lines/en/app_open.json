@@ -416,7 +416,7 @@
     "roast": 2,
     "bondMin": 0,
     "lang": "en",
-    "text": "The thumbs are busy again. {app}.",
+    "text": "The thumbs are busy. {app}.",
     "slots": [
       "app"
     ],
@@ -628,7 +628,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "A work app. Rare. I'm delighted.",
+    "text": "A work app. I'm delighted.",
     "slots": [],
     "tags": [
       "app_open"

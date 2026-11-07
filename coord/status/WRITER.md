@@ -28,3 +28,5 @@ Found: EN 621 lines, Hinglish 226, validator 0 problems, nothing device-tested. 
 ## 2026-11-07T05:20Z T-W3-5 done (weekly praise lines now claim only 'at least one Leave'; +2 headline IDs). No new ENGINE messages yet: T-W3-3 table and T-W3-4 slot names still pending.
 
 ## 2026-11-07T05:22Z T-W3-6 done: fix-it cards, notification states, diagnostics empty (MICROCOPY v0.8). Handled 20261107-0521-ENGINE-almostcaring-confirmed (ENGINE confirms per-line bondMin; keep mild almost-caring lines plentiful, 11 exist). Still waiting: ENGINE coverage table, fact slot names.
+
+## 2026-11-07T05:23Z T-W3-2 complete (all EN banks read). Remaining: T-W3-3 rest and T-W3-4 (blocked on ENGINE table + fact slot names), T-W3-8 (needs Owner feedback).

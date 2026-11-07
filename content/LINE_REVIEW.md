@@ -133,3 +133,6 @@ Still open: IMPRESSED roast 2 (2 lines), NAP/WAKE variety, weekly voice (T-W3-5)
 
 ## Wave 3, T-W3-5 weekly voice (2026-11-07T05:20Z)
 The builder shows one roast (or one weekly_quiet line when no pauses) plus one weekly_praise line only if the week had a Leave. So praise lines may claim only 'at least one Leave'. Reworded four that claimed more: weekly_any_029 ('Some Stays' claimed Stays), 030 ('More Leaves than I expected' claimed a comparison), 028 ('when it counted'), 007 ('small wins' for every pause). Added headline.4 and headline.quiet to MICROCOPY (new IDs, none changed; UI to wire headline.quiet only if it wants a quiet-week title). Quiet lines already avoid inventing numbers. Validator 0 problems.
+
+## Wave 3, T-W3-2 finish: remaining banks (2026-11-07T05:23Z)
+Read app_open, battery_low, charger_on, nap, wake, welcome line by line. Four rewrites: app_open messaging 'The thumbs are busy again' (false history, 'again' dropped), app_open productivity 'A work app. Rare.' (implied they never work; now 'A work app. I'm delighted.'), charger_on 'I forgive you for waiting' (mild guilt; now 'Peace treaty signed.'), wake 'Back already?' (assumed a short nap; now 'Awake. I was just warming up the nap.'). Everything else kept. The whole EN bank has now had a full human-style read; the audit is complete.
