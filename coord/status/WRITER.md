@@ -30,3 +30,5 @@ Found: EN 621 lines, Hinglish 226, validator 0 problems, nothing device-tested. 
 ## 2026-11-07T05:22Z T-W3-6 done: fix-it cards, notification states, diagnostics empty (MICROCOPY v0.8). Handled 20261107-0521-ENGINE-almostcaring-confirmed (ENGINE confirms per-line bondMin; keep mild almost-caring lines plentiful, 11 exist). Still waiting: ENGINE coverage table, fact slot names.
 
 ## 2026-11-07T05:23Z T-W3-2 complete (all EN banks read). Remaining: T-W3-3 rest and T-W3-4 (blocked on ENGINE table + fact slot names), T-W3-8 (needs Owner feedback).
+
+## 2026-11-07T05:28Z T-W3-4 done (12 callbacks for the new facts) and D-019 wording done (MICROCOPY v0.9). Handled: 20261107-0524-ENGINE-callback-facts, 20261107-1200-MANAGER-app-cap-8. EN bank 651 lines. Remaining: T-W3-3 rest (needs ENGINE table), T-W3-8 (needs Owner feedback), Hinglish native read (Owner/Manager). Nothing device-tested.

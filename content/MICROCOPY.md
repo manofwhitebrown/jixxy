@@ -1,4 +1,4 @@
-# JIXXY — MICROCOPY v0.8
+# JIXXY — MICROCOPY v0.9
 Owner: WRITER · Consumer: UI (→ strings.xml) · Language: en
 
 **Rules**
@@ -58,9 +58,9 @@ Format: `key` — text.
 - `onboarding.keepalive.menus_differ` — Menus differ by phone and Android version. Look for the closest match to the words here.
 
 ### Choose apps
-- `onboarding.apps.title` — Pick up to 3 apps
-- `onboarding.apps.body` — These are the apps where I'll ask you to pause first. You can change this any time. Apps like banking, payments, calls and maps are never included.
-- `onboarding.apps.cap_reached` — That's 3. Remove one to pick another.
+- `onboarding.apps.title` — Pick the apps you want a pause on
+- `onboarding.apps.body` — These are the apps where I'll ask you to pause first. Fewer is calmer, and you can change this any time. Apps like banking, payments, calls and maps are never included.
+- `onboarding.apps.cap_reached` — That's the limit ({n}). Remove one to pick another.
 
 ### Roast level
 - `onboarding.roast.title` — How much teasing?
@@ -96,7 +96,7 @@ Format: `key` — text.
 - `settings.title` — Settings
 - `settings.roast.label` — Teasing level
 - `settings.roast.help` — From playful to theatrical. Always about the situation, never you.
-- `settings.target_apps.label` — Apps I pause (max 3)
+- `settings.target_apps.label` — Apps I pause
 - `settings.target_apps.help` — I ask you to pause before these apps.
 - `settings.muted_apps.label` — Apps I stay quiet in
 - `settings.muted_apps.help` — I won't comment while you're in these.
@@ -275,7 +275,7 @@ Waking Jixxy always ends any nap. The copy says so, so the screen matches the be
 ### Launcher-screen empty states
 - `launcher.empty.no_overlay` — I can't show up yet. Allow "Display over other apps" first.
 - `launcher.empty.no_overlay.cta` — Allow overlay
-- `launcher.empty.no_apps` — No apps picked yet. Choose up to 3 and I'll start pausing them.
+- `launcher.empty.no_apps` — No apps picked yet. Choose the ones you want paused and I'll start.
 - `launcher.empty.no_apps.cta` — Choose apps
 - `launcher.empty.no_stats` — No pauses yet today. I'm napping on the job.
 - `launcher.empty.asleep` — Jixxy is asleep. Tap Wake.
@@ -327,3 +327,8 @@ New IDs only; nothing above changed. Clarity beats jokes: each card says what is
 - `notif.body.napping` — Napping. Tap Wake to bring me back.
 - `notif.body.blind` — Blind mode is on. I'm not reading app names and nothing is logged.
 - `settings.debug.empty` — No problems recorded.
+
+---
+
+## 18. D-019 wording (v0.9)
+The Pause-app cap is no longer hard-coded in copy: `onboarding.apps.title`, `onboarding.apps.body`, `onboarding.apps.cap_reached` (now uses `{n}`, filled from `BrainConfig.maxTargetApps`), `settings.target_apps.label`, `launcher.empty.no_apps` reworded. IDs unchanged. No line in the banks mentions a number of apps.

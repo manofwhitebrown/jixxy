@@ -136,3 +136,7 @@ The builder shows one roast (or one weekly_quiet line when no pauses) plus one w
 
 ## Wave 3, T-W3-2 finish: remaining banks (2026-11-07T05:23Z)
 Read app_open, battery_low, charger_on, nap, wake, welcome line by line. Four rewrites: app_open messaging 'The thumbs are busy again' (false history, 'again' dropped), app_open productivity 'A work app. Rare.' (implied they never work; now 'A work app. I'm delighted.'), charger_on 'I forgive you for waiting' (mild guilt; now 'Peace treaty signed.'), wake 'Back already?' (assumed a short nap; now 'Awake. I was just warming up the nap.'). Everything else kept. The whole EN bank has now had a full human-style read; the audit is complete.
+
+## Wave 3, T-W3-4 callbacks and D-019 (2026-11-07T05:28Z)
+ENGINE message 20261107-0524: new facts stays_week, late_opens_week, top_app_minutes_day (slots app/count, app/count, app/minutes). Added 12 CALLBACK lines (4 per fact, roast 1, bondMin 2, one fact: tag each, only the slots ENGINE lists). Rules kept: stays lines quote only the Stay count; late-night lines are gentle (no sarcasm about sleep, they never fire while it is late night); top-app lines claim only 'top app of the day' and minutes. Not built by ENGINE, so no lines: longest unbroken session, bond change, first_pause_ever, leave_streak_today, days_together. EN bank 651 lines; validator 877 total, 0 problems.
+D-019: no bank line mentions a number of apps (searched). MICROCOPY v0.9 section 18 rewords the five cap strings without the number; cap_reached uses {n}.

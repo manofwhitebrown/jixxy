@@ -429,5 +429,265 @@
       "fact:app_visits_week"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "callback_any_021",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "{count} Stays this week. I filed each one under 'five more minutes'.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "callback",
+      "fact:stays_week"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_022",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "{count} Stays this week. I'm not judging. I'm the one who allowed them.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "callback",
+      "fact:stays_week"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_023",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "Stays this week: {count}. The spreadsheet has a whole column for them now.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "callback",
+      "fact:stays_week"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_024",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "{count} times you stayed this week. Bold of us to call it 'five more minutes'.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "callback",
+      "fact:stays_week"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_025",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "{count} late-night {app} visits this week. I notice. I'm just saying hi.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "callback",
+      "fact:late_opens_week"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_026",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "{app} late at night: {count} times this week. No lecture. I'm yawning supportively.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "callback",
+      "fact:late_opens_week"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_027",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "{count} late nights with {app} this week. Be kind to your pillow.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "callback",
+      "fact:late_opens_week"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_028",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "Late-night {app} count this week: {count}. I'm sleepy by proxy.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "callback",
+      "fact:late_opens_week"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_029",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "{minutes} minutes on {app} today. That's your top app of the day.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "callback",
+      "fact:top_app_minutes_day"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_030",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "{app} is today's top app: {minutes} minutes. I counted every one, quietly.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "callback",
+      "fact:top_app_minutes_day"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_031",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "{minutes} minutes of {app} today. It's winning. Respectfully.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "callback",
+      "fact:top_app_minutes_day"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_032",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "Today's champion: {app}, {minutes} minutes. Stretch break, maybe?",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "callback",
+      "fact:top_app_minutes_day"
+    ],
+    "almostCaring": false
   }
 ]
