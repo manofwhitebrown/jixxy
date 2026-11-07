@@ -10,7 +10,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "{minutes} minutes on {app}. Stretch break?",
+    "text": "Stretch break? {minutes} minutes on {app}.",
     "slots": [
       "app",
       "minutes"
@@ -709,7 +709,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "{minutes} minutes straight. Just checking you're comfy. Carry on if you are.",
+    "text": "Straight for {minutes} minutes. Just checking you're comfy. Carry on if you are.",
     "slots": [
       "minutes"
     ],

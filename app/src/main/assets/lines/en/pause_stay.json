@@ -64,7 +64,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "Your call. I respect the commitment.",
+    "text": "Your call. I'll stay out of it. Loudly.",
     "slots": [],
     "tags": [
       "pause_stay"
@@ -636,7 +636,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "Stay, then. I'll watch the clock, gently.",
+    "text": "Okay. I'll watch the clock. Gently.",
     "slots": [],
     "tags": [
       "pause_stay",
@@ -712,7 +712,7 @@
     "roast": 2,
     "bondMin": 1,
     "lang": "en",
-    "text": "Stay, then, gremlin. I'm timing you. Lovingly.",
+    "text": "Fine, gremlin. I'm timing you. Lovingly.",
     "slots": [],
     "tags": [
       "pause_stay"

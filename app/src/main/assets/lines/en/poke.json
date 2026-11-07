@@ -49,7 +49,8 @@
     "text": "Third poke. I'm keeping count.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "escalation"
     ],
     "almostCaring": false
   },
@@ -85,7 +86,8 @@
     "text": "Okay, this is becoming a pattern.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "escalation"
     ],
     "almostCaring": false
   },
@@ -103,7 +105,8 @@
     "text": "Poke me once more and I file a complaint.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "escalation"
     ],
     "almostCaring": false
   },
@@ -139,7 +142,8 @@
     "text": "That's enough. I'm napping now. Goodnight, gremlin.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "escalation"
     ],
     "almostCaring": false
   },
@@ -265,7 +269,8 @@
     "text": "Poke count: rising. Mood: dipping.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "escalation"
     ],
     "almostCaring": false
   },
@@ -337,7 +342,8 @@
     "text": "One more and I roll over.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "escalation"
     ],
     "almostCaring": false
   },
@@ -993,7 +999,7 @@
     "roast": 2,
     "bondMin": 1,
     "lang": "en",
-    "text": "Hehe. Again? Fine, I love attention. Don't repeat that.",
+    "text": "Hehe. Poking me? Fine, I love attention. Don't repeat that.",
     "slots": [],
     "tags": [
       "poke"

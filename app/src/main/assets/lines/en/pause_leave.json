@@ -82,7 +82,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "Look at you, leaving on purpose.",
+    "text": "Left on purpose. I noticed.",
     "slots": [],
     "tags": [
       "pause_leave"
@@ -643,7 +643,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "Left {app}. Quietly proud. Don't tell anyone.",
+    "text": "Quietly proud you left {app}. Don't tell anyone.",
     "slots": [
       "app"
     ],
@@ -738,7 +738,7 @@
     "roast": 3,
     "bondMin": 1,
     "lang": "en",
-    "text": "Left {app}. The spreadsheet is stunned. So am I.",
+    "text": "Left {app}. The spreadsheet is thrilled. So am I.",
     "slots": [
       "app"
     ],

@@ -209,7 +209,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "Music on. I'll tap my tail. Tail only.",
+    "text": "Tail-tapping, tail only. Music's on.",
     "slots": [],
     "tags": [
       "music"
@@ -317,7 +317,7 @@
     "roast": 2,
     "bondMin": 0,
     "lang": "en",
-    "text": "Music on. Soft songs, I'm in. Loud ones, I'm leaving.",
+    "text": "Soft songs, I'm in. Loud ones, I'm leaving.",
     "slots": [],
     "tags": [
       "music"

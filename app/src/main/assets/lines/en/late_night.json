@@ -406,7 +406,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "Quiet company, as ordered.",
+    "text": "Quiet company. Complimentary.",
     "slots": [],
     "tags": [
       "late_night"
@@ -816,7 +816,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "You don't have to be okay at 2 a.m. Just be here. That's enough.",
+    "text": "You don't have to be okay at this hour. Just be here. That's enough.",
     "slots": [],
     "tags": [
       "safety"

@@ -55,3 +55,74 @@ Not done: native-speaker review. Idiom, gender agreement (Jixxy speaks as "raha 
 - D-014: ALMOST_CARING lines now use their own bondMin. Mild/joking = 1 (ROOMMATE): 002, 004, 006, 007, 009, 012, 016, 017, 018, 019, 020. Heartfelt = 3 (RIDE_OR_DIE): 001, 003, 005, 008, 010, 011, 013, 014, 015. The once-per-3-days cap stays in the engine.
 - D-015: all 6 "dropped" lines (poke_any_021..026) are POKE + tag dropped. weekly_any_006 only says "fell asleep" and is not a dropped line.
 - D-016: English files hold only lang "en", Hinglish files only "hinglish"; picker falls back to English only, never to Hinglish. validate_lines: 847 lines, 0 problems.
+
+## Wave 3, T-W3-2: 2 am audit of the EN bank (2026-11-07T05:15Z)
+Read every Pause line (prompt, stay, leave) and every LATE_NIGHT, SESSION_LONG, MUSIC, CALLBACK, IMPRESSED and POKE line as a tired 19-year-old. Kept: all canonical captions, all SOFT/late-night lines, the Leave 'Respect.' family. Nothing needed a hard cut; fixes were rewrites. Reasons used:
+- **False history**: 'again' / 'back on' in untagged Pause prompts (engine's tier tags are only preferences, so these could fire on the first pause of the day). 'again' removed or reworded.
+- **Slot the engine can't know**: tab counts, 'colour-coding', 'one real task', 'open since the last ice age', a literal '2 a.m.' in a line that fires any time in the late window.
+- **Judges the person**: 'you're not researching, you're wandering', 'starring you', 'The spreadsheet is stunned' (implied they wouldn't leave), 'Look at you, leaving on purpose', 'Quietly impressive' for a Pause count.
+- **Pleading / religion-adjacent**: 'Leave, please?' and 'Streaming gods demand tribute'.
+- **Repeated openings** in the same trigger: music 'Music on', session 'N minutes', stay 'Stay, then', leave 'Left {app}', duplicate phrase 'I respect the commitment'.
+- **Poke lines that imply repetition were untagged** (poke_any_003, 005, 006, 008, 015, 019): tagged 'escalation' so they only fire after 3 quick taps (ENGINE reserves that tag). poke_any_055 'Again?' reworded.
+
+| id | before | after |
+|---|---|---|
+| pause_prompt_social_002 | {app} again. Quick pause, then it's all yours. | {app}? Quick pause, then it's all yours. |
+| pause_prompt_social_004 | Back on {app}? Leave, or I'll narrate your scrolling. | Opening {app}? Leave, or I'll narrate your scrolling. |
+| pause_prompt_video_005 | {app} again. The algorithm sends its regards, and an invoice. | {app}. The algorithm sends its regards, and an invoice. |
+| pause_prompt_game_005 | {app} again. The leaderboard doesn't know you, but I do, menace. | {app}. The leaderboard may not know you, but I do, menace. |
+| pause_prompt_shopping_001 | {app} again. Quick pause before the cart gets ideas. | {app}. Quick pause before the cart gets ideas. |
+| pause_prompt_shopping_005 | Your cart has more friends than I do, dummy. {app} again? | Your cart has more friends than I do, dummy. Shopping on {app}? |
+| pause_prompt_other_005 | {app} AGAIN? Theatre of the absurd, starring you and {minutes} minutes. | {app}?! Theatre of the absurd, one cat in the audience. {minutes} minutes today. |
+| pause_prompt_video_010 | Streaming gods demand tribute. {minutes} minutes on {app}, goblin. | Infinite queue, finite goblin. {minutes} minutes on {app}. |
+| pause_prompt_other_010 | Breaking news: {app} again. Experts say leave, menace. | Breaking news: {app} opens. Experts say leave, menace. |
+| pause_prompt_social_024 | {app}, {count} pauses deep. I'm out of jokes. Leave, please? | {app}, {count} pauses deep. I've run out of jokes. Your move. |
+| pause_prompt_browser_011 | Fifteen tabs, zero answers. {app} again? | If it's fifteen tabs and zero answers, leave {app}. I'll hold the browser. |
+| pause_prompt_browser_012 | {minutes} minutes in {app}. The research is now just vibes. | If this is research, it's mostly vibes now. {minutes} minutes in {app}. |
+| pause_prompt_browser_013 | {app} again. You're not researching, you're wandering, gremlin. | Is this research, or wandering with extra steps, gremlin? {app} is open. |
+| pause_prompt_browser_014 | {minutes} minutes of 'one quick search'. Bold of you, dummy. | {minutes} minutes on {app} today. 'One quick search' is famously quick, dummy. |
+| pause_prompt_browser_015 | That tab has been open since the last ice age. Leave {app}? | Some tabs feel older than the last ice age. Leave {app}? |
+| pause_prompt_productivity_003 | {app} again? Productive. I'm suspicious, but proud. | {app}? Productive. I'm suspicious, but proud. |
+| pause_prompt_productivity_005 | Colour-coding {app} again? The deadline can see you, goblin. | Pause first, {app} after, goblin. I'll guard your to-do list. |
+| pause_prompt_productivity_006 | {minutes} minutes in {app} and one real task. I counted. | {minutes} minutes in {app}. I counted every one, quietly, goblin. |
+| pause_stay_any_004 | Your call. I respect the commitment. | Your call. I'll stay out of it. Loudly. |
+| pause_stay_any_036 | Stay, then. I'll watch the clock, gently. | Okay. I'll watch the clock. Gently. |
+| pause_stay_any_040 | Stay, then, gremlin. I'm timing you. Lovingly. | Fine, gremlin. I'm timing you. Lovingly. |
+| pause_leave_any_005 | Look at you, leaving on purpose. | Left on purpose. I noticed. |
+| pause_leave_any_035 | Left {app}. Quietly proud. Don't tell anyone. | Quietly proud you left {app}. Don't tell anyone. |
+| pause_leave_any_040 | Left {app}. The spreadsheet is stunned. So am I. | Left {app}. The spreadsheet is thrilled. So am I. |
+| pause_prompt_social_002 | {app} again. Quick pause, then it's all yours. | {app}? Quick pause, then it's all yours. |
+| pause_prompt_social_004 | Back on {app}? Leave, or I'll narrate your scrolling. | Opening {app}? Leave, or I'll narrate your scrolling. |
+| pause_prompt_video_005 | {app} again. The algorithm sends its regards, and an invoice. | {app}. The algorithm sends its regards, and an invoice. |
+| pause_prompt_game_005 | {app} again. The leaderboard doesn't know you, but I do, menace. | {app}. The leaderboard may not know you, but I do, menace. |
+| pause_prompt_shopping_001 | {app} again. Quick pause before the cart gets ideas. | {app}. Quick pause before the cart gets ideas. |
+| pause_prompt_shopping_005 | Your cart has more friends than I do, dummy. {app} again? | Your cart has more friends than I do, dummy. Shopping on {app}? |
+| pause_prompt_other_005 | {app} AGAIN? Theatre of the absurd, starring you and {minutes} minutes. | {app}?! Theatre of the absurd, one cat in the audience. {minutes} minutes today. |
+| pause_prompt_video_010 | Streaming gods demand tribute. {minutes} minutes on {app}, goblin. | Infinite queue, finite goblin. {minutes} minutes on {app}. |
+| pause_prompt_other_010 | Breaking news: {app} again. Experts say leave, menace. | Breaking news: {app} opens. Experts say leave, menace. |
+| pause_prompt_social_024 | {app}, {count} pauses deep. I'm out of jokes. Leave, please? | {app}, {count} pauses deep. I've run out of jokes. Your move. |
+| pause_prompt_browser_011 | Fifteen tabs, zero answers. {app} again? | If it's fifteen tabs and zero answers, leave {app}. I'll hold the browser. |
+| pause_prompt_browser_012 | {minutes} minutes in {app}. The research is now just vibes. | If this is research, it's mostly vibes now. {minutes} minutes in {app}. |
+| pause_prompt_browser_013 | {app} again. You're not researching, you're wandering, gremlin. | Is this research, or wandering with extra steps, gremlin? {app} is open. |
+| pause_prompt_browser_014 | {minutes} minutes of 'one quick search'. Bold of you, dummy. | {minutes} minutes on {app} today. 'One quick search' is famously quick, dummy. |
+| pause_prompt_browser_015 | That tab has been open since the last ice age. Leave {app}? | Some tabs feel older than the last ice age. Leave {app}? |
+| pause_prompt_productivity_003 | {app} again? Productive. I'm suspicious, but proud. | {app}? Productive. I'm suspicious, but proud. |
+| pause_prompt_productivity_005 | Colour-coding {app} again? The deadline can see you, goblin. | Pause first, {app} after, goblin. I'll guard your to-do list. |
+| pause_prompt_productivity_006 | {minutes} minutes in {app} and one real task. I counted. | {minutes} minutes in {app}. I counted every one, quietly, goblin. |
+| pause_stay_any_004 | Your call. I respect the commitment. | Your call. I'll stay out of it. Loudly. |
+| pause_stay_any_036 | Stay, then. I'll watch the clock, gently. | Okay. I'll watch the clock. Gently. |
+| pause_stay_any_040 | Stay, then, gremlin. I'm timing you. Lovingly. | Fine, gremlin. I'm timing you. Lovingly. |
+| pause_leave_any_005 | Look at you, leaving on purpose. | Left on purpose. I noticed. |
+| pause_leave_any_035 | Left {app}. Quietly proud. Don't tell anyone. | Quietly proud you left {app}. Don't tell anyone. |
+| pause_leave_any_040 | Left {app}. The spreadsheet is stunned. So am I. | Left {app}. The spreadsheet is thrilled. So am I. |
+| late_night_any_022 | Quiet company, as ordered. | Quiet company. Complimentary. |
+| late_night_any_044 | You don't have to be okay at 2 a.m. Just be here. That's enough. | You don't have to be okay at this hour. Just be here. That's enough. |
+| session_long_any_001 | {minutes} minutes on {app}. Stretch break? | Stretch break? {minutes} minutes on {app}. |
+| session_long_any_035 | {minutes} minutes straight. Just checking you're comfy. Carry on if you are. | Straight for {minutes} minutes. Just checking you're comfy. Carry on if you are. |
+| music_any_012 | Music on. I'll tap my tail. Tail only. | Tail-tapping, tail only. Music's on. |
+| music_any_018 | Music on. Soft songs, I'm in. Loud ones, I'm leaving. | Soft songs, I'm in. Loud ones, I'm leaving. |
+| callback_any_007 | Quietly impressive: {count} pauses today. | {count} pauses today. I'm keeping the notes tidy. |
+| poke_any_055 | Hehe. Again? Fine, I love attention. Don't repeat that. | Hehe. Poking me? Fine, I love attention. Don't repeat that. |
+
+Open for the Owner: music_any_011 ('Same song on repeat? Seek help.') and session_long_any_031 (💀) are the Owner's own captions and stay; 'seek help' is a casual idiom but borders on mental-health wording, so if any tester reads it badly, retire it. pause_stay 'Five' lines assume PauseSpec.grantMinutes = 5 (current default); if Stay length ever becomes a setting, those lines need a slot.
+Not yet audited line by line: app_open, battery_low, charger_on, nap, wake, weekly, welcome (scanned by pattern only, no hits). Validator: 847 lines, 0 problems.

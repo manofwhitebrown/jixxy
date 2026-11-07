@@ -35,7 +35,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "{app} again. Quick pause, then it's all yours.",
+    "text": "{app}? Quick pause, then it's all yours.",
     "slots": [
       "app"
     ],
@@ -80,7 +80,7 @@
     "roast": 2,
     "bondMin": 0,
     "lang": "en",
-    "text": "Back on {app}? Leave, or I'll narrate your scrolling.",
+    "text": "Opening {app}? Leave, or I'll narrate your scrolling.",
     "slots": [
       "app"
     ],
@@ -234,7 +234,7 @@
     "roast": 3,
     "bondMin": 1,
     "lang": "en",
-    "text": "{app} again. The algorithm sends its regards, and an invoice.",
+    "text": "{app}. The algorithm sends its regards, and an invoice.",
     "slots": [
       "app"
     ],
@@ -369,7 +369,7 @@
     "roast": 3,
     "bondMin": 1,
     "lang": "en",
-    "text": "{app} again. The leaderboard doesn't know you, but I do, menace.",
+    "text": "{app}. The leaderboard may not know you, but I do, menace.",
     "slots": [
       "app"
     ],
@@ -549,7 +549,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "{app} again. Quick pause before the cart gets ideas.",
+    "text": "{app}. Quick pause before the cart gets ideas.",
     "slots": [
       "app"
     ],
@@ -634,7 +634,7 @@
     "roast": 3,
     "bondMin": 1,
     "lang": "en",
-    "text": "Your cart has more friends than I do, dummy. {app} again?",
+    "text": "Your cart has more friends than I do, dummy. Shopping on {app}?",
     "slots": [
       "app"
     ],
@@ -769,7 +769,7 @@
     "roast": 3,
     "bondMin": 1,
     "lang": "en",
-    "text": "{app} AGAIN? Theatre of the absurd, starring you and {minutes} minutes.",
+    "text": "{app}?! Theatre of the absurd, one cat in the audience. {minutes} minutes today.",
     "slots": [
       "app",
       "minutes"
@@ -974,7 +974,7 @@
     "roast": 3,
     "bondMin": 1,
     "lang": "en",
-    "text": "Streaming gods demand tribute. {minutes} minutes on {app}, goblin.",
+    "text": "Infinite queue, finite goblin. {minutes} minutes on {app}.",
     "slots": [
       "app",
       "minutes"
@@ -1329,7 +1329,7 @@
     "roast": 3,
     "bondMin": 1,
     "lang": "en",
-    "text": "Breaking news: {app} again. Experts say leave, menace.",
+    "text": "Breaking news: {app} opens. Experts say leave, menace.",
     "slots": [
       "app"
     ],
@@ -2479,7 +2479,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "{app}, {count} pauses deep. I'm out of jokes. Leave, please?",
+    "text": "{app}, {count} pauses deep. I've run out of jokes. Your move.",
     "slots": [
       "app",
       "count"
@@ -2670,7 +2670,7 @@
     "roast": 2,
     "bondMin": 0,
     "lang": "en",
-    "text": "Fifteen tabs, zero answers. {app} again?",
+    "text": "If it's fifteen tabs and zero answers, leave {app}. I'll hold the browser.",
     "slots": [
       "app"
     ],
@@ -2692,7 +2692,7 @@
     "roast": 2,
     "bondMin": 0,
     "lang": "en",
-    "text": "{minutes} minutes in {app}. The research is now just vibes.",
+    "text": "If this is research, it's mostly vibes now. {minutes} minutes in {app}.",
     "slots": [
       "app",
       "minutes"
@@ -2715,7 +2715,7 @@
     "roast": 3,
     "bondMin": 1,
     "lang": "en",
-    "text": "{app} again. You're not researching, you're wandering, gremlin.",
+    "text": "Is this research, or wandering with extra steps, gremlin? {app} is open.",
     "slots": [
       "app"
     ],
@@ -2736,8 +2736,9 @@
     "roast": 3,
     "bondMin": 1,
     "lang": "en",
-    "text": "{minutes} minutes of 'one quick search'. Bold of you, dummy.",
+    "text": "{minutes} minutes on {app} today. 'One quick search' is famously quick, dummy.",
     "slots": [
+      "app",
       "minutes"
     ],
     "tags": [
@@ -2758,7 +2759,7 @@
     "roast": 3,
     "bondMin": 1,
     "lang": "en",
-    "text": "That tab has been open since the last ice age. Leave {app}?",
+    "text": "Some tabs feel older than the last ice age. Leave {app}?",
     "slots": [
       "app"
     ],
@@ -2824,7 +2825,7 @@
     "roast": 2,
     "bondMin": 0,
     "lang": "en",
-    "text": "{app} again? Productive. I'm suspicious, but proud.",
+    "text": "{app}? Productive. I'm suspicious, but proud.",
     "slots": [
       "app"
     ],
@@ -2868,7 +2869,7 @@
     "roast": 3,
     "bondMin": 1,
     "lang": "en",
-    "text": "Colour-coding {app} again? The deadline can see you, goblin.",
+    "text": "Pause first, {app} after, goblin. I'll guard your to-do list.",
     "slots": [
       "app"
     ],
@@ -2890,7 +2891,7 @@
     "roast": 3,
     "bondMin": 1,
     "lang": "en",
-    "text": "{minutes} minutes in {app} and one real task. I counted.",
+    "text": "{minutes} minutes in {app}. I counted every one, quietly, goblin.",
     "slots": [
       "app",
       "minutes"

@@ -140,7 +140,7 @@
     "roast": 1,
     "bondMin": 2,
     "lang": "en",
-    "text": "Quietly impressive: {count} pauses today.",
+    "text": "{count} pauses today. I'm keeping the notes tidy.",
     "slots": [
       "count"
     ],
