@@ -117,7 +117,7 @@ fun SettingsContent(
     onClearDebug: (() -> Unit)? = null,
 ) {
     var confirmReset by remember { mutableStateOf(false) }
-    var copied by remember { mutableStateOf(false) }
+    var debugNote by remember { mutableStateOf<Int?>(null) }
     Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
         Column(
             Modifier.verticalScroll(rememberScrollState()).padding(24.dp),
@@ -157,8 +157,11 @@ fun SettingsContent(
                 Text(stringResource(nagHint(s.nagLevel)), style = MaterialTheme.typography.bodyMedium)
             }
 
-            Section(R.string.settings_sounds_label, R.string.settings_sounds_help) {
-                SwitchRow(stringResource(R.string.settings_sounds_label), s.soundsEnabled, onSounds)
+            // Hidden until PLATFORM plays sounds in the overlay (JixxyView.sounds + SoundPolicy): a switch that does nothing would be a lie.
+            if (SOUNDS_WIRED) {
+                Section(R.string.settings_sounds_label, R.string.settings_sounds_help) {
+                    SwitchRow(stringResource(R.string.settings_sounds_label), s.soundsEnabled, onSounds)
+                }
             }
 
             Section(R.string.settings_target_apps_label, R.string.settings_target_apps_help) {
@@ -223,9 +226,9 @@ fun SettingsContent(
 
             if (onCopyDebug != null && onClearDebug != null) {
                 Section(R.string.settings_debug_label, R.string.settings_debug_help) {
-                    OutlinedButton(onClick = { onCopyDebug(); copied = true }, Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(stringResource(R.string.settings_debug_copy)) }
-                    if (copied) Text(stringResource(R.string.settings_debug_copied), Modifier.semantics { liveRegion = LiveRegionMode.Polite }, style = MaterialTheme.typography.bodyMedium)
-                    OutlinedButton(onClick = { onClearDebug(); copied = false }, Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(stringResource(R.string.settings_debug_clear)) }
+                    OutlinedButton(onClick = { onCopyDebug(); debugNote = R.string.settings_debug_copied }, Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(stringResource(R.string.settings_debug_copy)) }
+                    debugNote?.let { Text(stringResource(it), Modifier.semantics { liveRegion = LiveRegionMode.Polite }, style = MaterialTheme.typography.bodyMedium) }
+                    OutlinedButton(onClick = { onClearDebug(); debugNote = R.string.settings_debug_cleared }, Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(stringResource(R.string.settings_debug_clear)) }
                 }
             }
 
@@ -335,3 +338,5 @@ private val previewApps = listOf(AppChoice("pkg.a", "App A"), AppChoice("pkg.b",
     JixxyTheme(dark = false) { SettingsContent(UserSettings(targetApps = setOf("pkg.a", "pkg.b", "pkg.c"), blindMode = true), previewApps, {}, {}, {}, { _, _ -> }, {}, {}, {}, {}, {}, {}, {}, {}) }
 @Preview(showBackground = true, name = "200% font", fontScale = 2f, heightDp = 2400) @Composable private fun SettingsLargeFont() =
     JixxyTheme(dark = true) { SettingsContent(UserSettings(language = "hinglish"), previewApps, {}, {}, {}, { _, _ -> }, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}) }
+
+private const val SOUNDS_WIRED = false

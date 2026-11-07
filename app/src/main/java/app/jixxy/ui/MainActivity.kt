@@ -38,6 +38,7 @@ class MainActivity : ComponentActivity() {
                 JixxyNavHost(
                     startRoute = if (prefs.getBoolean(KEY_ONBOARDING_DONE, false)) Routes.HOME else Routes.ONBOARDING,
                     settings = app.settings,
+                    diagnostics = remember { diagnosticsPort(app.diagnostics) },
                     store = app.stateStore,
                     apps = apps,
                     appLabel = remember { CategoryResolver(applicationContext)::label },
@@ -98,4 +99,14 @@ class MainActivity : ComponentActivity() {
         const val UI_PREFS = "ui_prefs"
         const val KEY_ONBOARDING_DONE = "onboarding_done"
     }
+}
+
+/**
+ * Adapts PLATFORM's diagnostics to the Settings "Copy debug info" button. The screen promises the report has no app names,
+ * so the one header line that lists the user's chosen apps is dropped here (PLATFORM may remove it at the source).
+ */
+private fun diagnosticsPort(d: app.jixxy.platform.DiagnosticsRepository) = object : app.jixxy.ui.state.DiagnosticsPort {
+    override suspend fun copyableReport(): String =
+        d.copyableReport().lineSequence().filterNot { it.startsWith("Apps chosen for Pause:") }.joinToString("\n")
+    override suspend fun clear() = d.clear()
 }

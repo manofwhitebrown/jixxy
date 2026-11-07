@@ -200,9 +200,15 @@
     <string name="settings_nag_calm_hint">Now and then. Mostly soft.</string>
     <string name="settings_nag_naggy_hint">Regular comments. Persistent, but lovable. The default.</string>
     <string name="settings_nag_chaos_hint">Opinions all day.</string>
+    <string name="settings_sounds_label">Sounds (meows and blips)</string>
+    <string name="settings_sounds_help">Off by default. Silent mode and calls always win.</string>
+    <string name="home_turn_down">Turn him down</string>
+    <string name="home_turned_down">He\'s already on Calm. You can change that in Settings.</string>
+    <string name="onboarding_nag_title">How chatty should I be?</string>
+    <string name="onboarding_nag_body">Calm, Naggy or Chaos. Change it any time, or turn me down with one tap on Home.</string>
+    <string name="onboarding_sounds_title">Meows and blips?</string>
+    <string name="onboarding_sounds_body">Tiny sounds when I speak. Off by default. Silent mode and calls always win.</string>
+    <string name="onboarding_sounds_toggle">Turn sounds on</string>
     <!-- [P] placeholders: keys not yet in MICROCOPY -->
-    <string name="settings_sounds_label">[P] Sounds (meows and blips)</string>
-    <string name="settings_sounds_help">[P] Off by default. Silent mode and calls always win.</string>
-    <string name="home_turn_down">[P] Turn him down</string>
-    <string name="home_turned_down">[P] He\'s on Calm. You can change that in Settings.</string>
+
 </resources>
