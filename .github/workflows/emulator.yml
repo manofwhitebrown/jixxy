@@ -20,11 +20,13 @@ permissions:
   contents: read
   actions: read
 
-# A newer main commit supersedes an older emulator run that is still going (saves minutes and artifacts).
-# Manual runs get their own group so they are never cancelled by a push.
+# One automatic emulator run at a time. While one is running, only the NEWEST waiting run is kept (GitHub drops
+# older waiting ones), so rapid pushes cannot starve it: a run that has started always finishes.
+# (cancel-in-progress: true was tried and cancelled every run when several roles push within minutes.)
+# Manual runs get their own group.
 concurrency:
   group: emulator-${{ github.event_name == 'workflow_run' && 'main' || github.run_id }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   emulator:
