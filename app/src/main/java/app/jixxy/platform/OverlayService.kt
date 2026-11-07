@@ -40,6 +40,8 @@ import app.jixxy.platform.signals.CategoryResolver
 import app.jixxy.ui.MainActivity
 import app.jixxy.platform.signals.SystemSignals
 import app.jixxy.platform.signals.UsageDetector
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -64,7 +66,11 @@ class OverlayService : Service(), ReactionRenderer {
     private var sprite: JixxyView? = null
     private lateinit var params: WindowManager.LayoutParams
     private val handler = Handler(Looper.getMainLooper())
-    private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate)
+    // A failing background job (disk full, bad write) is logged to diagnostics instead of crashing the whole process.
+    private val scope = CoroutineScope(
+        SupervisorJob() + Dispatchers.Main.immediate +
+            CoroutineExceptionHandler { _, e -> if (::app.isInitialized) app.diagnostics.record("JOB_ERROR", e.stackTraceToString()) }
+    )
     private var settings = UserSettings()
     private var napping = false
     private var screenOn = true
@@ -92,7 +98,13 @@ class OverlayService : Service(), ReactionRenderer {
             return
         }
         setWantedRunning(this, true)
-        if (!addSprite()) { app.diagnostics.record("NO_OVERLAY", "service stopping"); stopSelf(); return }
+        if (!addSprite()) {
+            // Without the overlay permission he cannot exist; do not let boot/update keep restarting a service that stops at once.
+            app.diagnostics.record("NO_OVERLAY", "service stopping")
+            setWantedRunning(this, false)
+            stopSelf()
+            return
+        }
         registerReceiver(screenReceiver, IntentFilter().apply {
             addAction(Intent.ACTION_SCREEN_ON)
             addAction(Intent.ACTION_SCREEN_OFF)
@@ -106,6 +118,7 @@ class OverlayService : Service(), ReactionRenderer {
         val usage = UsageDetector(this, app.bus, categories)
         systemSignals = SystemSignals(this, app.bus, usage)
         scope.launch {
+            try {
             val loaded = withContext(Dispatchers.IO) {
                 val t = System.currentTimeMillis()
                 Triple(
@@ -134,10 +147,18 @@ class OverlayService : Service(), ReactionRenderer {
                 systemSignals?.setBlindMode(s.blindMode)  // starts detectors when blind mode is off
                 updateNap()
             }
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                // Corrupt state or assets must not crash-loop the app: log, remember he is off, stop cleanly.
+                app.diagnostics.record("PIPELINE_FAILED", e.stackTraceToString())
+                setWantedRunning(this@OverlayService, false)
+                stopSelf()
+            }
         }
         scope.launch { app.stateStore.purgeExpired() }
         // Weekly review check rides the existing 60 s heartbeat (screen on only): no timer of its own.
-        scope.launch { app.bus.signals.collect { if (it is Signal.Heartbeat && !settings.blindMode) app.weekly.check(it.ts) } }
+        scope.launch { app.bus.signals.collect { if (it is Signal.Heartbeat && !settings.blindMode) runCatching { app.weekly.check(it.ts) } } }
     }
 
     /** Reads every `*.json` under assets/lines/<lang>; falls back to English if that language has none. */
@@ -189,7 +210,7 @@ class OverlayService : Service(), ReactionRenderer {
         // Keep the snapped side: a sprite on the right edge must stay on the right edge after rotating.
         params.x = if (snappedRight) maxX(view) else params.x.coerceIn(0, maxX(view))
         params.y = params.y.coerceIn(0, maxY(view))
-        windowManager.updateViewLayout(view, params)
+        runCatching { windowManager.updateViewLayout(view, params) }
     }
 
     override fun onDestroy() {

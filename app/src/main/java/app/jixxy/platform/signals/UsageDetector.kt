@@ -61,12 +61,18 @@ class UsageDetector(
     private fun pollOnce() {
         if (!hasUsageAccess()) return
         val t = now()
-        val events = usm.queryEvents(lastQueryTs, t)
-        lastQueryTs = t
         var newest: String? = null
-        while (events.hasNextEvent()) {
-            events.getNextEvent(event)
-            if (event.eventType == FOREGROUND_EVENT) newest = event.packageName
+        try {
+            // Overlap by 1 s: usage events can be written a moment after their timestamp, and a strict "since last poll"
+            // window would then skip an app switch. Re-reading an old event is harmless (same package = no new signal).
+            val events = usm.queryEvents((lastQueryTs - OVERLAP_MS).coerceAtLeast(0L), t)
+            lastQueryTs = t
+            while (events.hasNextEvent()) {
+                events.getNextEvent(event)
+                if (event.eventType == FOREGROUND_EVENT) newest = event.packageName
+            }
+        } catch (e: RuntimeException) {
+            return  // access revoked mid-poll or OEM quirk: skip this tick, never crash the service
         }
         if (newest != null && newest != currentPkg) {
             currentPkg = newest
@@ -86,6 +92,7 @@ class UsageDetector(
     private companion object {
         const val POLL_MS = 1_500L
         const val LOOKBACK_MS = 10_000L
+        const val OVERLAP_MS = 1_000L
         val FOREGROUND_EVENT =
             if (Build.VERSION.SDK_INT >= 29) UsageEvents.Event.ACTIVITY_RESUMED
             else @Suppress("DEPRECATION") UsageEvents.Event.MOVE_TO_FOREGROUND
