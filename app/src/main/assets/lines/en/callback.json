@@ -689,5 +689,198 @@
       "fact:top_app_minutes_day"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "callback_any_033",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "{count} times on {app} today. I've started calling it a lifestyle.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "callback",
+      "fact:app_visits_day"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_034",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "{app}, visit {count} today. I'm not nagging, I'm narrating.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "callback",
+      "fact:app_visits_day"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_035",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "{count} pauses today. At this point I deserve a job title.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "callback",
+      "fact:pauses_day"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_036",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "Pause {count} today. I'm getting good at this, and I wish I weren't.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "callback",
+      "fact:pauses_day"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_037",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "{count} Leaves this week. Okay, I'll stop nagging. Briefly.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "callback",
+      "fact:leaves_week"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_038",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "{count} Leaves this week. I'm allowed to be smug.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "callback",
+      "fact:leaves_week"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_039",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "{count} {app} visits this week. I'm filing it under 'routine'.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "callback",
+      "fact:app_visits_week"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_040",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "{app}, {count} times this week. I'll keep nagging. It's my hobby.",
+    "slots": [
+      "app",
+      "count"
+    ],
+    "tags": [
+      "callback",
+      "fact:app_visits_week"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "callback_any_041",
+    "trigger": "CALLBACK",
+    "categories": [],
+    "moods": [
+      "SMUG",
+      "CHILL"
+    ],
+    "roast": 1,
+    "bondMin": 2,
+    "lang": "en",
+    "text": "{count} Stays this week. I'll allow it. I'll also mention it.",
+    "slots": [
+      "count"
+    ],
+    "tags": [
+      "callback",
+      "fact:stays_week"
+    ],
+    "almostCaring": false
   }
 ]

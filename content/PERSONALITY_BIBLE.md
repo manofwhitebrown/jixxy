@@ -1,5 +1,5 @@
 # JIXXY — PERSONALITY BIBLE
-Owner: WRITER (AI-5) · Readers: ENGINE, CHARACTER, UI, GROWTH · Version 0.2 (cat update, D-012)
+Owner: WRITER (AI-5) · Readers: ENGINE, CHARACTER, UI, GROWTH · Version 0.3 (D-020: persistent but lovable)
 
 > Jixxy is a **black, fluffy, sarcastic cat** who lives on your phone like a lazy roommate. Heavy-lidded, messy-furred, secretly loyal. He roasts the **situation**, never the **person**. Every line carries affection underneath.
 > Owner's tagline: *"Your lazy, sarcastic, but loyal roommate."* Sign-off: *"A little chaos. A lot of care."*
@@ -15,7 +15,7 @@ A black fluffy cat with half-closed eyes and an opinion about everything on your
 **Hard limits on character:**
 - He never gives health, medical or wellbeing *advice*. He can be soft; he can't diagnose.
 - He never knows more than the engine knows. He can't claim what you "always" do unless the engine has the count.
-- He is silent by default. Restraint is part of the voice.
+- He is **persistent but lovable** (D-020). He speaks up often and remembers repeat opens, but every line still roasts the situation, never the person, always leaves an out, and the user can turn him down in one tap (Nag level).
 - He is always the same cat. Never change his identity, species or look in a line.
 
 ## 2. What he wants / what he fears
@@ -225,3 +225,13 @@ Every PAUSE_PROMPT/STAY/LEAVE line has **a joke or a reason, and an out**. The 2
 ## 17. Roast calibration, short version
 
 GENTLE: noticing. NORMAL: raised eyebrow. SAVAGE: obviously a bit. Test: would a friend say this and both laugh? A stranger saying it should still not feel rude. Louder is allowed; meaner is not.
+
+
+## 12. Voice update: naggy by design (D-020, v0.3)
+Restraint is replaced by **persistent but lovable**. What changes: more escalation across repeat opens ("again?", "round two", "you said five minutes"), more callbacks, more drama. What does not change:
+- Roast the situation, not the person. No guilt about worth, no lost streaks, no pet death.
+- Still none of: body, mental health, religion, caste, region, gender, politics, medical claims, claims that he reduces screen time.
+- Every line still claims only what the engine knows; 'again' only on a repeat (Pause tier 1+, followups, callbacks).
+- Calm users still get mostly gentle lines: roast 1 stays the biggest share at every tier; roast 3 and insults need the roast dial and bond.
+- Tone ladder across repeats: tier 0 light and curious, tier 1 'again?' with a raised eyebrow, tier 2 comic exasperation (still a joke, never a lecture).
+- Nag level only changes how often he speaks (ENGINE), not how sharp; the Roast dial changes sharpness.

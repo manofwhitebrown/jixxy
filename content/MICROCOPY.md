@@ -1,4 +1,4 @@
-# JIXXY — MICROCOPY v0.9
+# JIXXY — MICROCOPY v1.0
 Owner: WRITER · Consumer: UI (→ strings.xml) · Language: en
 
 **Rules**
@@ -59,8 +59,8 @@ Format: `key` — text.
 
 ### Choose apps
 - `onboarding.apps.title` — Pick the apps you want a pause on
-- `onboarding.apps.body` — These are the apps where I'll ask you to pause first. Fewer is calmer, and you can change this any time. Apps like banking, payments, calls and maps are never included.
-- `onboarding.apps.cap_reached` — That's the limit ({n}). Remove one to pick another.
+- `onboarding.apps.body` — These are the apps where I'll ask you to pause first. Pick as many as you like, and change this any time. Apps like banking, payments, calls and maps are never included.
+- `onboarding.apps.cap_reached` — (retired by D-020: no app cap, UI can drop this string)
 
 ### Roast level
 - `onboarding.roast.title` — How much teasing?
@@ -332,3 +332,16 @@ New IDs only; nothing above changed. Clarity beats jokes: each card says what is
 
 ## 18. D-019 wording (v0.9)
 The Pause-app cap is no longer hard-coded in copy: `onboarding.apps.title`, `onboarding.apps.body`, `onboarding.apps.cap_reached` (now uses `{n}`, filled from `BrainConfig.maxTargetApps`), `settings.target_apps.label`, `launcher.empty.no_apps` reworded. IDs unchanged. No line in the banks mentions a number of apps.
+
+---
+
+## 19. D-020 wording and Nag level (v1.0)
+D-020 removes the Pause-app cap, so `onboarding.apps.body` no longer says "fewer is calmer" and `onboarding.apps.cap_reached` is retired. New Nag level setting (numbers are ENGINE's to tune, so the copy has none):
+- `settings.nag.label` — Nag level
+- `settings.nag.help` — How often I speak up on my own. Pauses on your chosen apps work the same at every level. Turn me down any time.
+- `settings.nag.calm` — Calm
+- `settings.nag.naggy` — Naggy
+- `settings.nag.chaos` — Chaos
+- `settings.nag.calm_hint` — Now and then. Mostly soft.
+- `settings.nag.naggy_hint` — Regular comments. Persistent, but lovable. The default.
+- `settings.nag.chaos_hint` — Opinions all day.

@@ -140,3 +140,11 @@ Read app_open, battery_low, charger_on, nap, wake, welcome line by line. Four re
 ## Wave 3, T-W3-4 callbacks and D-019 (2026-11-07T05:28Z)
 ENGINE message 20261107-0524: new facts stays_week, late_opens_week, top_app_minutes_day (slots app/count, app/count, app/minutes). Added 12 CALLBACK lines (4 per fact, roast 1, bondMin 2, one fact: tag each, only the slots ENGINE lists). Rules kept: stays lines quote only the Stay count; late-night lines are gentle (no sarcasm about sleep, they never fire while it is late night); top-app lines claim only 'top app of the day' and minutes. Not built by ENGINE, so no lines: longest unbroken session, bond change, first_pause_ever, leave_streak_today, days_together. EN bank 651 lines; validator 877 total, 0 problems.
 D-019: no bank line mentions a number of apps (searched). MICROCOPY v0.9 section 18 rewords the five cap strings without the number; cap_reached uses {n}.
+
+## Wave 3, D-020 naggy voice (2026-11-07T05:33Z)
+Manager request 20261107-1230. Added 41 EN lines (bank 692), all within the D-020 floors (roast the situation, no guilt about worth, no body/mental-health/etc., claims only known facts):
+- PAUSE_PROMPT escalation, any category: 6 tier1 ('again' is true from the 2nd pause) and 6 tier2 (use {count}); per category GAME/MESSAGING/SHOPPING/BROWSER/PRODUCTIVITY/OTHER: 1 tier1 + 1 tier2 each (SOCIAL/VIDEO already had tiers). Roast mix keeps roast 1-2 as the majority so Calm users stay mostly gentle; only 1 roast-3 line per tier (needs bond 1).
+- PAUSE_PROMPT follow-ups ('you said five minutes'): 8, tag followup (reserved by the picker, so they appear only after a Stay).
+- CALLBACK: 9 more across app_visits_day, pauses_day, leaves_week, app_visits_week, stays_week.
+Bible v0.3: 'restraint' replaced by 'persistent but lovable', with the floors listed (section 12). MICROCOPY v1.0 section 19: Nag level setting copy (Calm/Naggy/Chaos, no numbers), onboarding.apps.body no longer says 'fewer is calmer', cap_reached retired. Check: no bank line mentions a number of apps. Validator 918 total, 0 problems.
+Not done / needs ENGINE: unprompted APP_OPEN repeat-open lines ('third time tonight') need a count slot or a fact tag from ENGINE; callbacks only cover thresholds ENGINE lists. Tell me the new thresholds under Naggy and I will tune lines.
