@@ -121,6 +121,22 @@ jobs:
       - name: Unit-test summary (counts + failing tests as annotations)
         if: always() && steps.gradle.outputs.present == 'true'
         run: python3 scripts/ci_test_summary.py
+      - name: Engine coverage (report only until the first number is known; gate = COVERAGE_MIN)
+        if: always() && steps.gradle.outputs.present == 'true'
+        env:
+          COVERAGE_MIN: ''
+          COVERAGE_PACKAGES: rules,selector
+        run: python3 scripts/ci_coverage.py
+      - name: Upload coverage report (main pushes only)
+        if: always() && steps.gradle.outputs.present == 'true' && github.event_name == 'push'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: engine-coverage-${{ github.sha }}
+          path: |
+            engine/build/reports/jacoco
+            engine/build/reports/coverage-summary.txt
+          if-no-files-found: ignore
+          retention-days: 3
       - name: Report failures as annotations
         if: always() && steps.gradle.outputs.present == 'true'
         run: |
