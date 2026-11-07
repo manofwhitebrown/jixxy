@@ -1,5 +1,6 @@
 package app.jixxy.character
 
+import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -62,6 +63,9 @@ class JixxyView(context: Context) : FrameLayout(context) {
     private var shownPoke = 0
 
     private var screenActive = true
+
+    /** True when the system asks for no animation (animator scale 0 or battery saver): crossfades only, no motion. */
+    private var reduceMotion = false
     private var shiftedX = 0
     private var shiftedY = 0
     private var bubbleDown = false
@@ -77,6 +81,7 @@ class JixxyView(context: Context) : FrameLayout(context) {
         override fun run() {
             if (!shouldAnimate()) return
             val now = SystemClock.uptimeMillis()
+            reduceMotion = !ValueAnimator.areAnimatorsEnabled()
             animator.step(now)
             syncExpression(now)
             fader.step(now)
@@ -212,6 +217,7 @@ class JixxyView(context: Context) : FrameLayout(context) {
         removeCallbacks(ticker)
         if (!shouldAnimate()) return
         val now = SystemClock.uptimeMillis()
+        reduceMotion = !ValueAnimator.areAnimatorsEnabled()
         animator.resume(now)
         loadCurrent()
         syncExpression(now)
@@ -373,11 +379,13 @@ class JixxyView(context: Context) : FrameLayout(context) {
 
         val blink = animator.blinkEnvelope
         val swapBlinkFrame = blinkFrame != null && blink > BLINK_SWAP_AT && fader.current == Expression.REALLY
-        val squash = if (blinkFrame == null) BLINK_SQUASH * blink else 0f
+        val squash = if (blinkFrame == null && !reduceMotion) BLINK_SQUASH * blink else 0f
         canvas.save()
-        canvas.translate(pose[P.DX], pose[P.DY])
-        canvas.rotate(pose[P.ROT], FEET_X, FEET_Y)
-        canvas.scale(pose[P.SX], pose[P.SY] * (1f - squash), FEET_X, FEET_Y)
+        if (!reduceMotion) {
+            canvas.translate(pose[P.DX], pose[P.DY])
+            canvas.rotate(pose[P.ROT], FEET_X, FEET_Y)
+            canvas.scale(pose[P.SX], pose[P.SY] * (1f - squash), FEET_X, FEET_Y)
+        }
         val under = fader.previous?.let { bitmaps[it.ordinal] }
         if (under != null) {
             spritePaint.alpha = 255
@@ -385,12 +393,14 @@ class JixxyView(context: Context) : FrameLayout(context) {
         }
         spritePaint.alpha = (255f * fader.progress).toInt()
         canvas.drawBitmap(if (swapBlinkFrame) blinkFrame ?: current else current, null, spriteBounds, spritePaint)
-        drawSweat(canvas)
+        if (!reduceMotion) drawSweat(canvas)
         canvas.restore()
 
-        drawFloatingZs(canvas)
-        drawNotes(canvas)
-        drawSparkles(canvas)
+        if (!reduceMotion) {
+            drawFloatingZs(canvas)
+            drawNotes(canvas)
+            drawSparkles(canvas)
+        }
         canvas.restore()
         if (geometry != null) bubble.draw(canvas, SystemClock.uptimeMillis())
     }

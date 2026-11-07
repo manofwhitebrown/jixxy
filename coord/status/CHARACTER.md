@@ -10,6 +10,7 @@ T-C2-5 done. T-C2-6 reviewed (GROWTH built it). T-C2-7/dead face channels deferr
 Found: T-CHAR-2 (procedural Blanket Bean, 18 states, PoseAnimator + StatePoses + 20 JVM tests) is merged on main. Nothing was ever run on a device. No bubble, no PauseCardView, no icon. `design/character/reference/` is missing (Owner has not added the art). Engine CharacterState lacks PEEK/CHARGING/LOW_BATTERY.
 Plan: keep PoseAnimator (state machine, priorities, tested) and StatePoses motion channels; replace the vector drawing in JixxyView with expression images and crossfades.
 ## Done
+- T-C3-3 (part): JixxyView honours the system "remove animations" / battery saver (ValueAnimator.areAnimatorsEnabled, API 26): crossfades only, no bob/shake/squash/Zs/notes/sparkles. Hidden/screen-off/detached already stop the frame loop (shouldAnimate + onVisibilityAggregated), checked by reading, not measured.
 - T-V1-CHARACTER-1/-2: inventory in MAPPING.md; design/character/tools/build_expressions.py makes sleep, yawn, stretch WebP (cutout of the black-background images), manifest JSON; wired into ExpressionMap/JixxyView + tests
 - T-C2-5: icon source in design/character/icon (adaptive fg/bg/mono, 96px notification, 512 store, make_icons.py); UI + GROWTH messaged
 - T-C2-6: reviewed GROWTH's CharacterDemoActivity, now logs the pressed state name
@@ -33,3 +34,7 @@ Nothing in this wave is compiled or run yet. No Android SDK or Gradle in my sand
 
 Icons were only previewed as PNGs, never seen on a launcher. Demo activity unverified on device. Dead face channels left in on purpose: removing them touches tested code and I have no compiler, so CI would be the first check.
 OWNER TEST STEPS (demo): install the debug APK, open the second launcher icon 'Jixxy demo', press each state button, drag him, tap the bubble then an emoji, press 'Test Pause card' and wait for Stay to enable.
+
+## Motion budget (counted from code, not measured on a device)
+Idle (calm state, no blink, no bubble, no fade): one frame every CALM_FRAME_MS; during a blink, fade, bubble or active state: 33 ms (~30 fps, the cap). Screen off / window hidden / detached: zero frames, zero timers (the ticker is removed). Reduce-motion on: same frame rate for crossfades, no transform or overlay work. Allocation in onDraw not audited yet.
+QUESTION FOR THE OWNER: does he feel too fidgety when idle? (too much movement / about right / too still)
