@@ -1,11 +1,12 @@
 # PLATFORM status (Wave 3, AI-1) — updated 2026-11-07
 ## Takeover: 2026-11-07 (UTC)
 Found: Wave-2 code compiles on CI but is unrun on a phone. Read OverlayService, Dispatcher, PauseWindow, UsageDetector, SystemSignals, BootReceiver, PersistingBrain. Three real bugs found by reading (fixed below): (1) a Pause card dismissed by screen-off/nap/service stop left `Dispatcher.pauseShowing=true` forever, so NO further Pause would ever show; (2) an exception in `goHome()` would skip emitting `PauseChoice`; (3) no restart after an app update (only BOOT_COMPLETED was handled).
-## Now — T-P3-2 Pause hardening (pushed, awaiting CI) · next T-P3-3 / T-P3-4
+## Now — T-P3-0, T-P3-2 (core), T-P3-4 pushed; CI GREEN at b24c124 (compiles + unit tests pass; nothing seen on a phone)
 ## Done (this session)
+- T-P3-4 (b24c124): `data/DiagnosticsLog` (file ring buffer ~200 KB, line-trimmed), `DiagnosticsRedactor` (other apps' packages -> `<app>`), `DiagnosticsReport` (<= 20 KB, newest lines), `platform/DiagnosticsRepository` (`copyableReport()`, `clear()`, crash handler installed in `JixxyApp.onCreate`). Events logged: APP_START, SERVICE_CREATE/COMMAND/DESTROY, FGS_REFUSED, NO_OVERLAY, PAUSE_SHOWN/CHOICE/CANCELLED, GO_HOME_FAILED, CRASH. Tests: DiagnosticsLogTest. HANDOFF sent to UI (needs a Settings 'Copy debug info' button) and GROWTH (PRIVACY text).
 - Pause card lifecycle: cancel callback + `dismissPause()`; card is dropped on app switch, call start, screen off, nap, add-view failure; dispatcher is never stuck. `goHome()` failure no longer swallows the choice. Tests added in DispatcherTest.
 - `MY_PACKAGE_REPLACED` restart (RestartPolicy + test + manifest filter). `addSprite()` now returns false and stops the service cleanly if overlay is missing (no half-started pipeline).
-## Next — T-P3-4 diagnostics ring buffer + `DiagnosticsRepository`; T-P3-3 FGS start-path audit (notification actions, boot); T-P3-5 battery audit (polling now 1.5 s screen-on only)
+## Next — T-P3-1 as soon as the Owner reports; T-P3-5 battery audit (detector polls every 1.5 s, audio every 3 s, heartbeat 60 s, all screen-on only; idea: back-off to 3-5 s after 30 s in the same app); T-P3-6 R8/targetSdk doc check (targetSdk is already 36); T-P3-8 weekly trigger
 ## Blockers — none. No device available to me; CI is the only compile.
 ## Questions for MANAGER — none
 
@@ -39,7 +40,10 @@ FGS start sources: boot/update/notification-button/app-open are all on the docs'
 4. Open the app, wait for the card, switch to another app with the gesture: the card should disappear.
 5. Update test: install a newer APK over the old one with Jixxy running; after install, the cat should come back by itself within a few seconds (if not, open Jixxy and tap Wake, then tell me your phone model).
 6. Reboot test: restart the phone; cat should return within about a minute (many phones block this; tell me the phone model either way).
+## Owner test for diagnostics (after UI adds the button)
+Settings -> Copy debug info -> paste it into chat. Expect: short text with app version, Android version, phone model, permission states, then dated event lines. If it shows names of apps you did NOT choose, tell me at once.
 ## Honest notes
+- Process death / battery / R8 / weekly trigger (T-P3-3 rest, T-P3-5/6/8) not started; table above is the T-P3-3 audit result.
 - Nothing here was run on a phone or compiled by me; CI is the first compile. `fixed in code` only.
 - Messages handled: all Wave-2 inbox items were read through the predecessor's status; none new for Wave 3 yet.
 ## Earlier history (condensed from Wave 2)
