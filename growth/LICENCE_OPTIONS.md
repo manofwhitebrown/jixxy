@@ -20,7 +20,7 @@ Right now the repo has **no licence file**, so by default **all rights are reser
 **Past versions:** a licence cannot be taken back for copies people already have, so pick calmly. You can add a more open licence later; going stricter only affects future versions.
 
 ## 2. Art, name and lines: a separate choice
-The cat sheet, the 15 sprites, the icon, the line bank and the name "Jixxy" are what people recognise, and the art is yours. Common practice is **open code, closed brand**: say in writing that the licence for code does **not** cover them.
+The cat sheet, the 18 sprites, the icon, the line bank and the name "Jixxy" are what people recognise, and the art is yours. Common practice is **open code, closed brand**: say in writing that the licence for code does **not** cover them.
 
 | Option | Meaning | Consequence |
 |---|---|---|

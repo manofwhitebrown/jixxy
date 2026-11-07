@@ -17,7 +17,7 @@ How to read this: items marked **[verified]** come from Google's own pages I rea
 > **What he does**
 > You pick the apps. When you open one, Jixxy shows a short pause card with a joke and two buttons: Leave, or Stay for 5 more minutes. You are always in control: Leave works instantly, Stay unlocks after a few seconds.
 >
-> He reacts to small moments too: a long session, a late night, plugging in the charger, a low battery. He is a naggy cat by design, and you set how naggy (Calm, Naggy or Chaos) **[only once the nag dial ships; remove this clause if it doesn't]**. Every card and bubble can be dismissed, and you can nap him with one tap.
+> He reacts to small moments too: a long session, a late night, plugging in the charger, a low battery. He is a naggy cat by design, and you set how naggy (Calm, Naggy or Chaos). Every card and bubble can be dismissed, and you can nap him with one tap.
 >
 > **How he talks**
 > He jokes about the situation, never about you. Late at night he gets softer. Once a week he writes a "review of your week" card you can share if you like.

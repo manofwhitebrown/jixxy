@@ -26,7 +26,7 @@ He has **no internet permission** (anyone can check in Android's app info), no a
 ## 4. Copy-paste WhatsApp invite
 *(Send only after the Owner's go-ahead; fill in the link the Owner gives you.)*
 
-> Hey! Can you help me test a small free Android app? It's called **Jixxy**: a lazy, sarcastic black cat who floats on your screen and makes you pause, with a joke, before the apps *you* pick (like reels). **He's naggy on purpose**, and you can nap him with one tap (a Calm/Naggy/Chaos dial is coming). You always get **Leave** or **Stay**.
+> Hey! Can you help me test a small free Android app? It's called **Jixxy**: a lazy, sarcastic black cat who floats on your screen and makes you pause, with a joke, before the apps *you* pick (like reels). **He's naggy on purpose**, and you can nap him with one tap (Settings has a Calm / Naggy / Chaos dial). You always get **Leave** or **Stay**.
 >
 > The honest bit: it's early and rough, 18+ only, Android 8 or newer. It asks for "Display over other apps" and "Usage access" so he can float and know which app is open. It has no internet permission, so nothing leaves your phone. No ads, no sign-up.
 >

@@ -52,6 +52,8 @@ The one to try is the rolling **`latest`** build: <https://github.com/manofwhite
 ### Written, in the `latest` build or on `main`, not yet seen on a phone
 - [x] Real app as the launcher, guided setup, Home, Settings, "What Jixxy saw"
 - [x] 18 cat expression images, speech bubble, Pause card
+- [x] No limit on Pause apps (cap removed in the screens and the brain; code only)
+- [x] Calm / Naggy / Chaos nag level in Settings, default Naggy (code only)
 - [x] Line bank (700+ English lines, more being added) connected to the brain
 - [x] Weekly review screen and share card
 - [x] Hinglish as an opt-in beta
@@ -59,8 +61,6 @@ The one to try is the rolling **`latest`** build: <https://github.com/manofwhite
 - [x] Offline checks: no internet permission, signing key match, no secrets
 
 ### Decided, not written yet
-- [ ] No limit on Pause apps (app screens no longer cap it; the brain's old limit of 3 is still in the code)
-- [ ] Calm / Naggy / Chaos dial
 - [ ] Optional meows and blips (off by default)
 - [ ] Sharper art, plus a closed-eyes blink frame (yawn, stretch and sleep now exist)
 
@@ -84,7 +84,7 @@ The one to try is the rolling **`latest`** build: <https://github.com/manofwhite
 ## What he's meant to do
 
 - **You pick the apps.** When you open one, Jixxy shows a short pause card with **Leave** and **Stay** buttons. You stay in control.
-- **He is naggy, on purpose, and you set how much.** Persistent and dramatic ("again?"), but every card and bubble can be dismissed, and a one-tap nap is always there. A Calm / Naggy / Chaos dial is decided (D-020) but **not in any build yet**; the current build still uses the older, quieter limits.
+- **He is naggy, on purpose, and you set how much.** Persistent and dramatic ("again?"), but every card and bubble can be dismissed, and a one-tap nap is always there. A Calm / Naggy / Chaos dial is in Settings in the newest build (written, **not yet seen on a phone**); Naggy is the default.
 - **He roasts the situation, never you.** Late at night he gets softer.
 - **Weekly,** a shareable "Jixxy's review of your week" card.
 - **No guilt mechanics.** No lost streaks, no punishment for being away, no pet death.
@@ -157,7 +157,7 @@ Android 8.0 or newer.
 
 - **Alpha.** Expect rough edges. See [CHANGELOG.md](CHANGELOG.md) and the team's bug list [`qa/BUGS.md`](qa/BUGS.md).
 - **Nothing in the newest builds has been seen on a phone.** That includes the Pause flow (especially Leave going Home on Android 14 and 15), the speech bubble, the overlay with the bigger cat, starting again after a restart or update, and keep-alive on Samsung, Xiaomi, Oppo and Vivo.
-- **Art is soft.** The cat sprites come from a small source image, and three animation frames are missing; a simple squash stands in for them.
+- **Art is soft.** The cat sprites come from a small source image, and the closed-eyes blink frame is missing (yawn, stretch and sleep now exist); a simple squash stands in for it.
 - Phones with **aggressive battery managers** may close Jixxy in the background.
 - **Android only.** No iOS version is planned.
 - **English first.** Hinglish is an opt-in beta (off by default) and has not had a native-speaker read-through.

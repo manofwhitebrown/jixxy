@@ -20,7 +20,7 @@ Release page (shows the "Built" time, so tell us which build you tested): https:
 
 1. **First screen.** Open Jixxy. You should see the real app (onboarding or home), not a 3-button screen. Is the icon the cat, not the Android robot?
 2. **Look at him.** Is he the cat on your sheet? What's off (face, size, colour)?
-3. **Pick apps.** Choose some habit apps and a roast level. (The current build may still stop you at 3; the plan is no limit. Tell us what happens.) A nag-level dial is planned but not in the build yet.
+3. **Pick apps.** Choose some habit apps and a roast level. There should be no limit now; tell us if something stops you. Find the **nag level** (Calm / Naggy / Chaos) in Settings and try each.
 4. **Wake and move him.** Tap Wake. Drag him, let go, rotate the phone. Does he stay on screen? Can you use other apps normally, with taps passing through around him?
 5. **The Pause.** Open one of your chosen apps. A card with **Leave** and **Stay** should appear. Leave should take you home at once. On a new card, Stay should unlock after a few seconds. (This is the riskiest step on Android 14 and 15, so please try it twice.)
 6. **Talk.** Switch between apps for a few minutes, plug in and unplug the charger. Does he say anything? Funny or annoying? Screenshot any line.
