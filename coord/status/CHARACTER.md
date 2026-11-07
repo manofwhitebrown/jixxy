@@ -1,4 +1,9 @@
-# CHARACTER status: updated 2026-11-06T09:14Z
+# CHARACTER status: updated 2026-11-07T05:25Z (Wave 3, fresh AI)
+## Takeover: 2026-11-07T05:20Z
+Found: main green (CI, Emulator, Latest at 0550d84). Module = JixxyView, SpeechBubble, PauseCardView, PoseAnimator/StatePoses, 15 expression WebPs, 5 JVM test files. Demo activity already lists every CharacterState via values() (21). 5 new Owner images (sleep, sleep+zzz, yawn+zzz, yawn/stretch opaque black) sit in reference/ unprocessed. Nothing verified on a phone.
+Doing first: T-C3-0 demo gaps (long bubble, Pause with/without wait, light/dark stage), then PLATFORM's T-V1-CHARACTER-1/-2/-3 (inventory, asset pipeline, tight hit area).
+## Wave-3 findings list (Owner reports, with SHAs)
+(none yet)
 ## Now
 T-C2-5 done. T-C2-6 reviewed (GROWTH built it). T-C2-7/dead face channels deferred (see notes).
 ## Takeover: 2026-11-06T08:55Z

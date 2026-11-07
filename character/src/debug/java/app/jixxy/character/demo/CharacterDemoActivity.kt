@@ -31,6 +31,7 @@ class CharacterDemoActivity : Activity() {
     private lateinit var log: TextView
     private var pauseCard: PauseCardView? = null
     private var lineIndex = 0
+    private var lightStage = false
     private val stageLocation = IntArray(2)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,8 +60,13 @@ class CharacterDemoActivity : Activity() {
         }
         addRow(buttons, listOf(
             "Test bubble" to { showBubble() },
-            "Test Pause card" to { showPauseCard() },
+            "Long bubble" to { showBubble(LONG_LINE) },
             "Reset" to { cat.setCharacterState(CharacterState.IDLE) },
+        ))
+        addRow(buttons, listOf(
+            "Pause card (3 s wait)" to { showPauseCard(stayDelaySec = 3) },
+            "Pause card (no wait)" to { showPauseCard(stayDelaySec = 0) },
+            "Light / dark stage" to { toggleStage() },
         ))
         CharacterState.values().toList().chunked(COLUMNS).forEach { states ->
             addRow(buttons, states.map { state -> state.name to { cat.setCharacterState(state); log.text = "State: ${state.name}" } })
@@ -80,15 +86,22 @@ class CharacterDemoActivity : Activity() {
         super.onPause()
     }
 
-    private fun showBubble() {
-        cat.showBubble(SAMPLE_LINES[lineIndex % SAMPLE_LINES.size], BUBBLE_MS, "demo_$lineIndex")
+    private fun showBubble(text: String = SAMPLE_LINES[lineIndex % SAMPLE_LINES.size]) {
+        cat.showBubble(text, BUBBLE_MS, "demo_$lineIndex")
         lineIndex++
     }
 
-    private fun showPauseCard() {
+    /** Swaps the stage between dark and light so halos or fringes around the sprite show up on both. */
+    private fun toggleStage() {
+        lightStage = !lightStage
+        stage.setBackgroundColor(if (lightStage) STAGE_LIGHT else STAGE)
+        log.text = if (lightStage) "Light stage" else "Dark stage"
+    }
+
+    private fun showPauseCard(stayDelaySec: Int) {
         pauseCard?.let { stage.removeView(it) }
         val card = PauseCardView(this)
-        card.bind(PauseSpec(pkg = "demo.app", appLabel = "Demo app", minutesToday = 42), PAUSE_LINE) { choice ->
+        card.bind(PauseSpec(pkg = "demo.app", appLabel = "Demo app", minutesToday = 42, stayEnabledAfterSec = stayDelaySec), PAUSE_LINE) { choice ->
             log.text = "Pause card: $choice"
             stage.removeView(card)
             if (pauseCard === card) pauseCard = null
@@ -143,12 +156,14 @@ class CharacterDemoActivity : Activity() {
         const val BUBBLE_MS = 4_000L
         val BACKGROUND = Color.parseColor("#16141A")
         val STAGE = Color.parseColor("#2A2631")
+        val STAGE_LIGHT = Color.parseColor("#F6EFE0")
         val CREAM = Color.parseColor("#F6EFE0")
         val SAMPLE_LINES = listOf(
             "Respect. That was smooth.",
             "Charger on. I'm sitting in the sun. Metaphorically.",
             "Leave now, or I start rating the thumbnails.",
         )
+        const val LONG_LINE = "Another two hours on reels? Legend. Sleep is optional, apparently, and so is your alarm."
         const val PAUSE_LINE = "Pause: will this still sound good tomorrow?"
     }
 }
