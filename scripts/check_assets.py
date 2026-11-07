@@ -8,6 +8,7 @@ Checks
   4. no remote URLs used as resources inside site/ (plain <a href> links are fine)
   6. sounds (D-021): character/src/main/res/raw/*.ogg only, <= 400 KB combined, and every file listed with a source URL and licence
      (CC0 or generated) in design/character/audio/CREDITS.md
+  8. generated files (__pycache__, *.pyc) are never committed: they are "unexpected binary file"s (seen once, 2026-11-07)
   7. kept source clips: design/character/audio/source/*.wav, <= 600 KB each and <= 1.5 MB total (not shipped)
   5. site/ stays small: <= 1 MB in total, no single file > 300 KB (T-D3-5)
 """
