@@ -2,15 +2,17 @@
 # Inspects the MERGED debug manifest (includes library manifests) and fails on forbidden
 # permissions/components. Turns "Jixxy cannot send your data anywhere" into a checked promise.
 set -u
+# Usage: check_manifest.sh [debug|release]   (default debug; release needs :app:processReleaseManifest first)
 cd "$(git rev-parse --show-toplevel)"
-M=$(find app/build/intermediates -path '*merged_manifests/debug*' -name AndroidManifest.xml 2>/dev/null | head -1)
-[ -z "$M" ] && M=$(find app/build/intermediates -path '*merged_manifest*' -name AndroidManifest.xml 2>/dev/null | grep -i debug | head -1)
+V="${1:-debug}"
+M=$(find app/build/intermediates -path "*merged_manifests/$V*" -name AndroidManifest.xml 2>/dev/null | head -1)
+[ -z "$M" ] && M=$(find app/build/intermediates -path '*merged_manifest*' -name AndroidManifest.xml 2>/dev/null | grep -i "$V" | head -1)
 if [ -z "$M" ]; then
-  echo "::error::Merged debug manifest not found under app/build/intermediates. Run assembleDebug first."
+  echo "::error::Merged $V manifest not found under app/build/intermediates. Build it first (assembleDebug / processReleaseManifest)."
   exit 1
 fi
 echo "Checking $M"
-FORBIDDEN='android.permission.INTERNET|ACCESS_NETWORK_STATE|QUERY_ALL_PACKAGES|READ_PHONE_STATE|ACCESS_FINE_LOCATION|ACCESS_COARSE_LOCATION|ACCESS_BACKGROUND_LOCATION|READ_CONTACTS|WRITE_CONTACTS|GET_ACCOUNTS|android.permission.CAMERA|RECORD_AUDIO|BIND_ACCESSIBILITY_SERVICE|android.accessibilityservice|BIND_NOTIFICATION_LISTENER_SERVICE|android.service.notification.NotificationListenerService'
+FORBIDDEN='android.permission.INTERNET|ACCESS_NETWORK_STATE|QUERY_ALL_PACKAGES|READ_PHONE_STATE|ACCESS_FINE_LOCATION|ACCESS_COARSE_LOCATION|ACCESS_BACKGROUND_LOCATION|READ_CONTACTS|WRITE_CONTACTS|GET_ACCOUNTS|android.permission.CAMERA|RECORD_AUDIO|BIND_ACCESSIBILITY_SERVICE|android.accessibilityservice|BIND_NOTIFICATION_LISTENER_SERVICE|android.service.notification.NotificationListenerService|READ_EXTERNAL_STORAGE|WRITE_EXTERNAL_STORAGE|MANAGE_EXTERNAL_STORAGE|READ_MEDIA_'
 # XML comments cannot declare anything, so they are blanked out before matching (line numbers kept).
 # Every real <uses-permission>, <service>, <receiver> etc. is still checked.
 STRIPPED=$(mktemp)
@@ -29,4 +31,9 @@ if [ -n "$hits" ]; then
   echo "$hits"
   exit 1
 fi
-echo "check_manifest: OK"
+# Privacy promise: nothing leaves the phone, so cloud/adb backup of app data must stay off.
+if ! grep -q 'android:allowBackup="false"' "$M"; then
+  echo "::error title=Manifest guard::android:allowBackup=\"false\" is missing in the merged $V manifest (file: $M). Do not loosen this guard; ask PLATFORM to set it."
+  exit 1
+fi
+echo "check_manifest ($V): OK"

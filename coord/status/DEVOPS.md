@@ -1,4 +1,26 @@
-# DEVOPS status — updated 2026-11-06 09:36 UTC
+# DEVOPS status — updated 2026-11-07 05:25 UTC (Wave 3)
+## Takeover (Wave 3): 2026-11-07 05:10 UTC
+Fresh AI-6 replacing Wave 2. Found: main green at 0550d84 (CI, Latest, Emulator all success); Wave-2 had also shipped emulator.yml (API 26/30/34/35) and ci-evidence upload. First: T-D3-0 verification, then T-D3-3 gates (validateLines + assets blocking, test summary), then T-D3-1/2.
+## Wave 3 verification (T-D3-0) — what I actually ran
+- main green: yes, CI run 42341346937 on 0550d84; every step success incl. :engine:validateLines.
+- `latest`: notes name commit 0550d84, versionCode 163, built 2026-11-07 05:08 UTC = newest green commit. Downloaded jixxy-latest.apk (12,137,823 bytes); its SHA-256 equals the .sha256 asset.
+- Published APK (aapt): permissions are SYSTEM_ALERT_WINDOW, FOREGROUND_SERVICE(+SPECIAL_USE), PACKAGE_USAGE_STATS, POST_NOTIFICATIONS, RECEIVE_BOOT_COMPLETED; **no INTERNET**; allowBackup=false; minSdk 26, targetSdk 36.
+- Cert check: scripts/check_apk_cert.sh on that APK vs app/debug.keystore (alias jixxydebug) => match, ff57fdf9...3f1e.
+- Guards on a throwaway copy with seeded violations: fake github_pat token, a `*.local.md`, a `.jks` keystore, firebase-analytics dependency, okhttp dependency, INTERNET in merged manifest, over-long line with undeclared slot => ALL failed as intended; clean copy passed.
+- **Gap found:** manifest guard did NOT reject READ_MEDIA_IMAGES (storage permissions were not on the forbidden list). Fixed below.
+- GROWTH's two edits reviewed line by line: apk_cert.sh b801214 (regex now accepts optional `V2 `/`V3.1 ` prefix before `Signer`; still requires exactly one distinct digest) and check_apk_cert.sh ae3979f (`[[:space:]]*` before `SHA256:` for tab-indented keytool output). Both correct, minimal; keeping them.
+- Notices seen in CI annotations: ubuntu-latest migrates to Ubuntu 26 (announced 2026-10-19) => pinned all workflows to ubuntu-24.04; Gradle 8.14.3 "out of date" (PLATFORM's file, not mine; no action needed now).
+## Now
+T-D3-3 gates pushed in this commit; watching CI. Next T-D3-1 (BUGS.md refresh), T-D3-2 (test sheets).
+## Done (Wave 3)
+- T-D3-0 verification (above).
+- T-D3-3: validateLines (Gradle) now in the Gate (a failure turns CI red); asset budget guard runs STRICT=1 (first clean run: 174 KB of 3072 KB); new scripts/ci_test_summary.py puts test counts and failing tests into annotations; manifest guard now also forbids storage permissions (READ/WRITE/MANAGE_EXTERNAL_STORAGE, READ_MEDIA_*), requires allowBackup="false", and also runs on the RELEASE merged manifest (`:app:processReleaseManifest`). GROWTH requests (1),(2),(4) done; (3) resolved-dependency scan still to do.
+- T-D3-7 (part): all workflows pinned to ubuntu-24.04.
+## Honest notes (Wave 3)
+- The new CI steps have not run on GitHub at the time of writing; I tested the scripts locally against fake inputs only. `:app:processReleaseManifest` has never been run in CI by us.
+- Nothing here was tested on a phone.
+
+## ---- Wave 2 notes (kept for history) ----
 ## Takeover: 2026-11-06 08:55 UTC
 Wave-2 DEVOPS (AI-6), replacing the previous DEVOPS. Verified: repo cloned, ci_errors.sh says run 42158128299 on 58e7b01 is success (both jobs); debug key is committed in app/debug.keystore; release.yml, ci.yml, guards read. Found: versionCode is hard-coded to 1 in app/build.gradle.kts (PLATFORM file). First: T-D2-1, T-D2-2, T-D2-3.
 ## Now

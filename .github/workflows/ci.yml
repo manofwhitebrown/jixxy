@@ -17,7 +17,7 @@ permissions:
 jobs:
   guards:
     name: Guards (secrets, ownership, lines)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
@@ -30,14 +30,16 @@ jobs:
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
         with:
           python-version: "3.12"
-      - name: Asset budget (warn-only until the Owner's art is final; set STRICT=1 to enforce)
+      - name: Asset budget (blocking since the first clean run, 2026-11-07)
+        env:
+          STRICT: '1'
         run: bash scripts/check_assets.sh
       - name: Line bank (python fallback; Gradle task takes over when it exists)
         run: python3 scripts/validate_lines.py
 
   build:
     name: Build, test, lint, privacy guards
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5.1.0
@@ -76,9 +78,11 @@ jobs:
           set -o pipefail
           ./gradlew test --continue --stacktrace 2>&1 | tee build-test.log
       - name: Line bank (Gradle task)
+        id: lines
         if: steps.gradle.outputs.present == 'true'
         continue-on-error: true
         run: |
+          set -o pipefail
           chmod +x ./gradlew
           ./gradlew :engine:validateLines --stacktrace 2>&1 | tee build-lines.log
       - name: Lint
@@ -95,16 +99,25 @@ jobs:
         run: |
           set -o pipefail
           ./gradlew assembleDebug -PversionCode=${{ steps.ver.outputs.code }} --continue --stacktrace 2>&1 | tee build-assemble.log
+      - name: Unit-test summary (counts + failing tests as annotations)
+        if: always() && steps.gradle.outputs.present == 'true'
+        run: python3 scripts/ci_test_summary.py
       - name: Report failures as annotations
         if: always() && steps.gradle.outputs.present == 'true'
         run: |
           [ "${{ steps.unit.outcome }}" = "failure" ] && python3 scripts/ci_annotate_errors.py build-test.log "Unit tests"
           [ "${{ steps.lint.outcome }}" = "failure" ] && python3 scripts/ci_annotate_errors.py build-lint.log "Lint"
+          [ "${{ steps.lines.outcome }}" = "failure" ] && python3 scripts/ci_annotate_errors.py build-lines.log "Line bank"
           [ "${{ steps.assemble.outcome }}" = "failure" ] && python3 scripts/ci_annotate_errors.py build-assemble.log "Assemble"
           exit 0
       - name: Manifest guard (merged debug manifest)
         if: steps.assemble.outcome == 'success'
-        run: bash scripts/check_manifest.sh
+        run: bash scripts/check_manifest.sh debug
+      - name: Manifest guard (merged RELEASE manifest)
+        if: steps.assemble.outcome == 'success'
+        run: |
+          ./gradlew :app:processReleaseManifest -PversionCode=${{ steps.ver.outputs.code }} --stacktrace
+          bash scripts/check_manifest.sh release
       - name: Upload debug APK
         if: steps.assemble.outcome == 'success'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
@@ -119,8 +132,8 @@ jobs:
           apk=$(ls app/build/outputs/apk/debug/*.apk | head -1)
           bash scripts/check_apk_cert.sh "$apk" --keystore app/debug.keystore jixxydebug android
           echo "versionCode=${{ steps.ver.outputs.code }}"
-      - name: Gate (fail if tests, lint or assemble failed)
+      - name: Gate (fail if tests, line bank, lint or assemble failed)
         if: always() && steps.gradle.outputs.present == 'true'
         run: |
-          echo "unit=${{ steps.unit.outcome }} lint=${{ steps.lint.outcome }} assemble=${{ steps.assemble.outcome }}"
-          [ "${{ steps.unit.outcome }}" = "success" ] && [ "${{ steps.lint.outcome }}" = "success" ] && [ "${{ steps.assemble.outcome }}" = "success" ]
+          echo "unit=${{ steps.unit.outcome }} lines=${{ steps.lines.outcome }} lint=${{ steps.lint.outcome }} assemble=${{ steps.assemble.outcome }}"
+          [ "${{ steps.unit.outcome }}" = "success" ] && [ "${{ steps.lines.outcome }}" = "success" ] && [ "${{ steps.lint.outcome }}" = "success" ] && [ "${{ steps.assemble.outcome }}" = "success" ]

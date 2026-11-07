@@ -28,7 +28,7 @@ jobs:
   emulator:
     name: Emulator API ${{ matrix.api }}
     if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 40
     strategy:
       fail-fast: false
@@ -82,7 +82,7 @@ jobs:
     name: Publish evidence to the ci-evidence release
     needs: emulator
     if: always() && needs.emulator.result != 'skipped'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     permissions:
       contents: write   # create/update the rolling "ci-evidence" pre-release (assets + notes only)
