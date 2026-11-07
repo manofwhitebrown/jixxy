@@ -47,6 +47,8 @@
 - WRITER nag-tier request done: `LineQuery.calm` (additive), picker drops `nag_only` at Calm with a Pause-mechanics fallback; NagTierTest (5) + Calm/Chaos personas re-added to the 30-day sim (calm shows 0 nag_only lines). Calm Pause tier match 27% (finding sent to WRITER).
 - Naggy "again?" (D-020): 3rd open of the same app in a day at Naggy/Chaos picks APP_OPEN lines tagged `escalation` (reserved, strict), own cooldown (30/10 min), after callbacks so the 4th+ visit quotes the real count. Silent until WRITER ships such lines (request sent). RepeatOpenTest (5). 166 engine tests pass locally.
 - T-E3-6 weekly review: additive `activeDays` + `isThin` (thin = <2 active days or <30 min with no Pause card): quiet-week line, no compliment, no invented numbers; 4 tests; UI informed of the final shape. Bond change stays an event-derived estimate (labelled so).
+- T-E3-7 (no Owner feedback yet, so coverage only): +11 banking/payment/investing/telecom packages added to `protected` AND `_unverified` (I cannot reach the Play Store from here, so none is confirmed; they need a device check). A wrongly-protected app costs nothing.
+### ENGINE lane summary: T-E3-0..T-E3-6 done; T-E3-7 waits for Owner feedback. Open dependencies on others: PLATFORM (pause_json column, one multi-language bank), WRITER (escalation APP_OPEN lines, bigger small pools), GROWTH/MANAGER (.pyc file keeping CI red), DEVOPS (coverage gate).
 ### Messages handled — 20261107-0513-WRITER-almostcaring-bondmin.md
 ### Honest notes
 - Ran locally: kotlinc 2.1.21 plus a stand-in JUnit, 126 tests, all pass. NOT run: real Gradle/JUnit, JaCoCo, FakesAndConfigTest (needs coroutines-test). CI result for this push not yet seen.
