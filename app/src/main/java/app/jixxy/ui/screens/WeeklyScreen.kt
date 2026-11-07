@@ -49,7 +49,7 @@ import kotlinx.coroutines.withContext
 
 /** Weekly review: this week's counts, Jixxy's line, and a Share button that renders the 1080x1350 card on the phone. */
 @Composable
-fun WeeklyScreen(settings: SettingsRepository, store: StateStore, appLabel: (String) -> String = { it }) {
+fun WeeklyScreen(settings: SettingsRepository, store: StateStore, appLabel: (String) -> String = { it }, onShown: () -> Unit = {}) {
     val context = LocalContext.current
     val current by settings.settings.collectAsStateWithLifecycle(initialValue = UserSettings())
     var model by remember { mutableStateOf<WeeklyCardModel?>(null) }
@@ -59,6 +59,9 @@ fun WeeklyScreen(settings: SettingsRepository, store: StateStore, appLabel: (Str
             runCatching { WeeklyCardLogic.model(WeeklyLoader.load(context, store, current, appLabel)) }.getOrNull()
         }
     }
+
+    // The weekly notification stops nagging once the person has actually seen the card.
+    LaunchedEffect(model != null) { if (model != null) onShown() }
 
     val texts = WeeklyCardTexts(
         headline = stringResource(R.string.weekly_headline_1),

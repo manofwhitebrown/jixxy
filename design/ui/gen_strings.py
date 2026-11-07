@@ -9,6 +9,8 @@ Usage: python3 design/ui/gen_strings.py
 import re, sys
 
 MANUAL = {
+    "settings_weekly_label": "[P] Weekly review notification",
+    "settings_weekly_help": "[P] One quiet note on Sunday evening when your week is ready. Nothing is sent anywhere.",
     "home_open_weekly": "[P] Weekly review",
     "common_cancel": "[P] Cancel",
     "settings_language_value_en": "[P] English",

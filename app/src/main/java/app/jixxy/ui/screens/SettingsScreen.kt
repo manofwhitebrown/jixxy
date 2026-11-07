@@ -54,6 +54,7 @@ import app.jixxy.engine.api.UserSettings
 import app.jixxy.ui.onboarding.AppChoice
 import app.jixxy.ui.settings.SettingsLogic
 import app.jixxy.ui.state.DiagnosticsPort
+import app.jixxy.ui.state.WeeklyPort
 import app.jixxy.ui.theme.JixxyTheme
 import kotlinx.coroutines.launch
 
@@ -70,7 +71,9 @@ fun SettingsScreen(
     onWhatSaw: () -> Unit = {},
     onOemGuide: () -> Unit = {},
     diagnostics: DiagnosticsPort? = null,
+    weekly: WeeklyPort? = null,
 ) {
+    var weeklyOn by remember { mutableStateOf(weekly?.isEnabled()) }
     val current by settings.settings.collectAsStateWithLifecycle(initialValue = UserSettings())
     val scope = rememberCoroutineScope()
     val clipboard = LocalClipboardManager.current
@@ -92,6 +95,8 @@ fun SettingsScreen(
         onWhatSaw = onWhatSaw,
         onOemGuide = onOemGuide,
         onCopyDebug = diagnostics?.let { d -> { scope.launch { clipboard.setText(AnnotatedString(d.copyableReport())) } } },
+        weeklyOn = weeklyOn,
+        onWeeklyToggle = { on -> weekly?.setEnabled(on); weeklyOn = on },
         onClearDebug = diagnostics?.let { d -> { scope.launch { d.clear() } } },
     )
 }
@@ -115,6 +120,8 @@ fun SettingsContent(
     onOemGuide: () -> Unit,
     onCopyDebug: (() -> Unit)? = null,
     onClearDebug: (() -> Unit)? = null,
+    weeklyOn: Boolean? = null,
+    onWeeklyToggle: (Boolean) -> Unit = {},
 ) {
     var confirmReset by remember { mutableStateOf(false) }
     var debugNote by remember { mutableStateOf<Int?>(null) }
@@ -157,7 +164,13 @@ fun SettingsContent(
                 Text(stringResource(nagHint(s.nagLevel)), style = MaterialTheme.typography.bodyMedium)
             }
 
-            // Hidden until PLATFORM plays sounds in the overlay (JixxyView.sounds + SoundPolicy): a switch that does nothing would be a lie.
+            if (weeklyOn != null) {
+                Section(R.string.settings_weekly_label, R.string.settings_weekly_help) {
+                    SwitchRow(stringResource(R.string.settings_weekly_label), weeklyOn, onWeeklyToggle)
+                }
+            }
+
+            // PLATFORM plays sounds in the overlay behind SoundPolicy (silent mode, DND, calls, music win), so the switch is real.
             if (SOUNDS_WIRED) {
                 Section(R.string.settings_sounds_label, R.string.settings_sounds_help) {
                     SwitchRow(stringResource(R.string.settings_sounds_label), s.soundsEnabled, onSounds)
@@ -339,4 +352,4 @@ private val previewApps = listOf(AppChoice("pkg.a", "App A"), AppChoice("pkg.b",
 @Preview(showBackground = true, name = "200% font", fontScale = 2f, heightDp = 2400) @Composable private fun SettingsLargeFont() =
     JixxyTheme(dark = true) { SettingsContent(UserSettings(language = "hinglish"), previewApps, {}, {}, {}, { _, _ -> }, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}) }
 
-private const val SOUNDS_WIRED = false
+private const val SOUNDS_WIRED = true

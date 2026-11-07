@@ -16,6 +16,7 @@ import app.jixxy.ui.screens.OemGuideScreen
 import app.jixxy.ui.screens.OnboardingRoute
 import app.jixxy.ui.screens.SettingsScreen
 import app.jixxy.ui.state.DiagnosticsPort
+import app.jixxy.ui.state.WeeklyPort
 import app.jixxy.ui.screens.WeeklyScreen
 import app.jixxy.ui.screens.WhatSawScreen
 
@@ -39,6 +40,7 @@ fun JixxyNavHost(
     onAllowOverlay: () -> Unit = {},
     // Null until PLATFORM provides diagnostics; Settings then hides the debug-info section.
     diagnostics: DiagnosticsPort? = null,
+    weekly: WeeklyPort? = null,
 ) {
     val nav = rememberNavController()
     NavHost(nav, startDestination = startRoute, modifier = modifier) {
@@ -51,9 +53,9 @@ fun JixxyNavHost(
             )
         }
         composable(Routes.HOME) { HomeScreen(settings = settings, store = store, onSettings = { nav.navigate(Routes.SETTINGS) }, onWeekly = { nav.navigate(Routes.WEEKLY) }, onNapRequested = onNapRequested, onWakeRequested = onWakeRequested, onStopRequested = onStopRequested, isRunning = isRunning, overlayGranted = overlayGranted, onAllowOverlay = onAllowOverlay) }
-        composable(Routes.SETTINGS) { SettingsScreen(settings = settings, store = store, apps = apps, onWhatSaw = { nav.navigate(Routes.WHAT_SAW) }, onOemGuide = { nav.navigate(Routes.OEM_GUIDE) }, diagnostics = diagnostics) }
+        composable(Routes.SETTINGS) { SettingsScreen(settings = settings, store = store, apps = apps, onWhatSaw = { nav.navigate(Routes.WHAT_SAW) }, onOemGuide = { nav.navigate(Routes.OEM_GUIDE) }, diagnostics = diagnostics, weekly = weekly) }
         composable(Routes.WHAT_SAW) { WhatSawScreen(store = store, appLabel = appLabel) }
-        composable(Routes.WEEKLY) { WeeklyScreen(settings = settings, store = store, appLabel = appLabel) }
+        composable(Routes.WEEKLY) { WeeklyScreen(settings = settings, store = store, appLabel = appLabel, onShown = { weekly?.markShown() }) }
         composable(Routes.OEM_GUIDE) { OemGuideScreen() }
     }
 }

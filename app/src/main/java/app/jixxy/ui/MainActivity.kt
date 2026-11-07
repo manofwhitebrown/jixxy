@@ -39,6 +39,7 @@ class MainActivity : ComponentActivity() {
                     startRoute = if (prefs.getBoolean(KEY_ONBOARDING_DONE, false)) Routes.HOME else Routes.ONBOARDING,
                     settings = app.settings,
                     diagnostics = remember { diagnosticsPort(app.diagnostics) },
+                    weekly = remember { weeklyPort(app.weekly) },
                     store = app.stateStore,
                     apps = apps,
                     appLabel = remember { CategoryResolver(applicationContext)::label },
@@ -101,12 +102,14 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-/**
- * Adapts PLATFORM's diagnostics to the Settings "Copy debug info" button. The screen promises the report has no app names,
- * so the one header line that lists the user's chosen apps is dropped here (PLATFORM may remove it at the source).
- */
+/** Adapts PLATFORM's diagnostics to the Settings "Copy debug info" button (the report itself holds no app names). */
 private fun diagnosticsPort(d: app.jixxy.platform.DiagnosticsRepository) = object : app.jixxy.ui.state.DiagnosticsPort {
-    override suspend fun copyableReport(): String =
-        d.copyableReport().lineSequence().filterNot { it.startsWith("Apps chosen for Pause:") }.joinToString("\n")
+    override suspend fun copyableReport(): String = d.copyableReport()
     override suspend fun clear() = d.clear()
+}
+
+private fun weeklyPort(w: app.jixxy.platform.WeeklyTrigger) = object : app.jixxy.ui.state.WeeklyPort {
+    override fun isEnabled() = w.isEnabled()
+    override fun setEnabled(on: Boolean) = w.setEnabled(on)
+    override fun markShown() = w.markShown()
 }

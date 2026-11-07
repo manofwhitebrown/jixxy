@@ -22,7 +22,7 @@
     <string name="onboarding_restricted_step5">Come back here and try the permission again.</string>
     <string name="onboarding_restricted_hedge_note">Menus differ by phone and Android version. On some versions the \"Allow restricted settings\" item only appears after you\'ve tapped the blocked permission once. Older Android versions may not block these permissions this way, so you might not need this at all.</string>
     <string name="onboarding_notifications_title">A small \"Jixxy is around\" notice</string>
-    <string name="onboarding_notifications_body">Android needs a persistent notification so I can keep running. It has buttons to nap me or wake me. I won\'t use it to send promotions or nag you.</string>
+    <string name="onboarding_notifications_body">Android needs a persistent notification so I can keep running. It has buttons to nap me or wake me. I won\'t use it for promotions or anything extra.</string>
     <string name="onboarding_notifications_cta_allow">Allow</string>
     <string name="onboarding_notifications_cta_later">Not now</string>
     <string name="onboarding_keepalive_title">Keep me from being put to sleep</string>
@@ -43,7 +43,7 @@
     <string name="onboarding_finish_cta">Wake him up</string>
     <string name="home_status_awake">Jixxy is awake</string>
     <string name="home_status_napping">Jixxy is napping until %1$s</string>
-    <string name="home_status_blind">Blind mode is on. I\'m not watching anything.</string>
+    <string name="home_status_blind">Blind mode is on. He\'s not watching anything.</string>
     <string name="home_nap_1h">Nap for 1 hour</string>
     <string name="home_wake">Wake up</string>
     <string name="home_today_stats">Today: %1$d pauses · left %2$d · stayed %3$d</string>
@@ -52,7 +52,7 @@
     <string name="home_stat_stayed">Stayed</string>
     <string name="settings_title">Settings</string>
     <string name="settings_roast_label">Teasing level</string>
-    <string name="settings_roast_help">From playful to theatrical. Always about the situation, never you.</string>
+    <string name="settings_roast_help">From gentle to savage. Always about the situation, never you.</string>
     <string name="settings_target_apps_label">Apps I pause</string>
     <string name="settings_target_apps_help">I ask you to pause before these apps.</string>
     <string name="settings_muted_apps_label">Apps I stay quiet in</string>
@@ -100,12 +100,12 @@
     <string name="error_permission_missing_body">%1$s can\'t be paused until \"%2$s\" is allowed. Tap below to fix it.</string>
     <string name="error_permission_missing_cta">Fix it</string>
     <string name="error_service_not_running_title">I\'m not running</string>
-    <string name="error_service_not_running_body">Jixxy was stopped by your phone. Open the keep-alive guide to stop that from happening.</string>
+    <string name="error_service_not_running_body">Your phone stopped me. Open the keep-alive guide to stop that from happening.</string>
     <string name="error_service_not_running_cta">Open guide</string>
-    <string name="empty_apps_none_selected">No apps picked yet. I\'ll just comment now and then.</string>
+    <string name="empty_apps_none_selected">No apps picked yet. I won\'t pause anything until you choose some.</string>
     <string name="empty_weekly_not_enough_data">Not enough data for a weekly card yet. Check back in a few days.</string>
     <string name="notif_title">Jixxy is around</string>
-    <string name="notif_body">Watching app names only. Nothing leaves your phone.</string>
+    <string name="notif_body">Reading app names only. Nothing leaves your phone.</string>
     <string name="notif_action_nap">Nap 1h</string>
     <string name="notif_action_wake">Wake</string>
     <string name="notif_action_blind">Blind mode</string>
@@ -144,7 +144,7 @@
     <string name="brand_tagline">Your lazy, sarcastic, but loyal roommate.</string>
     <string name="brand_signoff">A little chaos. A lot of care.</string>
     <string name="home_stop">Stop</string>
-    <string name="home_stop_hint">Stop hides me completely until you tap Wake.</string>
+    <string name="home_stop_hint">Stop hides him completely until you tap Wake.</string>
     <string name="home_status_stopped">Jixxy is stopped</string>
     <string name="home_status_stopped_hint">Tap Wake to bring him back. Waking him ends any nap.</string>
     <string name="home_status_napping_hint">Tap Wake any time. He\'ll grumble. He\'ll be fine.</string>
@@ -210,5 +210,6 @@
     <string name="onboarding_sounds_body">Tiny sounds when I speak. Off by default. Silent mode and calls always win.</string>
     <string name="onboarding_sounds_toggle">Turn sounds on</string>
     <!-- [P] placeholders: keys not yet in MICROCOPY -->
-
+    <string name="settings_weekly_label">[P] Weekly review notification</string>
+    <string name="settings_weekly_help">[P] One quiet note on Sunday evening when your week is ready. Nothing is sent anywhere.</string>
 </resources>
