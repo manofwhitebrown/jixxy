@@ -2,6 +2,7 @@
 
 **Build to test:** `jixxy-latest.apk` from https://github.com/manofwhitebrown/jixxy/releases/tag/latest (open it in the phone browser). Write down the **Built** time on that page: it tells us which build you tested.
 **Only download `latest`.** Ignore the "Actions" artifacts and the `ci-evidence` release; those are developer test files, not apps.
+**Other test lists:** the 10-minute Pause test is `qa/MILESTONE_M2_PAUSE.md`; the full "will he get uninstalled?" list is `qa/KILL_TEST.md`; the overall plan is `qa/TEST_PLAN.md`. This sheet is the quick one.
 **How to answer:** for each step say **OK** or **BROKE** and what you saw. Short is fine. Details at the bottom.
 Steps marked ★ need a feature the release notes say is in your build (Nag level, sounds). If it isn't there yet, say "not in this build".
 
