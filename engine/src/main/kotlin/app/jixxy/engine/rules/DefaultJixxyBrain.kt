@@ -71,6 +71,7 @@ class DefaultJixxyBrain(
     private val stayExpiry = mutableMapOf<String, Long>()
     private val secondPromptDone = mutableSetOf<String>()
     private val lastTriggerTs = mutableMapOf<Trigger, Long>()
+    private var lastRepeatOpenTs: Long? = null
     private var leaveStreak = 0
     private var lastDroppedLineTs: Long? = null
 
@@ -231,7 +232,7 @@ class DefaultJixxyBrain(
             firstOpen -> tryUnprompted(Trigger.APP_OPEN, now, s, slots)
             prevPkg != null && prevMinutes >= BrainConfig.longSessionMin ->
                 tryUnprompted(Trigger.APP_OPEN, now, s, slots)
-            else -> tryCallback(sig.pkg, now, s)
+            else -> tryCallback(sig.pkg, now, s) ?: repeatOpenLine(sig.pkg, now, s, slots)
         }
         return listOfNotNull(reaction)
     }
@@ -446,12 +447,23 @@ class DefaultJixxyBrain(
     // ---- speaking --------------------------------------------------------------------------
 
     /** Speaks an unprompted line if every gate allows it; counts toward the daily cap. */
+    /**
+     * Naggy "again?" (D-020): the same app opened for the third time today at Naggy or Chaos. Uses only APP_OPEN lines
+     * tagged `escalation`, with its own cooldown, so it stays silent until such lines exist and never at Calm.
+     */
+    private fun repeatOpenLine(pkg: String, now: Long, s: UserSettings, slots: Map<String, String>): Reaction? {
+        if (s.nagLevel == NagLevel.CALM) return null
+        if (history.appVisitsToday(pkg, now) < BrainConfig.repeatOpenVisits) return null
+        return tryUnprompted(Trigger.APP_OPEN, now, s, slots, requiredTag = "escalation", repeatOpen = true)
+    }
+
     private fun tryUnprompted(
         trigger: Trigger,
         now: Long,
         s: UserSettings,
         slots: Map<String, String> = emptyMap(),
-        requiredTag: String? = null
+        requiredTag: String? = null,
+        repeatOpen: Boolean = false
     ): Reaction? {
         if (hardSilenced(now, s) || !screenOn || inQuiet(now, s) || state.energy <= 0) return null
         if (fgCategory == AppCategory.PROTECTED) return null
@@ -462,10 +474,11 @@ class DefaultJixxyBrain(
         if (used >= BrainConfig.maxUnpromptedPerDay(s.nagLevel)) return null
         val lastSpoken = state.lastUnpromptedTs
         if (lastSpoken != null && now - lastSpoken < BrainConfig.minGapMinutes(s.nagLevel) * 60_000L) return null
-        val lastOfKind = lastTriggerTs[trigger]
-        if (lastOfKind != null && now - lastOfKind < BrainConfig.unpromptedCooldownMin(trigger) * 60_000L) return null
-        val line = picker.pick(query(trigger, now, s, slots, null).copy(requiredTag = requiredTag)) ?: return null
-        lastTriggerTs[trigger] = now
+        val lastOfKind = if (repeatOpen) lastRepeatOpenTs else lastTriggerTs[trigger]
+        val cooldownMin = if (repeatOpen) BrainConfig.repeatOpenCooldownMin(s.nagLevel) else BrainConfig.unpromptedCooldownMin(trigger)
+        if (lastOfKind != null && now - lastOfKind < cooldownMin * 60_000L) return null
+        val line = picker.pick(query(trigger, now, s, slots, null).copy(requiredTag = requiredTag, escalation = repeatOpen)) ?: return null
+        if (repeatOpen) lastRepeatOpenTs = now else lastTriggerTs[trigger] = now
         state = state.copy(
             energy = (state.energy - BrainConfig.energyPerLine).coerceAtLeast(0),
             lastUnpromptedTs = now,
