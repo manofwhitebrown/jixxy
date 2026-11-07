@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import app.jixxy.engine.api.BrainState
 import app.jixxy.engine.api.Mood
+import app.jixxy.engine.api.PauseRuntime
 import app.jixxy.engine.api.StateStore
 import app.jixxy.engine.api.UsageEvent
 import app.jixxy.engine.api.UsageEventType
@@ -35,11 +36,15 @@ class SqliteStateStore(
             db.execSQL(
                 "CREATE TABLE brain_state (id INTEGER PRIMARY KEY CHECK (id = 1), energy INTEGER NOT NULL, " +
                     "mood TEXT NOT NULL, bond_xp INTEGER NOT NULL, first_seen_ts INTEGER, " +
-                    "last_unprompted_ts INTEGER, unprompted_day_epoch INTEGER, unprompted_today INTEGER NOT NULL)"
+                    "last_unprompted_ts INTEGER, unprompted_day_epoch INTEGER, unprompted_today INTEGER NOT NULL, " +
+                    "pause_json TEXT)"
             )
         }
 
-        override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) = Unit
+        /** v1 -> v2 (D-017): Pause grants/timers survive process death. Existing rows get NULL, which decodes to the default. */
+        override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
+            if (oldVersion < 2) db.execSQL("ALTER TABLE brain_state ADD COLUMN pause_json TEXT")
+        }
     }
 
     private var writesSincePurge = 0
@@ -56,6 +61,7 @@ class SqliteStateStore(
                 lastUnpromptedTs = longOrNull("last_unprompted_ts"),
                 unpromptedDayEpoch = longOrNull("unprompted_day_epoch"),
                 unpromptedToday = c.getInt(c.getColumnIndexOrThrow("unprompted_today")),
+                pause = PauseRuntime.decode(c.getColumnIndexOrThrow("pause_json").let { if (c.isNull(it)) null else c.getString(it) }),
             )
         }
     }
@@ -70,6 +76,7 @@ class SqliteStateStore(
             put("last_unprompted_ts", state.lastUnpromptedTs)
             put("unprompted_day_epoch", state.unpromptedDayEpoch)
             put("unprompted_today", state.unpromptedToday)
+            put("pause_json", state.pause.encode())
         }
         helper.writableDatabase.insertWithOnConflict("brain_state", null, v, SQLiteDatabase.CONFLICT_REPLACE)
         Unit
@@ -130,7 +137,7 @@ class SqliteStateStore(
 
     private companion object {
         const val DB_NAME = "jixxy.db"
-        const val DB_VERSION = 1
+        const val DB_VERSION = 2
         const val PURGE_EVERY = 200
     }
 }

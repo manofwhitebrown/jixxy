@@ -106,15 +106,23 @@ class OverlayService : Service(), ReactionRenderer {
         val usage = UsageDetector(this, app.bus, categories)
         systemSignals = SystemSignals(this, app.bus, usage)
         scope.launch {
-            val (initial, bank) = withContext(Dispatchers.IO) {
-                app.stateStore.load() to loadLineBank(app.settings.settings.first().language)
+            val loaded = withContext(Dispatchers.IO) {
+                val t = System.currentTimeMillis()
+                Triple(
+                    app.stateStore.load(),
+                    loadLineBank(app.settings.settings.first().language),
+                    // ENGINE: restores Pause grace, today's pause count and the no-repeat ring after a restart.
+                    app.stateStore.eventsBetween(t - RECENT_EVENTS_MS, t + 1),
+                )
             }
+            val (initial, bank, recent) = loaded
             val real = JixxyBrains.create(
                 lineBank = bank,
                 initialState = initial,
                 settings = { settings },
                 appLabel = { pkg -> categories.label(pkg) },
                 zone = ZoneId.systemDefault(),
+                recentEvents = recent,
             )
             val brain = PersistingBrain(real, real::currentState, real::drainEvents, app.stateStore, scope)
             // The dispatcher subscribes before any detector starts, so no early signal is lost.
@@ -364,6 +372,7 @@ class OverlayService : Service(), ReactionRenderer {
         const val ACTION_NAP = "app.jixxy.action.NAP"
         const val ACTION_STOP = "app.jixxy.action.STOP"
         const val ACTION_WAKE = "app.jixxy.action.WAKE"
+        private const val RECENT_EVENTS_MS = 30L * 86_400_000L
         private const val CHANNEL_ID = "jixxy_around"
         private const val NOTIFICATION_ID = 1
         private const val WAKE_ID = 2
