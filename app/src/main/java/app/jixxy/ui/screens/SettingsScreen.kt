@@ -174,6 +174,7 @@ fun SettingsContent(
             if (SOUNDS_WIRED) {
                 Section(R.string.settings_sounds_label, R.string.settings_sounds_help) {
                     SwitchRow(stringResource(R.string.settings_sounds_label), s.soundsEnabled, onSounds)
+                    if (s.soundsEnabled) TestMeowRow()
                 }
             }
 
@@ -353,3 +354,28 @@ private val previewApps = listOf(AppChoice("pkg.a", "App A"), AppChoice("pkg.b",
     JixxyTheme(dark = true) { SettingsContent(UserSettings(language = "hinglish"), previewApps, {}, {}, {}, { _, _ -> }, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}) }
 
 private const val SOUNDS_WIRED = true
+
+/**
+ * "Test meow": asks PLATFORM's SoundTester, which uses the same gate as the real overlay, so the answer is honest.
+ * Added by PLATFORM under D-018 (Owner + MANAGER approved, UI silent); UI may restyle it freely.
+ */
+@Composable
+private fun TestMeowRow() {
+    val app = LocalContext.current.applicationContext as? app.jixxy.platform.JixxyApp ?: return
+    val scope = rememberCoroutineScope()
+    var busy by remember { mutableStateOf(false) }
+    var result by remember { mutableStateOf<Int?>(null) }
+    OutlinedButton(
+        onClick = {
+            scope.launch {
+                busy = true
+                result = null
+                result = if (app.soundTester.testMeow()) R.string.settings_test_meow_played else R.string.settings_test_meow_silent
+                busy = false
+            }
+        },
+        enabled = !busy,
+        modifier = Modifier.heightIn(min = 48.dp),
+    ) { Text(stringResource(if (busy) R.string.settings_test_meow_playing else R.string.settings_test_meow)) }
+    result?.let { Text(stringResource(it), style = MaterialTheme.typography.bodyMedium) }
+}

@@ -201,6 +201,10 @@
     <string name="settings_nag_naggy_hint">Regular comments. Persistent, but lovable. The default.</string>
     <string name="settings_nag_chaos_hint">Opinions all day.</string>
     <string name="settings_sounds_label">Sounds (meows and blips)</string>
+    <string name="settings_test_meow">Test meow</string>
+    <string name="settings_test_meow_playing">Listening…</string>
+    <string name="settings_test_meow_played">Played. That is how loud I get.</string>
+    <string name="settings_test_meow_silent">Silent: your phone is on silent, Do Not Disturb is on, you are in a call or playing music, it is quiet hours, or I am napping.</string>
     <string name="settings_sounds_help">Off by default. Silent mode and calls always win.</string>
     <string name="home_turn_down">Turn him down</string>
     <string name="home_turned_down">He\'s already on Calm. You can change that in Settings.</string>
