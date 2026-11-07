@@ -26,7 +26,7 @@ object SettingsLogic {
         return "%02d:%02d".format(m / 60, m % 60)
     }
 
-    /** Adds/removes [pkg] from the pause targets, capped at 3. A target is never also muted. */
+    /** Adds/removes [pkg] from the pause targets (no cap, D-020). A target is never also muted. */
     fun toggleTarget(s: UserSettings, pkg: String): UserSettings {
         val targets = OnboardingFlow.toggleApp(s.targetApps, pkg)
         return s.copy(targetApps = targets, mutedApps = s.mutedApps - targets)
@@ -49,7 +49,4 @@ object SettingsLogic {
 
     /** Factory settings for "Reset Jixxy". The caller must also clear logged events. */
     fun reset(): UserSettings = UserSettings()
-
-    /** True when the 3-app cap blocks adding another target. */
-    fun targetCapReached(s: UserSettings): Boolean = s.targetApps.size >= OnboardingFlow.MAX_TARGET_APPS
 }

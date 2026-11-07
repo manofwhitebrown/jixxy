@@ -29,9 +29,9 @@
     <string name="onboarding_keepalive_body">Some phones close background apps to save battery, which stops me from working. A few settings can prevent that. It takes a minute.</string>
     <string name="onboarding_keepalive_cta_open">Show me how</string>
     <string name="onboarding_keepalive_menus_differ">Menus differ by phone and Android version. Look for the closest match to the words here.</string>
-    <string name="onboarding_apps_title">Pick up to 3 apps</string>
-    <string name="onboarding_apps_body">These are the apps where I\'ll ask you to pause first. You can change this any time. Apps like banking, payments, calls and maps are never included.</string>
-    <string name="onboarding_apps_cap_reached">That\'s 3. Remove one to pick another.</string>
+    <string name="onboarding_apps_title">Pick the apps you want a pause on</string>
+    <string name="onboarding_apps_body">These are the apps where I\'ll ask you to pause first. Fewer is calmer, and you can change this any time. Apps like banking, payments, calls and maps are never included.</string>
+    <string name="onboarding_apps_cap_reached">That\'s the limit (%1$d). Remove one to pick another.</string>
     <string name="onboarding_roast_title">How much teasing?</string>
     <string name="onboarding_roast_gentle">Gentle</string>
     <string name="onboarding_roast_normal">Normal</string>
@@ -53,7 +53,7 @@
     <string name="settings_title">Settings</string>
     <string name="settings_roast_label">Teasing level</string>
     <string name="settings_roast_help">From playful to theatrical. Always about the situation, never you.</string>
-    <string name="settings_target_apps_label">Apps I pause (max 3)</string>
+    <string name="settings_target_apps_label">Apps I pause</string>
     <string name="settings_target_apps_help">I ask you to pause before these apps.</string>
     <string name="settings_muted_apps_label">Apps I stay quiet in</string>
     <string name="settings_muted_apps_help">I won\'t comment while you\'re in these.</string>
@@ -76,6 +76,8 @@
     <string name="weekly_headline_1">Jixxy\'s review of your week</string>
     <string name="weekly_headline_2">Your week, according to the spreadsheet</string>
     <string name="weekly_headline_3">Week in review. I took notes.</string>
+    <string name="weekly_headline_4">Jixxy\'s verdict on your week</string>
+    <string name="weekly_headline_quiet">A very quiet week</string>
     <string name="weekly_stat_pauses">Pauses</string>
     <string name="weekly_stat_left">Times you left</string>
     <string name="weekly_stat_stayed">Times you stayed</string>
@@ -157,7 +159,7 @@
     <string name="error_overlay_revoked_cta">Allow overlay</string>
     <string name="launcher_empty_no_overlay">I can\'t show up yet. Allow \"Display over other apps\" first.</string>
     <string name="launcher_empty_no_overlay_cta">Allow overlay</string>
-    <string name="launcher_empty_no_apps">No apps picked yet. Choose up to 3 and I\'ll start pausing them.</string>
+    <string name="launcher_empty_no_apps">No apps picked yet. Choose the ones you want paused and I\'ll start.</string>
     <string name="launcher_empty_no_apps_cta">Choose apps</string>
     <string name="launcher_empty_no_stats">No pauses yet today. I\'m napping on the job.</string>
     <string name="launcher_empty_asleep">Jixxy is asleep. Tap Wake.</string>
@@ -168,13 +170,28 @@
     <string name="a11y_reaction_laugh">Funny</string>
     <string name="a11y_reaction_sleepy">Boring</string>
     <string name="a11y_pause_card">Jixxy is peeking. Choose Leave or Stay.</string>
+    <string name="settings_language_value_hinglish">Hinglish (beta)</string>
+    <string name="settings_language_help">Choose the language Jixxy talks in. Screens and buttons stay in English.</string>
+    <string name="settings_language_hinglish_note">Beta: these lines haven\'t been checked by native speakers yet, so some may sound off. You can switch back any time.</string>
+    <string name="settings_debug_label">Report a problem</string>
+    <string name="settings_debug_help">Copies a short report to your clipboard: app version, phone model, Android version, permission and service status, and recent errors. It has no app names, messages or anything you typed. It stays on your phone until you paste it somewhere yourself.</string>
+    <string name="settings_debug_copy">Copy debug info</string>
+    <string name="settings_debug_clear">Clear diagnostics</string>
+    <string name="settings_debug_copied">Copied. Paste it wherever you\'re reporting the problem.</string>
+    <string name="settings_debug_cleared">Diagnostics cleared.</string>
+    <string name="fixit_usage_title">Usage access is off</string>
+    <string name="fixit_usage_body">Without it I can\'t tell which app is open, so Pauses won\'t appear. Turn it back on in settings. I still only read app names and how long they\'re open.</string>
+    <string name="fixit_usage_cta">Open usage access</string>
+    <string name="fixit_notifications_title">Notifications are off</string>
+    <string name="fixit_notifications_body">I show one small notification while I\'m running. With notifications off, you won\'t see it or be able to use Nap from it. Allow them and it comes back.</string>
+    <string name="fixit_notifications_cta">Allow notifications</string>
+    <string name="fixit_restart_title">I didn\'t start after a restart</string>
+    <string name="fixit_restart_body">Your phone restarted or Jixxy updated, and I\'m not running. Tap Wake to bring me back.</string>
+    <string name="fixit_restart_cta">Wake</string>
+    <string name="fixit_menus_note">Menu names differ by phone. If you can\'t find it, search your settings for \"%1$s\".</string>
+    <string name="fixit_all_good">Everything I need is allowed.</string>
+    <string name="notif_body_blind">Blind mode is on. I\'m not reading app names and nothing is logged.</string>
+    <string name="settings_debug_empty">No problems recorded.</string>
     <!-- [P] placeholders: keys not yet in MICROCOPY -->
-    <string name="settings_language_value_hinglish">[P] Hinglish (beta)</string>
-    <string name="settings_language_help">[P] Which language Jixxy talks in. The app screens stay in English.</string>
-    <string name="settings_language_hinglish_note">[P] Beta: Jixxy\'s lines are in Hinglish. They are still being read through by native speakers, so some may sound off.</string>
-    <string name="settings_debug_label">[P] Report a problem</string>
-    <string name="settings_debug_help">[P] Copies a short report to your clipboard: app version, phone model, Android version, permission and service status, and recent errors. No app names, no messages, nothing you typed. It stays on your phone until you paste it somewhere yourself.</string>
-    <string name="settings_debug_copy">[P] Copy debug info</string>
-    <string name="settings_debug_copied">[P] Copied. Paste it into your message when you report the problem.</string>
-    <string name="settings_debug_clear">[P] Clear diagnostics</string>
+
 </resources>

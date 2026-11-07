@@ -20,12 +20,11 @@ class SettingsLogicTest {
         assertEquals("07:00", SettingsLogic.formatMinutes(420))
     }
 
-    @Test fun targetsCapAtThreeAndMutedAppsAreDropped() {
+    @Test fun targetsHaveNoCapAndMutedAppsAreDropped() {
         var s = UserSettings(mutedApps = setOf("d"))
-        listOf("a", "b", "c", "d").forEach { s = SettingsLogic.toggleTarget(s, it) }
-        assertEquals(setOf("a", "b", "c"), s.targetApps)
-        assertTrue(SettingsLogic.targetCapReached(s))
-        assertFalse(SettingsLogic.targetCapReached(s.copy(targetApps = setOf("a"))))
+        listOf("a", "b", "c", "d", "e").forEach { s = SettingsLogic.toggleTarget(s, it) }
+        assertEquals(setOf("a", "b", "c", "d", "e"), s.targetApps)
+        assertEquals(emptySet<String>(), s.mutedApps)
     }
 
     @Test fun mutingATargetRemovesItFromTargets() {

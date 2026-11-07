@@ -8,7 +8,6 @@ data class AppChoice(val pkg: String, val label: String)
 
 /** Pure, unit-testable navigation rules for onboarding. No Android imports. */
 object OnboardingFlow {
-    const val MAX_TARGET_APPS = 3
     private const val NOTIFICATION_PERMISSION_SDK = 33
 
     /**
@@ -52,10 +51,7 @@ object OnboardingFlow {
         return if (step in order(lite, sdkInt)) step else OnboardingStep.HELLO
     }
 
-    /** Toggle [pkg] in [selected], never exceeding [MAX_TARGET_APPS]. Returns the new set (unchanged if the cap blocks an add). */
-    fun toggleApp(selected: Set<String>, pkg: String): Set<String> = when {
-        pkg in selected -> selected - pkg
-        selected.size >= MAX_TARGET_APPS -> selected
-        else -> selected + pkg
-    }
+    /** Toggle [pkg] in [selected]. There is no cap on Pause apps (D-020); PROTECTED apps are filtered out before the list is shown. */
+    fun toggleApp(selected: Set<String>, pkg: String): Set<String> =
+        if (pkg in selected) selected - pkg else selected + pkg
 }

@@ -32,6 +32,8 @@ import androidx.compose.ui.unit.dp
 import app.jixxy.R
 import app.jixxy.engine.api.StateStore
 import app.jixxy.engine.api.UsageEventType
+import app.jixxy.ui.components.CatImage
+import app.jixxy.ui.components.CatPose
 import app.jixxy.ui.theme.JixxyTheme
 import app.jixxy.ui.whatsaw.SawDay
 import app.jixxy.ui.whatsaw.SawRow
@@ -72,12 +74,13 @@ fun WhatSawContent(days: List<SawDay>, onClear: () -> Unit) {
             Text(stringResource(R.string.whatsaw_nothing_leaves_phone), style = MaterialTheme.typography.bodyMedium)
 
             if (days.isEmpty()) {
+                CatImage(CatPose.NAP)
                 Text(stringResource(R.string.whatsaw_empty), style = MaterialTheme.typography.bodyLarge)
             } else {
                 LazyColumn(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     days.forEach { day ->
                         item(key = "h${day.dayStartTs}") { DayHeader(day.dayStartTs) }
-                        items(day.rows, key = { "${it.ts}-${it.type}-${it.appLabel}" }) { RowItem(it) }
+                        items(day.rows) { RowItem(it) }
                     }
                 }
             }

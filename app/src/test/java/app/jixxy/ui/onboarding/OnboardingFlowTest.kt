@@ -28,11 +28,11 @@ class OnboardingFlowTest {
         assertEquals(OnboardingStep.OVERLAY, OnboardingFlow.back(OnboardingStep.USAGE, false, 34))
     }
 
-    @Test fun appPickerCapsAtThree() {
+    @Test fun appPickerHasNoCap() {
         var s = emptySet<String>()
-        listOf("a", "b", "c", "d").forEach { s = OnboardingFlow.toggleApp(s, it) }
-        assertEquals(setOf("a", "b", "c"), s)
-        assertEquals(setOf("b", "c", "d"), OnboardingFlow.toggleApp(OnboardingFlow.toggleApp(s, "a"), "d"))
+        (1..12).forEach { s = OnboardingFlow.toggleApp(s, "app$it") }
+        assertEquals(12, s.size)
+        assertEquals(11, OnboardingFlow.toggleApp(s, "app1").size)
     }
 
     @Test fun resumeFallsBackToHelloForBadOrOutOfRunSteps() {

@@ -122,9 +122,6 @@ fun OnboardingScreen(
                             modifier = Modifier.heightIn(min = 48.dp),
                         )
                     }
-                    if (picked.size >= OnboardingFlow.MAX_TARGET_APPS) {
-                        Text(stringResource(R.string.onboarding_apps_cap_reached), style = MaterialTheme.typography.bodySmall)
-                    }
                 }
                 OnboardingStep.ROAST -> {
                     StepBody(R.string.onboarding_roast_title, null)

@@ -144,10 +144,7 @@ fun SettingsContent(
                 }
                 apps.forEach { app ->
                     val picked = app.pkg in s.targetApps
-                    CheckRow(app.label, picked, enabled = picked || !SettingsLogic.targetCapReached(s)) { onToggleTarget(app.pkg) }
-                }
-                if (SettingsLogic.targetCapReached(s)) {
-                    Text(stringResource(R.string.onboarding_apps_cap_reached), style = MaterialTheme.typography.bodySmall)
+                    CheckRow(app.label, picked, enabled = true) { onToggleTarget(app.pkg) }
                 }
             }
 
