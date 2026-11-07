@@ -16,9 +16,8 @@ T-G3-0 to -4, -6, -7 pushed. Next: T-G3-6 PRIVACY final pass (blocked on PLATFOR
 - Docs synced: README, CHANGELOG [Unreleased], site "What works today", store/LISTING.md header.
 
 ## Next
-1. T-G3-6 PRIVACY pass once PLATFORM ships DiagnosticsRepository (T-P3-4).
-2. T-G3-7 phone screen-recording shot list (growth/launch/).
-3. After Owner confirms a build: README/CHANGELOG/site "in this release" + known issues from qa/BUGS.md.
+1. Waiting on the Owner's phone report. Then:
+2. After Owner confirms a build: README/CHANGELOG/site "in this release" + known issues from qa/BUGS.md.
 
 ## Blockers
 none. Lighthouse and the site were not run (no browser here).
@@ -31,6 +30,8 @@ Please record the Owner decisions needed: licence (growth/LICENCE_OPTIONS.md), d
 20261106-1730-WRITER-safety-tone.md (noted; SAFETY_LINES.md rules apply to store tone). Earlier Wave-2 messages listed in the history below.
 
 ## Honest notes
+- Site static audit 2026-11-07 (by reading files, NOT Lighthouse; no browser available here): 92 KB total, 8 local webp images (4 to 9 KB each), every img has alt, html lang/title/description/viewport present, no external scripts/fonts/images. Lighthouse >= 90 is still unverified; run it in Chrome DevTools on the Pages URL once Pages is on.
+- Read-only scan of app resources, Kotlin and content for stale 'up to 3' / '6 a day' / 'silent by default' wording: none found.
 - I tested nothing on a phone and did not open the site in a browser. All app behaviour in docs is from the manifest, code names, status files and qa/BUGS.md.
 - Distribution facts: Google/F-Droid/IzzyOnDroid pages were read via search snippets on 2026-11-07, not full-page reads. Items marked [unverified] in the memo are third-party or memory. India payment methods, F-Droid signing behaviour and non-free-asset handling are unchecked.
 - Owner test steps: growth/OWNER_TEST_GUIDE.md (install the latest APK, 8 things, how to reply).
