@@ -55,3 +55,9 @@ Screen ON: usage poll every 1.5 s (one queryEvents over a few seconds, Event obj
 
 ## T-P3-6 (2026-11-07)
 targetSdk/compileSdk already 36 (Play needs 36 since 2026-08-31; confirm on Google's official page, I read secondary sources). No native libs -> 16 KB n/a. R8 deferred until size + emulator smoke on a minified build. Key plan sent to MANAGER + DEVOPS (inbox, T-P3-6). 
+
+## Bug sweep + weekly trigger (2026-11-07, CI green at 0b060d4)
+- T-P3-8 weekly trigger (e3b5516): `WeeklySchedule` (pure, tested) + `WeeklyTrigger` on the 60 s heartbeat; UI still has to add the Settings switch, the app-open card and `markShown()` (NOT yet messaged to UI).
+- Sweep fixes: usage query overlaps 1 s (late-written events no longer skipped) and cannot crash on revoked access; no restart loop when overlay permission is missing (wantedRunning=false); pipeline failure (bad state/assets) logs PIPELINE_FAILED and stops cleanly instead of crash-looping; background job errors go to diagnostics (JOB_ERROR); rotation layout update cannot throw.
+- Still unverified on a phone: Leave->Home, card cancel on lock/switch, Stay survives Stop/Wake, battery, OEM boot restart.
+- Open/blocked: D-020 nag level + D-021 sounds (waiting on ENGINE/CHARACTER); process-death restart (NOT_STICKY by choice); R8 deferred.
