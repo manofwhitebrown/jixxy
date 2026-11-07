@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jixxy FAQ: install, permissions, turning him down</title>
+<meta name="description" content="How to install the Jixxy alpha, the Allow restricted settings step, what he can see, how to turn him down and how to delete everything.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<main id="main" class="wrap faq">
+<p><a href="index.html">&larr; Back to Jixxy</a></p>
+<h1>Questions, answered honestly</h1>
+<p>Jixxy is an <strong>alpha</strong>. Items marked <strong>*</strong> are in the newest build but nobody has seen them work on a phone yet. If something here does not match what you see, that is a bug: tell us.</p>
+
+<details open><summary>How do I install it?</summary>
+<ol>
+<li>On your Android phone (Android 8 or newer), open the <a href="https://github.com/manofwhitebrown/jixxy/releases/download/latest/jixxy-latest.apk">latest APK link</a> and download the file. All builds are on the <a href="https://github.com/manofwhitebrown/jixxy/releases">Releases page</a>.</li>
+<li>Tap the downloaded file. If Android asks, allow your browser or file manager to install apps once (Settings, Apps, Special access, Install unknown apps).</li>
+<li>Open Jixxy and follow the setup. He explains each permission before he asks.</li>
+</ol>
+<p>New builds install over the old one, so you do not need to uninstall first. If Android refuses, note its exact words and tell us.</p>
+</details>
+
+<details><summary>A permission is greyed out: &ldquo;Restricted setting&rdquo;</summary>
+<p>Android can block overlay and usage access for apps installed outside the Play Store, mostly on Android 15 and newer. To unblock it:</p>
+<ol>
+<li>Tap the greyed-out permission once and press OK.</li>
+<li>Go to Settings, Apps, Jixxy, then the three-dot menu at the top right, then <strong>Allow restricted settings</strong> (you may need your PIN or fingerprint).</li>
+<li>Go back and grant the permission again.</li>
+</ol>
+<p>The menu item only appears after you have tapped the blocked permission once. Menus differ by phone brand.</p>
+</details>
+
+<details><summary>What does he ask for, and why?</summary>
+<ul>
+<li><strong>Display over other apps</strong>: so he can float on screen and show the Pause card.</li>
+<li><strong>Usage access</strong>: so he knows which app is in front. It gives app name and time only, not what is inside the app.</li>
+<li><strong>Notifications</strong>: for the &ldquo;Jixxy is awake&rdquo; notice, which has Nap, Wake and Stop.</li>
+</ul>
+<p>He has no internet permission, no accessibility service and no notification listener. These are checked automatically every time the app is built.</p>
+</details>
+
+<details><summary>What can he see?</summary>
+<p>He sees which app is open and for how long, only for the apps you chose to be paused on, plus things like the time of day and the battery state. He does not read your messages or what is on your screen. He has no microphone, camera, location or contacts permission. Banking, payments, password, dialer and maps apps are on a built-in list that he never reacts to or logs; the list covers common apps and may miss some, so tell us if you find a gap. Read the full <a href="privacy.html">privacy notice</a>.</p>
+</details>
+
+<details><summary>Does anything leave my phone?</summary>
+<p>He has no network access, so nothing is sent anywhere. The only way text leaves your phone is if you copy a debug report and paste it somewhere yourself.</p>
+</details>
+
+<details><summary>How do I turn him down?</summary>
+<ul>
+<li><strong>Nag level*</strong>: Settings has a Calm / Naggy / Chaos setting. Naggy is the default. Calm is the quietest.</li>
+<li><strong>Nap*</strong>: Nap for 1 hour, from Home or from his notification. Wake ends it.</li>
+<li><strong>Stop*</strong>: Stop hides him completely until you tap Wake.</li>
+<li><strong>Quiet hours*</strong>: he stays silent from 01:00 to 07:00 by default; you can change this in Settings.</li>
+<li><strong>Apps I stay quiet in* and Blind mode*</strong>: the first mutes him in specific apps; the second turns off all app detection and logging.</li>
+</ul>
+<p>Every Pause card has a Leave and a Stay button. You choose.</p>
+</details>
+
+<details><summary>He keeps disappearing or never shows up (battery)</summary>
+<p>Some phones close background apps to save battery. In Android, open Settings, Apps, Jixxy, Battery, and choose <strong>Unrestricted</strong>. On Xiaomi, Redmi, Poco, Oppo, Realme, Vivo and some Samsung models, also turn on <strong>Autostart</strong> or &ldquo;Allow background activity&rdquo; for Jixxy. The app has a short guide for your brand.* If he still vanishes, tell us your phone model and Android version.</p>
+</details>
+
+<details><summary>How do I delete everything?</summary>
+<ul>
+<li><strong>Inside the app*</strong>: the &ldquo;What Jixxy saw&rdquo; screen lets you erase what he saved. Settings has <strong>Reset Jixxy</strong>, which clears your settings and everything he logged on this phone, which cannot be undone.</li>
+<li><strong>Debug report*</strong>: &ldquo;Clear diagnostics&rdquo; in Settings erases the local log.</li>
+<li><strong>Uninstall</strong>: long-press the Jixxy icon and choose Uninstall. His data is only on your phone and goes with the app.</li>
+</ul>
+</details>
+
+<details><summary>Something is broken. How do I report it?</summary>
+<p>Tell us your phone model, Android version, what you did, what you expected, what happened, and a screenshot if you can. Do not include private messages or other people&rsquo;s content. In newer builds, Settings has a <strong>Copy debug info</strong> button* that copies a short report (app and phone details, permission status and recent events) to your clipboard; it does not send anything.</p>
+</details>
+
+<details><summary>Is he free? Who makes him?</summary>
+<p>Free, with no ads, no accounts and no payments. Jixxy is an in-development project by one Owner and a small team. Android only, English first; Hinglish is an opt-in beta.</p>
+</details>
+</main>
+<footer class="wrap foot">
+<p>Jixxy is a free, in-development project. Not affiliated with any app or brand mentioned as an example. <a href="privacy.html">Privacy notice</a>.</p>
+</footer>
+</body>
+</html>

@@ -91,3 +91,8 @@ details p { margin: 8px 0 0; color: var(--muted); }
 .faces img { max-width: 100%; height: auto; max-height: 150px; width: auto; }
 .faces span { font-weight: 600; font-size: 0.95rem; }
 @media (min-width: 640px) { .faces { grid-template-columns: repeat(4, 1fr); } }
+
+/* FAQ */
+.faq details { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 16px; margin: 10px 0; }
+.faq summary { cursor: pointer; font-weight: 600; }
+.faq details[open] summary { margin-bottom: 8px; }
