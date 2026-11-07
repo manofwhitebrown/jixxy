@@ -68,6 +68,7 @@ class DefaultJixxyBrain(
     private val dailyMinutes = mutableMapOf<String, Int>()
     private val pauseCount = mutableMapOf<String, Int>()
     private val graceUntil = mutableMapOf<String, Long>()
+    private val lastLeaveAt = mutableMapOf<String, Long>()
     private val stayExpiry = mutableMapOf<String, Long>()
     private val secondPromptDone = mutableSetOf<String>()
     private val lastTriggerTs = mutableMapOf<Trigger, Long>()
@@ -282,6 +283,7 @@ class DefaultJixxyBrain(
             }
             PauseChoiceKind.LEAVE -> {
                 graceUntil[pkg] = now + BrainConfig.leaveGraceMinutes * 60_000L
+                lastLeaveAt[pkg] = now
                 stayExpiry.remove(pkg)
                 log(UsageEventType.PAUSE_LEAVE, now, pkg)
                 addXp(BrainConfig.bondXpLeave)
@@ -425,6 +427,7 @@ class DefaultJixxyBrain(
                 }
                 UsageEventType.PAUSE_LEAVE -> if (pkg != null) {
                     graceUntil[pkg] = e.ts + BrainConfig.leaveGraceMinutes * 60_000L
+                    lastLeaveAt[pkg] = e.ts
                     stayExpiry.remove(pkg)
                     leaveStreak++
                     if (leaveStreak >= BrainConfig.impressedLeaveStreak) leaveStreak = 0
@@ -511,7 +514,9 @@ class DefaultJixxyBrain(
         val minutes = dailyMinutes[pkg] ?: 0
         val spec = PauseSpec(pkg, label, minutes, s.stayDelaySec, BrainConfig.stayGraceMinutes)
         val slots = mapOf("app" to label, "minutes" to minutes.toString(), "count" to count.toString())
-        val query = query(Trigger.PAUSE_PROMPT, now, s, slots, null).copy(tier = count - 1, followUp = followUp)
+        val sinceLeave = lastLeaveAt[pkg]?.let { now - it }
+        val afterLeave = !followUp && sinceLeave != null && sinceLeave >= 0L && sinceLeave <= BrainConfig.afterLeaveWindowMin * 60_000L
+        val query = query(Trigger.PAUSE_PROMPT, now, s, slots, null).copy(tier = count - 1, followUp = followUp, afterLeave = afterLeave)
         val line = picker.pick(query)
         log(UsageEventType.PAUSE_SHOWN, now, pkg, count)
         if (line != null) log(UsageEventType.LINE_SHOWN, now, pkg, null, line.id)

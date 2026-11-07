@@ -26,11 +26,19 @@ class BankLinePickerTest {
         trigger: Trigger = Trigger.APP_OPEN, cat: AppCategory? = AppCategory.SOCIAL, mood: Mood = Mood.CHILL,
         roast: RoastLevel = RoastLevel.NORMAL, bond: Bond = Bond.STRANGER, slots: Map<String, String> = mapOf("app" to "Insta"),
         lang: String = "en", onBreak: Boolean = false, followUp: Boolean = false, tier: Int = 0, requiredTag: String? = null,
-        escalation: Boolean = false, lateNight: Boolean = false
+        escalation: Boolean = false, lateNight: Boolean = false, afterLeave: Boolean = false
     ) = LineQuery(trigger, cat, mood, roast, bond, lang, slots, tier = tier, followUp = followUp, lateNight = lateNight,
-        onBreak = onBreak, requiredTag = requiredTag, escalation = escalation)
+        onBreak = onBreak, requiredTag = requiredTag, escalation = escalation, afterLeave = afterLeave)
 
     private fun picker(vararg l: Line, seed: Int = 1) = BankLinePicker(LineBank(l.toList()), Random(seed))
+
+    @Test fun afterLeaveLinesAreReservedForTheReturnPrompt() {
+        val plain = line("plain", Trigger.PAUSE_PROMPT)
+        val back = line("back", Trigger.PAUSE_PROMPT, tags = setOf("after_leave"))
+        assertEquals("plain", picker(plain, back).pick(query(Trigger.PAUSE_PROMPT))!!.id)
+        assertEquals("back", picker(plain, back).pick(query(Trigger.PAUSE_PROMPT, afterLeave = true))!!.id)
+        assertEquals("plain", picker(plain).pick(query(Trigger.PAUSE_PROMPT, afterLeave = true))!!.id)
+    }
 
     @Test fun fillsSlots() {
         assertEquals("Hi Insta", picker(line("a")).pick(query())!!.text)

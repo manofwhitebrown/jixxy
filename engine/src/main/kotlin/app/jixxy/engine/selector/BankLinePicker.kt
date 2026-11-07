@@ -32,7 +32,7 @@ class BankLinePicker(
     private val rings = mutableMapOf<String, ArrayDeque<String>>()
     private val weights = mutableMapOf<String, Int>()
     private val byId: Map<String, Line> = bank.lines.associateBy { it.id }
-    private val reservedTags = setOf("on_break", "dropped", "escalation", "followup")
+    private val reservedTags = setOf("on_break", "dropped", "escalation", "followup", "after_leave")
 
     override fun pick(query: LineQuery): PickedLine? {
         val lang = languageFor(query)
@@ -49,6 +49,7 @@ class BankLinePicker(
         if (query.followUp) pool = prefer(pool, "followup")
         if (query.escalation) pool = prefer(pool, "escalation")
         if (query.trigger == Trigger.PAUSE_PROMPT && !query.followUp) pool = prefer(pool, "tier${minOf(query.tier, 2)}")
+        if (query.afterLeave) pool = prefer(pool, "after_leave")
         if (query.lateNight || query.mood == Mood.SOFT) pool = prefer(pool, "soft")
         val moodMatched = pool.filter { query.mood in it.moods }
         if (moodMatched.isNotEmpty()) pool = moodMatched
@@ -99,6 +100,7 @@ class BankLinePicker(
             if (q.onBreak) add("on_break")
             if (q.followUp) add("followup")
             if (q.escalation) add("escalation")
+            if (q.afterLeave) add("after_leave")
             q.requiredTag?.let { add(it) }
         }
         return pool.filter { l -> reservedTags.none { it in l.tags && it !in wanted } }

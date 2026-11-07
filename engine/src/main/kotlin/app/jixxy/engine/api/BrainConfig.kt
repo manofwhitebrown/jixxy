@@ -20,6 +20,8 @@ object BrainConfig {
     const val stayGraceMinutes = 5
     /** Quiet minutes granted after the user taps Leave. */
     const val leaveGraceMinutes = 3
+    /** A Pause prompt within this many minutes of a Leave on the same app may use `after_leave` lines (D-024, WRITER). */
+    const val afterLeaveWindowMin = 15
     /** Late-night window start, minutes after local midnight (23:00). */
     const val lateNightStartMin = 23 * 60
     /** Late-night window end, minutes after local midnight (01:00). */

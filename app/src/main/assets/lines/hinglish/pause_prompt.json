@@ -1135,5 +1135,91 @@
       "nag_only"
     ],
     "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_afterleave_001",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Itni jaldi wapas? Abhi to baith hi raha tha.",
+    "slots": [],
+    "tags": [
+      "pause_prompt",
+      "hinglish",
+      "after_leave",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_afterleave_002",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Abhi gaye the, abhi wapas. Main chakkar mein hoon.",
+    "slots": [],
+    "tags": [
+      "pause_prompt",
+      "hinglish",
+      "after_leave",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_afterleave_003",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{app} phir se? Chhoti si pause, phir tumhari.",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "hinglish",
+      "after_leave",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_pause_prompt_afterleave_004",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Bye bola tha na? Chalo, ek baar phir pause.",
+    "slots": [],
+    "tags": [
+      "pause_prompt",
+      "hinglish",
+      "after_leave",
+      "calm_ok"
+    ],
+    "almostCaring": false
   }
 ]

@@ -32,7 +32,8 @@ data class LineQuery(
     val onBreak: Boolean = false,
     val requiredTag: String? = null,
     val escalation: Boolean = false,
-    val calm: Boolean = false
+    val calm: Boolean = false,
+    val afterLeave: Boolean = false
 )
 
 /** A chosen line with its slots already filled. */
