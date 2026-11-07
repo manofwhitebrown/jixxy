@@ -43,6 +43,15 @@ object OnboardingFlow {
         return if (i > 0) steps[i - 1] else current
     }
 
+    /**
+     * Step to resume at after the app was swiped away. [saved] is the stored step name; anything
+     * unknown, or not part of this run, restarts at HELLO so a bad value can never trap the user.
+     */
+    fun resume(saved: String?, lite: Boolean, sdkInt: Int): OnboardingStep {
+        val step = OnboardingStep.entries.firstOrNull { it.name == saved } ?: return OnboardingStep.HELLO
+        return if (step in order(lite, sdkInt)) step else OnboardingStep.HELLO
+    }
+
     /** Toggle [pkg] in [selected], never exceeding [MAX_TARGET_APPS]. Returns the new set (unchanged if the cap blocks an add). */
     fun toggleApp(selected: Set<String>, pkg: String): Set<String> = when {
         pkg in selected -> selected - pkg

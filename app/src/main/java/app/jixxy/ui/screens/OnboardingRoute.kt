@@ -17,6 +17,7 @@ import app.jixxy.engine.api.SettingsRepository
 import app.jixxy.platform.PermissionKind
 import app.jixxy.platform.PermissionsRepository
 import app.jixxy.ui.onboarding.AppChoice
+import app.jixxy.ui.onboarding.OnboardingFlow
 import app.jixxy.ui.state.toUi
 import kotlinx.coroutines.launch
 
@@ -45,8 +46,15 @@ fun OnboardingRoute(
     }
     val notificationLauncher = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { repo.refresh() }
 
+    // Remember the step so a swiped-away app resumes where the user was (never a dead end: bad values restart at Hello).
+    val prefs = remember { context.getSharedPreferences("ui_prefs", android.content.Context.MODE_PRIVATE) }
+    val savedLite = remember { prefs.getBoolean(KEY_STEP_LITE, false) }
+    val startStep = remember { OnboardingFlow.resume(prefs.getString(KEY_STEP, null), savedLite, Build.VERSION.SDK_INT) }
+
     OnboardingScreen(
-        onDone = onDone,
+        initialStep = startStep,
+        initialLite = savedLite,
+        onDone = { prefs.edit().remove(KEY_STEP).remove(KEY_STEP_LITE).apply(); onDone() },
         permissions = permissions.toUi(),
         availableApps = apps,
         actions = OnboardingActions(
@@ -59,7 +67,11 @@ fun OnboardingRoute(
             },
             openKeepAliveSettings = onOpenKeepAliveGuide,
             onTargetAppsChosen = { chosen -> scope.launch { settings.update { it.copy(targetApps = chosen) } } },
+            onProgress = { step, lite -> prefs.edit().putString(KEY_STEP, step.name).putBoolean(KEY_STEP_LITE, lite).apply() },
             onRoastChosen = { level -> scope.launch { settings.update { it.copy(roast = level) } } },
         ),
     )
 }
+
+private const val KEY_STEP = "onboarding_step"
+private const val KEY_STEP_LITE = "onboarding_lite"

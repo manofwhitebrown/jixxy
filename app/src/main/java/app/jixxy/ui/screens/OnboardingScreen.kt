@@ -21,6 +21,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -52,6 +53,8 @@ data class OnboardingActions(
     val onTargetAppsChosen: (Set<String>) -> Unit = {},
     val onRoastChosen: (RoastLevel) -> Unit = {},
     val onLiteMode: () -> Unit = {},
+    /** Called whenever the step or Lite choice changes, so the host can remember where the user was. */
+    val onProgress: (OnboardingStep, Boolean) -> Unit = { _, _ -> },
 )
 
 /**
@@ -65,9 +68,12 @@ fun OnboardingScreen(
     availableApps: List<AppChoice> = emptyList(),
     actions: OnboardingActions = OnboardingActions(),
     sdkInt: Int = Build.VERSION.SDK_INT,
+    initialStep: OnboardingStep = OnboardingStep.HELLO,
+    initialLite: Boolean = false,
 ) {
-    var step by rememberSaveable { mutableStateOf(OnboardingStep.HELLO) }
-    var lite by rememberSaveable { mutableStateOf(false) }
+    var step by rememberSaveable { mutableStateOf(initialStep) }
+    var lite by rememberSaveable { mutableStateOf(initialLite) }
+    LaunchedEffect(step, lite) { actions.onProgress(step, lite) }
     var picked by rememberSaveable { mutableStateOf(emptyList<String>()) }
     var roast by rememberSaveable { mutableStateOf(RoastLevel.NORMAL) }
 

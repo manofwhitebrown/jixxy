@@ -34,4 +34,12 @@ class OnboardingFlowTest {
         assertEquals(setOf("a", "b", "c"), s)
         assertEquals(setOf("b", "c", "d"), OnboardingFlow.toggleApp(OnboardingFlow.toggleApp(s, "a"), "d"))
     }
+
+    @Test fun resumeFallsBackToHelloForBadOrOutOfRunSteps() {
+        assertEquals(OnboardingStep.USAGE, OnboardingFlow.resume("USAGE", false, 34))
+        assertEquals(OnboardingStep.HELLO, OnboardingFlow.resume("USAGE", true, 34))
+        assertEquals(OnboardingStep.HELLO, OnboardingFlow.resume("NOPE", false, 34))
+        assertEquals(OnboardingStep.HELLO, OnboardingFlow.resume(null, false, 34))
+        assertEquals(OnboardingStep.HELLO, OnboardingFlow.resume("NOTIFICATIONS", false, 31))
+    }
 }
