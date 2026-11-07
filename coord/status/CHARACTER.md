@@ -51,3 +51,8 @@ OWNER TEST STEPS (demo): install the debug APK, open the second launcher icon 'J
 ## Motion budget (counted from code, not measured on a device)
 Idle (calm state, no blink, no bubble, no fade): one frame every CALM_FRAME_MS; during a blink, fade, bubble or active state: 33 ms (~30 fps, the cap). Screen off / window hidden / detached: zero frames, zero timers (the ticker is removed). Reduce-motion on: same frame rate for crossfades, no transform or overlay work. Allocation in onDraw not audited yet.
 QUESTION FOR THE OWNER: does he feel too fidgety when idle? (too much movement / about right / too still)
+
+## Completed by GROWTH on the Owner's instruction (2026-11-07, D-018, Owner-approved cross-lane; please review next session)
+- T-C3-6 state-mapping audit: appended to `design/character/MAPPING.md` (read-only, no code touched). Finding: engine never emits `SNACK` or `SNORE`; two shipped faces (`snacks`, `sleep`) are spare unless ENGINE or the view asks for them.
+- T-C3-7 icon and store-art fitness: `store/ART_FITNESS.md` (which files are fit for site/store, which are placeholders).
+- Not done (needs a compiler or the Owner): dead face channels in `Pose.kt`/`StatePoses.kt`; `really_blink` frame; hi-res originals; idle-motion feel and every "PHONE STEPS" item above.

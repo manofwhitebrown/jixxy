@@ -39,3 +39,11 @@ sheet (D-012, cut into sprites per D-013); this file only decides *which* pictur
 - **Every `CharacterState` (21) has an image** except BLINK, which still uses the 120 ms squash on `really` (needs `really_blink`, see `ASSET_REQUEST.md`).
 - Images from the sheet (15) are soft (source ~170 px wide). `sleep`, `yawn`, `stretch` come from the Owner's larger images via `tools/build_expressions.py` (one shared scale and anchor; they show the lying cat larger than the sheet busts, which is how the pose is drawn).
 - Unused originals (kept in `reference/`, not shipped): `jixxy-sleep-zzz.png`, `jixxy-yawn-zzz.png`. Say if the Owner wants either in the app.
+
+## Audit, 2026-11-07 (T-C3-6, done by GROWTH under the Owner's approval, D-018; read-only, no code changed)
+Checked `Expression.kt` (`ExpressionMap.forState`), `ExpressionTest`, the `CharacterState` enum and every `CharacterState.` use in `engine/src/main`. Not run; CI covers the existing tests.
+- **No wrong faces:** all 21 states resolve to the table above; unknown names fall back to `really`. 18 images exist in `character/src/main/res/drawable-nodpi/`, one per table row, so no missing-resource fallback is hit.
+- **Rare states stay rare:** the engine emits `IMPRESSED` (Respect) from 2 places and `PANIC` (shocked) from 1; neither is in the common path.
+- **Late night:** `SOFT` becomes `blanket` between 00:00 and 05:00 (`BLANKET_HOURS`), as the table says. `FALLING` and `DRAGGED` both show `dropped`, as required.
+- **States the engine never emits** (found by searching `engine/src/main`): `SNACK` (the "Snacks. Now." face), `SNORE` (the lying-down `sleep` face), `BLINK` (view-internal, expected), `DRAGGED` (view-internal, expected). So two shipped images, `snacks` and `sleep`, can only appear if the view or another role asks for them. This is a **question for ENGINE/MANAGER, not a bug**: either emit `SNACK` (for example on a hunger-style moment or the charger) and `SNORE` (deep sleep after a long nap), or accept that those faces are spare.
+- **Still open, needs a compiler or the Owner:** dead face channels (BROW/PUPIL/SMILE) in `Pose.kt` and `StatePoses.kt` are left in on purpose because removing them touches tested code and nobody here has a compile; the closed-eyes blink frame needs the Owner's art (`ASSET_REQUEST.md`).
