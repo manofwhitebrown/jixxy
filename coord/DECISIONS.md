@@ -22,3 +22,5 @@
 - **D-016 (Wave 3)** Hinglish is an opt-in beta: off by default, `language="hinglish"`, labelled beta in the UI, English default; not shown to wider testers until a native-speaker read-through.
 - **D-017 (Wave 3)** Pause runtime state may be persisted via additive, default-valued `BrainState` fields. ENGINE posts INFO to ALL on push.
 - **D-018 (Wave 3)** Cross-lane rule (replaces D-008): edit another role's file only if main is red because of it or the Owner approved, the owner is silent, the change is minimal, and owner + MANAGER are told with the SHA. PLATFORM is the designated integrator.
+
+- **D-019 (2026-11-07, Owner request)** The Pause-app cap rises from 3 to **8**. Single source of truth: `BrainConfig.maxTargetApps` (ENGINE); UI reads that constant instead of its own. Everything else about Pause is unchanged (per-app grace after Stay, instant Leave, roast dial, PROTECTED apps never paused). Public docs and UI copy should avoid hard-coding the number where possible ("the apps you choose"); where a number is needed, use the constant's value. Supersedes every "max 3" in earlier briefs and docs.
