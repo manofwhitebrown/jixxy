@@ -341,19 +341,28 @@ class DefaultJixxyBrain(
 
     // ---- memory: callbacks, almost-caring, restore -------------------------------------------
 
-    /** A callback built from a real counted fact (visits, pauses, leaves); the first fact over its threshold that has a line wins. */
+    /** A callback built from a real counted fact (visits, pauses, leaves, stays, late opens, top app minutes); the first fact over its threshold that has a line wins. */
     private fun tryCallback(pkg: String, now: Long, s: UserSettings): Reaction? {
         val app = appLabel(pkg)
         val facts = listOf(
             Triple("fact:app_visits_day", history.appVisitsToday(pkg, now), BrainConfig.callbackVisitsDay),
             Triple("fact:pauses_day", history.pausesToday(now), BrainConfig.callbackPausesDay),
             Triple("fact:leaves_week", history.leavesWeek(now), BrainConfig.callbackLeavesWeek),
-            Triple("fact:app_visits_week", history.appVisitsWeek(pkg, now), BrainConfig.callbackVisitsWeek)
+            Triple("fact:app_visits_week", history.appVisitsWeek(pkg, now), BrainConfig.callbackVisitsWeek),
+            Triple("fact:stays_week", history.staysWeek(now), BrainConfig.callbackStaysWeek),
+            Triple("fact:late_opens_week", history.lateOpensWeek(now), BrainConfig.callbackLateOpensWeek)
         )
         for ((tag, count, min) in facts) {
             if (count < min) continue
+            // During late night the LATE_NIGHT line owns the moment; quoting late opens then would just repeat it.
+            if (tag == "fact:late_opens_week" && isLateNight(now)) continue
             val slots = mapOf("app" to app, "count" to count.toString())
             tryUnprompted(Trigger.CALLBACK, now, s, slots, tag)?.let { return it }
+        }
+        val top = history.topAppMinutesToday(now)
+        if (top != null && top.second >= BrainConfig.callbackTopAppMinutesDay) {
+            val slots = mapOf("app" to appLabel(top.first), "minutes" to top.second.toString())
+            tryUnprompted(Trigger.CALLBACK, now, s, slots, "fact:top_app_minutes_day")?.let { return it }
         }
         return null
     }

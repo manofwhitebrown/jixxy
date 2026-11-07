@@ -35,8 +35,9 @@
 ### Done
 - T-E3-1 Pause state persisted: `PauseRuntime` on `BrainState.pause` (Stay grant, grace, second-prompt flag, prompts today, Leave streak) with `encode()`/`decode()`; brain seeds from it, then replays only newer events. 11 tests in PauseRuntimeTest incl. old-save migration, restart mid-grant, one second prompt across restarts, day rollover.
 - INFO to ALL and HANDOFF to PLATFORM sent (SqliteStateStore needs a `pause_json` column + DB version 2).
-### Next — T-E3-3 (callback counters), T-E3-4 (JaCoCo + simulation on the real bank)
+### Next (callback counters), T-E3-4 (JaCoCo + simulation on the real bank)
 - T-E3-2 done: no global floor existed; 5 tests in AlmostCaringBondTest (mild at ROOMMATE, heartfelt only at RIDE_OR_DIE, none before ROOMMATE, 3-day cap). WRITER informed. Local run: 131 tests pass.
+- T-E3-3 done: EventHistory gained staysWeek, lateOpensWeek, topAppMinutesToday, bestLeaveDayWeek; CALLBACK tags fact:stays_week, fact:late_opens_week, fact:top_app_minutes_day (thresholds in BrainConfig). 9 hand-counted tests in FactsTest. Late-opens callback is skipped during late night (it broke the once-per-night rule in an existing test). WRITER has the tag/slot table. Not provided: unbroken longest session, bond change (events cannot prove them).
 ### Messages handled — 20261107-0513-WRITER-almostcaring-bondmin.md
 ### Honest notes
 - Ran locally: kotlinc 2.1.21 plus a stand-in JUnit, 126 tests, all pass. NOT run: real Gradle/JUnit, JaCoCo, FakesAndConfigTest (needs coroutines-test). CI result for this push not yet seen.

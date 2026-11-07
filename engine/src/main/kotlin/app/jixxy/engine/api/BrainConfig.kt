@@ -65,6 +65,10 @@ object BrainConfig {
     const val callbackVisitsWeek = 10
     const val callbackPausesDay = 3
     const val callbackLeavesWeek = 3
+    const val callbackStaysWeek = 3
+    const val callbackLateOpensWeek = 3
+    /** Minutes in one app on one day before `fact:top_app_minutes_day` may be quoted. */
+    const val callbackTopAppMinutesDay = 120
     /** Distinct late nights in the last 7 days before the almost-caring line may appear. */
     const val almostCaringLateNights = 3
 
