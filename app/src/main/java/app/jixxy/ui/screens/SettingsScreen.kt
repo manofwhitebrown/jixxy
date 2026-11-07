@@ -37,7 +37,10 @@ import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.liveRegion
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -108,6 +111,7 @@ fun SettingsContent(
     onClearDebug: (() -> Unit)? = null,
 ) {
     var confirmReset by remember { mutableStateOf(false) }
+    var copied by remember { mutableStateOf(false) }
     Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
         Column(
             Modifier.verticalScroll(rememberScrollState()).padding(24.dp),
@@ -198,8 +202,9 @@ fun SettingsContent(
 
             if (onCopyDebug != null && onClearDebug != null) {
                 Section(R.string.settings_debug_label, R.string.settings_debug_help) {
-                    OutlinedButton(onClick = onCopyDebug, Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(stringResource(R.string.settings_debug_copy)) }
-                    OutlinedButton(onClick = onClearDebug, Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(stringResource(R.string.settings_debug_clear)) }
+                    OutlinedButton(onClick = { onCopyDebug(); copied = true }, Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(stringResource(R.string.settings_debug_copy)) }
+                    if (copied) Text(stringResource(R.string.settings_debug_copied), Modifier.semantics { liveRegion = LiveRegionMode.Polite }, style = MaterialTheme.typography.bodyMedium)
+                    OutlinedButton(onClick = { onClearDebug(); copied = false }, Modifier.fillMaxWidth().heightIn(min = 48.dp)) { Text(stringResource(R.string.settings_debug_clear)) }
                 }
             }
 

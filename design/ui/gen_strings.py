@@ -18,6 +18,7 @@ MANUAL = {
     "settings_debug_label": "[P] Report a problem",
     "settings_debug_help": "[P] Copies a short report to your clipboard: app version, phone model, Android version, permission and service status, and recent errors. No app names, no messages, nothing you typed. It stays on your phone until you paste it somewhere yourself.",
     "settings_debug_copy": "[P] Copy debug info",
+    "settings_debug_copied": "[P] Copied. Paste it into your message when you report the problem.",
     "settings_debug_clear": "[P] Clear diagnostics",
     "whatsaw_event_foreground": "[P] Opened",
     "whatsaw_event_session_minutes": "[P] Open for %1$d min",
