@@ -100,6 +100,7 @@ class JixxyView(context: Context) : FrameLayout(context) {
         strokeJoin = Paint.Join.ROUND
     }
     private val spriteBounds = RectF(0f, 0f, VIEWBOX, VIEWBOX)
+    private val ledgeRect = RectF()
     private val zShape = Path().apply { moveTo(-1f, -1f); lineTo(1f, -1f); lineTo(-1f, 1f); lineTo(1f, 1f) }
     private val noteTail = Path().apply { moveTo(2.3f, 0f); lineTo(2.3f, -9f); quadTo(5f, -8f, 6f, -4.5f) }
     private val star = Path().apply {
@@ -393,6 +394,7 @@ class JixxyView(context: Context) : FrameLayout(context) {
         }
         spritePaint.alpha = (255f * fader.progress).toInt()
         canvas.drawBitmap(if (swapBlinkFrame) blinkFrame ?: current else current, null, spriteBounds, spritePaint)
+        drawLedge(canvas)
         if (!reduceMotion) drawSweat(canvas)
         canvas.restore()
 
@@ -403,6 +405,24 @@ class JixxyView(context: Context) : FrameLayout(context) {
         }
         canvas.restore()
         if (geometry != null) bubble.draw(canvas, SystemClock.uptimeMillis())
+    }
+
+    /**
+     * The small purple ledge in front of the cat's flat bottom edge (the sheet's busts are cut there), so he reads
+     * as peeking over it instead of as half a cat. Drawn in the sprite's own transform so it moves with him.
+     */
+    private fun drawLedge(canvas: Canvas) {
+        val ledge = ledgeFor(fader.previous, fader.current, fader.progress) ?: return
+        ledgeRect.set(ledge.left, LEDGE_TOP, ledge.right, LEDGE_BOTTOM)
+        fill.color = palette.purple
+        fill.alpha = (255f * ledge.alpha).toInt()
+        canvas.drawRoundRect(ledgeRect, LEDGE_RADIUS, LEDGE_RADIUS, fill)
+        line.color = palette.ink
+        line.alpha = (200f * ledge.alpha).toInt()
+        line.strokeWidth = 1f
+        canvas.drawRoundRect(ledgeRect, LEDGE_RADIUS, LEDGE_RADIUS, line)
+        line.alpha = 255
+        fill.alpha = 255
     }
 
     /** Draws [path] in cream with a thin ink outline, so it reads on any app underneath. */
@@ -493,6 +513,10 @@ class JixxyView(context: Context) : FrameLayout(context) {
         const val VIEWBOX = 128f
         const val FEET_X = 64f
         const val FEET_Y = 125f
+        /** Ledge band in viewbox units: covers the flat cut at the anchor line (y = 125) without touching the face. */
+        const val LEDGE_TOP = 120f
+        const val LEDGE_BOTTOM = 127f
+        const val LEDGE_RADIUS = 3.5f
         const val NOON = 12
         const val TAU = (2.0 * PI).toFloat()
         const val OUTLINE = 1.4f

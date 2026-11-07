@@ -3,7 +3,8 @@
 Found: main green (CI, Emulator, Latest at 0550d84). Module = JixxyView, SpeechBubble, PauseCardView, PoseAnimator/StatePoses, 15 expression WebPs, 5 JVM test files. Demo activity already lists every CharacterState via values() (21). 5 new Owner images (sleep, sleep+zzz, yawn+zzz, yawn/stretch opaque black) sit in reference/ unprocessed. Nothing verified on a phone.
 Done: T-C3-0 demo gaps, new sleep/yawn/stretch sprites. Next: tight hit area (T-V1-CHARACTER-3), motion budget (T-C3-3), bubble/Pause polish.
 ## Wave-3 findings list (Owner reports, with SHAs)
-(none yet)
+1. 2026-11-07 "he looks half cut off" (Owner screenshot, Samsung home screen; B-003). Cause: flat bottom cut in the sheet busts, not a window clip (view is 88 dp square, bottom anchor at y=125/128, nothing clips it). Fixed in code: small purple ledge in front of the cut (JixxyView.drawLedge, per-sprite span in Expression.kt, fades with the crossfade). Commit: see git log "[CHARACTER] T-C3-1". NOT verified on a phone.
+   PHONE STEPS: 1. Wake him. 2. Drag him to the middle of the screen: is the flat cut gone, does he look like he peeks over a small purple ledge? 3. Drag to the bottom edge and the sides. 4. Open "Jixxy demo", press SMUG, SOFT, NAP/SLEEP, STRETCH, SHOCKED: round-bottomed ones (shocked, charging, headphones, yawn) should have no ledge. Reply: "looks fine" / "ledge too big/small/ugly" / "still cut off".
 ## Now
 T-C2-5 done. T-C2-6 reviewed (GROWTH built it). T-C2-7/dead face channels deferred (see notes).
 ## Takeover: 2026-11-06T08:55Z
