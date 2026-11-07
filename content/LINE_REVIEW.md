@@ -162,3 +162,15 @@ Added 30 EN lines (bank 771): PAUSE_PROMPT GRUMPY roast-2 lines for SOCIAL, VIDE
 
 ## Wave 3, T-W3-11 string read-through (2026-11-07T10:22Z)
 Read all 214 UI strings. 7 replacement texts and 1 deletion sent to UI (MICROCOPY v1.2 mirrors them). Themes: two strings contradicted D-020 ('nag you', 'comment now and then'), voice mixed first/third person on Home, one label mismatch (Roast help vs Gentle/Normal/Savage), one retired placeholder still in the file. Privacy and permission claims checked against the code's declared permissions in the brief; nothing overclaims. Dependency to remember: 'Stay 5 more minutes' hard-codes grantMinutes = 5.
+
+## Wave 3, T-W3-12 a day in the life (2026-11-07T10:23Z)
+Method: content/tools/day_sim.py replays one scripted day (38 events: 7 Instagram opens, YouTube, a game, charger, pokes, music, long sessions, late night) through the real EN bank with ENGINE's caps (Calm 3/day + 45 min gap, Naggy 15 + 10, Chaos 30 + 5), 200-line dedupe, roast 2, bond 1, calm_ok filter at Calm, tier preference for Pause. It is a rough hand-simulation, not the engine: no mood, no energy, no bond growth.
+**What it showed**
+1. **Wrong-hour claims (fixed):** pause_prompt_any_004 'Late one.' and pause_prompt_any_009 'It's late' could fire at 9:30 am; video_015 'your evening'. Now time-neutral ({time} slot in 009). Earlier audit missed them because they were not in a late-night trigger.
+2. **Spreadsheet gag overused:** 11 of the 19 spreadsheet lines are Pause lines, so a heavy Instagram day shows it 4 times. Rewrote pause_stay_any_003 and 029 (door open, sofa warm).
+3. **Follow-up sameness:** four of the follow-ups began 'Five...' so a third Stay in one evening read as a loop. Added 6 follow-ups that do not start with 'Five' (pause_prompt_any_049..054), 3 roast 1 and 3 roast 2.
+4. **Tier ladder works:** at Naggy a 7-Instagram day goes: '...really? Instagram?' -> 'Second time today' -> 'pause 3, counting out loud' -> 'again?! calling a meeting' -> 'must really miss you' -> 'started a new column' -> 'I've run out of jokes. Your move.' Best beats: 'must really miss you' and 'run out of jokes'; weakest: the three spreadsheet-row variants (they read the same).
+5. **Calm still hears a lot:** Nag level only limits unprompted lines, so a Calm user with 7 Pauses still got 30 Pause lines. That is by design (Pauses are the product) but worth an Owner look: a 'no escalation beyond tier 1' option for Calm would soften it. Not built, ENGINE's call.
+6. **Possible double voice (ENGINE to check):** my sim let a LATE_NIGHT comment land on the same open as a Pause prompt. If the engine can do that, two bubbles stack; unprompted lines should wait while a Pause card is up.
+7. **Limits of this test:** Chaos and Naggy came out identical because only about 10 unprompted chances exist in this script, so the 30/day Chaos cap never bound; the nag_only pools are barely exercised. Real repeats (ENGINE measured 26-55%) are unchanged by anything here. Needs a phone day.
+Lint now 1009 lines, 0 errors. Bank EN 777 / Hinglish 232.

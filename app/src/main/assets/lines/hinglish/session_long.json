@@ -302,7 +302,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "hinglish",
-    "text": "{minutes} minute ho gaye {app} pe. Thoda stretch kar lo?",
+    "text": "Thoda stretch kar lo? {app} pe {minutes} minute ho gaye.",
     "slots": [
       "app",
       "minutes"
@@ -368,7 +368,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "hinglish",
-    "text": "{minutes} minute ho gaye. Aankhon ko bhi chhutti chahiye.",
+    "text": "Aankhon ko bhi chhutti chahiye. {minutes} minute ho gaye.",
     "slots": [
       "minutes"
     ],

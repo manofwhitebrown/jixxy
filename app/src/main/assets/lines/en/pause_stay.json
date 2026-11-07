@@ -48,7 +48,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "Okay. I'll hold the spreadsheet open.",
+    "text": "Okay. I'll keep the door open.",
     "slots": [],
     "tags": [
       "pause_stay",
@@ -539,7 +539,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "Hehe. Go on. I'll keep the spreadsheet open.",
+    "text": "Hehe. Go on. I'll keep the sofa warm.",
     "slots": [],
     "tags": [
       "pause_stay",

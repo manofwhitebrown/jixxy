@@ -1474,7 +1474,7 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "Late one. Leave {app}, or stay a bit with me?",
+    "text": "One more visit. Leave {app}, or stay a bit with me?",
     "slots": [
       "app"
     ],
@@ -1579,9 +1579,10 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "It's late and {app} is bright. Leave, or I'll keep you company.",
+    "text": "It's {time} and {app} is bright. Leave, or I'll keep you company.",
     "slots": [
-      "app"
+      "app",
+      "time"
     ],
     "tags": [
       "pause_prompt",
@@ -3116,7 +3117,7 @@
     "roast": 3,
     "bondMin": 1,
     "lang": "en",
-    "text": "Plot hole in your evening: {minutes} minutes of {app}. Leave, menace.",
+    "text": "Plot hole in your day: {minutes} minutes of {app}. Leave, menace.",
     "slots": [
       "app",
       "minutes"
@@ -4410,6 +4411,136 @@
     ],
     "tags": [
       "pause_prompt",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_any_049",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY",
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Timer's up. Leave, or one more round?",
+    "slots": [],
+    "tags": [
+      "pause_prompt",
+      "followup",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_any_050",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY",
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Ding ding. Your stay has expired. Leave {app}, or extend?",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "followup",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_any_051",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY",
+      "SMUG"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "That's the clock. Leave, or stay with a plan?",
+    "slots": [],
+    "tags": [
+      "pause_prompt",
+      "followup",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_any_052",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY",
+      "SMUG"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Clock says leave. I only read it out. Your call.",
+    "slots": [],
+    "tags": [
+      "pause_prompt",
+      "followup",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_any_053",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY",
+      "SMUG"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Round over. Leave {app}, or ask nicely for more?",
+    "slots": [
+      "app"
+    ],
+    "tags": [
+      "pause_prompt",
+      "followup",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "pause_prompt_any_054",
+    "trigger": "PAUSE_PROMPT",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY",
+      "SMUG"
+    ],
+    "roast": 2,
+    "bondMin": 0,
+    "lang": "en",
+    "text": "Your extension has expired. Leave, or file another?",
+    "slots": [],
+    "tags": [
+      "pause_prompt",
+      "followup",
       "calm_ok"
     ],
     "almostCaring": false
