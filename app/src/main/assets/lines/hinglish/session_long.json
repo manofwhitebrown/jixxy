@@ -17,7 +17,8 @@
     ],
     "tags": [
       "session_long",
-      "hinglish"
+      "hinglish",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -38,7 +39,8 @@
     ],
     "tags": [
       "session_long",
-      "hinglish"
+      "hinglish",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -57,7 +59,8 @@
     "slots": [],
     "tags": [
       "session_long",
-      "hinglish"
+      "hinglish",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -79,7 +82,8 @@
     ],
     "tags": [
       "session_long",
-      "hinglish"
+      "hinglish",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -100,7 +104,8 @@
     ],
     "tags": [
       "session_long",
-      "hinglish"
+      "hinglish",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -122,7 +127,8 @@
     ],
     "tags": [
       "session_long",
-      "hinglish"
+      "hinglish",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -144,7 +150,8 @@
     ],
     "tags": [
       "session_long",
-      "hinglish"
+      "hinglish",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -165,7 +172,8 @@
     ],
     "tags": [
       "session_long",
-      "hinglish"
+      "hinglish",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -186,7 +194,8 @@
     ],
     "tags": [
       "session_long",
-      "hinglish"
+      "hinglish",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -208,7 +217,8 @@
     ],
     "tags": [
       "session_long",
-      "hinglish"
+      "hinglish",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -229,7 +239,8 @@
     ],
     "tags": [
       "session_long",
-      "hinglish"
+      "hinglish",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -251,7 +262,8 @@
     ],
     "tags": [
       "session_long",
-      "hinglish"
+      "hinglish",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -274,7 +286,96 @@
     "tags": [
       "session_long",
       "owner_canon",
-      "hinglish"
+      "hinglish",
+      "nag_only"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_session_long_any_014",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{minutes} minute ho gaye {app} pe. Thoda stretch kar lo?",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long",
+      "hinglish",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_session_long_any_015",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{app} pe {minutes} minute. Paani pi lo, phir wapas.",
+    "slots": [
+      "app",
+      "minutes"
+    ],
+    "tags": [
+      "session_long",
+      "hinglish",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_session_long_any_016",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Lamba session. Gardan ghuma lo, main yahin hoon.",
+    "slots": [],
+    "tags": [
+      "session_long",
+      "hinglish",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_session_long_any_017",
+    "trigger": "SESSION_LONG",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "{minutes} minute ho gaye. Aankhon ko bhi chhutti chahiye.",
+    "slots": [
+      "minutes"
+    ],
+    "tags": [
+      "session_long",
+      "hinglish",
+      "calm_ok"
     ],
     "almostCaring": false
   }

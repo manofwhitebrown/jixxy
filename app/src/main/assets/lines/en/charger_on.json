@@ -15,7 +15,8 @@
       "battery"
     ],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -35,7 +36,8 @@
       "battery"
     ],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -53,7 +55,8 @@
     "text": "Ahh. Charger on. I'm basically a houseplant now.",
     "slots": [],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -71,7 +74,8 @@
     "text": "Power! Beautiful power. Thank you.",
     "slots": [],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -89,7 +93,8 @@
     "text": "Charger on. I'm sitting in the sun. Metaphorically.",
     "slots": [],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -109,7 +114,8 @@
       "battery"
     ],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -127,7 +133,8 @@
     "text": "My knees stop shaking. Plugged in.",
     "slots": [],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -147,7 +154,8 @@
       "battery"
     ],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -165,7 +173,8 @@
     "text": "I'm basically a spa guest now. Charging.",
     "slots": [],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -183,7 +192,8 @@
     "text": "Wall power! Heaven in a cable.",
     "slots": [],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -201,7 +211,8 @@
     "text": "Charger found. Peace treaty signed.",
     "slots": [],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -221,7 +232,8 @@
       "battery"
     ],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -239,7 +251,8 @@
     "text": "I'll nap and absorb. Plugged in.",
     "slots": [],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -257,7 +270,8 @@
     "text": "Cable connected. Peace restored.",
     "slots": [],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -275,7 +289,8 @@
     "text": "Ahh, electricity. The nicest snack.",
     "slots": [],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -294,7 +309,8 @@
     "slots": [],
     "tags": [
       "charger_on",
-      "owner_canon"
+      "owner_canon",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -312,7 +328,8 @@
     "text": "Ooh nice! Charger. I was running on vibes.",
     "slots": [],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -332,7 +349,8 @@
       "battery"
     ],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -350,7 +368,8 @@
     "text": "Food. At last. Please don't touch anything for a bit.",
     "slots": [],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -368,7 +387,8 @@
     "text": "Electricity! Dinner is served.",
     "slots": [],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -386,7 +406,8 @@
     "text": "Charging. Do not disturb the cat while he eats.",
     "slots": [],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -406,7 +427,8 @@
       "battery"
     ],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -424,7 +446,8 @@
     "text": "Charger! I'll just lie here and absorb.",
     "slots": [],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -442,7 +465,8 @@
     "text": "Charging. The little bar climbs, the tiny cat smiles.",
     "slots": [],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -460,7 +484,8 @@
     "text": "Plugged in. Fresh batteries, fresh whiskers.",
     "slots": [],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -478,7 +503,8 @@
     "text": "Cable in. Everyone relax.",
     "slots": [],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -498,7 +524,8 @@
       "battery"
     ],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -516,7 +543,8 @@
     "text": "Charging! I'll stop shaking now.",
     "slots": [],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -534,7 +562,8 @@
     "text": "Power returns. The kingdom is saved.",
     "slots": [],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -554,7 +583,8 @@
       "battery"
     ],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -572,7 +602,8 @@
     "text": "Charging time. A nap for both of us.",
     "slots": [],
     "tags": [
-      "charger_on"
+      "charger_on",
+      "calm_ok"
     ],
     "almostCaring": false
   }

@@ -14,7 +14,8 @@
     "slots": [],
     "tags": [
       "music",
-      "hinglish"
+      "hinglish",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -33,7 +34,8 @@
     "slots": [],
     "tags": [
       "music",
-      "hinglish"
+      "hinglish",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -52,7 +54,8 @@
     "slots": [],
     "tags": [
       "music",
-      "hinglish"
+      "hinglish",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -71,7 +74,8 @@
     "slots": [],
     "tags": [
       "music",
-      "hinglish"
+      "hinglish",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -91,7 +95,8 @@
     "tags": [
       "music",
       "owner_canon",
-      "hinglish"
+      "hinglish",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -110,7 +115,68 @@
     "slots": [],
     "tags": [
       "music",
-      "hinglish"
+      "hinglish",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_music_any_007",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Gaana on! Main halka sa jhoom raha hoon.",
+    "slots": [],
+    "tags": [
+      "music",
+      "hinglish",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_music_any_008",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Achha gaana lag raha hai. Main chup-chaap sun raha hoon.",
+    "slots": [],
+    "tags": [
+      "music",
+      "hinglish",
+      "calm_ok"
+    ],
+    "almostCaring": false
+  },
+  {
+    "id": "hg_music_any_009",
+    "trigger": "MUSIC",
+    "categories": [],
+    "moods": [
+      "CHILL",
+      "SLEEPY"
+    ],
+    "roast": 1,
+    "bondMin": 0,
+    "lang": "hinglish",
+    "text": "Music on. Meri poonchh taal pe hil rahi hai.",
+    "slots": [],
+    "tags": [
+      "music",
+      "hinglish",
+      "calm_ok"
     ],
     "almostCaring": false
   }

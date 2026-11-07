@@ -15,7 +15,8 @@
       "battery"
     ],
     "tags": [
-      "battery_low"
+      "battery_low",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -35,7 +36,8 @@
       "battery"
     ],
     "tags": [
-      "battery_low"
+      "battery_low",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -55,7 +57,8 @@
       "battery"
     ],
     "tags": [
-      "battery_low"
+      "battery_low",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -75,7 +78,8 @@
       "battery"
     ],
     "tags": [
-      "battery_low"
+      "battery_low",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -95,7 +99,8 @@
       "battery"
     ],
     "tags": [
-      "battery_low"
+      "battery_low",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -115,7 +120,8 @@
       "battery"
     ],
     "tags": [
-      "battery_low"
+      "battery_low",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -133,7 +139,8 @@
     "text": "Battery's low. My dramatic side wakes up.",
     "slots": [],
     "tags": [
-      "battery_low"
+      "battery_low",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -153,7 +160,8 @@
       "battery"
     ],
     "tags": [
-      "battery_low"
+      "battery_low",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -173,7 +181,8 @@
       "battery"
     ],
     "tags": [
-      "battery_low"
+      "battery_low",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -193,7 +202,8 @@
       "battery"
     ],
     "tags": [
-      "battery_low"
+      "battery_low",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -211,7 +221,8 @@
     "text": "Low battery. Fewer jokes, more pleas.",
     "slots": [],
     "tags": [
-      "battery_low"
+      "battery_low",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -231,7 +242,8 @@
       "battery"
     ],
     "tags": [
-      "battery_low"
+      "battery_low",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -251,7 +263,8 @@
       "battery"
     ],
     "tags": [
-      "battery_low"
+      "battery_low",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -271,7 +284,8 @@
       "battery"
     ],
     "tags": [
-      "battery_low"
+      "battery_low",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -291,7 +305,8 @@
       "battery"
     ],
     "tags": [
-      "battery_low"
+      "battery_low",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -312,7 +327,8 @@
     ],
     "tags": [
       "battery_low",
-      "owner_canon"
+      "owner_canon",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -331,7 +347,8 @@
       "battery"
     ],
     "tags": [
-      "battery_low"
+      "battery_low",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -351,7 +368,8 @@
       "battery"
     ],
     "tags": [
-      "battery_low"
+      "battery_low",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -371,7 +389,8 @@
       "battery"
     ],
     "tags": [
-      "battery_low"
+      "battery_low",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -391,7 +410,8 @@
       "battery"
     ],
     "tags": [
-      "battery_low"
+      "battery_low",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -410,7 +430,8 @@
       "battery"
     ],
     "tags": [
-      "battery_low"
+      "battery_low",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -428,7 +449,8 @@
     "text": "Dramatic music is playing in my head. Low battery.",
     "slots": [],
     "tags": [
-      "battery_low"
+      "battery_low",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -447,7 +469,8 @@
       "battery"
     ],
     "tags": [
-      "battery_low"
+      "battery_low",
+      "calm_ok"
     ],
     "almostCaring": false
   }

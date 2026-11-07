@@ -38,3 +38,5 @@ Found: EN 621 lines, Hinglish 226, validator 0 problems, nothing device-tested. 
 ## 2026-11-07T10:11Z Pool widening pushed (+49 lines, bank 741) after ENGINE coverage table; MICROCOPY v1.1 (sounds, turn-down, onboarding nag). Handled 0540/0546 ENGINE and 0547 UI. Next: PAUSE_PROMPT GRUMPY coverage, NAP/WAKE/IMPRESSED pools; rerun repeat rate when ENGINE publishes.
 
 ## 2026-11-07T10:11Z Gap fill 2 pushed (GRUMPY pause lines, NAP/WAKE/IMPRESSED pools, bank 771). Waiting on ENGINE re-run of repeat rate, Owner feedback (T-W3-8), native Hinglish read.
+
+## 2026-11-07T10:21Z T-W3-9 and T-W3-10 done and pushed (lint_lines.py, calm_ok/nag_only tags on all 1003 lines, +7 Hinglish calm lines). Requests sent to ENGINE (tier filter) and DEVOPS (CI). Handled 20261107-1017 ENGINE (mood is a preference; Hinglish thin pools mean silence: favour breadth), 1330 and 1520 MANAGER. Next: T-W3-11 (read every app string), T-W3-12 (three-day simulation), then park.

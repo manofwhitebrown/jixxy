@@ -16,7 +16,8 @@
     ],
     "tags": [
       "callback",
-      "fact:leaves_week"
+      "fact:leaves_week",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -38,7 +39,8 @@
     ],
     "tags": [
       "callback",
-      "fact:app_visits_day"
+      "fact:app_visits_day",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -60,7 +62,8 @@
     ],
     "tags": [
       "callback",
-      "fact:app_visits_week"
+      "fact:app_visits_week",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -81,7 +84,8 @@
     ],
     "tags": [
       "callback",
-      "fact:pauses_day"
+      "fact:pauses_day",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -103,7 +107,8 @@
     ],
     "tags": [
       "callback",
-      "fact:app_visits_week"
+      "fact:app_visits_week",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -125,7 +130,8 @@
     ],
     "tags": [
       "callback",
-      "fact:app_visits_day"
+      "fact:app_visits_day",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -146,7 +152,8 @@
     ],
     "tags": [
       "callback",
-      "fact:pauses_day"
+      "fact:pauses_day",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -168,7 +175,8 @@
     ],
     "tags": [
       "callback",
-      "fact:app_visits_week"
+      "fact:app_visits_week",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -190,7 +198,8 @@
     ],
     "tags": [
       "callback",
-      "fact:app_visits_day"
+      "fact:app_visits_day",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -211,7 +220,8 @@
     ],
     "tags": [
       "callback",
-      "fact:pauses_week"
+      "fact:pauses_week",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -233,7 +243,8 @@
     ],
     "tags": [
       "callback",
-      "fact:app_visits_day"
+      "fact:app_visits_day",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -254,7 +265,8 @@
     ],
     "tags": [
       "callback",
-      "fact:leaves_week"
+      "fact:leaves_week",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -276,7 +288,8 @@
     ],
     "tags": [
       "callback",
-      "fact:app_visits_week"
+      "fact:app_visits_week",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -298,7 +311,8 @@
     ],
     "tags": [
       "callback",
-      "fact:app_visits_day"
+      "fact:app_visits_day",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -320,7 +334,8 @@
     ],
     "tags": [
       "callback",
-      "fact:app_visits_week"
+      "fact:app_visits_week",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -341,7 +356,8 @@
     ],
     "tags": [
       "callback",
-      "fact:pauses_day"
+      "fact:pauses_day",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -362,7 +378,8 @@
     ],
     "tags": [
       "callback",
-      "fact:pauses_day"
+      "fact:pauses_day",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -383,7 +400,8 @@
     ],
     "tags": [
       "callback",
-      "fact:pauses_week"
+      "fact:pauses_week",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -404,7 +422,8 @@
     ],
     "tags": [
       "callback",
-      "fact:pauses_day"
+      "fact:pauses_day",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -426,7 +445,8 @@
     ],
     "tags": [
       "callback",
-      "fact:app_visits_week"
+      "fact:app_visits_week",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -447,7 +467,8 @@
     ],
     "tags": [
       "callback",
-      "fact:stays_week"
+      "fact:stays_week",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -468,7 +489,8 @@
     ],
     "tags": [
       "callback",
-      "fact:stays_week"
+      "fact:stays_week",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -489,7 +511,8 @@
     ],
     "tags": [
       "callback",
-      "fact:stays_week"
+      "fact:stays_week",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -510,7 +533,8 @@
     ],
     "tags": [
       "callback",
-      "fact:stays_week"
+      "fact:stays_week",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -532,7 +556,8 @@
     ],
     "tags": [
       "callback",
-      "fact:late_opens_week"
+      "fact:late_opens_week",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -554,7 +579,8 @@
     ],
     "tags": [
       "callback",
-      "fact:late_opens_week"
+      "fact:late_opens_week",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -576,7 +602,8 @@
     ],
     "tags": [
       "callback",
-      "fact:late_opens_week"
+      "fact:late_opens_week",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -598,7 +625,8 @@
     ],
     "tags": [
       "callback",
-      "fact:late_opens_week"
+      "fact:late_opens_week",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -620,7 +648,8 @@
     ],
     "tags": [
       "callback",
-      "fact:top_app_minutes_day"
+      "fact:top_app_minutes_day",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -642,7 +671,8 @@
     ],
     "tags": [
       "callback",
-      "fact:top_app_minutes_day"
+      "fact:top_app_minutes_day",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -664,7 +694,8 @@
     ],
     "tags": [
       "callback",
-      "fact:top_app_minutes_day"
+      "fact:top_app_minutes_day",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -686,7 +717,8 @@
     ],
     "tags": [
       "callback",
-      "fact:top_app_minutes_day"
+      "fact:top_app_minutes_day",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -708,7 +740,8 @@
     ],
     "tags": [
       "callback",
-      "fact:app_visits_day"
+      "fact:app_visits_day",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -730,7 +763,8 @@
     ],
     "tags": [
       "callback",
-      "fact:app_visits_day"
+      "fact:app_visits_day",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -751,7 +785,8 @@
     ],
     "tags": [
       "callback",
-      "fact:pauses_day"
+      "fact:pauses_day",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -772,7 +807,8 @@
     ],
     "tags": [
       "callback",
-      "fact:pauses_day"
+      "fact:pauses_day",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -793,7 +829,8 @@
     ],
     "tags": [
       "callback",
-      "fact:leaves_week"
+      "fact:leaves_week",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -814,7 +851,8 @@
     ],
     "tags": [
       "callback",
-      "fact:leaves_week"
+      "fact:leaves_week",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -836,7 +874,8 @@
     ],
     "tags": [
       "callback",
-      "fact:app_visits_week"
+      "fact:app_visits_week",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -858,7 +897,8 @@
     ],
     "tags": [
       "callback",
-      "fact:app_visits_week"
+      "fact:app_visits_week",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -879,7 +919,8 @@
     ],
     "tags": [
       "callback",
-      "fact:stays_week"
+      "fact:stays_week",
+      "calm_ok"
     ],
     "almostCaring": false
   }

@@ -13,7 +13,8 @@
     "text": "Fine. Five minutes. I'll be napping, loudly.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -31,7 +32,8 @@
     "text": "Stay, then. I'm timing it. Fondly.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -49,7 +51,8 @@
     "text": "Okay. I'll hold the spreadsheet open.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -67,7 +70,8 @@
     "text": "Your call. I'll stay out of it. Loudly.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -85,7 +89,8 @@
     "text": "Five more. I'm setting an alarm for both of us.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -103,7 +108,8 @@
     "text": "Stay. I'll pretend to be busy.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -121,7 +127,8 @@
     "text": "Alright, alright. Snack break for me too.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -139,7 +146,8 @@
     "text": "Go on. I'll just be here, yawning at you.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -157,7 +165,8 @@
     "text": "Stay, and I'll pretend I'm not counting.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -175,7 +184,8 @@
     "text": "Five minutes. I'm timing it, quietly.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -193,7 +203,8 @@
     "text": "Okay. Your thumbs, your rules.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -211,7 +222,8 @@
     "text": "Sure. I brought snacks. Mentally.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -229,7 +241,8 @@
     "text": "Go ahead. I'll judge with affection.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -247,7 +260,8 @@
     "text": "Stay. The spreadsheet can wait. Barely.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -265,7 +279,8 @@
     "text": "I'll stare at the wall. Five more.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -283,7 +298,8 @@
     "text": "Your choice. I'm leaning on the sofa.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -301,7 +317,8 @@
     "text": "Stay if you like. I'll yawn supportively.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -319,7 +336,8 @@
     "text": "Understood. Setting a gentle alarm.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -337,7 +355,8 @@
     "text": "Eh, five minutes. I've survived worse.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -355,7 +374,8 @@
     "text": "Mm. Make them count.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -373,7 +393,8 @@
     "text": "I'll stop talking. Mostly.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -391,7 +412,8 @@
     "text": "I'll be right here, being small. Stay.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -409,7 +431,8 @@
     "text": "Okay, but I'm adding a tiny asterisk.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -427,7 +450,8 @@
     "text": "Very well. I'll hold the fort.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -445,7 +469,8 @@
     "text": "Fine by me. I'm in no rush.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -463,7 +488,8 @@
     "slots": [],
     "tags": [
       "pause_stay",
-      "owner_canon"
+      "owner_canon",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -480,7 +506,8 @@
     "text": "Fine. I'll sit on the clock.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -497,7 +524,8 @@
     "text": "Stay granted. I'll be right here, smug and fluffy.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -514,7 +542,8 @@
     "text": "Hehe. Go on. I'll keep the spreadsheet open.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -531,7 +560,8 @@
     "text": "I'll pretend I don't have opinions. Five minutes.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -548,7 +578,8 @@
     "text": "Eyes half closed in support. Your choice.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -566,7 +597,8 @@
     "text": "Fine. I'll nap. Wake me when the five are up.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -583,7 +615,8 @@
     "text": "Hehe. Stay it is. I'll act surprised.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -602,7 +635,8 @@
     "slots": [],
     "tags": [
       "pause_stay",
-      "soft"
+      "soft",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -621,7 +655,8 @@
     "slots": [],
     "tags": [
       "pause_stay",
-      "soft"
+      "soft",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -640,7 +675,8 @@
     "slots": [],
     "tags": [
       "pause_stay",
-      "soft"
+      "soft",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -659,7 +695,8 @@
     "slots": [],
     "tags": [
       "pause_stay",
-      "soft"
+      "soft",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -678,7 +715,8 @@
     "slots": [],
     "tags": [
       "pause_stay",
-      "soft"
+      "soft",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -697,7 +735,8 @@
     "slots": [],
     "tags": [
       "pause_stay",
-      "soft"
+      "soft",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -715,7 +754,8 @@
     "text": "Fine, gremlin. I'm timing you. Lovingly.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -732,7 +772,8 @@
     "text": "Five more minutes. Hehe. That's what I say about naps.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -750,7 +791,8 @@
     "text": "Fine, menace. The spreadsheet gets a row. A small one.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -767,7 +809,8 @@
     "text": "Stay it is. I'll act shocked. I'm a great actor.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -785,7 +828,8 @@
     "text": "Okay, dummy. Five minutes. Then we negotiate.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -805,7 +849,8 @@
       "count"
     ],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -823,7 +868,8 @@
     "text": "Stay. I'll sit on your thumb in spirit.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -840,7 +886,8 @@
     "text": "Granted. I'm filing this under 'famous last minutes'.",
     "slots": [],
     "tags": [
-      "pause_stay"
+      "pause_stay",
+      "nag_only"
     ],
     "almostCaring": false
   }

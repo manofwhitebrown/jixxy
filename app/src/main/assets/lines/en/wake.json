@@ -13,7 +13,8 @@
     "text": "Mmm. I'm up. Mostly. Hi.",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -31,7 +32,8 @@
     "text": "Back. Did I miss anything? Please say no.",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -49,7 +51,8 @@
     "text": "I'm back. Miss me? Don't answer.",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -67,7 +70,8 @@
     "text": "Awake. Slightly regretting it.",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -85,7 +89,8 @@
     "text": "Hello again. Anything exciting?",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -103,7 +108,8 @@
     "text": "Up. Fluffy. Ready.",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -121,7 +127,8 @@
     "text": "Morning-ish. Hi.",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -139,7 +146,8 @@
     "text": "Woke up. Snack first.",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -157,7 +165,8 @@
     "text": "Refreshed. Mostly.",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -175,7 +184,8 @@
     "text": "Back online. Tiny stretch.",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -194,7 +204,8 @@
     "text": "Hm? ...I was awake. I was resting my eyes.",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -212,7 +223,8 @@
     "text": "Oh. Hi. I wasn't asleep. I was thinking, loudly.",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -230,7 +242,8 @@
     "text": "Back. Slept great. Dreamed about snacks.",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -248,7 +261,8 @@
     "text": "...what did I miss? Nothing? Good.",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -266,7 +280,8 @@
     "text": "Not happy. Slightly happy. Woke up.",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -284,7 +299,8 @@
     "text": "Nap over. Fur is messy. Mood is fine.",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -303,7 +319,8 @@
     "text": "I'm up. Technically. Spiritually I'm still napping.",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -321,7 +338,8 @@
     "text": "Awake. I was just warming up the nap.",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -338,7 +356,8 @@
     "text": "Fine. I'm up. Menace. You'd better have snacks.",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -355,7 +374,8 @@
     "text": "Woke me up, dummy. Dream was about snacks.",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -373,7 +393,8 @@
     "text": "Awake. Barely. Don't make me do anything fast.",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -391,7 +412,8 @@
     "text": "Up! Stretching, yawning, dramatic.",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -409,7 +431,8 @@
     "text": "Awake. Did I miss anything?",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -427,7 +450,8 @@
     "text": "Back from nap. Whiskers refreshed.",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -445,7 +469,8 @@
     "text": "I'm up. Slowly. Don't rush me.",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -463,7 +488,8 @@
     "text": "Hello. Nap was excellent. Five stars.",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -481,7 +507,8 @@
     "text": "Awake and mildly smug about it.",
     "slots": [],
     "tags": [
-      "wake"
+      "wake",
+      "calm_ok"
     ],
     "almostCaring": false
   }

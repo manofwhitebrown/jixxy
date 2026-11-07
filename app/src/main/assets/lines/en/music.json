@@ -13,7 +13,8 @@
     "text": "Music! Good. I'm tapping my foot.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -31,7 +32,8 @@
     "text": "Tune on. I'll bob gently.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -49,7 +51,8 @@
     "text": "Good song? I'm vibing quietly.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -67,7 +70,8 @@
     "text": "Soundtrack time. I approve.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -85,7 +89,8 @@
     "text": "Sweet beats. I'm a nodder.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -103,7 +108,8 @@
     "text": "Music's on. I'm a tiny dancer.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -121,7 +127,8 @@
     "text": "Volume up, mood up. Fine by me.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -139,7 +146,8 @@
     "text": "A tune. My day improves.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -157,7 +165,8 @@
     "text": "Playlist magic. Carry on.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -175,7 +184,8 @@
     "text": "Music on? Respect. I'll hum along, solo.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -194,7 +204,8 @@
     "slots": [],
     "tags": [
       "music",
-      "owner_canon"
+      "owner_canon",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -212,7 +223,8 @@
     "text": "Tail-tapping, tail only. Music's on.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -230,7 +242,8 @@
     "text": "Music? I'll sit on the speaker.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -248,7 +261,8 @@
     "text": "Ooh nice, a soundtrack. Don't ruin it.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -266,7 +280,8 @@
     "text": "Volume's yours. Opinions are mine.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -284,7 +299,8 @@
     "text": "Is this a playlist or a feeling? Asking.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -302,7 +318,8 @@
     "text": "A nap soundtrack? I'll allow it.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -320,7 +337,8 @@
     "text": "Soft songs, I'm in. Loud ones, I'm leaving.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -338,7 +356,8 @@
     "text": "A soundtrack. Gremlin taste, I'll allow it.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -356,7 +375,8 @@
     "text": "Playlist on. Judging gently from the speaker.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -374,7 +394,8 @@
     "text": "Tunes! My tail has opinions.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -392,7 +413,8 @@
     "text": "Music on. I'm doing the head-bob of approval.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -410,7 +432,8 @@
     "text": "Good taste, probably. I haven't checked.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -428,7 +451,8 @@
     "text": "Beat detected. Paws ready.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -446,7 +470,8 @@
     "text": "New track? I'm listening with one ear.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -464,7 +489,8 @@
     "text": "Music makes the sofa better.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -482,7 +508,8 @@
     "text": "Loud enough for the cat, quiet enough for the neighbours.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -500,7 +527,8 @@
     "text": "Music in the air. Cat approves.",
     "slots": [],
     "tags": [
-      "music"
+      "music",
+      "calm_ok"
     ],
     "almostCaring": false
   }

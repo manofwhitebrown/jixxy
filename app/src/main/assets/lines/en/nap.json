@@ -13,7 +13,8 @@
     "text": "Napping. Wake me for snacks or emergencies. Snacks first.",
     "slots": [],
     "tags": [
-      "nap"
+      "nap",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -31,7 +32,8 @@
     "text": "Nap time. I'll be dreaming of snacks.",
     "slots": [],
     "tags": [
-      "nap"
+      "nap",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -49,7 +51,8 @@
     "text": "Zzz mode on. Wake me for emergencies.",
     "slots": [],
     "tags": [
-      "nap"
+      "nap",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -67,7 +70,8 @@
     "text": "Going quiet. Don't mind me.",
     "slots": [],
     "tags": [
-      "nap"
+      "nap",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -85,7 +89,8 @@
     "text": "Closing my eyes. Back soon.",
     "slots": [],
     "tags": [
-      "nap"
+      "nap",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -103,7 +108,8 @@
     "text": "Nap accepted. Cozy.",
     "slots": [],
     "tags": [
-      "nap"
+      "nap",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -121,7 +127,8 @@
     "text": "Night-night, briefly.",
     "slots": [],
     "tags": [
-      "nap"
+      "nap",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -139,7 +146,8 @@
     "text": "I'll be asleep. Poke gently.",
     "slots": [],
     "tags": [
-      "nap"
+      "nap",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -157,7 +165,8 @@
     "text": "Sofa calls. See you soon.",
     "slots": [],
     "tags": [
-      "nap"
+      "nap",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -175,7 +184,8 @@
     "text": "Napping. Bring snacks later.",
     "slots": [],
     "tags": [
-      "nap"
+      "nap",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -193,7 +203,8 @@
     "slots": [],
     "tags": [
       "nap",
-      "owner_canon"
+      "owner_canon",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -210,7 +221,8 @@
     "text": "Don't wait up. Nap time, officially.",
     "slots": [],
     "tags": [
-      "nap"
+      "nap",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -227,7 +239,8 @@
     "text": "Going under the blanket. Back when I'm back.",
     "slots": [],
     "tags": [
-      "nap"
+      "nap",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -244,7 +257,8 @@
     "text": "Eyes closed. Opinions still on.",
     "slots": [],
     "tags": [
-      "nap"
+      "nap",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -261,7 +275,8 @@
     "text": "Nap mode. One slow blink, then lights out.",
     "slots": [],
     "tags": [
-      "nap"
+      "nap",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -278,7 +293,8 @@
     "text": "Don't tell the spreadsheet I'm napping.",
     "slots": [],
     "tags": [
-      "nap"
+      "nap",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -296,7 +312,8 @@
     "text": "Quiet mode on. No hard feelings, ever.",
     "slots": [],
     "tags": [
-      "safety"
+      "safety",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -314,7 +331,8 @@
     "text": "Understood. I'll stay out of your way.",
     "slots": [],
     "tags": [
-      "safety"
+      "safety",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -332,7 +350,8 @@
     "text": "Okay. Silence it is. Wake me whenever.",
     "slots": [],
     "tags": [
-      "safety"
+      "safety",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -350,7 +369,8 @@
     "text": "Going quiet. You owe me nothing.",
     "slots": [],
     "tags": [
-      "safety"
+      "safety",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -368,7 +388,8 @@
     "text": "Got it. Space is good. I'll be here.",
     "slots": [],
     "tags": [
-      "safety"
+      "safety",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -386,7 +407,8 @@
     "text": "Nap time. Wake me with a poke.",
     "slots": [],
     "tags": [
-      "nap"
+      "nap",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -404,7 +426,8 @@
     "text": "Napping. Tiny snores incoming.",
     "slots": [],
     "tags": [
-      "nap"
+      "nap",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -422,7 +445,8 @@
     "text": "Curling up. Back soon.",
     "slots": [],
     "tags": [
-      "nap"
+      "nap",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -440,7 +464,8 @@
     "text": "Zzz, on request.",
     "slots": [],
     "tags": [
-      "nap"
+      "nap",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -458,7 +483,8 @@
     "text": "Off to nap. Don't mind the snoring.",
     "slots": [],
     "tags": [
-      "nap"
+      "nap",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -476,7 +502,8 @@
     "text": "Eyes closed. Ears open. Mostly.",
     "slots": [],
     "tags": [
-      "nap"
+      "nap",
+      "calm_ok"
     ],
     "almostCaring": false
   }

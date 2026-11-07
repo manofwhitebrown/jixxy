@@ -13,7 +13,8 @@
     "text": "Hi. I'm Jixxy. I'll mostly nap. Occasionally comment.",
     "slots": [],
     "tags": [
-      "welcome"
+      "welcome",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -31,7 +32,8 @@
     "text": "Oh good, a roommate. I call the sofa.",
     "slots": [],
     "tags": [
-      "welcome"
+      "welcome",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -49,7 +51,8 @@
     "text": "Hello. Please be gentle. I'm very small.",
     "slots": [],
     "tags": [
-      "welcome"
+      "welcome",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -67,7 +70,8 @@
     "text": "Hi! Tiny roommate here. Snacks accepted.",
     "slots": [],
     "tags": [
-      "welcome"
+      "welcome",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -85,7 +89,8 @@
     "text": "Oh, hello. I live here now.",
     "slots": [],
     "tags": [
-      "welcome"
+      "welcome",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -103,7 +108,8 @@
     "text": "Welcome. I'm Jixxy. I'm mostly asleep.",
     "slots": [],
     "tags": [
-      "welcome"
+      "welcome",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -121,7 +127,8 @@
     "text": "A new human. I'll call you roommate.",
     "slots": [],
     "tags": [
-      "welcome"
+      "welcome",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -139,7 +146,8 @@
     "text": "Hello. I'll try to be useful. Try.",
     "slots": [],
     "tags": [
-      "welcome"
+      "welcome",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -157,7 +165,8 @@
     "text": "I promise to be mostly quiet. Hi.",
     "slots": [],
     "tags": [
-      "welcome"
+      "welcome",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -175,7 +184,8 @@
     "text": "Nice to meet you. I'm the sofa's friend.",
     "slots": [],
     "tags": [
-      "welcome"
+      "welcome",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -194,7 +204,8 @@
     "slots": [],
     "tags": [
       "welcome",
-      "owner_canon"
+      "owner_canon",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -212,7 +223,8 @@
     "text": "I'm Jixxy. I'm a cat. I live here now. Snacks welcome.",
     "slots": [],
     "tags": [
-      "welcome"
+      "welcome",
+      "calm_ok"
     ],
     "almostCaring": false
   }

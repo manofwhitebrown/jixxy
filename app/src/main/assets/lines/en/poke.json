@@ -13,7 +13,8 @@
     "text": "Hm?",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -31,7 +32,8 @@
     "text": "Yes? I'm busy resting.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -50,7 +52,8 @@
     "slots": [],
     "tags": [
       "poke",
-      "escalation"
+      "escalation",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -68,7 +71,8 @@
     "text": "I felt that. All of it.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -87,7 +91,8 @@
     "slots": [],
     "tags": [
       "poke",
-      "escalation"
+      "escalation",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -106,7 +111,8 @@
     "slots": [],
     "tags": [
       "poke",
-      "escalation"
+      "escalation",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -124,7 +130,8 @@
     "text": "Fine. I'm awake. Happy?",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -143,7 +150,8 @@
     "slots": [],
     "tags": [
       "poke",
-      "escalation"
+      "escalation",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -161,7 +169,8 @@
     "text": "Yes? You called?",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -179,7 +188,8 @@
     "text": "Tap noted.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -197,7 +207,8 @@
     "text": "Polite knock accepted.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -215,7 +226,8 @@
     "text": "Okay, I'm listening.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -233,7 +245,8 @@
     "text": "That tickles. Don't.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -251,7 +264,8 @@
     "text": "Seriously, I'm resting.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -270,7 +284,8 @@
     "slots": [],
     "tags": [
       "poke",
-      "escalation"
+      "escalation",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -288,7 +303,8 @@
     "text": "Hey. Boundaries. Tiny ones.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -306,7 +322,8 @@
     "text": "I'm filing this under 'rude'.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -324,7 +341,8 @@
     "text": "Okay, okay, I'm up. What?",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -343,7 +361,8 @@
     "slots": [],
     "tags": [
       "poke",
-      "escalation"
+      "escalation",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -361,7 +380,8 @@
     "text": "Are we playing a game? I'll lose.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -381,7 +401,8 @@
     "tags": [
       "poke",
       "dropped",
-      "owner_canon"
+      "owner_canon",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -400,7 +421,8 @@
     "slots": [],
     "tags": [
       "poke",
-      "dropped"
+      "dropped",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -419,7 +441,8 @@
     "slots": [],
     "tags": [
       "poke",
-      "dropped"
+      "dropped",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -438,7 +461,8 @@
     "slots": [],
     "tags": [
       "poke",
-      "dropped"
+      "dropped",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -457,7 +481,8 @@
     "slots": [],
     "tags": [
       "poke",
-      "dropped"
+      "dropped",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -476,7 +501,8 @@
     "slots": [],
     "tags": [
       "poke",
-      "dropped"
+      "dropped",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -495,7 +521,8 @@
     "tags": [
       "poke",
       "escalation",
-      "owner_canon"
+      "owner_canon",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -513,7 +540,8 @@
     "slots": [],
     "tags": [
       "poke",
-      "escalation"
+      "escalation",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -532,7 +560,8 @@
     "slots": [],
     "tags": [
       "poke",
-      "escalation"
+      "escalation",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -550,7 +579,8 @@
     "slots": [],
     "tags": [
       "poke",
-      "escalation"
+      "escalation",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -569,7 +599,8 @@
     "slots": [],
     "tags": [
       "poke",
-      "escalation"
+      "escalation",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -587,7 +618,8 @@
     "slots": [],
     "tags": [
       "poke",
-      "escalation"
+      "escalation",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -606,7 +638,8 @@
     "tags": [
       "poke",
       "stare",
-      "owner_canon"
+      "owner_canon",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -623,7 +656,8 @@
     "text": "Hm? Oh, hi.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -640,7 +674,8 @@
     "text": "Pet me or leave me. Tap noted.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -657,7 +692,8 @@
     "text": "I'm listening with one eye. Yes?",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -674,7 +710,8 @@
     "text": "You rang? This is the nap desk.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -691,7 +728,8 @@
     "text": "I'm here. Yes. Hi. Carry on.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -709,7 +747,8 @@
     "slots": [],
     "tags": [
       "poke",
-      "owner_canon"
+      "owner_canon",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -726,7 +765,8 @@
     "text": "Hehe. Missed me?",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -743,7 +783,8 @@
     "text": "You poked me. I'm choosing to be flattered.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -760,7 +801,8 @@
     "text": "I'll allow it. Once.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -780,7 +822,8 @@
     "tags": [
       "poke",
       "on_break",
-      "owner_canon"
+      "owner_canon",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -799,7 +842,8 @@
     "slots": [],
     "tags": [
       "poke",
-      "on_break"
+      "on_break",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -818,7 +862,8 @@
     "slots": [],
     "tags": [
       "poke",
-      "on_break"
+      "on_break",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -837,7 +882,8 @@
     "slots": [],
     "tags": [
       "poke",
-      "on_break"
+      "on_break",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -856,7 +902,8 @@
     "slots": [],
     "tags": [
       "poke",
-      "on_break"
+      "on_break",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -875,7 +922,8 @@
     "slots": [],
     "tags": [
       "poke",
-      "on_break"
+      "on_break",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -894,7 +942,8 @@
     "slots": [],
     "tags": [
       "poke",
-      "on_break"
+      "on_break",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -913,7 +962,8 @@
     "slots": [],
     "tags": [
       "poke",
-      "on_break"
+      "on_break",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -931,7 +981,8 @@
     "text": "Poke again and I'll sit on your cursor, gremlin.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -949,7 +1000,8 @@
     "text": "Is that affection or boredom? Either way, hi.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -967,7 +1019,8 @@
     "text": "Menace. I was mid-nap. Mid-dream. Mid-snack.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -985,7 +1038,8 @@
     "text": "You poke me, I judge you. Fair trade.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -1002,7 +1056,8 @@
     "text": "Hehe. Poking me? Fine, I love attention. Don't repeat that.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -1020,7 +1075,8 @@
     "text": "Dummy. I'm right here. You don't need to prod.",
     "slots": [],
     "tags": [
-      "poke"
+      "poke",
+      "nag_only"
     ],
     "almostCaring": false
   }

@@ -13,7 +13,8 @@
     "text": "...Go to sleep, idiot. I'll be here tomorrow.",
     "slots": [],
     "tags": [
-      "almost_caring"
+      "almost_caring",
+      "nag_only"
     ],
     "almostCaring": true
   },
@@ -31,7 +32,8 @@
     "text": "You doing okay? Asking for a friend. I'm the friend.",
     "slots": [],
     "tags": [
-      "almost_caring"
+      "almost_caring",
+      "calm_ok"
     ],
     "almostCaring": true
   },
@@ -49,7 +51,8 @@
     "text": "Whatever happens today, I'm on your side. Mostly.",
     "slots": [],
     "tags": [
-      "almost_caring"
+      "almost_caring",
+      "calm_ok"
     ],
     "almostCaring": true
   },
@@ -67,7 +70,8 @@
     "text": "I like having you around. Don't tell the spreadsheet.",
     "slots": [],
     "tags": [
-      "almost_caring"
+      "almost_caring",
+      "calm_ok"
     ],
     "almostCaring": true
   },
@@ -85,7 +89,8 @@
     "text": "Take your time. The screen isn't going anywhere. Neither am I.",
     "slots": [],
     "tags": [
-      "almost_caring"
+      "almost_caring",
+      "calm_ok"
     ],
     "almostCaring": true
   },
@@ -103,7 +108,8 @@
     "text": "I'd say something sappy, but I'm very tired. So: hi.",
     "slots": [],
     "tags": [
-      "almost_caring"
+      "almost_caring",
+      "calm_ok"
     ],
     "almostCaring": true
   },
@@ -121,7 +127,8 @@
     "text": "I'm not worried. I'm just... checking.",
     "slots": [],
     "tags": [
-      "almost_caring"
+      "almost_caring",
+      "calm_ok"
     ],
     "almostCaring": true
   },
@@ -139,7 +146,8 @@
     "text": "Small thing: I'm glad you're okay.",
     "slots": [],
     "tags": [
-      "almost_caring"
+      "almost_caring",
+      "calm_ok"
     ],
     "almostCaring": true
   },
@@ -157,7 +165,8 @@
     "text": "Don't tell anyone, but... good job.",
     "slots": [],
     "tags": [
-      "almost_caring"
+      "almost_caring",
+      "calm_ok"
     ],
     "almostCaring": true
   },
@@ -175,7 +184,8 @@
     "text": "Be nice to yourself today. Please.",
     "slots": [],
     "tags": [
-      "almost_caring"
+      "almost_caring",
+      "calm_ok"
     ],
     "almostCaring": true
   },
@@ -193,7 +203,8 @@
     "text": "You're doing fine. Ugh, I said it.",
     "slots": [],
     "tags": [
-      "almost_caring"
+      "almost_caring",
+      "calm_ok"
     ],
     "almostCaring": true
   },
@@ -211,7 +222,8 @@
     "text": "I've got your back. Mostly the sofa.",
     "slots": [],
     "tags": [
-      "almost_caring"
+      "almost_caring",
+      "calm_ok"
     ],
     "almostCaring": true
   },
@@ -229,7 +241,8 @@
     "text": "You can talk to me. I mostly listen.",
     "slots": [],
     "tags": [
-      "almost_caring"
+      "almost_caring",
+      "calm_ok"
     ],
     "almostCaring": true
   },
@@ -247,7 +260,8 @@
     "text": "Go easy on yourself. I'll go easy on you.",
     "slots": [],
     "tags": [
-      "almost_caring"
+      "almost_caring",
+      "calm_ok"
     ],
     "almostCaring": true
   },
@@ -265,7 +279,8 @@
     "text": "I'm here. That's all.",
     "slots": [],
     "tags": [
-      "almost_caring"
+      "almost_caring",
+      "calm_ok"
     ],
     "almostCaring": true
   },
@@ -283,7 +298,8 @@
     "text": "Take a break, dummy. I'll cover.",
     "slots": [],
     "tags": [
-      "almost_caring"
+      "almost_caring",
+      "nag_only"
     ],
     "almostCaring": true
   },
@@ -302,7 +318,8 @@
     "slots": [],
     "tags": [
       "almost_caring",
-      "owner_canon"
+      "owner_canon",
+      "nag_only"
     ],
     "almostCaring": true
   },
@@ -320,7 +337,8 @@
     "text": "Not worried. Just awake at your hour. Weird.",
     "slots": [],
     "tags": [
-      "almost_caring"
+      "almost_caring",
+      "calm_ok"
     ],
     "almostCaring": true
   },
@@ -338,7 +356,8 @@
     "text": "...you good? Okay. Go to sleep, though.",
     "slots": [],
     "tags": [
-      "almost_caring"
+      "almost_caring",
+      "calm_ok"
     ],
     "almostCaring": true
   },
@@ -356,7 +375,8 @@
     "text": "I'll keep the blanket warm. Don't make it weird.",
     "slots": [],
     "tags": [
-      "almost_caring"
+      "almost_caring",
+      "calm_ok"
     ],
     "almostCaring": true
   }

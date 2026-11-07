@@ -13,7 +13,8 @@
     "text": "Left without a fight. That was genuinely good.",
     "slots": [],
     "tags": [
-      "impressed"
+      "impressed",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -33,7 +34,8 @@
       "count"
     ],
     "tags": [
-      "impressed"
+      "impressed",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -51,7 +53,8 @@
     "text": "Okay. I'm impressed. Don't let it go to your head.",
     "slots": [],
     "tags": [
-      "impressed"
+      "impressed",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -69,7 +72,8 @@
     "text": "No joke. That was disciplined, and I'm a lazy expert.",
     "slots": [],
     "tags": [
-      "impressed"
+      "impressed",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -87,7 +91,8 @@
     "text": "That was a real choice. Respect.",
     "slots": [],
     "tags": [
-      "impressed"
+      "impressed",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -107,7 +112,8 @@
       "app"
     ],
     "tags": [
-      "impressed"
+      "impressed",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -125,7 +131,8 @@
     "text": "Walking away takes real strength. Noted.",
     "slots": [],
     "tags": [
-      "impressed"
+      "impressed",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -143,7 +150,8 @@
     "text": "Quiet applause. Very quiet. I'm tired.",
     "slots": [],
     "tags": [
-      "impressed"
+      "impressed",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -161,7 +169,8 @@
     "text": "Left, just like that. I'm paying attention.",
     "slots": [],
     "tags": [
-      "impressed"
+      "impressed",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -179,7 +188,8 @@
     "text": "Elegant. I'm rarely impressed.",
     "slots": [],
     "tags": [
-      "impressed"
+      "impressed",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -197,7 +207,8 @@
     "slots": [],
     "tags": [
       "impressed",
-      "owner_canon"
+      "owner_canon",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -215,7 +226,8 @@
     "text": "Respect. Genuinely.",
     "slots": [],
     "tags": [
-      "impressed"
+      "impressed",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -234,7 +246,8 @@
       "count"
     ],
     "tags": [
-      "impressed"
+      "impressed",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -252,7 +265,8 @@
     "text": "Sunglasses on. That was cool.",
     "slots": [],
     "tags": [
-      "impressed"
+      "impressed",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -272,7 +286,8 @@
       "app"
     ],
     "tags": [
-      "impressed"
+      "impressed",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -289,7 +304,8 @@
     "text": "Okay. I'm impressed. That's three. Gremlin of discipline.",
     "slots": [],
     "tags": [
-      "impressed"
+      "impressed",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -309,7 +325,8 @@
       "count"
     ],
     "tags": [
-      "impressed"
+      "impressed",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -327,7 +344,8 @@
     "text": "You left. I noticed, and I'm quietly proud.",
     "slots": [],
     "tags": [
-      "impressed"
+      "impressed",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -345,7 +363,8 @@
     "text": "Leaving takes a decision. Nice one.",
     "slots": [],
     "tags": [
-      "impressed"
+      "impressed",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -363,7 +382,8 @@
     "text": "Nicely done. Tail wag, small.",
     "slots": [],
     "tags": [
-      "impressed"
+      "impressed",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -381,7 +401,8 @@
     "text": "That was smooth. Don't tell anyone I said so.",
     "slots": [],
     "tags": [
-      "impressed"
+      "impressed",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -399,7 +420,8 @@
     "text": "A Leave! My whiskers approve.",
     "slots": [],
     "tags": [
-      "impressed"
+      "impressed",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -417,7 +439,8 @@
     "text": "Small win. I'll take it. So should you.",
     "slots": [],
     "tags": [
-      "impressed"
+      "impressed",
+      "calm_ok"
     ],
     "almostCaring": false
   }

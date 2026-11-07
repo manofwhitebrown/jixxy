@@ -16,7 +16,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -37,7 +38,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -57,7 +59,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -75,7 +78,8 @@
     "text": "Long session. Wiggle your toes, I dare you.",
     "slots": [],
     "tags": [
-      "session_long"
+      "session_long",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -95,7 +99,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -115,7 +120,8 @@
       "app"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -136,7 +142,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -156,7 +163,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -177,7 +185,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -198,7 +207,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -218,7 +228,8 @@
       "app"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -238,7 +249,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -258,7 +270,8 @@
       "app"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -278,7 +291,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -298,7 +312,8 @@
       "app"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -319,7 +334,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -340,7 +356,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -361,7 +378,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -382,7 +400,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -402,7 +421,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -423,7 +443,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -443,7 +464,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -464,7 +486,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -485,7 +508,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -505,7 +529,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -526,7 +551,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -547,7 +573,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -568,7 +595,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -589,7 +617,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -610,7 +639,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -632,7 +662,8 @@
     ],
     "tags": [
       "session_long",
-      "owner_canon"
+      "owner_canon",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -653,7 +684,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -674,7 +706,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -694,7 +727,8 @@
       "minutes"
     ],
     "tags": [
-      "safety"
+      "safety",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -714,7 +748,8 @@
       "minutes"
     ],
     "tags": [
-      "safety"
+      "safety",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -732,7 +767,8 @@
     "text": "Long stretch. No judgement. A glass of water is on offer.",
     "slots": [],
     "tags": [
-      "safety"
+      "safety",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -751,7 +787,8 @@
       "minutes"
     ],
     "tags": [
-      "safety"
+      "safety",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -769,7 +806,8 @@
     "text": "Water break? I'd fetch one, but cat.",
     "slots": [],
     "tags": [
-      "session_long"
+      "session_long",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -790,7 +828,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -811,7 +850,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -826,12 +866,13 @@
     "roast": 1,
     "bondMin": 0,
     "lang": "en",
-    "text": "{minutes} minutes. The window has been waiting for you.",
+    "text": "The window has been waiting for you. {minutes} minutes, give or take.",
     "slots": [
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "calm_ok"
     ],
     "almostCaring": false
   },
@@ -846,13 +887,14 @@
     "roast": 2,
     "bondMin": 0,
     "lang": "en",
-    "text": "{minutes} minutes on {app}. My patience is stretching. So should you.",
+    "text": "My patience is stretching. So should you. {minutes} minutes on {app}.",
     "slots": [
       "app",
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -873,7 +915,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -888,12 +931,13 @@
     "roast": 2,
     "bondMin": 0,
     "lang": "en",
-    "text": "{minutes} minutes. Even the sofa checked its watch.",
+    "text": "Even the sofa checked its watch. {minutes} minutes.",
     "slots": [
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -908,13 +952,14 @@
     "roast": 3,
     "bondMin": 1,
     "lang": "en",
-    "text": "{minutes} minutes on {app}, goblin. My tail fell asleep and woke up twice.",
+    "text": "My tail fell asleep and woke up twice. {minutes} minutes on {app}, goblin.",
     "slots": [
       "app",
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -935,7 +980,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "nag_only"
     ],
     "almostCaring": false
   },
@@ -956,7 +1002,8 @@
       "minutes"
     ],
     "tags": [
-      "session_long"
+      "session_long",
+      "nag_only"
     ],
     "almostCaring": false
   }
