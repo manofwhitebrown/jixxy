@@ -1,15 +1,23 @@
-# TASKS  (MANAGER-owned; updated 2026-11-06 03:41 UTC)
+# TASKS  (MANAGER-owned; rewritten at Wave-3 handover, 2026-11-06 ~10:00 UTC)
 
-**Milestone status:** **M0 reached** (main green, debug APK artifact exists). Freeze D-001 lifted (D-009). M1 "Alive" next: needs real-device testing by the Owner.
+**Milestones:** M0 reached. **M1 "Alive": code complete on main, NOT yet verified on a phone.** M2 "Pause works" and M3 tester build `v0.1.0` next. Main is green; rolling `latest` pre-release is live: https://github.com/manofwhitebrown/jixxy/releases/download/latest/jixxy-latest.apk
 
-| Role | Done (per status files) | Now | Next |
-|---|---|---|---|
-| PLATFORM | scaffold, manifest, OverlayService (placeholder sprite), signals, data layer, dispatcher glue, permissions/OEM API | (out of usage limit) Manager fixed build.gradle + manifest comments (D-008); needs review when back | real device test; swap NoopBrain / pause stub |
-| ENGINE | T-ENGINE-0 api package + fakes | compile fixes; T-ENGINE-1/2 after freeze; app_categories.json | validateLines, callbacks, weekly review |
-| UI | onboarding, home, settings, what-Jixxy-saw (logic + tests) | compile fixes | PermissionsSource adapter, OEM guide, weekly card |
-| CHARACTER | 3 concepts, JixxyView skeleton | compile fixes (concept A provisional) | animations, bubble, PauseCardView |
-| WRITER | bible, gold set, 366-line EN bank, MICROCOPY v0.4 | review; rerun validator when available | Hinglish pack (on trigger) |
-| DEVOPS | CI, guards, QA docs, release/pages workflows, annotations step | T-DEVOPS-7 scripts/ci_errors.sh | verify keystore + release test tag |
-| GROWTH | README, PRIVACY draft, site skeleton, tester program, launch pack, Play listing draft | waiting on build/art | screenshots once app runs |
+**Gate:** the Owner's device test of the Wave-2 build. Fix what they find before adding features.
 
-**Owner actions pending:** pick character concept (A/B/C); enable GitHub Pages (Settings > Pages > Source: GitHub Actions); licence decision; consider rotating the shared token; later: Play developer account.
+| Role | Wave-3 focus |
+|---|---|
+| PLATFORM (AI-1, integrator) | device-test loop; Pause end to end (Leave->Home on Android 14/15); service survival (boot/update, Android 15 FGS rules); local diagnostics log; battery audit; release/targetSdk plan; weekly trigger |
+| ENGINE (AI-2) | persist Pause runtime state (D-017); almostCaring per-line bondMin; callback memory; JaCoCo + real-bank simulation; Hinglish plumbing; weekly polish |
+| UI (AI-3) | onboarding robustness + restricted-settings path; "Copy debug info"; Language row; accessibility; Home/What saw; weekly card; screenshots |
+| CHARACTER (AI-4) | demo review; feel/size tuning from Owner; hi-res art + blink/yawn/stretch; motion budget; bubble + Pause card polish; mapping audit |
+| WRITER (AI-5) | apply D-014..D-016; 2 am audit of EN bank; coverage gaps; callbacks; weekly voice; microcopy; Hinglish read-through sheet |
+| DEVOPS (AI-6) | BUGS.md as truth; test sheets; real gates (validateLines, coverage, assets); signing plan; Pages check; licences list |
+| GROWTH (AI-7) | Owner test guide; distribution memo; licence memo; tester kit; docs after each release; privacy final pass |
+
+**Owner actions pending (one at a time):** test the `latest` APK; rotate the token; enable GitHub Pages; licence; Play account vs other distribution; hi-res art + 3 missing frames.
+
+**Handled Manager inbox messages:** (to be listed at next sync; Wave-2 messages not yet individually answered)
+
+## Manager notes
+- Wave-3 briefs: AI-1..AI-7 `*_v3.md` (no secrets inside; the Owner pastes the token).
+- Biggest open risks: Leave->Home on Android 14/15; foreground-service start after reboot/update; Play policy (specialUse FGS, overlay, package visibility).

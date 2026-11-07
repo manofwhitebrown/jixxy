@@ -16,3 +16,9 @@
 - **D-011 (2026-11-06 08:58 UTC)** Raster expression sprites allowed; budget: each image <= 512x512, character module resources <= 3 MB.
 - **D-012 (2026-11-06 08:58 UTC)** Jixxy is the Owner's black fluffy cat; concepts A/B/C retired.
 - **D-013 (2026-11-06 08:58 UTC)** MANAGER cut the 15 expression sprites from the Owner's sheet and committed them (reference sheet, lossless crops, WebP in character/src/main/res/drawable-nodpi, icon face) so M1 is not blocked on art. CHARACTER owns the files from now on and may re-cut or replace them; see design/character/reference/CROPS.md.
+
+- **D-014 (2026-11-06 UTC, Wave 3)** ENGINE's eight judgement calls accepted: quiet hours silence only unprompted lines (Pause still fires); Pause exempt from energy and daily cap; SMUG = user tapped Stay (10 min); late night 23:00-01:00 forces SOFT; energy-0 pokes use `on_break` lines; nap owned by the platform (`NapPolicy`); runtime timers not persisted except Pause state (D-017). `almostCaring`: the engine uses each line's own `bondMin`, no global floor; WRITER marks mild lines ROOMMATE and heartfelt ones RIDE_OR_DIE; cap "once per 3 days" stays.
+- **D-015 (Wave 3)** "Dropped" stays a `POKE` line with tag `dropped`; no new trigger.
+- **D-016 (Wave 3)** Hinglish is an opt-in beta: off by default, `language="hinglish"`, labelled beta in the UI, English default; not shown to wider testers until a native-speaker read-through.
+- **D-017 (Wave 3)** Pause runtime state may be persisted via additive, default-valued `BrainState` fields. ENGINE posts INFO to ALL on push.
+- **D-018 (Wave 3)** Cross-lane rule (replaces D-008): edit another role's file only if main is red because of it or the Owner approved, the owner is silent, the change is minimal, and owner + MANAGER are told with the SHA. PLATFORM is the designated integrator.
