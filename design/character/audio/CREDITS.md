@@ -7,7 +7,7 @@ file is listed here with source URL, author, licence and the date it was checked
 All seven cues are cut from clips of one pack, built by `build_audio.py` (cut points, re-pitch and fades are in its table).
 - Pack: "Cat purr / meow" by Kerzoven, https://opengameart.org/content/cat-purr-meow
 - Licence: CC0 (public domain), as listed by the Manager for D-021. **CHARACTER could not open the page** (the sandbox cannot reach opengameart.org); the Owner downloaded the files on 2026-11-07. **Owner/Manager: please open the page once and confirm it says CC0**, then delete this sentence.
-- Used source clips: cat_softmew, cat_mewpurr, cat_mewpurr2, cat_mewfood, cat_purrsleepy_loop (the pack's WAVs are not kept in the repo: the asset guard allows no raw audio; re-download the pack into `design/character/audio/source/` to re-run `build_audio.py`, which is git-ignored there). Not used: cat_purractive_loop.
+- Used source clips (kept in `source/`, allowed by the asset guard): cat_softmew, cat_mewpurr, cat_mewpurr2, cat_mewfood, cat_purrsleepy_loop. Not used and not kept: cat_purractive_loop.
 - Derived: grumpy_mew (cat_mewpurr2, slowed to 85 %), yelp (cat_mewpurr, first 0.3 s, pitched up 30 %), worried_mew (cat_softmew second mew with a 5.5 Hz wobble). Pitch-shifted or wobbled CC0 audio is still CC0.
 - Total bundled audio: about 69 KB (budget 400 KB).
 
