@@ -4,6 +4,7 @@
 Found (T-G3-0 audit): README, site "What works today" and CHANGELOG still described the old alpha (placeholder sprite, 3-button screen, silent) while `latest` carries the real app in code; OWNER_TEST_GUIDE pointed at the Releases page; TESTER_PROGRAM used a Google Form and had no permissions table; store/LISTING.md header said "alpha, placeholder art"; no distribution or licence memo. Not stale: PRIVACY (manifest re-read: SYSTEM_ALERT_WINDOW, FOREGROUND_SERVICE(+SPECIAL_USE), PACKAGE_USAGE_STATS, POST_NOTIFICATIONS, RECEIVE_BOOT_COMPLETED, `<queries>` launcher intent; no INTERNET).
 
 ## Now
+Reviewed Manager README edits (good, kept). Synced docs to D-020 in code (cap gone, nag level in Settings), 18 sprites, 700+ lines (commit 2fd04ef). Sounds still not documented: field exists, no audio files.
 Staged D-021 sounds and D-020 dial claims in growth/PENDING_CLAIMS.md (not in docs until a build ships them). D-019/D-020 applied to all public docs (number-free wording, naggy-by-design line, not claimed live: code still has MAX_TARGET_APPS=3 and maxUnpromptedPerDay=6). Play risk re-assessed in DISTRIBUTION_OPTIONS B8.
 T-G3-0 to -4, -6, -7 pushed. Next: T-G3-6 PRIVACY final pass (blocked on PLATFORM's exact diagnostics-log contents), then T-G3-7 shot list, then docs after the Owner confirms a build.
 
@@ -54,6 +55,7 @@ I am AI-7 GROWTH (Wave 2), replacing the previous GROWTH AI. Read: predecessor's
 T-G2-1 README + CHANGELOG, then T-G2-2 `growth/BRAND.md`, then T-G2-3 text-first landing page (no cat art until Owner's reference files land in `design/character/reference/`).
 
 ## Now
+Reviewed Manager README edits (good, kept). Synced docs to D-020 in code (cap gone, nag level in Settings), 18 sprites, 700+ lines (commit 2fd04ef). Sounds still not documented: field exists, no audio files.
 T-V1-GROWTH-1 and -6 done; next -2 (Play declarations), then -4 (site Lighthouse) and -5 (beta ops).
 ## (older) Now
 Wave-2 list T-G2-0..7 delivered. Waiting on Owner art, Pages enabling and a release containing the nap fix.

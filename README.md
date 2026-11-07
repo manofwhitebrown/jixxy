@@ -33,7 +33,7 @@ The one to try is the rolling **`latest`** build: <https://github.com/manofwhite
 
 ## Progress checklist
 
-`[x]` = done. `[ ]` = not done yet. "Written" means the code exists and the computer's tests pass; **only the Owner seeing it work on a phone counts as "seen on a phone".** Last checked 2026-11-07 against commit `5892ff2`.
+`[x]` = done. `[ ]` = not done yet. "Written" means the code exists and the computer's tests pass; **only the Owner seeing it work on a phone counts as "seen on a phone".** Last checked 2026-11-07 against commit `b53f71d`.
 
 ### Seen working on a real phone
 - [x] Installs and opens (`v0.0.1-alpha`)
